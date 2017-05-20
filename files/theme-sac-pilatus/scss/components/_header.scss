@@ -1,0 +1,40 @@
+$header-height: 100px;
+
+#header {
+
+  .header-row-1 {
+
+    border-bottom: 1px solid $gray-lighter;
+    @include transition(all);
+
+    .row {
+      @include flex-vertical-align-middle();
+      height: $header-height;
+      @include transition(height);
+    }
+    .logo-header{
+      height:40px;
+      width: auto;
+    }
+    .mobile-title-heading{
+      @include flex-vertical-align-middle();
+      img{
+        margin:0 1rem;
+      }
+    }
+    .header-search-form {
+      margin: 0;
+    }
+    .header-button-container {
+      text-align: right;
+      .btn {
+        margin-right: $spacer;
+      }
+      .dropdown-menu {
+        right: 0;
+        left: inherit;
+      }
+    }
+  }
+}
+

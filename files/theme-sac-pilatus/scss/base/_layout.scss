@@ -1,0 +1,110 @@
+
+#header {
+  .header-row-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-fixed;
+    height: 100px;
+    background: darken(#f9f9f9,4);
+    @include media-breakpoint-up(lg) {
+      background: #fff;
+    }
+  }
+}
+
+// overwrite bootstrap .container padding
+.container {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include media-breakpoint-up(md) {
+    //padding-left:$spacer;
+    //padding-right: $spacer;
+  }
+}
+
+#container {
+
+  #main {
+
+    margin-bottom: $spacer-y;
+
+  }
+}
+
+#container {
+  margin-top: 15px; // Because auf the fixed header, we need some margin
+  @include media-breakpoint-down(md) {
+    margin-top: 100px;
+  }
+
+  .mod_article:not(.container-fluid) > .inside {
+    @extend .container;
+    padding: $spacer;
+  }
+
+  .mod_article.container-fluid {
+    padding: 0;
+  }
+
+  .mod_article *[class*="ce_"], .mod_article *[class*="mod_"] {
+    //margin-bottom: 20px;
+  }
+  .mod_article {
+    background-color: transparent;
+    margin-bottom: $spacer-y;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  .mod_article {
+    >.inside {
+      background-color: #fff;
+      > *:first-child {
+        margin-top: $spacer !important;
+      }
+    }
+  }
+
+  .mod_article.article-dark {
+    background-image: none;
+    background-color: #222;
+  }
+  .mod_article.article-white {
+    background-image: none;
+    background-color: #fff;
+  }
+  .mod_article.article-gray {
+    background-image: none;
+    //background-color: $gray-lighter;
+    >.inside{
+      background-color: $gray-lighter;
+    }
+  }
+  .mod_article.article-white {
+    background-image: none;
+    background-color: #fff;
+  }
+
+  @include media-breakpoint-down(md) {
+    //width: 100%;
+  }
+}
+
+#footer {
+  //
+}
+
+
+
+
+
+
+
+
+
+
+

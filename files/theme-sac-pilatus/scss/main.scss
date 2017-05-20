@@ -1,0 +1,35 @@
+// Set variables and overwrite bootstrap vars
+@import "variables";
+// EMBED BOOTSTRAP FRAMEWORK
+@import "/../bootstrap/scss/bootstrap.scss";
+
+// MIXINS
+@import "mixins/_mixins.scss";
+// GENERIC
+@import "generic/contao-reset";
+// BASE 
+@import "base/page";
+@import "base/layout";
+@import "base/type";
+@import "base/bootstrap-anpassungen";
+@import "base/grid";
+// COMPONENTS
+@import "components/header";
+@import "components/footer";
+@import "components/sticky-footer";
+@import "components/forms";
+@import "components/downloads";
+@import "components/gallery-creator";
+@import "components/service-link";
+@import "components/socialmedia-buttons";
+@import "components/preloader-overlay";
+@import "components/sidebar-and-navigation";
+@import "components/navbar";
+@import "components/scroll-to-top";
+@import "components/media";
+@import "components/pagination";
+@import "components/element_text_image_layer";
+@import "components/news";
+@import "components/leitbild";
+@import "components/accordion";
+@import "components/other";

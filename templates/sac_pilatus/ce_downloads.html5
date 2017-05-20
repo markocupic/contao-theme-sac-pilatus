@@ -1,0 +1,54 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="multifile-download-link"><span class="fa fa-download"></span> Mehrere Dateien herunterladen</div>
+<div class="multifile-download-list-container">
+<ul>
+    <?php foreach ($this->files as $file): ?>
+    <li><input type="checkbox" value="<?= $file['id'] ?>"><?= Image::getHtml($file['icon'], '', 'class="mime_icon"') ?> <a href="<?= $file['href'] ?>" title="<?= $file['title'] ?>"><?= $file['link'] ?> <span class="size">(<?= $file['filesize'] ?>)</span></a></li>
+    <?php endforeach; ?>
+</ul>
+</div>
+
+<div class="checkbox_container multifile-download-button-container">
+    <button class="btn btn-default downloadFilesButton">Download</button>
+</div>
+<script>
+(function ($) {
+    $().ready(function () {
+
+        $('.downloadFilesButton').click(function () {
+            var button = $(this);
+            var list = button.closest('.ce_downloads').find('ul').eq(0);
+            var files = [];
+            $(list).find('input').each(function () {
+                var input = $(this);
+                if($(this).is(':checked'))
+                {
+                    files.push(input.attr('value'));
+                }
+
+            });
+            if(files.length > 0)
+            {
+                var path = '{{env::url}}/{{env::request}}?zipDownload=true&files=' + files.join();
+                window.location.href = path;
+            }else{
+                alert('Bitte wählen Sie mindestens eine Datei zum Download aus.')
+            }
+
+        });
+
+        $('.multifile-download-link').click(function(){
+            $(this).siblings('.multifile-download-list-container').toggleClass('show-checkbox');
+            $(this).siblings('.multifile-download-button-container').toggleClass('show-button');
+        });
+
+    });
+
+
+})(jQuery);
+
+</script>
+
+        <?php $this->endblock(); ?>

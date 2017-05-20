@@ -1,0 +1,52 @@
+#footer {
+
+
+  [class*="footer-row-"] {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  .footer-row-1 {
+    background-color: $gray-lightest;
+    color: #1a1a1a !important;
+    border-top: 1px solid darken($gray-lighter,4);
+    a, &:hover {
+      color: $gray !important;
+    }
+    .title {
+      font-weight:bold;
+    }
+    .row > div > div {
+      padding: 0 8px;
+    }
+  }
+
+  .footer-row-2 {
+    background-color: #222;
+    color: #8b889b !important;
+    a, &:hover {
+      color: #8b889b !important;
+    }
+    .title {
+      color: #d7d5e5;
+    }
+    .row > div > div {
+      padding: 0 8px;
+    }
+  }
+
+  .navigation-footer {
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 0;
+      margin: 0;
+      span:before, a:before {
+        @include icon-before(f105);
+        font-family: FontAwesome;
+      }
+    }
+  }
+}

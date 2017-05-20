@@ -1,0 +1,14 @@
+body{
+  background-color: #333 !important;
+  #wrapper{
+     opacity: 0;
+   }
+ }
+
+
+body.loaded{
+  background-color: $body-bg !important;
+  #wrapper{
+    opacity: 1;
+  }
+}

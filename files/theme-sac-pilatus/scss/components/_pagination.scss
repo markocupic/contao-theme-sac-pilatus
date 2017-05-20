@@ -1,0 +1,12 @@
+.pagination{
+  margin:0;
+  padding:0;
+  li{
+    a,span{
+      border-radius: 0 !important;
+      i{
+        margin-right: 4px;
+      }
+    }
+  }
+}

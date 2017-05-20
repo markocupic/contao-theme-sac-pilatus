@@ -1,0 +1,46 @@
+<?php $this->extend('block_searchable_carousel'); ?>
+
+<?php $this->block('content'); ?>
+<div class="row"> <!--start row-->
+  <?php if (!$this->addBefore): ?>
+    <?php if ($this->headline): ?>
+      <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+    <div class="col-xs-4">
+    <?= $this->text ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($this->addImage): ?>
+  <div class="col-xs-4">
+  <figure class="image_container<?= $this->floatClass ?>"<?php if ($this->margin): ?> style="<?= $this->margin ?>"<?php endif; ?>>
+      <?php if ($this->href): ?>
+        <a href="<?= $this->href ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle ?>"<?php endif; ?><?= $this->attributes ?>>
+      <?php endif; ?>
+
+      <?php $this->insert('picture_default', $this->picture); ?>
+
+      <?php if ($this->href): ?>
+        </a>
+      <?php endif; ?>
+
+      <?php if ($this->caption): ?>
+        <figcaption class="caption"><?= $this->caption ?></figcaption>
+      <?php endif; ?>
+
+    </figure>
+    </div>
+
+  <?php endif; ?>
+
+  <?php if ($this->addBefore): ?>
+    <div class="col-xs-8">
+    <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+
+    <?= $this->text ?>
+    </div>
+  <?php endif; ?>
+  </div> <!--end row-->
+<?php $this->endblock(); ?>

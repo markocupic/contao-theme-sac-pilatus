@@ -1,0 +1,93 @@
+<div id="headerTopWrapper">
+    <div id="headerTop">
+        <div class="companyLogo">{{image::files/default-theme/images/logo-sac-pilatus.png?alt=companyLogo&mode=proportional}}</div>
+
+        <div id="headerNavigation" class="hidden-sm-down">
+            <!-- Placeholder -->
+        </div>
+
+        <div class="nav-toggler hidden-lg-up"><span class="fa fa-bars"></span></div>
+    </div>
+
+
+    <div style="" id="mainNavigation" class="fixed-navigation">
+        <!--<nav class="home-link"><a href=""><h1>SAC-Pilatus</h1></a></nav>-->
+        <div class="text-right"><span role="button" class="close-nav-btn fa fa-close"></span></div>
+        {{insert_module::288}}
+        <nav class="login">
+            <ul>
+                <li class="frontend-login"><a href="login.html" title="Login">Frontend Login</a></li>
+                <li class="backend-login"><a href="contao" title="Backend Login">Backend Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <?php //$images = range(0,10,1);shuffle($images); $images = array($images[0]);?>
+<?php $showeaderImage = false;?>
+<?php if($showeaderImage): ?>
+    <div id="headerImage" class="hidden-sm-down">
+        <div id="carousel-header-image" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+            <!--<ol class="carousel-indicators">
+                 <?php foreach($images as $k => $v): ?>
+                 <li data-target="#carousel-header-image" data-slide-to="<?= $k ?>"<?php if($k==0): ?> class="active"<?php endif; ?>></li>
+                 <?php endforeach; ?>
+             </ol>-->
+            <div class="carousel-inner" role="listbox">
+                <?php foreach($images as $k => $v): ?>
+                <?php if(is_file(TL_ROOT . '/files/default-theme/images/header-image_' . $v . '.jpg')): ?>
+                <div class="carousel-item<?php if($k==0): ?> active<?php endif; ?>">
+                    {{image::files/default-theme/images/header-image_<?= $v ?>.jpg?width=1900&height=380&mode=center_top}}
+                </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+<!--
+            <a class="left carousel-control" href="#carousel-header-image" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-header-image" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            -->
+        </div>
+
+    </div>
+    <?php endif; ?>
+
+</div>
+
+<script>
+(function ($) {
+    $().ready(function () {
+        $('#mainNavigation li.submenu').each(function () {
+            $(this).append('<span class="expand-submenu"></span>');
+        });
+
+        // expand active submenu list item
+        $('li.submenu.active, li.submenu.trail').addClass('expanded');
+
+        $('span.expand-submenu').click(function () {
+            $(this).closest('li').toggleClass('expanded');
+        });
+        $('#mainNavigation ul.level_1 > li.trail').addClass('expanded');
+        //$('.expand-submenu').siblings('ul').children('li.expanded').toggleClass('expanded');
+
+
+        $('#header .nav-toggler').click(function () {
+
+            $('html').toggleClass('navigation-opened');
+            if ($('html').hasClass('navigation-opened')) {
+                $('body').append('<div id="navigationOverlay"></div>');
+                $('#navigationOverlay, .close-nav-btn').click(function () {
+                    $('html').removeClass('navigation-opened');
+                    $('#navigationOverlay').remove();
+                });
+            } else {
+                $('html').removeClass('navigation-opened');
+                $('#navigationOverlay').remove();
+            }
+        });
+    });
+})(jQuery);
+</script>
