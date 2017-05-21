@@ -1,0 +1,53 @@
+<!-- indexer::stop -->
+<div class="footer-row-1">
+    <div class="container">
+         <div class="row">
+
+                <div class="col-md-4 col-lg-4">
+                    <strong>SAC-Pilatus<br></strong>
+                    Testumgebung zur<br>Harmonisierung der Alpinkurse 2017
+                </div>
+
+
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <a href="touren.html" role="button" class="btn btn-lg btn-reverse">Tourenkalender</a>
+                </div>
+
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <a href="kurse.html" role="button" class="btn btn-lg btn-reverse-black">Kurskalender</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="copyright-box footer-row-2">
+    <div class="container">
+         <div class="row">
+             <div class="col-xs-12 col-md-4 col-lg-4">
+                 <address>
+                     Marko Cupic,
+                     6208 Oberkirch, {{email::m.cupic@gmx.ch}}
+                 </address>
+             </div>
+             <div class="col-xs-12 col-md-4 col-lg-4">
+
+                 <div id="socialIcons">
+                     <ul>
+                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                         <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                         <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                     </ul>
+                 </div>
+
+             </div>
+             <div class="col-xs-12 col-md-4 col-lg-4">
+                 <div id="footerNavigation">
+                     <?php //echo \Controller::replaceInsertTags('{{insert_module::304}}'); ?>
+                 </div>
+             </div>
+         </div>
+    </div>
+</div>
+<!-- indexer::continue -->
+

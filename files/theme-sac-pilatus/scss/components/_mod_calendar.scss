@@ -31,6 +31,18 @@
       color:red;
     }
   }
+
+  .button-bar{
+    ul{
+      display:flex !important;
+      li{
+        margin-right: 5px;
+        a{
+          touch-action: none;
+        }
+      }
+    }
+  }
 }
 .kursmodul-sac-liste {
 

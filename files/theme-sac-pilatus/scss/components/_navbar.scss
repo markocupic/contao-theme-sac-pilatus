@@ -19,6 +19,7 @@ body .navbar-backdrop {
     height: $navbar-height;
     overflow-y: visible;
     background-color: $gray-lightest;
+    background-color: white;
     color: #000;
     margin-top: 100px;
     ul, li {
@@ -49,15 +50,15 @@ body .navbar-backdrop {
         color: $link-color;
       }
       > li.trail, > li.active {
-        background-color: $accent-color;
+        //background-color: $accent-color;
         > strong, > a, > a:after, > strong:after {
-          color: #fff;
+          //color: #fff;
         }
       }
       > li.expanded, > li:hover {
-        background-color: $accent-color;
+        //background-color: $accent-color;
         > a, > a:after, > strong {
-          color: #fff;
+         //color: #fff;
           text-decoration: none;
         }
       }

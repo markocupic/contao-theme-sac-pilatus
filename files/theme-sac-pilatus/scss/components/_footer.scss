@@ -7,7 +7,7 @@
   }
 
   .footer-row-1 {
-    background-color: $gray-lightest;
+    background-color: #fff;
     color: #1a1a1a !important;
     border-top: 1px solid darken($gray-lighter,4);
     a, &:hover {
@@ -33,6 +33,18 @@
     .row > div > div {
       padding: 0 8px;
     }
+    #socialIcons ul{
+      display:flex;
+      li{
+        margin-right: 5px;
+      }
+    }
+    #footerNavigation ul{
+      display:flex;
+      li{
+        margin-right: 5px;
+      }
+    }
   }
 
   .navigation-footer {
@@ -49,4 +61,5 @@
       }
     }
   }
+
 }
