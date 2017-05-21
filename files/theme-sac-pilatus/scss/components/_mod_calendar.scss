@@ -1,0 +1,170 @@
+.loading-icon-lg {
+  div {
+    text-align: center;
+  }
+
+  .fa {
+    font-size: 4rem;
+    color: #ccc;
+  }
+}
+
+.filter-board {
+  .row > div {
+    margin-bottom: 2rem;
+  }
+  .filter-select {
+    width: 100%;
+  }
+}
+
+.ce_hyperlink a:before {
+  font-family: "FontAwesome";
+  content: "\f019";
+  margin-right: 5px;
+}
+
+// Loading icon
+.mod_eventlist{
+  .loading-icon-lg {
+    .fa {
+      color:red;
+    }
+  }
+}
+.kursmodul-sac-liste {
+
+  .more-date-infos {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus {
+      @include tab-focus();
+    }
+  }
+
+  .row {
+    padding-top: 2rem;
+    padding-bottom: $spacer-y;
+    .kursstufe {
+      color: $gray-light !important;
+      margin-top: $spacer-y/2;
+      margin-bottom: $spacer-y;
+      text-transform: uppercase;
+    }
+    .kursart .label-kursart {
+      cursor: pointer;
+    }
+
+    .detail-item {
+      padding: $table-cell-padding;
+      padding-left: 20px;
+      position: relative;
+      &:last-child {
+        border-bottom: 0;
+      }
+      &:before {
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 11px;
+        left: 0;
+        color: $body-color;
+      }
+    }
+    .location:before {
+      content: "\f041";
+    }
+    .life-ring:before {
+      content: "\f1cd";
+    }
+    .user:before {
+      content: "\f007";
+    }
+    .home:before {
+      content: "\f015";
+    }
+    .calendar-o:before {
+      content: "\f133";
+    }
+    .info:before {
+      content: "\f129";
+    }
+  }
+  .more {
+    text-align: right;
+  }
+
+}
+
+.kursmodul-sac-liste.last {
+  border-bottom: 0;
+}
+
+.event-detailview {
+  .flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .teaser p {
+    font-weight: bold !important;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+
+  .kursstufe {
+    color: green;
+    margin-bottom: $spacer-y;
+    text-transform: uppercase;
+  }
+
+  .eventdate {
+    time {
+      display: block;
+    }
+  }
+
+  .instructor {
+    img {
+      border-radius: 0;
+    }
+    .instructor-name {
+      margin-bottom: $spacer-y;
+    }
+  }
+
+  .event-detail {
+    padding: $spacer 0;
+    &.last {
+      border: 0;
+    }
+    &:nth-child(odd) {
+      //background: $gray-lightest;
+    }
+  }
+
+  .info-box {
+    //background-color: $gray-lightest;
+    padding: $spacer 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+}
+
+.course-registration-form {
+  .widget {
+    margin-bottom: 1.5rem;
+  }
+  input, select {
+    @extend .form-control;
+  }
+  button {
+    @extend .btn;
+    @extend .btn-danger;
+  }
+}

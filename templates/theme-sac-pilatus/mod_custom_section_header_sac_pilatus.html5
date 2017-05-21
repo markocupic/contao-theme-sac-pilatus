@@ -9,9 +9,9 @@
 
         <div class="mobile-title-heading col-10 col-md-5 col-lg-6">
             <a href="" title="Startseite">
-                <img src="/files/page_media/logos-ettiswil/logos-schule/logo-red.png" class="logo-header wow fadeIn" data-wow-duration="1s" data-wow-delay="2s" alt="Logo">
+                <img src="/files/default-theme/images/logo-sac-pilatus.png" class="logo-header wow fadeIn" data-wow-duration="1s" data-wow-delay="2s" alt="Logo">
             </a>
-            <h1>Schule Ettiswil</h1>
+            <h1>SAC Pilatus</h1>
         </div>
 
 
@@ -54,7 +54,7 @@
 </div>
 
 <!-- NAVBAR-START -->
-<div class="header-row-2 navbar-header">{{insert_module::179}}</div>
+<div class="header-row-2 navbar-header">{{insert_module::307}}</div>
 <!-- NAVBAR-END -->
 
 
