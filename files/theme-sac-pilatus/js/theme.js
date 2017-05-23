@@ -1,8 +1,3 @@
-
-
-
-
-
 // Load resources
 (function ($) {
 
@@ -15,14 +10,14 @@
     $.getScript("https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js");
 
     // Load Bootstrap
-    $.getScript("/composer/vendor/twbs/bootstrap/dist/js/bootstrap.min.js");
+    $.getScript("/files/theme-sac-pilatus/bootstrap/dist/js/bootstrap.min.js");
 
     // Load FontAwesome
     $.getScript("https://use.fontawesome.com/926b4fc2c0.js");
 
     // WOW & Animate.css
-    $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" )
-        .done(function( script, textStatus ) {
+    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js")
+        .done(function (script, textStatus) {
             new WOW().init();
         });
     $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css" />');
@@ -37,42 +32,40 @@
 })(jQuery);
 
 
-
 (function ($) {
     $().ready(function () {
-       $('#header .mod_navigation ul.level_1 > li > a, #header .mod_navigation ul.level_1 > li>a:after, #header .mod_navigation ul.level_1 > li > span').click(function(e){
-           if(!$(this).closest('li').hasClass('submenu')){
-               return true;
-           }else{
-               e.stopPropagation();
-               e.preventDefault();
-           }
+        // Add expand icon to first level submenu
+        $('#header .mod_navigation ul.level_1 > li.submenu').append('<i role="button" class="toggler fa fa-chevron-down"></i>');
 
-           $(this).closest('ul').find('.expanded').removeClass('expanded');
-           $(this).closest('li').addClass('expanded');
+        // Add event click
+        $('#header .mod_navigation ul.level_1 > li.submenu > .toggler').click(function (e) {
 
-           $('.navbar-backdrop').remove();
-           $('body').append('<div class="navbar-backdrop"></div>');
-           $('.navbar-backdrop').click(function(e){
-               e.preventDefault();
-               dispandNavigation();
-           });
-           $(window).resize(function(e){
-               e.preventDefault();
-               dispandNavigation();
-           });
-           $(window).scroll(function(e){
-               e.preventDefault();
-               dispandNavigation();
-           });
 
-           function dispandNavigation()
-           {
-               $('.navbar-backdrop').remove();
-               $('.mod_navigation .expanded').removeClass('expanded');
-           }
+            $(this).closest('ul').find('.expanded').removeClass('expanded');
+            $(this).closest('li').addClass('expanded');
 
-       });
+            $('.navbar-backdrop').remove();
+
+            $('body').append('<div class="navbar-backdrop"></div>');
+            $('.navbar-backdrop').click(function (e) {
+                e.preventDefault();
+                dispandNavigation();
+            });
+            $(window).resize(function (e) {
+                e.preventDefault();
+                dispandNavigation();
+            });
+            $(window).scroll(function (e) {
+                e.preventDefault();
+                dispandNavigation();
+            });
+
+            function dispandNavigation() {
+                $('.navbar-backdrop').remove();
+                $('.mod_navigation .expanded').removeClass('expanded');
+            }
+
+        });
     });
 })(jQuery);
 

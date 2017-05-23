@@ -45,7 +45,9 @@
   }
 }
 .kursmodul-sac-liste {
-
+  .title .headline{
+    margin-top:0;
+  }
   .more-date-infos {
     color: $link-color;
     text-decoration: $link-decoration;

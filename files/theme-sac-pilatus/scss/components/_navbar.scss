@@ -43,9 +43,7 @@ body .navbar-backdrop {
       > li > a, > li > strong {
         line-height: $navbar-height;
       }
-      > li.submenu > a:after, li.submenu > strong:after {
-        font-family: $icon-font-name;
-        content: "\f078";
+      > li.submenu > a:after, li.submenu > .toggler {
         padding-left: $spacer-x;
         color: $link-color;
       }
