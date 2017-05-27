@@ -1,3 +1,4 @@
+
 // Bootstrap
 .widget {
   @extend .form-group;
@@ -22,9 +23,12 @@ input.text, input.captcha, textarea, select {
   }
 }
 
+
+
+
 #main {
   .formbody {
-    max-width: 800px;
+    //max-width: 800px;
     background: #fff;
     border: 1px solid $gray-lighter;
     padding: $spacer;
@@ -39,12 +43,25 @@ input.text, input.captcha, textarea, select {
         border-bottom: 1px solid $gray-lighter;
       }
     }
+    textarea {
+        line-height:2;
+    }
+    .autogrowing-textarea-hiddendiv {
+      display: none;
+      white-space: pre-wrap;
+      min-height: 100px;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      word-wrap: break-word;
+      line-height:2;
+    }
+
 
     .checkbox_container, .radio_container {
       display: flex;
       align-items: baseline;
       position: relative;
-      label, input,
+      label, input
       {
         margin: 0;
         padding: 0;
