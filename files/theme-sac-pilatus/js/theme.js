@@ -93,6 +93,25 @@
 })(jQuery);
 
 
+/** Scroll to form fields if there are errors **/
+(function ($) {
+    $().ready(function () {
+        if($('.widget.error').length){
+
+            var interval = window.setInterval(function(){
+                // Wait until the onload overlay has disapeared
+                if($('body.loaded').length)
+                {
+                    clearInterval(interval);
+                    window.setTimeout(function(){
+                        window.scrollTo(0, $('.widget.error').first().offset().top);
+                    },100);
+                }
+            },100);
+        }
+    });
+})(jQuery);
+
 /** Mediabox **/
 (function ($) {
     $().ready(function () {

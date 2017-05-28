@@ -1,5 +1,5 @@
 // Fonts
-$font-family-sans-serif: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: 'Fire Sans', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
 $headings-font-family:'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
 
 // Icon Fontname
@@ -20,6 +20,9 @@ $body-color: #333;
 $body-bg: #f8f8f8;
 //$link-color: #1570a6;
 
+
+// Form Widgets
+$alert-danger-text: red;
 
 $zindex-navbar-aside-backdrop: 1080;
 $zindex-navbar-aside: 1090;

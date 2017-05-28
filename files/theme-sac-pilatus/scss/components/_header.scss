@@ -12,23 +12,26 @@ $header-height: 100px;
       height: $header-height;
       @include transition(height);
     }
-    .logo-header{
-      height:80px;
+    .logo-header {
+      height: 80px;
       width: auto;
     }
-    .mobile-title-heading{
+    .mobile-title-heading {
       @include flex-vertical-align-middle();
-      img{
-        margin:0 1rem;
+      img {
+        margin: 0 1rem;
       }
     }
     .header-search-form {
       margin: 0;
     }
+
     .header-button-container {
-      text-align: right;
-      .btn {
-        margin-right: $spacer;
+      display: flex;
+      justify-content: flex-end;
+      & > * {
+        margin: 0 8px;
+        @include flex-vertical-align-middle();
       }
       .dropdown-menu {
         right: 0;
@@ -36,5 +39,19 @@ $header-height: 100px;
       }
     }
   }
+  .navigation-toggler {
+    background: $accent-color;
+    .fa {
+      //font-size: 2rem;
+      color: #fff;
+    }
+    border: 0;
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
 }
+
+
 

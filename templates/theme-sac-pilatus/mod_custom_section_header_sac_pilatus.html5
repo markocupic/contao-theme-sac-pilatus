@@ -1,13 +1,9 @@
 
 <div class="header-row-1">
     <div class="row">
-        <div class="header-navigation-toggle-container hidden-lg-up col-2 col-md-1">
-            <!-- Navbar toggler mobile -->
-            <button class="navigation-toggler"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
-            <!-- End Navbar toggler mobile -->
-        </div>
 
-        <div class="mobile-title-heading col-10 col-md-5 col-lg-6">
+
+        <div class="mobile-title-heading col-4 col-md-5 col-lg-6">
             <a href="" title="Startseite">
                 <img src="/files/default-theme/images/logo-sac-pilatus.svg" class="logo-header wow fadeIn" data-wow-duration="1s" data-wow-delay="2s" alt="Logo">
             </a>
@@ -16,7 +12,7 @@
 
 
         <div class="col-md-3 hidden-sm-down header-search-form">
-            <form action="suche" method="get">
+            <form action="{{link_url::suche}}" method="get">
                 <div class="formbody">
                     <label for="ctrl_keywords_152" class="invisible">Suchbegriffe</label>
 
@@ -47,8 +43,18 @@
         </div>
 
 
-        <div class="header-button-container col-6 col-md-3 hidden-sm-down">
-            <a href="{{link_url::member-login}}" role="button" class="btn btn-primary"><?php if(FE_USER_LOGGED_IN): ?>Abmelden<?php else: ?>Anmelden<?php endif; ?></a>
+        <div class="header-button-container col-8 col-md-3">
+            <?php if(FE_USER_LOGGED_IN): ?>
+                <a href="{{link_url::member-login}}"><button aria-label="abmelden" class="btn btn-primary"><i class="fa fa-sign-out"></i> <span>Abmelden</span></button></a>
+            <?php else: ?>
+                <a href="{{link_url::member-login}}"><button aria-label="anmelden" class="btn btn-primary"><i class="fa fa-sign-in"></i> <span>Anmelden</span></button></a>
+            <?php endif; ?>
+
+
+
+            <!-- Navbar toggler mobile -->
+            <button class="navigation-toggler hidden-lg-up btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+            <!-- End Navbar toggler mobile -->
         </div>
     </div>
 </div>

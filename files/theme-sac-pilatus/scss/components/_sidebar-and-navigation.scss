@@ -12,7 +12,7 @@ html, body {
 }
 
 
-#header, #sidebar {
+#sidebar {
   .navigation-toggler {
     background: transparent;
     .fa {
@@ -116,7 +116,7 @@ body.sidebar-open {
     left: 0;
   }
   #header .navigation-toggler {
-    display: none;
+    //display: none;
   }
 }
 
