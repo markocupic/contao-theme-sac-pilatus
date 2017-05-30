@@ -1,16 +1,14 @@
 
 #header {
   .header-row-1 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: $zindex-fixed;
-    height: 100px;
-    background: darken(#f9f9f9,4);
-    @include media-breakpoint-up(lg) {
-      background: #fff;
+    .row {
+      padding-left: 10px;
+      padding-right: 10px;
+
     }
+
+
+      background: #fff;
   }
 }
 
@@ -36,9 +34,6 @@
 
 #container {
   margin-top: 15px; // Because auf the fixed header, we need some margin
-  @include media-breakpoint-down(md) {
-    margin-top: 100px;
-  }
 
   .mod_article:not(.container-fluid) > .inside {
     @extend .container;

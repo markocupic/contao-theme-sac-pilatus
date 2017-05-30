@@ -9,6 +9,10 @@ input.text, input.captcha, textarea, select {
   border-radius: 0;
 }
 
+button:hover * {
+  text-decoration: none !important;
+}
+
 .btn {
   border-radius: 0;
 }

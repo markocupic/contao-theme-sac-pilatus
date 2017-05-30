@@ -1,5 +1,5 @@
 
-<div class="header-row-1">
+<div class="header-row-1" data-toggle="sticky-onscroll">
     <div class="row">
 
 
@@ -7,11 +7,12 @@
             <a href="" title="Startseite">
                 <img src="/files/default-theme/images/logo-sac-pilatus.svg" class="logo-header wow fadeIn" data-wow-duration="1s" data-wow-delay="2s" alt="Logo">
             </a>
-            <!--<h1>SAC Pilatus</h1>-->
+            <h1 class="hidden-md-down">SAC Pilatus</h1>
         </div>
 
 
         <div class="col-md-3 hidden-sm-down header-search-form">
+        <!--
             <form action="{{link_url::suche}}" method="get">
                 <div class="formbody">
                     <label for="ctrl_keywords_152" class="invisible">Suchbegriffe</label>
@@ -40,14 +41,15 @@
                     </fieldset>
                 </div>
             </form>
+            -->
         </div>
 
 
         <div class="header-button-container col-8 col-md-3">
             <?php if(FE_USER_LOGGED_IN): ?>
-                <a href="{{link_url::member-login}}"><button aria-label="abmelden" class="btn btn-primary"><i class="fa fa-sign-out"></i> <span>Abmelden</span></button></a>
+                <a href="{{link_url::member-login}}" class="btn btn-primary"><i class="fa fa-sign-out"></i>&nbsp;Abmelden</a>
             <?php else: ?>
-                <a href="{{link_url::member-login}}"><button aria-label="anmelden" class="btn btn-primary"><i class="fa fa-sign-in"></i> <span>Anmelden</span></button></a>
+                <a href="{{link_url::member-login}}" class="btn btn-primary"><i class="fa fa-sign-in"></i>&nbsp;Anmelden</a>
             <?php endif; ?>
 
 
@@ -57,10 +59,11 @@
             <!-- End Navbar toggler mobile -->
         </div>
     </div>
+    <!-- NAVBAR-START -->
+    <div class="navbar-header">{{insert_module::307}}</div>
+    <!-- NAVBAR-END -->
 </div>
 
-<!-- NAVBAR-START -->
-<div class="header-row-2 navbar-header">{{insert_module::307}}</div>
-<!-- NAVBAR-END -->
+
 
 
