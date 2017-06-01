@@ -58,7 +58,7 @@
 
           <?php $this->block('left'); ?>
             <?php if ($this->left): ?>
-              <aside id="left" class="">
+              <aside id="left">
                 <div class="inside">
                   <?= $this->left ?>
                 </div>
@@ -81,9 +81,7 @@
 
       <?php $this->sections('after'); ?>
 
-
-    </div>
-    <?php $this->block('footer'); ?>
+      <?php $this->block('footer'); ?>
         <?php if ($this->footer): ?>
           <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
             <div class="inside">
@@ -91,7 +89,9 @@
             </div>
           </footer>
         <?php endif; ?>
-    <?php $this->endblock(); ?>
+      <?php $this->endblock(); ?>
+
+    </div>
 
     <?php $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>
@@ -100,4 +100,3 @@
 
 </body>
 </html>
-

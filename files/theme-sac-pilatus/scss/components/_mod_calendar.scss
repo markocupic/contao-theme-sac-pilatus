@@ -25,28 +25,29 @@
 }
 
 // Loading icon
-.mod_eventlist{
+.mod_eventlist {
   .loading-icon-lg {
     .fa {
-      color:red;
+      color: red;
     }
   }
 
-  .button-bar{
-    ul{
-      display:flex !important;
-      li{
+  .button-bar {
+    ul {
+      display: flex !important;
+      li {
         margin-right: 5px;
-        a{
+        a {
           touch-action: none;
         }
       }
     }
   }
 }
+
 .kursmodul-sac-liste {
-  .title .headline{
-    margin-top:0;
+  .title .headline {
+    margin-top: 0;
   }
   .more-date-infos {
     color: $link-color;
@@ -111,6 +112,23 @@
   }
   .more {
     text-align: right;
+  }
+
+  .event_status_1:before {
+    @include icon-before('f111');
+    color: green;
+  }
+  .event_status_2:before {
+    @includeicon-before ('f28e');
+    color: red;
+  }
+  .event_status_3:before {
+    @includeicon-before ('f111');
+    color: red;
+  }
+  .event_status_4:before {
+    @include icon-before('f05e');
+    color: red;
   }
 
 }

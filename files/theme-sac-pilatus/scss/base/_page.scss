@@ -1,12 +1,8 @@
 html {
-  min-height: 101%;
-  //overflow-y: scroll; //prevent display two scrollbars
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  overflow-x:hidden;
 
 }
 
@@ -28,24 +24,24 @@ body {
   //line-height: $line-height-sm;
   //line-height: $line-height-lg;
 
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   line-height: $line-height-sm;
 
   @include media-breakpoint-up(xs) {
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(sm) {
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(lg) {
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(xl) {
     font-size: $font-size-base;
-    line-height: $line-height-base;
+    line-height: $line-height-sm;
   }
 
   // The font family

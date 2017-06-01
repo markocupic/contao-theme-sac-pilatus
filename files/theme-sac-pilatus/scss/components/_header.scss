@@ -21,13 +21,13 @@ $header-height: 100px;
   }
 
   .header-row-1 {
-
-    border-bottom: 4px solid red;
+    border-bottom: solid 1px #eee;
+    box-shadow: 0 0 5px #eee;
     @include transition(all);
 
     .row {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 
       @include flex-vertical-align-middle();
       //height: $header-height;

@@ -35,7 +35,7 @@
 
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
-          <header class="container-fluid" id="header">
+          <header id="header">
             <div class="inside">
               <?= $this->header ?>
             </div>

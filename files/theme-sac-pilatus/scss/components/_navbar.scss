@@ -20,7 +20,7 @@ body .navbar-backdrop {
     overflow-y: visible;
     background-color: $gray-lightest;
     background-color: white;
-    background-color: #eaeaea;
+    background-color: #fff;
     color: #000;
     //margin-top: 100px;
     ul, li {
@@ -29,16 +29,16 @@ body .navbar-backdrop {
       line-height: 1;
     }
     ul.level_1 {
-      @extend .container;
 
       display: flex;
+      justify-content: flex-end;
       ul {
         display: none;
       }
       > li {
         padding: 0 $spacer-x;
         position: relative;
-        border-right: 1px solid darken(#eaeaea, 6);
+        //border-right: 1px solid darken(#eaeaea, 6);
         height: $navbar-height;
         @include transition(background-color);
         z-index: $zindex-dropdown;
