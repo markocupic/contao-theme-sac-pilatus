@@ -3,15 +3,9 @@
     <div class="container">
         <div style="padding: 0 8px; display:block; overflow:hidden;">
              <div class="row">
-                <div class="col-12 col-md-4 col-lg-4">
+                <div class="col-12 col-md-12 col-lg-12">
                     <strong>SAC-Pilatus<br></strong>
                     Testumgebung zur<br>Harmonisierung der Alpinkurse 2017
-                </div>
-                <div class="col-12 col-md-4 col-lg-4">
-                    <a href="touren.html" role="button" class="btn btn-lg btn-secondary">Tourenkalender</a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-4">
-                    <a href="kurse.html" role="button" class="btn btn-lg btn-secondary">Kurskalender</a>
                 </div>
             </div>
         </div>
