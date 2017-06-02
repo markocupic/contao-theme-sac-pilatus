@@ -139,7 +139,7 @@ body.sidebar-open {
 
 .sidebar-navigation {
   padding: $spacer 0;
-  margin: 40px 0 0 0;
+  margin: 20px 0 0 0;
   text-align: left;
 
   * {
@@ -157,14 +157,14 @@ body.sidebar-open {
     padding: 0;
     overflow: hidden;
     > a,
-    > span {
+    > strong {
       color: $nav-font-color !important;
     }
-    > span.active {
+    > strong.active {
       color:$red !important;
     }
     &:hover {
-      > a, > span {
+      > a, > strong {
         color: $red !important;
       }
     }
@@ -236,7 +236,7 @@ body.sidebar-open {
       border-bottom: 1px solid #34495D;
       &:hover{
         background-color: $nav-bg-hover-color;
-         > a, > span{
+        > a, > span{
           color: #fff !important;
         }
       }
@@ -305,7 +305,7 @@ body.sidebar-open {
       > .toggle-submenu {
         right: 0;
       }
-      > a, > span {
+      > a, > strong {
         padding-left: $level_1-offset;
         font-size: 16px;
         color: #fff;
@@ -324,12 +324,12 @@ body.sidebar-open {
       > .toggle-submenu {
         right: 0;
       }
-      > a, span {
+      > a, strong {
         padding-left: $level_2-offset;
         font-size: 13px;
         color: $nav-font-color;
       }
-      span.active {
+      strong.active {
         color: $red !important;
       }
     }
@@ -342,12 +342,12 @@ body.sidebar-open {
       > .toggle-submenu {
         right: 0;
       }
-      > a, span {
+      > a, strong {
         padding-left: $level_3-offset;
         font-size: 13px;
         color: $nav-font-color;
       }
-      span.active {
+      strong.active {
         color: $red !important;
       }
     }
@@ -361,12 +361,12 @@ body.sidebar-open {
         right: 0;
       }
 
-      > a, span {
+      > a, strong {
         padding-left: $level_4-offset;
         font-size: 13px;
         color: $nav-font-color;
       }
-      span.active {
+      strong.active {
         color: $red !important;
       }
     }
