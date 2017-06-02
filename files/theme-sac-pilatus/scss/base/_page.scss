@@ -28,11 +28,11 @@ body {
   line-height: $line-height-sm;
 
   @include media-breakpoint-up(xs) {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(sm) {
-    font-size: $font-size-xs;
+    font-size: $font-size-sm;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(lg) {
