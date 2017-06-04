@@ -6,16 +6,12 @@
   outline-offset: -2px;
 }
 
-
 // Add a icon font before an element
 @mixin icon-before($icon) {
- // @extend .fa;
-  //@extend .fa-fw;
   font-family: $icon-font-name;
-  //padding-right: 6px;
+  padding-right: 6px;
   content: "\#{$icon}";
 }
-
 
 @mixin flex-vertical-align-middle() {
   // Center vertical with flexbox
@@ -36,13 +32,12 @@
   transition: $property $mode $duration;
 }
 
-@mixin opacity($value){
+@mixin opacity($value) {
   $ie-value: $value * 100;
   opacity: $value;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$ie-value+")";
   filter: alpha(opacity=$ie-value);
 }
-
 
 @mixin ease-in-out() {
   -webkit-transition: all 0.7s ease-in-out;
@@ -50,7 +45,6 @@
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
-
 
 // Functions
 // function map-deep-get()
@@ -65,11 +59,11 @@
 
 // screen reader only
 @mixin invisible {
-  width:0;
-  height:0;
-  left:-1000px;
-  top:-1000px;
-  position:absolute;
-  overflow:hidden;
-  display:inline;
+  width: 0;
+  height: 0;
+  left: -1000px;
+  top: -1000px;
+  position: absolute;
+  overflow: hidden;
+  display: inline;
 }
