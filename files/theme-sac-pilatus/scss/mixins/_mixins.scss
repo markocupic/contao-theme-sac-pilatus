@@ -9,9 +9,10 @@
 
 // Add a icon font before an element
 @mixin icon-before($icon) {
-  display: inline-block;
+ // @extend .fa;
+  //@extend .fa-fw;
   font-family: $icon-font-name;
-  padding-right: 6px;
+  //padding-right: 6px;
   content: "\#{$icon}";
 }
 

@@ -19,8 +19,6 @@ body .navbar-backdrop {
     //height: $navbar-height;
     overflow-y: visible;
     background-color: $gray-lightest;
-    background-color: white;
-    background-color: #fff;
     color: #000;
     //margin-top: 100px;
     ul, li {
@@ -31,7 +29,6 @@ body .navbar-backdrop {
     ul.level_1 {
 
       display: flex;
-      justify-content: flex-end;
       ul {
         display: none;
       }

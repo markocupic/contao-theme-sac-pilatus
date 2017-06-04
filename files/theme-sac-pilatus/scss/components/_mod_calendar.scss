@@ -75,62 +75,31 @@
     .kursart .label-kursart {
       cursor: pointer;
     }
+    .more {
+      text-align: right;
+    }
 
-    .detail-item {
-      padding: $table-cell-padding;
-      padding-left: 20px;
-      position: relative;
-      &:last-child {
-        border-bottom: 0;
-      }
-      &:before {
-        font-family: "FontAwesome";
-        position: absolute;
-        top: 11px;
-        left: 0;
-        color: $body-color;
-      }
-    }
-    .location:before {
-      content: "\f041";
-    }
-    .life-ring:before {
-      content: "\f1cd";
-    }
-    .user:before {
-      content: "\f007";
-    }
-    .home:before {
-      content: "\f015";
-    }
-    .calendar-o:before {
-      content: "\f133";
-    }
-    .info:before {
-      content: "\f129";
-    }
   }
-  .more {
-    text-align: right;
+  .fa {
+    font-family: $icon-font-name;
+    margin-right: 6px;
   }
-
-  .event_status_1:before {
-    @include icon-before('f111');
+  .fa.event_status_1:before {
+    content: "\f111";
     color: green;
   }
-  .event_status_2:before {
-    @includeicon-before ('f28e');
+  .fa.event_status_2:before {
+    content: "\f28e";
     color: red;
   }
-  .event_status_3:before {
-    @includeicon-before ('f111');
+  .fa.event_status_3:before {
+    content: "\f111";
     color: red;
   }
-  .event_status_4:before {
-    @include icon-before('f05e');
+  .fa.event_status_4:before {
+    content: "\f05e";
     color: red;
   }
-
 }
 
 .kursmodul-sac-liste.last {
@@ -171,7 +140,7 @@
   }
 
   .event-detail {
-    padding: $spacer 0;
+    padding: 0;
     &.last {
       border: 0;
     }
@@ -181,9 +150,19 @@
   }
 
   .info-box {
+    padding: 0 0 0 30px;
+    position:relative;
+    &:before{
+      font-family: $icon-font-name;
+      content: "\f00c";
+      color: red;
+      position: absolute;
+      top:0;
+      left:0;
+      font-size: 20px;
+    }
+
     //background-color: $gray-lightest;
-    padding: $spacer 0;
-    border-bottom: 1px solid $gray-lighter;
   }
 
 }
