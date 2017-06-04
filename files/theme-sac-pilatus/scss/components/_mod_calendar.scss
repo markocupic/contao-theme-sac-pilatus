@@ -139,31 +139,8 @@
     }
   }
 
-  .event-detail {
-    padding: 0;
-    &.last {
-      border: 0;
-    }
-    &:nth-child(odd) {
-      //background: $gray-lightest;
-    }
-  }
 
-  .info-box {
-    padding: 0 0 0 30px;
-    position:relative;
-    &:before{
-      font-family: $icon-font-name;
-      content: "\f00c";
-      color: red;
-      position: absolute;
-      top:0;
-      left:0;
-      font-size: 20px;
-    }
 
-    //background-color: $gray-lightest;
-  }
 
 }
 
