@@ -20,7 +20,17 @@
         .done(function (script, textStatus) {
             new WOW().init();
         });
+
+    // Animate
     $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css" />');
+
+    // Slick: The last slider yo ever need
+    $.getScript("files/theme-sac-pilatus/slick-slider/slick/slick.min.js");
+    $('head').append('<link rel="stylesheet" href="files/theme-sac-pilatus/slick-slider/slick/slick-theme.css" type="text/css" />');
+    $('head').append('<link rel="stylesheet" href="files/theme-sac-pilatus/slick-slider/slick/slick.css" type="text/css" />');
+
+
+
 })(jQuery);
 
 

@@ -1,11 +1,82 @@
-/**
-#main {
-  .more {
-    text-align: center;
-    a {
-      border: 1px solid $link-color;
-      padding: 0.4rem 2rem;
+.mod_eventlist_slick_slider.block{
+  overflow:visible;
+}
+.slick-slider {
+  margin: 0 -0.5rem;
+  position:relative;
+
+}
+
+.slick-slide {
+  padding: 0 0.5rem;
+
+  img {
+    width: 100%;
+  }
+}
+button.slick-arrow{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  top: 50%;
+}
+
+button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
+  border-radius: 4px;
+  border: 0;
+  padding: 5px;
+  &:before {
+    background-color: transparent;
+    position: absolute;
+  }
+  &:hover {
+    &:before {
+      background-color: indianred;
+      border: 0;
+      color: #fff !important;
     }
   }
 }
-**/
+
+button.slick-next.slick-arrow:before {
+  font-family: FontAwesome;
+  content: "\f054";
+  border: 1px solid white;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 4px;
+  right:-30px;
+}
+
+button.slick-prev.slick-arrow:before {
+  font-family: FontAwesome;
+  content: "\f053";
+  border: 1px solid white;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 4px;
+  left:-30px;
+}
+
+.sac-event-slider {
+  .info-text {
+    position: absolute;
+    padding: 20px 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .button-container {
+      text-align: center;
+    }
+    .ce_headline {
+      text-align: center;
+      color: #fff;
+    }
+    .ce_headline.event-date-span {
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+}
+
