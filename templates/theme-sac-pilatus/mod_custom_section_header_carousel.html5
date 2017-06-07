@@ -1,3 +1,13 @@
+<?php $mode = 'singleImage'; ?>
+
+<?php if($mode == 'singleImage'): ?>
+<img style="width:100%; height:auto;" class="header-image" src="<?= \Image::get('files/theme-sac-pilatus/images/header/header-1.jpg',1800,550,'crop') ?>">
+<?php endif; ?>
+
+
+
+
+<?php if($mode == 'carousel'): ?>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -25,3 +35,4 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<?php endif; ?>

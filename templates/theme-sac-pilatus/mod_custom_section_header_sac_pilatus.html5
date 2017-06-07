@@ -5,7 +5,7 @@
 
         <div class="mobile-title-heading col-4 col-md-9 col-lg-6">
             <a href="" title="Startseite">
-                <img src="/files/default-theme/images/logo-sac-pilatus.svg" class="logo-header" alt="Logo">
+                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
             </a>
             <h1 class="hidden-md-down">SAC Pilatus</h1>
         </div>
