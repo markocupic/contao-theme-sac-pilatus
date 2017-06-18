@@ -103,11 +103,6 @@ button:hover * {
       font-weight: bold;
     }
 
-    // Switch display order: Display label before input
-    .widget {
-      display: flex;
-      flex-direction: column;
-    }
 
     span.mandatory, .captcha_text {
       display: inline-block !important;

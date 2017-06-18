@@ -99,7 +99,7 @@
         </div>
         <div class="col-8 col-sm-8">
           <div class="personal-info">
-                <h4 style="margin-top:0;"><?= $objUser->name ?></h5>
+            <h4 style="margin-top:0;"><a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>"><?= $objUser->name ?></a></h4>
           </div>
           <div class="personal-info">
             <?php if($objUser->street != ''): ?><?= $objUser->street ?><?php endif; ?>

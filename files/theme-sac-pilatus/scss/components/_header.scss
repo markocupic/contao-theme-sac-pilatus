@@ -2,35 +2,13 @@ $header-height: 100px;
 
 #header {
   background-color: #fff;
-  .header-row-0{
-    padding: 5px 0;
-    .right-section {
-      //display:flex;
-      nav{
-        ul {
-          display:block;
-          display:flex;
-          justify-content:flex-end;
-          margin:0;
-          li{
-            margin: 0 8px;
-          }
-        }
-      }
-    }
-  }
-
   .header-row-1 {
-    //border-bottom: solid 1px #eee;
-    //box-shadow: 0 0 5px #eee;
+
     @include transition(all);
 
     .row {
       padding-top: 10px;
       padding-bottom: 10px;
-
-      @include flex-vertical-align-middle();
-      //height: $header-height;
       @include transition(height);
     }
     .logo-header {
@@ -48,11 +26,9 @@ $header-height: 100px;
     }
 
     .header-button-container {
-      display: flex;
-      justify-content: flex-end;
+
       & > * {
-        margin: 0 8px;
-        @include flex-vertical-align-middle();
+        margin: 1.25rem 8px;
       }
       .dropdown-menu {
         right: 0;
@@ -63,7 +39,6 @@ $header-height: 100px;
   .navigation-toggler {
     background: $accent-color;
     .fa {
-      //font-size: 2rem;
       color: #fff;
     }
     border: 0;
