@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-3">
             <a class="responsive" href="kurs-detail/<?= $objEvents->id ?>">
-                {{picture::<?= \CalendarKurse::getEventImagePath($objEvents->id) ?>?size=11&alt=<?= $objEvents->title ?>}}
+                {{picture::<?= \CalendarKurse::getEventImagePath($objEvents->id) ?>?size=16&alt=<?= $objEvents->title ?>}}
             </a>
         {{br}}{{br}}
         </div>
