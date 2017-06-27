@@ -1,0 +1,22 @@
+<div>
+    <?php $objEvents = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE startDate > ? AND pid IN (SELECT id FROM tl_calendar WHERE calendarType=?) ORDER BY startDate')->limit(8)->execute(time(), 'course'); ?>
+    <?php while($objEvents->next()): ?>
+    <div class="row">
+        <div class="col-3">
+            <a class="responsive" href="kurs-detail/<?= $objEvents->id ?>">
+                {{picture::<?= \CalendarKurse::getEventImagePath($objEvents->id) ?>?size=11&alt=<?= $objEvents->title ?>}}
+            </a>
+        {{br}}{{br}}
+        </div>
+        <div class="col-9">
+            <time><?= \CalendarKurse::getEventPeriod($objEvents->id) ?></time>
+            <div>
+                <a href="kurs-detail/<?= $objEvents->id ?>" title="Details">
+                    <?= $objEvents->title ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <?php endwhile; ?>
+</div>
