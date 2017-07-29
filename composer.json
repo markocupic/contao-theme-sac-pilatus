@@ -6,7 +6,7 @@
     "frontend",
     "theme"
   ],
-  "type": "contao-bundle",
+  "type": "contao-module",
   "license": "LGPL-3.0+",
   "authors": [
     {
