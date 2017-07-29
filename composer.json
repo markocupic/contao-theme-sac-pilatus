@@ -6,7 +6,7 @@
     "frontend",
     "theme"
   ],
-  "type": "contao-module",
+  "type": "contao-bundle",
   "license": "LGPL-3.0+",
   "authors": [
     {
@@ -21,7 +21,8 @@
     "source": "https://github.com/markocupic/contao-theme-sac-pilatus"
   },
   "require": {
-    "php": ">=5.3.2",
+    "php": ">=7.1",
+    "contao/core-bundle": ">=4.4, <5",
     "markocupic/rotate_image": ">=1.0.11",
     "markocupic/custom-section": ">=0.0.2",
     "markocupic/preloader-overlay": ">=0.0.2",
@@ -40,9 +41,9 @@
   "extra": {
     "contao": {
       "sources": {
-        "templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
-        "files/theme-sac-pilatus": "files/theme-sac-pilatus",
-        "system/modules/theme-sac-pilatus": "system/modules/theme-sac-pilatus"
+        "src/Resources/contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
+        "src/Resources/contao/files/theme-sac-pilatus": "files/theme-sac-pilatus",
+        "src/Resources/contao/system/modules/theme-sac-pilatus": "system/modules/theme-sac-pilatus"
       }
     }
   },
