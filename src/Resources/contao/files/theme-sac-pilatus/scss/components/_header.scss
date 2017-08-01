@@ -26,9 +26,11 @@ $header-height: 100px;
     }
 
     .header-button-container {
-
+      .widget{
+        margin:0;
+      }
       & > * {
-        margin: 1.25rem 8px;
+        margin: 0 8px;
       }
       .dropdown-menu {
         right: 0;

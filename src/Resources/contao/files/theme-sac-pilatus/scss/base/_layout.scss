@@ -58,8 +58,17 @@
     >.inside {
       background-color: #fff;
       > *:first-child {
-        margin-top: $spacer !important;
+        //margin-top: $spacer !important;
       }
+    }
+  }
+
+  .mod_article.steelblue  {
+    background-color: $btn-primary-bg;
+    .inside{
+      background-color:transparent;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -73,6 +82,7 @@
       padding-bottom: 4rem;
     }
   }
+
   .mod_article.article-white {
     background-image: none;
     background-color: #fff;

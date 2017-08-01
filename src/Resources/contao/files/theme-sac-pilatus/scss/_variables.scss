@@ -8,14 +8,18 @@ $icon-font-name: "FontAwesome";
 // Border radius
 $enable-rounded: false;
 
-// Colors
+// Colors see http://www.colorcombos.com/color-schemes/168/ColorCombo168.html
+$blue: #009ECE;
+$orange: #FF9E00;
+$yellow: #F7D708;
+$red: #CE0000;
+$green: #9CCF31;
 
-$red:    firebrick;
-$accent-color: firebrick;
-$accent-color: firebrick;
+$accent-color: $red;
+$accent-color: $red;
 
-$btn-primary-bg: dodgerblue;
-
+$btn-primary-bg: $blue;
+$link-color: $blue;
 
 
 $body-color: #333;

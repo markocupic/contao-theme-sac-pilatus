@@ -1,3 +1,4 @@
+<!-- indexer::stop -->
 <?php $mode = 'singleImage'; ?>
 
 <?php if($mode == 'singleImage'): ?>
@@ -36,3 +37,4 @@
   </a>
 </div>
 <?php endif; ?>
+<!-- indexer::continue -->
