@@ -5,15 +5,6 @@
     //$('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" type="text/css" />');
     //$('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" type="text/css" />');
 
-    // Load tether
-    $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether-theme-arrows-dark.min.css" type="text/css" />');
-    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js");
-
-    // Load Bootstrap
-    $.getScript("/files/theme-sac-pilatus/bootstrap/dist/js/bootstrap.min.js");
-
-    // Load FontAwesome
-    $.getScript("https://use.fontawesome.com/926b4fc2c0.js");
 
     // WOW & Animate.css
     $.getScript("https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js")
@@ -21,46 +12,35 @@
             new WOW().init();
         });
 
-    // Animate
-    $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css" />');
-
-    // Slick: The last slider yo ever need
-    $.getScript("files/theme-sac-pilatus/slick-slider/slick/slick.min.js");
-    $('head').append('<link rel="stylesheet" href="files/theme-sac-pilatus/slick-slider/slick/slick-theme.css" type="text/css" />');
-    $('head').append('<link rel="stylesheet" href="files/theme-sac-pilatus/slick-slider/slick/slick.css" type="text/css" />');
-
-
 
 })(jQuery);
 
 
-
-
 /** Sticky header on scroll **/
-$(document).ready(function() {
+$(document).ready(function () {
     // Custom
-    var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
+    var stickyToggle = function (sticky, stickyWrapper, scrollElement) {
         var stickyHeight = sticky.outerHeight();
         var stickyTop = stickyWrapper.offset().top;
-        if (scrollElement.scrollTop() >= stickyTop){
+        if (scrollElement.scrollTop() >= stickyTop) {
             stickyWrapper.height(stickyHeight);
             sticky.addClass("is-sticky");
         }
-        else{
+        else {
             sticky.removeClass("is-sticky");
             stickyWrapper.height('auto');
         }
     };
 
     // Find all data-toggle="sticky-onscroll" elements
-    $('[data-toggle="sticky-onscroll"]').each(function() {
+    $('[data-toggle="sticky-onscroll"]').each(function () {
         var sticky = $(this);
         var stickyWrapper = $('<div>').addClass('sticky-wrapper'); // insert hidden element to maintain actual top offset on page
         sticky.before(stickyWrapper);
         sticky.addClass('sticky');
 
         // Scroll & resize events
-        $(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function() {
+        $(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function () {
             stickyToggle(sticky, stickyWrapper, $(this));
         });
 
@@ -68,7 +48,6 @@ $(document).ready(function() {
         stickyToggle(sticky, stickyWrapper, $(window));
     });
 });
-
 
 
 /** Sticky footer **/
@@ -143,18 +122,17 @@ $(document).ready(function() {
 /** Scroll to form fields if there are errors **/
 (function ($) {
     $().ready(function () {
-        if($('.widget.error').length){
+        if ($('.widget.error').length) {
 
-            var interval = window.setInterval(function(){
+            var interval = window.setInterval(function () {
                 // Wait until the onload overlay has disapeared
-                if($('body.loaded').length)
-                {
+                if ($('body.loaded').length) {
                     clearInterval(interval);
-                    window.setTimeout(function(){
+                    window.setTimeout(function () {
                         window.scrollTo(0, $('.widget.error').first().offset().top);
-                    },100);
+                    }, 100);
                 }
-            },100);
+            }, 100);
         }
     });
 })(jQuery);
@@ -203,4 +181,5 @@ $(document).ready(function() {
         });
     });
 })(jQuery);
+
 
