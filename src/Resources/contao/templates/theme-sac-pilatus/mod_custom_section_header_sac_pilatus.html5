@@ -20,6 +20,13 @@
             <?php endif; ?>
             <!-- indexer::continue -->
 
+            
+            <?php if(FE_USER_LOGGED_IN): ?>
+            <!-- indexer::stop -->
+            <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary"><i class="fa fa-cog"></i>&nbsp;Profil</a>
+            <!-- indexer::continue -->
+            <?php endif; ?>
+
 
             <!-- indexer::stop -->
             <!-- Search form -->
