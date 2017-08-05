@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-3">
             <a class="responsive" href="kurs-detail/<?= $objEvents->id ?>">
-                {{picture::<?= \CalendarKurse::getEventImagePath($objEvents->id) ?>?size=16&alt=<?= $objEvents->title ?>}}
+                {{picture::<?= Markocupic\Sacpilatus\CalendarKurse::getEventImagePath($objEvents->id) ?>?size=16&alt=<?= $objEvents->title ?>}}
             </a>
         {{br}}{{br}}
         </div>
         <div class="col-9">
-            <time><?= \CalendarKurse::getEventPeriod($objEvents->id) ?></time>
+            <time><?= Markocupic\Sacpilatus\CalendarKurse::getEventPeriod($objEvents->id) ?></time>
             <div>
                 <a href="kurs-detail/<?= $objEvents->id ?>" title="Details">
                     <?= $objEvents->title ?>
