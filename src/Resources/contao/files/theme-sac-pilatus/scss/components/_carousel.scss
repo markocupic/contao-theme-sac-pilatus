@@ -1,3 +1,4 @@
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
@@ -8,3 +9,35 @@
     width: 100%;
   }
 }
+
+
+.carousel-control-prev {
+  justify-content: flex-start;
+  opacity: 1;
+}
+.carousel-control-next {
+  justify-content: flex-end;
+  opacity: 1;
+
+}
+
+.carousel-control-next,.carousel-control-prev {
+  &:hover {
+    opacity: 1;
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: #ddd;
+    }
+  }
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  transition: all ease-in-out 0.6s;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  background-size: 50% 50%;
+  padding: 15px;
+}
+
+
