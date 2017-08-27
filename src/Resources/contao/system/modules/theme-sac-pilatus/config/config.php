@@ -22,4 +22,7 @@ if (TL_MODE == 'FE')
 
     // Load theme javascript file
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js';
+
+	// Embed jQuery touch swipe
+	$GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>';
 }
