@@ -63,7 +63,7 @@ $(document).ready(function () {
         $('#header .mod_navigation ul.level_1 > li.submenu').append('<i role="button" class="toggler fa fa-chevron-down"></i>');
 
         // Add event click
-        $('#header .mod_navigation ul.level_1 > li.submenu > .toggler').click(function (e) {
+        $('#header .mod_navigation ul.level_1 > li.submenu > .toggler').on('click touchstart', function (e) {
 
 
             $(this).closest('ul').find('.expanded').removeClass('expanded');
