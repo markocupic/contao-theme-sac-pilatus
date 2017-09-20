@@ -81,8 +81,8 @@ $(document).ready(function () {
                 dispandNavigation();
             });
             $(window).scroll(function (e) {
-                e.preventDefault();
-                dispandNavigation();
+                //e.preventDefault();
+                //dispandNavigation();
             });
 
             function dispandNavigation() {

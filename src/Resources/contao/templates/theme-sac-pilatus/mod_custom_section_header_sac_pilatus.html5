@@ -1,60 +1,59 @@
-
 <div class="header-row-1" data-toggle="sticky-onscroll">
-    <div class="row align-middle">
-        <!-- indexer::stop -->
-        <div class="mobile-title-heading col-4 col-md-9 col-lg-6">
-            <a href="" title="Startseite">
-                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
-            </a>
-            <!--<h1 class="hidden-md-down">SAC Pilatus</h1>-->
-        </div>
-        <!-- indexer::continue -->
-
-
-        <div class="header-button-container col-8 col-md-3 col-lg-6 d-flex flex-row-reverse align-items-center">
-            <!-- indexer::stop -->
-            <?php if(FE_USER_LOGGED_IN): ?>
-                <a href="{{link_url::member-login}}" class="align-middle btn btn-primary"><i class="fa fa-sign-out"></i>&nbsp;Abmelden</a>
-            <?php else: ?>
-                <a href="{{link_url::member-login}}" class="btn btn-primary"><i class="fa fa-sign-in"></i>&nbsp;Anmelden</a>
-            <?php endif; ?>
-            <!-- indexer::continue -->
-
-            
-            <?php if(FE_USER_LOGGED_IN): ?>
-            <!-- indexer::stop -->
-            <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary"><i class="fa fa-cog"></i>&nbsp;Profil</a>
-            <!-- indexer::continue -->
-            <?php endif; ?>
-
-
-            <!-- indexer::stop -->
-            <!-- Search form -->
-            <div class="mod_search block hidden-md-down">
-                <form action="suche" method="get">
-                    <div class="formbody d-flex">
-                        <input type="hidden" name="id" value="332">
-                        <div class="widget widget-text">
-                            <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
-                            <input type="search" name="keywords" id="ctrl_keywords_332" class="text" value="">
-                        </div>
-                        <div class="widget widget-submit">
-                            <button type="submit" id="ctrl_submit_332" class="submit">Suchen</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- End search form -->
-            <!-- indexer::continue -->
-
-            <!-- indexer::stop -->
-            <!-- Navbar toggler mobile -->
-            <button class="navigation-toggler hidden-lg-up btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
-            <!-- End Navbar toggler mobile -->
-            <!-- indexer::continue -->
-        </div>
+  <div class="row align-middle">
+    <!-- indexer::stop -->
+    <div class="mobile-title-heading col-4 col-md-9 col-lg-6">
+      <a href="" title="Startseite">
+        <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+      </a>
+      <!--<h1 class="hidden-md-down">SAC Pilatus</h1>-->
     </div>
-    <!-- NAVBAR-START -->
-    <div class="navbar-header">{{insert_module::307}}</div>
-    <!-- NAVBAR-END -->
+    <!-- indexer::continue -->
+
+
+    <div class="header-button-container col-8 col-md-3 col-lg-6 d-flex flex-row-reverse align-items-center">
+      <!-- indexer::stop -->
+      <?php if(FE_USER_LOGGED_IN): ?>
+      <a href="{{link_url::member-login}}" class="align-middle btn btn-primary" title="Abmelden"><i class="fa fa-sign-out"></i><span class="hidden-sm-down">&nbsp;Abmelden</span></a>
+      <?php else: ?>
+      <a href="{{link_url::member-login}}" class="btn btn-primary" title="Anmelden"><i class="fa fa-sign-in"></i><span class="hidden-sm-down">&nbsp;Anmelden</span></a>
+      <?php endif; ?>
+      <!-- indexer::continue -->
+
+
+      <?php if(FE_USER_LOGGED_IN): ?>
+      <!-- indexer::stop -->
+      <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary" title="Mein Profil"><i class="fa fa-cog"></i><span class="hidden-sm-down">&nbsp;Profil</span></a>
+      <!-- indexer::continue -->
+      <?php endif; ?>
+
+
+      <!-- indexer::stop -->
+      <!-- Search form -->
+      <div class="mod_search block hidden-md-down">
+        <form action="suche" method="get">
+          <div class="formbody d-flex">
+            <input type="hidden" name="id" value="332">
+            <div class="widget widget-text">
+              <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
+              <input type="search" name="keywords" id="ctrl_keywords_332" class="text" value="">
+            </div>
+            <div class="widget widget-submit">
+              <button type="submit" id="ctrl_submit_332" class="submit">Suchen</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End search form -->
+      <!-- indexer::continue -->
+
+      <!-- indexer::stop -->
+      <!-- Navbar toggler mobile -->
+      <button class="navigation-toggler hidden-lg-up btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+      <!-- End Navbar toggler mobile -->
+      <!-- indexer::continue -->
+    </div>
+  </div>
+  <!-- NAVBAR-START -->
+  <div class="navbar-header">{{insert_module::307}}</div>
+  <!-- NAVBAR-END -->
 </div>
