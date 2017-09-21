@@ -3,4 +3,7 @@
     margin-bottom: $spacer-y;
     margin-top: $spacer-y;
   }
+  .ui-sortable-handle{
+    cursor: move;
+  }
 }
