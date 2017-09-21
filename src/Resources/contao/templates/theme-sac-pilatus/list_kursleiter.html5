@@ -94,8 +94,9 @@
         <div class="col-4 col-sm-4">
           <div class="image_container responsive wow fadeIn" data-wow-offset="15" data-wow-delay="<?= $animDelay ?>s" data-wow-duration="0.8s">
             <figure>
+              <a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>">
               {{picture::<?= getAvatar($objUser->id, 'BE') ?>?size=14&alt=<?= $objUser->name ?>}}
-
+              </a>
             </figure>
             {{br}}{{br}}
           </div>
