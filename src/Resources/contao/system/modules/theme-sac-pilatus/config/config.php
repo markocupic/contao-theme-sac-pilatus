@@ -24,8 +24,13 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js';
 
     // Embed JQuery UI
-	$GLOBALS['TL_HEAD'][] = '<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>';
+    // Get jquery-ui !!!! But do not select the Datepicker Widget, because there is a conflict with the bootstrap Datepicker from eternicode
+    $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/jquery-ui/jquery-ui.min.js';
 
-	// Embed jQuery touch swipe
-	$GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>';
+
+    // Embed jQuery touch swipe
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>';
+    // Enable dragging on touch screens
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>';
+
 }
