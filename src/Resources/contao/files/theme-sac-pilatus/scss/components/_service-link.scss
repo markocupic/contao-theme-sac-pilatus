@@ -1,13 +1,10 @@
 .ce_serviceLink {
-  * {
-    @include ease-in-out;
-  }
+
   .fa {
     padding: 27px 25px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    //border: 4px solid $accent-color !important;
     background-color: #fff;
     @include transition(background);
     margin-bottom: 10px;
@@ -16,7 +13,6 @@
     font-size: 40px;
     &:hover {
       cursor: pointer;
-      //background-color: $accent-color;
       color: #004466;
     }
   }
@@ -25,16 +21,15 @@
     > * {
       text-align: center;
     }
-    &:hover{
-      //background-color: $gray-lighter;
+    &:hover {
       @include transition(background);
 
     }
   }
 
-  .service-link-headline {
+  .service-link-headline, .service-link-headline a {
     font-size: 1.25rem !important;
-    //color: #000;
+    transition: font-size ease-in-out .4s;
     color: #fff;
     text-align: center;
   }
