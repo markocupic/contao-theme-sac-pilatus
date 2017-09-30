@@ -42,17 +42,11 @@ if (TL_MODE == 'FE')
 	//$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css';
 
 
-	// Embed JQuery UI
-	// !!!! But do not select the Datepicker Widget, because there is a conflict with the bootstrap Datepicker from eternicode
-	// http://jqueryui.com/download/
-	//$GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/jquery-ui/jquery-ui.min.js';
+	// Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
+	// JQuery UI doesn't go with popper.js
+	$GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
 
 
-	// Embed jQuery touch swipe
-	$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
-
-	// Enable dragging on touch screens
-	$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js";
 
 	// Load theme javascript file
 	$GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js';

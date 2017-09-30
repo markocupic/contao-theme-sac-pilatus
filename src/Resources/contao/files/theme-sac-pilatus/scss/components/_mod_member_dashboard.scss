@@ -1,9 +1,9 @@
-.member-dashboard-gallery {
+.sortable-event-story-gallery {
   > div[class*="col"]{
     margin-bottom: $spacer-y;
     margin-top: $spacer-y;
   }
-  .ui-sortable-handle{
+  .sortable-item{
     cursor: move;
   }
 }
