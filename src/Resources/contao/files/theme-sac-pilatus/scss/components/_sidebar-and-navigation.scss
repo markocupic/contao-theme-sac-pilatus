@@ -7,10 +7,6 @@ $nav-bg-color: #333;
 //$nav-font-color: #333;
 /* Dropdown - main navigation header */
 
-html, body {
-  height: 100%;
-}
-
 
 #sidebar {
   .navigation-toggler {
@@ -77,7 +73,7 @@ html, body {
     z-index: 99;
     height: 78px;
     overflow: hidden;
-    border-bottom: 1px ridge $gray-light;
+    border-bottom: 1px ridge $gray-400;
     @include transition(height);
     img {
       margin: 0 $spacer;
@@ -87,13 +83,13 @@ html, body {
     }
     .sidebar-title{
       padding-left: $spacer-x;
-      color: $gray-light;
+      color: $gray-400;
     }
     .navigation-toggler {
       position: absolute;
       right: $spacer;
       .fa {
-        color: $gray-lightest;
+        color: $gray-200;
         font-size: 2rem;
       }
     }

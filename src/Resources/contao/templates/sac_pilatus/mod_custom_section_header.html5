@@ -2,11 +2,11 @@
     <div id="headerTop">
         <div class="companyLogo">{{image::files/default-theme/images/logo-sac-pilatus.png?alt=companyLogo&mode=proportional}}</div>
 
-        <div id="headerNavigation" class="hidden-sm-down">
+        <div id="headerNavigation" class="d-none d-md-block">
             <!-- Placeholder -->
         </div>
 
-        <div class="nav-toggler hidden-lg-up"><span class="fa fa-bars"></span></div>
+        <div class="nav-toggler d-lg-none"><span class="fa fa-bars"></span></div>
     </div>
 
 

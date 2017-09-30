@@ -7,7 +7,7 @@
 @import "mixins/_mixins.scss";
 // GENERIC
 @import "generic/contao-reset";
-// BASE 
+// BASE
 @import "base/page";
 @import "base/layout";
 @import "base/type";
@@ -19,11 +19,11 @@
 @import "components/footer";
 //@import "components/sticky-footer";
 @import "components/forms";
-@import "components/downloads"; 
+@import "components/downloads";
 @import "components/gallery-creator";
 @import "components/service-link";
 @import "components/socialmedia-buttons";
-@import "components/preloader-overlay";
+//@import "components/preloader-overlay";
 @import "components/sidebar-and-navigation";
 @import "components/navbar";
 @import "components/scroll-to-top";
@@ -39,4 +39,4 @@
 @import "components/mod_breadcrumb";
 @import "components/carousel";
 @import "components/event-slick-slider";
-//@import "components/blur-in-overlay"; 
+//@import "components/blur-in-overlay";

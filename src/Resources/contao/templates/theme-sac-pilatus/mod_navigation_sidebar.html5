@@ -1,6 +1,6 @@
 <?php // Own Stylesheet ?>
 <?php // $GLOBALS['TL_CSS'][] = 'system/modules/sidebar_navigation/assets/css/sidebar_navigation.css|static'; ?>
-<?php $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sidebar_navigation/assets/js/sidebar_navigation.js|static'; ?>
+<?php $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sidebar_navigation/assets/js/sidebar_navigation.js'; ?>
 
 <!-- indexer::stop -->
 <div class="sidebar-top-container">

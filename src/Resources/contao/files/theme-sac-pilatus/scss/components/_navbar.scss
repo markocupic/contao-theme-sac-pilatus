@@ -8,16 +8,18 @@ body .navbar-backdrop {
   top: 0;
   bottom: 0;
   background-color: transparent;
-  z-index: $zindex-dropdown-backdrop;
+  //z-index: $zindex-dropdown-backdrop;
+  z-index: calc($zindex-dropdown-1);
 }
 
 #header {
   * {
     overflow: visible;
   }
-  .mod_navigation.navbar-header {
+  .navbar-header .mod_navigation {
     border-bottom: 1px solid #a3a3a3;
-    z-index: $zindex-navbar;
+    //z-index: $zindex-navbar;
+    z-index: $zindex-dropdown;
     //height: $navbar-height;
     overflow-y: visible;
     background-color: #fff;
@@ -107,7 +109,7 @@ body .navbar-backdrop {
         position: absolute;
         border-style: solid;
         border-width: 0 10px 10px;
-        border-color:$gray-lighter transparent;
+        border-color:$gray-300 transparent;
         display: block;
         width: 0;
         z-index: 0;
@@ -115,7 +117,7 @@ body .navbar-backdrop {
         left: 30px;
       }
 
-      border: 1px solid $gray-lighter;
+      border: 1px solid $gray-300;
       position: relative;
       border-radius: 4px;
       background-color: #fff;
@@ -126,7 +128,7 @@ body .navbar-backdrop {
       }
       > li {
         line-height: 3;
-        border-top: 1px solid $gray-lighter;
+        border-top: 1px solid $gray-300;
         padding: 0 $spacer-x;
       }
       > li:first-child {

@@ -34,7 +34,7 @@ button:hover * {
   .formbody {
     //max-width: 800px;
     background: #fff;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-300;
     padding: $spacer;
     position:relative;
     & > *{
@@ -44,7 +44,7 @@ button:hover * {
       margin: $spacer 0 2rem 0;
       legend {
         margin-bottom: $spacer;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid $gray-300;
       }
     }
     textarea {

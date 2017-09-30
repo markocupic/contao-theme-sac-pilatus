@@ -9,9 +9,9 @@
   .footer-row-1 {
     background-color: #fff;
     color: #1a1a1a !important;
-    border-top: 1px solid darken($gray-lighter,4);
+    border-top: 1px solid darken($gray-300,4);
     a, &:hover {
-      color: $gray !important;
+      color: $gray-600 !important;
     }
     .title {
       font-weight:bold;

@@ -24,7 +24,7 @@ body {
   //line-height: $line-height-sm;
   //line-height: $line-height-lg;
 
-  font-size: $font-size-xs;
+  font-size: $font-size-base;
   line-height: $line-height-sm;
 
   @include media-breakpoint-up(xs) {
