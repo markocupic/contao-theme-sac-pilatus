@@ -38,6 +38,11 @@ jQuery(document).ready(function () {
             }, 600);
         }
     });
+
+
+  $( window ).resize(function() {
+    $('body').removeClass('sidebar-open');
+  });
 });
 </script>
 <!-- indexer::continue -->

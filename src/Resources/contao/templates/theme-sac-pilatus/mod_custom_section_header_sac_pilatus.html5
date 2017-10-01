@@ -13,9 +13,9 @@
     <div class="header-button-container col-8 col-md-3 col-lg-6 d-flex flex-row-reverse align-items-center">
       <!-- indexer::stop -->
       <?php if(FE_USER_LOGGED_IN): ?>
-      <a href="{{link_url::member-login}}" class="align-middle btn btn-primary" title="Abmelden"><i class="fa fa-sign-out"></i><span class="d-none d-md-inline">&nbsp;Abmelden</span></a>
+      <a href="{{link_url::member-login}}" class="align-middle btn btn-outline-primary" title="Abmelden"><i class="fa fa-sign-out"></i><span class="d-none d-md-inline">&nbsp;Abmelden</span></a>
       <?php else: ?>
-      <a href="{{link_url::member-login}}" class="btn btn-primary" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
+      <a href="{{link_url::member-login}}" class="btn btn-outline-primary" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
       <?php endif; ?>
       <!-- indexer::continue -->
 
@@ -37,10 +37,7 @@
             <input type="hidden" name="id" value="332">
             <div class="widget widget-text">
               <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
-              <input type="search" name="keywords" id="ctrl_keywords_332" class="text" value="">
-            </div>
-            <div class="widget widget-submit">
-              <button type="submit" id="ctrl_submit_332" class="submit">Suchen</button>
+              <input type="search" name="keywords" id="ctrl_keywords_332" class="text" value="" placeholder="Suche">
             </div>
           </div>
         </form>

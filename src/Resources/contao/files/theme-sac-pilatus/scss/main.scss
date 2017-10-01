@@ -6,7 +6,7 @@
 // MIXINS
 @import "mixins/_mixins.scss";
 // GENERIC
-@import "generic/contao-reset";
+@import "generic/contao-reset"; 
 // BASE
 @import "base/page";
 @import "base/layout";
@@ -26,7 +26,7 @@
 //@import "components/preloader-overlay";
 @import "components/sidebar-and-navigation";
 @import "components/navbar";
-@import "components/scroll-to-top";
+@import "components/scroll-to-top"; 
 @import "components/media";
 @import "components/pagination";
 @import "components/element_text_image_layer";

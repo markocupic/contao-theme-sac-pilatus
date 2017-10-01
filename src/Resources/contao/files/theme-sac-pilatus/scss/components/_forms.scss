@@ -6,24 +6,24 @@
 
 input.text, input.captcha, textarea, select {
   @extend .form-control;
-  border-radius: 0;
+  //border-radius: 0;
 }
-
+button {
+  @extend .btn;
+}
 button:hover * {
   text-decoration: none !important;
 }
 
-.btn {
-  border-radius: 0;
-}
+
 .submit{
   @extend .btn;
   @extend .btn-primary;
-  background-color: $accent-color;
-  border-color: $accent-color;
+  background-color: $red;
+  border-color: $red;
   &:hover{
-    background-color: darken($accent-color, 4);
-    border-color: darken($accent-color, 4);
+    background-color: darken($red, 4);
+    border-color: darken($red, 4);
   }
 }
 

@@ -1,36 +1,36 @@
 // Fonts
-$font-family-sans-serif: 'Ubuntu', 'Fire Sans', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
-$headings-font-family:'Ubuntu', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: 'Open Sans', 'Ubuntu', 'Fire Sans', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family:'Roboto Slab', 'Ubuntu', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, serif;
 
 // Icon Fontname
 $icon-font-name: "FontAwesome";
 
 // Border radius
-$enable-rounded: false;
+$enable-rounded: true;
 
 // Colors see http://www.colorcombos.com/color-schemes/168/ColorCombo168.html
 $blue: #009ECE;
-$orange: #FF9E00;
-$yellow: #F7D708;
-$red: #CE0000;
-$green: #9CCF31;
+//$orange: #FF9E00;
+//$yellow: #F7D708;
+$red: #d50000;
+$blue: #01579b;
+//$green: #9CCF31;
 
 $accent-color: $red;
-$accent-color: $red;
+//$accent-color: $red;
 
-$btn-primary-bg: $blue;
 $link-color: #0f6bbb;
 
 
 $body-color: #333;
 $body-bg: #f8f8f8;
-$body-bg: #fff;
+$body-bg: #F5F5F5;
 
 //$link-color: #1570a6;
 
 
 // Form Widgets
-$alert-danger-text: red;
+$alert-danger-text: $accent-color;
 
 $zindex-navbar-aside-backdrop: 1080;
 $zindex-navbar-aside: 1090;

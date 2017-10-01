@@ -34,7 +34,9 @@ if (TL_MODE == 'FE')
 
 	// Fonts
 	// Ubuntu
-	$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i';
+	//$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i';
+	$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+	$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
 	// Slick: The last slider yo ever need
 	//$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js';
