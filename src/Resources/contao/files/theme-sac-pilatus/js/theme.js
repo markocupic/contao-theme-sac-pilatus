@@ -74,7 +74,7 @@ $(document).ready(function () {
 		$('#header .mod_navigation ul.level_1 > li.submenu').each(function(){
 			var dropdown = this;
 			$(dropdown).addClass('dropdown');
-			$(dropdown).append('<button class="dropdown-toggle" type="button" data-toggle="dropdown" data-placement="bottom" data-flip="false" data-offset="-50" aria-haspopup="true" aria-expanded="false">');
+			$(dropdown).append('<button class="dropdown-toggle" type="button" data-toggle="dropdown" data-placement="bottom" data-flip="false" data-offset="-50" aria-haspopup="true" aria-expanded="false"><i class="fa fa-angle-down"></i></button>');
 			$(dropdown).find('ul.level_2').addClass('dropdown-menu');
 			setDropdownOffset();
 		});

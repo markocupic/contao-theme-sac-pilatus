@@ -18,12 +18,12 @@ button:hover * {
 
 .submit{
   @extend .btn;
-  @extend .btn-primary;
-  background-color: $red;
-  border-color: $red;
+  @extend .btn-outline-primary;
+  //background-color: $red;
+  //border-color: $red;
   &:hover{
-    background-color: darken($red, 4);
-    border-color: darken($red, 4);
+    //background-color: darken($red, 4);
+    //border-color: darken($red, 4);
   }
 }
 
