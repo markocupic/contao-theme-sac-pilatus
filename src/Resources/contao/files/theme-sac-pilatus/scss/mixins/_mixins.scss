@@ -13,6 +13,17 @@
   content: "\#{$icon}";
 }
 
+// Add a icon font before an element
+@mixin column-count($value, $gap: 1rem) {
+  -webkit-column-count: $value; /* Chrome, Safari, Opera */
+  -moz-column-count: $value; /* Firefox */
+  column-count: $value;
+
+  -webkit-column-gap: $gap; /* Chrome, Safari, Opera */
+  -moz-column-gap: $gap; /* Firefox */
+  column-gap: $gap;
+}
+
 @mixin flex-vertical-align-middle() {
   // Center vertical with flexbox
   display: -ms-flexbox;
