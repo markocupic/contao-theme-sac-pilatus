@@ -1,6 +1,5 @@
 #footer {
 
-
   [class*="footer-row-"] {
     padding-top: $spacer;
     padding-bottom: $spacer;
@@ -9,12 +8,12 @@
   .footer-row-1 {
     background-color: #fff;
     color: #1a1a1a !important;
-    border-top: 1px solid darken($gray-300,4);
-    a, &:hover {
+    border-top: 1px solid darken($gray-300, 4);
+    a {
       color: $gray-600 !important;
     }
     .title {
-      font-weight:bold;
+      font-weight: bold;
     }
     .row > div > div {
       padding: 0 8px;
@@ -24,7 +23,7 @@
   .footer-row-2 {
     background-color: #222;
     color: #8b889b !important;
-    a, &:hover {
+    a {
       color: #8b889b !important;
     }
     .title {
@@ -33,15 +32,15 @@
     .row > div > div {
       padding: 0 8px;
     }
-    #socialIcons ul{
-      display:flex;
-      li{
+    #socialIcons ul {
+      display: flex;
+      li {
         margin-right: 5px;
       }
     }
-    #footerNavigation ul{
-      display:flex;
-      li{
+    #footerNavigation ul {
+      display: flex;
+      li {
         margin-right: 5px;
       }
     }
