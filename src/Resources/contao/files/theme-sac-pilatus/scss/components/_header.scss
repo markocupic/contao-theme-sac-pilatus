@@ -1,8 +1,7 @@
-$header-height: 100px;
-
 #header {
   background-color: #fff;
   .header-row-1 {
+    background: #f8f8f8;
 
     @include transition(all);
 

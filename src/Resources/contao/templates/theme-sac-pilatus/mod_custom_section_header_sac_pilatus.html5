@@ -11,25 +11,32 @@
 
 
     <div class="header-button-container col-8 col-md-3 col-lg-6 d-flex flex-row-reverse align-items-center">
-      <!-- indexer::stop -->
-      <?php if(FE_USER_LOGGED_IN): ?>
-      <a href="{{link_url::member-login}}" class="align-middle btn btn-outline-primary" title="Abmelden"><i class="fa fa-sign-out"></i><span class="d-none d-md-inline">&nbsp;Abmelden</span></a>
-      <?php else: ?>
-      <a href="{{link_url::member-login}}" class="btn btn-outline-primary" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
-      <?php endif; ?>
-      <!-- indexer::continue -->
+
+        <!-- indexer::stop -->
+        <!-- Navbar toggler mobile -->
+        <button class="navigation-toggler d-lg-none btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+        <!-- End Navbar toggler mobile -->
+        <!-- indexer::continue -->
+
+        <!-- indexer::stop -->
+        <?php if(FE_USER_LOGGED_IN): ?>
+        <a href="{{link_url::member-login}}" class="align-middle btn btn-outline-danger" title="Abmelden"><i class="fa fa-sign-out"></i><span class="d-none d-md-inline">&nbsp;Abmelden</span></a>
+        <?php else: ?>
+        <a href="{{link_url::member-login}}" class="btn btn-outline-danger" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
+        <?php endif; ?>
+        <!-- indexer::continue -->
 
 
-      <?php if(FE_USER_LOGGED_IN): ?>
-      <!-- indexer::stop -->
-      <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
-      <!-- indexer::continue -->
-      <?php endif; ?>
+        <?php if(FE_USER_LOGGED_IN): ?>
+        <!-- indexer::stop -->
+        <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
+        <!-- indexer::continue -->
+        <?php endif; ?>
 
 
-      <!-- indexer::stop -->
-      <!-- Search form -->
-      <div class="mod_search block d-none d-lg-block">
+        <!-- indexer::stop -->
+        <!-- Search form -->
+        <div class="mod_search block d-none d-lg-block">
         <form action="suche" method="get">
           <div class="formbody form-row align-items-center">
 
@@ -41,15 +48,11 @@
             </div>
           </div>
         </form>
-      </div>
-      <!-- End search form -->
-      <!-- indexer::continue -->
+        </div>
+        <!-- End search form -->
+        <!-- indexer::continue -->
 
-      <!-- indexer::stop -->
-      <!-- Navbar toggler mobile -->
-      <button class="navigation-toggler d-lg-none btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
-      <!-- End Navbar toggler mobile -->
-      <!-- indexer::continue -->
+      
     </div>
   </div>
   <!-- NAVBAR-START -->
