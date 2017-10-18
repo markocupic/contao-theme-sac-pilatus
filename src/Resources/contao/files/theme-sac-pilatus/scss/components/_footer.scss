@@ -1,13 +1,29 @@
 #footer {
 
+  .footer-nav{
+    margin-top: 1rem;
+    li{
+      border-top: 1px solid $gray-900;
+      margin:0;
+      line-height: 2.75;
+      padding: 0 0.5rem;
+    }
+    &:first-child {
+      border: none;
+    }
+  }
+
+  * {
+    font-size: 0.875rem !important;
+  }
   [class*="footer-row-"] {
     padding-top: $spacer;
     padding-bottom: $spacer;
   }
 
   .footer-row-1 {
-    background-color: #fff;
-    color: #1a1a1a !important;
+    background-color: #000;
+    color: $gray-100;
     border-top: 1px solid darken($gray-300, 4);
     a {
       color: $gray-600 !important;
@@ -21,7 +37,7 @@
   }
 
   .footer-row-2 {
-    background-color: #222;
+    background-color: #000;
     color: #8b889b !important;
     a {
       color: #8b889b !important;
@@ -29,9 +45,7 @@
     .title {
       color: #d7d5e5;
     }
-    .row > div > div {
-      padding: 0 8px;
-    }
+
     #socialIcons ul {
       display: flex;
       li {
