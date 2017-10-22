@@ -16,10 +16,14 @@ $navbar-dropdown-color: #888;
         line-height: 1;
       }
       ul.level_1 {
+        @extend .align-items-center;
         background-color: transparent;
         display: flex;
+        a, strong {
+          font-size: 0.925rem;
+        }
 
-        // Dropdown toggle
+          // Dropdown toggle
         > li.dropdown > button.dropdown-toggle {
           border: 0;
           background: 0;
@@ -45,10 +49,11 @@ $navbar-dropdown-color: #888;
         }
 
         > li {
-          padding: 0 $spacer-x;
+          padding: 0 4px;
           margin-right: 4px;
-          border-bottom: 4px solid transparent;
+          border-bottom: 0px solid transparent;
           height: $navbar-height;
+          position:relative;
         }
         > li.active, > li.trail, > li:hover, li.show {
           border-bottom-color: $red;
@@ -100,7 +105,7 @@ $navbar-dropdown-color: #888;
         }
         // End speech bubble
 
-        top: 20px !important;
+        top: 50px !important;
         border: 1px solid $gray-300;
         width: 300px;
         background-color: #fff;

@@ -1,7 +1,31 @@
-<div class="header-row-1" data-toggle="sticky-onscroll">
-  <div class="row align-middle">
+<div class="header-row-0 d-flex justify-content-end pl-3 pr-3 pt-2 pb-2 align-items-center">
+    <div class="mod_search block ml-2">
+        <form action="suche" method="get">
+          <div class="formbody form-row align-items-center">
+            <input type="hidden" name="id" value="332">
+            <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
+            <input type="search" name="keywords" id="ctrl_keywords_332" class="form-control form-control-sm" value="" placeholder="Suche">
+          </div>
+        </form>
+    </div>
+    <div class="ml-auto d-flex align-items-center">
+        <?php if(FE_USER_LOGGED_IN): ?>
+        <a href="{{link_url::member-login}}" class="ml-2" title="Abmelden">Abmelden</a>
+
+        <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
+        <?php $id = \FrontendUser::getInstance()->id; ?>
+        <div class="ml-3">
+            {{image::<?= getAvatar($id,'FE') ?>?height=32&class=rounded-circle}}
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+        <!-- End search form -->
+
+
+<div class="header-row-1 navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
     <!-- indexer::stop -->
-    <div class="mobile-title-heading col-4 col-md-9 col-lg-6">
+    <div class="navbar-brand">
       <a href="" title="Startseite">
         <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
       </a>
@@ -9,53 +33,35 @@
     </div>
     <!-- indexer::continue -->
 
+    <!-- NAVBAR-START -->
+    <div class="navbar-header d-none d-lg-flex align-items-center">{{insert_module::307}}</div>
+    <!-- NAVBAR-END -->
 
-    <div class="header-button-container col-8 col-md-3 col-lg-6 d-flex flex-row-reverse align-items-center">
+    <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
+
+        <!-- indexer::stop -->
+        <?php if(!FE_USER_LOGGED_IN): ?>
+        <a href="{{link_url::member-login}}" class="btn btn-outline-danger ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
+        <?php endif; ?>
+        <!-- indexer::continue -->
+
+
+        <?php if(FE_USER_LOGGED_IN): ?>
+        <!-- indexer::stop -->
+        <a href="{{link_url::member-profile}}" class="btn btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
+        <!-- indexer::continue -->
+        <?php endif; ?>
+
+
+
 
         <!-- indexer::stop -->
         <!-- Navbar toggler mobile -->
-        <button class="navigation-toggler d-lg-none btn btn-danger" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+        <button class="navigation-toggler d-lg-none btn btn-danger ml-2" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
         <!-- End Navbar toggler mobile -->
-        <!-- indexer::continue -->
-
-        <!-- indexer::stop -->
-        <?php if(FE_USER_LOGGED_IN): ?>
-        <a href="{{link_url::member-login}}" class="align-middle btn btn-outline-danger" title="Abmelden"><i class="fa fa-sign-out"></i><span class="d-none d-md-inline">&nbsp;Abmelden</span></a>
-        <?php else: ?>
-        <a href="{{link_url::member-login}}" class="btn btn-outline-danger" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
-        <?php endif; ?>
-        <!-- indexer::continue -->
-
-
-        <?php if(FE_USER_LOGGED_IN): ?>
-        <!-- indexer::stop -->
-        <a href="{{link_url::member-profile}}" class="align-middle btn btn-primary" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
-        <!-- indexer::continue -->
-        <?php endif; ?>
-
-
-        <!-- indexer::stop -->
-        <!-- Search form -->
-        <div class="mod_search block d-none d-lg-block">
-        <form action="suche" method="get">
-          <div class="formbody form-row align-items-center">
-
-          <!--<div class=" d-flex">-->
-            <input type="hidden" name="id" value="332">
-            <div class="widget widget-text">
-              <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
-              <input type="search" name="keywords" id="ctrl_keywords_332" class="text" value="" placeholder="Suche">
-            </div>
-          </div>
-        </form>
-        </div>
-        <!-- End search form -->
         <!-- indexer::continue -->
 
       
     </div>
-  </div>
-  <!-- NAVBAR-START -->
-  <div class="navbar-header d-none d-lg-block">{{insert_module::307}}</div>
-  <!-- NAVBAR-END -->
+
 </div>
