@@ -1,22 +1,25 @@
 <div class="header-row-0 d-flex justify-content-end pl-3 pr-3 pt-2 pb-2 align-items-center">
-    <div class="mod_search block ml-2">
-        <form action="suche" method="get">
-          <div class="formbody form-row align-items-center">
-            <input type="hidden" name="id" value="332">
-            <label for="ctrl_keywords_332" class="invisible">Suchbegriffe</label>
-            <input type="search" name="keywords" id="ctrl_keywords_332" class="form-control form-control-sm" value="" placeholder="Suche">
-          </div>
-        </form>
-    </div>
+
     <div class="ml-auto d-flex align-items-center">
         <?php if(FE_USER_LOGGED_IN): ?>
-        <a href="{{link_url::member-login}}" class="ml-2" title="Abmelden">Abmelden</a>
+        <a href="{{link_url::member-logout}}" class="ml-2" title="Abmelden">Abmelden</a>
 
         <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
         <?php $id = \FrontendUser::getInstance()->id; ?>
         <div class="ml-3">
             {{image::<?= getAvatar($id,'FE') ?>?height=32&class=rounded-circle}}
         </div>
+        <?php endif; ?>
+        <?php if(!FE_USER_LOGGED_IN): ?>
+        <!-- indexer::stop -->
+        <a href="{{link_url::member-login}}" class="ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
+        <!-- indexer::continue -->
+        <?php endif; ?>
+
+        <?php if(FE_USER_LOGGED_IN): ?>
+        <!-- indexer::stop -->
+        <a href="{{link_url::member-profile}}" class="btn btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
+        <!-- indexer::continue -->
         <?php endif; ?>
     </div>
 </div>
@@ -39,21 +42,18 @@
 
     <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
 
-        <!-- indexer::stop -->
-        <?php if(!FE_USER_LOGGED_IN): ?>
-        <a href="{{link_url::member-login}}" class="btn btn-outline-danger ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline">&nbsp;Anmelden</span></a>
-        <?php endif; ?>
+
         <!-- indexer::continue -->
 
 
-        <?php if(FE_USER_LOGGED_IN): ?>
+
+
+
         <!-- indexer::stop -->
-        <a href="{{link_url::member-profile}}" class="btn btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
+        <!-- Searchbar toggler -->
+        <button class="btn btn-outline-danger ml-2" data-action="search-bar-toggle" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
+        <!-- End Searchbar toggler -->
         <!-- indexer::continue -->
-        <?php endif; ?>
-
-
-
 
         <!-- indexer::stop -->
         <!-- Navbar toggler mobile -->
@@ -65,3 +65,20 @@
     </div>
 
 </div>
+<div class="header-row-2">
+    <div class="mod_search block d-flex align-items-center p-3">
+        <form action="suche" method="get">
+            <input type="hidden" name="id" value="332">
+            <div class="search-formbody-header input-group">
+                <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Suche" aria-label="Suchformular">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="submit">Suche</button>
+                </span>
+            </div>
+        </form>
+        <div class="ml-auto">
+        <button class="btn btn-primary close-navbar-header-toggler" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
+        </div>
+    </div>
+</div>
+

@@ -23,6 +23,18 @@
     });
 })(jQuery);
 
+(function ($) {
+    $().ready(function () {
+        $('[data-action="search-bar-toggle"]').on('touchstart click', function(){
+            $('body').toggleClass('search-bar-open');
+        });
+        $('[data-action="close-search-bar"]').on('touchstart click', function(){
+            $('body').removeClass('search-bar-open');
+        });
+    });
+})(jQuery);
+
+
 
 (function ($) {
     $().ready(function () {

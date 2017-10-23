@@ -34,8 +34,25 @@
       }
     }
   }
+  .header-row-2{
+    max-height:0;
+    background-color: #68696f;
+    transition: max-height ease-in-out 1s;
+    overflow: hidden;
+    .form-control{
+      width: 300px;
+    }
+    .btn{
+      background-color: #08c;
+    }
+  }
 
 }
+
+body.search-bar-open #header .header-row-2{
+  max-height: 80px; /* approximate max height */
+};
+
 
 
 
