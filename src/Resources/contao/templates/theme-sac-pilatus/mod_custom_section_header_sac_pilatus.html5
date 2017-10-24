@@ -7,7 +7,7 @@
         <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
         <?php $id = \FrontendUser::getInstance()->id; ?>
         <div class="ml-3">
-            {{image::<?= getAvatar($id,'FE') ?>?height=32&height=32&mode=crop&class=rounded-circle}}
+            {{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
         </div>
         <?php endif; ?>
         <?php if(!FE_USER_LOGGED_IN): ?>

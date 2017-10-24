@@ -28,13 +28,13 @@ figure{
       @extend .col-12;
       @extend .col-sm-4;
       @extend .col-md-3;
-      padding: 0.5rem;
+      padding: 0.25rem;
     }
   }
   .row {
-    margin: 0 -0.5rem;
+    margin: 0 -0.25rem;
     [class*="col-"] {
-      padding: 0.5rem;
+      padding: 0.25rem;
     }
   }
 }

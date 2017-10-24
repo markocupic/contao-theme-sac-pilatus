@@ -22,7 +22,6 @@
 }
 
 #container {
-  margin-top: 15px; // Because auf the fixed header, we need some margin
 
   .mod_article:not(.container-fluid) > .inside {
     @extend .container;
