@@ -2,6 +2,9 @@
   background-color: #fff;
   .header-row-0 {
     background-color: #2baaff;
+    background-color: #f8f8f8;
+    border: 1px solid #f1f1f1;
+
   }
 
   .header-row-1 {
@@ -33,7 +36,7 @@
   }
   .header-row-2 {
     max-height: 0;
-    background-color: #000;
+    background-color: #fff;
     transition: max-height ease-in-out 1s;
     overflow: hidden;
     .form-control {
@@ -44,14 +47,15 @@
     }
     input[type="search"] {
       text-align: center;
-      color: #999;
-      background-color: #eee;
+      color: #000;
+      background-color: #fff;
       border-color: #eee;
 
     }
     .btn {
-      background-color: #222;
-      border-color: #eee;
+     // background-color: #fff;
+      //border-color: #eee;
+      //color: #000;
 
     }
   }

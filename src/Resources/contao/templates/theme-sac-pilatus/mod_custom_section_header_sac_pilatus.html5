@@ -72,12 +72,12 @@
             <div class="search-formbody-header input-group">
                 <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Bitte gib hier Deine Suchbegriffe ein ..." aria-label="Suchformular">
                 <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit">Suche</button>
+                    <button class="btn btn-primary" title="Suchanfrage senden" type="submit">Suche</button>
                 </span>
             </div>
         </form>
         <div class="ml-auto">
-        <button class="btn btn-primary close-navbar-header-toggler" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
+        <button class="btn btn btn-outline-dark close-navbar-header-toggler" title="Suche schliessen" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
         </div>
     </div>
 </div>

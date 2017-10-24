@@ -1,4 +1,6 @@
-
+#wrapper{
+  //@extend .container;
+}
 // overwrite bootstrap .container padding
 .container {
   padding-left: 0;

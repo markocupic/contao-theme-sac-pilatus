@@ -2,7 +2,7 @@
 <?php $mode = 'singleImage'; ?>
 
 <?php if($mode == 'singleImage'): ?>
-<img style="width:100%; height:auto;" class="header-image" src="<?= \Image::get('files/theme-sac-pilatus/images/header/header-1.jpg',1800,550,'crop') ?>">
+<!--{{image::files/theme-sac-pilatus/images/header/header-1.jpg?width=1800&height=550&mode=crop}}-->
 <?php endif; ?>
 
 
