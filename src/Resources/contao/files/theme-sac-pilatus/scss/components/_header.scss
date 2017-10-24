@@ -1,5 +1,9 @@
 #header {
   background-color: #fff;
+  .header-row-0 {
+    background-color: #2baaff;
+  }
+
   .header-row-1 {
     @include transition(all);
     background: #f8f8f8;
@@ -13,25 +17,19 @@
     }
 
     .header-button-container {
-      .widget {
-        //margin:0;
+      .btn{
+        cursor: pointer !important;
       }
-      & > * {
-        // margin: 0 8px;
-      }
-
-    }
-    .navigation-toggler {
-      background: $accent-color;
-      .fa {
-        color: #fff;
-      }
-      border: 0;
-      &:focus {
-        border: 0;
-        outline: 0;
+      i.fa{
+        font-size: 1.5rem !important;
       }
     }
+      .fa-search {
+        color: #999999;
+      }
+      .fa-navicon{
+        color: #000000;
+      }
   }
   .header-row-2 {
     max-height: 0;
