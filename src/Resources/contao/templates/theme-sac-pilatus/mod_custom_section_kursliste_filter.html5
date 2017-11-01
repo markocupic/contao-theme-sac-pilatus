@@ -36,9 +36,10 @@
 
     <!--<h4>Organisierende Sektion ausw&auml;hlen:</h4>-->
     <div id="organizers">
-        <?php foreach ($GLOBALS['TL_CONFIG']['SAC-PILATUS-CONFIG']['organizers'] as $i => $v): ?>
-            <div class="checkbox-container"><label><input class="ctrl_sektion" type="checkbox" name="og" value="<?= $i ?>" checked> <?= $v ?></label></div>
-        <?php endforeach; ?>
+        <?php $objOrganizers = \EventOrganizerModel::findAll(); ?>
+        <?php while ($objOrganizers->next()): ?>
+            <div class="checkbox-container"><label><input class="ctrl_sektion" type="checkbox" name="og" value="<?= $objOrganizers->id ?>" checked> <?= $objOrganizers->title ?></label></div>
+        <?php endwhile; ?>
     </div>
     <br>
 
