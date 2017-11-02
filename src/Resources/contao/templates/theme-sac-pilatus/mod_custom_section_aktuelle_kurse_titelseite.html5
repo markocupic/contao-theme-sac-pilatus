@@ -11,13 +11,13 @@
         {{br}}{{br}}
         </div>
         <div class="col-9">
-            <time class="small"><?= Markocupic\SacpilatusBundle\CalendarKurse::getEventPeriod($objEvents->id) ?></time>
+            <time><?= Markocupic\SacpilatusBundle\CalendarKurse::getEventPeriod($objEvents->id) ?></time>
             <div>
-              <h5 class="mt-1">
+              <h4 class="mt-1">
                 <a href="kurs-detail/<?= $objEvents->id ?>" title="Details">
                   <?= $objEvents->title ?>
                 </a>
-              </h5>
+              </h4>
             </div>
 
         </div>

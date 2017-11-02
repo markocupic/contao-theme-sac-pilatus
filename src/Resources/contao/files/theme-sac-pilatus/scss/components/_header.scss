@@ -3,36 +3,56 @@
   .header-row-0 {
     background-color: #2baaff;
     background-color: #f8f8f8;
-    border: 1px solid #f1f1f1;
+    background-color: #1793b8;
+    // border: 1px solid #f1f1f1;
+    .btn-primary {
+      background-color: #d50000;
+      border: 0;
+    }
+    div {
+      color: lightgray;
+    }
+    a, a:hover {
+      color: #fff;
+    }
 
   }
 
   .header-row-1 {
     @include transition(all);
-    background: #f8f8f8;
+    background: #fff;
+
     .logo-header {
       height: 70px;
+      @include media-breakpoint-up(lg) {
+        height: 80px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 100px;
+      }
       width: auto;
     }
+
+
 
     .header-search-form {
       margin: 0;
     }
 
     .header-button-container {
-      .btn{
+      .btn {
         cursor: pointer !important;
       }
-      i.fa{
+      i.fa {
         font-size: 1.5rem !important;
       }
     }
-      .fa-search {
-        color: #999999;
-      }
-      .fa-navicon{
-        color: #000000;
-      }
+    .fa-search {
+      color: #999999;
+    }
+    .fa-navicon {
+      color: #000000;
+    }
   }
   .header-row-2 {
     max-height: 0;
@@ -53,7 +73,7 @@
 
     }
     .btn {
-     // background-color: #fff;
+      // background-color: #fff;
       //border-color: #eee;
       //color: #000;
 

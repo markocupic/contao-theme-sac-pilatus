@@ -16,11 +16,16 @@ $navbar-dropdown-color: #888;
         line-height: 1;
       }
       ul.level_1 {
-        @extend .align-items-center;
         background-color: transparent;
         display: flex;
         a, strong {
           font-size: 1rem;
+          @include media-breakpoint-up(lg) {
+            font-size: 1.1rem;
+          }
+          @include media-breakpoint-up(xl) {
+            font-size: 1.25rem;
+          }
         }
 
           // Dropdown toggle
@@ -50,7 +55,7 @@ $navbar-dropdown-color: #888;
 
         > li {
           padding: 0 4px;
-          margin-right: 4px;
+          margin-right: 12px;
           border-bottom: 0px solid transparent;
           height: $navbar-height;
           position:relative;

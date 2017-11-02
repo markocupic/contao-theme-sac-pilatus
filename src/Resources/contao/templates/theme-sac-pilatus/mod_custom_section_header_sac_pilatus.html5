@@ -18,7 +18,7 @@
 
         <?php if(FE_USER_LOGGED_IN): ?>
         <!-- indexer::stop -->
-        <a href="{{link_url::member-profile}}" class="btn btn-sm btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
+        <a href="{{link_url::member-profile}}" class="btn btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-none d-md-inline">&nbsp;Profil</span></a>
         <!-- indexer::continue -->
         <?php endif; ?>
     </div>

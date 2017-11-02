@@ -25,7 +25,7 @@
     <?php //endif; ?>
 
 
-    <div class="col-12 col-sm-6 col-lg-4">
+    <div class="col-12 col-sm-6">
       <div class="row">
         <div class="col-4">
           <div class="image_container responsive wow fadeIn" data-wow-offset="15" data-wow-delay="<?= $animDelay ?>s" data-wow-duration="0.8s">
@@ -39,22 +39,22 @@
         </div>
         <div class="col-8">
           <div class="personal-info">
-            <h5 style="margin-top:0;"><a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>"><?= $objUser->name ?></a></h5>
+            <h4 style="margin-top:0;"><a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>"><?= $objUser->name ?></a></h4>
           </div>
-          <div class="personal-info small">
+          <div class="personal-info">
             <?php if($objUser->street != ''): ?><?= $objUser->street ?><?php endif; ?>
           </div>
-          <div class="personal-info small">
+          <div class="personal-info">
             <?php if($objUser->postal != ''): ?><?= $objUser->postal ?>&nbsp;<?php endif; ?>
             <?php if($objUser->city != ''): ?><?= $objUser->city ?><?php endif; ?>
           </div>
-          <div class="personal-info small">
+          <div class="personal-info">
             <?php if($objUser->email != ''): ?>{{email::<?= $objUser->email ?>}}<?php endif; ?>
           </div>
-          <div class="personal-info small">
+          <div class="personal-info">
             <?php if($objUser->phone != ''): ?><?= $objUser->phone ?><?php endif; ?>
           </div>
-          <div class="personal-info small">
+          <div class="personal-info">
             <?php if($objUser->mobile != ''): ?><?= $objUser->mobile ?><?php endif; ?>
           </div>
         </div>
