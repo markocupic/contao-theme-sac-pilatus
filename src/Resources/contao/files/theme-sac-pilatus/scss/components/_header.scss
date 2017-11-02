@@ -20,7 +20,7 @@
 
   .header-row-1 {
     @include transition(all);
-    background: #fff;
+      background: rgba(0, 188, 212, 0.08);
 
     .logo-header {
       height: 70px;
@@ -84,10 +84,3 @@
 body.search-bar-open #header .header-row-2 {
   max-height: 200px; /* approximate max height */
 }
-
-
-
-
-
-
-
