@@ -66,8 +66,13 @@ $navbar-dropdown-color: #888;
         }
         > li > a, > li > strong {
           line-height: $navbar-height;
-          color: #000;
+          color: #999;
           text-transform: uppercase;
+          font-weight:bold;
+          @include transition(color);
+        }
+        li.active>*{
+          color: #000;
         }
         > li.submenu > a:after, li.submenu > .toggler {
           padding-left: $spacer-x;
@@ -77,13 +82,14 @@ $navbar-dropdown-color: #888;
         > li.show, > li:hover {
           > a, > a:after, > strong {
             text-decoration: none;
+            color: #000000;
           }
         }
 
       }
 
       ul.level_2.dropdown-menu {
-
+        width: 400px;
         //speech bubble effect http://ilikepixels.co.uk/drop/bubbler/
         &:after {
           content: '';
@@ -110,18 +116,24 @@ $navbar-dropdown-color: #888;
         }
         // End speech bubble
 
-        top: 50px !important;
-        border: 1px solid $gray-300;
-        width: 300px;
         background-color: #fff;
         a, strong {
           color: $navbar-dropdown-color;
-          font-size: 13px;
+          font-size: 15px;
+          @include transition(color);
+
         }
         > li {
           line-height: 3;
           border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
+          @include transition(background-color);
+        }
+        > li:hover{
+          background-color: #1793B8;
+          a, strong {
+            color: #ffffff;
+          }
         }
         > li:first-child {
           border: 0;
@@ -130,7 +142,7 @@ $navbar-dropdown-color: #888;
       ul.level_3 {
         a, strong {
           color: $navbar-dropdown-color;
-          font-size: 12px;
+          font-size: 14px;
 
         }
         > li {

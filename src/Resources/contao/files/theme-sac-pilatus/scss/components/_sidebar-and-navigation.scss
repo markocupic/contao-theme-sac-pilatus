@@ -1,5 +1,5 @@
 $sidebar-bg-color: #000000;
-$nav-bg-hover-color: #2baaff;
+$nav-bg-hover-color: #1793B8;
 $nav-close-btn-color: #ccc;
 //$nav-bg-hover-color: $accent-color;
 
@@ -228,7 +228,7 @@ body.sidebar-open {
       border-bottom: 1px solid #e2e2e2;
       &:hover{
         background-color: $nav-bg-hover-color;
-        > a, > span{
+        > a, > span, > strong{
           color: #fff !important;
         }
       }
