@@ -1,5 +1,5 @@
 $navbar-height: 40px;
-$navbar-dropdown-color: #888;
+$navbar-dropdown-color: #777;
 
 #header {
   * {
@@ -66,9 +66,9 @@ $navbar-dropdown-color: #888;
         }
         > li > a, > li > strong {
           line-height: $navbar-height;
-          color: #999;
+          color: #777;
           text-transform: uppercase;
-          font-weight:bold;
+          font-weight:500;
           @include transition(color);
         }
         li.active>*{
@@ -130,7 +130,7 @@ $navbar-dropdown-color: #888;
           @include transition(background-color);
         }
         > li:hover{
-          background-color: #1793B8;
+          background-color: #d50000;
           a, strong {
             color: #ffffff;
           }

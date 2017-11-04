@@ -1,9 +1,11 @@
 #header {
   background-color: #fff;
   .header-row-0 {
+    font-size: $font-size-base;
     background-color: #2baaff;
     background-color: #f8f8f8;
-    background-color: #1793b8;
+    background-color: #d50000;
+    background-color: #fff;
     // border: 1px solid #f1f1f1;
     .btn-primary {
       background-color: #d50000;
@@ -13,14 +15,18 @@
       color: lightgray;
     }
     a, a:hover {
-      color: #fff;
+      //color: dodgerblue;
     }
+
 
   }
 
   .header-row-1 {
     @include transition(all);
-      background: rgba(0, 188, 212, 0.08);
+      background: #f9f9f9;
+    background-color: #fff;
+    border-bottom: 1px solid $gray-200;
+
 
     .logo-header {
       height: 70px;
