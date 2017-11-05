@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-3">
             <a class="responsive wow fadeIn" data-wow-offset="15" data-wow-delay="<?= $animDelay ?>s" data-wow-duration="0.8s" href="kurs-detail/<?= $objEvents->id ?>">
-                {{picture::<?= Markocupic\SacpilatusBundle\CalendarSacEvents::getEventImagePath($objEvents->id) ?>?size=16&alt=<?= $objEvents->title ?>}}
+                {{picture::<?= Markocupic\SacpilatusBundle\CalendarSacEvents::getEventImagePath($objEvents->id) ?>?size=21&alt=<?= $objEvents->title ?>}}
             </a>
         {{br}}{{br}}
         </div>

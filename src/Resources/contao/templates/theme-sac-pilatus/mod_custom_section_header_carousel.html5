@@ -1,8 +1,11 @@
 <!-- indexer::stop -->
+
 <?php $mode = 'singleImage'; ?>
 
 <?php if($mode == 'singleImage'): ?>
-<!--{{image::files/theme-sac-pilatus/images/header/header-1.jpg?width=1800&height=550&mode=crop}}-->
+<?php $rand = rand(1,5); ?>
+<?php $src = sprintf('files/sac_pilatus/page_assets/hero_images/hero-%s.jpg', $rand); ?>
+{{picture::<?= $src ?>?size=19}}
 <?php endif; ?>
 
 
