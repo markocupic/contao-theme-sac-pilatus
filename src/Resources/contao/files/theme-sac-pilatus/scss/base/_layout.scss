@@ -13,13 +13,17 @@
   }
 }
 
+@media (min-width: 1600px)   {
+  max-width: 80%;
+}
+
+
 #container {
 
   #main {
     min-height: 600px;
     background-color: #ffffff;
     //margin-bottom: $spacer-y;
-
   }
 }
 
