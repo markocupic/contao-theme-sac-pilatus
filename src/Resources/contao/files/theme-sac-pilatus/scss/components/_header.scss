@@ -85,6 +85,13 @@
 
     }
   }
+  .header-row-3 {
+    .header-banner-image{
+      img{
+        width: 100% !important;
+      }
+    }
+  }
 }
 
 body.search-bar-open #header .header-row-2 {

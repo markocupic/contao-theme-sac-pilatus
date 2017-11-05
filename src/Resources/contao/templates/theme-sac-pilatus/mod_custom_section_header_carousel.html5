@@ -5,7 +5,11 @@
 <?php if($mode == 'singleImage'): ?>
 <?php $rand = rand(1,5); ?>
 <?php $src = sprintf('files/sac_pilatus/page_assets/hero_images/hero-%s.jpg', $rand); ?>
-{{picture::<?= $src ?>?size=19}}
+<div class="header-row-3">
+    <figure class="image_container header-banner-image">
+        {{picture::<?= $src ?>?size=19}}
+    </figure>
+</div>
 <?php endif; ?>
 
 
