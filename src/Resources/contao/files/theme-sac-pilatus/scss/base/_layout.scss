@@ -6,16 +6,10 @@
 .container {
   padding-left: 0;
   padding-right: 0;
-
-  @include media-breakpoint-up(md) {
-    //padding-left:$spacer;
-    //padding-right: $spacer;
-  }
 }
 
-@media (min-width: 1600px)   {
-  max-width: 80%;
-}
+
+
 
 
 #container {
@@ -32,6 +26,12 @@
   .mod_article:not(.container-fluid) > .inside {
     @extend .container;
     padding: $spacer;
+    @media (min-width: 1400px)   {
+      max-width: 70%;
+    }
+    @media (min-width: 1600px)   {
+      max-width: 65%;
+    }
   }
 
   .mod_article.container-fluid {
