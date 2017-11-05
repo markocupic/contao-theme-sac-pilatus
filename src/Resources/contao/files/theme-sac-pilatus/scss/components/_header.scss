@@ -3,9 +3,9 @@
   .header-row-0 {
     font-size: $font-size-base;
     background-color: #2baaff;
-    background-color: #f8f8f8;
     background-color: #d50000;
     background-color: #fff;
+    background-color: #f8f8f8;
     border: 1px solid $gray-100;
     .btn-primary {
       background-color: #d50000;
@@ -18,15 +18,11 @@
       //color: dodgerblue;
     }
 
-
   }
 
   .header-row-1 {
-    @include transition(all);
-      background: #f9f9f9;
     background-color: #fff;
     border-bottom: 1px solid $gray-200;
-
 
     .logo-header {
       height: 70px;
@@ -38,8 +34,6 @@
       }
       width: auto;
     }
-
-
 
     .header-search-form {
       margin: 0;
@@ -54,7 +48,11 @@
       }
     }
     .fa-search {
-      color: #999999;
+      color: $gray-400;
+      @include transition(color);
+      &:hover{
+        color: #d50000;
+      }
     }
     .fa-navicon {
       color: #000000;
@@ -86,8 +84,8 @@
     }
   }
   .header-row-3 {
-    .header-banner-image{
-      img{
+    .header-banner-image {
+      img {
         width: 100% !important;
       }
     }
