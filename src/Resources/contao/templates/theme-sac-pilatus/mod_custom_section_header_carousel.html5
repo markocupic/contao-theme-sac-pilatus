@@ -12,7 +12,7 @@
 </div>
 <?php endif; ?>
 
-
+ 
 
 
 <?php if($mode == 'carousel'): ?>
