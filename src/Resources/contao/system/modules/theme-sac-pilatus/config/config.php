@@ -34,8 +34,6 @@ if (TL_MODE == 'FE')
 
 	// Fonts
 	// Ubuntu
-	//$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i';
-	$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Roboto+Slab';
 	$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
 
 	// Slick: The last slider yo ever need
