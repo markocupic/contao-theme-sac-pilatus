@@ -1,11 +1,11 @@
 #header {
   background-color: #fff;
   .header-row-0 {
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
     background-color: #2baaff;
     background-color: #d50000;
     background-color: #fff;
-    background-color: #f8f8f8;
+    background-color: $gray-100;
     border: 1px solid $gray-100;
     .btn-primary {
       background-color: #d50000;
