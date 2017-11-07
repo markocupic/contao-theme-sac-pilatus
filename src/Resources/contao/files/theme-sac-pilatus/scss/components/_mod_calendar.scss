@@ -28,6 +28,11 @@
   margin-right: 5px;
 }
 
+// Do not show "aktuell sind keine termine vorahanden"
+.empty{
+  display:none;
+}
+
 // Loading icon
 .mod_eventlist {
   .loading-icon-lg {
@@ -49,7 +54,7 @@
   }
 }
 
-.kursmodul-sac-liste {
+.event-item-course {
   .title .headline {
     margin-top: 0;
   }
@@ -110,7 +115,7 @@
   }
 }
 
-.kursmodul-sac-liste.last {
+.event-item-course.last {
   border-bottom: 0;
 }
 
