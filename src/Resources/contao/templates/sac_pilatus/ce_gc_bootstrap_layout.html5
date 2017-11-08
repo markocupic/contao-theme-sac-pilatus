@@ -45,7 +45,7 @@
                                 <p class="count_pics"><?php echo $Album['count_subalbums']; ?> <?php echo $GLOBALS['TL_LANG']['gallery_creator']['subalbums']; ?></p>
                             <?php endif; ?>
                             <?php if ($Album['comment']): ?>
-                                <p class="album_comment"><?php echo \String::substr($Album['comment'], 200); ?></p>
+                                <p class="album_comment"><?php echo \StringUtil::substr($Album['comment'], 200); ?></p>
                             <?php endif; ?>
                             <button onclick="window.location.href='<?php echo $Album['href']; ?>'" type="button" class="btn btn-danger btn-sm">mehr...</button>
                         </div>
