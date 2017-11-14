@@ -1,6 +1,6 @@
 $navbar-height: 40px;
 $navbar-dropdown-color: #777;
-
+$color-level-1: #d50000;
 #header {
   * {
     overflow: visible;
@@ -9,7 +9,7 @@ $navbar-dropdown-color: #777;
     .mod_navigation {
       overflow-y: visible;
       background-color: transparent;
-      color: #000;
+      //color: #000;
       ul, li {
         margin: 0;
         padding: 0;
@@ -20,6 +20,7 @@ $navbar-dropdown-color: #777;
         display: flex;
         a, strong {
           font-size: 1rem;
+          color: $color-level-1;
           @include media-breakpoint-up(lg) {
             font-size: 1.1rem;
           }
@@ -27,8 +28,20 @@ $navbar-dropdown-color: #777;
             font-size: 1.15rem;
           }
         }
+        > li{
+          > a > span, > li > strong {
+            padding: 8px 0;
+            border-bottom: 3px solid transparent;
+          }
+        }
+        > li.active, >li.trail{
+          > a > span, > strong {
+            padding: 8px 4px;
+            border-bottom: 3px solid #d50000;
+          }
+        }
 
-          // Dropdown toggle
+        // Dropdown toggle
         > li.dropdown > button.dropdown-toggle {
           border: 0;
           background: 0;
@@ -38,6 +51,8 @@ $navbar-dropdown-color: #777;
           }
           .fa {
             font-size: 1.5rem;
+            color: $color-level-1;
+
             &:before {
               margin: 0;
               content: "\f107"
@@ -47,6 +62,8 @@ $navbar-dropdown-color: #777;
         > li.dropdown.show > button.dropdown-toggle {
           .fa {
             font-size: 1.5rem;
+            color: $color-level-1;
+
             &:before {
               content: "\f106"
             }
@@ -54,25 +71,24 @@ $navbar-dropdown-color: #777;
         }
 
         > li {
-          padding: 0 4px;
+          padding: 0 6px;
           margin-right: 12px;
-          border-bottom: 0px solid transparent;
           height: $navbar-height;
-          position:relative;
+          position: relative;
         }
         > li.active, > li.trail, > li:hover, li.show {
-          border-bottom-color: $red;
           @include transition(border);
         }
         > li > a, > li > strong {
           line-height: $navbar-height;
-          color: #777;
+          color: #000;
           text-transform: uppercase;
-          font-weight:500;
+          font-weight: 400;
+          font-size: 1.25rem;
           @include transition(color);
         }
-        li.active>*{
-          color: #000;
+        li.active > * {
+          color: #dc0000;
         }
         > li.submenu > a:after, li.submenu > .toggler {
           padding-left: $spacer-x;
@@ -129,7 +145,7 @@ $navbar-dropdown-color: #777;
           padding: 0 $spacer-x;
           @include transition(background-color);
         }
-        > li:hover{
+        > li:hover {
           background-color: #d50000;
           a, strong {
             color: #ffffff;
