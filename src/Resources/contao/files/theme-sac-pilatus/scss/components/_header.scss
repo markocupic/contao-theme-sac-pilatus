@@ -88,6 +88,7 @@
     }
   }
   .header-row-3 {
+    margin-top: 125px;
     .header-banner-image {
       img {
         width: 100% !important;
@@ -100,15 +101,6 @@ body.search-bar-open #header .header-navbar-row-2 {
   max-height: 200px; /* approximate max height */
 }
 
-
-
-
-
-
-
-
-
-
 .header-navbar {
   position: fixed;
   z-index: 10;
@@ -116,8 +108,6 @@ body.search-bar-open #header .header-navbar-row-2 {
   left: 0;
   top: 0
 }
-
-
 
 .headroom {
   transition: transform .25s ease-in-out;
@@ -131,7 +121,6 @@ body.search-bar-open #header .header-navbar-row-2 {
 .headroom--unpinned {
   transform: translateY(-100%)
 }
-
 
 .animated {
   -webkit-animation-duration: .5s;
