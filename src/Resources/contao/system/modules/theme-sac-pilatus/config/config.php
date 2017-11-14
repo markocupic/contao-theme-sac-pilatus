@@ -50,7 +50,7 @@ if (TL_MODE == 'FE')
 	$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
 
 	// Load headroom.js https://github.com/WickyNilliams/headroom.js/
-    $GLOBALS['TL_HEAD'] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>'; 
+  $GLOBALS['TL_HEAD'] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>'; 
 
 	// Load theme javascript file
 	$GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js';
