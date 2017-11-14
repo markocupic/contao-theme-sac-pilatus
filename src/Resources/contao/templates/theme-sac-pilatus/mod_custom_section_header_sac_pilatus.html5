@@ -1,84 +1,70 @@
-<div class="header-row-0 d-flex justify-content-end pl-3 pr-3 pt-1 pb-1 align-items-center">
+<!-- indexer::stop -->
+<div class="header-navbar">
+    <div class="header-navbar-row-0 d-flex justify-content-end pl-3 pr-3 pt-1 pb-1 align-items-center">
 
-    <div class="ml-auto d-flex align-items-center">
-        <?php if(FE_USER_LOGGED_IN): ?>
-        <a href="{{link_url::member-logout}}" class="ml-2" title="Abmelden">Abmelden</a>
+        <div class="ml-auto d-flex align-items-center">
+            <?php if(FE_USER_LOGGED_IN): ?>
+            <a href="{{link_url::member-logout}}" class="ml-2" title="Abmelden">Abmelden</a>
 
-        <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
-        <?php $id = \FrontendUser::getInstance()->id; ?>
-        <div class="ml-3">
-            {{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
-        </div>
-        <?php endif; ?>
-        <?php if(!FE_USER_LOGGED_IN): ?>
-        <!-- indexer::stop -->
-        <a href="{{link_url::member-login}}" class="ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span>&nbsp;Anmelden</span></a>
-        <!-- indexer::continue -->
-        <?php endif; ?>
-
-        <?php if(FE_USER_LOGGED_IN): ?>
-        <!-- indexer::stop -->
-        <a href="{{link_url::member-profile}}" class="btn btn-sm btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
-        <!-- indexer::continue -->
-        <?php endif; ?>
-    </div>
-</div>
-        <!-- End search form -->
-
-
-<div class="header-row-1 navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
-    <!-- indexer::stop -->
-    <div class="navbar-brand">
-      <a href="" title="Startseite">
-        <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
-      </a>
-      <!--<h1 class="d-none d-lg-block">SAC Pilatus</h1>-->
-    </div>
-    <!-- indexer::continue -->
-
-    <!-- NAVBAR-START -->
-    <div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
-    <!-- NAVBAR-END -->
-
-    <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
-
-
-        <!-- indexer::continue -->
-
-
-
-
-
-        <!-- indexer::stop -->
-        <!-- Searchbar toggler -->
-        <button class="btn btn-lg btn-link ml-2" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
-        <!-- End Searchbar toggler -->
-        <!-- indexer::continue -->
-
-        <!-- indexer::stop -->
-        <!-- Navbar toggler mobile -->
-        <button class="navigation-toggler d-xl-none btn btn-lg btn-link ml-2" role="button" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
-        <!-- End Navbar toggler mobile -->
-        <!-- indexer::continue -->
-
-      
-    </div>
-
-</div>
-<div class="header-row-2 ">
-    <div class="mod_search container d-flex align-items-center p-3 p-lg-5">
-        <form action="suche" method="get" style="width:90% !important">
-            <input type="hidden" name="id" value="332">
-            <div class="search-formbody-header input-group">
-                <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Bitte gib hier Deine Suchbegriffe ein ..." aria-label="Suchformular">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary" title="Suchanfrage senden" type="submit">Suche</button>
-                </span>
+            <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
+            <?php $id = \FrontendUser::getInstance()->id; ?>
+            <div class="ml-3">
+                {{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
             </div>
-        </form>
-        <div class="ml-auto">
-        <button class="btn btn btn-outline-primary close-navbar-header-toggler" title="Suche schliessen" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
+            <?php endif; ?>
+            <?php if(!FE_USER_LOGGED_IN): ?>
+
+            <a href="{{link_url::member-login}}" class="ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span>&nbsp;Anmelden</span></a>
+            <?php endif; ?>
+
+            <?php if(FE_USER_LOGGED_IN): ?>
+            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+            <?php endif; ?>
+        </div>
+    </div>
+
+
+    <div class="header-navbar-row-1  header--fixed hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
+        <div class="navbar-brand">
+          <a href="" title="Startseite">
+            <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+          </a>
+          <!--<h1 class="d-none d-lg-block">SAC Pilatus</h1>-->
+        </div>
+
+        <!-- NAVBAR-START -->
+        <div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
+        <!-- NAVBAR-END -->
+
+        <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
+            <!-- Searchbar toggler -->
+            <button class="btn btn-lg btn-link ml-2" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
+            <!-- End Searchbar toggler -->
+
+            <!-- Navbar toggler mobile -->
+            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ml-2" role="button" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+            <!-- End Navbar toggler mobile -->
+
+        </div>
+
+    </div>
+
+    <div class="header-navbar-row-2">
+        <div class="mod_search container d-flex align-items-center p-3 p-lg-5">
+            <form action="suche" method="get" style="width:90% !important">
+                <input type="hidden" name="id" value="332">
+                <div class="search-formbody-header input-group">
+                    <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Bitte gib hier Deine Suchbegriffe ein ..." aria-label="Suchformular">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" title="Suchanfrage senden" type="submit">Suche</button>
+                    </span>
+                </div>
+            </form>
+            <div class="ml-auto">
+            <button class="btn btn btn-outline-primary close-navbar-header-toggler" title="Suche schliessen" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
+            </div>
         </div>
     </div>
 </div>
+<!-- indexer::continue -->
 
