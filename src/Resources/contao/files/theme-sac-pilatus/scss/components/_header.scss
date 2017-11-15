@@ -89,8 +89,16 @@
       }
     }
   }
+
   .header-row-3 {
-    margin-top: 125px;
+    // Set a top margin becaus there is a fixed header
+    margin-top: 117px;
+    @include media-breakpoint-up(lg) {
+      margin-top: 127px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: 128px;
+    }
     .header-banner-image {
       img {
         width: 100% !important;
@@ -98,9 +106,9 @@
     }
   }
 }
-
+// Search bar open
 body.search-bar-open #header .header-navbar-row-2 {
-  max-height: 200px; /* approximate max height */
+  max-height: 300px; /* approximate max height */
 }
 
 .header-navbar {
