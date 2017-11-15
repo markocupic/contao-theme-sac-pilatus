@@ -30,13 +30,12 @@ $color-level-1: #d50000;
         }
         > li{
           > a > span, > li > strong {
-            padding: 8px 0;
+            padding: 8px 4px;
             border-bottom: 3px solid transparent;
           }
         }
-        > li.active, >li.trail{
+        > li.active, >li.trail, >li:hover{
           > a > span, > strong {
-            padding: 8px 4px;
             border-bottom: 3px solid #d50000;
           }
         }
@@ -87,7 +86,7 @@ $color-level-1: #d50000;
           font-size: 1.25rem;
           @include transition(color);
         }
-        li.active > * {
+        li.active > *, li:hover > * {
           color: #dc0000;
         }
         > li.submenu > a:after, li.submenu > .toggler {
