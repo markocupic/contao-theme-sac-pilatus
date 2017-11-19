@@ -83,7 +83,7 @@ $color-level-1: #d50000;
           color: #000;
           text-transform: uppercase;
           font-weight: 400;
-          font-size: 1.25rem;
+          font-size: 1rem;
           @include transition(color);
         }
         li.active > *, li:hover > * {
