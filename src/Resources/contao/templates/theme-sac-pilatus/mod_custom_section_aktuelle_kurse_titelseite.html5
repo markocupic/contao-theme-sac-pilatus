@@ -1,5 +1,5 @@
 <div>
-    <?php $objEvents = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND pid IN (SELECT id FROM tl_calendar WHERE calendarType=?) ORDER BY startDate')->limit(8)->execute('1', time(), 'course'); ?>
+    <?php $objEvents = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND eventType=? ORDER BY startDate')->limit(8)->execute('1', time(), 'course'); ?>
     <?php $animDelay = 0; ?>
     <?php while($objEvents->next()): ?>
     <?php $animDelay += 0.05; ?>
