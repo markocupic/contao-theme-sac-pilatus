@@ -1,6 +1,6 @@
 $navbar-height: 40px;
 $navbar-dropdown-color: #777;
-$color-level-1: #d50000;
+$color-level-1: #222;
 #header {
   * {
     overflow: visible;
@@ -18,23 +18,20 @@ $color-level-1: #d50000;
       ul.level_1 {
         background-color: transparent;
         display: flex;
-        a, strong {
-          font-size: 1rem;
+        li > a, li > strong, li > span {
+          font-size: 1rem !important;
           color: $color-level-1;
-          @include media-breakpoint-up(lg) {
-            font-size: 1.1rem;
-          }
           @include media-breakpoint-up(xl) {
-            font-size: 1.15rem;
+            font-size: 1.15rem !important;
           }
         }
-        > li{
+        > li {
           > a > span, > strong {
             padding: 8px 4px;
             border-bottom: 3px solid transparent;
           }
         }
-        > li.active, >li.trail, >li:hover{
+        > li.active, > li.trail, > li:hover {
           > a > span, > strong {
             border-bottom: 3px solid #d50000;
           }
@@ -132,7 +129,7 @@ $color-level-1: #d50000;
         // End speech bubble
 
         background-color: #fff;
-        a, strong {
+        a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 15px;
           @include transition(color);
@@ -146,8 +143,8 @@ $color-level-1: #d50000;
         }
         > li:hover {
           background-color: #d50000;
-          a, strong {
-            color: #ffffff;
+          a, strong,span {
+            color: #ffffff !important;
           }
         }
         > li:first-child {
@@ -155,7 +152,7 @@ $color-level-1: #d50000;
         }
       }
       ul.level_3 {
-        a, strong {
+        a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 14px;
 
@@ -170,7 +167,7 @@ $color-level-1: #d50000;
         }
       }
       ul.level_4 {
-        a, strong {
+        a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 11px;
 
