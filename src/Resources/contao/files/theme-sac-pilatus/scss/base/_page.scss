@@ -32,7 +32,7 @@ body {
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(sm) {
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(lg) {

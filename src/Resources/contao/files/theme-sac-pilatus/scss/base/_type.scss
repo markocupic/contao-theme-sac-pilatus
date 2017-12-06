@@ -3,16 +3,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
 
+h1, h2 {
+  font-weight: 700;
+}
 
 // Set headline
 $text-elements: (
         h1: (
                 sizes: (
-                        xs: 1.5rem,
-                        sm: 2.0rem,
-                        md: 2.25rem,
-                        lg: 2.25rem,
-                        xl: 2.25rem
+                        xs: 1.500rem,
+                        sm: 2.000rem,
+                        md: 2.250rem,
+                        lg: 2.250rem,
+                        xl: 2.500rem
                 ),
                 line-height: 1.55,
                 margin-top: 2rem,
@@ -20,11 +23,11 @@ $text-elements: (
         ),
         h2: (
                 sizes: (
-                        xs: 1.25rem,
+                        xs: 1.250rem,
                         sm: 1.625rem,
                         md: 1.750rem,
                         lg: 1.750rem,
-                        xl: 1.750rem
+                        xl: 2.000rem
                 ),
                 line-height: 1.5,
                 margin-top: 2rem,
@@ -36,7 +39,7 @@ $text-elements: (
                         sm: 1.375rem,
                         md: 1.500rem,
                         lg: 1.500rem,
-                        xl: 1.500rem
+                        xl: 1.750rem
                 ),
                 line-height: 1.25,
                 margin-top: 2rem,
@@ -44,11 +47,11 @@ $text-elements: (
         ),
         h4: (
                 sizes: (
-                        xs: 1.0rem,
+                        xs: 1.000rem,
                         sm: 1.125rem,
                         md: 1.250rem,
-                        lg: 1.250rem,
-                        xl: 1.250rem
+                        lg: 1.375rem,
+                        xl: 1.500rem
                 ),
                 line-height: 1,
                 margin-top: 1.5rem,
@@ -57,10 +60,10 @@ $text-elements: (
         h5: (
                 sizes: (
                         xs: 0.875rem,
-                        sm: 1rem,
-                        md: 1rem,
-                        lg: 1rem,
-                        xl: 1rem
+                        sm: 1.000rem,
+                        md: 1.125rem,
+                        lg: 1.250rem,
+                        xl: 1.375rem
                 ),
                 line-height: 1,
                 margin-top: 1.5rem,
@@ -70,9 +73,9 @@ $text-elements: (
                 sizes: (
                         xs: 0.75rem,
                         sm: 0.875rem,
-                        md: 0.875rem,
-                        lg: 0.875rem,
-                        xl: 0.875rem
+                        md: 1.000rem,
+                        lg: 1.125rem,
+                        xl: 1.250rem
                 ),
                 line-height: 1,
                 margin-top: 1.5rem,
@@ -92,8 +95,6 @@ $text-elements: (
                 font-weight: bold
         ),
 );
-
-
 
 // Scalling down headline font-size for mobile devices
 @each $key, $map in $text-elements {
@@ -143,13 +144,12 @@ $text-elements: (
 #main h1.ce_headline {
   text-align: left;
   color: #000;
-  font-weight: 500;
+  font-weight: 700;
 
   &:after {
     content: "";
     width: 100px;
     background: $accent-color;
-
     margin: 0 0 !important;
     font-weight: 300;
     margin-bottom: 1em;
@@ -167,11 +167,10 @@ $text-elements: (
     font-weight: 500;
     color: #000;
     margin: 0;
-    padding:0;
+    padding: 0;
     line-height: 1;
   }
 }
-
 
 // Lists
 ul {

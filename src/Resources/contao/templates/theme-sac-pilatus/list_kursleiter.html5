@@ -39,7 +39,7 @@
         </div>
         <div class="col-8">
           <div class="personal-info">
-            <h4 style="margin-top:0;"><a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>"><?= $objUser->name ?></a></h4>
+            <h5 style="margin-top:0;"><a href="{{link_url::leiter-portrait}}?username=<?= $objUser->username ?>"><?= $objUser->name ?></a></h5>
           </div>
           <div class="personal-info">
             <?php if($objUser->street != ''): ?><?= $objUser->street ?><?php endif; ?>
@@ -49,14 +49,16 @@
             <?php if($objUser->city != ''): ?><?= $objUser->city ?><?php endif; ?>
           </div>
           <div class="personal-info">
-            <?php if($objUser->email != ''): ?>{{email::<?= $objUser->email ?>}}<?php endif; ?>
+            <?php if($objUser->email != ''): ?><a href="{{email_url::<?= $objUser->email ?>}}" class="email">E-Mail senden</a><?php endif; ?>
           </div>
+            <!--
           <div class="personal-info">
             <?php if($objUser->phone != ''): ?><?= $objUser->phone ?><?php endif; ?>
           </div>
           <div class="personal-info">
             <?php if($objUser->mobile != ''): ?><?= $objUser->mobile ?><?php endif; ?>
           </div>
+          -->
         </div>
       </div>
 
