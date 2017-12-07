@@ -142,7 +142,7 @@ $color-level-1: #222;
           @include transition(background-color);
         }
         > li:hover {
-          background-color: #d50000;
+          background-color: #4682b4;
           a, strong,span {
             color: #ffffff !important;
           }
