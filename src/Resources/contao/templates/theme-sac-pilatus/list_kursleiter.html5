@@ -49,7 +49,7 @@
             <?php if($objUser->city != ''): ?><?= $objUser->city ?><?php endif; ?>
           </div>
           <div class="personal-info">
-            <?php if($objUser->email != ''): ?><a href="{{email_url::<?= $objUser->email ?>}}" class="email">E-Mail senden</a><?php endif; ?>
+            <?php if($objUser->email != ''): ?><a href="mailto:{{email_url::<?= $objUser->email ?>}}" class="email">E-Mail senden</a><?php endif; ?>
           </div>
             <!--
           <div class="personal-info">
