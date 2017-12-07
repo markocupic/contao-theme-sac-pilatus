@@ -16,7 +16,7 @@
     <?php $userId = $row['id']['id']; ?>
     <?php $objUser = \UserModel::findByPk($userId); ?>
     <?php if($objUser === null) continue; ?>
-    <?php if(!isInGroup($objUser->id, SACP_GRUPPE_KURSLEITER)) continue; ?>
+    <?php if(!isInGroup($objUser->id, SAC_EVT_GRUPPE_KURSLEITER)) continue; ?>
 
     <?php $objImageSRC = 'files/user-verzeichnisse/' . $objUser->username . '/avatar/default.jpg'; ?>
     <?php $objFile = new \File($objImageSRC); ?>
