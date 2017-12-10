@@ -35,6 +35,10 @@
 
 // Loading icon
 .mod_eventToolCalendarEventlist {
+  span.last-minute-tour{
+    color: $green;
+    font-size: $font-size-sm;
+  }
   .loading-icon-lg {
     .fa {
       color: red;
@@ -120,6 +124,13 @@
 }
 
 .event-detailview {
+
+  .ce_headline.last-minute-tour {
+    color: $green;
+    text-transform: inherit;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+  }
   .flex-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -151,10 +162,9 @@
     }
   }
 
-
-
-
 }
+
+
 
 .course-registration-form {
   .widget {
