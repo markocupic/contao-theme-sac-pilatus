@@ -23,7 +23,7 @@
 }
 
 .ce_hyperlink a:before {
-  font-family: "FontAwesome";
+  font-family: $icon-font-name;
   content: "\f019";
   margin-right: 5px;
 }
@@ -93,27 +93,29 @@
     }
 
   }
-  .fa {
+  .event-state-icon {
     font-family: $icon-font-name;
     margin-right: 6px;
+    font-style: normal;
+    font-weight: 900;
   }
-  .fa.event_status_1:before {
+  .event-state-icon.event_status_1:before {
     content: "\f111";
     color: green;
   }
-  .fa.event_status_2:before {
-    content: "\f28e";
+  .event-state-icon.event_status_2:before {
+    content: "\f28d";
     color: red;
   }
-  .fa.event_status_3:before {
+  .event-state-icon.event_status_3:before {
     content: "\f111";
     color: red;
   }
-  .fa.event_status_4:before {
+  .event-state-icon.event_status_4:before {
     content: "\f05e";
     color: red;
   }
-  .fa.event_status_5:before {
+  .event-state-icon.event_status_5:before {
     content: "\f111";
     color: orange;
   }

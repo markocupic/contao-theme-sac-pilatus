@@ -29,10 +29,10 @@
         </div>
         <div id="socialIcons">
             <ul class="d-flex justify-content-center">
-                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
             </ul>
         </div>
     </div>

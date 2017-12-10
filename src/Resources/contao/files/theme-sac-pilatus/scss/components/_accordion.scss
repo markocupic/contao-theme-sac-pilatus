@@ -23,13 +23,13 @@
     color: #000;
     // for open accordions
     .ui-icon-triangle-1-s::before {
-      font-family: FontAwesome;
+      font-family: $icon-font-name;
       content: "\f078";
       padding-right: 20px;
     }
     // for closed accordions
     .ui-icon-triangle-1-e::before {
-      font-family: FontAwesome;
+      font-family: $icon-font-name;
       content: "\f054";
       padding-right: 20px;
     }

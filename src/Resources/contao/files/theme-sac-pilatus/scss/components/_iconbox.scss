@@ -2,7 +2,7 @@
   padding: 0 0 0 30px;
   position: relative;
   &:before {
-    font-family: FontAwesome;
+    font-family: $icon-font-name;
     content: "\f00c";
     color: red;
     position: absolute;

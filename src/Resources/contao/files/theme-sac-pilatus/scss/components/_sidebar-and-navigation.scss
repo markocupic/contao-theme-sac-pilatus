@@ -12,8 +12,8 @@ $nav-bg-color: #fff;
 #sidebar {
   .navigation-toggler {
     background: transparent;
-    .fa {
-      font-size: 2rem;
+    .btn {
+      font-size: 1.75rem;
       color: $nav-font-color;
     }
     border: 0;
@@ -174,7 +174,7 @@ body.sidebar-open {
   ul.level_1 {
 
     > li:before {
-      font-family: FontAwesome;
+      font-family: $icon-font-name;
       position: absolute;
       top: 0;
       left: 16px;
@@ -258,7 +258,7 @@ body.sidebar-open {
       }
 
       > .toggle-submenu:before {
-        font-family: FontAwesome;
+        font-family: $icon-font-name;
         color: $nav-font-color;
         content: "\f067";
         font-size: 12px;

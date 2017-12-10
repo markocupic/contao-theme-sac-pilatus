@@ -42,7 +42,7 @@
             <!-- End Searchbar toggler -->
 
             <!-- Navbar toggler mobile -->
-            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ml-2" role="button" aria-label="Navigation"><i class="fa fa-navicon" title="Navigation öffnen"></i></button>
+            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ml-2" role="button" aria-label="Navigation"><i class="fa fa-bars" title="Navigation öffnen"></i></button>
             <!-- End Navbar toggler mobile -->
 
         </div>

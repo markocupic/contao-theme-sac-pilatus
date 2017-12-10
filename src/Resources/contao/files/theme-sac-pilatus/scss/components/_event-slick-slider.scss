@@ -38,7 +38,7 @@ button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
 }
 
 button.slick-next.slick-arrow:before {
-  font-family: FontAwesome;
+  font-family: $icon-font-name;
   content: "\f054";
   border: 1px solid white;
   padding: 8px 12px;
@@ -48,7 +48,7 @@ button.slick-next.slick-arrow:before {
 }
 
 button.slick-prev.slick-arrow:before {
-  font-family: FontAwesome;
+  font-family: $icon-font-name;
   content: "\f053";
   border: 1px solid white;
   padding: 8px 12px;

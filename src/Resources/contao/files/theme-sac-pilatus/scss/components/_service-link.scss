@@ -1,6 +1,6 @@
 .ce_serviceLink {
 
-  .fa {
+  [class*="fa-"] {
     padding: 27px 25px;
     width: 100px;
     height: 100px;
@@ -13,7 +13,7 @@
     font-size: 40px;
     &:hover {
       cursor: pointer;
-      color: #004466;
+      color: steelblue;
     }
   }
   .service-link-wrapper {
