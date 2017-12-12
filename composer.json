@@ -27,7 +27,7 @@
     "markocupic/custom-section": ">=0.0.6",
     "markocupic/preloader-overlay": ">=0.0.2",
     "markocupic/sidebar-navigation": ">=0.0.1",
-    "markocupic/service_link": ">=0.0.3",
+    "markocupic/service-link-bundle": ">=0.0.1",
     "markocupic/heroimage": ">=1.0.0",
     "markocupic/bootstrap_responsive_youtube_embed": ">=1.0.0",
     "menatwork/contao-multicolumnwizard": "~3.3"
