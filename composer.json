@@ -40,6 +40,7 @@
     ]
   },
   "extra": {
+    "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
     "contao": {
       "sources": {
         "src/Resources/contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
