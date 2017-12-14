@@ -51,7 +51,7 @@
 
     <div class="header-navbar-row-2">
         <div class="mod_search container d-flex align-items-center pl-3 pr-3 pt-5 pb-5 p-lg-5">
-            <form action="{{url_link::suche}}" method="get" style="width:90% !important">
+            <form action="{{link_url::suche}}" method="get" style="width:90% !important">
                 <input type="hidden" name="id" value="332">
                 <div class="search-formbody-header input-group">
                     <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Bitte gib hier Deine Suchbegriffe ein ..." aria-label="Suchformular">
