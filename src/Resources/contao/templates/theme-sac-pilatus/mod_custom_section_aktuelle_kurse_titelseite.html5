@@ -5,7 +5,7 @@
     <?php $animDelay += 0.05; ?>
     <div class="row">
         <div class="col-3">
-            <a class="responsive wow fadeIn" data-wow-offset="15" data-wow-delay="<?= $animDelay ?>s" data-wow-duration="0.8s" href="kurs-detail/<?= $objEvents->id ?>">
+            <a class="responsive wow fadeIn" data-wow-offset="15" data-wow-delay="<?= $animDelay ?>s" data-wow-duration="0.8s" href="{{event_url::<?= $objEvents->id ?>}}" title="{{event_url::<?= $objEvents->id ?>}}">
                 {{picture::<?= Markocupic\SacEventToolBundle\CalendarSacEvents::getEventImagePath($objEvents->id) ?>?size=21&alt=<?= $objEvents->title ?>}}
             </a>
         {{br}}{{br}}
@@ -14,7 +14,7 @@
             <time><?= Markocupic\SacEventToolBundle\CalendarSacEvents::getEventPeriod($objEvents->id) ?></time>
             <div>
               <h5 class="mt-1">
-                <a href="kurs-detail/<?= $objEvents->id ?>" title="Details">
+                <a href="{{event_url::<?= $objEvents->id ?>}}" title="{{event_title::<?= $objEvents->id ?>}}">
                   <?= $objEvents->title ?>
                 </a>
               </h5>
