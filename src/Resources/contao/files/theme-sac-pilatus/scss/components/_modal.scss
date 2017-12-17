@@ -1,0 +1,15 @@
+.modal-dialog{
+  .modal-header{
+    background-color: steelblue;
+    .modal-title{
+      color: white;
+    }
+    .close{
+      color:white;
+    }
+  }
+  .error{
+    font-size: 1rem;
+    color: red;
+  }
+}
