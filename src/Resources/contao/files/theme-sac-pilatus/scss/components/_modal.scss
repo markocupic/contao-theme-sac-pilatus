@@ -1,14 +1,17 @@
-.modal-dialog{
-  .modal-header{
+.modal-dialog {
+  .modal-header {
     background-color: steelblue;
-    .modal-title{
+    .modal-title {
       color: white;
     }
-    .close{
-      color:white;
+    .close {
+      color: white;
     }
   }
-  .error{
+  .modal-body {
+    font-weight: bold;
+  }
+  .error {
     font-size: 1rem;
     color: red;
   }
