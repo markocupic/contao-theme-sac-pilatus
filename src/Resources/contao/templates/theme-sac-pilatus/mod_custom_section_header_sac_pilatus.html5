@@ -14,7 +14,7 @@
             <?php endif; ?>
             <?php if(!FE_USER_LOGGED_IN): ?>
 
-            <a href="{{link_url::member-login}}" class="header-login-button ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span>&nbsp;Anmelden</span></a>
+            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Anmelden"><i class="fa fa-sign-in"></i><span>&nbsp;Anmelden</span></a>
             <?php endif; ?>
 
             <?php if(FE_USER_LOGGED_IN): ?>
@@ -81,10 +81,6 @@
             <div class="modal-body">
                 {{insert_module::290}}
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-            </div>
         </div>
     </div>
 </div>
@@ -96,7 +92,7 @@
         "use strict";
 
         $(document).ready(function () {
-            $('.header-login-button').click(function(e){
+            $('.trigger-login-modal').click(function(e){
                 e.preventDefault();
                 e.stopPropagation();
                 $('#loginModal').modal('show');
