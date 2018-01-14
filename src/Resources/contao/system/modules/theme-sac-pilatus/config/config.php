@@ -11,10 +11,10 @@ if (TL_MODE == 'FE')
     //$GLOBALS['TL_JAVASCRIPT'][] = "https://code.jquery.com/jquery-1.12.4.min.js";
 
     // Popper.js must be loaded before bootstrap.js
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js";
 
     // Bootstrap.js
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
 
     // Icheck
     $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js";
