@@ -9,7 +9,7 @@
     @include column-count(3);
   }
   @include media-breakpoint-only(xl) {
-    @include column-count(3);
+    @include column-count(4);
   }
   .card-date
   {

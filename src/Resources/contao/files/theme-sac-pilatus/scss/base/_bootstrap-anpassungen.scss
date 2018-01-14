@@ -43,6 +43,14 @@
   border-left-width: 4px;
 }
 
+.bg-light {
+  background-color: #eff0f1 !important;
+}
+
+a.bg-light:focus, a.bg-light:hover {
+  background-color: #d6dce1 !important;
+}
+
 
 
 

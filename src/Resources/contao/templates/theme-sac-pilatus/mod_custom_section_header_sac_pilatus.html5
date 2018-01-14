@@ -81,6 +81,9 @@
             <div class="modal-body">
                 {{insert_module::290}}
             </div>
+            <div class="modal-footer">
+                <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}</a>
+            </div>
         </div>
     </div>
 </div>
