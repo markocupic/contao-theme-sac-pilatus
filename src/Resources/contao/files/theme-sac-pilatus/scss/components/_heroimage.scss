@@ -1,0 +1,23 @@
+.ce_heroimage {
+
+  display: flex;
+  align-items: center;
+
+  min-height: 400px;
+
+  @include media-breakpoint-up(xs) {
+    min-height: 430px;
+  }
+  @include media-breakpoint-up(sm) {
+    min-height: 460px;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 490px;
+  }
+  @include media-breakpoint-up(lg) {
+    min-height: 520px;
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 550px;
+  }
+}

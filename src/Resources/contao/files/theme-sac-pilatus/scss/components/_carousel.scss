@@ -4,24 +4,30 @@
 .carousel-item-prev {
   display: block;
 }
-.carousel-item{
-  .img-fluid{
+
+.carousel-item {
+  .img-fluid {
     width: 100%;
   }
 }
-
 
 .carousel-control-prev {
   justify-content: flex-start;
   opacity: 1;
 }
+
 .carousel-control-next {
   justify-content: flex-end;
   opacity: 1;
-
 }
 
-.carousel-control-next,.carousel-control-prev {
+@include media-breakpoint-down(sm) {
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
+  }
+}
+
+.carousel-control-next, .carousel-control-prev {
   &:hover {
     opacity: 1;
     .carousel-control-prev-icon, .carousel-control-next-icon {

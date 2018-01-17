@@ -13,7 +13,15 @@
 
 
 #container {
-
+  margin-top: 116px;
+  @include media-breakpoint-up(xs) {  }
+  @include media-breakpoint-up(sm) {  }
+  @include media-breakpoint-up(md) { margin-top: 116px; }
+  @include media-breakpoint-up(lg) {     margin-top: 116px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 136px;
+      }
   #main {
     min-height: 600px;
     background-color: #ffffff;
