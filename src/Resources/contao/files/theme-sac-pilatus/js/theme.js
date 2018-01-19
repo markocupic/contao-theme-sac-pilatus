@@ -4,7 +4,7 @@
         var elem = document.querySelector(".header-navbar");
         var headroom = new Headroom(elem, {
             tolerance: 5,
-            offset : 205,
+            offset: 205,
             classes: {
                 initial: "animated",
                 pinned: "slideDown",
@@ -14,6 +14,21 @@
         headroom.init();
     });
 })(jQuery);
+
+
+(function ($) {
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $('a[href^="#"]').on('click', function (e) {
+            var href = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(href).offset().top
+            },3000);
+            e.preventDefault();
+        });
+    });
+})(jQuery);
+
 
 
 // Load resources

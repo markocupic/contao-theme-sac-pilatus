@@ -21,12 +21,6 @@
   opacity: 1;
 }
 
-@include media-breakpoint-down(sm) {
-  .carousel-control-prev, .carousel-control-next {
-    display: none;
-  }
-}
-
 .carousel-control-next, .carousel-control-prev {
   &:hover {
     opacity: 1;
@@ -46,4 +40,183 @@
   padding: 15px;
 }
 
+.ce_sliderStart {
+
+  .content-slider {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+
+    .slider-control {
+      position: absolute !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      height: auto !important;
+
+      .carousel-control-prev.slider-prev {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        width: 15%;
+        display: flex;
+        //justify-content: flex-start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: flex-start;
+        width: 15%;
+        color: #fff;
+        text-align: left;
+
+      }
+      .carousel-control-next.slider-next {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        width: 15%;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: flex-end;
+        width: 15%;
+        color: #fff;
+        text-align: right;
+
+      }
+      @include media-breakpoint-down(sm) {
+        .carousel-control-next.slider-next, .carousel-control-prev.slider-prev {
+          display: none;
+        }
+      }
+
+      .slider-menu {
+        position: absolute !important;
+        top: auto !important;
+        bottom: 20px !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 15;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        padding: 0;
+        margin-right: 15%;
+        margin-left: 15%;
+        width: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 0;
+        text-align: center;
+      }
+
+      .slider-menu b {
+
+        color: transparent !important;
+        width: 30px;
+        border-top: 4px solid rgba(204, 204, 204, 0.8);
+        margin: 0 3px;
+        &.active {
+          border-top: 4px solid rgba(255, 255, 255, 1);
+        }
+      }
+
+    }
+  }
+
+}
+
+
+// Slick slider
+.slick-container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+
+  .slider-control-prev {
+    justify-content: flex-start;
+    text-align: left;
+    left: 0;
+  }
+  .slider-control-next {
+    justify-content: flex-end;
+    text-align: right;
+    right: 0;
+  }
+  // slider-control-prev && slider-control-next
+  [class*="slider-control-"] {
+    top: 0;
+    bottom: 0;
+    width: 15% !important;
+    position: absolute;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    z-index: 10;
+    [class*="slick-"] {
+      z-index: 11;
+      width: 60px;
+      background-color: #fff;
+      padding: 10px;
+      [class*="fa-"] {
+        font-size: 30px;
+        color: #5b5b5b;
+      }
+    }
+  }
+  [class*="slider-control-"]:hover {
+    [class*="slick-"] {
+      background-color: #dedede;
+      [class*="fa-"] {
+        color: #4b4b4b;
+      }
+    }
+  }
+  // Hide arrows on mobile devices
+  @include media-breakpoint-down(sm) {
+    [class*="slider-control-"] {
+      display: none !important;
+    }
+  }
+
+  .slick-dots {
+    margin: 0 !important;
+    bottom: 20px;
+    position: absolute;
+    display: flex;
+    li {
+      color: transparent !important;
+      background-color: transparent;
+      border-top: 4px solid #c7c7c7;
+      margin: 0 3px;
+      width: 30px;
+      button {
+        display: none;
+      }
+    }
+    li.slick-active {
+      border-top: 4px solid #fff;
+    }
+  }
+
+}
 
