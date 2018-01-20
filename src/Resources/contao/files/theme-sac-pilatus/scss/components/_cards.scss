@@ -31,4 +31,10 @@
   .caption{
     display:none;
   }
+  figure{
+    max-width: 100% !important;
+  }
+  img{
+    @extend .img-fluid;
+  }
 }
