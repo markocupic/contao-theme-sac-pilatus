@@ -171,9 +171,9 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     align-items: center;
-    z-index: 10;
+    z-index: 1;
     [class*="slick-"] {
-      z-index: 11;
+      z-index: 2;
       width: 60px;
       background-color: #fff;
       padding: 10px;
