@@ -365,7 +365,9 @@ body.sidebar-open {
   }
 
   // Show active submenus
-  ul.level_1 li.trail > ul {
+  ul.level_1 li.trail > ul,
+  ul.level_1 li.active.submenu > ul
+  {
     display: block;
   }
 
