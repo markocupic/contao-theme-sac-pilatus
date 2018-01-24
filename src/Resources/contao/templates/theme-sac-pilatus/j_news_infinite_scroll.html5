@@ -1,6 +1,10 @@
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
     (function ($) {
         $(document).ready(function () {
+
+            // Global grid container element
+            var $grid = $('.mod_newslist_infinite_scroll');
 
             /**
              * Generate the ContaoNewsInfiniteScroll object
@@ -18,9 +22,9 @@
                 loadAllOnDomready: false,
                 // Use a "load more button" (Preserve the accessibility of the footer)
                 // !!!! Important Set loadMoreButton to false, if you want to autoload items
-                loadMoreButton: false,
+                loadMoreButton: true,
                 // Load more button
-                loadMoreButtonMarkup: '<div class="inf-scr-load-more-btn-container text-center"><button class="btn btn-primary w-100"><?= $GLOBALS["TL_LANG"]["MSC"]["infScrLoadMore"] ?></button></div>',
+                loadMoreButtonMarkup: '<div class="mt-2 inf-scr-load-more-btn-container text-center"><button class="btn btn-primary w-100"><?= $GLOBALS["TL_LANG"]["MSC"]["infScrLoadMore"] ?></button></div>',
                 // CSS selector: When you scroll and the window has reached the anchor point, requests will start
                 anchorPoint: '.mod_newslist_infinite_scroll',
                 // Distance in px from the top of the anchorPoint
@@ -38,10 +42,28 @@
                  * @return bool
                  */
                 onInitialize: function (instance) {
-                    //$('.mod_portfoliolist').addClass('row');
-                    //$('.mod_portfoliolist  > div').addClass('col-md-3');
+
+                    // Add empty grid-sizer element
+                    $('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
+
                     $('.mod_newslist_infinite_scroll .pagination').parent('').children().hide();
                     $('.mod_newslist_infinite_scroll .pagination').hide();
+
+
+                    var i = 0;
+                    $('.mod_newslist_infinite_scroll .card').each(function (el) {
+                        i++;
+                        $('<span class="item-number">#' + i + '</span>').prependTo($(this));
+                        $(this).closest('.news_card').addClass('added-to-masonry-grid');
+                    });
+
+                    $grid.masonry({
+                        horizontalOrder: true,
+                        itemSelector: '.news_card',
+                        columnWidth: '.grid-sizer',
+                        percentPosition: true
+                    });
+
                     // Return false to abort initialization
                     return true;
                 },
@@ -78,7 +100,21 @@
                  * @param instance
                  */
                 onAppendCallback: function (instance) {
-                    // Do some actions
+
+                    var i = 0;
+                    $('.mod_newslist_infinite_scroll .card .item-number').remove();
+                    $('.mod_newslist_infinite_scroll .card').each(function (el) {
+                        i++;
+                        $('<span class="item-number">#' + i + '</span>').prependTo($(this));
+                    });
+
+                    // Find new elements
+                    var $newElements = $('.mod_newslist_infinite_scroll .news_card:not(.added-to-masonry-grid)');
+
+                    // Append new elements to the masonry grid
+                    $grid.append($newElements).masonry('appended', $newElements);
+                    $('.mod_newslist_infinite_scroll .news_card').addClass('added-to-masonry-grid');
+
                 }
             });
         });
