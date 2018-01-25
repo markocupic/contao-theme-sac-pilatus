@@ -53,7 +53,7 @@
                     var i = 0;
                     $('.mod_newslist_infinite_scroll .card').each(function (el) {
                         i++;
-                        $('<span class="item-number">#' + i + '</span>').prependTo($(this));
+                        //$('<span class="item-number">#' + i + '</span>').prependTo($(this));
                         $(this).closest('.news_card').addClass('added-to-masonry-grid');
                     });
 
@@ -105,7 +105,7 @@
                     $('.mod_newslist_infinite_scroll .card .item-number').remove();
                     $('.mod_newslist_infinite_scroll .card').each(function (el) {
                         i++;
-                        $('<span class="item-number">#' + i + '</span>').prependTo($(this));
+                        //$('<span class="item-number">#' + i + '</span>').prependTo($(this));
                     });
 
                     // Find new elements

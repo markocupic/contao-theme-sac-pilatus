@@ -1,0 +1,31 @@
+<?php $i=0; ?>
+<?php $limit = 8; ?>
+<?php $objEvent = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND eventType=? ORDER BY startDate')->limit(8)->execute('1', time(), 'tour'); ?>
+<?php while($objEvent->next()): ?>
+
+<?php if(Markocupic\SacEventToolBundle\CalendarSacEvents::isEventBookable($objEvent->id) === false) continue; ?>
+
+<?php $eventState = Markocupic\SacEventToolBundle\CalendarSacEvents::getEventState($objEvent->id); ?>
+<?php $eventStateLabel = $GLOBALS['TL_LANG']['CTE']['calendar_events'][$eventState]; ?>
+
+<?php $arrTourTypes = \StringUtil::deserialize($objEvent->tourType,true); ?>
+<?php if($i == $limit) continue; ?>
+<?php $i++; ?>
+
+<div class="row mb-3">
+    <div class="col-2 col-sm-1">
+        <?= Markocupic\SacEventToolBundle\CalendarSacEvents::getBookingCounter($objEvent->id) ?>
+    </div>
+    <div class="col-3 col-sm-3">
+        <?= \Date::parse('d.m.Y', $objEvent->startDate) ?>
+    </div>
+    <div class="col-5 col-sm-6">
+        <?php if($objEvent->eventType === 'lastMinuteTour'): ?><span class="last-minute-tour small"><i class="fa fa-clock"></i> LAST MINUTE TOUR</span><br><?php endif; ?>
+        <i class="event-state-icon fa-fw <?= $eventState ?>" aria-label="<?= htmlspecialchars($eventStateLabel) ?>" title="<?= $eventStateLabel ?>"></i>
+        <a href="{{event_url::<?php echo $objEvent->id; ?>}}">{{event_title::<?= $objEvent->id ?>}}</a>
+    </div>
+    <div class="col-2 col-sm-2">
+        <?= implode(', ', Markocupic\SacEventToolBundle\CalendarSacEvents::getTourTypesAsArray($objEvent->id, 'shortcut')) ?>
+    </div>
+</div>
+<?php endwhile; ?>
