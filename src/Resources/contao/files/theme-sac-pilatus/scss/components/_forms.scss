@@ -72,9 +72,10 @@ button:hover * {
       }
       input {
         margin-right: .75rem;
+        background-color: blue;
       }
       label {
-        max-width: 90%;
+        //max-width: 90%;
       }
     }
     .checkbox_container, .radio_container, .submit_container {
