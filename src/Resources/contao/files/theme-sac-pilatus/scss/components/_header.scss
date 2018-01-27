@@ -88,14 +88,6 @@
   }
 
   .header-row-3 {
-    // Set a top margin becaus there is a fixed header
-    margin-top: 117px;
-    @include media-breakpoint-up(lg) {
-      margin-top: 127px;
-    }
-    @include media-breakpoint-up(xl) {
-      margin-top: 128px;
-    }
     .header-banner-image {
       img {
         width: 100% !important;
@@ -108,122 +100,18 @@ body.search-bar-open #header .header-navbar-row-2 {
   max-height: 300px; /* approximate max height */
 }
 
-.header-navbar {
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  left: 0;
-  top: 0
-}
 
-.headroom {
-  transition: transform .5s ease-in-out;
-  will-change: transform
-}
-
-.headroom--pinned {
-  transform: translateY(0)
-}
-
-.headroom--unpinned {
-  transform: translateY(-100%)
-}
-
-.animated {
-  -webkit-animation-duration: .7s;
-  -moz-animation-duration: .7s;
-  -o-animation-duration: .7s;
-  animation-duration: .7s;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
-  will-change: transform, opacity
-}
-
-@-webkit-keyframes slideDown {
-  0% {
-    -webkit-transform: translateY(-100%)
+@include media-breakpoint-up(lg) {
+  .header-navbar {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0
   }
-  100% {
-    -webkit-transform: translateY(0)
+  .header-row-3 {
+    margin-top: 128px;
   }
 }
 
-@-moz-keyframes slideDown {
-  0% {
-    -moz-transform: translateY(-100%)
-  }
-  100% {
-    -moz-transform: translateY(0)
-  }
-}
-
-@-o-keyframes slideDown {
-  0% {
-    -o-transform: translateY(-100%)
-  }
-  100% {
-    -o-transform: translateY(0)
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%)
-  }
-  100% {
-    transform: translateY(0)
-  }
-}
-
-.animated.slideDown {
-  -webkit-animation-name: slideDown;
-  -moz-animation-name: slideDown;
-  -o-animation-name: slideDown;
-  animation-name: slideDown
-}
-
-@-webkit-keyframes slideUp {
-  0% {
-    -webkit-transform: translateY(0)
-  }
-  100% {
-    -webkit-transform: translateY(-100%)
-  }
-}
-
-@-moz-keyframes slideUp {
-  0% {
-    -moz-transform: translateY(0)
-  }
-  100% {
-    -moz-transform: translateY(-100%)
-  }
-}
-
-@-o-keyframes slideUp {
-  0% {
-    -o-transform: translateY(0)
-  }
-  100% {
-    -o-transform: translateY(-100%)
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(0)
-  }
-  100% {
-    transform: translateY(-100%)
-  }
-}
-
-.animated.slideUp {
-  -webkit-animation-name: slideUp;
-  -moz-animation-name: slideUp;
-  -o-animation-name: slideUp;
-  animation-name: slideUp
-}
 

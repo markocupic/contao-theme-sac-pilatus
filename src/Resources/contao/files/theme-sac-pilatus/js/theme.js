@@ -1,22 +1,4 @@
-(function ($) {
-    $(document).ready(function () {
-        // grab an element
-        var elem = document.querySelector(".header-navbar");
-        var headroom = new Headroom(elem, {
-            tolerance: 5,
-            offset: 205,
-            classes: {
-                initial: "animated",
-                pinned: "slideDown",
-                unpinned: "slideUp"
-            }
-        });
-        headroom.init();
-    });
-})(jQuery);
-
-
-(function ($) {
+(function ($) { 
     $(document).ready(function () {
         // Add smooth scrolling to all links
         $('a[href^="#"]').on('click', function (e) {
