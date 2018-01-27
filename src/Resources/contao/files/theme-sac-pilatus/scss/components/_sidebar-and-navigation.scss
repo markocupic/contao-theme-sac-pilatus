@@ -1,5 +1,5 @@
 $sidebar-bg-color: #000000;
-$nav-bg-hover-color: #4682b4;
+$nav-bg-hover-color: $blue;
 $nav-close-btn-color: #ccc;
 //$nav-bg-hover-color: $accent-color;
 
@@ -313,6 +313,9 @@ body.sidebar-open {
       padding: 0;
       line-height: 34px;
       background-color: transparent;
+      &:hover{
+        background-color: #fff;
+      }
       > .toggle-submenu {
         right: 0;
       }
@@ -331,6 +334,9 @@ body.sidebar-open {
       padding: 0;
       line-height: 30px;
       background-color: transparent;
+      &:hover{
+        background-color: #fff;
+      }
       > .toggle-submenu {
         right: 0;
       }
@@ -349,6 +355,9 @@ body.sidebar-open {
       padding: 0;
       line-height: 28px;
       background-color: transparent;
+      &:hover{
+        background-color: #fff;
+      }
       > .toggle-submenu {
         right: 0;
       }

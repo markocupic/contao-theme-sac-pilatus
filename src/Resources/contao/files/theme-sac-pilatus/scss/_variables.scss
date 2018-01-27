@@ -8,15 +8,14 @@ $icon-font-name: "Font Awesome 5 Pro";
 // Border radius
 $enable-rounded: true;
 
-// Colors see http://www.colorcombos.com/color-schemes/168/ColorCombo168.html
-//$orange: #FF9E00;
-//$yellow: #F7D708;
+
 $red: #d50000;
-$blue: #01579b;
-//$green: #9CCF31;
+// Luzern Corporate Design
+$blue: #0082C7;
+
 
 $accent-color: $red;
-$accent-color-2: steelblue;
+$accent-color-2: $blue;
 
 $link-color: #0f6bbb;
 
@@ -45,3 +44,4 @@ $border-radius:0;
 $border-radius-lg:0;
 $border-radius-sm:0;
 
+$grid-gutter-width: 15px;

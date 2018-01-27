@@ -143,6 +143,7 @@ $color-level-1: #222;
         }
         > li:hover {
           background-color: #4682b4;
+          background-color: $blue;
           a, strong,span {
             color: #ffffff !important;
           }
