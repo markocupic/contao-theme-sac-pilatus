@@ -1,4 +1,4 @@
-(function ($) { 
+(function ($) {
     $(document).ready(function () {
         // Add smooth scrolling to all links
         $('a[href^="#"]').on('click', function (e) {
