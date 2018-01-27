@@ -7,7 +7,7 @@
 
 
 
-<div class="row">
+<div class="row tiny-gutter">
     <?php $animDelay = 0; ?>
     <?php foreach ($this->tbody as $class=>$row): ?>
     <?php $animDelay += 0.05; ?>

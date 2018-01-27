@@ -1,5 +1,5 @@
 
-<ul class="row cols_<?= $this->perRow ?>">
+<ul class="row tiny-gutter cols_<?= $this->perRow ?>">
   <?php $animationDelay = 0.5; ?>
 
   <?php foreach ($this->body as $class=>$row): ?>
