@@ -1,4 +1,5 @@
 #footer {
+  $footer-bg-color: #122;
    font-size: $font-size-base;
   .footer-nav{
     margin-top: 1rem;
@@ -22,7 +23,7 @@
   }
 
   .footer-row-1 {
-    background-color: #000;
+    background-color: $footer-bg-color;
     color: $gray-100;
     border-top: 1px solid darken($gray-300, 4);
     a {
@@ -37,7 +38,7 @@
   }
 
   .footer-row-2 {
-    background-color: #000;
+    background-color: $footer-bg-color;
     color: #8b889b !important;
     a {
       color: #8b889b !important;

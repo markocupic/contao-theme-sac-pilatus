@@ -11,30 +11,34 @@
   @include media-breakpoint-only(xl) {
     @include column-count(4);
   }
-  .card-date
-  {
+  .card-date {
     color: $gray-500;
   }
-  .card-title
-  {
-    color: #d50000;
+  a > .card-title .card-title {
+    color: #d50000 !important;
     line-height: 1.4;
   }
-  .card{
+  .card {
     position: inherit;
   }
 }
 
-
 .card {
   margin-bottom: 15px;
-  .caption{
-    display:none;
+  .caption {
+    display: none;
   }
-  figure{
+  figure {
     max-width: 100% !important;
   }
-  img{
+  img {
     @extend .img-fluid;
+  }
+  .card-body {
+    a, .card-title {
+      color: #d50000 !important;
+      line-height: 1.4;
+      text-decoration-color: $red;
+    }
   }
 }

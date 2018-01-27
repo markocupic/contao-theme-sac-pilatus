@@ -1,16 +1,11 @@
+// Equal height for cards
 (function ($) {
     $(document).ready(function () {
-        // Add smooth scrolling to all links
-        $('a[href^="#"]').on('click', function (e) {
-            var href = $(this).attr('href');
-            $('html, body').animate({
-                scrollTop: $(href).offset().top
-            },3000);
-            e.preventDefault();
+        $(window).on("load resize orientationchange", function() {
+            equalheight('.equal-height .card');
         });
     });
 })(jQuery);
-
 
 
 // Load resources
@@ -22,20 +17,13 @@
 })(jQuery);
 
 
-// Tether tooltips
+// Popper tooltips
 (function ($) {
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
 })(jQuery);
 
-
-/** Sticky footer **/
-(function ($) {
-    $().ready(function () {
-        //$($("#footer").detach()).appendTo("body");
-    });
-})(jQuery);
 
 /** Close and open the searchbar in the header **/
 (function ($) {
@@ -57,7 +45,7 @@
     });
 })(jQuery);
 
-
+/** Header navigation **/
 (function ($) {
     $().ready(function () {
         function setDropdownOffset() {

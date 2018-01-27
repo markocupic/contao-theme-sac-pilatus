@@ -22,7 +22,7 @@ $color-level-1: #222;
           font-size: 1rem !important;
           color: $color-level-1;
           @include media-breakpoint-up(xl) {
-            font-size: 1.15rem !important;
+            //font-size: 1.15rem !important;
           }
         }
         > li {
@@ -101,6 +101,9 @@ $color-level-1: #222;
       }
 
       ul.level_2.dropdown-menu {
+        li .active {
+          color: $red !important;
+        }
         width: 400px;
         //speech bubble effect http://ilikepixels.co.uk/drop/bubbler/
         &:after {
@@ -132,6 +135,7 @@ $color-level-1: #222;
         a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 15px;
+          font-weight:normal;
           @include transition(color);
 
         }
@@ -156,7 +160,7 @@ $color-level-1: #222;
         a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 14px;
-
+          font-weight:normal;
         }
         > li {
           line-height: 2.5;

@@ -28,8 +28,8 @@ figure{
       @extend .col-12;
       @extend .col-sm-4;
       @extend .col-md-3;
-      margin-top: 7.5px;
-      margin-bottom: 7.5px;
+      margin-top: $grid-gutter-width/4;
+      margin-bottom: $grid-gutter-width/4;
     }
   }
   .row {
