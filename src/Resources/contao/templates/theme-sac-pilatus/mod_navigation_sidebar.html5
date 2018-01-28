@@ -1,6 +1,6 @@
 <?php // Own Stylesheet ?>
 <?php // $GLOBALS['TL_CSS'][] = 'system/modules/sidebar_navigation/assets/css/sidebar_navigation.css|static'; ?>
-<?php // $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sidebar_navigation/assets/js/sidebar_navigation.js'; ?>
+<?php $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/sidebar_navigation/assets/js/sidebar_navigation.js|static'; ?>
 
 <!-- indexer::stop -->
 <div class="sidebar-top-container">
@@ -32,7 +32,8 @@ jQuery(document).ready(function () {
         if ($('body').hasClass('sidebar-open')) {
             $('#sidebar').css('visibility', 'visible');
         }
-        else {
+        else
+        {
             window.setTimeout(function () {
                 $('#sidebar').css('visibility', 'hidden');
             }, 600);
