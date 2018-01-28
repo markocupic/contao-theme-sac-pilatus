@@ -1,6 +1,7 @@
 <!-- indexer::stop -->
 <div class="header-navbar">
     <div class="header-navbar-row-0 d-flex justify-content-end pl-3 pr-3 pt-1 pb-1 align-items-center">
+        <div class="ml-0 mr-auto d-none d-md-flex">{{email::geschaeftsstelle@sac-pilatus.ch}}</div>
 
         <div class="ml-auto mr-0 d-flex align-items-center">
             <?php if(FE_USER_LOGGED_IN): ?>

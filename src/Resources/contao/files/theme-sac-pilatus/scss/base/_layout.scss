@@ -15,7 +15,7 @@
   }
   #main {
     min-height: 600px;
-    background-color: #ffffff;
+    //background-color: #ffffff;
   }
 }
 
@@ -54,6 +54,23 @@
     background-color: transparent;
     .article-inside {
       background-color: transparent;
+    }
+  }
+
+  .mod_article.article-boxed-white {
+    background-color: transparent;
+    .article-inside {
+      background-color: #fff;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  .mod_article.article-boxed-gray {
+    background-color: transparent;
+    .article-inside {
+      background-color: #fff;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 

@@ -24,7 +24,7 @@
 }
 
 .card {
-  margin-bottom: 15px;
+  margin-bottom: $grid-gutter-width/2;
   .caption {
     display: none;
   }

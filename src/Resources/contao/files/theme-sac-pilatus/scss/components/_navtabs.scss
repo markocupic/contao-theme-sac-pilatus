@@ -1,0 +1,11 @@
+.nav.nav-tabs {
+  border-bottom-color: $blue;
+  .nav-item{
+
+    .nav-link.active{
+      background-color: $blue;
+      color: #fff;
+      border-color: $blue;
+    }
+  }
+}
