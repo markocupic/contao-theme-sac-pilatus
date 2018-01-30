@@ -5,30 +5,21 @@
     .header-navbar-row-0 {
       font-size: $font-size-sm;
       background-color:#fff;
-
       border: 1px solid $gray-100;
-      .btn-primary {
-        background-color: $red;
-        border: 0;
-      }
-      div {
-        //color: lightgray;
-      }
       * {
         font-size: small;
       }
-      a {
-        color: $gray-500;
+      a.email {
+        //color: $gray-500;
+        border: 0;
+        &:hover{
+          //color: $gray-800;
+        }
       }
-      a.btn{
-        color:#fff;
+      a.header-login-button
+      {
+        line-height: 1;
       }
-      a:hover {
-        //color: dodgerblue;
-        //color: #fff;
-        color: $gray-800;
-      }
-
     }
 
     .header-navbar-row-1 {
