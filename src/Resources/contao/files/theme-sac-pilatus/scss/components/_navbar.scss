@@ -1,4 +1,5 @@
 $navbar-height: 40px;
+$navbar-hover-color: #f2f2f2;
 $navbar-dropdown-color: #777;
 $color-level-1: #222;
 #header {
@@ -146,10 +147,9 @@ $color-level-1: #222;
           @include transition(background-color);
         }
         > li:hover {
-          background-color: #4682b4;
-          background-color: $blue;
+          background-color: $navbar-hover-color;
           a, strong,span {
-            color: #ffffff !important;
+            color: #000000 !important;
           }
         }
         > li:first-child {

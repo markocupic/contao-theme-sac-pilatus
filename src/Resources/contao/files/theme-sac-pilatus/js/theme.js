@@ -2,7 +2,7 @@
 (function ($) {
     $(document).ready(function () {
         $(window).on("load resize orientationchange", function() {
-            equalheight('.equal-height .card');
+            equalheight('.equal-height', '.card');
         });
     });
 })(jQuery);

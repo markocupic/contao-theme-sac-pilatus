@@ -1,11 +1,11 @@
+$bgcolor: $gray-500;
 .nav.nav-tabs {
-  border-bottom-color: $blue;
-  .nav-item{
+  border-bottom-color: $bgcolor;
 
-    .nav-link.active{
-      background-color: $blue;
-      color: #fff;
-      border-color: $blue;
-    }
+  .nav-item .nav-link.active, .list-group-item.active {
+    background-color: $bgcolor;
+    color: #fff;
+    border-color: $bgcolor;
   }
+
 }

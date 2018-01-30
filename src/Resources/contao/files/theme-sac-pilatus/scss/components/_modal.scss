@@ -1,12 +1,12 @@
 .modal-dialog {
   .modal-header {
     background-color: $accent-color-2;
-    background-color: $blue;
+    background-color: $gray-100;
     .modal-title {
-      color: white;
+      color: $red;
     }
     .close {
-      color: white;
+      color: $gray-600;
     }
   }
   .modal-body {

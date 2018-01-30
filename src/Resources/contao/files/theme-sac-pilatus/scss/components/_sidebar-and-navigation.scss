@@ -1,5 +1,5 @@
 $sidebar-bg-color: #000000;
-$nav-bg-hover-color: $blue;
+$nav-bg-hover-color: #f6f6f6;
 $nav-close-btn-color: #ccc;
 //$nav-bg-hover-color: $accent-color;
 
@@ -7,7 +7,6 @@ $nav-font-color: #222;
 $nav-bg-color: #fff;
 //$nav-font-color: #333;
 /* Dropdown - main navigation header */
-
 
 #sidebar {
   .navigation-toggler {
@@ -23,8 +22,6 @@ $nav-bg-color: #fff;
     }
   }
 }
-
-
 
 #sidebarOverlay {
   display: none;
@@ -53,13 +50,13 @@ $nav-bg-color: #fff;
 
 #sidebar {
   display: none;
-  visibility:hidden;
+  visibility: hidden;
   overflow-x: hidden;
   z-index: $zindex-navbar-aside;
   position: fixed;
-  left: -300px;
+  left: -400px;
   top: 0;
-  width: 300px;
+  width: 400px;
   height: 100%;
   background-color: $nav-bg-color;
   @include transition(left, ease-in-out, 0.7s);
@@ -78,7 +75,7 @@ $nav-bg-color: #fff;
       max-width: 120px;
       height: 66px;
     }
-    .sidebar-title{
+    .sidebar-title {
       padding-left: $spacer-x;
       color: $gray-400;
     }
@@ -98,7 +95,6 @@ body.loaded {
     display: block;
   }
 }
-
 
 body.sidebar-open {
   #sidebarOverlay {
@@ -226,10 +222,10 @@ body.sidebar-open {
   ul.level_1 {
     > li {
       border-bottom: 1px solid #e2e2e2;
-      &:hover{
+      &:hover {
         background-color: $nav-bg-hover-color;
-        > a, > span, > strong{
-          color: #fff !important;
+        > a, > span, > strong {
+          color: #000 !important;
         }
       }
     }
@@ -237,9 +233,9 @@ body.sidebar-open {
 
   // Expand Icon for items with submenus
   ul.level_1 {
-    > li.expanded{
+    > li.expanded {
       background-color: $nav-bg-hover-color;
-      &:before,  > *,> *:before{
+      &:before, > *, > *:before {
         color: $nav-font-color !important;
       }
     }
@@ -254,32 +250,32 @@ body.sidebar-open {
         position: absolute;
         top: 0;
         cursor: pointer;
-        // background-color: #444;
       }
 
       > .toggle-submenu:before {
         font-family: $icon-font-name;
-        color: $nav-font-color;
-        content: "\f067";
-        font-size: 12px;
+        // fa fal-plus-circle
+        content: "\f055";
+        font-size: 18px;
         font-style: normal;
       }
 
-      > .toggle-submenu:hover:before {
-        color: $red;
-      }
       &.expanded {
         > .toggle-submenu {
           background-color: transparent;
         }
         > .toggle-submenu:before {
-          content: "\f068";
-          color: $red;
+          // minus fal fa-minus-circle
+          content: "\f056";
+          //color: $red;
         }
       }
     }
     > li {
-      > .toggle-submenu:before, > .toggle-submenu:hover:before {
+      > .toggle-submenu:before {
+        color: $gray-500 !important;
+      }
+      > .toggle-submenu:hover:before {
         color: $nav-font-color !important;
       }
     }
@@ -299,7 +295,7 @@ body.sidebar-open {
       }
       > a, > strong {
         padding-left: $level_1-offset;
-        font-size: 16px;
+        font-size: 20px;
         color: #fff;
       }
       span.active {
@@ -313,15 +309,18 @@ body.sidebar-open {
       padding: 0;
       line-height: 34px;
       background-color: transparent;
-      &:hover{
+      &:hover {
         background-color: #fff;
       }
       > .toggle-submenu {
         right: 0;
       }
+      > .toggle-submenu:before {
+        font-size: 16px !important;
+      }
       > a, strong {
         padding-left: $level_2-offset;
-        font-size: 13px;
+        font-size: 16px;
         color: $nav-font-color;
       }
       strong.active {
@@ -334,15 +333,18 @@ body.sidebar-open {
       padding: 0;
       line-height: 30px;
       background-color: transparent;
-      &:hover{
+      &:hover {
         background-color: #fff;
       }
       > .toggle-submenu {
         right: 0;
       }
+      > .toggle-submenu:before {
+        font-size: 12px !important;
+      }
       > a, strong {
         padding-left: $level_3-offset;
-        font-size: 13px;
+        font-size: 12px;
         color: $nav-font-color;
       }
       strong.active {
@@ -355,7 +357,7 @@ body.sidebar-open {
       padding: 0;
       line-height: 28px;
       background-color: transparent;
-      &:hover{
+      &:hover {
         background-color: #fff;
       }
       > .toggle-submenu {
@@ -364,7 +366,7 @@ body.sidebar-open {
 
       > a, strong {
         padding-left: $level_4-offset;
-        font-size: 13px;
+        font-size: 11px;
         color: $nav-font-color;
       }
       strong.active {
@@ -375,8 +377,7 @@ body.sidebar-open {
 
   // Show active submenus
   ul.level_1 li.trail > ul,
-  ul.level_1 li.active.submenu > ul
-  {
+  ul.level_1 li.active.submenu > ul {
     display: block;
   }
 
