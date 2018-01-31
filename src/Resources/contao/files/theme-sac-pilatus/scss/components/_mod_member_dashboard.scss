@@ -8,15 +8,18 @@
   }
   .thumbnail {
     position: relative;
-    button {
+    .dashboard-event-story-thumb-buttons-container {
       position: absolute;
-      bottom: 10px;
-      right: 26px;
-      @include opacity(0.4);
+      bottom: 4px;
+      right: 4px;
+    }
+    button {
+      margin-left: 4px;
+      @include opacity(0.6);
       @include transition(opacity);
       cursor: pointer;
     }
-    button:hover{
+    button:hover {
       @include opacity(1);
     }
   }
