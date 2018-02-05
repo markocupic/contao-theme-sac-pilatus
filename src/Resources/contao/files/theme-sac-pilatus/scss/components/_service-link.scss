@@ -1,17 +1,17 @@
 .ce_serviceLink {
-  //padding-top: 20px;
-  //padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   [class*="fa-"] {
     padding: 27px 25px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #fff;
+    width: 120px;
+    height: 120px;
+    //border-radius: 50%;
+    //background-color: #fff;
     @include transition(background);
     margin-bottom: 10px;
     color: #333;
     @include transition(color);
-    font-size: 40px;
+    font-size: 60px;
     &:hover {
       cursor: pointer;
       color: $blue;
@@ -29,10 +29,15 @@
   }
 
   .service-link-headline, .service-link-headline a {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
     transition: font-size ease-in-out .4s;
-    color: #fff;
+    color: rgb(59, 60, 66);
     text-align: center;
+    font-weight: 200;
+    &:hover{
+      text-decoration: none;
+      color:$red;
+    }
   }
 
   .service-link-button {
