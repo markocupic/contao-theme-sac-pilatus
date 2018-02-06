@@ -30,7 +30,7 @@
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
 
-    <div id="wrapper" class="layout-1-col">
+    <div id="wrapper" class="layout-col-2-right">
 
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
@@ -45,10 +45,10 @@
       <?php $this->sections('before'); ?>
 
       <?php $this->block('container'); ?>
-        <div id="container">
+        <div id="container" class="row">
 
           <?php $this->block('main'); ?>
-            <main id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+            <main id="main" class="col-xl-9" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
               <div class="inside">
                 <?= $this->main ?>
               </div>
@@ -56,24 +56,12 @@
             </main>
           <?php $this->endblock(); ?>
 
-          <?php $this->block('left'); ?>
-            <?php if ($this->left): ?>
-              <aside id="left">
-                <div class="inside">
-                  <?= $this->left ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
           <?php $this->block('right'); ?>
-            <?php if ($this->right): ?>
-              <aside id="right">
+              <aside id="right" class="col-xl-3">
                 <div class="inside">
                   <?= $this->right ?>
                 </div>
               </aside>
-            <?php endif; ?>
           <?php $this->endblock(); ?>
 
         </div>

@@ -1,0 +1,46 @@
+.filter-board {
+  width: 100%;
+  padding: 15px;
+  background-color: #343434;
+  label {
+    color: #fff;
+  }
+  .close-event-filter-button
+  {
+    color: #fff;
+    border:1px solid #fff;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .col-event-filter {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 380px;
+    max-width: 100%;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    z-index: 1100;
+    background-color: #343434;
+  }
+
+  .col-event-filter.expanded {
+    display: block;
+  }
+}
+
+.event-filter-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+  z-index: 1099;
+}

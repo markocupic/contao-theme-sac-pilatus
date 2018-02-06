@@ -38,6 +38,12 @@
         <!-- NAVBAR-END -->
 
         <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
+
+          <!-- Searchbar toggler -->
+          <a href="{{link_url::kurse}}" class="d-none d-xl-block btn btn-sm btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
+          <a href="{{link_url::touren}}" class="d-none d-xl-block btn btn-sm btn-outline-danger ml-2" role="button" aria-label="Touren">Touren</a>
+
+          <!-- End Searchbar toggler -->
             <!-- Searchbar toggler -->
             <button class="btn btn-lg btn-link ml-2" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
             <!-- End Searchbar toggler -->
