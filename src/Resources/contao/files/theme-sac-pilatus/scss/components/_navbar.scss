@@ -37,6 +37,11 @@ $color-level-1: #222;
             border-bottom: 3px solid #d50000;
           }
         }
+        > li.show,  > li.show:hover {
+          > a > span, > strong {
+            border-bottom: 3px solid transparent;
+          }
+        }
 
         // Dropdown toggle
         > li.dropdown > button.dropdown-toggle {

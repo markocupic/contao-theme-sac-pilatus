@@ -1,7 +1,7 @@
 <!-- indexer::stop -->
 <div class="header-navbar">
     <div class="header-navbar-row-0 d-flex pl-3 pr-3 pt-1 pb-1 align-items-center">
-        <div class="ml-0 mr-auto d-none d-md-flex">{{email::geschaeftsstelle@sac-pilatus.ch}}</div>
+        <div class="ml-0 mr-auto d-none d-sm-flex">{{email::geschaeftsstelle@sac-pilatus.ch}}</div>
 
         <div class="ml-auto mr-0 d-flex align-items-center">
             <?php if(FE_USER_LOGGED_IN): ?>
@@ -19,7 +19,7 @@
             <?php endif; ?>
 
             <?php if(FE_USER_LOGGED_IN): ?>
-            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-primary ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-danger ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
             <?php endif; ?>
         </div>
     </div>

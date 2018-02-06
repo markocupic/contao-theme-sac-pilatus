@@ -3,11 +3,13 @@
   background-color: #fff;
   .header-navbar {
     .header-navbar-row-0 {
+      min-height: 40px;
       font-size: $font-size-sm;
-      background-color:#fff;
-      border: 1px solid $gray-100;
+      background-color:$blue;
+      //border: 1px solid #343434;
       * {
         font-size: small;
+        color: #fff;
       }
       a.email {
         //color: $gray-500;
@@ -28,15 +30,18 @@
 
       .logo-header {
         height: 60px;
-
+/**
         @include media-breakpoint-up(lg) {
           height: 70px;
         }
         @include media-breakpoint-up(xl) {
           height: 80px;
         }
+         **/
         width: auto;
       }
+
+
 
       .header-search-form {
         margin: 0;
@@ -105,7 +110,7 @@ body.search-bar-open #header .header-navbar-row-2 {
 @include media-breakpoint-up(xl) {
   .header-navbar {
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
     right: 0;
     left: 0;
     top: 0
