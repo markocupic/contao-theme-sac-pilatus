@@ -13,6 +13,7 @@
 }
 
 @include media-breakpoint-down(md) {
+
   .col-event-filter {
     display: none;
     position: fixed;
