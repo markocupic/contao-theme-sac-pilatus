@@ -8,10 +8,12 @@
   }
 
   #container {
+    /**
     @include media-breakpoint-up(xl) {
       // Fixed header
       margin-top: 125px;
     }
+    **/
     #main {
       min-height: 600px;
       //background-color: #ffffff;

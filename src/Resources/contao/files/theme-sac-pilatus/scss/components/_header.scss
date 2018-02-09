@@ -106,7 +106,7 @@ body.search-bar-open #header .header-navbar-row-2 {
   max-height: 300px; /* approximate max height */
 }
 
-
+/**
 @include media-breakpoint-up(xl) {
   .header-navbar {
     position: fixed;
@@ -120,4 +120,4 @@ body.search-bar-open #header .header-navbar-row-2 {
   }
 }
 
-
+**/

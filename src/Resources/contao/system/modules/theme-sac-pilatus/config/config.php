@@ -16,10 +16,6 @@ if (TL_MODE == 'FE')
     // Bootstrap.js
     $GLOBALS['TL_JAVASCRIPT'][] = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
 
-    // Icheck
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js";
-    $GLOBALS['TL_CSS'][] = "https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/green.css";
-
     // Bootstrap datepicker
     $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js";
     $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.de.min.js";
