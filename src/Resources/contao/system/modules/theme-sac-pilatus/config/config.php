@@ -2,7 +2,7 @@
 if (TL_MODE == 'FE')
 {
     // Head tags
-    $GLOBALS['TL_HEAD'][] = '<meta name="author" content="Marko Cupic, Oberkirch">';
+    $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
     $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
 
 
@@ -17,19 +17,23 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_JAVASCRIPT'][] = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
 
     // Bootstrap datepicker
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js";
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.de.min.js";
-    $GLOBALS['TL_CSS'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css";
+    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/bootstrap-datepicker.min.js|static";
+    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.de.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/bootstrap-datepicker.de.min.js|static";
+    //$GLOBALS['TL_CSS'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css";
+    $GLOBALS['TL_CSS'][] = "files/theme-sac-pilatus/css/third-party/bootstrap-datepicker.standalone.min.css|static";
 
     // Load FontAwesome
     //$GLOBALS['TL_JAVASCRIPT'][] = "https://use.fontawesome.com/926b4fc2c0.js";
-    $GLOBALS['TL_HEAD'][] = '<link href="/files/fontawesome-pro-5.0.1/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<script defer src="files/fontawesome-pro-5.0.1/svg-with-js/js/fontawesome-all.js"></script>';
+    $GLOBALS['TL_CSS'][] = 'files/fontawesome-pro-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css|static';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="files/fontawesome-pro-5.0.6/svg-with-js/js/fontawesome-all.min.js"></script>';
+
 
 
     // Animate
-    $GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
-    $GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+    //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
+    //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 
     // Google Webfonts
     //$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
@@ -43,10 +47,13 @@ if (TL_MODE == 'FE')
 
     // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
     // JQuery UI doesn't go with popper.js
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
+    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/Sortable.min.js|static";
+
 
     // Enable jqueryTouchSwipe
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
+    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
+    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/jquery.touchSwipe.min.js|static";
 
     // Load headroom.js https://github.com/WickyNilliams/headroom.js/
     //$GLOBALS['TL_HEAD'][] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>';

@@ -12,7 +12,7 @@
 (function ($) {
     // WOW & Animate.css
     $(document).ready(function () {
-        new WOW().init();
+        //new WOW().init();
     });
 })(jQuery);
 
