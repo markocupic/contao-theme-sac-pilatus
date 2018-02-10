@@ -30,6 +30,8 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_HEAD'][] = '<script defer src="files/fontawesome-pro-5.0.6/svg-with-js/js/fontawesome-all.min.js"></script>';
 
 
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>';
+    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />';
 
     // Animate
     //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
