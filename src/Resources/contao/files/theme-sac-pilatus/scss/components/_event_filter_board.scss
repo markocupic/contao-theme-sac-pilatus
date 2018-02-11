@@ -1,13 +1,30 @@
 .filter-board {
-  width: 100%;
-  padding: 15px;
-  background-color: #343434;
+
+  background-color: transparent;
+
+
+  .inside{
+    padding: 15px;
+
+  }
   a.select-organizer-all {
     color: #f8f8f8;
   }
   label {
     color: #fff;
+    margin-top: 1rem;
   }
+  input, textarea, select {
+    margin: 0;
+    width: 100%;
+    outline: none;
+    border: 0;
+
+  }
+  .form-group {
+    margin: 0;
+  }
+
   .close-event-filter-button {
     color: #fff;
     border: 1px solid #fff;
@@ -26,47 +43,21 @@
       color: #fff;
     }
   }
-
-  .chosen-choices {
-    padding: 6px 12px !important;
-  }
-  .chosen-search-input {
-    font-size: 1rem !important;
-    line-height: 1.5 !important;
-    color: #495057 !important;
-  }
-}
-
-@include media-breakpoint-down(md) {
-
-  .col-event-filter {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 380px;
-    max-width: 100%;
-    overflow-y: scroll;
-    margin: 0;
-    padding: 0;
-    z-index: 1100;
-    background-color: #343434;
+  .datepicker {
+    z-index: 1200;
   }
 
-  .col-event-filter.expanded {
-    display: block;
+  option[disabled] {
+    color: $gray-300 !important;
+  }
+  .reset-form{
+    color: #fff;
   }
 }
-
-.event-filter-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.3;
-  z-index: 1099;
+.select2-container--default .select2-selection--multiple
+{
+  border:0 !important;
+  line-height: 1.6;
 }
+
+

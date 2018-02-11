@@ -76,6 +76,14 @@
         padding-bottom: 4rem;
       }
     }
+    .mod_article.article-boxed-blue {
+      background-color: transparent;
+      .article-inside {
+        background-color: $blue;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
 
     .mod_article.article-blue {
       background-color: $blue;
