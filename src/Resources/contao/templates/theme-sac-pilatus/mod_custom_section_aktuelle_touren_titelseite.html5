@@ -1,11 +1,13 @@
 <?php $i=0; ?>
 <?php $limit = 8; ?>
 <?php $objEvent = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND eventType=? ORDER BY startDate')->limit(8)->execute('1', time(), 'tour'); ?>
+
 <?php while($objEvent->next()): ?>
 
 <?php if(Markocupic\SacEventToolBundle\CalendarSacEvents::isEventBookable($objEvent->id) === false) continue; ?>
 
 <?php $eventState = Markocupic\SacEventToolBundle\CalendarSacEvents::getEventState($objEvent->id); ?>
+
 <?php $eventStateLabel = $GLOBALS['TL_LANG']['CTE']['calendar_events'][$eventState]; ?>
 
 <?php $arrTourTypes = \StringUtil::deserialize($objEvent->tourType,true); ?>
@@ -14,6 +16,7 @@
 
 <div class="row mb-3">
     <div class="col-2 col-sm-1">
+
         <?= Markocupic\SacEventToolBundle\CalendarSacEvents::getBookingCounter($objEvent->id) ?>
     </div>
     <div class="col-3 col-sm-3">

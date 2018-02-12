@@ -1,7 +1,8 @@
 
-.fixed-tabs-aside-layer{
+.fixed-tabs-aside-layer {
   //@extend .blur-in-overlay;
 }
+
 .loading-icon-lg {
   div {
     text-align: center;
@@ -13,8 +14,6 @@
   }
 }
 
-
-
 .ce_hyperlink a:before {
   font-family: $icon-font-name;
   content: "\f019";
@@ -22,13 +21,13 @@
 }
 
 // Do not show "aktuell sind keine termine vorahanden"
-.empty{
-  display:none;
+.empty {
+  display: none;
 }
 
 // Loading icon
 .mod_eventToolCalendarEventlist {
-  span.last-minute-tour{
+  span.last-minute-tour {
     color: $green;
     font-size: $font-size-sm;
   }
@@ -119,7 +118,9 @@
 }
 
 .event-detailview {
-
+  .img-fluid {
+    width: 100%;
+  }
   .ce_headline.last-minute-tour {
     color: $green;
     text-transform: inherit;
@@ -159,17 +160,13 @@
 
 }
 
+.hasteform_form-event-registration {
 
-
-.course-registration-form {
-  .widget {
-    margin-bottom: 1.5rem;
-  }
-  input, select {
-    @extend .form-control;
-  }
   button {
     @extend .btn;
-    @extend .btn-danger;
+    @extend .btn-primary;
+    @extend .btn-block;
+    @extend .btn-lg;
+
   }
 }
