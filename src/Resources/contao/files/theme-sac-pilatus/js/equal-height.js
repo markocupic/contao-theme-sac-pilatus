@@ -37,4 +37,4 @@ var equalheight = function (parent, child) {
             });
         }
     });
-};
+}; 
