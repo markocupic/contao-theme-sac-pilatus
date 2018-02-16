@@ -1,7 +1,7 @@
 // Equal height for cards
 (function ($) {
     $(document).ready(function () {
-        $(window).on("load resize orientationchange", function() {
+        $(window).on("load resize orientationchange", function () {
             equalheight('.equal-height', '.card');
         });
     });
@@ -57,6 +57,31 @@
                 $(dropdownToggler).attr('data-offset', offset);
             });
         }
+
+        // Open level_2 on mousein
+        $('#header .mod_navigation ul.level_1 > li.submenu').on('mouseover', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            var linkLevel_1 = this;
+            if ($(linkLevel_1).hasClass('show')) {
+                // Return if dropdown is already opened
+                return;
+            }
+
+            $(linkLevel_1).closest('li').find('.dropdown-toggle').trigger('click');
+        });
+
+        // Close level_2 on mouseout
+        $('#header .mod_navigation ul.level_1 > li.submenu').on('mouseout', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            var linkLevel_1 = this;
+            if (!$(linkLevel_1).hasClass('show')) {
+                // Return if dropdown is already closed
+                return;
+            }
+            $(linkLevel_1).closest('li').find('.dropdown-toggle').trigger('click');
+        });
 
         // Add expand icon to first level submenu
         $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
