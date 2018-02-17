@@ -38,8 +38,11 @@ if (TL_MODE == 'FE')
     //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 
     // Google Webfonts
-    //$GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
-    $GLOBALS['TL_CSS'][] = 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">';
+
 
     // Slick: The last slider yo ever need
     //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js';

@@ -2,22 +2,31 @@
 
   display: flex;
 
-  min-height: 400px;
+  min-height: 300px;
 
-  @include media-breakpoint-up(xs) {
+  @include media-breakpoint-up(sm) {
     min-height: 430px;
   }
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     min-height: 460px;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     min-height: 490px;
   }
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     min-height: 520px;
   }
-  @include media-breakpoint-up(xl) {
+
+  @media (min-width: 1800px) {
     min-height: 550px;
   }
 
+
+
+}
+
+body .ce_heroimage .heroimage-headline-box {
+  h1,h2,h3,h4,h5,h6{
+    font-family: "Vollkorn", "Roboto", "Arial", "Georgia", "Times New Roman", Times, serif !important;
+  }
 }
