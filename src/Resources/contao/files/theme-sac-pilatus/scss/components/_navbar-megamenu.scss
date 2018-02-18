@@ -3,10 +3,34 @@ $navbar-hover-color: #f2f2f2;
 $navbar-dropdown-color: #777;
 $color-level-1: #222;
 #header {
+
+  .header-navbar{
+    position:relative;
+  }
+  position: relative !important;
   * {
     overflow: visible;
   }
   .navbar-header {
+    display:flex;
+    & > ul{
+      justify-content: center;
+      display:flex;
+    }
+    .-mega {
+      h3 {
+        font-size: 1rem;
+      }
+      position: static !important;
+    }
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      width: 100vw;
+      left: 0;
+      right: 0;
+    }
+
     .mod_navigation {
       overflow-y: visible;
       background-color: transparent;
@@ -19,8 +43,9 @@ $color-level-1: #222;
       ul.level_1 {
         background-color: transparent;
         display: flex;
+        position: relative;
         li > a, li > strong, li > span {
-          
+
           font-size: 1rem !important;
           color: $color-level-1;
           @include media-breakpoint-up(xl) {
@@ -38,7 +63,7 @@ $color-level-1: #222;
             border-bottom: 3px solid #d50000;
           }
         }
-        > li.show,  > li.show:hover {
+        > li.show, > li.show:hover {
           > a > span, > strong {
             border-bottom: 3px solid transparent;
           }
@@ -142,7 +167,7 @@ $color-level-1: #222;
         a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 15px;
-          font-weight:normal;
+          font-weight: normal;
           @include transition(color);
 
         }
@@ -154,7 +179,7 @@ $color-level-1: #222;
         }
         > li:hover {
           background-color: $navbar-hover-color;
-          a, strong,span {
+          a, strong, span {
             color: #000000 !important;
           }
         }
@@ -166,7 +191,7 @@ $color-level-1: #222;
         a, strong, span {
           color: $navbar-dropdown-color;
           font-size: 14px;
-          font-weight:normal;
+          font-weight: normal;
         }
         > li {
           line-height: 2.5;
