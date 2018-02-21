@@ -57,7 +57,7 @@
                 $(dropdownToggler).attr('data-offset', offset);
             });
         }
-
+        /**
         // Open level_2 on mousein
         $('#header .mod_navigation ul.level_1 > li.submenu').on('mouseover', function (e) {
             e.stopPropagation();
@@ -82,7 +82,7 @@
             }
             $(linkLevel_1).closest('li').find('.dropdown-toggle').trigger('click');
         });
-
+        **/
         // Add expand icon to first level submenu
         $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
             var dropdown = this;

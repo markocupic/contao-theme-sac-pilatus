@@ -39,9 +39,10 @@ if (TL_MODE == 'FE')
 
     // Google Webfonts
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">';
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">';
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Varela+Round"rel="stylesheet">';
 
 
     // Slick: The last slider yo ever need
