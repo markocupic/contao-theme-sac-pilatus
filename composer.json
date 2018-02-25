@@ -25,7 +25,6 @@
     "contao/core-bundle": ">=4.4, <5",
     "markocupic/rotate_image": ">=1.0.11",
     "markocupic/custom-section": ">=0.0.6",
-    "markocupic/preloader-overlay": ">=0.0.2",
     "markocupic/sidebar-navigation": ">=0.0.1",
     "markocupic/service-link-bundle": ">=1.0.0",
     "markocupic/heroimage": ">=1.0.0",
