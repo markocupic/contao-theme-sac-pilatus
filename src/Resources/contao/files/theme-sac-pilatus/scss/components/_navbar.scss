@@ -21,7 +21,7 @@ $color-level-1: #222;
         display: flex;
         li > a, li > strong, li > span {
           
-          font-size: 1rem !important;
+          font-size: 1.25rem !important;
           color: $color-level-1;
           @include media-breakpoint-up(xl) {
             //font-size: 1.15rem !important;
