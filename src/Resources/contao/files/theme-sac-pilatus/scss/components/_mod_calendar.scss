@@ -111,6 +111,10 @@
     content: "\f111";
     color: orange;
   }
+  .event-state-icon.event_status_6:before {
+    content: "\f06a";
+    color: orange;
+  }
 }
 
 .event-item-course.last {
@@ -118,6 +122,10 @@
 }
 
 .event-detailview {
+  .event-state-headline{
+    margin-bottom:-30px;
+    color: $red;
+  }
   .img-fluid {
     width: 100%;
   }
