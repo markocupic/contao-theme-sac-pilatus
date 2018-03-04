@@ -145,19 +145,20 @@ $text-elements: (
   text-align: left;
   color: #000;
   font-weight: bold;
-/**
-  &:after {
-    content: "";
-    width: 100px;
-    background: $accent-color;
-    margin: 0 0 !important;
-    font-weight: 300;
-    margin-bottom: 1em;
-    height: .125em;
-    display: block;
-    text-align: left;
-  }
-**/
+  font-family: "Roboto Slab", serif;
+  /**
+    &:after {
+      content: "";
+      width: 100px;
+      background: $accent-color;
+      margin: 0 0 !important;
+      font-weight: 300;
+      margin-bottom: 1em;
+      height: .125em;
+      display: block;
+      text-align: left;
+    }
+  **/
 }
 
 .mobile-title-heading {
