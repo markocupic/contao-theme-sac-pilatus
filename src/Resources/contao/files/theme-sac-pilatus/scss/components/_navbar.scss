@@ -20,7 +20,7 @@ $color-level-1: #222;
         background-color: transparent;
         display: flex;
         li > a, li > strong, li > span {
-          
+
           font-size: 1.25rem !important;
           color: $color-level-1;
           @include media-breakpoint-up(xl) {
@@ -38,7 +38,7 @@ $color-level-1: #222;
             border-bottom: 3px solid #d50000;
           }
         }
-        > li.show,  > li.show:hover {
+        > li.show, > li.show:hover {
           > a > span, > strong {
             border-bottom: 3px solid transparent;
           }
@@ -139,22 +139,22 @@ $color-level-1: #222;
         // End speech bubble
 
         background-color: #fff;
-        a, strong, span {
-          color: $navbar-dropdown-color;
-          font-size: 15px;
-          font-weight:normal;
-          @include transition(color);
-
-        }
         > li {
           line-height: 3;
           border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
           @include transition(background-color);
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 14px !important;
+            font-weight: normal;
+            @include transition(color);
+
+          }
         }
         > li:hover {
           background-color: $navbar-hover-color;
-          a, strong,span {
+          a, strong, span {
             color: #000000 !important;
           }
         }
@@ -163,30 +163,32 @@ $color-level-1: #222;
         }
       }
       ul.level_3 {
-        a, strong, span {
-          color: $navbar-dropdown-color;
-          font-size: 14px;
-          font-weight:normal;
-        }
         > li {
           line-height: 2.5;
           border-top: 1px solid #444;
           padding: 0 $spacer-x;
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 13px !important;
+            font-weight: normal;
+            @include transition(color);
+          }
         }
         > li:first-child {
           border: 0;
         }
       }
       ul.level_4 {
-        a, strong, span {
-          color: $navbar-dropdown-color;
-          font-size: 11px;
-
-        }
         > li {
           line-height: 2.25;
           border-top: 1px solid #444;
           padding: 0 $spacer-x;
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 12px !important;
+            font-weight: normal;
+            @include transition(color);
+          }
         }
         > li:first-child {
           border: 0;
