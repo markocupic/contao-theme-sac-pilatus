@@ -4,13 +4,26 @@
 }
 
 .loading-icon-lg {
-  div {
-    text-align: center;
-  }
 
-  .fa {
-    font-size: 4rem;
-    color: #ccc;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+
+  .preloader-icon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-left: 2px solid #e6e6e6;
+    border-right: 2px solid #e6e6e6;
+    border-top: 2px solid #e6e6e6;
+    border-bottom: 2px solid #2acfff;
+    -webkit-animation: rotation 1.6s infinite linear;
+    -moz-animation: rotation 1.6s infinite linear;
+    -ms-animation: rotation 1.6s infinite linear;
+    -o-animation: rotation 1.6s infinite linear;
+    animation: rotation 1.6s infinite linear;
   }
 }
 
@@ -122,8 +135,8 @@
 }
 
 .event-detailview {
-  .event-state-headline{
-    margin-bottom:-30px;
+  .event-state-headline {
+    margin-bottom: -30px;
     color: $red;
   }
   .img-fluid {
@@ -167,7 +180,7 @@
   }
   .event-detail {
     h5 {
-      font-weight:bold;
+      font-weight: bold;
     }
   }
 
