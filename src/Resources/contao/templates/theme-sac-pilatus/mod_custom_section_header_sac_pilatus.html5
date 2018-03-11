@@ -40,8 +40,8 @@
         <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
 
           <!-- Searchbar toggler -->
-          <a href="{{link_url::kurse}}" class="d-none d-xl-block btn btn-sm btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
-          <a href="{{link_url::touren}}" class="d-none d-xl-block btn btn-sm btn-outline-danger ml-2" role="button" aria-label="Touren">Touren</a>
+          <a href="{{link_url::kurse}}" class="d-none d-sm-block btn btn-outline-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
+          <a href="{{link_url::touren}}" class="d-none d-sm-block btn btn-outline-danger ml-2" role="button" aria-label="Touren">Touren</a>
 
           <!-- End Searchbar toggler -->
             <!-- Searchbar toggler -->
