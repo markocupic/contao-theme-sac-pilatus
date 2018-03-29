@@ -28,7 +28,7 @@
     "markocupic/preloader-overlay": ">=0.0.2",
     "markocupic/sidebar-navigation": ">=0.0.1",
     "markocupic/service-link-bundle": ">=1.0.0",
-    "markocupic/heroimage": ">=1.0.0",
+    "markocupic/heroimage": "^4",
     "markocupic/bootstrap_responsive_youtube_embed": ">=1.0.0",
     "markocupic/contao-article-class-select-bundle": ">=0.0.9",
     "markocupic/backend-password-recovery-bundle": "^1.0",
