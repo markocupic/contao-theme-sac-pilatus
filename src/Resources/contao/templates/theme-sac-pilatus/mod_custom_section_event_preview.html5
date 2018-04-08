@@ -1,0 +1,27 @@
+<?php
+// Place this code snippet right in front of the event reader
+// Use getContentElement Hook to unpublish the event right after it is parsed
+if (isset($_GET['eventToken']))
+{
+
+    if (!isset($_GET['events']) && \Config::get('useAutoItem') && isset($_GET['auto_item']))
+    {
+        \Input::setGet('events', \Input::get('auto_item'));
+    }
+
+    if (Contao\Input::get('events') != '')
+    {
+        $objEvent = Contao\CalendarEventsModel::findByIdOrAlias(Contao\Input::get('events'));
+        if ($objEvent !== null)
+        {
+            if ($objEvent->eventToken === $_GET['eventToken'])
+            {
+                \Input::setGet('published', $objEvent->published);
+                \Input::setGet('eventPreviewMode', 'true');
+                $objEvent->published = '1';
+                $objEvent->save();
+            }
+        }
+    }
+}
+?>
