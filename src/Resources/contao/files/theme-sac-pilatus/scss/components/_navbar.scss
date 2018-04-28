@@ -35,7 +35,9 @@ $color-level-1: #222;
         }
         > li.active, > li.trail, > li:hover {
           > a > span, > strong {
-            border-bottom: 3px solid #d50000;
+            //border-bottom: 3px solid #d50000;
+            border-bottom: 3px solid transparent;
+
           }
         }
         > li.show, > li.show:hover {
