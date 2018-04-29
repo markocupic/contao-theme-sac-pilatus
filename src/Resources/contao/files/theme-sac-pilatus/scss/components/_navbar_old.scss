@@ -28,9 +28,6 @@ $color-level-1: #222;
           }
         }
         > li {
-          ////////////////// megamenu hack
-          position: inherit !important;
-          //////////
           > a > span, > strong {
             padding: 8px 4px;
             border-bottom: 3px solid transparent;
@@ -111,25 +108,13 @@ $color-level-1: #222;
         }
 
       }
-      ////////////////// megamenu hack
-      ul.level_2.show{
-        display:flex;
-        justify-content:center;
-      }
 
       ul.level_2.dropdown-menu {
-
-        width: 400px;
-        ////////////////// megamenu hack
-        width: 100% !important;
-
-
         li .active {
           color: $red !important;
         }
-
+        width: 400px;
         //speech bubble effect http://ilikepixels.co.uk/drop/bubbler/
-        /**
         &:after {
           content: '';
           position: absolute;
@@ -153,19 +138,18 @@ $color-level-1: #222;
           top: -11px;
           left: 30px;
         }
-        **/
         // End speech bubble
 
         background-color: #fff;
         > li {
           line-height: 3;
-          //border-top: 1px solid $gray-300;
+          border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
           @include transition(background-color);
           > a, > strong, > span {
-            color: #000;
-            font-size: 15px !important;
-            font-weight: 600;
+            color: $navbar-dropdown-color;
+            font-size: 14px !important;
+            font-weight: normal;
             @include transition(color);
 
           }

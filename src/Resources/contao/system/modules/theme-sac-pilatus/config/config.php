@@ -46,6 +46,11 @@ if (TL_MODE == 'FE')
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">';
     $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">';
     $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">';
+
+
+
     // Slick: The last slider yo ever need
     //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js';
     //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css';

@@ -21,13 +21,43 @@
     min-height: 650px;
   }
 
-
-
 }
 
-.heroimage-headline-box h1
-{
+.heroimage-headline-box h1 {
   font-family: Amatic SC;
-  font-size: 5rem !important;
+  font-family: Graduate;
+  font-family: "Roboto Slab";
+  color: #ffeb3b !important;
 }
+
+.ce_heroimage .heroimage-headline-box {
+  margin-bottom: 2rem;
+}
+
+
+@include media-breakpoint-up(sm) {
+
+  .ce_heroimage .heroimage-headline-box h1 {
+    font-size: 3.5rem;
+    line-height: 5.2rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .ce_heroimage .heroimage-headline-box h1 {
+    font-size: 4.5rem;
+    line-height: 6.75rem;
+  }
+
+}
+
+@include media-breakpoint-up(xl) {
+  .ce_heroimage .heroimage-headline-box h1 {
+    font-size: 5rem;
+    line-height: 7.5rem;
+  }
+}
+
+
 

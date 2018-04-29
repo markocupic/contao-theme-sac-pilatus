@@ -57,32 +57,9 @@
                 $(dropdownToggler).attr('data-offset', offset);
             });
         }
-        /**
-        // Open level_2 on mousein
-        $('#header .mod_navigation ul.level_1 > li.submenu').on('mouseover', function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-            var linkLevel_1 = this;
-            if ($(linkLevel_1).hasClass('show')) {
-                // Return if dropdown is already opened
-                return;
-            }
 
-            $(linkLevel_1).closest('li').find('.dropdown-toggle').trigger('click');
-        });
 
-        // Close level_2 on mouseout
-        $('#header .mod_navigation ul.level_1 > li.submenu').on('mouseout', function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-            var linkLevel_1 = this;
-            if (!$(linkLevel_1).hasClass('show')) {
-                // Return if dropdown is already closed
-                return;
-            }
-            $(linkLevel_1).closest('li').find('.dropdown-toggle').trigger('click');
-        });
-        **/
+
         // Add expand icon to first level submenu
         $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
             var dropdown = this;
@@ -91,6 +68,43 @@
             $(dropdown).find('ul.level_2').addClass('dropdown-menu');
             setDropdownOffset();
         });
+
+        // Prevent default if page has class "not-clickable'
+        $('.mod_navigation ul.level_1 > li.submenu.not-clickable > a,  .mod_navigation ul.level_1 > li.submenu.not-clickable > strong').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).parent('ul.level_1 > li.dropdown').children('.dropdown-toggle').trigger('click');
+        });
+
+        // Control the header dropdown navigation
+        $(document).on('hide.bs.dropdown', function (e) {
+
+            if ($(e.relatedTarget).is('#header .mod_navigation ul.level_1 > li > .dropdown-toggle')) {
+                var hide = false;
+                // Hide when clicking on the dropdown toggler
+                if ($(e.currentTarget.activeElement).hasClass('dropdown-toggle')) {
+                    hide = true;
+                }
+                // Hide when clicking a level_1 link element
+                else if ($(e.currentTarget.activeElement).is('ul.level_1 > li > a') || $(e.currentTarget.activeElement).is('ul.level_1 > li > strong')) {
+                    hide = true;
+                }
+                // Hide when clicking on the body element
+                else if ($(e.currentTarget.activeElement).is('body')) {
+                    hide = true;
+                }
+
+                if (hide === true) {
+                    return true;
+                }
+                // Otherwise keep the dropdown open
+                return false;
+
+            }
+            return true;
+
+        });
+
 
         /** Close dropdown on window resize **/
         $(window).resize(function (e) {
