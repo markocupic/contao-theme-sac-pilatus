@@ -50,6 +50,17 @@ $color-level-1: #222;
         }
 
         // Dropdown toggle
+        > li.dropdown > .dropdown-toggle[aria-expanded="true"] {
+          .fa-angle-down {
+            display: none !important;
+          }
+        }
+        > li.dropdown > .dropdown-toggle[aria-expanded="false"] {
+          .fa-angle-up {
+            display: none !important;
+          }
+        }
+        
         > li.dropdown > button.dropdown-toggle {
           border: 0;
           background: 0;
@@ -112,17 +123,19 @@ $color-level-1: #222;
 
       }
       ////////////////// megamenu hack
-      ul.level_2.show{
-        display:flex;
-        justify-content:center;
+      ul.level_2.show {
+        display: flex;
+        justify-content: center;
       }
 
       ul.level_2.dropdown-menu {
 
+        border: 0;
+        border-top: 1px solid #eee;
+
         width: 400px;
         ////////////////// megamenu hack
         width: 100% !important;
-
 
         li .active {
           color: $red !important;
