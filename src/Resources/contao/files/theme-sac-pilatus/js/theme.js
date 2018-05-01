@@ -59,7 +59,6 @@
         }
 
 
-
         // Add expand icon to first level submenu
         $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
             var dropdown = this;
@@ -70,11 +69,15 @@
             setDropdownOffset();
         });
 
-        // Prevent default if page has class "not-clickable'
+        // trigger dropdown menut
         $('.mod_navigation ul.level_1 > li.submenu.not-clickable > a,  .mod_navigation ul.level_1 > li.submenu.not-clickable > strong').click(function (e) {
+            $(this).parent('ul.level_1 > li.dropdown').children('.dropdown-toggle').trigger('click');
+        });
+
+        // Prevent default if page has class "not-clickable'
+        $('.mod_navigation li.submenu.not-clickable > a').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            $(this).parent('ul.level_1 > li.dropdown').children('.dropdown-toggle').trigger('click');
         });
 
         // Control the header dropdown navigation

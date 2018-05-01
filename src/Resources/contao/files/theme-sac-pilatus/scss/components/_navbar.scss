@@ -132,6 +132,9 @@ $color-level-1: #222;
 
         border: 0;
         border-top: 1px solid #eee;
+        border-bottom: 1px solid #ccc;
+
+        padding-bottom: 1rem;
 
         width: 400px;
         ////////////////// megamenu hack
@@ -139,6 +142,10 @@ $color-level-1: #222;
 
         li .active {
           color: $red !important;
+        }
+        li.not-clickable > a{
+          cursor:default;
+          text-decoration: none;
         }
 
         //speech bubble effect http://ilikepixels.co.uk/drop/bubbler/
@@ -171,7 +178,7 @@ $color-level-1: #222;
 
         background-color: #fff;
         > li {
-          line-height: 3;
+          line-height: 2;
           //border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
           @include transition(background-color);
@@ -180,11 +187,14 @@ $color-level-1: #222;
             font-size: 15px !important;
             font-weight: 600;
             @include transition(color);
+            //padding: 4px;
+            //background-color: red;
+            //display: block;
 
           }
         }
         > li:hover {
-          background-color: $navbar-hover-color;
+          //background-color: $navbar-hover-color;
           a, strong, span {
             color: #000000 !important;
           }
@@ -195,12 +205,12 @@ $color-level-1: #222;
       }
       ul.level_3 {
         > li {
-          line-height: 2.5;
-          border-top: 1px solid #444;
-          padding: 0 $spacer-x;
+          line-height: 1.75;
+          //border-top: 1px solid #444;
+          padding: 0;
           > a, > strong, > span {
-            color: $navbar-dropdown-color;
-            font-size: 13px !important;
+            color: #000;
+            font-size: 14px !important;
             font-weight: normal;
             @include transition(color);
           }
