@@ -39,13 +39,11 @@
 
         <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
 
-          <!-- Searchbar toggler -->
           <a href="{{link_url::kurse}}" class="d-none d-sm-block btn btn-outline-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
           <a href="{{link_url::touren}}" class="d-none d-sm-block btn btn-outline-danger ml-2" role="button" aria-label="Touren">Touren</a>
 
-          <!-- End Searchbar toggler -->
             <!-- Searchbar toggler -->
-            <button class="btn btn-lg btn-link ml-2" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
+            <button class="btn btn-lg btn-link ml-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
             <!-- End Searchbar toggler -->
 
             <!-- Navbar toggler mobile -->
@@ -55,8 +53,10 @@
         </div>
 
     </div>
-
-    <div class="header-navbar-row-2">
+    <!-- Search module -->
+    {{insert_module::353}}
+    <!-- Search module end -->
+    <!--<div class="header-navbar-row-2">
         <div class="mod_search container d-flex align-items-center pl-3 pr-3 pt-5 pb-5 p-lg-5">
             <form action="{{link_url::suche}}" method="get" style="width:90% !important">
                 <input type="hidden" name="id" value="332">
@@ -71,7 +71,7 @@
             <button class="btn btn btn-outline-primary close-navbar-header-toggler" title="Suche schliessen" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
             </div>
         </div>
-    </div>
+    </div>-->
 
 </div>
 

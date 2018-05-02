@@ -45,9 +45,9 @@ if (TL_MODE == 'FE')
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Varela+Round"rel="stylesheet">';
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">';
     $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">';
 
 
 
