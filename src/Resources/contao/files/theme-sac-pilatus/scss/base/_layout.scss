@@ -137,18 +137,21 @@
     }
 
     .mod_article.article-gray {
-      background-color: $gray-200;
       background-color: #e9ecef;
-
       .article-inside {
-        background-color: $gray-200;
         background-color: #e9ecef;
-
         padding-top: 1rem;
         padding-bottom: 1rem;
       }
     }
-
+    .mod_article.article-dark-gray {
+      background-color: #cfcfcf;
+      .article-inside {
+        background-color: transparent;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
   }
 
   #footer {
