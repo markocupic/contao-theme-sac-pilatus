@@ -45,3 +45,19 @@
     @extend .more;
   }
 }
+.article-blue .ce_serviceLink{
+  [class*="fa-"] {
+    color: #000;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  .service-link-headline, .service-link-headline a {
+    color: #fff;
+    &:hover{
+      text-decoration: none;
+      color:#000;
+    }
+  }
+}
