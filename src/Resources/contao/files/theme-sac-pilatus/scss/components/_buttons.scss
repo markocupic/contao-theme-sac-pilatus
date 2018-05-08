@@ -1,0 +1,11 @@
+.btn.btn-danger, .btn.btn-primary {
+  a {
+    color: #fff !important;
+    &:hover {
+      color: #fff !important;
+    }
+  }
+  .fa{
+    color: #fff;
+  }
+}
