@@ -1,0 +1,13 @@
+.ce_table
+{
+  &.table{
+    table {
+      @extend .table;
+    }
+  }
+  &.table-responsive{
+    table {
+      @extend .table-responsive;
+    }
+  }
+}
