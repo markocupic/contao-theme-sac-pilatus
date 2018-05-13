@@ -8,5 +8,20 @@
   td.event-export-weeknumber {
     border: 0;
   }
+  td.event-export-eventState{
+    color: red;
+    text-transform: uppercase;
+  }
+
+  &.event-export-table-courses{
+    td,th{
+      border:0;
+    }
+    td.event-export-headline{
+      border-top: 1px dotted #000;
+      margin-top: 20px;
+    }
+  }
 
 }
+
