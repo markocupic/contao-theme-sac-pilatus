@@ -89,7 +89,11 @@
                 {{insert_module::290}}
             </div>
             <div class="modal-footer">
-                <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}</a>
+              <?php if(!FE_USER_LOGGED_IN): ?>
+              <a href="{{link_url::konto-aktivieren}}" class="btn btn-sm btn-link">Konto aktivieren/Registrieren</a>
+              &nbsp;
+              <?php endif; ?>
+              <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}</a>
             </div>
         </div>
     </div>
