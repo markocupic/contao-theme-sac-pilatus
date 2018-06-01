@@ -38,10 +38,10 @@
         <!-- NAVBAR-END -->
 
         <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
-<!--
-          <a href="{{link_url::kurse}}" class="d-none d-sm-block btn btn-outline-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
-          <a href="{{link_url::touren}}" class="d-none d-sm-block btn btn-outline-danger ml-2" role="button" aria-label="Touren">Touren</a>
--->
+
+          <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
+          <a href="{{link_url::touren}}" class="d-none d-md-block btn btn-danger ml-2" role="button" aria-label="Touren">Touren</a>
+
             <!-- Searchbar toggler -->
             <button class="btn btn-lg btn-link ml-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
             <!-- End Searchbar toggler -->

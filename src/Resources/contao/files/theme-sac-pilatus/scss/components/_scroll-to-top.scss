@@ -10,7 +10,7 @@
   bottom: 50px;
   right: 10px;
   display: none;
-  border-radius: 5px;
+  border-radius: 0;
   opacity: 1;
   @include transition(background-color);
   a, .fa{

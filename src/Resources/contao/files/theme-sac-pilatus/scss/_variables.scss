@@ -6,7 +6,11 @@ $font-family-sans-serif: 'Lato', 'bariolregular',  'Futura', 'Verdana', 'Arial',
 $icon-font-name: "Font Awesome 5 Pro";
 
 // Border radius
-$enable-rounded: true;
+$enable-rounded: false;
+
+$border-radius: 0 !important;
+$border-radius-sm: 0 !important;
+$border-radius-lg: 0 !important;
 
 
 $red: #d50000;
