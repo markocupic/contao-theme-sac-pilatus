@@ -15,7 +15,7 @@
             <?php endif; ?>
             <?php if(!FE_USER_LOGGED_IN): ?>
 
-            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Login"><i class="fal fa-user"></i><span>&nbsp;Login</span></a>
+            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Anmelden"><i class="fal fa-user"></i><span>&nbsp;Anmelden</span></a>
             <?php endif; ?>
 
             <?php if(FE_USER_LOGGED_IN): ?>
@@ -90,10 +90,10 @@
             </div>
             <div class="modal-footer">
               <?php if(!FE_USER_LOGGED_IN): ?>
-              <a href="{{link_url::konto-aktivieren}}" class="btn btn-sm btn-link">Konto aktivieren/Registrieren</a>
+              <a href="{{link_url::konto-aktivieren}}" class="btn btn-sm btn-link">Noch nicht registriert?</a>
               &nbsp;
               <?php endif; ?>
-              <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}</a>
+              <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}?</a>
             </div>
         </div>
     </div>

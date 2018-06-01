@@ -1,19 +1,28 @@
 .modal-dialog {
+  .modal-content {
+    background-color: transparent;
+  }
   .modal-header {
     background-color: $accent-color-2;
-    background-color: #fff;
-    border:0;
+    background-color: $red;
+    border: 0;
     .modal-title {
-      color: $red;
+      color: #fff;
     }
     .close {
-      color: #000000;
+      color: #fff !important;
+      opacity: 1;
       font-size: 1.5rem !important;
     }
   }
   .modal-body {
-    //font-weight: bold;
-    border:0;
+    background-color: #fff;
+    border: 0;
+  }
+  .modal-footer{
+    background-color: $gray-300;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
   .error {
     font-size: 1rem;
