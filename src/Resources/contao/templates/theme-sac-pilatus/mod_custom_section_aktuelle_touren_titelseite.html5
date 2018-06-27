@@ -4,9 +4,9 @@
 
 <?php while($objEvent->next()): ?>
 
-    <?php if(Markocupic\SacEventToolBundle\CalendarSacEvents::isEventBookable($objEvent->id) === false) continue; ?>
+    <?php if(Markocupic\SacEventToolBundle\CalendarEventsHelper::isEventBookable($objEvent->id) === false) continue; ?>
 
-    <?php $eventState = Markocupic\SacEventToolBundle\CalendarSacEvents::getEventState($objEvent->id); ?>
+    <?php $eventState = Markocupic\SacEventToolBundle\CalendarEventsHelper::getEventState($objEvent->id); ?>
 
     <?php $eventStateLabel = $GLOBALS['TL_LANG']['CTE']['calendar_events'][$eventState]; ?>
 
@@ -17,7 +17,7 @@
     <div class="row mb-3">
         <div class="col-2 col-sm-1">
 
-            <?= Markocupic\SacEventToolBundle\CalendarSacEvents::getBookingCounter($objEvent->id) ?>
+            <?= Markocupic\SacEventToolBundle\CalendarEventsHelper::getBookingCounter($objEvent->id) ?>
         </div>
         <div class="col-3 col-sm-3">
             <?= \Date::parse('d.m.Y', $objEvent->startDate) ?>
@@ -28,7 +28,7 @@
             <a href="{{event_url::<?php echo $objEvent->id; ?>}}">{{event_title::<?= $objEvent->id ?>}}</a>
         </div>
         <div class="col-2 col-sm-2">
-            <?= implode(', ', Markocupic\SacEventToolBundle\CalendarSacEvents::getTourTypesAsArray($objEvent->id, 'shortcut')) ?>
+            <?= implode(', ', Markocupic\SacEventToolBundle\CalendarEventsHelper::getTourTypesAsArray($objEvent->id, 'shortcut')) ?>
         </div>
     </div>
 <?php endwhile; ?>
