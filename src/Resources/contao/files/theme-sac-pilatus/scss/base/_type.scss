@@ -127,24 +127,27 @@ $text-elements: (
 }
 
 // Underline
-#main h1.ce_headline {
+#main h1.ce_headline, .ce_text > h1 {
   text-align: left;
   color: #000;
-  font-weight: bold;
-  font-family: "Roboto Slab", serif;
-  /**
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  //font-family: "Roboto Slab", serif;
+
     &:after {
       content: "";
-      width: 100px;
+      width: 150px;
       background: $accent-color;
-      margin: 0 0 !important;
-      font-weight: 300;
+      margin: 15px auto !important;
       margin-bottom: 1em;
-      height: .125em;
+      height: 2px;
       display: block;
-      text-align: left;
+
     }
-  **/
+
 }
 
 .mobile-title-heading {
