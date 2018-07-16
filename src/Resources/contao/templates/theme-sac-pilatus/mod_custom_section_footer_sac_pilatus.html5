@@ -2,13 +2,7 @@
 <div class="footer-row-1">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-4">
-                <?php echo \Controller::replaceInsertTags('{{insert_module::304}}'); ?>
-            </div>
-            <div class="col-12 col-md-4">
-                <?php echo \Controller::replaceInsertTags('{{insert_module::304}}'); ?>
-            </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12">
                 <?php echo \Controller::replaceInsertTags('{{insert_module::304}}'); ?>
             </div>
         </div>
@@ -20,20 +14,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12 text-center">
-                <strong>SAC Sektion Pilatus</strong> Testumgebung zum Relaunch der Webseite 2018
+                <strong>SAC Sektion Pilatus</strong>
                 <address>
                     Schweizer Alpenclub SAC, Sektion Pilatus,
                     Bireggring 1, 6005 Luzern
                 </address>
             </div>
-        </div>
-        <div id="socialIcons">
-            <ul class="d-flex justify-content-center">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-            </ul>
         </div>
     </div>
 </div>

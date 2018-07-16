@@ -1,13 +1,24 @@
 #footer {
   $footer-bg-color: #122;
-   font-size: $font-size-base;
-  .footer-nav{
+  font-size: $font-size-base;
+  .footer-nav {
+    ul {
+      text-align: center;
+    }
     margin-top: 1rem;
-    li{
-      border-top: 1px solid $gray-900;
-      margin:0;
-      line-height: 2.75;
-      padding: 0 0.5rem;
+    li {
+      display: inline;
+      margin: 0;
+      line-height: 2;
+      padding: 0 0.75rem;
+       *{
+        color: #ff454a !important;
+         text-transform: uppercase;
+         text-decoration: none;
+         &:hover{
+           color: #fff !important;
+         }
+      }
     }
     &:first-child {
       border: none;
@@ -51,27 +62,6 @@
       display: flex;
       li {
         margin-right: 5px;
-      }
-    }
-    #footerNavigation ul {
-      display: flex;
-      li {
-        margin-right: 5px;
-      }
-    }
-  }
-
-  .navigation-footer {
-    ul {
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      padding: 0;
-      margin: 0;
-      span:before, a:before {
-        @include icon-before(f105);
-        font-family: $icon-font-name;
       }
     }
   }
