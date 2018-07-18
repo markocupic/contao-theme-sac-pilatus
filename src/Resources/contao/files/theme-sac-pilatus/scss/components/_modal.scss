@@ -1,10 +1,15 @@
+$modal-backdrop-bg: #fff;
+
 .modal-dialog {
   .modal-content {
     background-color: transparent;
+    @extend .shadow;
+    button, .btn{
+    font-size: 0.875rem;
+    }
   }
   .modal-header {
-    background-color: $accent-color-2;
-    background-color: $red;
+    background-color: $blue;
     border: 0;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -18,8 +23,12 @@
     }
   }
   .modal-body {
+    padding-top: 2rem;
     background-color: #fff;
     border: 0;
+    label{
+      font-weight: bold;
+    }
   }
   .modal-footer{
     background-color: $gray-300;

@@ -21,10 +21,10 @@ $color-level-1: #222;
         display: flex;
         li > a, li > strong, li > span {
 
-          font-size: 1.25rem !important;
+          font-size: 1rem !important;
           color: $color-level-1;
-          @include media-breakpoint-up(xl) {
-            //font-size: 1.15rem !important;
+          @media screen and (min-width: 1400px) {
+            //font-size: 1.25rem !important;
           }
         }
         > li {
@@ -103,7 +103,7 @@ $color-level-1: #222;
           color: #000;
           //text-transform: uppercase;
           font-weight: 400;
-          font-size: 1rem;
+          font-size: 0.875rem;
           @include transition(color);
         }
         li.active > *, li:hover > * {
@@ -184,7 +184,7 @@ $color-level-1: #222;
           @include transition(background-color);
           > a, > strong, > span {
             color: #000;
-            font-size: 1rem !important;
+            font-size: 0.875rem !important;
             font-weight: 600;
             @include transition(color);
             //padding: 4px;
@@ -210,7 +210,7 @@ $color-level-1: #222;
           padding: 0;
           > a, > strong, > span {
             color: #000;
-            font-size: 1rem !important;
+            font-size: 0.875rem !important;
             font-weight: normal;
             @include transition(color);
           }
@@ -226,7 +226,7 @@ $color-level-1: #222;
           padding: 0 $spacer-x;
           > a, > strong, > span {
             color: $navbar-dropdown-color;
-            font-size: 12px !important;
+            font-size: 0.875rem !important;
             font-weight: normal;
             @include transition(color);
           }

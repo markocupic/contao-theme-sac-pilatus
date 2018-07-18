@@ -80,17 +80,23 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="d-block modal-title">Einloggen</h5>{{br}}
+              <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fal fa-times" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="modal-body">
                 {{insert_module::290}}
+              {{br}}
+              <hr>
+              <h6 class="mt-4">Zum ersten Mal hier?</h6>
+              <p>Jetzt mit <strong>Mitgliedernummer</strong> und deiner beim SAC hinterlegten <strong>E-Mail-Adresse</strong> dein SAC-Pilatus Konto einmalig <a href="{{link_url::konto-aktivieren}}">aktivieren!</a></p>
             </div>
             <div class="modal-footer">
               <?php if(!FE_USER_LOGGED_IN): ?>
-              <a href="{{link_url::konto-aktivieren}}" class="btn btn-sm btn-link">Noch nicht registriert?</a>
+              <a href="{{link_url::konto-aktivieren}}" class="btn btn-sm btn-link">Konto aktivieren?</a>
               &nbsp;
               <?php endif; ?>
               <a href="{{link_url::passwort-vergessen}}" class="btn btn-sm btn-link">{{link_title::passwort-vergessen}}?</a>
