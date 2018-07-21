@@ -8,13 +8,15 @@ input.text, input.captcha, textarea, select {
   @extend .form-control;
 }
 button {
-  @extend .btn;
+  //@extend .btn;
 }
 button:hover * {
   text-decoration: none !important;
 }
 
-
+.btn {
+  font-size: $font-size-sm;
+}
 .submit{
   @extend .btn;
   @extend .btn-outline-primary;
