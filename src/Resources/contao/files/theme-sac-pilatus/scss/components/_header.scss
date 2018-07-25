@@ -5,7 +5,7 @@
     .header-navbar-row-0 {
       min-height: 40px;
       font-size: 0.875rem;
-      background-color:$blue;
+      background-color: $blue;
       //border: 1px solid #343434;
       * {
         //font-size: small;
@@ -14,12 +14,11 @@
       a.email {
         //color: $gray-500;
         border: 0;
-        &:hover{
+        &:hover {
           //color: $gray-800;
         }
       }
-      a.header-login-button
-      {
+      a.header-login-button {
         line-height: 1;
       }
     }
@@ -30,37 +29,36 @@
 
       .logo-header {
         height: 60px;
-/**
-        @include media-breakpoint-up(lg) {
-          height: 70px;
-        }
-        @include media-breakpoint-up(xl) {
-          height: 80px;
-        }
-         **/
+        /**
+                @include media-breakpoint-up(lg) {
+                  height: 70px;
+                }
+                @include media-breakpoint-up(xl) {
+                  height: 80px;
+                }
+                 **/
         width: auto;
       }
-      .navbar-header{
+      .navbar-header {
         flex-grow: 1;
         justify-content: center;
       }
       // Event buttons tour&kurs
-      a.btn{
-        font-size:0.875rem;
+      a.btn {
+        font-size: 0.875rem;
       }
-
-
 
       .header-search-form {
         margin: 0;
       }
 
+      // Nav icon & search icon
       .header-button-container {
         .btn {
           cursor: pointer !important;
         }
-        i.fa {
-          font-size: 1.5rem !important;
+        .svg-inline--fa, i.fa {
+          font-size: 1.625rem !important;
         }
       }
       .fa-search {
@@ -70,7 +68,7 @@
           color: #d50000;
         }
       }
-      .fa-bars  {
+      .fa-bars {
         color: #000000;
       }
     }
@@ -109,6 +107,7 @@
     }
   }
 }
+
 // Search bar open
 body.search-bar-open #header .header-navbar-row-2 {
   max-height: 300px; /* approximate max height */
