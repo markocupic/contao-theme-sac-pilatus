@@ -18,6 +18,10 @@
     background-color: transparent;
     color: #fff;
     font-size: 2rem;
+    border: none;
+    &:hover{
+      cursor: pointer;
+    }
   }
   .formbody {
     width: 100%;

@@ -248,7 +248,8 @@ body.sidebar-open {
         width: 30px;
         text-align: center;
         position: absolute;
-        top: 0;
+        top: 10px;
+        right: 10px;
         cursor: pointer;
       }
 
@@ -288,15 +289,15 @@ body.sidebar-open {
   ul.level_1 {
     > li {
       padding: 0;
-      line-height: 60px;
+      line-height: 40px;
       background-color: transparent;
-      > .toggle-submenu {
-        right: 0;
-      }
       > a, > strong {
+        padding: 0;
+        margin: 10px 0;
         padding-left: $level_1-offset;
         font-size: 20px;
         color: #fff;
+        display: block;
       }
       span.active {
         color: #000 !important;
@@ -307,7 +308,35 @@ body.sidebar-open {
     background-color: #eee;
     > li {
       padding: 0;
-      line-height: 34px;
+      line-height: 36px;
+      background-color: transparent;
+      &:hover {
+        background-color: #fff;
+      }
+      > .toggle-submenu {
+        right: 0;
+        top: 5px;
+      }
+      > .toggle-submenu:before {
+        font-size: 16px !important;
+      }
+      > a, strong {
+        padding: 0;
+        margin: 10px 0;
+        padding-left: $level_2-offset;
+        font-size: 18px;
+        color: $nav-font-color;
+        display: block;
+      }
+      strong.active {
+        color: $red !important;
+      }
+    }
+  }
+  ul.level_3 {
+    > li {
+      padding: 0;
+      line-height: 32px;
       background-color: transparent;
       &:hover {
         background-color: #fff;
@@ -319,33 +348,11 @@ body.sidebar-open {
         font-size: 16px !important;
       }
       > a, strong {
-        padding-left: $level_2-offset;
+        padding-left: $level_3-offset;
+        margin: 5px 0;
         font-size: 16px;
         color: $nav-font-color;
-      }
-      strong.active {
-        color: $red !important;
-      }
-    }
-  }
-  ul.level_3 {
-    > li {
-      padding: 0;
-      line-height: 30px;
-      background-color: transparent;
-      &:hover {
-        background-color: #fff;
-      }
-      > .toggle-submenu {
-        right: 0;
-      }
-      > .toggle-submenu:before {
-        font-size: 12px !important;
-      }
-      > a, strong {
-        padding-left: $level_3-offset;
-        font-size: 12px;
-        color: $nav-font-color;
+        display: block;
       }
       strong.active {
         color: $red !important;
@@ -363,11 +370,15 @@ body.sidebar-open {
       > .toggle-submenu {
         right: 0;
       }
-
+      > .toggle-submenu:before {
+        font-size: 14px !important;
+      }
       > a, strong {
+        margin: 10px 0;
         padding-left: $level_4-offset;
-        font-size: 11px;
+        font-size: 14px;
         color: $nav-font-color;
+        display: block;
       }
       strong.active {
         color: $red !important;

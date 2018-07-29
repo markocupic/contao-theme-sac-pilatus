@@ -6,7 +6,7 @@
 // MIXINS
 @import "mixins/_mixins.scss";
 // GENERIC
-@import "generic/contao-reset"; 
+@import "generic/contao-reset";
 // BASE
 @import "base/page";
 @import "base/layout";
@@ -42,7 +42,8 @@
 @import "components/carousel";
 @import "components/event-slick-slider";
 @import "components/cards";
-@import "components/event-slick-slidercomponents/event_filter_board";
+@import "components/event-slick-slider"; 
+@import "components/event_filter_board";
 @import "components";
 @import "components/modal";
 @import "components/heroimage";
