@@ -31,7 +31,7 @@
     "markocupic/heroimage": "^4",
     "markocupic/bootstrap_responsive_youtube_embed": ">=1.0.0",
     "markocupic/contao-article-class-select-bundle": ">=0.0.9",
-    "markocupic/backend-password-recovery-bundle": "^1.0",
+    "markocupic/backend-password-recovery-bundle": "^1.1",
     "dma/dma_simple_grid": ">=1.0.0",
     "markocupic/contao-news-infinite-scroll-bundle": "^1.0",
     "markocupic/bootstrap-carousel-bundle": "^1.0"
