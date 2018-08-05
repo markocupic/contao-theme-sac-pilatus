@@ -6,7 +6,10 @@ ul.pagination {
 
     a {
       @extend .page-link;
+      background-color: $gray-400;
+      border-color: $gray-400;
     }
+    margin-right: 2px;
 
   }
 }
