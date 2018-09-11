@@ -22,3 +22,15 @@
   }
 }
 
+.member-dashboard-avatar {
+  position: relative;
+
+  .member-dashboard-rotate-image-button {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background-color: #ccc;
+    padding: 5px 10px;
+  }
+}
+

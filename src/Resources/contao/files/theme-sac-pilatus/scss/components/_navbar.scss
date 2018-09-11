@@ -3,12 +3,9 @@ $navbar-hover-color: #f2f2f2;
 $navbar-dropdown-color: #777;
 $color-level-1: #222;
 #header {
-  * {
-    overflow: visible;
-  }
   .navbar-header {
     .mod_navigation {
-      overflow-y: visible;
+      //overflow-y: visible;
       background-color: transparent;
       //color: #000;
       ul, li {

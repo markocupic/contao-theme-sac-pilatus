@@ -3,7 +3,6 @@ html {
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
 }
 
 body {
@@ -39,8 +38,8 @@ body {
     font-size: $font-size-sm;
     line-height: $line-height-sm;
   }
-  @media (min-width: 1800px){
-    #main{
+  @media (min-width: 1800px) {
+    #main {
       font-size: $font-size-base;
       line-height: $line-height-base;
     }
