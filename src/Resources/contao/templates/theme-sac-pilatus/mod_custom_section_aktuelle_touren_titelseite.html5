@@ -1,6 +1,6 @@
 <?php $i=0; ?>
 <?php $limit = 8; ?>
-<?php $objEvent = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND eventType=? ORDER BY startDate')->limit(8)->execute('1', time(), 'tour'); ?>
+<?php $objEvent = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND eventType=? OR eventType=? ORDER BY startDate')->limit(10)->execute('1', time(), 'tour', 'last-minute-tour'); ?>
 
 <?php while($objEvent->next()): ?>
 
@@ -22,10 +22,13 @@
         <div class="col-3 col-sm-3">
             <?= \Date::parse('d.m.Y', $objEvent->startDate) ?>
         </div>
-        <div class="col-5 col-sm-6">
+        <div class="col-5 col-sm-6 col-xl-4">
             <?php if($objEvent->eventType === 'lastMinuteTour'): ?><span class="last-minute-tour small"><i class="fa fa-clock"></i> LAST MINUTE TOUR</span><br><?php endif; ?>
             <i class="event-state-icon fa-fw <?= $eventState ?>" aria-label="<?= htmlspecialchars($eventStateLabel) ?>" title="<?= $eventStateLabel ?>"></i>
             <a href="{{event_url::<?php echo $objEvent->id; ?>}}">{{event_title::<?= $objEvent->id ?>}}</a>
+        </div>
+        <div class="col-5 col-sm-6 col-xl-2">
+            <?= implode(', ', Markocupic\SacEventToolBundle\CalendarEventsHelper::getEventOrganizersAsArray($objEvent->id, 'titlePrint')) ?>
         </div>
         <div class="col-2 col-sm-2">
             <?= implode(', ', Markocupic\SacEventToolBundle\CalendarEventsHelper::getTourTypesAsArray($objEvent->id, 'shortcut')) ?>
