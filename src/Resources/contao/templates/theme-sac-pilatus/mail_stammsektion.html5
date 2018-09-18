@@ -3,14 +3,14 @@
 <?php $objRecipient = \Contao\NewsletterRecipientsModel::findByEmailAndPids($this->recipient, [$this->pid]); ?>
 <?php if($objRecipient !== null){
     while($objRecipient->next()){
-if($objRecipient->token === ''){
-$strToken = md5(uniqid(mt_rand(), true));
-$objRecipient->token = $strToken;
-$objRecipient->save();
-}
-$this->objRecipient = $objRecipient->row();
-continue;
-}
+        if($objRecipient->token === ''){
+            $strToken = md5(uniqid(mt_rand(), true));
+            $objRecipient->token = $strToken;
+            $objRecipient->save();
+        }
+        $this->objRecipient = $objRecipient->row();
+        continue;
+    }
 }
 ?>
 <head>
