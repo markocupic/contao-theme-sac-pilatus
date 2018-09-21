@@ -52,5 +52,9 @@ a.email{
   a[href*="."]:before {
     @include icon-before(f0c1); // fa-link
   }
+  a.hyperlink_img:before{
+    display: none;
+  }
+  margin-bottom: $spacer-y;
 }
 
