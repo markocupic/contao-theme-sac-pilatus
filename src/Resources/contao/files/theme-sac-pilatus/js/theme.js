@@ -96,12 +96,12 @@
         });
 
         // trigger dropdown menut
-        $('.mod_navigation ul.level_1 > li.submenu.not-clickable > a,  .mod_navigation ul.level_1 > li.submenu.not-clickable > strong').click(function (e) {
+        $('.mod_navigation ul.level_1 > li.submenu.not-clickable-page-container > a,  .mod_navigation ul.level_1 > li.submenu.not-clickable-page-container > strong').click(function (e) {
             $(this).parent('ul.level_1 > li.dropdown').children('.dropdown-toggle').trigger('click');
         });
 
-        // Prevent default if page has class "not-clickable'
-        $('.mod_navigation li.submenu.not-clickable > a').click(function (e) {
+        // Prevent default if page has class "not-clickable-page-container'
+        $('.mod_navigation li.submenu.not-clickable-page-container > a').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
         });

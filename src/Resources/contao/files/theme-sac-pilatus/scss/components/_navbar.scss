@@ -141,8 +141,8 @@ $color-level-1: #222;
         li .active {
           color: $red !important;
         }
-        li.not-clickable > a{
-          cursor:default;
+        li.not-clickable-page-container > a{
+          cursor:text;
           text-decoration: none;
         }
 
