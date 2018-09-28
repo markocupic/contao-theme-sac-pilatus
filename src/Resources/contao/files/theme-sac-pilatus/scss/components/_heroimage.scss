@@ -27,14 +27,13 @@
 
   font-family: "Roboto Slab";
   font-family: "Open Sans";
-
+  font-weight: 600 !important;
   color: #8bc34a !important;
 }
 
 .ce_heroimage .heroimage-headline-box {
   margin-bottom: 2rem;
 }
-
 
 @include media-breakpoint-up(sm) {
 
