@@ -15,7 +15,7 @@
             <?php endif; ?>
             <?php if(!FE_USER_LOGGED_IN): ?>
 
-            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Anmelden"><i class="fal fa-user"></i><span>&nbsp;Anmelden</span></a>
+            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Mitglieder-Login"><i class="fal fa-user"></i><span>&nbsp;Mitglieder-Login</span></a>
             <?php endif; ?>
 
             <?php if(FE_USER_LOGGED_IN): ?>
@@ -80,7 +80,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="d-block modal-title">Einloggen</h5>{{br}}
+                <h5 class="d-block modal-title">Mitglieder-Login</h5>{{br}}
               <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
 
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
