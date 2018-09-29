@@ -35,8 +35,8 @@ body {
     line-height: $line-height-sm;
   }
   @include media-breakpoint-up(lg) {
-    font-size: $font-size-sm;
-    line-height: $line-height-sm;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
   }
   @media (min-width: 1800px) {
     #main {

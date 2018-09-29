@@ -1,11 +1,14 @@
+$headline-font-weight: 700;
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-weight: $headline-font-weight;
   color: #000;
 }
 
 .ce_headline {
-  font-weight: 600;
+  font-weight: $headline-font-weight;
 }
+
 
 // Set headline
 $text-elements: (
@@ -14,13 +17,13 @@ $text-elements: (
                         xs: 1.750rem,
                         sm: 1.750rem,
                         md: 1.750rem,
-                        lg: 1.750rem,
-                        xl: 2.000rem
+                        lg: 2.000rem,
+                        xl: 2.250rem
                 ),
                 line-height: 1.55,
                 margin-top: 2rem,
                 margin-bottom: 2rem,
-                font-weight:bold
+                font-weight: $headline-font-weight
         ),
         h2: (
                 sizes: (
@@ -33,7 +36,7 @@ $text-elements: (
                 line-height: 1.5,
                 margin-top: 2rem,
                 margin-bottom: 0.5rem,
-                font-weight:bold
+                font-weight:$headline-font-weight
         ),
         h3: (
                 sizes: (
@@ -45,7 +48,8 @@ $text-elements: (
                 ),
                 line-height: 1.25,
                 margin-top: 2rem,
-                margin-bottom: 0.5rem
+                margin-bottom: 0.5rem,
+                font-weight:$headline-font-weight
         ),
         h4: (
                 sizes: (
@@ -58,7 +62,7 @@ $text-elements: (
                 line-height: 1,
                 margin-top: 1.5rem,
                 margin-bottom: 0.5rem,
-                font-weight:bold
+                font-weight:$headline-font-weight
         ),
         h5: (
                 sizes: (
@@ -70,7 +74,8 @@ $text-elements: (
                 ),
                 line-height: 1,
                 margin-top: 1.5rem,
-                margin-bottom: 0.5rem
+                margin-bottom: 0.5rem,
+                font-weight:$headline-font-weight
         ),
         h6: (
                 sizes: (
@@ -83,7 +88,7 @@ $text-elements: (
                 line-height: 1,
                 margin-top: 1.5rem,
                 margin-bottom: 0.5rem,
-                font-weight:bold
+                font-weight:$headline-font-weight
         ),
         legend: (
                 sizes: (
@@ -130,23 +135,23 @@ $text-elements: (
 #main h1.ce_headline, .ce_text > h1 {
   text-align: left;
   color: #000;
-  font-weight: 1000;
-  text-transform: uppercase;
+  font-weight: 800;
+  //text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08em;
 
   //font-family: "Roboto Slab", serif;
 
-    &:after {
-      content: "";
-      width: 150px;
-      background: $accent-color;
-      margin: 15px auto !important;
-      margin-bottom: 1em;
-      height: 2px;
-      display: block;
+  &:after {
+    content: "";
+    width: 150px;
+    background: $accent-color;
+    margin: 15px auto !important;
+    margin-bottom: 1em;
+    height: 2px;
+    display: block;
 
-    }
+  }
 
 }
 
