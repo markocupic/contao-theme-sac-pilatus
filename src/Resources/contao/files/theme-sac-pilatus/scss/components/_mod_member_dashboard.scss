@@ -22,6 +22,20 @@
   }
 }
 
+.member-picture-feed-thumb {
+  position: relative;
+  margin-bottom: 15px;
+  .member-picture-feed-thumb-buttons-container {
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    button{
+      margin-left: 5px;
+    }
+  }
+}
+
+
 .member-dashboard-avatar {
   position: relative;
 
