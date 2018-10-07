@@ -25,7 +25,7 @@ figure{
   ul{
     @extend .row;
     li {
-      @extend .col-12;
+      @extend .col-6;
       @extend .col-sm-4;
       @extend .col-md-3;
       margin-top: $grid-gutter-width/4;
