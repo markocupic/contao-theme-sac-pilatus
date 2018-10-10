@@ -6,7 +6,12 @@
     <?php foreach ($row as $col): ?>
       <?php $animationDelay+=0.1; ?>
       <?php if ($col->addImage): ?>
-        <?php $objImage = \Contao\FilesModel::findByPath($col->singleSRC); ?>
+      <?php $strOwner = null ?>
+      <?php $objImage = \Contao\FilesModel::findByPath($col->singleSRC); ?>
+      <?php  $objOwner = \Contao\MemberModel::findByPk($objImage->memberPictureFeedUserId); ?>
+      <?php if($objOwner !== null): ?>
+        <?php $strOwner = $objOwner->firstname . ' ' . $objOwner->lastname ?>
+      <?php endif; ?>
         <li class="col-6 col-sm-4 col-md-3 col-lg-3 <?= $class ?> <?= $col->class ?>">
           <div class="card gray-lightest">
             <div class="p-2 d-flex align-items-center">
@@ -15,7 +20,7 @@
                   {{image::<?= getAvatar($objImage->memberPictureFeedUserId, 'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
                 <?php endif; ?>
               <?php endif; ?>
-              <p class="card-text small ml-2">von <?= $col->photographer ?></p>
+              <p class="card-text small ml-2">von <?= $strOwner ? $strOwner : $col->photographer ?></p>
             </div>
             <figure class="image_container"<?php if ($col->margin): ?> style="<?= $col->margin ?>"<?php endif; ?>>
             <?php if ($col->href): ?>
