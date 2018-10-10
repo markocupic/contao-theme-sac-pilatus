@@ -22,7 +22,7 @@ figure{
 }
 
 .ce_gallery {
-  ul{
+  ul:first-child{
     @extend .row;
     li {
       @extend .col-6;
