@@ -29,12 +29,18 @@
     position: absolute;
     bottom: 5px;
     right: 12px;
-    button{
+    button {
       margin-left: 5px;
     }
   }
+  .member-picture-feed-upload-time-overlay {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    font-size: 9px;
+    color: yellow;
+  }
 }
-
 
 .member-dashboard-avatar {
   position: relative;
