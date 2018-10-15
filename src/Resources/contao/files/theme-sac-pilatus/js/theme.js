@@ -173,6 +173,10 @@
 (function ($) {
     $().ready(function () {
         if ($('.widget.error').length) {
+            window.setTimeout(function () {
+                window.scrollTo(0, $('.widget.error').first().offset().top);
+            }, 500);
+            /**
 
             var interval = window.setInterval(function () {
                 // Wait until the onload overlay has disapeared
@@ -183,6 +187,7 @@
                     }, 100);
                 }
             }, 100);
+             **/
         }
     });
 })(jQuery);

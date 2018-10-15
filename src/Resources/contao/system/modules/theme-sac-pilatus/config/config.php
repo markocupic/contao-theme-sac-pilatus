@@ -29,9 +29,9 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_CSS'][] = 'files/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css|static';
     $GLOBALS['TL_HEAD'][] = '<script defer src="files/fontawesome-pro-5.0.13/svg-with-js/js/fontawesome-all.min.js"></script>';
 
-
-    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>';
-    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />';
+    // Select2
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/js/select2.min.js"></script>';
+    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/css/select2.min.css" />';
 
     // Animate
     //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';

@@ -6,11 +6,7 @@ html {
 }
 
 body {
-  &.loaded {
-    @include media-breakpoint-up(sm) {
-      //background: $body-bg url("/../../files/theme-sac-pilatus/images/bg/background-clip-2.png") no-repeat fixed center;
-    }
-  }
+
 
   // Choose between these font sizes:
   //font-size: $font-size-base;
