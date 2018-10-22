@@ -95,7 +95,7 @@
             setDropdownOffset();
         });
 
-        // trigger dropdown menut
+        // trigger dropdown menu
         $('.mod_navigation ul.level_1 > li.submenu.not-clickable-page-container > a,  .mod_navigation ul.level_1 > li.submenu.not-clickable-page-container > strong').click(function (e) {
             $(this).parent('ul.level_1 > li.dropdown').children('.dropdown-toggle').trigger('click');
         });
@@ -173,10 +173,6 @@
 (function ($) {
     $().ready(function () {
         if ($('.widget.error').length) {
-            window.setTimeout(function () {
-                window.scrollTo(0, $('.widget.error').first().offset().top);
-            }, 500);
-            /**
 
             var interval = window.setInterval(function () {
                 // Wait until the onload overlay has disapeared
@@ -187,7 +183,6 @@
                     }, 100);
                 }
             }, 100);
-             **/
         }
     });
 })(jQuery);

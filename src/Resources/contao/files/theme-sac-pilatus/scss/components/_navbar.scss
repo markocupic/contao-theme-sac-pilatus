@@ -1,6 +1,7 @@
 $navbar-height: 40px;
 $navbar-hover-color: #f2f2f2;
-$navbar-dropdown-color: #777;
+$navbar-dropdown-color: #66caff;
+$navbar-dropdown-color: #e4e4e4;
 $color-level-1: #222;
 #header {
   .navbar-header {
@@ -136,7 +137,7 @@ $color-level-1: #222;
         width: 400px;
         ////////////////// megamenu hack
         width: 100% !important;
-        background-color: #66caff;
+        background-color: $navbar-dropdown-color;
 
         li .active {
           color: $red !important;

@@ -1,4 +1,4 @@
-$headline-font-weight: 700;
+$headline-font-weight: 600;
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: $headline-font-weight;
@@ -135,7 +135,7 @@ $text-elements: (
 #main h1.ce_headline, .ce_text > h1 {
   text-align: left;
   color: #000;
-  font-weight: 800;
+  font-weight: 700;
   //text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08em;
