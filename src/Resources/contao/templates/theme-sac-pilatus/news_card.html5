@@ -18,7 +18,7 @@
             <a href="{{news_url::<?= $this->id ?>}}" title="weiterlesen">
                 <h5 class="card-title mt-0"><?= $this->newsHeadline ?></h5>
             </a>
-            <p class="card-news-teaser"><?= \StringUtil::substr($this->teaser,80) ?></p>
+            <p class="card-news-teaser"><?= \StringUtil::substr($this->teaser,100) ?></p>
             <!--
             <a href="{{news_url::<?= $this->id ?>}}" role="button" class="btn mt-4 btn-sm btn-outline-primary" title="Weiterlesen">Weiterlesen</a>
             -->
