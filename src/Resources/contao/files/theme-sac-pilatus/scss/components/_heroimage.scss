@@ -34,6 +34,11 @@
   margin-bottom: 2rem;
 }
 
+.ce_heroimage .heroimage-text-box
+{
+  font-style: italic;
+}
+
 @include media-breakpoint-up(sm) {
 
   .ce_heroimage .heroimage-headline-box h1 {
