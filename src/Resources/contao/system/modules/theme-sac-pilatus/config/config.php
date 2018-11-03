@@ -25,8 +25,7 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_CSS'][] = "files/theme-sac-pilatus/css/third-party/bootstrap-datepicker.standalone.min.css|static";
 
     // Load FontAwesome
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://use.fontawesome.com/926b4fc2c0.js";
-    //$GLOBALS['TL_CSS'][] = 'files/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css|static';
+    $GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
     $GLOBALS['TL_HEAD'][] = '<script defer src="/files/fontawesome-pro-5.5.0-web/js/all.js"></script>';
 
     // Select2
