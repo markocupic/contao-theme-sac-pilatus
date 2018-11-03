@@ -26,8 +26,8 @@ if (TL_MODE == 'FE')
 
     // Load FontAwesome
     //$GLOBALS['TL_JAVASCRIPT'][] = "https://use.fontawesome.com/926b4fc2c0.js";
-    $GLOBALS['TL_CSS'][] = 'files/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css|static';
-    $GLOBALS['TL_HEAD'][] = '<script defer src="files/fontawesome-pro-5.0.13/svg-with-js/js/fontawesome-all.min.js"></script>';
+    //$GLOBALS['TL_CSS'][] = 'files/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css|static';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="/files/fontawesome-pro-5.5.0-web/js/all.js"></script>';
 
     // Select2
     $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/js/select2.min.js"></script>';
