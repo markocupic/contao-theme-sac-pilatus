@@ -15,6 +15,7 @@ $color-level-1: #222;
         line-height: 1;
       }
       ul.level_1 {
+
         background-color: transparent;
         display: flex;
         li > a, li > strong, li > span {
@@ -48,44 +49,25 @@ $color-level-1: #222;
         }
 
         // Dropdown toggle
-        > li.dropdown > .dropdown-toggle[aria-expanded="true"] {
-          .fa-angle-down {
-            display: none !important;
-          }
+        > li > .dropdown-toggle > *[data-role="closedropdown"] {
+          display: none !important;
         }
-        > li.dropdown > .dropdown-toggle[aria-expanded="false"] {
-          .fa-angle-up {
-            display: none !important;
-          }
+        > li > .dropdown-toggle > *[data-role="opendropdown"] {
+          display: inline-block !important;
         }
-
+        > li.show > .dropdown-toggle > *[data-role="opendropdown"] {
+            display: none !important;
+        }
+        > li.show > .dropdown-toggle > *[data-role="closedropdown"] {
+          display: inline-block !important;
+        }
         > li.dropdown > button.dropdown-toggle {
-          border: 0;
-          background: 0;
-          padding: 0 6px;
+          padding: 0 6px 0 3px;
           &:after {
-            display: none
-          }
-          .fa {
-            font-size: 1.5rem;
-            color: $color-level-1;
-
-            &:before {
-              margin: 0;
-              content: "\f107"
-            }
+            display: none !important;
           }
         }
-        > li.dropdown.show > button.dropdown-toggle {
-          .fa {
-            font-size: 1.5rem;
-            color: $color-level-1;
-
-            &:before {
-              content: "\f106"
-            }
-          }
-        }
+        // End Dropdown toggle style
 
         > li {
           padding: 0 6px;

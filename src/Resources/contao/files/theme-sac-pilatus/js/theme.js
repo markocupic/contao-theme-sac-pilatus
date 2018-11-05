@@ -25,7 +25,7 @@
 })(jQuery);
 
 
-/** Close and open the search frôrmmoverlay **/
+/** Close and open the search form overlay **/
 (function ($) {
     $().ready(function () {
         if (!$(".mod_search_custom .mod_search_custom_overlay").length) {
@@ -74,6 +74,7 @@
 /** Header navigation **/
 (function ($) {
     $().ready(function () {
+        /**
         function setDropdownOffset() {
             $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
                 var dropdown = this;
@@ -83,16 +84,12 @@
                 $(dropdownToggler).attr('data-offset', offset);
             });
         }
+         */
 
 
         // Add expand icon to first level submenu
         $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
-            var dropdown = this;
-            $(dropdown).addClass('dropdown');
-            $(dropdown).append('<button class="dropdown-toggle" type="button" data-toggle="dropdown" data-placement="bottom" data-flip="false" data-offset="-50" aria-haspopup="true" aria-expanded="false"><i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></button>');
-
-            $(dropdown).find('ul.level_2').addClass('dropdown-menu');
-            setDropdownOffset();
+            //setDropdownOffset();
         });
 
         // trigger dropdown menu
