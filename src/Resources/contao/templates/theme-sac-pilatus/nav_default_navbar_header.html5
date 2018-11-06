@@ -4,7 +4,7 @@
     <?php $dropdownButton = ''; ?>
     <?php if(!empty($item['subitems'])): ?>
       <?php $item['class'] .= ' dropdown'; ?>
-      <?php $dropdownButton = '<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" data-role="opendropdown"></i><i class="fa fa-caret-up" data-role="closedropdown"></i></button>'; ?>
+      <?php $dropdownButton = '<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down" data-role="opendropdown"></i><i class="fa fa-chevron-up" data-role="closedropdown"></i></button>'; ?>
     <?php endif; ?>
     <?php if ($item['isActive']): ?>
       <li class="<?= $item['class'] ?>"><strong class="<?= $item['class'] ?>"<?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="name"><?= $item['link'] ?></strong><?= $item['subitems'] ?><?php echo $dropdownButton; ?></li>
