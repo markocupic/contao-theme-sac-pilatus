@@ -137,7 +137,7 @@
         $(window).resize(function (e) {
 
             $('#header .mod_navigation .dropdown.show .dropdown-toggle').dropdown('toggle');
-            setDropdownOffset();
+            //setDropdownOffset();
         });
     });
 })(jQuery);
