@@ -1,3 +1,30 @@
+/** Style file inputs **/
+(function ($) {
+    $(document).ready(function () {
+        $('input.custom-input-file').each(function () {
+            var label = $(this).siblings('label.custom-input-file');
+            var labelVal = $(label).html();
+            $(this).change(function (e) {
+                var fileName = '';
+                if (this.files && this.files.length > 1) {
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                }
+                else {
+                    fileName = e.target.value.split('\\').pop();
+                }
+                if (fileName) {
+                    $(label).html(fileName);
+                }
+                else {
+                    $(label).html(labelVal);
+                }
+            });
+        });
+
+    });
+})(jQuery);
+
+
 // Equal height for cards
 (function ($) {
     $(document).ready(function () {
@@ -75,7 +102,7 @@
 (function ($) {
     $().ready(function () {
         /**
-        function setDropdownOffset() {
+         function setDropdownOffset() {
             $('#header .mod_navigation ul.level_1 > li.submenu').each(function () {
                 var dropdown = this;
                 var dropdownToggler = $(dropdown).find('.dropdown-toggle');
