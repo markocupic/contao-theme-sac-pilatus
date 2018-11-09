@@ -1,4 +1,5 @@
 /** Style file inputs **/
+//https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
 (function ($) {
     $(document).ready(function () {
         $('input.custom-input-file').each(function () {
