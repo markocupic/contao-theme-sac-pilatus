@@ -11,14 +11,20 @@
       margin: 0;
       line-height: 2;
       padding: 0 0.75rem;
-       *{
-        color: #ff454a !important;
-         text-transform: uppercase;
-         text-decoration: none;
-         &:hover{
-           color: #fff !important;
-         }
+      * {
+        color: #d0021b !important;
+        font-weight: normal !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          color: #fff !important;
+        }
+        &.active {
+          font-weight: normal !important;
+          color: #fff !important;
+        }
       }
+
     }
     &:first-child {
       border: none;

@@ -49,7 +49,7 @@ a.email{
 }
 
 .ce_hyperlink {
-  a[href*="."]:before {
+  a[href*="."] {
     @include icon-before(f0c1); // fa-link
   }
   a.hyperlink_img:before{
