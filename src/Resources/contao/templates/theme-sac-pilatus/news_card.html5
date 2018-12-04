@@ -1,5 +1,5 @@
 <div class="news_card col-12 col-sm-6 col-lg-3<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
-    <div class="card">
+    <div class="card gray-lightest">
         <!--
         <div class="p-2 d-flex align-items-center">
             <p class="card-text small ml-2">

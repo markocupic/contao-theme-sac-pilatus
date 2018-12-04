@@ -1,10 +1,13 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
+
+
     (function ($) {
         $(document).ready(function () {
 
             // Global grid container element
             var $grid = $('.mod_newslist_infinite_scroll');
+
 
             /**
              * Generate the ContaoNewsInfiniteScroll object
@@ -114,7 +117,9 @@
                     // Append new elements to the masonry grid
                     $grid.append($newElements).masonry('appended', $newElements);
                     $('.mod_newslist_infinite_scroll .news_card').addClass('added-to-masonry-grid');
-
+                    setTimeout(function() {
+                        $grid.masonry();
+                    }, 200);
                 }
             });
         });
