@@ -23,7 +23,7 @@
   "require": {
     "contao/core-bundle": "^4.6, <5",
     "markocupic/rotate_image": "^1.0",
-    "markocupic/custom-section": "^0.0.6",
+    "markocupic/custom-section": "^0.0.11",
     "markocupic/preloader-overlay": "^0.0.10",
     "markocupic/sidebar-navigation": "^0.0.2",
     "markocupic/service-link-bundle": "^1.0",
