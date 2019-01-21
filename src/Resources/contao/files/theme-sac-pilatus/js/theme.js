@@ -1,3 +1,19 @@
+/** Remove leading zeros in login forms **/
+(function ($) {
+    $(document).ready(function () {
+        $('input[name="username"]').each(function () {
+            var elInput = this;
+            $(elInput).on('input', function (e) {
+                if ($(elInput).val() != '') {
+                    var value = $(elInput).val().replace(/^0+/, '');
+                    $(elInput).val(value);
+                }
+            });
+        });
+    });
+})(jQuery);
+
+
 /** Style file inputs **/
 //https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
 (function ($) {
