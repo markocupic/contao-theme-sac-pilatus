@@ -22,8 +22,8 @@ $color-level-1: #222;
 
           font-size: 1rem !important;
           color: $color-level-1;
-          @media screen and (min-width: 1400px) {
-            //font-size: 1.25rem !important;
+          @media screen and (min-width: 1600px) {
+            font-size: $font-size-lg !important;
           }
         }
         > li {
@@ -165,6 +165,9 @@ $color-level-1: #222;
           > a, > strong, > span {
             color: #000;
             font-size: 1rem !important;
+            @media screen and (min-width: 1600px) {
+              font-size: $font-size-lg !important;
+            }
             font-weight: 600;
             @include transition(color);
             display: block;
@@ -198,6 +201,9 @@ $color-level-1: #222;
           > a, > strong, > span {
             color: #000;
             font-size: 0.875rem !important;
+            @media screen and (min-width: 1600px) {
+              font-size: 1.125rem !important;
+            }
             font-weight: normal;
             @include transition(color);
             &:before {
