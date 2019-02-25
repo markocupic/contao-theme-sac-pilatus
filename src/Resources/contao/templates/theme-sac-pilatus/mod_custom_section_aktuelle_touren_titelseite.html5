@@ -5,11 +5,12 @@
     <table class="table">
         <tr>
             <th>Datum</th>
-            <th>Dauer</th>
-            <th>Tour</th>
+            <th class="d-none d-md-table-cell">Dauer</th>
             <th></th>
-            <th>Anf.</th>
-            <th>Art</th>
+            <th>Tour</th>
+            <th class="d-none d-md-table-cell">Anz.</th>
+            <th class="d-none d-md-table-cell">Anf.</th>
+            <th class="d-none d-md-table-cell">Art</th>
             <th>Leitung</th>
         </tr>
 
@@ -17,7 +18,7 @@
         <?php if($i == $limit) continue; ?>
         <?php //if(Markocupic\SacEventToolBundle\CalendarEventsHelper::isEventBookable($objEvent->id) === false) continue; ?>
         <?php $i++; ?>
-        <?= Markocupic\SacEventToolBundle\CalendarEventsHelper::generateTourRow($objEvent->id) ?>
+        <?= Markocupic\SacEventToolBundle\CalendarEventsHelper::generateTourRow($objEvent->id, array('tour', 'lastMinuteTour'), 'partial_event_tour_row_layout_table') ?>
     <?php endwhile; ?>
     </table>
 <?php endif; ?>
