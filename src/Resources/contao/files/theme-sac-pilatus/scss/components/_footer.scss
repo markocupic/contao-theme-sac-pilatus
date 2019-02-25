@@ -1,6 +1,18 @@
 #footer {
-  $footer-bg-color: #122;
-  font-size: 0.875rem;
+  $footer-bg-color: transparent;
+  $footer-color: #333;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+  @media (min-width: 1600px) {
+    font-size: $font-size-lg;
+    line-height: $line-height-base;
+  }
+
   .footer-nav {
     ul {
       text-align: center;
@@ -12,16 +24,16 @@
       line-height: 2;
       padding: 0 0.75rem;
       * {
-        color: #d0021b !important;
+        color: $footer-color !important;
         font-weight: normal !important;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         text-decoration: none;
         &:hover {
-          color: #fff !important;
+          color: #000 !important;
         }
         &.active {
           font-weight: normal !important;
-          color: #fff !important;
+          //color: #fff !important;
         }
       }
 
@@ -41,10 +53,9 @@
 
   .footer-row-1 {
     background-color: $footer-bg-color;
-    color: $gray-100;
-    border-top: 1px solid darken($gray-300, 4);
-    a {
-      color: $gray-600 !important;
+    color: $footer-color;
+    a, a > * {
+      color: $primary !important;
     }
     .title {
       font-weight: bold;
@@ -56,12 +67,12 @@
 
   .footer-row-2 {
     background-color: $footer-bg-color;
-    color: #8b889b !important;
-    a {
-      color: #8b889b !important;
+    color: $footer-color !important;
+    a, a > * {
+      color: $primary !important;
     }
     .title {
-      color: #d7d5e5;
+      color: $footer-color;
     }
 
     #socialIcons ul {
