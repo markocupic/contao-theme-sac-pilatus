@@ -18,7 +18,7 @@
         <?php if($i == $limit) continue; ?>
         <?php //if(Markocupic\SacEventToolBundle\CalendarEventsHelper::isEventBookable($objEvent->id) === false) continue; ?>
         <?php $i++; ?>
-        <?= Markocupic\SacEventToolBundle\CalendarEventsHelper::generateTourRow($objEvent->id, array('tour', 'lastMinuteTour'), 'partial_event_tour_row_layout_table') ?>
+        <?= Markocupic\SacEventToolBundle\CalendarEventsHelper::generateEventRow($objEvent->id, array('tour', 'lastMinuteTour'), 'partial_event_tour_row_layout_table') ?>
     <?php endwhile; ?>
     </table>
 <?php endif; ?>
