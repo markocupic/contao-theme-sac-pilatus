@@ -1,3 +1,7 @@
+<?php
+$GLOBALS['TL_JAVASCRIPT'][] = "bundles/markocupicsaceventtool/js/event_data_lazy_load.js|static";
+?>
+<div data-request-token="{{request_token}}" style="display:none"></div>
 <?php $i=0; ?>
 <?php $limit = 10; ?>
 <?php $objEvent = \Database::getInstance()->prepare('SELECT * FROM tl_calendar_events WHERE published=? AND startDate > ? AND (eventType=? OR eventType=?) ORDER BY startDate')->limit($limit+100)->execute('1', time(), 'tour', 'lastMinuteTour'); ?>
