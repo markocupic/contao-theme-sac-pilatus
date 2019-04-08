@@ -1,37 +1,32 @@
 .filter-board {
-
   background-color: transparent;
 
-  .inside {
-    padding: 15px;
-
+  .filter-board-widget {
+    visibility: hidden;
   }
+
   a.select-organizer-all {
     color: #f8f8f8;
   }
+
   label {
     color: #fff;
     margin-top: 1rem;
   }
+
   input, textarea, select {
     margin: 0;
     width: 100%;
     outline: none;
     border: 0;
-
-  }
-  .form-group {
-    margin: 0;
-  }
-
-  .close-event-filter-button {
-    color: #fff;
-    border: 1px solid #fff;
   }
 
   .select2-container--default .select2-selection--multiple {
-    border-radius: 0 !important;
-    font-size: 1rem;
+    border: 0 !important;
+    padding: .25rem;
+    line-height: 1.6;
+    border-radius: 4px !important;
+    font-size: .75rem;
     .select2-selection__choice {
       background-color: $blue !important;
       color: #fff !important;
@@ -42,21 +37,19 @@
       }
     }
   }
+
   .datepicker {
     z-index: 1200;
   }
 
-  option[disabled] {
-    color: $gray-300 !important;
-  }
   .reset-form {
     color: #fff;
   }
 }
 
 .select2-container--default .select2-selection--multiple {
-  border: 0 !important;
-  line-height: 1.6;
+  //border: 0 !important;
+  //line-height: 1.6;
 }
 
 
