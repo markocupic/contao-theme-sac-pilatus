@@ -31,7 +31,8 @@
     "markocupic/contao-article-class-select-bundle": "^1.0",
     "markocupic/backend-password-recovery-bundle": "^1.2",
     "markocupic/contao-news-infinite-scroll-bundle": "^1.0",
-    "markocupic/bootstrap-carousel-bundle": "^1.0"
+    "markocupic/bootstrap-carousel-bundle": "^1.0",
+    "stefansl/divider": "^1.3"
   },
   "replace": {
   },
