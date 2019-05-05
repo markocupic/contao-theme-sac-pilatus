@@ -19,6 +19,14 @@ $orange: #FF9900;
 $purple: #7848B8;
 // Luzern Corporate Design
 $blue: #0082C7;
+:root {
+  --red: $red;
+  --green: $green;
+  --orange: $orange;
+  --purple: $purple;
+  --blue: $blue;
+}
+
 
 $accent-color: $red;
 $accent-color-2: $blue;
@@ -52,3 +60,7 @@ $grid-gutter-width: 15px;
 // Modal
 $modal-backdrop-opacity: .7;
 $modal-content-border-radius: 0;
+
+:root {
+  --bg-article-blue: $blue;
+}
