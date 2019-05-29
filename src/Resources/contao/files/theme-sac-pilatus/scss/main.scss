@@ -1,7 +1,8 @@
 // Set variables and overwrite bootstrap vars
 @import "variables";
 // EMBED BOOTSTRAP FRAMEWORK
-@import "/../bootstrap/scss/bootstrap.scss";
+//@import "/../bootstrap-4.1.1/bootstrap-4.1.1/scss/bootstrap.scss";
+@import "/../bootstrap-4.3.1/bootstrap-4.3.1/scss/bootstrap.scss";
 
 // MIXINS
 @import "mixins/_mixins.scss";
@@ -18,6 +19,7 @@
 @import "components/header";
 @import "components/stickyheader-onscroll";
 @import "components/footer";
+@import "components/___miscelaneous"; 
 //@import "components/sticky-footer";
 @import "components/lists";
 @import "components/forms";
@@ -26,7 +28,7 @@
 @import "components/service-link";
 @import "components/socialmedia-buttons";
 //@import "components/preloader-overlay";
-@import "components/sidebar-and-navigation"; 
+@import "components/sidebar-and-navigation";
 @import "components/navbar";
 @import "components/scroll-to-top";
 @import "components/media";
