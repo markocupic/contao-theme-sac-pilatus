@@ -1,5 +1,7 @@
+$enable-responsive-font-sizes: true;
+
 // Fonts
-$font-family-sans-serif:'Segoe UI','Bai Jamjuree', 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: 'Segoe UI', 'Bai Jamjuree', 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
 //$headings-font-family:'PT Sans', 'Open Sans','Roboto Slab', 'Ubuntu', 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, serif;
 
 // Icon Fontname
@@ -26,7 +28,6 @@ $blue: #0082C7;
   --purple: $purple;
   --blue: $blue;
 }
-
 
 $accent-color: $red;
 $accent-color-2: $blue;

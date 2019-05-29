@@ -30,7 +30,7 @@
     background-color: $gray-300;
   }
   .error {
-    font-size: 1rem;
+    @include font-size(20px);
     color: $red;
   }
 }

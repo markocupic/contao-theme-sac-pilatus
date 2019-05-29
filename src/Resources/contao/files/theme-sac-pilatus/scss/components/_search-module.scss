@@ -6,10 +6,48 @@
   bottom: 0;
   left: 0;
   color: #ffffff;
-  text-align: center;
   background: $blue;
   z-index: 100000;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  form {
+    width: 600px;
+    position: relative;
+    max-width: 90%;
+    padding: 0;
+    margin: 0;
+    display: block;
+    .formbody {
+      padding: 0;
+      margin: 0;
+      .search-headline {
+        color: #fff;
+        margin-bottom: 2rem;
+        text-align: center;
+        width: 100%;
+      }
+      .search-input {
+        margin-bottom: 2rem;
+        input[type="search"] {
+          width: 100%;
+        }
+      }
+
+      .search-submit {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .submit {
+          background-color: transparent;
+          border: 1px solid #fff;
+          color: #fff;
+        }
+      }
+    }
+
+  }
 
   .close-button {
     position: absolute;
@@ -19,32 +57,8 @@
     color: #fff;
     font-size: 2rem;
     border: none;
-    &:hover{
+    &:hover {
       cursor: pointer;
-    }
-  }
-  .formbody {
-    width: 100%;
-
-    .search-headline {
-      color: #fff;
-      margin-bottom: 2rem;
-    }
-    .search-input {
-      text-align: center;
-      margin-bottom: 2rem;
-      input[type="search"] {
-        width: 400px;
-        max-width: 80%;
-        display: inline !important;
-      }
-
-    }
-
-    .submit {
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: #fff;
     }
   }
 }

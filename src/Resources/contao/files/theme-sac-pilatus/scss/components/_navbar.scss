@@ -16,6 +16,9 @@ $color-level-1: #222;
       }
       ul.level_1 {
 
+        a:hover{
+          background-color: transparent;
+        }
         background-color: transparent;
         display: flex;
         li > a, li > strong, li > span {
