@@ -11,6 +11,7 @@
 
 
 .carousel-control-next, .carousel-control-prev {
+  z-index: 10;
   &:hover {
     //opacity: 1;
     .carousel-control-prev-icon, .carousel-control-next-icon {
