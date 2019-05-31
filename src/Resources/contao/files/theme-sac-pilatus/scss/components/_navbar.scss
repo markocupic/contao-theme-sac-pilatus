@@ -178,7 +178,7 @@ $color-level-2-active: #ffe500;
           line-height: 2.25;
           @include icon-before(f105, white); //angle-right
           &:before {
-            margin-top: 2px;
+            margin-top: 0;
           }
           //border-top: 1px solid #444;
           padding: 0;
