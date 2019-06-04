@@ -24,13 +24,12 @@
         </div>
     </div>
 
-
-    <div class="header-navbar-row-1  header--fixed hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
+    <div class="header-navbar-row-1 hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
         <div class="navbar-brand">
-          <a href="" title="Startseite">
-            <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
-          </a>
-          <!--<h1 class="d-none d-lg-block">SAC Pilatus</h1>-->
+            <a href="" title="Startseite">
+                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+            </a>
+            <!--<h1 class="d-none d-lg-block">SAC Pilatus</h1>-->
         </div>
 
         <!-- NAVBAR-START -->
@@ -39,8 +38,8 @@
 
         <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
 
-          <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
-          <a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ml-2" role="button" aria-label="Touren">Touren</a>
+            <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
+            <a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ml-2" role="button" aria-label="Touren">Touren</a>
 
             <!-- Searchbar toggler -->
             <button class="btn btn-lg btn-link ml-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
@@ -81,25 +80,25 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="d-block modal-title">Mitglieder-Login</h5>{{br}}
-              <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
+                <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fal fa-times" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="modal-body">
                 {{insert_module::290}}
-              {{br}}
-              <hr>
-              <h6 class="mt-4">Zum ersten Mal hier?</h6>
-              <p>Jetzt mit <strong>Mitgliedernummer</strong> und deiner beim SAC hinterlegten <strong>E-Mail-Adresse</strong> dein SAC-Pilatus Konto einmalig <a href="{{link_url::konto-aktivieren}}">aktivieren!</a></p>
+                {{br}}
+                <hr>
+                <h6 class="mt-4">Zum ersten Mal hier?</h6>
+                <p>Jetzt mit <strong>Mitgliedernummer</strong> und deiner beim SAC hinterlegten <strong>E-Mail-Adresse</strong> dein SAC-Pilatus Konto einmalig <a href="{{link_url::konto-aktivieren}}">aktivieren!</a></p>
             </div>
             <div class="modal-footer">
-              <?php if(!FE_USER_LOGGED_IN): ?>
-              <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto aktivieren?</a>
-              &nbsp;
-              <?php endif; ?>
-              <a href="{{link_url::passwort-vergessen}}" class="btn btn-outline-primary">{{link_title::passwort-vergessen}}?</a>
+                <?php if(!FE_USER_LOGGED_IN): ?>
+                <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto aktivieren?</a>
+                &nbsp;
+                <?php endif; ?>
+                <a href="{{link_url::passwort-vergessen}}" class="btn btn-outline-primary">{{link_title::passwort-vergessen}}?</a>
             </div>
         </div>
     </div>
@@ -112,19 +111,18 @@
         "use strict";
 
         $(document).ready(function () {
-            $('.trigger-login-modal').click(function(e){
+            $('.trigger-login-modal').click(function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 $('#loginModal').modal('show');
             });
 
-            if($('#loginModal .error').length){
+            if ($('#loginModal .error').length) {
                 $('#loginModal').modal('show');
             }
         });
     })(jQuery);
 </script>
-
 
 
 <!-- indexer::continue -->
