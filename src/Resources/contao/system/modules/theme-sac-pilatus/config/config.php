@@ -5,24 +5,12 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
     $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
 
-
-    // Bootstrap.js  Load in layout
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://code.jquery.com/jquery-3.2.1.slim.min.js";
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://code.jquery.com/jquery-1.12.4.min.js";
-
+    // JQuery is loaded in the layout
     // Popper.js must be loaded before bootstrap.js
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js";
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>';
 
     // Bootstrap.js
-    $GLOBALS['TL_JAVASCRIPT'][] = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
-
-    // Bootstrap datepicker
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js";
-    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/bootstrap-datepicker.min.js|static";
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.de.min.js";
-    $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/bootstrap-datepicker.de.min.js|static";
-    //$GLOBALS['TL_CSS'][] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css";
-    $GLOBALS['TL_CSS'][] = "files/theme-sac-pilatus/css/third-party/bootstrap-datepicker.standalone.min.css|static";
+    $GLOBALS['TL_HEAD'][] = '<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>';
 
     // Load FontAwesome
     $GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
@@ -38,24 +26,6 @@ if (TL_MODE == 'FE')
 
     // Google Webfonts
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,400,700" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Varela+Round"rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">';
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">';
-
-
-
-    // Slick: The last slider yo ever need
-    //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js';
-    //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css';
-    //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css';
-
 
     // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
     // JQuery UI doesn't go with popper.js
@@ -73,5 +43,10 @@ if (TL_MODE == 'FE')
     // Load theme javascript file
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/equal-height.min.js|static';
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js|static';
+
+    // Load flatpickr
+    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
+    $GLOBALS['TL_HEAD'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
+    $GLOBALS['TL_HEAD'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
 
 }
