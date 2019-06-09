@@ -1,8 +1,7 @@
 // Set variables and overwrite bootstrap vars
 @import "variables";
 // EMBED BOOTSTRAP FRAMEWORK
-//@import "/../bootstrap-4.1.1/bootstrap-4.1.1/scss/bootstrap.scss";
-@import "/../bootstrap-4.3.1/bootstrap-4.3.1/scss/bootstrap.scss";
+@import "/../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
 
 // MIXINS
 @import "mixins/_mixins.scss";
