@@ -22,6 +22,7 @@
   },
   "require": {
     "contao/core-bundle": "^4.6, <5",
+    "markocupic/contao-component-bootstrap": "^4.3",
     "markocupic/rotate_image": "^1.0",
     "markocupic/custom-section": "^1.0",
     "markocupic/sidebar-navigation": "^1.0",
