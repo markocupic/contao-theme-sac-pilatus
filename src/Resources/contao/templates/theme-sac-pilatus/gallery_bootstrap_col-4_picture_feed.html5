@@ -1,4 +1,4 @@
-
+<!-- indexer::stop -->
 <ul class="row tiny-gutter equal-height cols_<?= $this->perRow ?>">
   <?php $animationDelay = 0.5; ?>
 
@@ -41,16 +41,9 @@
                 </p>
             </div>
           </div>
-
-
-
-
-
-
-
-
         </li>
       <?php endif; ?>
     <?php endforeach; ?>
   <?php endforeach; ?>
 </ul>
+<!-- indexer::continue -->
