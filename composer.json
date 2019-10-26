@@ -33,7 +33,7 @@
     "markocupic/backend-password-recovery-bundle": "^1.2",
     "markocupic/contao-news-infinite-scroll-bundle": "^1.0",
     "markocupic/bootstrap-carousel-bundle": "^1.0",
-    "stefansl/divider": "^1.3"
+    "stefansl/contao-divider-bundle": "^v1.0"
   },
   "replace": {
   },
