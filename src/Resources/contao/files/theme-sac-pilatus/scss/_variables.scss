@@ -1,5 +1,7 @@
 $enable-responsive-font-sizes: true;
+$rfs-base-font-size: 1rem;
 
+$enable-gradients: true;
 // Icon Fontname
 $icon-font-name: "Font Awesome 5 Pro";
 
@@ -23,7 +25,7 @@ $accent-color-2: $blue;
 
 $link-color: $blue;
 
-$body-color: #222;
+$body-color: #505050; // Contrast ratio 8.0
 $body-bg: #e9ecef; // $gray-200
 
 // Form Widgets

@@ -14,7 +14,7 @@
   #container {
 
     .mod_article > .container {
-      padding: $spacer;
+      padding: 2rem $spacer;
       @media (min-width: 1400px) {
         max-width: 70%;
       }
@@ -53,8 +53,8 @@
       background-color: transparent;
       .article-inside {
         background-color: #fff;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
@@ -87,6 +87,7 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
+      color: #fff;
       a {
         color: #fff;
       }
@@ -134,8 +135,8 @@
       background-color: #fff;
       .article-inside {
         background-color: #fff;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
       }
     }
 
@@ -143,16 +144,16 @@
       background-color: #F3EFED;
       .article-inside {
         background-color: #F3EFED;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
       }
     }
     .mod_article.article-dark-gray {
       background-color: #cfcfcf;
       .article-inside {
         background-color: transparent;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
       }
     }
   }

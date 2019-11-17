@@ -71,8 +71,8 @@ $text-elements: (
 // Scalling down headline font-size for mobile devices
 @each $key, $map in $text-elements {
   #{$key} {
-    @include font-size(map-deep-get($text-elements, $key, "font-size"));
-    line-height: map-deep-get($text-elements, $key, "line-height");
+    //@include font-size(map-deep-get($text-elements, $key, "font-size"));
+    //line-height: map-deep-get($text-elements, $key, "line-height");
     margin-top: map-deep-get($text-elements, $key, "margin-top");
     margin-bottom: map-deep-get($text-elements, $key, "margin-bottom");
     font-weight: map-deep-get($text-elements, $key, "font-weight");
@@ -88,20 +88,17 @@ $text-elements: (
   color: #000;
   font-weight: 700;
   //text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.08em;
-
-  //font-family: "Roboto Slab", serif;
 
   &:after {
     content: "";
     width: 150px;
     background: $accent-color;
-    margin: 15px auto !important;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     height: 2px;
     display: block;
-
   }
 
 }

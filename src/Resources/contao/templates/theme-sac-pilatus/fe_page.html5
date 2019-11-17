@@ -81,17 +81,18 @@
 
       <?php $this->sections('after'); ?>
 
-      <?php $this->block('footer'); ?>
-        <?php if ($this->footer): ?>
-          <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
-            <div class="inside">
-              <?= $this->footer ?>
-            </div>
-          </footer>
-        <?php endif; ?>
-      <?php $this->endblock(); ?>
+    </div><!-- End wrapper -->
 
-    </div>
+    <!-- Sticky footer -->
+    <?php $this->block('footer'); ?>
+    <?php if ($this->footer): ?>
+    <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="inside">
+        <?= $this->footer ?>
+      </div>
+    </footer>
+    <?php endif; ?>
+    <?php $this->endblock(); ?>
 
     <?php $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>

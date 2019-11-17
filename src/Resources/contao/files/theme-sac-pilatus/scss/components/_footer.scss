@@ -1,17 +1,7 @@
 #footer {
-  $footer-bg-color: transparent;
-  $footer-color: #333;
-  font-size: $font-size-sm;
-  line-height: $line-height-sm;
-
-  @include media-breakpoint-up(lg) {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-  }
-  @media (min-width: 1600px) {
-    font-size: $font-size-lg;
-    line-height: $line-height-base;
-  }
+  $footer-bg-color-row-1: #252f33;
+  $footer-bg-color-row-2: #262627;
+  $footer-color: #cdcdcd;
 
   .footer-nav {
     ul {
@@ -52,7 +42,7 @@
   }
 
   .footer-row-1 {
-    background-color: $footer-bg-color;
+    background-color: $footer-bg-color-row-1;
     color: $footer-color;
     a, a > * {
       color: $primary !important;
@@ -66,7 +56,7 @@
   }
 
   .footer-row-2 {
-    background-color: $footer-bg-color;
+    background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
     a, a > * {
       color: $primary !important;

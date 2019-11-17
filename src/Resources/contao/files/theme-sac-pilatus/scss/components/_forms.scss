@@ -4,7 +4,7 @@
   @extend .form-group;
 }
 
-input.text, input.captcha, textarea, select {
+input.text, input.captcha, textarea, .widget>select {
   @extend .form-control;
 }
 button {
@@ -91,9 +91,11 @@ button:hover * {
     span.mandatory, .captcha_text {
       display: inline-block !important;
     }
-    .widget .invisible {
-        display:none !important;
+    
+    .widget .invisible{
+        display: none;
     }
+    
     // Do not hide comments label in the comment form
     label[for="ctrl_comment"].invisible {
       display: block;
