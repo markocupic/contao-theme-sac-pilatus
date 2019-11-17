@@ -83,7 +83,7 @@ $text-elements: (
 
 
 // Underline
-#main h1.ce_headline, .ce_text > h1 {
+#main h1.ce_headline, [class*="ce_"] > h1, [class*="mod_"] > h1 {
   text-align: left;
   color: #000;
   font-weight: 700;
