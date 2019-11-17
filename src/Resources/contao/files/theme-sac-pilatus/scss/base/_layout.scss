@@ -8,7 +8,7 @@
   }
 
   #container {
-   //
+    //
   }
 
   #container {
@@ -71,13 +71,17 @@
       background-color: transparent;
       .article-inside {
         background-color: $blue;
+        background: rgb(0, 130, 199);
+        background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
         padding-top: 1rem;
         padding-bottom: 1rem;
       }
     }
 
     .mod_article.article-blue {
-      background-color: $blue;
+      //background-color: $blue;
+      background: rgb(0, 130, 199);
+      background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
       .article-inside {
         background-color: transparent;
         padding-top: 2rem;
@@ -86,6 +90,11 @@
       a {
         color: #fff;
       }
+    }
+
+    .mod_article.blue-gradient {
+      background: rgb(0, 130, 199);
+      background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
     }
 
     .mod_article.article-darkcyan {
