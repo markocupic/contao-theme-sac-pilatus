@@ -29,7 +29,6 @@
             <a href="" title="Startseite">
                 <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
             </a>
-            <!--<h1 class="d-none d-lg-block">SAC Pilatus</h1>-->
         </div>
 
         <!-- NAVBAR-START -->
@@ -54,24 +53,6 @@
     </div>
     <!-- Search module -->
     {{insert_module::353}}
-    <!-- Search module end -->
-    <!--<div class="header-navbar-row-2">
-        <div class="mod_search container d-flex align-items-center pl-3 pr-3 pt-5 pb-5 p-lg-5">
-            <form action="{{link_url::suche}}" method="get" style="width:90% !important">
-                <input type="hidden" name="id" value="332">
-                <div class="search-formbody-header input-group">
-                    <input type="search" name="keywords" id="searchBarInputHeader" class="form-control" placeholder="Bitte gib hier Deine Suchbegriffe ein ..." aria-label="Suchformular">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" title="Suchanfrage senden" type="submit">Suche</button>
-                    </span>
-                </div>
-            </form>
-            <div class="ml-auto">
-            <button class="btn btn btn-outline-primary close-navbar-header-toggler" title="Suche schliessen" data-action="close-search-bar" aria-label="Suche schliessen"><i class="fa fa-times"></i></button>
-            </div>
-        </div>
-    </div>-->
-
 </div>
 
 <!-- Login Modal -->
