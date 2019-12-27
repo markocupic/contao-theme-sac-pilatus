@@ -12,11 +12,29 @@
   //padding-right: 6px;
   //content: "\#{$icon}";
 
-  display: flex;
+  display: inline-flex;
   flex-wrap: nowrap;
   &:before {
     font-family: $icon-font-name !important;
     padding-right: .75rem;
+    content: "\#{$icon}";
+    @if $color {
+      color: $color;
+    }
+  }
+
+}
+// Add a icon font before an element
+@mixin icon-after($icon, $color:false) {
+  //font-family: $icon-font-name;
+  //padding-right: 6px;
+  //content: "\#{$icon}";
+
+  display: inline-flex;
+  flex-wrap: nowrap;
+  &:after {
+    font-family: $icon-font-name !important;
+    padding-left: .75rem;
     content: "\#{$icon}";
     @if $color {
       color: $color;

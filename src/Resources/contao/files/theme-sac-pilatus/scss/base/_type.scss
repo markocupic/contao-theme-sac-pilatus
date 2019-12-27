@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
 a:hover, a:focus{
   background-color: transparent;
   color: darken($link-color, 10);
@@ -18,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 // Set headline
 $text-elements: (
         h1: (
-                font-size: 42px,
+                font-size: 46px,
                 line-height: 1.55,
                 margin-top: 2rem,
                 margin-bottom: 2rem,
@@ -90,6 +92,8 @@ $text-elements: (
   //text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.08em;
+  font-family: "Roboto Slab", serif;
+
 
   &:after {
     content: "";

@@ -23,20 +23,28 @@
 
 }
 
-
 .heroimage-headline-box h1 {
   //font-weight: 600 !important;
   color: #fff !important;
-  font-weight: 600 !important;
+  font-weight: 200 !important;
 }
 
 .ce_heroimage .heroimage-headline-box {
   margin-bottom: 2rem;
 }
 
-.ce_heroimage .heroimage-text-box
-{
-  font-style: italic;
+.ce_heroimage .heroimage-text-box {
+  //font-style: italic;
+  font-family: 'Roboto Slab', serif;
+}
+
+.heroimage-button-box > a {
+  @include icon-after('f35a');
+  font-family: 'Roboto Slab', serif;
+  &:after{
+    //color: $accent-color;
+  }
+
 }
 
 @include media-breakpoint-up(sm) {
