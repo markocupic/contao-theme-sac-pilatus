@@ -39,9 +39,9 @@
 }
 
 .heroimage-button-box > a {
-  @include icon-after('f35a');
+  @include icon-after('f35a', false, 'inline-flex');
   font-family: 'Roboto Slab', serif;
-  &:after{
+  &:after {
     //color: $accent-color;
   }
 
