@@ -23,9 +23,9 @@ if (TL_MODE == 'FE')
     // Animate
     //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
     //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
-
+ 
     // Google Webfonts
-    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">';
+    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">';
 
     // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
     // JQuery UI doesn't go with popper.js
