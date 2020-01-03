@@ -13,7 +13,7 @@
         <?php $strOwner = $objOwner->firstname . ' ' . $objOwner->lastname ?>
       <?php endif; ?>
         <li class="col-6 col-sm-4 col-md-3 col-lg-3 <?= $class ?> <?= $col->class ?>">
-          <div class="card gray-lightest">
+          <div class="card" style="background-color:#f3f3f3;">
             <div class="p-2 d-flex align-items-center">
               <?php if($objImage !== null): ?>
                 <?php if($objImage->memberPictureFeedUserId > 0): ?>
@@ -36,9 +36,9 @@
               <p class="card-date m-0">
                 <small><?= \Contao\Date::parse('d.m.Y', $objImage->tstamp) ?></small>
               </p>
-                <p class="card-caption small mt-0" style="color:black; font-weight: bold">
+                <h6 class="card-title mt-0">
                   <?= $col->caption ?>
-                </p>
+                </h6>
             </div>
           </div>
         </li>

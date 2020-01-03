@@ -1,54 +1,55 @@
+.carousel {
 
-.carousel-control-prev {
-  justify-content: flex-start;
-  opacity: 1;
-}
+  .carousel-control-next, .carousel-control-prev {
+    z-index: 10;
+    opacity: 1;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
 
-.carousel-control-next {
-  justify-content: flex-end;
-  opacity: 1;
-}
+  .carousel-control-prev {
+    justify-content: flex-start;
+  }
 
+  .carousel-control-next {
+    justify-content: flex-end;
+  }
 
-.carousel-control-next, .carousel-control-prev {
-  z-index: 10;
-  &:hover {
-    //opacity: 1;
-    .carousel-control-prev-icon, .carousel-control-next-icon {
-      background-color: transparent;
-      &:before{
-        color: #fff;
-      }
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    transition: all ease-in-out 0.4s;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      font-family: $icon-font-name;
+      font-size: 30px;
+      line-height: 1;
+      color: transparent;
+      font-weight: 100;
     }
   }
-  width: auto;
+
+  .carousel-control-prev-icon:before {
+    content: "\f053";
+  }
+
+  .carousel-control-next-icon:before {
+    content: "\f054";
+  }
+
 }
 
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  transition: all ease-in-out 0.4s;
-  display: inline-block;
-  width: 65px;
-  height: 65px;
-  background-color: #fff;
-  background-color: transparent;
-  padding: 0 15px;
-  line-height: 50px;
-  background-image: none;
-  &:before{
-    font-family: $icon-font-name;
-    font-size: 65px;
-    color: $gray-400;
-    font-weight: 100;
-
+.carousel:hover {
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #fff;
+    &:before {
+      color: $gray-500;
+    }
   }
 }
-.carousel-control-prev-icon:before{
-  content:"\f053";
-}
-
-.carousel-control-next-icon:before{
-  content:"\f054";
-}
-
-
