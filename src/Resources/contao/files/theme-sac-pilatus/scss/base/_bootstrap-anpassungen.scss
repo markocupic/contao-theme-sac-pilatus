@@ -21,5 +21,20 @@ a.bg-light:focus, a.bg-light:hover {
   margin-top: 8px;
 }
 
+.alert{
+  padding: 1.5rem 1.25rem;
+}
+.alert-info {
+  background: $blue;
+  color: #ffffff;
+}
 
+.alert-danger {
+  background: $red;
+  color: #ffffff;
+}
 
+.alert-success{
+  background: $green;
+  color: #ffffff;
+}
