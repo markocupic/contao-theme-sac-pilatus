@@ -112,31 +112,31 @@
   }
   .event-state-icon.event_status_1:before {
     content: "\f111";
-    color: green;
+    color: $green;
   }
   .event-state-icon.event_status_2:before {
     content: "\f28d";
-    color: red;
+    color: $red;
   }
   .event-state-icon.event_status_3:before {
     content: "\f111";
-    color: red;
+    color: $red;
   }
   .event-state-icon.event_status_4:before {
     content: "\f05e";
-    color: red;
+    color: $red;
   }
   .event-state-icon.event_status_5:before {
     content: "\f111";
-    color: orange;
+    color: $orange;
   }
   .event-state-icon.event_status_6:before {
     content: "\f06a";
-    color: orange;
+    color: $orange;
   }
   .event-state-icon.event_status_7:before {
     content: "\f06a";
-    color: black;
+    color: #000000;
   }
 }
 
