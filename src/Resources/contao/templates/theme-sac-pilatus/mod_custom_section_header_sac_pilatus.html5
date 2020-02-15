@@ -5,7 +5,7 @@
 
         <div class="ml-auto mr-0 d-flex align-items-center">
             <?php if(FE_USER_LOGGED_IN): ?>
-            <a href="{{link_url::member-logout}}" class="ml-2" title="Abmelden">Abmelden</a>
+            <button data-href="{{link_url::member-logout}}" class="btn btn-link trigger-ids-kill-session ml-2" title="Abmelden">Abmelden</button>
 
             <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
             <?php $id = \FrontendUser::getInstance()->id; ?>
