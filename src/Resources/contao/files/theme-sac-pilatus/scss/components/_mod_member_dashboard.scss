@@ -1,3 +1,63 @@
+/** Horizontal navigation **/
+.h-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  border-bottom: 1px solid $gray-300;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #ececf3;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #d2d8dd;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #d2d8dd;
+  }
+  .nav.horizontal-tabs {
+
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    > li.nav-item {
+      padding: 4px 0 10px 0;
+      margin-right: 1rem;
+      border-bottom: 4px solid transparent;
+    }
+
+    > li.nav-item.active {
+      border-color: red;
+
+    }
+
+    > li > a {
+      color: $body-color;
+      text-decoration: none;
+      font-weight: bolder;
+
+      &:hover {
+        color: $link-color;
+      }
+
+    }
+  }
+
+}
+
+
+
 .dashboard-event-story-gallery {
 
   .sortable-item {
