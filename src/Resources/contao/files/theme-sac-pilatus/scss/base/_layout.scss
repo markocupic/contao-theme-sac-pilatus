@@ -141,9 +141,9 @@
     }
 
     .mod_article.article-gray {
-      background-color: #F3EFED;
+      background-color: $gray-200;
       .article-inside {
-        background-color: #F3EFED;
+        background-color: $gray-200;
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
