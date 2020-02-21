@@ -43,9 +43,9 @@
     }
 
     > li > a {
-      color: $body-color;
+      //font-size: larger ;
+      color: #000000;
       text-decoration: none;
-      font-weight: bolder;
 
       &:hover {
         color: $link-color;
