@@ -45,7 +45,7 @@
 // Equal height for cards
 (function ($) {
     $(document).ready(function () {
-        $(window).on("load resize orientationchange", function () {
+        $(window).on("load resize orientationchange vueupdate", function () {
             equalheight('.equal-height', '.card');
         });
     });
