@@ -25,13 +25,13 @@
       <?php else: ?>
         <input type="hidden" name="_failure_path" value="<?= $this->failurePath ?>">
         <input type="hidden" name="_always_use_target_path" value="<?= $this->forceTargetPath ?>">
-        <div class="widget widget-text">
+        <div class="widget widget-text mb-4">
           <label for="username"><?= $this->username ?></label>
-          <input type="text" name="username" id="username" class="text" value="<?= $this->value ?>" required>
+          <input type="text" name="username" id="username" class="text" value="<?= $this->value ?>" placeholder="" required>
         </div>
-        <div class="widget widget-password">
+        <div class="widget widget-password mb-5">
           <label for="password"><?= $this->password ?></label>
-          <input type="password" name="password" id="password" class="text password" value="" required>
+          <input type="password" name="password" id="password" class="text password" value="<?= $this->password ?>" placeholder="" required>
         </div>
         <?php if ($this->autologin): ?>
           <div class="widget widget-checkbox">
@@ -41,8 +41,8 @@
           </div>
         <?php endif; ?>
       <?php endif; ?>
-      <div class="widget widget-submit">
-        <button type="submit" class="submit"><?= $this->slabel ?></button>
+      <div class="widget widget-submit mt-0">
+        <button type="submit" class="btn btn-block submit"><?= $this->slabel ?></button>
 
 
         <?php if ($this->twoFactorEnabled): ?>
@@ -52,6 +52,9 @@
     </div>
   </form>
   <?php if(!$this->logout): ?>
+  <div class="mt-4 mb-4">
+    <div class="separator">oder</div>
+  </div>
   <div class="d-block mt-4">
     {{insert_module::396}}
   </div>

@@ -25,6 +25,9 @@ $dark: #333;
   --primary: $primary;
 }
 
+// Disable border radius
+$enable-rounded: false;
+
 // Border radius buttons
 $btn-border-radius: 0;
 $btn-border-radius-lg: 0;

@@ -76,7 +76,7 @@
             </div>
             <div class="modal-footer">
                 <?php if(!FE_USER_LOGGED_IN): ?>
-                <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto aktivieren?</a>
+                <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto einmalig aktivieren?</a>
                 &nbsp;
                 <?php endif; ?>
                 <a href="{{link_url::frontend-user-passwort-vergessen}}" class="btn btn-outline-primary">{{link_title::frontend-user-passwort-vergessen}}?</a>
