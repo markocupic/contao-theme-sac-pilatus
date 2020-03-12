@@ -55,9 +55,11 @@
   <div class="mt-4 mb-4">
     <div class="separator">oder</div>
   </div>
+  <?php if($this->swiss_alpine_club_oidc_add_module && $this->swiss_alpine_club_oidc_module > 0): ?>
   <div class="d-block mt-4">
-    {{insert_module::396}}
+    {{insert_module::<?= $this->swiss_alpine_club_oidc_module ?>}}
   </div>
+  <?php endif; ?>
   <?php endif; ?>
 
 </div>
