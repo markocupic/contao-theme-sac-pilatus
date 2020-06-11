@@ -19,8 +19,12 @@
                 newsContainer: '.mod_newslist_infinite_scroll',
                 // CSS selector: Default to $(window)
                 scrollContainer: $(window),
-                // CSS selector: Pagination links (<a href="infinite?page_n193=5" class="link page-link" title="Gehe zu Seite 5">5</a>)
-                paginationLinks: '.pagination .link',
+                // CSS selector: Pagination next  (<ul class="pagination"><li class="next"><a href="newslist.html?page_n343=2" class="next" title="Gehe zu Seite 2">Vorwärts</a></li></ul>)
+                paginationNextLink: '.pagination > .next > a.next',
+                // CSS selector: Pagination last  (<ul class="pagination"><li class="last"><a href="newslist.html?page_n343=44" class="last" title="Gehe zu Seite 44">Ende</a></li></ul>)
+                paginationLastLink: '.pagination > .last > a.last',
+                // Pagination url regex pattern
+                paginationUrlRegexPattern: 'page_n(\\d*)=(\\d*)',
                 // When set to true, this will disable infinite scrolling and start firing ajax requests on domready with an interval of 3s
                 loadAllOnDomready: false,
                 // Use a "load more button" (Preserve the accessibility of the footer)
@@ -35,7 +39,7 @@
                 // Integer: Fading time for loades news items
                 fadeInTime: 400,
                 // HTML: Show this message during the loading process
-                loadingInProcessContainer: '<div class="inf-scr-loading-in-process-container text-center"><i class="fal fa-5x fa-spinner fa-spin"></i>{{br}}{{br}}<?= $GLOBALS["TL_LANG"]["MSC"]["infScrLoadingInProcess"] ?>...</em></div>',
+                loadingInProcessContainer: '<div class="inf-scr-loading-in-process-container mt-4 text-center"><i class="fal fa-5x fa-spinner fa-spin"></i>{{br}}{{br}}<?= $GLOBALS["TL_LANG"]["MSC"]["infScrLoadingInProcess"] ?>...</em></div>',
 
 
                 // Callbacks
@@ -49,14 +53,13 @@
                     // Add empty grid-sizer element
                     $('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
 
-                    $('.mod_newslist_infinite_scroll .pagination').parent('').children().hide();
-                    $('.mod_newslist_infinite_scroll .pagination').hide();
+                    $(instance.getOption('newsContainer') + ' .pagination').parent('').children().hide();
+                    $(instance.getOption('newsContainer') + ' .pagination').hide();
 
 
                     var i = 0;
-                    $('.mod_newslist_infinite_scroll .card').each(function (el) {
+                    $(instance.getOption('newsContainer') + ' .card').each(function (el) {
                         i++;
-                        //$('<span class="item-number">#' + i + '</span>').prependTo($(this));
                         $(this).closest('.news_card').addClass('added-to-masonry-grid');
                     });
 
@@ -105,18 +108,14 @@
                 onAppendCallback: function (instance) {
 
                     var i = 0;
-                    $('.mod_newslist_infinite_scroll .card .item-number').remove();
-                    $('.mod_newslist_infinite_scroll .card').each(function (el) {
-                        i++;
-                        //$('<span class="item-number">#' + i + '</span>').prependTo($(this));
-                    });
+                    $(instance.getOption('newsContainer') + ' .card .item-number').remove();
 
                     // Find new elements
-                    var $newElements = $('.mod_newslist_infinite_scroll .news_card:not(.added-to-masonry-grid)');
+                    var $newElements = $(instance.getOption('newsContainer') + ' .news_card:not(.added-to-masonry-grid)');
 
                     // Append new elements to the masonry grid
                     $grid.append($newElements).masonry('appended', $newElements);
-                    $('.mod_newslist_infinite_scroll .news_card').addClass('added-to-masonry-grid');
+                    $(instance.getOption('newsContainer') + ' .news_card').addClass('added-to-masonry-grid');
                     setTimeout(function() {
                         $grid.masonry();
                     }, 200);
