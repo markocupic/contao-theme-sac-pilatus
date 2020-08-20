@@ -6,7 +6,13 @@
         $(document).ready(function () {
 
             // Global grid container element
-            var $grid = $('.mod_newslist_infinite_scroll');
+            var $grid = null;
+            var masonryOptions = {
+                horizontalOrder: true,
+                itemSelector: '.news_card',
+                columnWidth: '.grid-sizer',
+                percentPosition: true
+            };
 
 
             /**
@@ -50,12 +56,12 @@
                  */
                 onInitialize: function (instance) {
 
-                    // Add empty grid-sizer element
-                    $('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
+                    $grid = $(instance.getOption('newsContainer'));
 
-                    $(instance.getOption('newsContainer') + ' .pagination').parent('').children().hide();
-                    $(instance.getOption('newsContainer') + ' .pagination').hide();
-
+                    // Hide pagination
+                    $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
+                        $(this).hide();
+                    });
 
                     var i = 0;
                     $(instance.getOption('newsContainer') + ' .card').each(function (el) {
@@ -63,12 +69,9 @@
                         $(this).closest('.news_card').addClass('added-to-masonry-grid');
                     });
 
-                    $grid.masonry({
-                        horizontalOrder: true,
-                        itemSelector: '.news_card',
-                        columnWidth: '.grid-sizer',
-                        percentPosition: true
-                    });
+                    // Add empty grid-sizer element for masonry layout
+                    //$('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
+                    //$grid.masonry(masonryOptions);
 
                     // Return false to abort initialization
                     return true;
@@ -108,17 +111,26 @@
                 onAppendCallback: function (instance) {
 
                     var i = 0;
+
+                    // Remove pagination
+                    $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
+                        $(this).remove();
+                    });
+
                     $(instance.getOption('newsContainer') + ' .card .item-number').remove();
 
                     // Find new elements
-                    var $newElements = $(instance.getOption('newsContainer') + ' .news_card:not(.added-to-masonry-grid)');
+                    /**
+                    var newElements = $(instance.getOption('newsContainer')).find('.news_card:not(.added-to-masonry-grid)');
+                    $grid.append(newElements).masonry('appended', newElements);
+                    $(newElements).addClass('.added-to-masonry-grid').show();
+                    //$grid.masonry('destroy');
+                    $grid.masonry('reloadItems');
+                    $grid.masonry('layout');
+                     */
 
-                    // Append new elements to the masonry grid
-                    $grid.append($newElements).masonry('appended', $newElements);
-                    $(instance.getOption('newsContainer') + ' .news_card').addClass('added-to-masonry-grid');
-                    setTimeout(function() {
-                        $grid.masonry();
-                    }, 200);
+
+
                 }
             });
         });
