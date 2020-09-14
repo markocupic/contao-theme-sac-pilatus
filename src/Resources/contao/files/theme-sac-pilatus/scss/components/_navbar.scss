@@ -154,7 +154,7 @@ $color-level-2-active: #ffe500;
             @include transition(color);
             display: block;
             margin-bottom: 0.5rem;
-            @include icon-before(f00c);
+            @include icon-before("\f00c");
             text-decoration: none !important;
 
             &:before {
@@ -177,7 +177,7 @@ $color-level-2-active: #ffe500;
       ul.level_3 {
         > li {
           line-height: 2.25;
-          @include icon-before(f105, white); //angle-right
+          @include icon-before("\f105", white); //angle-right
           &:before {
             margin-top: 0;
           }

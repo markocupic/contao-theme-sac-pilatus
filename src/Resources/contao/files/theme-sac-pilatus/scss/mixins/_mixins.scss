@@ -11,13 +11,12 @@
   //font-family: $icon-font-name;
   //padding-right: 6px;
   //content: "\#{$icon}";
-
   display: $display;
   flex-wrap: nowrap;
   &:before {
     font-family: $icon-font-name !important;
     padding-right: .75rem;
-    content: "\#{$icon}";
+    content: $icon;
     @if $color {
       color: $color;
     }
@@ -29,13 +28,12 @@
   //font-family: $icon-font-name;
   //padding-right: 6px;
   //content: "\#{$icon}";
-
   display: $display;
   flex-wrap: nowrap;
   &:after {
     font-family: $icon-font-name !important;
     padding-left: .75rem;
-    content: "\#{$icon}";
+    content: $icon;
     @if $color {
       color: $color;
     }

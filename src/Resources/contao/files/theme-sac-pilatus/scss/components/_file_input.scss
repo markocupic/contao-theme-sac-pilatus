@@ -15,7 +15,7 @@ input.custom-input-file {
   padding: 2rem 4rem;
   text-align: center;
   border: 1px solid $gray-400;
-  @include icon-before('f382');
+  @include icon-before("\f382");
   display: block;
   &:before{
     display:block;

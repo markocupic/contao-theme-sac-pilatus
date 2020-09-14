@@ -1,7 +1,7 @@
 // Email mailto link
 a.email{
   &:before {
-    @include icon-before(f2b6);
+    @include icon-before("\f2b6");
   }
 }
 
@@ -35,22 +35,22 @@ a.email{
   }
   */
   a[href*="."]:before {
-    @include icon-before(f0c1); // fa-file-o     // fa-file-word
+    @include icon-before("\f0c1"); // fa-file-o     // fa-file-word
   }
   a[href$=".docx"]:before {
-    @include icon-before(f1c2); // fa-file-word
+    @include icon-before("\f1c2"); // fa-file-word
   }
   a[href$=".doc"]:before {
-    @include icon-before(f1c2); // fa-file-word
+    @include icon-before("\f1c2"); // fa-file-word
   }
   a[href$=".pdf"]:before {
-    @include icon-before(f1c1); // fa-file-pdf
+    @include icon-before("\f1c1"); // fa-file-pdf
   }
 }
 
 .ce_hyperlink {
   a[href*="."] {
-    @include icon-before(f0c1); // fa-link
+    @include icon-before("\f0c1"); // fa-link
   }
   a.hyperlink_img:before{
     display: none;
