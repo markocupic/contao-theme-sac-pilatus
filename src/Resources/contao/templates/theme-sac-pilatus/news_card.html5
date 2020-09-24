@@ -15,7 +15,7 @@
         <?php endif; ?>
         <div class="card-body">
             <p class="card-date m-0"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><small><?= $this->date ?></small></time></p>
-            <a href="{{news_url::<?= $this->id ?>}}" title="weiterlesen">
+            <a href="<?= $this->href ?>" title="weiterlesen">
                 <h6 class="card-title mt-0"><?= $this->newsHeadline ?></h6>
             </a>
             <p class="card-news-teaser"><?= \StringUtil::substr($this->teaser,100) ?></p>
