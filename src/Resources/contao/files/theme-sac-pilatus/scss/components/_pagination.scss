@@ -1,6 +1,6 @@
-
 ul.pagination {
-  padding-left:1px;
+  padding-left: 1px;
+
   li {
     @extend .page-item;
 
@@ -9,6 +9,7 @@ ul.pagination {
       background-color: $gray-400;
       border-color: $gray-400;
     }
+
     margin-right: 2px;
 
   }
