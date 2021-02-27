@@ -1,9 +1,9 @@
-<script src="https://unpkg.com/vue@next"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
-
-
-    (function ($) {
+    /**
+		 * Customized news-infinite-scroll template for sac pilatus 2021
+		 */
+		(function ($) {
         $(document).ready(function () {
 
             // Global grid container element
@@ -21,7 +21,7 @@
              * requires news_infinite_scroll.js
              * @type {ContaoNewsInfiniteScroll}
              */
-            var contaoNewsInfiniteScroll = new ContaoNewsInfiniteScroll({
+             new ContaoNewsInfiniteScroll({
                 // CSS selector: Append loaded items to this container
                 newsContainer: '.mod_newslist_infinite_scroll',
                 // CSS selector: Default to $(window)
@@ -57,22 +57,22 @@
                  */
                 onInitialize: function (instance) {
 
-                    //$grid = $(instance.getOption('newsContainer'));
+                    $grid = $(instance.getOption('newsContainer'));
 
                     // Hide pagination
                     $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
                         $(this).hide();
                     });
 
-                    var i = 0;
+                    let i = 0;
                     $(instance.getOption('newsContainer') + ' .card').each(function (el) {
                         i++;
-                        //$(this).closest('.news_card').addClass('added-to-masonry-grid');
+                        $(this).closest('.news_card').addClass('added-to-masonry-grid');
                     });
 
                     // Add empty grid-sizer element for masonry layout
-                    //$('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
-                    //$grid.masonry(masonryOptions);
+                    $('<div class="grid-sizer col-sm-6 col-lg-3">').prependTo('.mod_newslist_infinite_scroll');
+                    $grid.masonry(masonryOptions);
 
                     // Return false to abort initialization
                     return true;
@@ -111,27 +111,20 @@
                  */
                 onAppendCallback: function (instance) {
 
-                    var i = 0;
-
                     // Remove pagination
                     $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
                         $(this).remove();
                     });
 
-                    //$(instance.getOption('newsContainer') + ' .card .item-number').remove();
+                    $(instance.getOption('newsContainer') + ' .card .item-number').remove();
 
                     // Find new elements
-                    /**
                     var newElements = $(instance.getOption('newsContainer')).find('.news_card:not(.added-to-masonry-grid)');
                     $grid.append(newElements).masonry('appended', newElements);
                     $(newElements).addClass('.added-to-masonry-grid').show();
                     //$grid.masonry('destroy');
                     $grid.masonry('reloadItems');
                     $grid.masonry('layout');
-                     */
-
-
-
                 }
             });
         });
