@@ -51,11 +51,22 @@
   .reset-form {
     color: #fff;
   }
+  .checkbox_container{
+    legend{
+     display:none;
+    }
+
+    input{
+      width: auto;
+    }
+  }
 }
 
 .select2-container--default .select2-selection--multiple {
   //border: 0 !important;
   //line-height: 1.6;
 }
+
+
 
 

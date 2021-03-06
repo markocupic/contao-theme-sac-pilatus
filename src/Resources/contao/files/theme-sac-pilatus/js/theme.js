@@ -147,6 +147,12 @@
             e.stopPropagation();
         });
 
+        // Prevent default if page has class "not-clickable-page-container'
+        $('.mod_sitemap li.submenu.not-clickable-page-container > a').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
         // Control the header dropdown navigation
         $(document).on('hide.bs.dropdown', function (e) {
 
