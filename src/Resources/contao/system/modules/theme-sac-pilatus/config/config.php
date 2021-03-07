@@ -1,5 +1,5 @@
 <?php
-if (TL_MODE == 'FE')
+if (TL_MODE === 'FE')
 {
     // Head tags
     $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
