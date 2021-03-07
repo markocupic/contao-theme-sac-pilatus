@@ -6,11 +6,8 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
 
     // JQuery is loaded in the layout
-    // Popper.js must be loaded before bootstrap.js
-    $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-popper-js/popper.min.js"></script>';
-
-    // Bootstrap.js
-    $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.min.js"></script>';
+    // Bootstrap.js bundle (includes popper.js)
+    $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
     // Load FontAwesome
     $GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
