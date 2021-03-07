@@ -10,8 +10,8 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
     // Load FontAwesome
-    $GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
-    $GLOBALS['TL_HEAD'][] = '<script defer src="/files/fontawesome-pro-5.5.0-web/js/all.js"></script>';
+    //$GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
+    $GLOBALS['TL_HEAD'][] = '<script defer src="https://pro.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-ZbBwfM248+qoG5GJvuV2PmK9gvlW3dXpgC/jeIn45pWWroL3v+5K1ZAth+gs165y" crossorigin="anonymous"></script>';
 
     // Select2
     $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/js/select2.min.js"></script>';
@@ -41,7 +41,7 @@ if (TL_MODE == 'FE')
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/equal-height.min.js|static';
     $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js|static';
 
-    // Load flatpickr
+    // Load flatpickr (datepicker)
     $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
     $GLOBALS['TL_HEAD'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
     $GLOBALS['TL_HEAD'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
