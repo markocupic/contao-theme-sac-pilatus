@@ -10,7 +10,7 @@ if (TL_MODE === 'FE')
     $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
     // Load FontAwesome
-    //$GLOBALS['TL_CSS'][] = '/files/fontawesome-pro-5.5.0-web/css/all.css|static';
+    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom" crossorigin="anonymous">';
     $GLOBALS['TL_HEAD'][] = '<script defer src="https://pro.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-ZbBwfM248+qoG5GJvuV2PmK9gvlW3dXpgC/jeIn45pWWroL3v+5K1ZAth+gs165y" crossorigin="anonymous"></script>';
 
     // Select2
