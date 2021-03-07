@@ -104,6 +104,11 @@
     }
 
   }
+  .event-for-beginners:before {
+    font-family: $icon-font-name;
+    content: "\f4c4";
+    color: #ffffff;
+  }
   .event-state-icon {
     font-family: $icon-font-name;
     margin-right: 6px;
