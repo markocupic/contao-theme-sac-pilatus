@@ -2,7 +2,7 @@
     <div class="card">
         <!--
         <div class="p-2 d-flex align-items-center">
-            <p class="card-text small ml-2">
+            <p class="card-text small ms-2">
                 {{image::<?= getAvatar(\NewsModel::findByPk($this->id)->author,'BE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
                 <?= $this->author ?>
             </p>

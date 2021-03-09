@@ -1,6 +1,6 @@
 <div class="mod_search_custom">
   <div class="mod_search_custom_overlay">
-    <button class="close-button" aria-label="Schliessen" title="Schliessen"><i class="fa fa-times"></i></button>
+    <button type="button" class="close-button btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
     <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="get">
       <div class="formbody">
         <div><h1 class="search-headline">Suche</h1></div>

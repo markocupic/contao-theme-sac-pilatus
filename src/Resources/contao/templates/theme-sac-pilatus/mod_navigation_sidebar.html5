@@ -7,7 +7,9 @@
     <!--<img src="/files/theme-caribbean-blue/images/logos/logo.png" alt="Logo">-->
     <h5 class="sidebar-title invisible">NAVIGATION</h5>
     <div class="navigation-toggler" title="Navigation schliessen" role="button">
-        <button class="btn btn-lg btn-link" title="Navigation schliessen"><i class="fal fa-times" aria-hidden="true"></i></button>
+        <button class="btn btn-lg btn-link" title="Navigation schliessen">
+          <i class="fal fa-times" aria-hidden="true"></i>
+        </button>
         <span class="sr-only">Navigation</span>
     </div>
 </div>

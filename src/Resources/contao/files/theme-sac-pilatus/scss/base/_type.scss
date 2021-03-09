@@ -1,4 +1,4 @@
-a:hover, a:focus{
+a:hover, a:focus {
   background-color: transparent;
   color: darken($link-color, 10);
 }
@@ -80,8 +80,6 @@ $text-elements: (
 }
 
 
-
-
 // Underline
 #main h1.ce_headline, [class*="ce_"] > h1, [class*="mod_"] > h1 {
   text-align: left;
@@ -108,13 +106,29 @@ $text-elements: (
 .mobile-title-heading {
   h1 {
     @include transition(font-size);
-    @extend .h1;
+    //@extend .h1;
     font-weight: 500;
     color: #000;
     margin: 0;
     padding: 0;
     line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: calc(1.375rem + 1.5vw);
+
   }
+
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+small, .small {
+  font-size: .75rem !important;
 }
 
 // Lists
@@ -148,15 +162,5 @@ ul {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
 }
-
-
-
-
-
-
-
-
-
-
 
 

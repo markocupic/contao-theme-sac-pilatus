@@ -1,25 +1,25 @@
 <!-- indexer::stop -->
 <div class="header-navbar">
-    <div class="header-navbar-row-0 d-flex pl-3 pr-3 pt-1 pb-1 align-items-center">
-        <div class="ml-0 mr-auto d-none d-sm-flex">{{link_open::geschaeftsstelle}}Zur Geschäftsstelle{{link_close}}</div>
+    <div class="header-navbar-row-0 d-flex ps-3 pe-3 pt-1 pb-1 align-items-center">
+        <div class="ms-0 me-auto d-none d-sm-flex">{{link_open::geschaeftsstelle}}Zur Geschäftsstelle{{link_close}}</div>
 
-        <div class="ml-auto mr-0 d-flex align-items-center">
+        <div class="ms-auto me-0 d-flex align-items-center">
             <?php if(FE_USER_LOGGED_IN): ?>
-            <button data-href="/" class="btn btn-link trigger-ids-kill-session ml-2" title="Abmelden">Abmelden</button>
+            <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2" title="Abmelden">Abmelden</button>
 
-            <div class="ml-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
+            <div class="ms-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
             <?php $id = \FrontendUser::getInstance()->id; ?>
-            <div class="ml-3">
+            <div class="ms-3">
                 {{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
             </div>
             <?php endif; ?>
             <?php if(!FE_USER_LOGGED_IN): ?>
 
-            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ml-2" title="Mitglieder-Login"><i class="fal fa-user"></i><span>&nbsp;Mitglieder-Login</span></a>
+            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ms-2" title="Mitglieder-Login"><i class="fal fa-user"></i><span>&nbsp;Mitglieder-Login</span></a>
             <?php endif; ?>
 
             <?php if(FE_USER_LOGGED_IN): ?>
-            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-danger ml-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
             <?php endif; ?>
         </div>
     </div>
@@ -35,17 +35,17 @@
         <div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
         <!-- NAVBAR-END -->
 
-        <div class="header-button-container ml-auto d-flex align-items-center justify-content-end">
+        <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
 
-            <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ml-2" role="button" aria-label="Kurse">Kurse</a>
-            <a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ml-2" role="button" aria-label="Touren">Touren</a>
+            <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ms-2" role="button" aria-label="Kurse">Kurse</a>
+            <a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-label="Touren">Touren</a>
 
             <!-- Searchbar toggler -->
-            <button class="btn btn-lg btn-link ml-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
+            <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
             <!-- End Searchbar toggler -->
 
             <!-- Navbar toggler mobile -->
-            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ml-2" role="button" aria-label="Navigation"><i class="fa fa-bars" title="Navigation öffnen"></i></button>
+            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation"><i class="fa fa-bars" title="Navigation öffnen"></i></button>
             <!-- End Navbar toggler mobile -->
 
         </div>
@@ -62,10 +62,7 @@
             <div class="modal-header">
                 <h5 class="d-block modal-title">Mitglieder-Login</h5>{{br}}
                 <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fal fa-times" aria-hidden="true"></i>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
             </div>
             <div class="modal-body">
                 {{insert_module::290}}

@@ -12,105 +12,67 @@ $color-level-2-active: #ffe500;
 #header {
   .navbar-header {
     .mod_navigation {
-      //overflow-y: visible;
       background-color: transparent;
-      //color: #000;
+
       ul, li {
         margin: 0;
         padding: 0;
         line-height: 1;
       }
+
       ul.level_1 {
+        background-color: transparent;
+        display: flex;
 
         a:hover {
           background-color: transparent;
         }
-        background-color: transparent;
-        display: flex;
-        li > a, li > strong, li > span {
 
-          font-size: 1rem !important;
-          color: $color-level-1;
-          @media screen and (min-width: 1600px) {
-            font-size: $font-size-lg !important;
-          }
-        }
-        > li {
+        > li.nav-item {
           ////////////////// megamenu hack
           position: inherit !important;
-          //////////
-          > a > span, > strong {
-            padding: 8px 4px;
-            border-bottom: 3px solid transparent;
-          }
-        }
-        > li.active, > li.trail, > li:hover {
-          > a > span, > strong {
-            //border-bottom: 3px solid #d50000;
-            border-bottom: 3px solid transparent;
-
-          }
-        }
-        > li.show, > li.show:hover {
-          > a > span, > strong {
-            border-bottom: 3px solid transparent;
-          }
-        }
-
-        // Dropdown toggle
-        > li > .dropdown-toggle > *[data-role="closedropdown"] {
-          display: none !important;
-        }
-        > li > .dropdown-toggle > *[data-role="opendropdown"] {
-          display: inline-block !important;
-        }
-        > li.show > .dropdown-toggle > *[data-role="opendropdown"] {
-          display: none !important;
-        }
-        > li.show > .dropdown-toggle > *[data-role="closedropdown"] {
-          display: inline-block !important;
-        }
-        > li.dropdown > button.dropdown-toggle {
-          padding: 0 6px 0 3px;
-          &:after {
-            display: none !important;
-          }
-        }
-        // End Dropdown toggle style
-
-        > li {
+          //margin: 0 .5rem;
           padding: 0 6px;
-          margin-right: 8px;
-          height: $navbar-height;
+          //height: $navbar-height;
           position: relative;
+
+          > a > span, > strong,.nav-link {
+            padding: 0;
+            margin: 0;
+            font-size: 1rem !important;
+            color: $color-level-1;
+            font-size: 0.875rem;
+            line-height: $navbar-height;
+            font-weight: 400;
+
+            @media screen and (min-width: 1600px) {
+              font-size: $font-size-lg !important;
+            }
+          }
+          >strong{
+            padding-top:.5rem;
+            padding-bottom:.5rem;
+          }
+
         }
-        > li.active, > li.trail, > li:hover, li.show {
-          @include transition(border);
-        }
-        > li > a, > li > strong {
-          line-height: $navbar-height;
-          color: #000;
-          //text-transform: uppercase;
-          font-weight: 400;
-          font-size: 0.875rem;
-          @include transition(color);
-        }
-        > li.active > *, > li:hover > * {
+
+        > li.nav-item.active > *, > li.nav-item:hover > * {
           color: $color-level-1-active;
         }
-        > li.submenu > a:after, li.submenu > .toggler {
-          padding-left: $spacer-x;
-          color: #000;
-        }
 
-        > li.show, > li:hover {
+        > li.nav-item:hover {
           > a, > a:after, > strong {
             text-decoration: none;
             color: #000000;
           }
         }
 
+        li.nav-item {
+          padding-right: 1.5rem;
+        }
+
       }
+
       ////////////////// megamenu hack
       ul.level_2.show {
         display: flex;
@@ -144,6 +106,7 @@ $color-level-2-active: #ffe500;
           //border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
           @include transition(background-color);
+
           > a, > strong, > span {
             color: $color-level-2;
             font-size: 1rem !important;
@@ -162,11 +125,13 @@ $color-level-2-active: #ffe500;
             }
           }
         }
+
         > li.not-clickable-page-container {
           > a {
             border-bottom: 1px solid $color-level-2;
           }
         }
+
         > li:hover {
           > a, > strong, > a > span {
             color: $color-level-2 !important;
@@ -174,6 +139,7 @@ $color-level-2-active: #ffe500;
         }
 
       }
+
       ul.level_3 {
         > li {
           line-height: 2.25;
@@ -181,33 +147,41 @@ $color-level-2-active: #ffe500;
           &:before {
             margin-top: 0;
           }
+
           //border-top: 1px solid #444;
           padding: 0;
+
           > a, > strong, > a > span {
             color: $color-level-3;
             font-size: 0.875rem !important;
+            text-decoration: none;
             @media screen and (min-width: 1600px) {
               font-size: 1.125rem !important;
             }
             font-weight: normal;
             @include transition(color);
+
             &:before {
               text-decoration: none !important;
             }
           }
         }
+
         > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-active !important;
         }
+
         > li:first-child {
           border: 0;
         }
       }
+
       ul.level_4 {
         > li {
           line-height: 2.25;
           border-top: 1px solid #444;
           padding: 0 $spacer-x;
+
           > a, > strong, > a > span {
             color: $color-level-4;
             font-size: 0.875rem !important;
