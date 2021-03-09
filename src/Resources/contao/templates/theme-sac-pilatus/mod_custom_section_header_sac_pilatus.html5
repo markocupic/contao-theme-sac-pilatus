@@ -25,7 +25,7 @@
     </div>
 
     <div class="header-navbar-row-1 hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
-        <div class="navbar-brand">
+        <div class="navbar-brand ms-3">
             <a href="" title="Startseite">
                 <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
             </a>
