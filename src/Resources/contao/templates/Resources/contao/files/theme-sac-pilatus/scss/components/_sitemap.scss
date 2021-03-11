@@ -1,0 +1,48 @@
+.mod_sitemap {
+
+  .submenu.not-clickable-page-container
+  {
+    >a{
+      color: #000;
+    }
+    >a:hover{
+      color: #000;
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+  .level_1 {
+   @extend .row;
+    >li{
+      @extend .col-6;
+      @extend .col-md-3;
+      @extend .col-lg-2;
+      >a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: block;
+      }
+    }
+  }
+
+  .level_2 {
+    margin-left: 1rem;
+    >li{
+      >a{
+        font-size: 1rem;
+        //font-weight: bold;
+      }
+    }
+
+  }
+
+  .level_3 {
+    margin-left: 1rem;
+
+  }
+
+  .level_4 {
+    margin-left: 1rem;
+  }
+
+}

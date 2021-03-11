@@ -1,15 +1,16 @@
-
 // Bootstrap
 .widget {
   //@extend .form-group;
 }
 
-input.text, input.captcha, textarea, .widget>select {
+input.text, input.captcha, textarea, .widget > select {
   @extend .form-control;
 }
+
 button {
   //@extend .btn;
 }
+
 button:hover * {
   text-decoration: none !important;
 }
@@ -17,50 +18,63 @@ button:hover * {
 .btn {
   font-size: $font-size-sm;
 }
-.submit{
+
+.submit {
   @extend .btn;
   @extend .btn-outline-primary;
 }
 
-.article-blue .submit{
-  @extend .btn-danger;
+.article-blue .submit {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.article-blue .submit:hover {
+  background: #851c1c;
+  border-color: #851c1c;
+  color: #fff;
 }
 
 
 #main {
   .formbody {
-    background: transparent;
+    position: relative;
 
-    position:relative;
-    & > *{
+    & > * {
       box-sizing: border-box;
     }
+
     fieldset {
       margin: $spacer 0 2rem 0;
+
       legend {
         margin-bottom: $spacer;
         border-bottom: 1px solid $gray-300;
       }
     }
+
     textarea {
-        line-height:2;
+      line-height: 2;
     }
 
     .checkbox_container, .radio_container {
       display: flex;
       align-items: baseline;
       position: relative;
-      label, input
-      {
+
+      label, input {
         margin: 0;
         padding: 0;
       }
+
       input {
         margin-right: .75rem;
-        background-color: blue;
+        //background-color: blue;
       }
 
     }
+
     .checkbox_container, .radio_container, .submit_container {
       margin: 2rem 0;
     }
@@ -72,8 +86,9 @@ button:hover * {
         align-items: baseline;
       }
     }
-    .widget.error{
-      .error{
+
+    .widget.error {
+      .error {
         color: $alert-danger-text;
       }
     }
@@ -91,16 +106,17 @@ button:hover * {
     span.mandatory, .captcha_text {
       display: inline-block !important;
     }
-    
-    .widget .invisible{
-        display: none;
+
+    .widget .invisible {
+      display: none;
     }
-    
+
     // Do not hide comments label in the comment form
     label[for="ctrl_comment"].invisible {
       display: block;
       visibility: visible !important;
     }
+
     .submit {
       margin-top: $spacer-y;
     }

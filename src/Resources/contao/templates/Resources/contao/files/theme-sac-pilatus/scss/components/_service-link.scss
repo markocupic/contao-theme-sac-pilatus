@@ -1,0 +1,63 @@
+.ce_serviceLink {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  [class*="fa-"] {
+    padding: 27px 25px;
+    width: 100px;
+    height: 100px;
+    //border-radius: 50%;
+    //background-color: #fff;
+    @include transition(background);
+    margin-bottom: 5px;
+    color: #333;
+    @include transition(color);
+    @include font-size(40px);
+    &:hover {
+      cursor: pointer;
+      color: $blue;
+    }
+  }
+  .service-link-wrapper {
+    //padding: 20px 0;
+    > * {
+      text-align: center;
+    }
+    &:hover {
+      @include transition(background);
+
+    }
+  }
+
+  .service-link-headline, .service-link-headline a {
+    @include font-size(25px,true);
+    transition: font-size ease-in-out .4s;
+    color: rgb(59, 60, 66);
+    text-align: center;
+    font-weight: 400;
+    &:hover{
+      text-decoration: none;
+      color:$red;
+    }
+  }
+
+  .service-link-button {
+    text-align: center;
+    @extend .more;
+  }
+}
+.article-blue .ce_serviceLink{
+  [class*="fa-"] {
+    color: #000;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  .service-link-headline, .service-link-headline a {
+    color: #fff;
+    &:hover{
+      text-decoration: none;
+      color:#000;
+    }
+  }
+}

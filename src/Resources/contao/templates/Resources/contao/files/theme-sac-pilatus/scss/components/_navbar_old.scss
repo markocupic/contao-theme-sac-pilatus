@@ -1,0 +1,202 @@
+$navbar-height: 40px;
+$navbar-hover-color: #f2f2f2;
+$navbar-dropdown-color: #777;
+$color-level-1: #222;
+#header {
+  * {
+    overflow: visible;
+  }
+  .navbar-header {
+    .mod_navigation {
+      overflow-y: visible;
+      background-color: transparent;
+      //color: #000;
+      ul, li {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+      }
+      ul.level_1 {
+        background-color: transparent;
+        display: flex;
+        li > a, li > strong, li > span {
+
+          font-size: 1.25rem !important;
+          color: $color-level-1;
+          @include media-breakpoint-up(xl) {
+            //font-size: 1.15rem !important;
+          }
+        }
+        > li {
+          > a > span, > strong {
+            padding: 8px 4px;
+            border-bottom: 3px solid transparent;
+          }
+        }
+        > li.active, > li.trail, > li:hover {
+          > a > span, > strong {
+            //border-bottom: 3px solid #d50000;
+            border-bottom: 3px solid transparent;
+
+          }
+        }
+        > li.show, > li.show:hover {
+          > a > span, > strong {
+            border-bottom: 3px solid transparent;
+          }
+        }
+
+        // Dropdown toggle
+        > li.dropdown > button.dropdown-toggle {
+          border: 0;
+          background: 0;
+          padding: 0 6px;
+          &:after {
+            display: none
+          }
+          .fa {
+            font-size: 1.5rem;
+            color: $color-level-1;
+
+            &:before {
+              margin: 0;
+              content: "\f107"
+            }
+          }
+        }
+        > li.dropdown.show > button.dropdown-toggle {
+          .fa {
+            font-size: 1.5rem;
+            color: $color-level-1;
+
+            &:before {
+              content: "\f106"
+            }
+          }
+        }
+
+        > li {
+          padding: 0 6px;
+          margin-right: 12px;
+          height: $navbar-height;
+          position: relative;
+        }
+        > li.active, > li.trail, > li:hover, li.show {
+          @include transition(border);
+        }
+        > li > a, > li > strong {
+          line-height: $navbar-height;
+          color: #000;
+          //text-transform: uppercase;
+          font-weight: 400;
+          font-size: 1rem;
+          @include transition(color);
+        }
+        li.active > *, li:hover > * {
+          color: #dc0000;
+        }
+        > li.submenu > a:after, li.submenu > .toggler {
+          padding-left: $spacer-x;
+          color: #000;
+        }
+
+        > li.show, > li:hover {
+          > a, > a:after, > strong {
+            text-decoration: none;
+            color: #000000;
+          }
+        }
+
+      }
+
+      ul.level_2.dropdown-menu {
+        li .active {
+          color: $red !important;
+        }
+        width: 400px;
+        //speech bubble effect http://ilikepixels.co.uk/drop/bubbler/
+        &:after {
+          content: '';
+          position: absolute;
+          border-style: solid;
+          border-width: 0 10px 10px;
+          border-color: #FFFFFF transparent;
+          display: block;
+          width: 0;
+          top: -10px;
+          left: 30px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          border-style: solid;
+          border-width: 0 10px 10px;
+          border-color: $gray-300 transparent;
+          display: block;
+          width: 0;
+          z-index: 0;
+          top: -11px;
+          left: 30px;
+        }
+        // End speech bubble
+
+        background-color: #fff;
+        > li {
+          line-height: 3;
+          border-top: 1px solid $gray-300;
+          padding: 0 $spacer-x;
+          @include transition(background-color);
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 14px !important;
+            font-weight: normal;
+            @include transition(color);
+
+          }
+        }
+        > li:hover {
+          background-color: $navbar-hover-color;
+          a, strong, span {
+            color: #000000 !important;
+          }
+        }
+        > li:first-child {
+          border: 0;
+        }
+      }
+      ul.level_3 {
+        > li {
+          line-height: 2.5;
+          border-top: 1px solid #444;
+          padding: 0 $spacer-x;
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 13px !important;
+            font-weight: normal;
+            @include transition(color);
+          }
+        }
+        > li:first-child {
+          border: 0;
+        }
+      }
+      ul.level_4 {
+        > li {
+          line-height: 2.25;
+          border-top: 1px solid #444;
+          padding: 0 $spacer-x;
+          > a, > strong, > span {
+            color: $navbar-dropdown-color;
+            font-size: 12px !important;
+            font-weight: normal;
+            @include transition(color);
+          }
+        }
+        > li:first-child {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+

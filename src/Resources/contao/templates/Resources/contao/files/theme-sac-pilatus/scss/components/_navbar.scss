@@ -1,0 +1,197 @@
+$navbar-height: 40px;
+$navbar-hover-color: #f2f2f2;
+$navbar-dropdown-color: #66caff;
+$navbar-dropdown-color: $blue;
+$color-level-1: #222222;
+$color-level-2: #ffffff;
+$color-level-3: #ffffff;
+$color-level-4: #ffffff;
+$color-level-1-active: #000000;
+$color-level-2-active: #ffe500;
+
+#header {
+  .navbar-header {
+    .mod_navigation {
+      background-color: transparent;
+
+      ul, li {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+      }
+
+      ul.level_1 {
+        background-color: transparent;
+        display: flex;
+
+        a:hover {
+          background-color: transparent;
+        }
+
+        > li.nav-item {
+          ////////////////// megamenu hack
+          position: inherit !important;
+          //margin: 0 .5rem;
+          padding: 0 6px;
+          //height: $navbar-height;
+          position: relative;
+
+          > a > span, > strong,.nav-link {
+            padding: 0;
+            margin: 0;
+            font-size: 1rem !important;
+            color: $color-level-1;
+            font-size: 0.875rem;
+            line-height: $navbar-height;
+            font-weight: 400;
+
+            @media screen and (min-width: 1600px) {
+              font-size: $font-size-lg !important;
+            }
+          }
+          >strong{
+            padding-top:.5rem;
+            padding-bottom:.5rem;
+          }
+
+        }
+
+        > li.nav-item.active > *, > li.nav-item:hover > * {
+          color: $color-level-1-active;
+        }
+
+        > li.nav-item:hover {
+          > a, > a:after, > strong {
+            text-decoration: none;
+            color: #000000;
+          }
+        }
+
+        li.nav-item {
+          padding-right: 1.5rem;
+        }
+
+      }
+
+      ////////////////// megamenu hack
+      ul.level_2.show {
+        display: flex;
+        justify-content: center;
+      }
+
+      ul.level_2.dropdown-menu {
+
+        border: 0;
+        border-top: 1px solid #eee;
+        //border-bottom: 1px solid #ccc;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        width: 400px;
+        ////////////////// megamenu hack
+        width: 100% !important;
+        background-color: $navbar-dropdown-color;
+
+        > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
+          color: $color-level-2-active !important;
+        }
+
+        li.not-clickable-page-container > a {
+          cursor: text;
+          text-decoration: none;
+        }
+
+        > li {
+          line-height: 2;
+          //border-top: 1px solid $gray-300;
+          padding: 0 $spacer-x;
+          @include transition(background-color);
+
+          > a, > strong, > span {
+            color: $color-level-2;
+            font-size: 1rem !important;
+            @media screen and (min-width: 1600px) {
+              font-size: $font-size-lg !important;
+            }
+            font-weight: 600;
+            @include transition(color);
+            display: block;
+            margin-bottom: 0.5rem;
+            @include icon-before("\f00c");
+            text-decoration: none !important;
+
+            &:before {
+              text-decoration: none !important;
+            }
+          }
+        }
+
+        > li.not-clickable-page-container {
+          > a {
+            border-bottom: 1px solid $color-level-2;
+          }
+        }
+
+        > li:hover {
+          > a, > strong, > a > span {
+            color: $color-level-2 !important;
+          }
+        }
+
+      }
+
+      ul.level_3 {
+        > li {
+          line-height: 2.25;
+          @include icon-before("\f105", white); //angle-right
+          &:before {
+            margin-top: 0;
+          }
+
+          //border-top: 1px solid #444;
+          padding: 0;
+
+          > a, > strong, > a > span {
+            color: $color-level-3;
+            font-size: 0.875rem !important;
+            text-decoration: none;
+            @media screen and (min-width: 1600px) {
+              font-size: 1.125rem !important;
+            }
+            font-weight: normal;
+            @include transition(color);
+
+            &:before {
+              text-decoration: none !important;
+            }
+          }
+        }
+
+        > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
+          color: $color-level-2-active !important;
+        }
+
+        > li:first-child {
+          border: 0;
+        }
+      }
+
+      ul.level_4 {
+        > li {
+          line-height: 2.25;
+          border-top: 1px solid #444;
+          padding: 0 $spacer-x;
+
+          > a, > strong, > a > span {
+            color: $color-level-4;
+            font-size: 0.875rem !important;
+            font-weight: normal;
+            @include transition(color);
+          }
+        }
+
+      }
+    }
+  }
+}
+

@@ -1,0 +1,69 @@
+.event-export-table {
+  td,th {
+    border-width:0;
+    border-bottom:1px solid #dee2e6;
+  }
+
+  td.event-export-weeknumber {
+    border: 0;
+  }
+  td.event-export-eventState{
+    color: red;
+    text-transform: uppercase;
+  }
+
+  &.event-export-table-courses{
+    td,th{
+      border:0;
+    }
+    td.event-export-event-separator{
+      border-top: 1px solid #dee2e6;
+      margin-top: 20px;
+    }
+  }
+
+}
+
+
+.event-export-month {
+  color: red;
+  padding-top: 3rem !important;
+}
+
+.event-export-row-headline td {
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+  border-bottom: none !important;
+  color: $blue;
+  font-weight: bold;
+}
+
+.event-export-row-subheadline td {
+  border-bottom: none !important;
+  font-weight: bold;
+  color: black;
+}
+
+.event-export-row-teaser td {
+  border-bottom: none !important;
+}
+
+.event-export-row-details td {
+  border-bottom: none !important;
+}
+
+.event-export-course-type-level-0 {
+  font-size: 3rem !important;
+  color: red;
+  text-transform: uppercase;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.event-export-course-type-level-1 {
+  font-size: 2rem !important;
+  color: $blue;
+  text-transform: uppercase;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}

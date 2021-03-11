@@ -1,0 +1,23 @@
+ul.pagination {
+
+  padding-left: 1px;
+
+  li {
+    @extend .page-item;
+
+    a {
+      @extend .page-link;
+      background-color: $gray-400;
+      border-color: $gray-400;
+    }
+
+    margin-right: 2px;
+  }
+
+  > li > span, > li > a {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+
+
+}

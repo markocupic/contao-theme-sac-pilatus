@@ -1,0 +1,107 @@
+<!-- indexer::stop -->
+<div class="header-navbar">
+    <div class="header-navbar-row-0 d-flex ps-3 pe-3 pt-1 pb-1 align-items-center">
+        <div class="ms-0 me-auto d-none d-sm-flex">{{link_open::geschaeftsstelle}}Zur Geschäftsstelle{{link_close}}</div>
+
+        <div class="ms-auto me-0 d-flex align-items-center">
+            <?php if(FE_USER_LOGGED_IN): ?>
+            <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2" title="Abmelden">Abmelden</button>
+
+            <div class="ms-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
+            <?php $id = \FrontendUser::getInstance()->id; ?>
+            <div class="ms-3">
+                {{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
+            </div>
+            <?php endif; ?>
+            <?php if(!FE_USER_LOGGED_IN): ?>
+
+            <a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ms-2" title="Mitglieder-Login"><i class="fal fa-user"></i><span>&nbsp;Mitglieder-Login</span></a>
+            <?php endif; ?>
+
+            <?php if(FE_USER_LOGGED_IN): ?>
+            <a href="{{link_url::member-profile}}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="header-navbar-row-1 hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
+        <div class="navbar-brand ms-3">
+            <a href="" title="Startseite">
+                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+            </a>
+        </div>
+
+        <!-- NAVBAR-START -->
+        <div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
+        <!-- NAVBAR-END -->
+
+        <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
+
+            <a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-dark ms-2" role="button" aria-label="Kurse">Kurse</a>
+            <a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-label="Touren">Touren</a>
+
+            <!-- Searchbar toggler -->
+            <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fa fa-search" title="Suche"></i></button>
+            <!-- End Searchbar toggler -->
+
+            <!-- Navbar toggler mobile -->
+            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation"><i class="fa fa-bars" title="Navigation öffnen"></i></button>
+            <!-- End Navbar toggler mobile -->
+
+        </div>
+
+    </div>
+    <!-- Search module -->
+    {{insert_module::353}}
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="d-block modal-title">Mitglieder-Login</h5>{{br}}
+                <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
+            </div>
+            <div class="modal-body">
+                {{insert_module::290}}
+                {{br}}
+                <hr>
+                <h6 class="mt-4">Zum ersten Mal hier?</h6>
+                <p>Jetzt mit <strong>Mitgliedernummer</strong> und deiner beim SAC hinterlegten <strong>E-Mail-Adresse</strong> dein SAC-Pilatus Konto einmalig <a href="{{link_url::konto-aktivieren}}">aktivieren!</a></p>
+            </div>
+            <div class="modal-footer">
+                <?php if(!FE_USER_LOGGED_IN): ?>
+                <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto einmalig aktivieren?</a>
+                &nbsp;
+                <?php endif; ?>
+                <a href="{{link_url::frontend-user-passwort-vergessen}}" class="btn btn-outline-primary">{{link_title::frontend-user-passwort-vergessen}}?</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /**
+     * Handle Login Modal
+     */
+    (function ($) {
+        "use strict";
+
+        $(document).ready(function () {
+            $('.trigger-login-modal').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#loginModal').modal('show');
+            });
+
+            if ($('#loginModal .error').length) {
+                $('#loginModal').modal('show');
+            }
+        });
+    })(jQuery);
+</script>
+
+
+<!-- indexer::continue -->
+

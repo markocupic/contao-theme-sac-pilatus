@@ -1,0 +1,24 @@
+
+<ul class="row tiny-gutter cols_<?= $this->perRow ?>">
+  <?php $animationDelay = 0.5; ?>
+
+  <?php foreach ($this->body as $class=>$row): ?>
+    <?php foreach ($row as $col): ?>
+      <?php $animationDelay+=0.1; ?>
+      <?php if ($col->addImage): ?>
+        <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3 <?= $class ?> <?= $col->class ?>" data-wow-duration="0.5s" data-wow-delay="<?= $animationDelay ?>s">
+          <figure class="image_container"<?php if ($col->margin): ?> style="<?= $col->margin ?>"<?php endif; ?>>
+            <?php if ($col->href): ?>
+              <a href="<?= $col->href ?>"<?= $col->attributes ?> title="<?= $col->photographer . ' ' . $col->alt ?>"><?php $this->insert('picture_default', $col->picture); ?></a>
+            <?php else: ?>
+              <?php $this->insert('picture_default', $col->picture); ?>
+            <?php endif; ?>
+            <?php if ($col->caption): ?>
+              <figcaption class="caption"><?= $col->caption ?></figcaption>
+            <?php endif; ?>
+          </figure>
+        </li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+</ul>

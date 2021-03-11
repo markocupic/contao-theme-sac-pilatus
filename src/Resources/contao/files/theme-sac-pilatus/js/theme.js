@@ -117,7 +117,6 @@
 (function ($) {
     $().ready(function () {
 
-
         // Prevent default if page has class "not-clickable-page-container'
         $('.mod_navigation li.submenu.not-clickable-page-container > a').click(function (e) {
             e.preventDefault();
