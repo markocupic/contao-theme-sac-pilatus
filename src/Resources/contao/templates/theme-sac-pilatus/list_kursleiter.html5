@@ -7,7 +7,7 @@
 
 
 
-<div class="row gx-1 gy-2">
+<div class="row gx-2 gy-1">
     <?php $animDelay = 0; ?>
     <?php foreach ($this->tbody as $class=>$row): ?>
     <?php $animDelay += 0.05; ?>

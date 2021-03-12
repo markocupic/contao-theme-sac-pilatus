@@ -1,5 +1,5 @@
 <!-- indexer::stop -->
-<ul class="row gx-1 gy-2 equal-height cols_<?= $this->perRow ?>">
+<ul class="row gx-2 gy-1 equal-height cols_<?= $this->perRow ?>">
   <?php $animationDelay = 0.5; ?>
 
   <?php foreach ($this->body as $class=>$row): ?>
