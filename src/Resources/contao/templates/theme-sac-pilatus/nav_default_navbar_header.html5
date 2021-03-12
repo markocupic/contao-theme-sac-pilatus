@@ -1,0 +1,37 @@
+<?php if($this->level == 'level_1'): ?>
+<ul class="<?= $this->level ?>">
+  <?php foreach ($this->items as $item): ?>
+    <?php $hasDropdown = false; ?>
+    <?php $item['class'] = $item['class'] ?: ''; ?>
+    <?php if(!empty($item['subitems'])): ?>
+      <?php $hasDropdown = true; ?>
+    <?php endif; ?>
+
+    <?php if ($item['isActive']): ?>
+      <li class="nav-item <?= $item['class'] ?>">
+        <strong class="<?= $item['class'] ?>"<?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="name"><?= $item['link'] ?></strong>
+        <?= $item['subitems'] ?>
+      </li>
+    <?php else: ?>
+      <li class="nav-item <?php if($hasDropdown): ?>dropdown <?php endif; ?><?= $item['class'] ?>">
+        <a href="<?= $item['href'] ?: './' ?>" <?php if($hasDropdown): ?>data-bs-toggle="dropdown" <?php endif; ?>title="<?= $item['pageTitle'] ?: $item['title'] ?>" class="nav-link<?php if($hasDropdown): ?> dropdown-toggle<?php endif; ?> <?= $item['class'] ?>"<?php if ($item['accesskey'] !== '') echo ' accesskey="' . $item['accesskey'] . '"'; ?><?php if ($item['tabindex']) echo ' tabindex="' . $item['tabindex'] . '"'; ?><?= $item['target'] ?><?= $item['rel'] ?><?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="url">
+        <span itemprop="name"><?= $item['link'] ?></span>
+        </a><?= $item['subitems'] ?></li>
+    <?php endif; ?>
+  <?php endforeach; ?>
+</ul>
+<?php else: ?>
+<ul class="<?php if($this->level == 'level_2'): ?>dropdown-menu <?php endif; ?><?= $this->level ?>">
+  <?php foreach ($this->items as $item): ?>
+  <?php if(!empty($item['subitems'])): ?>
+  <?php $item['class'] .= ' dropdown'; ?>
+  <?php endif; ?>
+  <?php if ($item['isActive']): ?>
+  <li class="<?= $item['class'] ?>"><strong class="<?= $item['class'] ?>"<?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="name"><?= $item['link'] ?></strong><?= $item['subitems'] ?></li>
+  <?php else: ?>
+  <li<?php if ($item['class']) echo ' class="' . $item['class'] . '"'; ?>><a href="<?= $item['href'] ?: './' ?>" title="<?= $item['pageTitle'] ?: $item['title'] ?>"<?php if ($item['class']) echo ' class="' . $item['class'] . '"'; ?><?php if ($item['accesskey'] !== '') echo ' accesskey="' . $item['accesskey'] . '"'; ?><?php if ($item['tabindex']) echo ' tabindex="' . $item['tabindex'] . '"'; ?><?= $item['target'] ?><?= $item['rel'] ?><?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="url"><span itemprop="name"><?= $item['link'] ?></span></a><?= $item['subitems'] ?></li>
+  <?php endif; ?>
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+

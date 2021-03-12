@@ -1,3 +1,7 @@
+.select2-results__option{
+  font-size: .825rem;
+}
+
 .filter-board {
   background-color: transparent;
 
@@ -14,6 +18,14 @@
     margin-top: 1rem;
   }
 
+  input[type="text"],select,.btn{
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+  input#ctrl_dateStart{
+    background: #fff !important;
+  }
+
   input[type="text"], textarea, select {
     margin: 0;
     width: 100%;
@@ -24,6 +36,12 @@
   select2-selection__rendered {
     border-radius: 0 !important;
   }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    border-radius: 0;
+  }
+
+
 
   .select2-container--default .select2-selection--multiple {
     border: 0 !important;
