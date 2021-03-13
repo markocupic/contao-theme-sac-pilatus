@@ -1,6 +1,6 @@
 // Bootstrap
 .widget {
-  //@extend .form-group;
+  @extend .mb-3;
 }
 
 input.text, input.captcha, textarea, .widget > select {
@@ -8,15 +8,11 @@ input.text, input.captcha, textarea, .widget > select {
 }
 
 button {
-  //@extend .btn;
+  @extend .btn;
 }
 
 button:hover * {
   text-decoration: none !important;
-}
-
-.btn {
-  font-size: $font-size-sm;
 }
 
 .submit {
@@ -39,11 +35,8 @@ button:hover * {
 
 #main {
   .formbody {
-    position: relative;
 
-    & > * {
-      box-sizing: border-box;
-    }
+
 
     fieldset {
       margin: $spacer 0 2rem 0;

@@ -1,4 +1,4 @@
-.select2-results__option{
+.select2-results__option {
   font-size: .825rem;
 }
 
@@ -18,16 +18,19 @@
     margin-top: 1rem;
   }
 
-  input[type="text"],select,.btn{
-    padding-top: 0.65rem;
-    padding-bottom: 0.65rem;
+  input[type="text"], select, .btn {
+    //padding-top: 0.65rem;
+    //padding-bottom: 0.65rem;
   }
-  input#ctrl_dateStart{
+
+  input#ctrl_dateStart {
     background: #fff !important;
   }
 
+
+
   input[type="text"], textarea, select {
-    margin: 0;
+    //margin: 0;
     width: 100%;
     outline: none;
     border: 0;
@@ -37,10 +40,9 @@
     border-radius: 0 !important;
   }
 
-  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     border-radius: 0;
   }
-
 
 
   .select2-container--default .select2-selection--multiple {

@@ -1,6 +1,7 @@
 
 #header {
   background-color: #fff;
+
   .header-navbar {
     .header-navbar-row-0 {
       min-height: 40px;
@@ -17,15 +18,19 @@
         //font-size: small;
         color: #fff;
       }
-      a{
+
+      a {
         text-decoration: none;
       }
+
       a.email {
         border: 0;
+
         &:hover {
           //color: $gray-800;
         }
       }
+
       a.header-login-button {
         line-height: 1;
       }
@@ -45,19 +50,10 @@
         }
         width: auto;
       }
+
       .navbar-header {
         flex-grow: 1;
         justify-content: center;
-      }
-      // Event buttons tour&kurs
-      a.btn {
-        font-size: $font-size-sm;
-        @include media-breakpoint-up(lg) {
-          font-size: $font-size-base;
-        }
-        @media (min-width: 1600px) {
-          font-size: $font-size-lg;
-        }
       }
 
       .header-search-form {
@@ -69,32 +65,40 @@
         .btn {
           cursor: pointer !important;
         }
+
         .svg-inline--fa, i.fa {
           font-size: 1.625rem !important;
         }
       }
+
       .fa-search {
         color: $gray-900;
         @include transition(color);
+
         &:hover {
           color: #d50000;
         }
       }
+
       .fa-bars {
         color: #000000;
       }
     }
+
     .header-navbar-row-2 {
       max-height: 0;
       background-color: #fff;
       transition: max-height ease-in-out 1s;
       overflow: hidden;
+
       .form-control {
         width: 300px;
       }
+
       .btn {
         //background-color: #08c;
       }
+
       input[type="search"] {
         text-align: center;
         color: #000;

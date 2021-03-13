@@ -1,4 +1,7 @@
 .mod_search_custom_overlay {
+  .close-button.btn-close{
+    color: #ffffff;
+  }
   display: none;
   position: fixed;
   top: 0;
@@ -31,6 +34,9 @@
         margin-bottom: 2rem;
         input[type="search"] {
           width: 100%;
+          border:0;
+          z-index: 111111;
+          opacity: 1;
         }
       }
 

@@ -5,7 +5,7 @@
 
         <div class="ms-auto me-0 d-flex align-items-center">
             <?php if(FE_USER_LOGGED_IN): ?>
-            <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2" title="Abmelden">Abmelden</button>
+            <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
 
             <div class="ms-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
             <?php $id = Contao\FrontendUser::getInstance()->id; ?>
