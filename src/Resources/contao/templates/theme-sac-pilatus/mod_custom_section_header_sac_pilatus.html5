@@ -65,19 +65,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
             </div>
             <div class="modal-body">
-                {{insert_module::290}}
-                {{br}}
-                <hr>
-                <h6 class="mt-4">Zum ersten Mal hier?</h6>
-                <p>Jetzt mit <strong>Mitgliedernummer</strong> und deiner beim SAC hinterlegten <strong>E-Mail-Adresse</strong> dein SAC-Pilatus Konto einmalig <a href="{{link_url::konto-aktivieren}}">aktivieren!</a></p>
+                {{insert_module::396}}
+                <div class="mt-5">
+                    <h5>Mehrere Services, ein Login</h5>
+                    <p>Das "alte Login" wurde durch das <strong>SAC Login</strong> abgelöst. Falls du das SAC-Login noch nicht aktiviert hast, kannst du das mit dem PUK Code und deiner 6-stelligen Mitgliedernummer sehr einfach nachholen. Beide Angaben findest du auf deinem SAC-Mitgliederausweis.</p>
+                    <p>In einem Flyer, welchen du unterhalb herunterladen kannst, werden alle Fragen rund um das SAC-Login beantwortet.</p>
+                    <p>Sollten trotzdem noch Schwierigkeiten beim Login auftreten, bieten wir zeitlich befristet noch das {{link_open::member-login}}alte SAC-Pilatus-Login{{link_close}} an.</p>
+
+                    <h5 class="mt-4 d-block">Was ist das SAC-Login?</h5>
+                    <div class="d-block mt-1">
+                        <p><a class="btn btn-sm btn-outline-danger" href="{{file::c10f6425-84a3-11eb-a01f-02000a14001a}}" download="SAC Login FAQ">Häufige Fragen rund um das SAC-Login</a>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <?php if(!FE_USER_LOGGED_IN): ?>
-                <a href="{{link_url::konto-aktivieren}}" class="btn btn-primary">Konto einmalig aktivieren?</a>
-                &nbsp;
-                <?php endif; ?>
-                <a href="{{link_url::frontend-user-passwort-vergessen}}" class="btn btn-outline-primary">{{link_title::frontend-user-passwort-vergessen}}?</a>
-            </div>
+
         </div>
     </div>
 </div>
