@@ -1,26 +1,32 @@
 #footer {
-  $footer-bg-color-row-1: #252f33;
-  $footer-bg-color-row-2: #262627;
-  $footer-color: #cdcdcd;
+  $footer-bg-color-row-1: #474747;
+  $footer-bg-color-row-2: #474747;
+  $footer-color: #fff;
+  $footer-link-color: #fff;
 
   .footer-nav {
     ul {
       text-align: center;
     }
+
     margin-top: 1rem;
+
     li {
       display: inline;
       margin: 0;
       line-height: 2;
       padding: 0 0.75rem;
+
       * {
         color: $footer-color !important;
         font-weight: normal !important;
         //text-transform: uppercase;
         text-decoration: none;
+
         &:hover {
-          color: #000 !important;
+          //color: #000000 !important;
         }
+
         &.active {
           font-weight: normal !important;
           //color: #fff !important;
@@ -28,6 +34,7 @@
       }
 
     }
+
     &:first-child {
       border: none;
     }
@@ -36,6 +43,7 @@
   * {
     //font-size: 0.875rem !important;
   }
+
   [class*="footer-row-"] {
     padding-top: $spacer;
     padding-bottom: $spacer;
@@ -44,29 +52,49 @@
   .footer-row-1 {
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
+
     a, a > * {
-      color: $primary !important;
+      color: $footer-link-color !important;
+      &:hover{
+        text-decoration: underline;
+        text-underline-position: under;
+        color: $footer-link-color;
+      }
     }
+
     .title {
       font-weight: bold;
     }
+
     .row > div > div {
       padding: 0 8px;
     }
   }
 
   .footer-row-2 {
+    .container{
+      border-top: 1px solid #807d7d;
+      padding-top:2rem;
+    }
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
+
     a, a > * {
-      color: $primary !important;
+      color: $footer-link-color !important;
+      &:hover{
+        text-decoration: underline;
+        text-underline-position: under;
+        color: $footer-link-color;
+      }
     }
+
     .title {
       color: $footer-color;
     }
 
     #socialIcons ul {
       display: flex;
+
       li {
         margin-right: 5px;
       }

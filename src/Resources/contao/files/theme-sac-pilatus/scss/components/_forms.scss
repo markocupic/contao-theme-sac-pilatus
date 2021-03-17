@@ -21,14 +21,14 @@ button:hover * {
 }
 
 .article-blue .submit {
-  background: #000;
-  border-color: #000;
-  color: #fff;
+  background: #ffffff;
+  border-color: transparent;
+  color: $blue;
 }
 
 .article-blue .submit:hover {
-  background: #851c1c;
-  border-color: #851c1c;
+  background: #000000;
+  border-color: transparent;
   color: #fff;
 }
 
