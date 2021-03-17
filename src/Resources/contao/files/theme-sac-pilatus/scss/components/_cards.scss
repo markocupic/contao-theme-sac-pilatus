@@ -37,9 +37,9 @@
   }
   .card-body {
     a, .card-title {
-      color: #d50000 !important;
+      color: $blue !important;
       line-height: 1.4;
-      text-decoration-color: $red;
+      text-decoration-color: $blue;
     }
   }
 }

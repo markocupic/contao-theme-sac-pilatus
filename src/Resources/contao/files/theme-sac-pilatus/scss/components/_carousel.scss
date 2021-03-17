@@ -1,11 +1,18 @@
 .carousel {
-
+  position: relative;
+  .carousel-indicators{
+    z-index: 21;
+  }
   .carousel-control-next, .carousel-control-prev {
-    z-index: 10;
+    z-index: 2000;
     opacity: 1;
     width: auto;
     display: flex;
+    position:absolute;
     align-items: center;
+    &:focus{
+      box-shadow: none;
+    }
   }
 
   .carousel-control-prev {

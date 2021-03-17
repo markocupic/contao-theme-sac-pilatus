@@ -83,7 +83,7 @@ $text-elements: (
 // Underline
 #main h1.ce_headline, [class*="ce_"] > h1, [class*="mod_"] > h1 {
   text-align: left;
-  color: #000;
+  color: $blue;
   font-weight: 700;
   //text-transform: uppercase;
   text-align: left;
@@ -94,7 +94,7 @@ $text-elements: (
   &:after {
     content: "";
     width: 150px;
-    background: $accent-color;
+    background: $blue;
     margin-top: 1rem;
     margin-bottom: 1rem;
     height: 2px;
