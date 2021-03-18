@@ -88,9 +88,13 @@
         padding-bottom: 2rem;
       }
       color: #fff;
-      a {
-        color: #fff;
+      a,h1,h2,h3,h4,h5,h6 {
+        color: #fff !important;
       }
+      h1:after {
+        background-color: #fff;
+      }
+
     }
 
     .mod_article.blue-gradient {
