@@ -80,8 +80,8 @@
 
     .mod_article.article-blue {
       //background-color: $blue;
-      background: rgb(0, 130, 199);
-      background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
+      background: $blue;
+      //background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
       .article-inside {
         background-color: transparent;
         padding-top: 2rem;
@@ -98,8 +98,8 @@
     }
 
     .mod_article.blue-gradient {
-      background: rgb(0, 130, 199);
-      background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
+      background: $blue;
+      //background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
     }
 
     .mod_article.article-darkcyan {

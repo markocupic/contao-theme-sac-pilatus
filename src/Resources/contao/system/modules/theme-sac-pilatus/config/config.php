@@ -24,10 +24,12 @@ if (TL_MODE === 'FE')
     // Google Webfonts
     $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.gstatic.com">';
     $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">';
+    // Vorschlag Buffoni Source Serif Pro
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">';
 
     // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
-    // JQuery UI doesn't go with popper.js
-    //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
+    // JQuery UI does not go with popper.js
+    // $GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
     $GLOBALS['TL_JAVASCRIPT'][] = "files/theme-sac-pilatus/js/third-party/Sortable.min.js|static";
 
 
