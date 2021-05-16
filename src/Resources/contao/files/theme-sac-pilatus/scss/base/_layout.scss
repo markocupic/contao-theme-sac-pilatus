@@ -14,12 +14,19 @@
   #container {
 
     .mod_article > .container {
-      padding: 2rem $spacer;
+
+      @include media-breakpoint-down(lg) {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      @extend .container-lg;
+      @extend .py-4, .px-4, .px-md-5;
       @media (min-width: 1400px) {
-        max-width: 70%;
+        //max-width: 70%;
       }
       @media (min-width: 1600px) {
-        max-width: 65%;
+        //max-width: 65%;
       }
     }
 

@@ -64,9 +64,24 @@
   .thumbnail {
     position: relative;
     .dashboard-event-story-thumb-buttons-container {
+      button.btn{
+        padding: 4px 8px !important;
+      }
       position: absolute;
       bottom: 4px;
       right: 4px;
+      .missing-caption-or-photographer-name{
+        background-color: black;
+        color: yellow;
+      }
+      .blinking{
+        animation: blinkingButton 1.2s infinite;
+      }
+    }
+    @keyframes blinkingButton{
+      0% { background-color: #000; }
+      100% { background-color: red; }
+    }
     }
     button {
       margin-left: 4px;
@@ -78,7 +93,7 @@
       @include opacity(1);
     }
   }
-}
+
 
 .member-picture-feed-thumb {
   position: relative;

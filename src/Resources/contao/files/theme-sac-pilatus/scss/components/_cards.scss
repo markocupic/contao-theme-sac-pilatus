@@ -24,8 +24,6 @@
 }
 
 .card {
-  margin-bottom: $grid-gutter-width/2;
-  //border:0;
   .caption {
     display: none;
   }
@@ -34,6 +32,9 @@
   }
   img {
     @extend .img-fluid;
+  }
+  .image_container img, .card-img-top{
+    @extend .w-100;
   }
   .card-body {
     a, .card-title {
