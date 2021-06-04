@@ -49,10 +49,7 @@
         "src/Resources/contao/system/modules/theme-sac-pilatus": "system/modules/theme-sac-pilatus"
       }
     }
-  },
-  "repositories": [
-
-  ]
+  }
 }
 
 
