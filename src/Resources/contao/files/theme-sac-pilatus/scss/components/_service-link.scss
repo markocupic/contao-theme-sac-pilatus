@@ -29,7 +29,7 @@
   }
 
   .service-link-headline, .service-link-headline a {
-    @include font-size(25px,true);
+    @include font-size(25px);
     transition: font-size ease-in-out .4s;
     color: rgb(59, 60, 66);
     text-align: center;
