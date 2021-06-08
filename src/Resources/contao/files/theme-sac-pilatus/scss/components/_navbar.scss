@@ -9,6 +9,16 @@ $color-level-4: #ffffff;
 $color-level-1-active: #000000;
 $color-level-2-active: #000000;
 
+// Toggler
+#header .close-header-navigation-dropdown{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
 #header {
   .navbar-header {
     .mod_navigation {
@@ -23,6 +33,7 @@ $color-level-2-active: #000000;
       ul.level_1 {
         background-color: transparent;
         display: flex;
+
 
         a:hover {
           background-color: transparent;
@@ -76,21 +87,30 @@ $color-level-2-active: #000000;
       ////////////////// megamenu hack
       ul.level_2.show {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: start;
       }
 
       ul.level_2.dropdown-menu {
 
+        min-height: 200px;
         border: 0;
         border-top: 1px solid #eee;
         //border-bottom: 1px solid #ccc;
         padding-top: 1rem;
         padding-bottom: 1rem;
-
-        width: 400px;
+        z-index: 2001;
         ////////////////// megamenu hack
         width: 100% !important;
-        background-color: $navbar-dropdown-color;
+        // new
+        border-top: 0;
+
+        //width: calc(100vw - 80px) !important;
+        opacity: .95;
+        //left:40px;
+        //right:40px;
+        margin-top: 1px;
+        background-color: darken($navbar-dropdown-color,10);
 
         > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-active !important;
@@ -102,9 +122,11 @@ $color-level-2-active: #000000;
         }
 
         > li {
+          width: 270px;
           line-height: 2;
           //border-top: 1px solid $gray-300;
           padding: 0 $spacer-x;
+          margin-bottom: 2rem;
           @include transition(background-color);
 
           > a, > strong, > span {

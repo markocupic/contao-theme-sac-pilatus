@@ -215,3 +215,27 @@
 })(jQuery);
 
 
+/** Avoid close the header navbar dropdown when click inside. **/
+(function ($) {
+    $().ready(function () {
+        $('<i class="close-header-navigation-dropdown fal fa-times"></i>').appendTo('#header .header-navbar ul.dropdown-menu');
+        $('#header .header-navbar ul.dropdown-menu').on('click', function (e) {
+            e.stopPropagation();
+        });
+    });
+})(jQuery);
+
+/** Close dropdown when clicking the toggler **/
+(function ($) {
+    $().ready(function () {
+        $('<i class="close-header-navigation-dropdown fal fa-times" title="Navigation schliessen"></i>').appendTo('#header .header-navbar ul.dropdown-menu');
+        $('.close-header-navigation-dropdown').click(function (e) {
+            let ddCollection = document.querySelectorAll('#header .dropdown-toggle');
+            ddCollection.forEach(element => {
+                dd = new bootstrap.Dropdown(element);
+                dd.hide();
+            });
+            e.stopPropagation();
+        });
+    });
+})(jQuery);
