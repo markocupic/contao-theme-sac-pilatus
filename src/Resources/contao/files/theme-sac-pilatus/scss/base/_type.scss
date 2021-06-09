@@ -1,7 +1,9 @@
-$font-family-sans-serif: "Nunito",  sans-serif;
-body{
-  font-family: "Work Sans" !important;
+
+
+.font-family-serif {
+  font-family: $font-family-serif;
 }
+
 a{
   text-underline-position: under;
 }
@@ -95,7 +97,7 @@ $text-elements: (
   //text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.08em;
-  font-family: "Roboto Slab", serif;
+  font-family: $font-family-serif;
   // Vorschlag Buffoni
   //font-family: "Source Serif Pro", serif;
 

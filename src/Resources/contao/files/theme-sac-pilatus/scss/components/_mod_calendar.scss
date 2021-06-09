@@ -3,14 +3,17 @@
   text-align: center;
   position: relative;
   padding: 50px 0;
+
   .preloader-text {
     color: $gray-600;
   }
+
   .preloader-icon {
     margin-left: auto;
     margin-right: auto;
     width: 100px;
     height: 100px;
+
     .fa {
       color: $gray-200 !important;
     }
@@ -31,15 +34,18 @@
 .event-list-inner-box {
   @include transition(background-color);
   border: 1px solid $gray-200;
+
   .event-list-badge-wrapper {
     min-width: 50px;
     width: 50px;
     height: 50px;
     border: 1px solid $gray-200;
+
     .event-list-badge-day, event-list-badge-month {
       line-height: 1;
     }
   }
+
   .last-minute-tour {
     color: $green;
     font-size: $font-size-sm;
@@ -49,9 +55,11 @@
 .event-list-inner-box:hover {
   background-color: $gray-200;
   border-color: $gray-400;
+
   .event-list-badge-wrapper {
     border-color: $gray-400;
   }
+
   .last-minute-tour {
     color: $green;
     font-size: $font-size-sm;
@@ -61,8 +69,10 @@
 .button-bar {
   ul {
     display: flex !important;
+
     li {
       margin-right: 5px;
+
       a {
         touch-action: none;
       }
@@ -74,6 +84,7 @@
   .title .headline {
     margin-top: 0;
   }
+
   .more-date-infos {
     color: $link-color;
     text-decoration: $link-decoration;
@@ -91,55 +102,67 @@
   .row {
     padding-top: 2rem;
     padding-bottom: $spacer-y;
+
     .kursstufe {
       color: $gray-400 !important;
       margin-top: $spacer-y/2;
       margin-bottom: $spacer-y;
       text-transform: uppercase;
     }
+
     .kursart .label-kursart {
       cursor: pointer;
     }
+
     .more {
       text-align: right;
     }
 
   }
+
   .event-for-beginners:before {
     font-family: $icon-font-name;
     content: "\f4c4";
     color: #ffffff;
   }
+
   .event-state-icon {
     font-family: $icon-font-name;
     margin-right: 6px;
     font-style: normal;
     font-weight: 900;
   }
+
   .event-state-icon.event_status_1:before {
     content: "\f111";
     color: $green;
   }
+
   .event-state-icon.event_status_2:before {
     content: "\f28d";
     color: $red;
   }
+
   .event-state-icon.event_status_3:before {
     content: "\f111";
     color: $red;
   }
+
   .event-state-icon.event_status_4:before {
     content: "\f05e";
     color: $red;
   }
+
   .event-state-icon.event_status_5:before {
     content: "\f111";
     color: $orange;
   }
+
   .event-state-icon.event_status_6:before {
     content: "\f06a";
     color: $orange;
   }
+
   .event-state-icon.event_status_7:before {
     content: "\f06a";
     color: #000000;
@@ -150,28 +173,38 @@
   border-bottom: 0;
 }
 
+// Hide back link
+.mod_eventreader {
+  .back {
+    display: none;
+  }
+}
+
 .event-detailview {
+
+
   .event-state-headline {
-    margin-bottom: -30px;
     color: $red;
   }
+
   .img-fluid {
     width: 100%;
   }
+
   .ce_headline.last-minute-tour {
     color: $green;
     text-transform: inherit;
     margin-bottom: 0 !important;
     line-height: 1 !important;
   }
+
   .flex-wrapper {
     display: flex;
     flex-wrap: wrap;
   }
 
   .teaser p {
-    margin-bottom: 1rem;
-    color: #111;
+    line-height: 2;
   }
 
   .kursstufe {
@@ -190,26 +223,21 @@
     img {
       border-radius: 0;
     }
+
     .instructor-name {
       margin-bottom: $spacer-y;
     }
   }
+
   .event-detail {
     h5 {
       font-weight: bold;
     }
-    p{
-      margin:0;
+
+    p {
+      margin: 0;
     }
   }
 
 }
 
-.hasteform_form-event-registration {
-
-  button {
-    //@extend .btn;
-    //@extend .btn-primary;
-    //@extend .btn-block;
-  }
-}

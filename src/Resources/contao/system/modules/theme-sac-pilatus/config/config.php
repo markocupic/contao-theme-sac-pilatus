@@ -23,7 +23,7 @@ if (TL_MODE === 'FE') {
     // Google Webfonts
     $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.gstatic.com">';
     $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">';
-    $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">';
+    //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">';
     //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,200&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Varela+Round&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">';
 
     // Vorschlag Buffoni Source Serif Pro
