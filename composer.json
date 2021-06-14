@@ -25,7 +25,7 @@
     "markocupic/contao-component-bootstrap": "^5.0",
     "markocupic/rotate_image": "^1.0",
     "markocupic/custom-section": "^1.0",
-    "markocupic/sidebar-navigation": "^1.0",
+    "markocupic/contao-sidebar-navigation": "^1.0",
     "markocupic/service-link-bundle": "^1.0",
     "markocupic/heroimage": "^4.0",
     "markocupic/bootstrap_responsive_youtube_embed": "^1.0",
