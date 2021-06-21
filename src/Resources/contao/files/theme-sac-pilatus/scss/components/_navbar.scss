@@ -106,12 +106,11 @@ $color-level-2-active: #000000;
         border-top: 0;
 
         //width: calc(100vw - 80px) !important;
-        opacity: .95;
+        opacity: .97;
         //left:40px;
         //right:40px;
         margin-top: 1px;
         background-color: darken($navbar-dropdown-color,10);
-
         > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-active !important;
         }

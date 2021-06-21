@@ -5,7 +5,7 @@
 // because the main.scss is located in:
 // vendor/markocupic/contao-theme-sac-pilatus/src/Resources/contao/files/theme-sac-pilatus/scss/main.scss
 @import "../../../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
- 
+
 // MIXINS
 @import "mixins/_mixins.scss";
 
@@ -65,7 +65,5 @@
 @import "components/alert";
 @import "components/gallery_grid";
 @import "components/scrollbar";
-
-
-
+@import "components/step_indicator";
 

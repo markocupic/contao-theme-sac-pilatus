@@ -84,6 +84,12 @@
   .title .headline {
     margin-top: 0;
   }
+  .title a {
+    text-decoration: none;
+  }
+  .title a:hover {
+    text-decoration: underline;
+  }
 
   .more-date-infos {
     color: $link-color;

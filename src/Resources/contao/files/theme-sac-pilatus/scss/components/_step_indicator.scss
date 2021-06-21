@@ -1,0 +1,21 @@
+.step-indicator {
+  .checkout-step {
+    @extend .text-black-50;
+    padding-bottom: 4px;
+    font-size: .875rem;
+    line-height: 1.75rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+    }
+
+    &.step--active {
+      @extend .text-danger;
+      border-bottom: 3px solid red;
+    }
+  }
+
+  .step-indicator-divider {
+    @extend .text-black-50;
+  }
+}
