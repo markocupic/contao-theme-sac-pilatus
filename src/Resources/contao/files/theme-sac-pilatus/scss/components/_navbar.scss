@@ -138,7 +138,7 @@ $color-level-2-active: #000000;
             @include transition(color);
             display: block;
             margin-bottom: 0.5rem;
-            @include icon-before("\f00c");
+            @include icon-before("\f067");
             text-decoration: none !important;
 
             &:before {

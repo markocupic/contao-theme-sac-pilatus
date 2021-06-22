@@ -1,8 +1,8 @@
 #footer {
-  $footer-bg-color-row-1: #474747;
-  $footer-bg-color-row-2: #474747;
-  $footer-color: #fff;
-  $footer-link-color: #fff;
+  $footer-bg-color-row-1: #e9ecef;
+  $footer-bg-color-row-2: #fdfdfd;
+  $footer-color: #333;
+  $footer-link-color: #333;
 
   .footer-nav {
     ul {
@@ -73,7 +73,7 @@
 
   .footer-row-2 {
     .container{
-      border-top: 1px solid #807d7d;
+      //border-top: 1px solid #807d7d;
       padding-top:2rem;
     }
     background-color: $footer-bg-color-row-2;

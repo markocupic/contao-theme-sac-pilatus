@@ -27,6 +27,9 @@
   .caption {
     display: none;
   }
+  &:hover{
+    @extend .shadow-sm;
+  }
   figure {
     max-width: 100% !important;
   }

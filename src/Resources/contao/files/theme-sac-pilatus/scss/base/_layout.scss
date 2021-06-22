@@ -1,6 +1,6 @@
 #wrapper {
   //@extend .container;
-
+  overflow-x: hidden;
   // overwrite bootstrap .container padding
   .container {
     padding-left: 0;
@@ -152,9 +152,9 @@
     }
 
     .mod_article.article-gray {
-      background-color: $gray-100;
+      background-color: #f5f5f2;
       .article-inside {
-        background-color: $gray-100;
+        background-color: #f5f5f2;
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
