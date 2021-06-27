@@ -1,6 +1,6 @@
 
 <!-- indexer::stop -->
-<div class="block">
+<nav class="block" aria-label="<?= $this->pagination ?>">
 
   <p><?= $this->total ?></p>
 
@@ -30,5 +30,5 @@
     <?php endif; ?>
   </ul>
 
-</div>
+</nav>
 <!-- indexer::continue -->
