@@ -1,0 +1,28 @@
+.mod_event_feedback_form
+{
+  .event-feedback-form{
+    border-top: 1px solid #666;
+  }
+  button[name="mp_form_pageswitch"][value="continue"]
+  {
+    @extend .btn;
+    @extend .btn-danger;
+  }
+  button[name="mp_form_pageswitch"][value="back"]
+  {
+    @extend .btn;
+    @extend .btn-success;
+  }
+  .widget.widget-placeholder{
+    .label {
+      @extend .mt-3;
+      font-weight: bold;
+    }
+  }
+  .widget-pagebreak{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    column-gap: 1rem;
+  }
+}
