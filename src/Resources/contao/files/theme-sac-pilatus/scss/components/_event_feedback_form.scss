@@ -1,6 +1,9 @@
 .mod_event_feedback_form
 {
-  .event-feedback-form{
+  .sac-ev-fb-event-title{
+    color: $red;
+  }
+  .sac-ev-fb-form{
     border-top: 1px solid #666;
   }
   button[name="mp_form_pageswitch"][value="continue"]
@@ -13,10 +16,16 @@
     @extend .btn;
     @extend .btn-success;
   }
+  .widget{
+    @extend .mb-4;
+  }
   .widget.widget-placeholder{
     .label {
       @extend .mt-3;
       font-weight: bold;
+    }
+    .value {
+      font-style: italic;
     }
   }
   .widget-pagebreak{
