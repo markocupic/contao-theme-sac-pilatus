@@ -14,7 +14,7 @@
       </li>
     <?php else: ?>
       <li class="nav-item <?php if($hasDropdown): ?>dropdown <?php endif; ?><?= $item['class'] ?>">
-        <a href="<?= $item['href'] ?: './' ?>" <?php if($hasDropdown): ?>data-bs-toggle="dropdown" <?php endif; ?>title="<?= $item['pageTitle'] ?: $item['title'] ?>" class="nav-link<?php if($hasDropdown): ?> dropdown-toggle<?php endif; ?> <?= $item['class'] ?>"<?php if ($item['accesskey'] !== '') echo ' accesskey="' . $item['accesskey'] . '"'; ?><?php if ($item['tabindex']) echo ' tabindex="' . $item['tabindex'] . '"'; ?><?= $item['target'] ?><?= $item['rel'] ?><?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="url">
+        <a href="<?= $item['href'] ?: './' ?>" <?php if($hasDropdown): ?>role="button" data-bs-toggle="dropdown" <?php endif; ?>title="<?= $item['pageTitle'] ?: $item['title'] ?>" class="nav-link<?php if($hasDropdown): ?> dropdown-toggle<?php endif; ?> <?= $item['class'] ?>"<?php if ($item['accesskey'] !== '') echo ' accesskey="' . $item['accesskey'] . '"'; ?><?php if ($item['tabindex']) echo ' tabindex="' . $item['tabindex'] . '"'; ?><?= $item['target'] ?><?= $item['rel'] ?><?php if (!empty($item['subitems'])) echo ' aria-haspopup="true"'; ?> itemprop="url">
         <span itemprop="name"><?= $item['link'] ?></span>
         </a><?= $item['subitems'] ?></li>
     <?php endif; ?>

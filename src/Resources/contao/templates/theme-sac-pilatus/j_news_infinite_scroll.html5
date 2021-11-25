@@ -15,13 +15,14 @@
                 percentPosition: true
             };
 
-
-            /**
-             * Generate the ContaoNewsInfiniteScroll object
-             * requires news_infinite_scroll.js
-             * @type {ContaoNewsInfiniteScroll}
-             */
-             new ContaoNewsInfiniteScroll({
+            if(typeof ContaoNewsInfiniteScroll === 'function')
+            {
+              /**
+               * Generate the ContaoNewsInfiniteScroll object
+               * requires news_infinite_scroll.js
+               * @type {ContaoNewsInfiniteScroll}
+               */
+              new ContaoNewsInfiniteScroll({
                 // CSS selector: Append loaded items to this container
                 newsContainer: '.mod_newslist_infinite_scroll',
                 // CSS selector: Default to $(window)
@@ -57,25 +58,25 @@
                  */
                 onInitialize: function (instance) {
 
-                    $grid = $(instance.getOption('newsContainer'));
+                  $grid = $(instance.getOption('newsContainer'));
 
-                    // Hide pagination
-                    $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
-                        $(this).hide();
-                    });
+                  // Hide pagination
+                  $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
+                    $(this).hide();
+                  });
 
-                    let i = 0;
-                    $(instance.getOption('newsContainer') + ' .card').each(function (el) {
-                        i++;
-                        $(this).closest('.news_card').addClass('added-to-masonry-grid');
-                    });
+                  let i = 0;
+                  $(instance.getOption('newsContainer') + ' .card').each(function (el) {
+                    i++;
+                    $(this).closest('.news_card').addClass('added-to-masonry-grid');
+                  });
 
-                    // Add empty grid-sizer element for masonry layout
-                    $('<div class="grid-sizer col-12 col-md-4">').prependTo('.mod_newslist_infinite_scroll');
-                    $grid.masonry(masonryOptions);
+                  // Add empty grid-sizer element for masonry layout
+                  $('<div class="grid-sizer col-12 col-md-4">').prependTo('.mod_newslist_infinite_scroll');
+                  $grid.masonry(masonryOptions);
 
-                    // Return false to abort initialization
-                    return true;
+                  // Return false to abort initialization
+                  return true;
                 },
 
                 /**
@@ -83,7 +84,7 @@
                  * @param instance
                  */
                 onXHRStart: function (instance) {
-                    // Do some actions
+                  // Do some actions
                 },
 
                 /**
@@ -93,8 +94,8 @@
                  * @returns string
                  */
                 onXHRComplete: function (html, instance) {
-                    // Do some actions
-                    return html;
+                  // Do some actions
+                  return html;
                 },
 
                 /**
@@ -102,7 +103,7 @@
                  * @param instance
                  */
                 onXHRFail: function (instance) {
-                    console.log('No response from server with address: ' + instance.currentUrl);
+                  console.log('No response from server with address: ' + instance.currentUrl);
                 },
 
                 /**
@@ -111,22 +112,24 @@
                  */
                 onAppendCallback: function (instance) {
 
-                    // Remove pagination
-                    $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
-                        $(this).remove();
-                    });
+                  // Remove pagination
+                  $(instance.getOption('newsContainer')).find('.pagination').closest('.block').each(function (el) {
+                    $(this).remove();
+                  });
 
-                    $(instance.getOption('newsContainer') + ' .card .item-number').remove();
+                  $(instance.getOption('newsContainer') + ' .card .item-number').remove();
 
-                    // Find new elements
-                    var newElements = $(instance.getOption('newsContainer')).find('.news_card:not(.added-to-masonry-grid)');
-                    $grid.append(newElements).masonry('appended', newElements);
-                    $(newElements).addClass('.added-to-masonry-grid').show();
-                    //$grid.masonry('destroy');
-                    $grid.masonry('reloadItems');
-                    $grid.masonry('layout');
+                  // Find new elements
+                  var newElements = $(instance.getOption('newsContainer')).find('.news_card:not(.added-to-masonry-grid)');
+                  $grid.append(newElements).masonry('appended', newElements);
+                  $(newElements).addClass('.added-to-masonry-grid').show();
+                  //$grid.masonry('destroy');
+                  $grid.masonry('reloadItems');
+                  $grid.masonry('layout');
                 }
-            });
+              });
+            }
+
         });
     }(jQuery));
 </script>
