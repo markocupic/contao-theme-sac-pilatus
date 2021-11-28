@@ -111,23 +111,23 @@
 /** Main Navigation **/
 (function ($) {
   $().ready(function () {
-    // Prevent default if page has class "not-clickable-page-container'
-    $('.mod_navigation ul.level_2 > li.not-clickable-page-container > a').click(function (e) {
+    // Prevent default if page has class "folder'
+    $('.mod_navigation ul.level_2 > li.folder > a').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    // Prevent default if page has class "not-clickable-page-container'
-    $('.mod_navigation.sidebar-navigation li.not-clickable-page-container > a').click(function (e) {
+    // Prevent default if page has class "folder'
+    $('.mod_navigation.sidebar-navigation li.folder > a').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    /** Sidebar navigation: accordion behavior when clicking on not-clickable-page-container **/
+    /** Sidebar navigation: accordion behavior when clicking on folder **/
     let navItems = document.querySelectorAll('.mod_navigation.sidebar-navigation a.submenu');
     if (navItems) {
       navItems.forEach((el) => {
-        if (el.classList.contains('not-clickable-page-container')) {
+        if (el.classList.contains('folder')) {
           el.addEventListener('click', (e) => {
             e.preventDefault();
             e.target.closest('li')

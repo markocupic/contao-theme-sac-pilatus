@@ -9,8 +9,10 @@ if (TL_MODE === 'FE') {
     $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
     // Load FontAwesome
-    $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom" crossorigin="anonymous">';
-    $GLOBALS['TL_HEAD'][] = '<script defer src="https://pro.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-ZbBwfM248+qoG5GJvuV2PmK9gvlW3dXpgC/jeIn45pWWroL3v+5K1ZAth+gs165y" crossorigin="anonymous" data-auto-replace-svg="nest"></script>';
+    $GLOBALS['TL_HEAD'][] = '<script src="https://kit.fontawesome.com/f781a81460.js" crossorigin="anonymous"></script>';
+
+    //$GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom" crossorigin="anonymous">';
+    //$GLOBALS['TL_HEAD'][] = '<script defer src="https://pro.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-ZbBwfM248+qoG5GJvuV2PmK9gvlW3dXpgC/jeIn45pWWroL3v+5K1ZAth+gs165y" crossorigin="anonymous" data-auto-replace-svg="nest"></script>';
 
     // Select2
     $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';

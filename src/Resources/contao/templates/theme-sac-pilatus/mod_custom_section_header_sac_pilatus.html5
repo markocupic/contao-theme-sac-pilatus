@@ -30,22 +30,22 @@
 				<img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
 			</a>
 		</div>
-
+ 
 		<!-- NAVBAR-START -->
 		<div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
 		<!-- NAVBAR-END -->
 
 		<div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
 
-			<a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-outline-dark ms-2" role="button" aria-label="Kurse">Kurse</a>
-			<a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-label="Touren">Touren</a>
+			<a href="{{link_url::kurse}}" class="d-none d-md-block btn btn-outline-dark ms-2" role="button" aria-label="Kurse"><i style="width:20px;font-size:1rem !important;" class="far fa-mind-share"></i> Kurse</a>
+			<a href="{{link_url::touren-trainings-und-anlaesse}}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-label="Touren"><i style="width:20px;font-size:1rem !important;" class="far fa-mountain"></i> Touren</a>
 
 			<!-- Searchbar toggler -->
 			<button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche"><i class="fal fa-search" title="Suche"></i></button>
 			<!-- End Searchbar toggler -->
 
 			<!-- Navbar toggler mobile -->
-			<button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation"><i class="fal fa-bars" title="Navigation öffnen"></i></button>
+			<button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation"><i class="fal fa-lg fa-bars" title="Navigation öffnen"></i></button>
 			<!-- End Navbar toggler mobile -->
 
 		</div>
