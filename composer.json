@@ -31,7 +31,8 @@
     "markocupic/bootstrap_responsive_youtube_embed": "^1.0",
     "markocupic/contao-article-class-select-bundle": "^2.0",
     "markocupic/bootstrap-carousel-bundle": "^1.0",
-    "stefansl/contao-divider-bundle": "^v1.0"
+    "stefansl/contao-divider-bundle": "^v1.0",
+    "markocupic/contao-folderpage-ext": "^1.0"
   },
   "replace": {
   },
