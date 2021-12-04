@@ -30,7 +30,7 @@
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
 
-    <div id="wrapper" class="layout-1-col">
+    <div id="wrapper">
 
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
