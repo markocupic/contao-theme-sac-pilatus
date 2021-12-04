@@ -7,8 +7,28 @@
     padding-right: 0;
   }
 
-  #container {
-    //
+  #header {
+    @media (min-width: 1800px) {
+     background-color: transparent !important;
+    }
+  }
+
+  #header > .inside, .article-inside.container-fluid {
+    @media (min-width: 1800px) {
+      position: relative;
+      max-width: 1800px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
+  #container main > .inside .mod_article{
+    @media (min-width: 1800px) {
+      position: relative;
+      max-width: 1800px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
   }
 
   #container {
@@ -25,8 +45,11 @@
       @media (min-width: 1400px) {
         //max-width: 70%;
       }
-      @media (min-width: 1600px) {
-        //max-width: 65%;
+
+      @media (min-width: 1800px) {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
