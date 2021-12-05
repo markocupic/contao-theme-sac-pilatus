@@ -15,7 +15,7 @@
     <button class="btn btn-lg btn-link" title="Navigation schliessen">
       <i class="fal fa-times" aria-hidden="true"></i>
     </button>
-    <span class="sr-only">Navigation</span>
+    <span class="visually-hidden">Navigation</span>
   </div>
 </div>
 

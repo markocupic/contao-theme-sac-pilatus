@@ -1,7 +1,7 @@
 // Set variables and overwrite bootstrap vars
 @import "variables";
 // EMBED BOOTSTRAP FRAMEWORK
-// this wan't work --> @import "/../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
+// this wan't work --> @import "/../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss"; 
 // because the main.scss is located in:
 // vendor/markocupic/contao-theme-sac-pilatus/src/Resources/contao/files/theme-sac-pilatus/scss/main.scss
 @import "../../../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
@@ -67,4 +67,5 @@
 @import "components/scrollbar";
 @import "components/step_indicator";
 @import "components/event_feedback_form";
+@import "components/font-awesome";
  

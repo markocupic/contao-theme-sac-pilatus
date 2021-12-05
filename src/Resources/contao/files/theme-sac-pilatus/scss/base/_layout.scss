@@ -1,3 +1,18 @@
+/** Fade in */
+body {
+  animation: visible 1.5s;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 #wrapper {
 
   overflow-x: hidden;
