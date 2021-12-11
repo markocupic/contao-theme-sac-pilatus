@@ -1,8 +1,9 @@
 #footer {
-  $footer-bg-color-row-1: #e9ecef;
-  $footer-bg-color-row-2: #fdfdfd;
-  $footer-color: #333;
-  $footer-link-color: #333;
+  $footer-bg-color-row-1: transparent;
+  $footer-bg-color-row-2: transparent;
+  $footer-color: #8e8e8e;
+  $footer-link-color: #8e8e8e;
+  $footer-font-size: small;
 
   .footer-nav {
     ul {
@@ -22,6 +23,7 @@
         font-weight: normal !important;
         //text-transform: uppercase;
         text-decoration: none;
+        font-size: $footer-font-size;
 
         &:hover {
           //color: #000000 !important;
@@ -52,6 +54,8 @@
   .footer-row-1 {
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
+    font-size: $footer-font-size;
+
 
     a, a > * {
       color: $footer-link-color !important;
@@ -78,6 +82,7 @@
     }
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
+    font-size: $footer-font-size;
 
     a, a > * {
       color: $footer-link-color !important;
