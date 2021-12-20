@@ -111,23 +111,23 @@
 /** Main Navigation **/
 (function ($) {
   $().ready(function () {
-    // Prevent default if page has class "folder'
-    $('.mod_navigation ul.level_2 > li.folder > a').click(function (e) {
+    // Prevent default if page has class "page-container'
+    $('.mod_navigation ul.level_2 > li.page-container > a').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    // Prevent default if page has class "folder'
-    $('.mod_navigation.sidebar-navigation li.folder > a').click(function (e) {
+    // Prevent default if page has class "page-container'
+    $('.mod_navigation.sidebar-navigation li.page-container > a').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    /** Sidebar navigation: accordion behavior when clicking on folder **/
+    /** Sidebar navigation: accordion behavior when clicking on page-container **/
     let navItems = document.querySelectorAll('.mod_navigation.sidebar-navigation a.submenu');
     if (navItems) {
       navItems.forEach((el) => {
-        if (el.classList.contains('folder')) {
+        if (el.classList.contains('page-container')) {
           el.addEventListener('click', (e) => {
             e.preventDefault();
             e.target.closest('li')

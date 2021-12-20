@@ -129,7 +129,7 @@ $color-level-2-active: #000000;
           color: $color-level-2-active !important;
         }
 
-        li.folder > a {
+        li.page-container > a {
           cursor: text;
           text-decoration: none;
         }
@@ -161,7 +161,7 @@ $color-level-2-active: #000000;
           }
         }
 
-        > li.folder {
+        > li.page-container {
           > a {
             border-bottom: 1px solid $color-level-2;
           }

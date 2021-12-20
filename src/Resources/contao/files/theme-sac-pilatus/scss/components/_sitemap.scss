@@ -1,24 +1,13 @@
 .mod_sitemap {
 
-  .submenu.folder
-  {
-    >a{
-      color: #000;
-    }
-    >a:hover{
-      color: #000;
-      text-decoration: none;
-      cursor: default;
-    }
-  }
+
+
   .level_1 {
-   @extend .row;
     >li{
-      @extend .col-6;
-      @extend .col-md-3;
-      @extend .col-lg-3;
-      >a {
-        font-size: 1.25rem;
+      margin: 1.5rem 0 0 0;
+      padding:0;
+      > a, > span {
+        font-size: 1.25rem !important;
         font-weight: bold;
         display: block;
       }
@@ -27,18 +16,19 @@
 
   .level_2 {
     margin-left: 1rem;
-    >li{
-      >a{
-        font-size: 1rem;
-        //font-weight: bold;
-      }
-    }
 
+    > li > a, > li > span {
+      font-size: 1.125rem !important;
+      //font-weight: bold;
+    }
   }
 
   .level_3 {
     margin-left: 1rem;
-
+    > li > a, > li > span {
+      font-size: 1 !important;
+      //font-weight: bold;
+    }
   }
 
   .level_4 {
