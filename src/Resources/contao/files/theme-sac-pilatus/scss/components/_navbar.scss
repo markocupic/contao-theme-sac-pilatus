@@ -1,4 +1,4 @@
-$navbar-height: 40px;
+$navbar-height: 35px;
 $navbar-hover-color: #f2f2f2;
 $navbar-dropdown-color: #66caff;
 $navbar-dropdown-color: $blue;
@@ -6,11 +6,11 @@ $color-level-1: #222222;
 $color-level-2: #ffffff;
 $color-level-3: #ffffff;
 $color-level-4: #ffffff;
-$color-level-1-active: #000000;
+$color-level-1-active: #ff0000;
 $color-level-2-active: #000000;
 
 // Toggler
-#header .close-header-navigation-dropdown{
+#header .close-header-navigation-dropdown {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -46,7 +46,7 @@ $color-level-2-active: #000000;
           padding: 0 6px;
           //height: $navbar-height;
           position: relative;
-          display:flex;
+          display: flex;
           align-items: center;
 
           > a > span, > span[data-bs-toggle="dropdown"], > strong {
@@ -62,27 +62,40 @@ $color-level-2-active: #000000;
             }
           }
 
-          >span[data-bs-toggle="dropdown"] {
+          > span[data-bs-toggle="dropdown"] {
             @include icon-after("\f107", black); //fas fa-angle-down
           }
-          >span[data-bs-toggle="dropdown"][aria-expanded="true"] {
+
+          > span[data-bs-toggle="dropdown"][aria-expanded="true"] {
             @include icon-after("\f106", black); //fas fa-angle-up
           }
-          >span[aria-expanded="true"], >span[aria-expanded="true"]:after  {
+
+          > span[aria-expanded="true"], > span[aria-expanded="true"]:after {
             color: $red !important;
           }
-          >span:after{
+
+          > span:after {
             font-weight: bold !important;
           }
-          >strong{
-            padding-top:.5rem;
-            padding-bottom:.5rem;
-          }
-
         }
 
         > li.nav-item.active > *, > li.nav-item:hover > * {
           color: $color-level-1-active;
+        }
+
+        > li.nav-item.active > * {
+          border-bottom: 3px solid transparent;
+        }
+
+        > li.nav-item.active > *, > li.nav-item.trail > * {
+          color: $color-level-1-active;
+          border-bottom: 3px solid red;
+        }
+
+        > li.nav-item.active > *, > li.nav-item.trail > * {
+          &:after {
+            border-bottom-color: #fff;
+          }
         }
 
         > li.nav-item:hover {
@@ -124,7 +137,8 @@ $color-level-2-active: #000000;
         //left:40px;
         //right:40px;
         margin-top: 1px;
-        background-color: darken($navbar-dropdown-color,10);
+        background-color: darken($navbar-dropdown-color, 10);
+
         > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-active !important;
         }
