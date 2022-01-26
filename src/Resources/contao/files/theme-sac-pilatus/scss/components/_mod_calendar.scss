@@ -57,17 +57,17 @@
   background-color: $gray-200;
   border-color: $gray-400;
 
-  .event-list-badge-wrapper {
-    border-color: $gray-400;
+  .event-list-tour-col-1 {
+    cursor: pointer;
 
-    &:hover {
-      cursor: pointer;
+    .event-list-badge-wrapper {
+      border-color: $gray-400;
     }
-  }
 
-  .last-minute-tour {
-    color: $green;
-    font-size: $font-size-sm;
+    .last-minute-tour {
+      color: $green;
+      font-size: $font-size-sm;
+    }
   }
 }
 
