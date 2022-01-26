@@ -29,7 +29,7 @@ input.custom-input-file {
 
   input.custom-input-file:focus ~ label,
   .custom-input-file ~ label:hover {
-    background-color: red;
+    background-color: $red;
   }
 
   label.custom-input-file {

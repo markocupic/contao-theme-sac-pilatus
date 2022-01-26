@@ -6,7 +6,7 @@ $color-level-1: #222222;
 $color-level-2: #ffffff;
 $color-level-3: #ffffff;
 $color-level-4: #ffffff;
-$color-level-1-active: #ff0000;
+$color-level-1-active: $red;
 $color-level-2-active: #000000;
 
 // Toggler
@@ -89,7 +89,7 @@ $color-level-2-active: #000000;
 
         > li.nav-item.active > *, > li.nav-item.trail > * {
           color: $color-level-1-active;
-          border-bottom: 3px solid red;
+          border-bottom: 2px solid $color-level-1-active;
         }
 
         > li.nav-item.active > *, > li.nav-item.trail > * {

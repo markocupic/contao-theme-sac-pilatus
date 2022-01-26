@@ -11,7 +11,7 @@
 
     &.step--active {
       @extend .text-danger;
-      border-bottom: 3px solid red;
+      border-bottom: 3px solid $red;
     }
   }
 

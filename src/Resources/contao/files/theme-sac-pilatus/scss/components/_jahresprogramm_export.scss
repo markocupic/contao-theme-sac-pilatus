@@ -16,7 +16,7 @@
     border: 0;
   }
   td.event-export-eventState{
-    color: red;
+    color: $red;
     text-transform: uppercase;
   }
 
@@ -33,7 +33,7 @@
 }
 
 .event-export-month {
-  color: red;
+  color: $red;
   padding-top: 3rem !important;
 }
 
@@ -53,7 +53,7 @@
 
 .event-export-course-type-level-0 {
   font-size: 3rem !important;
-  color: red;
+  color: $red;
   text-transform: uppercase;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
