@@ -32,6 +32,7 @@
 }
 
 .event-list-inner-box {
+
   @include transition(background-color);
   border: 1px solid $gray-200;
 
@@ -58,6 +59,10 @@
 
   .event-list-badge-wrapper {
     border-color: $gray-400;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .last-minute-tour {
@@ -84,11 +89,14 @@
   .title .headline {
     margin-top: 0;
   }
-  .title a {
-    text-decoration: none;
+
+  .title a, .title a * {
+    text-decoration: none !important;
+    color: $link-color;
   }
+
   .title a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 
   .more-date-infos {
