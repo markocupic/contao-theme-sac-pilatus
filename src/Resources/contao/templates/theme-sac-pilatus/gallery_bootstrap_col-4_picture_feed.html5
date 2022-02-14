@@ -14,7 +14,7 @@
       <?php endif; ?>
         <li class="<?= $class ?> <?= $col->class ?>">
           <div class="card">
-            <div class="p-2 d-flex align-items-center">
+            <div class="p-2 d-flex fw-bold align-items-center">
               <?php if($objImage !== null): ?>
                 <?php if($objImage->memberPictureFeedUserId > 0): ?>
                   {{image::<?= getAvatar($objImage->memberPictureFeedUserId, 'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
