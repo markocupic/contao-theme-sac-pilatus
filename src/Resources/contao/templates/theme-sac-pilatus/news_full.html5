@@ -6,7 +6,7 @@
     <?php if ($this->hasMetaFields): ?>
       <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
     <?php endif; ?>    <div class="row">
-        <div class="col-sm-6" style="margin-bottom: 1rem;">
+        <div class="col-sm-4" style="margin-bottom: 1rem;">
 
             {{picture::<?= $this->singleSRC ?>?size=3&class=img-fluid}}
         </div>
