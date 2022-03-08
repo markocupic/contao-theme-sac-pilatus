@@ -2,30 +2,37 @@
 <div class="layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
 
   <h1 class="ce_headline mt-0" itemprop="name"><?= $this->newsHeadline ?></h1>
-    <?php if ($this->hasMetaFields): ?>
-      <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
-    <?php endif; ?>    <div class="row">
-        <div class="col-sm-4" style="margin-bottom: 1rem;">
+  
+  <?php if ($this->hasMetaFields): ?>
+    <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+  <?php endif; ?>    
+  
+  <div class="block" style="display: flex; flex-flow: wrap;">
 
-            {{picture::<?= $this->singleSRC ?>?size=3&class=img-fluid}}
-        </div>
-    </div>
+    <!-- <div class="row"> -->
+      <div class="col-sm-4" style="padding-bottom: 1rem; padding-right: 1rem; min-width: 250px;">
+        {{picture::<?= $this->singleSRC ?>?size=3&class=img-fluid}}
+      </div>
+    <!-- </div> -->
 
-
-    <?php if ($this->hasText): ?>
+    <div class="col-sm-8">
+    
+      <?php if ($this->hasText): ?>
         <?= $this->text ?>
-    <?php endif; ?>
+      <?php endif; ?>
 
+      <?php if ($this->enclosure): ?>
+        <ul class="enclosure">
+          <?php foreach ($this->enclosure as $enclosure): ?>
+            <li class="download-element ext-<?= $enclosure['extension'] ?>">
+               <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
+  
+    </div><!-- col-sm-8 -->
 
-
-  <?php if ($this->enclosure): ?>
-    <ul class="enclosure">
-      <?php foreach ($this->enclosure as $enclosure): ?>
-        <li class="download-element ext-<?= $enclosure['extension'] ?>">
-           <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
-        </li>
-      <?php endforeach; ?>
-    </ul>
-  <?php endif; ?>
+  </div><!-- flex block -->
 
 </div>
