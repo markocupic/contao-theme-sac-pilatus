@@ -5,7 +5,7 @@
 		 */
 		(function ($) {
         $(document).ready(function () {
-            if(typeof ContaoNewsInfiniteScroll === 'function')
+            if (typeof ContaoNewsInfiniteScroll === 'function')
             {
                 // Global grid container element
                 var $grid = null;

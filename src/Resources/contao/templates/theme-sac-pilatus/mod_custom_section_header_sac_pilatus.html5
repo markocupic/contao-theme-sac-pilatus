@@ -4,7 +4,7 @@
 		<div class="ms-0 me-auto d-none d-sm-flex">{{link_open::geschaeftsstelle}}Zur Geschäftsstelle{{link_close}}</div>
 
 		<div class="ms-auto me-0 d-flex align-items-center">
-			<?php if(FE_USER_LOGGED_IN): ?>
+			<?php if (FE_USER_LOGGED_IN): ?>
 			<button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
 
 			<div class="ms-2 d-none d-sm-block">{{user::firstname}} {{user::lastname}}</div>
@@ -13,12 +13,12 @@
 				{{image::<?= getAvatar($id,'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
 			</div>
 			<?php endif; ?>
-			<?php if(!FE_USER_LOGGED_IN): ?>
+			<?php if (!FE_USER_LOGGED_IN): ?>
 
 			<a href="{{link_url::member-login}}" class="header-login-button trigger-login-modal ms-2" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
 			<?php endif; ?>
 
-			<?php if(FE_USER_LOGGED_IN): ?>
+			<?php if (FE_USER_LOGGED_IN): ?>
 			<a href="{{link_url::member-profile}}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
 			<?php endif; ?>
 		</div>

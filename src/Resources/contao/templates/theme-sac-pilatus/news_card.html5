@@ -10,7 +10,9 @@
         -->
         <?php if ($this->addImage): ?>
         <a href="{{news_url::<?= $this->id ?>}}" title="weiterlesen">
-            <?php $this->insert('image', $this->arrData); ?>
+            <div class="image-zoom-in">
+                <?php $this->insert('image', $this->arrData); ?>
+            </div>
         </a>
         <?php endif; ?>
         <div class="card-body">
@@ -18,7 +20,7 @@
             <a href="<?= $this->href ?>" class="text-decoration-none" title="weiterlesen">
                 <h6 class="card-title mt-0"><?= $this->newsHeadline ?></h6>
             </a>
-            <p class="card-news-teaser"><?= \StringUtil::substr($this->teaser,100) ?></p>
+            <p class="card-news-teaser"><?= \Contao\StringUtil::substr($this->teaser,100) ?></p>
             <!--
             <a href="{{news_url::<?= $this->id ?>}}" role="button" class="btn mt-4 btn-sm btn-outline-primary" title="Weiterlesen">Weiterlesen</a>
             -->

@@ -9,14 +9,14 @@
       <?php $strOwner = null ?>
       <?php $objImage = \Contao\FilesModel::findByPath($col->singleSRC); ?>
       <?php  $objOwner = \Contao\MemberModel::findByPk($objImage->memberPictureFeedUserId); ?>
-      <?php if($objOwner !== null): ?>
+      <?php if ($objOwner !== null): ?>
         <?php $strOwner = $objOwner->firstname . ' ' . $objOwner->lastname ?>
       <?php endif; ?>
         <li class="<?= $class ?> <?= $col->class ?>">
           <div class="card">
             <div class="p-2 d-flex fw-bold align-items-center">
-              <?php if($objImage !== null): ?>
-                <?php if($objImage->memberPictureFeedUserId > 0): ?>
+              <?php if ($objImage !== null): ?>
+                <?php if ($objImage->memberPictureFeedUserId > 0): ?>
                   {{image::<?= getAvatar($objImage->memberPictureFeedUserId, 'FE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
                 <?php endif; ?>
               <?php endif; ?>
@@ -24,9 +24,15 @@
             </div>
             <figure class="image_container"<?php if ($col->margin): ?> style="<?= $col->margin ?>"<?php endif; ?>>
             <?php if ($col->href): ?>
-            <a href="<?= $col->href ?>"<?= $col->attributes ?> title="<?= $col->photographer ?>: <?= $col->caption ?>"><?php $this->insert('picture_default', $col->picture); ?></a>
+            <a href="<?= $col->href ?>"<?= $col->attributes ?> title="<?= $col->photographer ?>: <?= $col->caption ?>">
+              <div class="image-zoom-in">
+                <?php $this->insert('picture_default', $col->picture); ?>
+              </div>
+            </a>
             <?php else: ?>
-            <?php $this->insert('picture_default', $col->picture); ?>
+              <div class="image-zoom-in">
+                <?php $this->insert('picture_default', $col->picture); ?>
+              </div>
             <?php endif; ?>
             <?php if ($col->caption): ?>
             <figcaption class="caption"><?= $col->photographer ?>: <?= $col->caption ?></figcaption>

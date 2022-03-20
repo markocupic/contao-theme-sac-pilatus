@@ -1,9 +1,9 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <?php $objRecipient = \Contao\NewsletterRecipientsModel::findByEmailAndPids($this->recipient, [$this->pid]); ?>
-<?php if($objRecipient !== null){
+<?php if ($objRecipient !== null){
     while($objRecipient->next()){
-if($objRecipient->token === ''){
+if ($objRecipient->token === ''){
 $strToken = md5(uniqid(mt_rand(), true));
 $objRecipient->token = $strToken;
 $objRecipient->save();

@@ -1,4 +1,4 @@
-<?php if(TL_MODE == 'FE' && FE_USER_LOGGED_IN): ?>
+<?php if (TL_MODE == 'FE' && FE_USER_LOGGED_IN): ?>
 <?php $objMember = \FrontendUser::getInstance(); ?>
 <?php $arrEvents = \CalendarEventsParticipantModel::findPastEventsByMemberId($objMember->id); ?>
 <h1 class="ce_headline">Dein Profil</h1>
@@ -6,7 +6,7 @@
 <h2>Absolvierte Kurse</h2>
 <table class="table">
 <?php foreach($arrEvents as $event): ?>
-<?php if($event['eventType'] == 'course'): ?>
+<?php if ($event['eventType'] == 'course'): ?>
 <?php $objEvent = \CalendarEventsModel::findByPk($event['id']); ?>
 <tr>
 <td><?= $event['dateSpan'] ?></td>
