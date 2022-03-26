@@ -3,7 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <!-- indexer::continue -->
                 <?php echo \Controller::replaceInsertTags('{{insert_module::304}}'); ?>
+                <!-- indexer::stop -->
             </div>
         </div>
     </div>

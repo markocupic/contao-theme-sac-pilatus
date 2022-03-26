@@ -32,7 +32,11 @@
 		</div>
  
 		<!-- NAVBAR-START -->
-		<div class="navbar-header d-none d-xl-flex align-items-center">{{insert_module::307}}</div>
+		<div class="navbar-header d-none d-xl-flex align-items-center">
+			<!-- indexer::continue -->
+			{{insert_module::307}}
+		</div>
+		<!-- indexer::stop -->
 		<!-- NAVBAR-END -->
 
 		<div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
@@ -56,7 +60,10 @@
 
 	</div>
 	<!-- Search module -->
+	<!-- indexer::continue -->
 	{{insert_module::353}}
+	<!-- indexer::stop -->
+
 </div>
 
 <!-- Login Modal -->
@@ -69,7 +76,10 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
 			</div>
 			<div class="modal-body">
+				<!-- indexer::continue -->
 				{{insert_module::396}}
+				<!-- indexer::stop -->
+
 				<div class="mt-5">
 					<h5>Mehrere Services, ein Login</h5>
 					<p>Das "alte Login" wurde durch das <strong>SAC Login</strong> abgelöst. Falls du das SAC-Login noch nicht aktiviert hast, kannst du das mit dem PUK Code und deiner 6-stelligen Mitgliedernummer sehr einfach nachholen. Beide Angaben findest du auf deinem SAC-Mitgliederausweis.</p>
