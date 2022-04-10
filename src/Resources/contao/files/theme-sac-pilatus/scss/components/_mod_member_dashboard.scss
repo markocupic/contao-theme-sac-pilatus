@@ -25,12 +25,14 @@
   &::-webkit-scrollbar-thumb:hover {
     background: #d2d8dd;
   }
+
   .nav.horizontal-tabs {
 
     display: flex;
     flex-direction: row !important;
     flex-wrap: nowrap;
     scrollbar-width: thin;
+
     > li.nav-item {
       padding: 4px 0 10px 0;
       margin-right: 1rem;
@@ -61,62 +63,90 @@
   .sortable-item {
     cursor: move;
   }
+
   .thumbnail {
     position: relative;
+
     .dashboard-event-story-thumb-buttons-container {
-      button.btn{
+      button.btn {
         padding: 4px 8px !important;
       }
+
       position: absolute;
       bottom: 4px;
       right: 4px;
-      .missing-caption-or-photographer-name{
+
+      .missing-caption-or-photographer-name {
         background-color: black;
         color: yellow;
       }
-      .blinking{
+
+      .blinking {
         animation: blinkingButton 1.2s infinite;
       }
     }
-    @keyframes blinkingButton{
-      0% { background-color: #000; }
-      100% { background-color: $red; }
-    }
-    }
-    button {
-      margin-left: 4px;
-      @include opacity(0.6);
-      @include transition(opacity);
-      cursor: pointer;
-    }
-    button:hover {
-      @include opacity(1);
+
+    @keyframes blinkingButton {
+      0% {
+        background-color: #000;
+      }
+      100% {
+        background-color: $red;
+      }
     }
   }
 
+  button {
+    margin-left: 4px;
+    @include opacity(0.6);
+    @include transition(opacity);
+    cursor: pointer;
+  }
 
-.member-picture-feed-thumb {
-  position: relative;
-  margin-bottom: 15px;
-  .member-picture-feed-thumb-buttons-container {
-    position: absolute;
-    bottom: 5px;
-    right: 12px;
-    button {
-      margin-left: 5px;
+  button:hover {
+    @include opacity(1);
+  }
+}
+
+.mod_memberPictureFeedUpload {
+  .member-picture-feed-thumb {
+    position: relative;
+    margin-bottom: 15px;
+
+    .member-picture-feed-thumb-buttons-container {
+      position: absolute;
+      bottom: 5px;
+      right: 12px;
+
+      button {
+        margin-left: 5px;
+      }
+    }
+
+    .member-picture-feed-upload-time-overlay {
+      position: absolute;
+      top: 5px;
+      left: 12px;
+      font-size: 9px;
+      color: yellow;
     }
   }
-  .member-picture-feed-upload-time-overlay {
-    position: absolute;
-    top: 5px;
-    left: 12px;
-    font-size: 9px;
-    color: yellow;
+
+  .tl_info {
+    @extend .alert;
+    @extend .alert-info;
+
+  }
+
+  .tl_error {
+    @extend .alert;
+    @extend .alert-danger;
   }
 }
 
 .member-dashboard-avatar {
   position: relative;
+
   .member-dashboard-rotate-image-button {
     position: absolute;
     right: 20px;
