@@ -201,12 +201,13 @@
 /** shorten download links **/
 (function ($) {
   $().ready(function () {
-    if (window.screen.width < 800) {
-      var maxStringLength = 18;
-
-    } else {
-      maxStringLength = 40;
+    var inputScreenWidth = window.innerWidth;
+    if (inputScreenWidth < 300) {
+      inputScreenWidth = 300; // min. screen width
     }
+    var targetRatio = 36.0 / 600; // scaling [string length / screen width]
+    var scaledLength = Math.ceil(targetRatio * inputScreenWidth);
+    var maxStringLength = Math.min(scaledLength, 100); // max. length
     var classes = ['.ce_downloads a', '.ce_download a'];
     $.each(classes, function (index, strClass) {
       $(strClass).each(function (index, el) {
