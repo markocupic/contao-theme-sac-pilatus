@@ -7,7 +7,9 @@ $color-level-2: #ffffff;
 $color-level-3: #ffffff;
 $color-level-4: #ffffff;
 $color-level-1-active: $red;
-$color-level-2-active: #000000;
+$color-level-1-hover: $dark;
+$color-level-2-active: $red;
+$color-level-2-hover: $dark;
 
 // Toggler
 #header .close-header-navigation-dropdown {
@@ -79,8 +81,12 @@ $color-level-2-active: #000000;
           }
         }
 
-        > li.nav-item.active > *, > li.nav-item:hover > * {
+        > li.nav-item.active > * {
           color: $color-level-1-active;
+        }
+        
+        > li.nav-item:hover > * {
+          color: $color-level-1-hover;
         }
 
         > li.nav-item.active > * {
@@ -101,7 +107,7 @@ $color-level-2-active: #000000;
         > li.nav-item:hover {
           > a, > a:after, > strong {
             text-decoration: none;
-            color: #000000;
+            color: $color-level-1-hover;
           }
         }
 
@@ -139,8 +145,12 @@ $color-level-2-active: #000000;
         margin-top: 1px;
         background-color: darken($navbar-dropdown-color, 10);
 
-        > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
+        > li.active > strong {
           color: $color-level-2-active !important;
+        }
+        
+        > li > a > span:hover, > li > a > strong:hover {
+          color: $color-level-2-hover !important;
         }
 
         li.page-container > a {
@@ -183,7 +193,7 @@ $color-level-2-active: #000000;
 
         > li:hover {
           > a, > strong, > a > span {
-            color: $color-level-2 !important;
+            color: $color-level-2-hover !important;
           }
         }
 
@@ -216,8 +226,12 @@ $color-level-2-active: #000000;
           }
         }
 
-        > li.active > strong, > li > a > span:hover, > li > a > strong:hover {
+        > li.active > strong {
           color: $color-level-2-active !important;
+        }
+        
+        > li > a > span:hover, > li > a > strong:hover {
+          color: $color-level-2-hover !important;
         }
 
         > li:first-child {
