@@ -1,14 +1,13 @@
 $navbar-height: 35px;
 $navbar-hover-color: #f2f2f2;
-$navbar-dropdown-color: #66caff;
 $navbar-dropdown-color: $blue;
-$color-level-1: #222222;
+$color-level-1: $dark;
 $color-level-2: #ffffff;
 $color-level-3: #ffffff;
 $color-level-4: #ffffff;
-$color-level-1-active: $red;
+$color-level-1-active: $black;
 $color-level-1-hover: $dark;
-$color-level-2-active: $red;
+$color-level-2-active: $black;
 $color-level-2-hover: $dark;
 
 // Toggler
@@ -143,7 +142,7 @@ $color-level-2-hover: $dark;
         //left:40px;
         //right:40px;
         margin-top: 1px;
-        background-color: darken($navbar-dropdown-color, 10);
+        background-color: $navbar-dropdown-color;
 
         > li.active > strong {
           color: $color-level-2-active !important;
@@ -193,7 +192,7 @@ $color-level-2-hover: $dark;
 
         > li:hover {
           > a, > strong, > a > span {
-            color: $color-level-2-hover !important;
+            color: $color-level-2 !important;
           }
         }
 
