@@ -1,10 +1,11 @@
 $navbar-height: 35px;
-$navbar-hover-color: #f2f2f2;
+$navbar-tab-color: $red;
+$navbar-content-color: #ffffff;
 $navbar-dropdown-color: $blue;
-$color-level-1: $dark;
-$color-level-2: #ffffff;
-$color-level-3: #ffffff;
-$color-level-4: #ffffff;
+$color-level-1: $black;
+$color-level-2: $navbar-content-color;
+$color-level-3: $navbar-content-color;
+$color-level-4: $navbar-content-color;
 $color-level-1-active: $black;
 $color-level-1-hover: $dark;
 $color-level-2-active: $black;
@@ -15,7 +16,7 @@ $color-level-2-hover: $dark;
   position: absolute;
   right: 20px;
   top: 20px;
-  color: #fff;
+  color: $navbar-content-color;
   cursor: pointer;
   font-size: 2rem;
 }
@@ -72,7 +73,7 @@ $color-level-2-hover: $dark;
           }
 
           > span[aria-expanded="true"], > span[aria-expanded="true"]:after {
-            color: $red !important;
+            color: $navbar-tab-color !important;
           }
 
           > span:after {
@@ -85,21 +86,21 @@ $color-level-2-hover: $dark;
         }
         
         > li.nav-item:hover > * {
-          color: $color-level-1-hover;
+          color: $color-level-1-hover !important;
         }
 
         > li.nav-item.active > * {
-          border-bottom: 3px solid transparent;
+          border-bottom: 2px solid transparent;
         }
 
         > li.nav-item.active > *, > li.nav-item.trail > * {
           color: $color-level-1-active;
-          border-bottom: 2px solid $color-level-1-active;
+          border-bottom: 2px solid $navbar-tab-color;
         }
 
         > li.nav-item.active > *, > li.nav-item.trail > * {
           &:after {
-            border-bottom-color: #fff;
+            border-bottom-color: $navbar-content-color;
           }
         }
 
@@ -187,6 +188,9 @@ $color-level-2-hover: $dark;
         > li.page-container {
           > a {
             border-bottom: 1px solid $color-level-2;
+          }
+          > strong {
+            border-bottom: 1px solid $color-level-2-active;
           }
         }
 
