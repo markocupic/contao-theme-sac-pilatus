@@ -15,6 +15,7 @@
             </div>
         </a>
         <?php endif; ?>
+        
         <div class="card-body">
             <p class="card-date m-0"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><small><?= $this->date ?></small></time></p>
             <a href="<?= $this->href ?>" class="text-decoration-none" title="weiterlesen">
