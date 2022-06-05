@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Symplify\EasyCodingStandard\Config\ECSConfig;
 use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return static function (ECSConfig $ECSConfig): void {
 

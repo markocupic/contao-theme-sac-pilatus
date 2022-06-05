@@ -59,7 +59,8 @@
 
     a, a > * {
       color: $footer-link-color !important;
-      &:hover{
+
+      &:hover {
         text-decoration: underline;
         text-underline-position: under;
         color: $footer-link-color;
@@ -76,17 +77,19 @@
   }
 
   .footer-row-2 {
-    .container{
+    .container {
       //border-top: 1px solid #807d7d;
-      padding-top:2rem;
+      padding-top: 2rem;
     }
+
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
     font-size: $footer-font-size;
 
     a, a > * {
       color: $footer-link-color !important;
-      &:hover{
+
+      &:hover {
         text-decoration: underline;
         text-underline-position: under;
         color: $footer-link-color;

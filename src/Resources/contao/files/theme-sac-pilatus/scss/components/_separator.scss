@@ -4,14 +4,17 @@
   text-align: center;
   color: $text-muted;
 }
+
 .separator::before, .separator::after {
   content: '';
   flex: 1;
   border-bottom: 1px solid $gray-200;
 }
+
 .separator::before {
   margin-right: .75em;
 }
+
 .separator::after {
   margin-left: .75em;
 }

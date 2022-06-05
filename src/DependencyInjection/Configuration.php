@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder->getRootNode()
             ->children()
                 // Font Awesome Kit
-                ->scalarNode('font_awesome_kit_key')->info('Set the font awesome kit key.')->defaultValue('none')->cannotBeEmpty()->end()
+            ->scalarNode('font_awesome_kit_key')->info('Set the font awesome kit key.')->defaultValue('none')->cannotBeEmpty()->end()
             ->end()
         ;
 

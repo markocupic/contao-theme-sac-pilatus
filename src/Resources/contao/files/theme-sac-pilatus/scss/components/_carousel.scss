@@ -1,16 +1,19 @@
 .carousel {
   position: relative;
-  .carousel-indicators{
+
+  .carousel-indicators {
     z-index: 21;
   }
+
   .carousel-control-next, .carousel-control-prev {
     z-index: 2000;
     opacity: 1;
     width: auto;
     display: flex;
-    position:absolute;
+    position: absolute;
     align-items: center;
-    &:focus{
+
+    &:focus {
       box-shadow: none;
     }
   }
@@ -62,6 +65,7 @@
 .carousel:hover {
   .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: #fff;
+
     &:before {
       color: $gray-500;
     }

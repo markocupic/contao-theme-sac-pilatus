@@ -84,7 +84,7 @@ $color-level-2-hover: $dark;
         > li.nav-item.active > * {
           color: $color-level-1-active;
         }
-        
+
         > li.nav-item:hover > * {
           color: $color-level-1-hover !important;
         }
@@ -148,7 +148,7 @@ $color-level-2-hover: $dark;
         > li.active > strong {
           color: $color-level-2-active !important;
         }
-        
+
         > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-hover !important;
         }
@@ -189,6 +189,7 @@ $color-level-2-hover: $dark;
           > a {
             border-bottom: 1px solid $color-level-2;
           }
+
           > strong {
             border-bottom: 1px solid $color-level-2-active;
           }
@@ -232,7 +233,7 @@ $color-level-2-hover: $dark;
         > li.active > strong {
           color: $color-level-2-active !important;
         }
-        
+
         > li > a > span:hover, > li > a > strong:hover {
           color: $color-level-2-hover !important;
         }

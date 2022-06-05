@@ -1,35 +1,43 @@
-.btn a{
+.btn a {
   text-decoration: none;
 }
-.btn.btn-primary a{
+
+.btn.btn-primary a {
   color: #fff;
 }
-.btn.btn-primary:hover a{
+
+.btn.btn-primary:hover a {
   color: $blue;
 }
-.btn.btn-outline-primary a{
+
+.btn.btn-outline-primary a {
   color: $blue;
 }
-.btn.btn-outline-primary:hover a{
-  color: #ffffff;
-}
-.btn.btn-danger a{
-  color: #fff;
-}
-.btn.btn-danger:hover a{
-  color: $red;
-}
-.btn.btn-outline-danger a{
-  color: $red;
-}
-.btn.btn-outline-danger:hover a{
+
+.btn.btn-outline-primary:hover a {
   color: #ffffff;
 }
 
-.btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover{
+.btn.btn-danger a {
+  color: #fff;
+}
+
+.btn.btn-danger:hover a {
+  color: $red;
+}
+
+.btn.btn-outline-danger a {
+  color: $red;
+}
+
+.btn.btn-outline-danger:hover a {
   color: #ffffff;
 }
 
-.btn.btn-success, .btn.btn-success:active, .btn.btn-success:hover{
+.btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover {
+  color: #ffffff;
+}
+
+.btn.btn-success, .btn.btn-success:active, .btn.btn-success:hover {
   color: #ffffff;
 }

@@ -1,10 +1,11 @@
 {
   "name": "markocupic/contao-theme-sac-pilatus",
-  "description": "Contao Frontend Theme SAC Pilatus Relaunch",
+  "description": "Contao Frontend Theme SAC Pilatus Relaunch 2019",
   "keywords": [
     "contao",
     "frontend",
-    "theme"
+    "theme",
+    "SAC Pilatus"
   ],
   "type": "contao-module",
   "license": "GPL-3.0-or-later",
@@ -34,6 +35,14 @@
     "stefansl/contao-divider-bundle": "^v1.0",
     "markocupic/nav-page-container": "dev-master"
   },
+  "require-dev": {
+    "contao/manager-plugin": "^2.3",
+    "contao/test-case": "^4.0",
+    "phpunit/phpunit": "^8.4",
+    "symfony/http-client": "4.4.*",
+    "symfony/phpunit-bridge": "4.4.*",
+    "contao/easy-coding-standard": "^5.0"
+  },
   "autoload": {
     "psr-4": {
       "Markocupic\\ContaoThemeSacPilatus\\": "src/"
@@ -49,7 +58,7 @@
       }
     }
   }
-} 
+}
 
 
 

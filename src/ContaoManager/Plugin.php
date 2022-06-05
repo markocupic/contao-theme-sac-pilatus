@@ -20,10 +20,6 @@ use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Markocupic\ContaoThemeSacPilatus\MarkocupicContaoThemeSacPilatus;
 
-/**
- * Class Plugin
- * Plugin for the Contao Manager.
- */
 class Plugin implements BundlePluginInterface
 {
     /**

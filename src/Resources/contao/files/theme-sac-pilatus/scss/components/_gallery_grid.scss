@@ -1,7 +1,8 @@
-.gallery-grid{
+.gallery-grid {
   @extend .g-4;
   @extend .row;
-  > *{
+
+  > * {
     @extend .col-12, .col-md-4;
   }
 }

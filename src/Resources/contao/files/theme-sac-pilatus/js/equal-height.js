@@ -4,7 +4,7 @@
 var equalheight = function (parent, child) {
 
     jQuery(parent).each(function () {
-       var parentContainer = this;
+        var parentContainer = this;
         var children = jQuery(parentContainer).find(child);
         if (children.length) {
             var currentTallest = 0;

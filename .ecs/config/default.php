@@ -10,8 +10,5 @@ return static function (ECSConfig $ECSConfig): void {
 
     // Custom
     $ECSConfig->import(__DIR__.'/set/header_comment_fixer.php');
-
-    // Custom
     $ECSConfig->import(__DIR__.'/set/skip_configuration.php');
-
 };

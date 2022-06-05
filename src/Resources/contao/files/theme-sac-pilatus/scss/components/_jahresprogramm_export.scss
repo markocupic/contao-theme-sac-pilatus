@@ -1,10 +1,10 @@
 .event-export-table {
-  td,th {
-    border-width:0;
+  td, th {
+    border-width: 0;
     border-bottom: 0;
   }
 
-  tr.event-export-row-headline > td{
+  tr.event-export-row-headline > td {
     padding-top: 1rem;
     border-top: 1px solid $border-color;
     border-bottom: none !important;
@@ -15,16 +15,18 @@
   td.event-export-weeknumber {
     border: 0;
   }
-  td.event-export-eventState{
+
+  td.event-export-eventState {
     color: $red;
     text-transform: uppercase;
   }
 
-  &.event-export-table-courses{
-    td,th{
-      border:0;
+  &.event-export-table-courses {
+    td, th {
+      border: 0;
     }
-    td.event-export-event-separator{
+
+    td.event-export-event-separator {
       border-top: 1px solid #dee2e6;
       margin-top: 20px;
     }
@@ -48,7 +50,7 @@
 }
 
 .event-export-row-details, .event-export-row-details > td {
-  border:0 !important;
+  border: 0 !important;
 }
 
 .event-export-course-type-level-0 {

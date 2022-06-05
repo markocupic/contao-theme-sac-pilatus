@@ -8,9 +8,11 @@
       border: 1px solid $gray-300;
       border-top: 0;
     }
+
     .card-title {
       font-size: 1.5rem;
     }
+
     .card-img-top {
       border-radius: 0;
       cursor: pointer;
@@ -45,6 +47,7 @@
 
   .image_container {
     width: 100%;
+
     img {
       max-width: 100%;
       height: auto;
@@ -53,10 +56,10 @@
   }
 
 
-
   &.listview {
     .row {
       margin: 0 -0.5rem;
+
       > div {
         padding: 0 0.5rem;
       }
@@ -73,17 +76,21 @@
         padding-left: 5px;
         padding-right: 5px;
         margin-bottom: 10px;
-        figure{
-          margin:0;
+
+        figure {
+          margin: 0;
         }
       }
     }
+
     .image_container {
       margin: 0;
     }
+
     .album-comment {
       margin-bottom: $spacer;
     }
+
     // Bildbeschreibung
     .headline {
       display: none;
@@ -92,8 +99,7 @@
 
 }
 
-#main .mod_gallery_creator_album_comments
-{
+#main .mod_gallery_creator_album_comments {
   .widget {
     display: flex;
     flex-direction: column-reverse;

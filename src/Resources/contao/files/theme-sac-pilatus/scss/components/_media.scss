@@ -6,6 +6,7 @@
 .image_container img {
   //width: 100%;
   @include transition(all);
+
   &:hover {
     //transform: scale(1.1);
   }
@@ -16,15 +17,16 @@ img {
   max-width: 100%;
 }
 
-figure{
-  margin:0;
-  padding:0;
+figure {
+  margin: 0;
+  padding: 0;
 }
 
 .ce_gallery {
-  ul:first-child{
+  ul:first-child {
     @extend .row;
     @extend .g-4;
+
     li {
       @extend .col-12;
       @extend .col-md-4;
@@ -35,10 +37,10 @@ figure{
 
 // Do not show caption on mobile phones
 @include media-breakpoint-up(sm) {
-      .gallery_creator .caption {
-        display: none;
-      }
-      .ce_gallery .caption {
-        display: none;
-      }
+  .gallery_creator .caption {
+    display: none;
+  }
+  .ce_gallery .caption {
+    display: none;
+  }
 }

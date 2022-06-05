@@ -13,16 +13,17 @@ a.bg-light:focus, a.bg-light:hover {
   background-color: #d6dce1 !important;
 }
 
-.figure-caption{
+.figure-caption {
   font-size: 80%;
   color: $gray-900;
   font-style: italic;
   margin-top: 8px;
 }
 
-.alert{
+.alert {
   padding: 1.5rem 1.25rem;
 }
+
 .alert-info {
   background: $blue;
   color: #ffffff;
@@ -33,12 +34,12 @@ a.bg-light:focus, a.bg-light:hover {
   color: #ffffff;
 }
 
-.alert-success{
+.alert-success {
   background: $green;
   color: #ffffff;
 }
 
-.alert-primary{
+.alert-primary {
   background: $primary;
   color: #ffffff;
 }

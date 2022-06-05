@@ -1,29 +1,37 @@
-.mod_newslist{
+.mod_newslist {
   @extend .row;
-  .layout_latest{
+
+  .layout_latest {
     h3 a {
       color: #000;
       @include transition(color);
-      &:hover{
+
+      &:hover {
         color: $link-color;
         text-decoration: none;
       }
     }
   }
+
   margin-bottom: 30px;
-  .pagination{
-    padding:0 $spacer-x;
-    display:block;
-    p{
-      display:block;
+
+  .pagination {
+    padding: 0 $spacer-x;
+    display: block;
+
+    p {
+      display: block;
     }
-    ul{
-      display:flex;
-      li{
+
+    ul {
+      display: flex;
+
+      li {
         margin-right: 10px;
       }
     }
   }
+
   .more {
     margin-top: $spacer-y;
   }

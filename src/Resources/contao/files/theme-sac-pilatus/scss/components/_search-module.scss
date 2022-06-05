@@ -1,7 +1,8 @@
 .mod_search_custom_overlay {
-  .close-button.btn-close{
+  .close-button.btn-close {
     color: #ffffff;
   }
+
   display: none;
   position: fixed;
   top: 0;
@@ -14,6 +15,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+
   form {
     width: 600px;
     position: relative;
@@ -21,20 +23,24 @@
     padding: 0;
     margin: 0;
     display: block;
+
     .formbody {
       padding: 0;
       margin: 0;
+
       .search-headline {
         color: #fff;
         margin-bottom: 2rem;
         text-align: center;
         width: 100%;
       }
+
       .search-input {
         margin-bottom: 2rem;
+
         input[type="search"] {
           width: 100%;
-          border:0;
+          border: 0;
           z-index: 111111;
           opacity: 1;
         }
@@ -44,6 +50,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+
         .submit {
           background-color: transparent;
           border: 1px solid #fff;
@@ -62,6 +69,7 @@
     color: #fff;
     font-size: 2rem;
     border: none;
+
     &:hover {
       cursor: pointer;
     }
@@ -78,9 +86,11 @@
   &.is-pre-active, &.is-active {
     display: flex !important;
   }
+
   &.is-pre-active {
     opacity: 0;
   }
+
   &.is-active {
     opacity: 0.95;
   }

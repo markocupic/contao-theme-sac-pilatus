@@ -7,11 +7,11 @@
   $socialmedia-icon-font-size-mobile: 1.5rem;
 
 
-
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
+
   li {
     margin-left: $socialmedia-button-aside-margin;
     margin-right: $socialmedia-button-aside-margin;
@@ -19,6 +19,7 @@
       margin-left: $socialmedia-button-aside-margin-mobile;
       margin-right: $socialmedia-button-aside-margin-mobile;
     }
+
     .fa:hover, a:hover {
       text-decoration: none !important;
     }
@@ -35,6 +36,7 @@
         height: $socialmedia-button-line-height-mobile;
         line-height: $socialmedia-button-line-height-mobile;
       }
+
       .fa {
         width: 100%;
         position: absolute;
@@ -46,32 +48,38 @@
         text-align: center;
         transition: color linear .4s;
       }
+
       .fa-stack-circle {
         color: #fff;
         font-size: $socialmedia-button-line-height;
         @include media-breakpoint-down(lg) {
           font-size: $socialmedia-button-line-height-mobile;
         }
+
         &:hover {
           color: $accent-color;
         }
       }
+
       .fa-stack-icon {
         color: $accent-color;
         font-size: $socialmedia-icon-font-size;
         @include media-breakpoint-down(lg) {
           font-size: $socialmedia-icon-font-size-mobile;
         }
+
         &:hover {
           color: #fff;
         }
       }
     }
+
     // Hover
     .fa-stack:hover {
       .fa-stack-circle {
         color: #fff;
       }
+
       .fa-stack-icon {
         color: $accent-color;
       }

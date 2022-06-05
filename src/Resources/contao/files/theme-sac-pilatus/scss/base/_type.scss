@@ -1,12 +1,12 @@
 
-
 .font-family-serif {
   font-family: $font-family-serif;
 }
 
-a{
+a {
   text-underline-position: under;
 }
+
 a:hover, a:focus {
   background-color: transparent;
   color: darken($link-color, 10);
@@ -100,8 +100,6 @@ $text-elements: (
   font-family: $font-family-serif;
   // Vorschlag Buffoni
   //font-family: "Source Serif Pro", serif;
-
-
 
 
   &:after {

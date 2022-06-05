@@ -1,5 +1,5 @@
 // Email mailto link
-a.email{
+a.email {
   &:before {
     @include icon-before("\f2b6");
   }
@@ -20,9 +20,11 @@ a.email{
     position: relative;
     line-height: 2.25;
   }
+
   .mime_icon {
     display: none;
   }
+
   /*
   ul::after {
     font-family: $icon-font-name;
@@ -37,12 +39,15 @@ a.email{
   a[href*="."]:before {
     @include icon-before("\f0c1"); // fa-file-o     // fa-file-word
   }
+
   a[href$=".docx"]:before {
     @include icon-before("\f1c2"); // fa-file-word
   }
+
   a[href$=".doc"]:before {
     @include icon-before("\f1c2"); // fa-file-word
   }
+
   a[href$=".pdf"]:before {
     @include icon-before("\f1c1"); // fa-file-pdf
   }
@@ -52,9 +57,11 @@ a.email{
   a[href*="."] {
     @include icon-before("\f0c1"); // fa-link
   }
-  a.hyperlink_img:before{
+
+  a.hyperlink_img:before {
     display: none;
   }
+
   margin-bottom: $spacer-y;
 }
 

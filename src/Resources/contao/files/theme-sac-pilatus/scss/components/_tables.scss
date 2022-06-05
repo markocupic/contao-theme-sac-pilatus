@@ -1,11 +1,11 @@
-.ce_table
-{
-  &.table{
+.ce_table {
+  &.table {
     table {
       @extend .table;
     }
   }
-  &.table-responsive{
+
+  &.table-responsive {
     table {
       @extend .table-responsive;
     }

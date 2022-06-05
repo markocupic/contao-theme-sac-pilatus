@@ -11,13 +11,16 @@
   @include media-breakpoint-only(xl) {
     @include column-count(4);
   }
+
   .card-date {
     color: $gray-500;
   }
+
   a > .card-title .card-title {
     color: #d50000 !important;
     line-height: 1.4;
   }
+
   .card {
     position: inherit;
   }
@@ -27,18 +30,23 @@
   .caption {
     display: none;
   }
-  &:hover{
+
+  &:hover {
     @extend .shadow-sm;
   }
+
   figure {
     max-width: 100% !important;
   }
+
   img {
     @extend .img-fluid;
   }
-  .image_container img, .card-img-top{
+
+  .image_container img, .card-img-top {
     @extend .w-100;
   }
+
   .card-body {
     a, .card-title {
       color: $blue !important;
@@ -47,6 +55,7 @@
     }
   }
 }
-.card.gray-lightest{
+
+.card.gray-lightest {
   background-color: $gray-300;
 }

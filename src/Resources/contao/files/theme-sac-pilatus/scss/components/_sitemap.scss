@@ -1,11 +1,11 @@
 .mod_sitemap {
 
 
-
   .level_1 {
-    >li{
+    > li {
       margin: 1.5rem 0 0 0;
-      padding:0;
+      padding: 0;
+
       > a, > span {
         font-size: 1.25rem !important;
         font-weight: bold;
@@ -25,6 +25,7 @@
 
   .level_3 {
     margin-left: 1rem;
+
     > li > a, > li > span {
       font-size: 1 !important;
       //font-weight: bold;

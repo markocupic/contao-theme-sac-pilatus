@@ -7,6 +7,7 @@ input.custom-input-file {
   position: absolute;
   z-index: -1;
 }
+
 .widget.custom-input-file > label {
   font-size: 1em;
   font-weight: normal !important;
@@ -17,14 +18,16 @@ input.custom-input-file {
   border: 1px solid $gray-400;
   @include icon-before("\f382");
   display: block;
-  &:before{
-    display:block;
+
+  &:before {
+    display: block;
     font-size: 2rem;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     margin-bottom: 10px;
   }
 }
+
 .widget.custom-input-file {
 
   input.custom-input-file:focus ~ label,
@@ -35,6 +38,7 @@ input.custom-input-file {
   label.custom-input-file {
     cursor: pointer; /* "hand" cursor */
   }
+
   input.custom-input-file:focus ~ label {
     outline: 1px dotted #000;
     outline: -webkit-focus-ring-color auto 5px;

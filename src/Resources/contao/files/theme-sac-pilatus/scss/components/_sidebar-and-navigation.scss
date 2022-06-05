@@ -11,11 +11,14 @@ $nav-bg-color: #fff;
 #sidebar {
   .navigation-toggler {
     background: transparent;
+
     .btn {
       font-size: 1.75rem;
       color: $nav-font-color;
     }
+
     border: 0;
+
     &:focus {
       border: 0;
       outline: 0;
@@ -69,19 +72,23 @@ $nav-bg-color: #fff;
     overflow: hidden;
     border-bottom: 1px ridge $gray-400;
     @include transition(height);
+
     img {
       margin: 0 $spacer;
       width: auto;
       max-width: 120px;
       height: 66px;
     }
+
     .sidebar-title {
       padding-left: $spacer-x;
       color: $gray-400;
     }
+
     .navigation-toggler {
       position: absolute;
       right: $spacer;
+
       .fa {
         color: $nav-close-btn-color;
         font-size: 2rem;
@@ -102,6 +109,7 @@ body.sidebar-open {
     display: block;
     opacity: 0;
   }
+
   #sidebar {
     left: 0;
   }
@@ -117,6 +125,7 @@ body.sidebar-open {
     #sidebar {
       left: 0;
     }
+
     #wrapper, #footer {
       display: none;
     }
@@ -133,25 +142,30 @@ body.sidebar-open {
   * {
     text-decoration: none !important;
   }
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+
   li {
     display: block;
     position: relative;
     margin: 0;
     padding: 0;
     overflow: hidden;
+
     > a,
     > strong {
       color: $nav-font-color !important;
     }
+
     > strong.active {
       color: $nav-font-color;
       font-weight: bold;
     }
+
     &:hover {
       > a, > strong {
         color: $nav-font-color !important;
@@ -162,6 +176,7 @@ body.sidebar-open {
   // Hide Submenus
   ul.level_1 {
     display: block;
+
     ul {
       display: none;
     }
@@ -178,42 +193,55 @@ body.sidebar-open {
       color: $nav-font-color;
       width: 2.5rem;
     }
+
     > li.picture-o:before {
       content: "\f03e";
     }
+
     > li.newspaper-o:before {
       content: "\f1ea";
     }
+
     > li.users:before {
       content: "\f0c0";
     }
+
     > li.bolt:before {
       content: "\f0e7";
     }
+
     > li.wrench:before {
       content: "\f0ad";
     }
+
     > li.newspaper-o:before {
       content: "\f1ea ";
     }
+
     > li.cogs:before {
       content: "\f085";
     }
+
     > li.flask:before {
       content: "\f0c3";
     }
+
     > li.file-o:before {
       content: "\f016";
     }
+
     > li.leanpub:before {
       content: "\f212";
     }
+
     > li.handshake-o:before {
       content: "\f2b5";
     }
+
     > li.school:before {
       content: "\f19d";
     }
+
     > li.home:before {
       content: "\f015";
     }
@@ -223,8 +251,10 @@ body.sidebar-open {
   ul.level_1 {
     > li {
       border-bottom: 1px solid #e2e2e2;
+
       &:hover {
         background-color: $nav-bg-hover-color;
+
         > a, > span, > strong {
           color: #000 !important;
         }
@@ -236,6 +266,7 @@ body.sidebar-open {
   ul.level_1 {
     > li.expanded {
       background-color: $nav-bg-hover-color;
+
       &:before, > *, > *:before {
         color: $nav-font-color !important;
       }
@@ -266,6 +297,7 @@ body.sidebar-open {
         > .toggle-submenu {
           background-color: transparent;
         }
+
         > .toggle-submenu:before {
           // minus fal fa-minus-circle
           content: "\f056";
@@ -273,15 +305,18 @@ body.sidebar-open {
         }
       }
     }
+
     > li {
       > .toggle-submenu:before {
         color: $gray-500 !important;
       }
+
       > .toggle-submenu:hover:before {
         color: $nav-font-color !important;
       }
     }
   }
+
   $level_1-offset: 48px;
   $level_2-offset: 54px;
   $level_3-offset: 60px;
@@ -292,6 +327,7 @@ body.sidebar-open {
       padding: 0;
       line-height: 40px;
       background-color: transparent;
+
       > a, > strong {
         padding: 0;
         margin: 10px 0;
@@ -300,27 +336,34 @@ body.sidebar-open {
         color: #fff;
         display: block;
       }
+
       span.active {
         color: #000 !important;
       }
     }
   }
+
   ul.level_2 {
     background-color: #eee;
+
     > li {
       padding: 0;
       line-height: 36px;
       background-color: transparent;
+
       &:hover {
         background-color: #fff;
       }
+
       > .toggle-submenu {
         right: 0;
         top: 5px;
       }
+
       > .toggle-submenu:before {
         font-size: 16px !important;
       }
+
       > a, strong {
         padding: 0;
         margin: 10px 0;
@@ -329,25 +372,31 @@ body.sidebar-open {
         color: $nav-font-color;
         display: block;
       }
+
       strong.active {
         color: $blue !important;
       }
     }
   }
+
   ul.level_3 {
     > li {
       padding: 0;
       line-height: 32px;
       background-color: transparent;
+
       &:hover {
         background-color: #fff;
       }
+
       > .toggle-submenu {
         right: 0;
       }
+
       > .toggle-submenu:before {
         font-size: 16px !important;
       }
+
       > a, strong {
         padding-left: $level_3-offset;
         margin: 5px 0;
@@ -355,25 +404,31 @@ body.sidebar-open {
         color: $nav-font-color;
         display: block;
       }
+
       strong.active {
         color: $blue !important;
       }
     }
   }
+
   ul.level_4 {
     > li {
       padding: 0;
       line-height: 28px;
       background-color: transparent;
+
       &:hover {
         background-color: #fff;
       }
+
       > .toggle-submenu {
         right: 0;
       }
+
       > .toggle-submenu:before {
         font-size: 14px !important;
       }
+
       > a, strong {
         margin: 10px 0;
         padding-left: $level_4-offset;
@@ -381,6 +436,7 @@ body.sidebar-open {
         color: $nav-font-color;
         display: block;
       }
+
       strong.active {
         color: $blue !important;
       }
