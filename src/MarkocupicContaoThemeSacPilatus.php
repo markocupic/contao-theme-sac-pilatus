@@ -16,9 +16,6 @@ namespace Markocupic\ContaoThemeSacPilatus;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-/**
- * Configures the contao theme sac pilatus.
- */
 class MarkocupicContaoThemeSacPilatus extends Bundle
 {
 }
