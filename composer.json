@@ -34,6 +34,9 @@
     "stefansl/contao-divider-bundle": "^v1.0",
     "markocupic/nav-page-container": "dev-master"
   },
+  "psr-4": {
+    "Markocupic\\ContaoThemeSacPilatus\\": "src/"
+  },
   "extra": {
     "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
     "contao": {
@@ -44,7 +47,7 @@
       }
     }
   }
-}
+} 
 
 
 

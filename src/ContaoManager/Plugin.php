@@ -14,9 +14,11 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoThemeSacPilatus\ContaoManager;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Markocupic\ContaoThemeSacPilatus\MarkocupicContaoThemeSacPilatus;
 
 /**
  * Class Plugin
@@ -30,8 +32,8 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create('Markocupic\ContaoThemeSacPilatus\MarkocupicContaoThemeSacPilatus')
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle']),
+            BundleConfig::create(MarkocupicContaoThemeSacPilatus::class)
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 }
