@@ -7,7 +7,7 @@
     "theme"
   ],
   "type": "contao-module",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Marko Cupic",
@@ -21,7 +21,7 @@
     "source": "https://github.com/markocupic/contao-theme-sac-pilatus"
   },
   "require": {
-    "contao/core-bundle": "^4.6, <5",
+    "contao/core-bundle": "^4.13",
     "markocupic/contao-component-bootstrap": "^5.0",
     "markocupic/rotate_image": "^1.0",
     "markocupic/custom-section": "^1.0",
@@ -33,13 +33,6 @@
     "markocupic/bootstrap-carousel-bundle": "^1.0",
     "stefansl/contao-divider-bundle": "^v1.0",
     "markocupic/nav-page-container": "dev-master"
-  },
-  "replace": {
-  },
-  "autoload": {
-    "classmap": [
-      ""
-    ]
   },
   "extra": {
     "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
