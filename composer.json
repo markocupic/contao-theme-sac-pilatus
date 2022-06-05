@@ -37,7 +37,7 @@
   },
   "require-dev": {
     "contao/manager-plugin": "^2.3.1",
-    "contao/test-case": "self.version",
+    "contao/test-case": "^4.5",
     "phpunit/phpunit": "^9.3",
     "symfony/http-client": "5.4.*",
     "symfony/phpunit-bridge": "^5.4",
