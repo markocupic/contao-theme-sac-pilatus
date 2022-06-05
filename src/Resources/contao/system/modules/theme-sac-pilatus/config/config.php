@@ -24,7 +24,7 @@ if (TL_MODE === 'FE') {
     $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
     // Load Font Awesome key from configuration
-    $faKey = System::getContainer()->getParameter('contao_theme_sac_pilatus.font_awesome_kit_key');
+    $faKey = System::getContainer()->getParameter('markocupic_contao_theme_sac_pilatus.font_awesome_kit_key');
     $GLOBALS['TL_HEAD'][] = '<script src="https://kit.fontawesome.com/'.$faKey.'.js" crossorigin="anonymous"></script>';
 
     // Select2
