@@ -8,8 +8,10 @@
     height: 100px;
     margin-bottom: 0;
     color: #333;
+    display:flex;
+    justify-content: center;
     @include transition(color);
-    @include font-size(4rem !important);
+    @include font-size(3rem !important);
 
     &:hover {
       cursor: pointer;
@@ -31,7 +33,7 @@
   .service-link-headline {
     margin-top: 0 !important;
     @include rfs(1rem, margin-bottom);
-    @include font-size(2rem !important);
+    @include font-size(1.5rem !important);
   }
 
   .service-link-headline a {
