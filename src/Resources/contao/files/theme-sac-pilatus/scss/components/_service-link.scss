@@ -1,49 +1,42 @@
 .ce_serviceLink {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  @include rfs(2rem, padding-top);
+  @include rfs(2rem, padding-bottom);
 
   [class*="fa-"] {
     padding: 27px 25px;
     width: 100px;
     height: 100px;
-    //border-radius: 50%;
-    //background-color: #fff;
-    @include transition(background);
-    margin-bottom: 5px;
+    margin-bottom: 0;
     color: #333;
     @include transition(color);
-    @include font-size(40px);
+    @include font-size(4rem !important);
 
     &:hover {
       cursor: pointer;
-      color: $blue;
     }
   }
 
   .service-link-wrapper {
-    //padding: 20px 0;
     > * {
-      text-align: center;
+      text-align: center !important;
     }
 
-    &:hover {
-      @include transition(background);
-
-    }
   }
 
-  .service-link-headline, .service-link-headline a {
-    @include font-size(25px);
-    transition: font-size ease-in-out .4s;
-    color: rgb(59, 60, 66);
-    text-align: center;
-    font-weight: 400;
-    text-decoration: none;
+  .service-link-icon {
+    display: flex;
+    justify-content: center;
+  }
 
-    &:hover {
-      text-decoration: none;
-      color: $red;
-    }
+  .service-link-headline {
+    margin-top: 0 !important;
+    @include rfs(1rem, margin-bottom);
+    @include font-size(2rem !important);
+  }
+
+  .service-link-headline a {
+    text-decoration: none;
+    font-weight: 400;
   }
 
   .service-link-button {
@@ -57,7 +50,6 @@
     color: #000;
 
     &:hover {
-      cursor: pointer;
       color: #fff;
     }
   }
@@ -66,7 +58,6 @@
     color: #fff;
 
     &:hover {
-      text-decoration: none;
       color: #000;
     }
   }

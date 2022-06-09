@@ -2,7 +2,7 @@
     <div class="card">
         <!--
         <div class="p-2 d-flex align-items-center">
-            <p class="card-text small ms-2">
+            <p class="card-text small m-0 ms-2">
                 {{image::<?= getAvatar(\NewsModel::findByPk($this->id)->author,'BE') ?>?width=32&height=32&mode=crop&class=rounded-circle}}
                 <?= $this->author ?>
             </p>
@@ -15,7 +15,7 @@
             </div>
         </a>
         <?php endif; ?>
-        
+
         <div class="card-body">
             <p class="card-date m-0"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><small><?= $this->date ?></small></time></p>
             <a href="<?= $this->href ?>" class="text-decoration-none" title="weiterlesen">

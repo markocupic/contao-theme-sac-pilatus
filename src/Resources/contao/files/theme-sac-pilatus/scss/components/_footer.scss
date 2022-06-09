@@ -3,14 +3,13 @@
   $footer-bg-color-row-2: transparent;
   $footer-color: #8e8e8e;
   $footer-link-color: #8e8e8e;
-  $footer-font-size: small;
 
   .footer-nav {
+    margin-top: 1rem;
+
     ul {
       text-align: center;
     }
-
-    margin-top: 1rem;
 
     li {
       display: inline;
@@ -19,31 +18,17 @@
       padding: 0 0.75rem;
 
       * {
+        // Extend font-size, line-height & margin from .small (@see type.scss)
+        @extend .small;
         color: $footer-color !important;
         font-weight: normal !important;
-        //text-transform: uppercase;
         text-decoration: none;
-        font-size: $footer-font-size;
-
-        &:hover {
-          //color: #000000 !important;
-        }
-
-        &.active {
-          font-weight: normal !important;
-          //color: #fff !important;
-        }
       }
-
     }
 
     &:first-child {
       border: none;
     }
-  }
-
-  * {
-    //font-size: 0.875rem !important;
   }
 
   [class*="footer-row-"] {
@@ -54,8 +39,6 @@
   .footer-row-1 {
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
-    font-size: $footer-font-size;
-
 
     a, a > * {
       color: $footer-link-color !important;
@@ -78,13 +61,11 @@
 
   .footer-row-2 {
     .container {
-      //border-top: 1px solid #807d7d;
       padding-top: 2rem;
     }
 
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
-    font-size: $footer-font-size;
 
     a, a > * {
       color: $footer-link-color !important;

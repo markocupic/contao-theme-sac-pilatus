@@ -1,148 +1,108 @@
-
 .font-family-serif {
   font-family: $font-family-serif;
 }
 
-a {
-  text-underline-position: under;
-}
-
-a:hover, a:focus {
-  background-color: transparent;
-  color: darken($link-color, 10);
-}
-
 $headline-font-weight: 600;
 
-h1, h2, h3, h4, h5, h6 {
+body {
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, .ce_headline {
   font-weight: $headline-font-weight;
   color: #000;
 }
 
-.ce_headline {
-  font-weight: $headline-font-weight;
-}
-
-
-// Set headline
-$text-elements: (
-        h1: (
-                font-size: 46px,
-                line-height: 1.55,
-                margin-top: 2rem,
-                margin-bottom: 2rem,
-                font-weight: $headline-font-weight
-        ),
-        h2: (
-                font-size: 38px,
-                line-height: 1.5,
-                margin-top: 2rem,
-                margin-bottom: 0.5rem,
-                font-weight:$headline-font-weight
-        ),
-        h3: (
-                font-size: 34px,
-                line-height: 1.25,
-                margin-top: 2rem,
-                margin-bottom: 0.5rem,
-                font-weight:$headline-font-weight
-        ),
-        h4: (
-                font-size: 30px,
-                line-height: 1,
-                margin-top: 1.5rem,
-                margin-bottom: 0.5rem,
-                font-weight:$headline-font-weight
-        ),
-        h5: (
-                font-size: 26px,
-                line-height: 1,
-                margin-top: 1.5rem,
-                margin-bottom: 0.5rem,
-                font-weight:$headline-font-weight
-        ),
-        h6: (
-                font-size: 22px,
-                line-height: 1,
-                margin-top: 1.5rem,
-                margin-bottom: 0.5rem,
-                font-weight:$headline-font-weight
-        ),
-        legend: (
-                font-size: 22px,
-                line-height: 1.5,
-                margin-top: 2rem,
-                margin-bottom: 0.5rem,
-                font-weight: bold
-        ),
-);
-
-// Scalling down headline font-size for mobile devices
-@each $key, $map in $text-elements {
-  #{$key} {
-    //@include font-size(map-deep-get($text-elements, $key, "font-size"));
-    //line-height: map-deep-get($text-elements, $key, "line-height");
-    margin-top: map-deep-get($text-elements, $key, "margin-top");
-    margin-bottom: map-deep-get($text-elements, $key, "margin-bottom");
-    font-weight: map-deep-get($text-elements, $key, "font-weight");
-  }
-}
-
-
-// Underline
+// Underline h1
 #main h1.ce_headline, [class*="ce_"] > h1, [class*="mod_"] > h1 {
   text-align: left;
   color: $blue;
   font-weight: 700;
-  //text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.08em;
   font-family: $font-family-serif;
   // Vorschlag Buffoni
   //font-family: "Source Serif Pro", serif;
 
-
-  &:after {
-    content: "";
-    width: 150px;
-    background: $blue;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    height: 2px;
-    display: block;
-  }
-
+  /**
+    &:after {
+      content: "";
+      width: 150px;
+      background: $blue;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      height: 2px;
+      display: block;
+    }
+  */
 }
 
-.mobile-title-heading {
-  h1 {
-    @include transition(font-size);
-    //@extend .h1;
-    font-weight: 500;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    font-size: calc(1.375rem + 1.5vw);
 
-  }
+// headline font-size, line-height & margin
+$mc_scale_factors: ("xs": 1, "sm": 1.05, "md": 1.1, "lg": 1.15, "xl": 1.2, "xxl": 1.3);
+$mc_font_size_bases_headline_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30rem", "h4,.h4": "1.2rem", "h5,.h5": "1.1rem", "h6,.h6": "1.0rem");
 
-  @media (min-width: 1200px) {
-    h1, .h1 {
-      font-size: 2.5rem;
+@each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
+  @include media-breakpoint-up($mc_breakpoint) {
+    @each $mc_selector, $mc_font_size_base in $mc_font_size_bases_headline_map {
+      #{$mc_selector} {
+        font-size: calc(#{$mc_font_size_base} * #{$mc_font_size_factor});
+        line-height: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.6);
+        margin-top: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.5);
+        margin-bottom: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * .5);
+
+      }
     }
   }
 }
 
-small, .small {
-  font-size: .75rem !important;
+// font-size
+$mc_scale_factors: ("xs": 1, "sm": 1.05, "md": 1.1, "lg": 1.15, "xl": 1.2, "xxl": 1.3);
+$mc_font_size_bases_headline_map: ("div,p,li,legend,label,td,th": "0.9rem", "small,.small": "0.8rem");
+
+@each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
+  @include media-breakpoint-up($mc_breakpoint) {
+    @each $mc_selector, $mc_font_size_base in $mc_font_size_bases_headline_map {
+      #{$mc_selector} {
+        font-size: calc(#{$mc_font_size_base} * #{$mc_font_size_factor});
+      }
+    }
+  }
 }
 
-// Lists
+// line-height
+$mc_scale_factors: ("xs": 1, "sm": 1.05, "md": 1.1, "lg": 1.15, "xl": 1.2, "xxl": 1.3);
+$mc_font_size_bases_headline_map: ("div,p,li,legend,label,td,th": "0.9rem");
+
+@each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
+  @include media-breakpoint-up($mc_breakpoint) {
+    @each $mc_selector, $mc_font_size_base in $mc_font_size_bases_headline_map {
+      #{$mc_selector} {
+        line-height: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.6);
+      }
+    }
+  }
+}
+
+// Margin
+$mc_scale_factors: ("xs": 1, "sm": 1.05, "md": 1.1, "lg": 1.15, "xl": 1.2, "xxl": 1.3);
+$mc_font_size_bases_headline_map: ("p,li,legend,label": "0.9rem");
+
+@each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
+  @include media-breakpoint-up($mc_breakpoint) {
+    @each $mc_selector, $mc_font_size_base in $mc_font_size_bases_headline_map {
+      #{$mc_selector} {
+        margin-top: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.5);
+        margin-bottom: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.3);
+      }
+    }
+  }
+}
+
+label {
+  @extend .mb-2;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -174,4 +134,12 @@ ul {
   -ms-hyphens: auto;
 }
 
+// Links
+a {
+  text-underline-position: under;
+}
 
+a:hover, a:focus {
+  background-color: transparent;
+  color: darken($link-color, 10);
+}
