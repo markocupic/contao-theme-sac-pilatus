@@ -6,7 +6,7 @@
   }
 
   .carousel-control-next, .carousel-control-prev {
-    z-index: 2000;
+    z-index: 1053; // Display buttons below megamenu, which has a z-index of 1054
     opacity: 1;
     width: auto;
     display: flex;
