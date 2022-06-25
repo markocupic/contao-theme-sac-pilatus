@@ -132,7 +132,7 @@ $color-level-2-hover: $dark;
         //border-bottom: 1px solid #ccc;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        z-index: 2001;
+        z-index: 1054; // put the menu below the bootstrap modal backdrop, which has has a z-index of 1055
         ////////////////// megamenu hack
         width: 100% !important;
         // new
