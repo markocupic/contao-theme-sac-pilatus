@@ -1,5 +1,5 @@
 .image-zoom-in {
-  overflow: hidden;
+  overflow: hidden !important;
 
   img {
     transition: transform .4s;
