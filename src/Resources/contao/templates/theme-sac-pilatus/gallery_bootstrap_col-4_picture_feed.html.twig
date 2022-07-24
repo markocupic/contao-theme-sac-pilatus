@@ -1,0 +1,53 @@
+<!-- indexer::stop -->
+<ul class="gallery-grid equal-height cols_{{ perRow }}">
+    {% for row in body %}
+        {% set class = loop.index %}
+        {% for col in row %}
+            {% if col.addImage is defined %}
+                {% set owner = mpf_getOwnerFromPath(col.singleSRC) %}
+                {% set file = mpf_getFilesModelFromPath(col.singleSRC) %}
+                {% if not owner is empty and not file is empty %}
+
+                    <li class="{{ class }} {{ col.class }}">
+                        <div class="card">
+                            <div class="p-2 d-flex fw-bold align-items-center">
+                                {{ '{{image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
+                                <p class="card-text small m-0 ms-2">von {{ owner.firstname }} {{ owner.lastname }}</p>
+                            </div>
+                            <figure class="image_container"{% if col.margin is defined %} style="{{ col.margin }}"{% endif %}>
+                                {% set sources = col.picture %}
+                                {% if not sources.class is defined %}
+                                    {% set sources = sources|merge({"class": ""}) %}
+                                {% endif %}
+
+                                {% if col.href is defined %}
+                                    <a href="{{ col.href }}"{{ col.attributes }} title="{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}">
+                                        <div class="image-zoom-in">
+                                            {% include '@Contao/picture_default' with sources %}
+                                        </div>
+                                    </a>
+                                {% else %}
+                                    <div class="image-zoom-in">
+                                        {% include '@Contao/picture_default' with sources %}
+                                    </div>
+                                {% endif %}
+                                {% if col.caption is defined and not col.caption is empty %}
+                                    <figcaption class="caption">{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}</figcaption>
+                                {% endif %}
+                            </figure>
+                            <div class="card-body">
+                                <p class="card-date m-0">
+                                    <small>{{ file.tstamp|date("d.m.Y") }}</small>
+                                </p>
+                                <h6 class="card-title mt-0">
+                                    {{ col.caption }}
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</ul>
+<!-- indexer::continue -->
