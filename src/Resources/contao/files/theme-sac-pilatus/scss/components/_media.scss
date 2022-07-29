@@ -4,12 +4,7 @@
 }
 
 .image_container img {
-  //width: 100%;
   @include transition(all);
-
-  &:hover {
-    //transform: scale(1.1);
-  }
 }
 
 img {
@@ -23,16 +18,22 @@ figure {
 }
 
 .ce_gallery {
-  ul:first-child {
+  ul.gallery-grid {
     @extend .row;
-    @extend .g-4;
+    @extend .gx-2;
+    @extend .gy-2;
+    margin: -8px -4px 0 -4px !important;
 
-    li {
+    li.gallery-grid-item {
+      margin: 8px 0 0 0 !important;
+      padding: 0 4px !important;
       @extend .col-12;
-      @extend .col-md-4;
+      @extend .col-sm-4;
+      @extend .col-md-3;
 
       img {
-        @extend .img-fluid;
+        width: 100%;
+        max-width: 100%;
       }
     }
   }
