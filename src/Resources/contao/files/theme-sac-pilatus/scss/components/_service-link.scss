@@ -1,6 +1,6 @@
 .ce_serviceLink {
-  @include rfs(2rem, padding-top);
-  @include rfs(2rem, padding-bottom);
+  @include rfs(3rem, padding-top);
+  @include rfs(3rem, padding-bottom);
 
   [class*="fa-"] {
     @include rfs(4.5rem, width);
@@ -31,9 +31,10 @@
   }
 
   .service-link-headline {
+    margin-bottom: 0 !important;
     @include rfs(0.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
-    @include font-size(2rem !important);
+    @include font-size(1.8rem !important);
   }
 
   .service-link-headline a {
