@@ -12,60 +12,31 @@ body {
   }
 }
 
-
 #wrapper {
 
   overflow-x: hidden;
-  // overwrite bootstrap .container padding
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  @extend .px-0;
+  @extend .container; // 100% width < sm (small screens)
 
   @media (min-width: 1900px) {
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    max-width: 1900px;
+    max-width: $mc-container-max-width;
   }
 
   #container {
 
-    .mod_article > .container-sm {
-      .box-layout-transparent {
-        @extend .mt-3;
-        @extend .mb-3;
-        @extend .ps-3;
-        @extend .pe-3;
-        @extend .ps-sm-0;
-        @extend .pe-sm-0;
-      }
-      .box-layout-white {
-        background-color: white;
-        @extend .p-3;
-        @extend .mt-3;
-        @extend .mb-3;
-      }
-    }
-
     .mod_article > .container {
-
-      @include media-breakpoint-down(lg) {
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      @extend .container-lg;
-      @extend .py-4, .px-4, .px-md-5;
+      @extend .px-2;
+      @extend .px-sm-4;
     }
+
 
     .mod_article > .container-fluid {
       padding: 0;
     }
 
-    .mod_article *[class*="ce_"], .mod_article *[class*="mod_"] {
-      //margin-bottom: 20px;
-    }
 
     .mod_article {
       background-color: transparent;
@@ -122,16 +93,15 @@ body {
     }
 
     .mod_article.article-blue {
-      //background-color: $blue;
       background: $blue;
-      //background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
+      color: #fff;
+
       .article-inside {
         background-color: transparent;
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
 
-      color: #fff;
 
       a, h1, h2, h3, h4, h5, h6 {
         color: #fff !important;
@@ -141,11 +111,6 @@ body {
         background-color: #fff;
       }
 
-    }
-
-    .mod_article.blue-gradient {
-      background: $blue;
-      //background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
     }
 
     .mod_article.article-darkcyan {
@@ -218,8 +183,31 @@ body {
     }
   }
 
-  #footer {
-    //
+  // Tour detail/course detail
+  .mod_article {
+    .box-layout-transparent, .box-layout-white {
+      @extend .mt-3;
+      @extend .mb-3;
+      @extend .p-2;
+      @extend .p-sm-3;
+
+      > *:first-child {
+        margin-top: 0;
+
+        > h1, h2, h3, h4, h5, h6 {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .box-layout-transparent {
+      background-color: transparent;
+    }
+
+    .box-layout-white {
+      background-color: #ffffff;
+
+    }
   }
 
 }
