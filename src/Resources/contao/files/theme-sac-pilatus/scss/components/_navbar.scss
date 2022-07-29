@@ -45,11 +45,15 @@ $color-level-2-hover: $dark;
           ////////////////// megamenu hack
           position: inherit !important;
           //margin: 0 .5rem;
-          padding: 0 6px;
+          padding: 0 0 0 6px;
           //height: $navbar-height;
           position: relative;
           display: flex;
           align-items: center;
+          margin-right: 0;
+          @media screen and (min-width: 1900px) {
+            margin-right: 1rem;
+          }
 
           > a > span, > span[data-bs-toggle="dropdown"], > strong {
             padding: 0;
@@ -78,6 +82,7 @@ $color-level-2-hover: $dark;
 
           > span:after {
             font-weight: bold !important;
+            padding-left: .125rem !important;
           }
         }
 
@@ -112,7 +117,7 @@ $color-level-2-hover: $dark;
         }
 
         li.nav-item {
-          padding-right: 1.5rem;
+          padding-right: .75rem;
         }
 
       }
