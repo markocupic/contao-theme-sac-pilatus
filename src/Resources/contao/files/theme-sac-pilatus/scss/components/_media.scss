@@ -30,6 +30,10 @@ figure {
     li {
       @extend .col-12;
       @extend .col-md-4;
+
+      img {
+        @extend .img-fluid;
+      }
     }
   }
 
@@ -37,9 +41,6 @@ figure {
 
 // Do not show caption on mobile phones
 @include media-breakpoint-up(sm) {
-  .gallery_creator .caption {
-    display: none;
-  }
   .ce_gallery .caption {
     display: none;
   }

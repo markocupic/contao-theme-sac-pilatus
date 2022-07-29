@@ -3,15 +3,15 @@
   @include rfs(2rem, padding-bottom);
 
   [class*="fa-"] {
-    padding: 27px 25px;
-    width: 100px;
-    height: 100px;
+    @include rfs(4.5rem, width);
+    @include rfs(4.5rem, height);
+    @include rfs(.1rem, padding);
+    @include rfs(4.25rem, font-size);
     margin-bottom: 0;
     color: #333;
-    display:flex;
+    display: flex;
     justify-content: center;
     @include transition(color);
-    @include font-size(3rem !important);
 
     &:hover {
       cursor: pointer;
@@ -22,18 +22,18 @@
     > * {
       text-align: center !important;
     }
-
   }
 
   .service-link-icon {
     display: flex;
     justify-content: center;
+    margin-bottom: 0;
   }
 
   .service-link-headline {
-    margin-top: 0 !important;
+    @include rfs(0.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
-    @include font-size(1.5rem !important);
+    @include font-size(2rem !important);
   }
 
   .service-link-headline a {

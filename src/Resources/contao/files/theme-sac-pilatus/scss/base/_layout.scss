@@ -31,6 +31,23 @@ body {
 
   #container {
 
+    .mod_article > .container-sm {
+      .box-layout-transparent {
+        @extend .mt-3;
+        @extend .mb-3;
+        @extend .ps-3;
+        @extend .pe-3;
+        @extend .ps-sm-0;
+        @extend .pe-sm-0;
+      }
+      .box-layout-white {
+        background-color: white;
+        @extend .p-3;
+        @extend .mt-3;
+        @extend .mb-3;
+      }
+    }
+
     .mod_article > .container {
 
       @include media-breakpoint-down(lg) {
