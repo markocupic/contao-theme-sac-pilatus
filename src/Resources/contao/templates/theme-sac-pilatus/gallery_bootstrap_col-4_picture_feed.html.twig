@@ -1,5 +1,5 @@
 <!-- indexer::stop -->
-<ul class="gallery-grid equal-height cols_{{ perRow }}">
+<ul class="grid-card equal-height cols_{{ perRow }}">
     {% for row in body %}
         {% set class = loop.index %}
         {% for col in row %}
@@ -8,7 +8,7 @@
                 {% set file = mpf_getFilesModelFromPath(col.singleSRC) %}
                 {% if not owner is empty and not file is empty %}
 
-                    <li class="gallery-grid-item {{ class }} {{ col.class }}">
+                    <li class="grid-card-item {{ class }} {{ col.class }}">
                         <div class="card">
                             <div class="p-2 d-flex fw-bold align-items-center">
                                 {{ '{{image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}

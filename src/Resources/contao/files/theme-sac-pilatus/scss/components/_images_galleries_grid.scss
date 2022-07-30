@@ -17,6 +17,18 @@ figure {
   padding: 0;
 }
 
+.grid-card {
+  @extend .row;
+  @extend .gx-2;
+  @extend .gy-2;
+  margin: -8px -4px 0 -4px !important;
+
+  > * {
+    @extend .col-12;
+    @extend .col-md-4;
+  }
+}
+
 .ce_gallery {
   ul.gallery-grid {
     @extend .row;
@@ -31,10 +43,13 @@ figure {
       @extend .col-sm-4;
       @extend .col-md-3;
 
-      img {
-        width: 100%;
-        max-width: 100%;
+      figure {
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
       }
+
     }
   }
 
