@@ -1,64 +1,68 @@
 <!-- indexer::stop -->
 <div class="header-navbar">
-    <div class="header-navbar-row-0 d-flex ps-3 pe-3 pt-1 pb-1 align-items-center">
-        <div class="ms-0 me-auto d-none d-sm-flex small">{{ '{{link_open::geschaeftsstelle}}' }}Zur Geschäftsstelle{{ '{{link_close}}' }}</div>
+    <div class="header-navbar-row-0">
+        <div class="inner d-flex ps-3 pe-3 pt-2 pb-2 align-items-center">
+            <div class="ms-0 me-auto d-none d-sm-flex align-items-center small">{{ '{{link_open::geschaeftsstelle}}' }}Zur Geschäftsstelle{{ '{{link_close}}' }}</div>
+            <div class="ms-auto me-0 d-flex align-items-center">
+                {% if hasLoggedInFrontendUser() is same as true %}
+                    <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
 
-        <div class="ms-auto me-0 d-flex align-items-center">
-            {% if hasLoggedInFrontendUser() is same as true %}
-                <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
+                    <div class="ms-2 d-none d-sm-block small">{{ '{{user::firstname}}' }} {{ '{{user::lastname}}' }}</div>
+                    <div class="ms-3">
+                        {% set user = getLoggedInFrontendUser() %}
+                        {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
+                    </div>
+                {% endif %}
 
-                <div class="ms-2 d-none d-sm-block small">{{ '{{user::firstname}}' }} {{ '{{user::lastname}}' }}</div>
-                <div class="ms-3">
-                    {% set user = getLoggedInFrontendUser() %}
-                    {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
-                </div>
-            {% endif %}
+                {% if hasLoggedInFrontendUser() is same as false %}
+                    <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
+                {% endif %}
 
-            {% if hasLoggedInFrontendUser() is same as false %}
-                <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
-            {% endif %}
-
-            {% if hasLoggedInFrontendUser() is same as true %}
-                <a href="{{ '{{link_url::member-profile}}' }}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
-            {% endif %}
-        </div>
-    </div>
-
-    <div class="header-navbar-row-1 hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
-        <div class="navbar-brand ms-3">
-            <a href="" title="Startseite">
-                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
-            </a>
-        </div>
-
-        <!-- NAVBAR-START -->
-        <div class="navbar-header d-none d-xl-flex align-items-center">
-            <!-- indexer::continue -->
-            {{ '{{insert_module::307}}' }}
-        </div>
-        <!-- indexer::stop -->
-        <!-- NAVBAR-END -->
-
-        <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
-
-            <a href="{{ '{{link_url::kurse}}' }}" class="d-none d-md-block btn btn-outline-dark ms-2" role="button" aria-hidden="true" aria-label="Kurse"><i style="width:20px;font-size:1rem !important;" class="far fa-mind-share"></i> Kurse</a>
-            <a href="{{ '{{link_url::touren-trainings-und-anlaesse}}' }}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-hidden="true" aria-label="Touren"><i style="width:20px;font-size:1rem !important;" class="far fa-mountain"></i> Touren</a>
-
-            <!-- Searchbar toggler -->
-            <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
-                <i class="fal fa-search" aria-label="Suche" title="Suche"></i>
-            </button>
-            <!-- End Searchbar toggler -->
-
-            <!-- Navbar toggler mobile -->
-            <button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation">
-                <i class="fal fa-lg fa-bars" title="Navigation öffnen"></i>
-            </button>
-            <!-- End Navbar toggler mobile -->
-
+                {% if hasLoggedInFrontendUser() is same as true %}
+                    <a href="{{ '{{link_url::member-profile}}' }}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+                {% endif %}
+            </div>
         </div>
 
     </div>
+
+    <div class="header-navbar-row-1">
+        <div class="inner hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
+            <div class="navbar-brand ms-3">
+                <a href="" title="Startseite">
+                    <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+                </a>
+            </div>
+
+            <!-- NAVBAR-START -->
+            <div class="navbar-header d-none d-xl-flex align-items-center">
+                <!-- indexer::continue -->
+                {{ '{{insert_module::307}}' }}
+            </div>
+            <!-- indexer::stop -->
+            <!-- NAVBAR-END -->
+
+            <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
+
+                <a href="{{ '{{link_url::kurse}}' }}" class="d-none d-md-block btn btn-outline-dark ms-2" role="button" aria-hidden="true" aria-label="Kurse"><i style="width:20px;font-size:1rem !important;" class="far fa-mind-share"></i> Kurse</a>
+                <a href="{{ '{{link_url::touren-trainings-und-anlaesse}}' }}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-hidden="true" aria-label="Touren"><i style="width:20px;font-size:1rem !important;" class="far fa-mountain"></i> Touren</a>
+
+                <!-- Searchbar toggler -->
+                <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
+                    <i class="fal fa-search" aria-label="Suche" title="Suche"></i>
+                </button>
+                <!-- End Searchbar toggler -->
+
+                <!-- Navbar toggler mobile -->
+                <button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation">
+                    <i class="fal fa-lg fa-bars" title="Navigation öffnen"></i>
+                </button>
+                <!-- End Navbar toggler mobile -->
+
+            </div>
+        </div>
+    </div>
+
     <!-- Search module -->
     <!-- indexer::continue -->
     {{ '{{insert_module::353}}' }}

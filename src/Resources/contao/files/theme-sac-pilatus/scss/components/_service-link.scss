@@ -6,7 +6,7 @@
     @include rfs(4.5rem, width);
     @include rfs(4.5rem, height);
     @include rfs(.1rem, padding);
-    @include rfs(4.25rem, font-size);
+    @include rfs(3.5rem, font-size);
     margin-bottom: 0;
     color: #333;
     display: flex;
@@ -34,7 +34,7 @@
     margin-bottom: 0 !important;
     @include rfs(0.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
-    @include font-size(1.8rem !important);
+    @include rfs(1.5rem, font-size);
   }
 
   .service-link-headline a {

@@ -4,7 +4,7 @@
 
   .header-navbar {
     .header-navbar-row-0 {
-      min-height: 40px;
+      //min-height: 40px;
       font-size: $font-size-sm;
       @include media-breakpoint-up(lg) {
         font-size: $font-size-base;
@@ -46,7 +46,7 @@
           height: 80px;
         }
         @media (min-width: 1600px) {
-          height: 100px;
+          height: 95px;
         }
         width: auto;
       }

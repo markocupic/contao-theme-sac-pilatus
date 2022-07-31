@@ -13,63 +13,66 @@
     min-height: 490px;
   }
   @include media-breakpoint-up(xl) {
-    min-height: 570px;
+    // min-height: 550px;
   }
 
   @media (min-width: 1800px) {
-    min-height: 650px;
+    //min-height: 650px;
+  }
+
+
+  .heroimage-headline-box h1 {
+    //font-weight: 600 !important;
+    color: #fff !important;
+    font-weight: 200 !important;
+    margin: 0;
+  }
+
+  .heroimage-headline-box {
+    margin: 0 0 1.5rem 0 !important;
+  }
+
+  .heroimage-text-box {
+    //font-style: italic;
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .heroimage-button-box {
+    margin-top: 0
+  }
+
+  .heroimage-button-box > a {
+    @include icon-after('\f35a', false, 'inline-flex');
+    font-family: 'Roboto Slab', serif;
+
+    &:after {
+      //color: $accent-color;
+    }
+
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    .heroimage-headline-box h1 {
+      font-size: 3.5rem;
+      line-height: 5.2rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    .heroimage-headline-box h1 {
+      font-size: 4.25rem;
+      line-height: calc(6.75rem * 1.6);
+    }
+
+  }
+
+  @include media-breakpoint-up(xl) {
+    .heroimage-headline-box h1 {
+      //font-size: 5rem;
+      //line-height: 7.5rem;
+    }
   }
 
 }
-
-.heroimage-headline-box h1 {
-  //font-weight: 600 !important;
-  color: #fff !important;
-  font-weight: 200 !important;
-}
-
-.ce_heroimage_element .heroimage-headline-box {
-  margin-bottom: 2rem;
-}
-
-.ce_heroimage_element .heroimage-text-box {
-  //font-style: italic;
-  font-family: 'Roboto Slab', serif;
-}
-
-.heroimage-button-box > a {
-  @include icon-after('\f35a', false, 'inline-flex');
-  font-family: 'Roboto Slab', serif;
-
-  &:after {
-    //color: $accent-color;
-  }
-
-}
-
-@include media-breakpoint-up(sm) {
-
-  .ce_heroimage_element .heroimage-headline-box h1 {
-    font-size: 3.5rem;
-    line-height: 5.2rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-
-  .ce_heroimage_element .heroimage-headline-box h1 {
-    font-size: 4.5rem;
-    line-height: 6.75rem;
-  }
-
-}
-
-@include media-breakpoint-up(xl) {
-  .ce_heroimage_element .heroimage-headline-box h1 {
-    font-size: 5rem;
-    line-height: 7.5rem;
-  }
-}
-
-
-

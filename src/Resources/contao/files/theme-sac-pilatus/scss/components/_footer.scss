@@ -1,8 +1,8 @@
 #footer {
-  $footer-bg-color-row-1: transparent;
-  $footer-bg-color-row-2: transparent;
-  $footer-color: #8e8e8e;
-  $footer-link-color: #8e8e8e;
+  $footer-bg-color-row-1: #262626;
+  $footer-bg-color-row-2: #131313;
+  $footer-color: #fff;
+  $footer-link-color: #d2d2d2;
 
   .footer-nav {
     margin-top: 1rem;
@@ -39,9 +39,12 @@
   .footer-row-1 {
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
+    @extend .small;
+
 
     a, a > * {
       color: $footer-link-color !important;
+      @extend .small;
 
       &:hover {
         text-decoration: underline;
@@ -67,8 +70,14 @@
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
 
+    * {
+      @extend .small;
+
+    }
+
     a, a > * {
       color: $footer-link-color !important;
+      @extend .small;
 
       &:hover {
         text-decoration: underline;

@@ -30,18 +30,17 @@
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
 
+    <?php $this->block('header'); ?>
+    <?php if ($this->header): ?>
+    <header id="header">
+      <div class="inside">
+        <?= $this->header ?>
+      </div>
+    </header>
+    <?php endif; ?>
+    <?php $this->endblock(); ?>
+
     <div id="wrapper">
-
-      <?php $this->block('header'); ?>
-        <?php if ($this->header): ?>
-          <header id="header">
-            <div class="inside">
-              <?= $this->header ?>
-            </div>
-          </header>
-        <?php endif; ?>
-      <?php $this->endblock(); ?>
-
       <?php $this->sections('before'); ?>
 
       <?php $this->block('container'); ?>

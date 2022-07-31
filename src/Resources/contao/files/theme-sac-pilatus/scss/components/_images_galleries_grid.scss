@@ -24,6 +24,8 @@ figure {
   margin: -8px -4px 0 -4px !important;
 
   > * {
+    margin: 8px 0 0 0 !important;
+    padding: 0 4px !important;
     @extend .col-12;
     @extend .col-md-4;
   }

@@ -52,9 +52,8 @@ $mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30r
       #{$mc_selector} {
         font-size: calc(#{$mc_font_size_base} * #{$mc_font_size_factor});
         line-height: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.6);
-        margin-top: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.5);
+        margin-top: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1);
         margin-bottom: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * .5);
-
       }
     }
   }
