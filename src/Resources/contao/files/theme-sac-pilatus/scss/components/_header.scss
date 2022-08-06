@@ -2,7 +2,7 @@
 #header {
   background-color: #fff;
 
-  .header-navbar {
+  .header-custom-template {
     .header-navbar-row-0 {
       //min-height: 40px;
       font-size: $font-size-sm;
@@ -124,18 +124,3 @@ body.search-bar-open #header .header-navbar-row-2 {
   max-height: 300px; /* approximate max height */
 }
 
-/**
-@include media-breakpoint-up(xl) {
-  .header-navbar {
-    position: fixed;
-    z-index: 1000;
-    right: 0;
-    left: 0;
-    top: 0
-  }
-  .header-row-3 {
-    margin-top: 128px;
-  }
-}
-
-**/
