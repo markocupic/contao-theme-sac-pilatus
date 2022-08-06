@@ -15,12 +15,12 @@ body {
 #header {
   .header-navbar-row-0 > .inner {
     @extend .container-lg; // 100% width < lg (large screens)
-    max-width: 1350px;
+    max-width: $mc-container-max-width;
   }
 
   .header-navbar-row-1 > .inner {
     @extend .container-lg;
-    max-width: 1350px;
+    max-width: $mc-container-max-width;
   }
 }
 
@@ -30,10 +30,21 @@ body {
 
   #container {
     .mod_article > .article-inside.container {
-      max-width: 1350px;
+      max-width: $mc-container-max-width;
       @extend .px-2;
       @extend .px-sm-4;
       @extend .container-lg;
+      @include media-breakpoint-down(lg) {
+        width: 100% !important; // override container class
+        margin-left: 0 !important; // override container class
+        margin-right: 0 !important; // override container class
+      }
+    }
+
+    .mod_article > .article-inside.container-no-padding {
+      max-width: $mc-container-max-width;
+      @extend .container-lg;
+      @extend .px-0;
       @include media-breakpoint-down(lg) {
         width: 100% !important; // override container class
         margin-left: 0 !important; // override container class
