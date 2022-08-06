@@ -27,7 +27,9 @@ figure {
     margin: 8px 0 0 0 !important;
     padding: 0 4px !important;
     @extend .col-12;
+    @extend .col-sm-6;
     @extend .col-md-4;
+    @extend .col-lg-3;
   }
 }
 
@@ -42,8 +44,9 @@ figure {
       margin: 8px 0 0 0 !important;
       padding: 0 4px !important;
       @extend .col-12;
-      @extend .col-sm-4;
-      @extend .col-md-3;
+      @extend .col-sm-6;
+      @extend .col-md-4;
+      @extend .col-lg-3;
 
       figure {
         img {
