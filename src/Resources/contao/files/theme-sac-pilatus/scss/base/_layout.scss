@@ -34,6 +34,8 @@ body {
       @extend .px-2;
       @extend .px-sm-4;
       @extend .container-lg;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
       @include media-breakpoint-down(lg) {
         width: 100% !important; // override container class
         margin-left: 0 !important; // override container class
