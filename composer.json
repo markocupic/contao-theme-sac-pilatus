@@ -29,7 +29,7 @@
     "markocupic/contao-sidebar-navigation": "^1.0",
     "markocupic/service-link-bundle": "^1.0",
     "markocupic/contao-heroimage-bundle": "^1.0",
-    "markocupic/bootstrap_responsive_youtube_embed": "^1.0",
+    "markocupic/bootstrap_responsive_youtube_embed": "^2.1",
     "markocupic/contao-article-class-select-bundle": "^2.0",
     "markocupic/bootstrap-carousel-bundle": "^1.0",
     "stefansl/contao-divider-bundle": "^v1.0",
