@@ -14,7 +14,9 @@ declare(strict_types=1);
 
 use Contao\System;
 
-if (TL_MODE === 'FE') {
+$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+
+if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isFrontendRequest($request)) {
     // Head tags
     $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
     $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
