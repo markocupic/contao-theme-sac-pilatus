@@ -14,9 +14,9 @@ declare(strict_types=1);
 
 use Contao\System;
 
-$request = System::getContainer()->get('request_stack')->getCurrentRequest(); 
+$request = System::getContainer()->get('request_stack')->getCurrentRequest();
 
-if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isFrontendRequst($request)) {
+if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isFrontendRequest($request)) {
 
     // Head tags
     $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
