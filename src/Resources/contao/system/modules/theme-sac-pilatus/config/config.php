@@ -14,9 +14,10 @@ declare(strict_types=1);
 
 use Contao\System;
 
-$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+$request = System::getContainer()->get('request_stack')->getCurrentRequest(); 
 
-if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isFrontendRequest($request)) {
+if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isFrontendRequst($request)) {
+
     // Head tags
     $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
     $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
