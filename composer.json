@@ -53,8 +53,7 @@
     "contao": {
       "sources": {
         "src/Resources/contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
-        "src/Resources/contao/files/theme-sac-pilatus": "files/theme-sac-pilatus",
-        "src/Resources/contao/system/modules/theme-sac-pilatus": "system/modules/theme-sac-pilatus"
+        "src/Resources/contao/files/theme-sac-pilatus": "files/theme-sac-pilatus"
       }
     }
   }
