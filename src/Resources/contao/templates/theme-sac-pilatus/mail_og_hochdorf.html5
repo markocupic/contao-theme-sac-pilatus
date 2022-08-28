@@ -1,70 +1,308 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<!-- Generated with https://grapesjs.com/demo-newsletter-editor.html -->
+<!-- Generator: https://app.bootstrapemail.com/editor/documents -->
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=<?= $this->charset ?>">
-  <meta name="Generator" content="Contao Open Source CMS">
+  <!-- Compiled with Bootstrap Email version: 1.3.1 --><meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title><?= $this->title ?></title>
-  <?= $this->css ?>
+  <style type="text/css">
+      body,table,td{font-family:Helvetica,Arial,sans-serif !important}.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:150%}a{text-decoration:none}*{color:inherit}a[x-apple-data-detectors],u+#body a,#MessageViewBody a{color:inherit;text-decoration:none;font-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit}img{-ms-interpolation-mode:bicubic}table:not([class^=s-]){font-family:Helvetica,Arial,sans-serif;mso-table-lspace:0pt;mso-table-rspace:0pt;border-spacing:0px;border-collapse:collapse}table:not([class^=s-]) td{border-spacing:0px;border-collapse:collapse}@media screen and (max-width: 600px){.w-full,.w-full>tbody>tr>td{width:100% !important}.p-3:not(table),.p-3:not(.btn)>tbody>tr>td,.p-3.btn td a{padding:12px !important}*[class*=s-lg-]>tbody>tr>td{font-size:0 !important;line-height:0 !important;height:0 !important}.s-2>tbody>tr>td{font-size:8px !important;line-height:8px !important;height:8px !important}.s-5>tbody>tr>td{font-size:20px !important;line-height:20px !important;height:20px !important}}
+  </style>
 </head>
-<body id="i0wb" style="box-sizing: border-box; margin: 0;">
-
-<table class="main-body" style="box-sizing: border-box; min-height: 150px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 100%; height: 100%; max-width: 600px; background-color: rgb(234, 236, 237);" width="100%" height="100%" bgcolor="rgb(234, 236, 237)">
-  <tbody style="box-sizing: border-box;">
-  <tr class="row" style="box-sizing: border-box; vertical-align: top;" valign="top">
-    <td class="main-body-cell" style="box-sizing: border-box; background-color: #ffffff;" bgcolor="#ffffff">
-      <table class="container" style="box-sizing: border-box; font-family: Helvetica, serif; min-height: 150px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: auto; margin-right: auto; margin-bottom: auto; margin-left: auto; height: 0px; width: 90%; max-width: 550px;" width="90%" height="0">
-        <tbody style="box-sizing: border-box;">
-        <tr style="box-sizing: border-box;">
-          <td class="container-cell" style="box-sizing: border-box; vertical-align: top; font-size: medium; padding-bottom: 50px;" valign="top">
-            <table class="c1766" style="box-sizing: border-box; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: 0px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 100%; max-width: 600px; min-height: 30px;" width="100%">
-              <tbody style="box-sizing: border-box;">
-              <tr style="box-sizing: border-box;">
-                <td class="cell c1769" style="box-sizing: border-box; width: 11%;" width="11%">
-                  <img src="https://www.sac-pilatus.ch/files/theme-sac-pilatus/images/logos/logo-header.svg" alt="Logo" class="c926" style="box-sizing: border-box; color: rgb(158, 83, 129); width: 100%; font-size: 50px;">
-                </td>
-                <td class="cell c1776" style="box-sizing: border-box; width: 70%; vertical-align: middle;" width="70%" valign="middle">
-                  <div class="c1144" style="box-sizing: border-box; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; font-size: 17px; font-weight: 300;">SAC Pilatus OG Hochdorf
-                  </div>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="card" style="box-sizing: border-box; max-width: 600px; min-height: 150px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-bottom: 20px; height: 0px;" height="0">
-              <tbody style="box-sizing: border-box;">
-              <tr style="box-sizing: border-box;">
-                <td class="card-cell" style="box-sizing: border-box; background-color: rgb(255, 255, 255); overflow-x: hidden; overflow-y: hidden; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: center;" bgcolor="rgb(255, 255, 255)" align="center">
-                  <img src="https://www.sac-pilatus.ch/files/fileadmin/page_assets/hero_images/Urbachtal.jpg" alt="SAC Pilatus Image" class="c1271" style="box-sizing: border-box; width: 100%; max-width: 600px; margin-top: 0px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; font-size: 50px; color: rgb(120, 197, 214); line-height: 250px; text-align: center;">
-                  <table class="table100 c1357" style="box-sizing: border-box; width: 100%; min-height: 150px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-collapse: collapse;" width="100%" height="0">
-                    <tbody style="box-sizing: border-box;">
-                    <tr style="box-sizing: border-box;">
-                      <td class="card-content" style="box-sizing: border-box; font-size: 13px; line-height: 20px; color: rgb(111, 119, 125); padding-top: 10px; padding-right: 20px; padding-bottom: 0px; padding-left: 20px; vertical-align: top; text-align: left;" valign="top">
-                        <p class="card-text" style="box-sizing: border-box; text-align: left;">
-                          <?= $this->body ?>
-                        </p>
+<body class="bg-light" style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border-width: 0;" bgcolor="#f7fafc">
+<table class="bg-light body" valign="top" role="presentation" border="0" cellpadding="0" cellspacing="0" style="outline: 0; width: 100%; min-width: 100%; height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #000000; margin: 0; padding: 0; border-width: 0;" bgcolor="#f7fafc">
+  <tbody>
+  <tr>
+    <td valign="top" style="line-height: 24px; font-size: 16px; margin: 0;" align="left" bgcolor="#f7fafc">
+      <table class="container" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+        <tbody>
+        <tr>
+          <td align="center" style="line-height: 24px; font-size: 16px; margin: 0; padding: 0 16px;">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" role="presentation">
+              <tbody>
+              <tr>
+                <td width="600">
+            <![endif]-->
+            <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 600px; margin: 0 auto;">
+              <tbody>
+              <tr>
+                <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                  <table class="header-section p-3 bg-white w-100 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" bgcolor="#ffffff" width="100%">
+                    <tbody>
+                    <tr>
+                      <td style="line-height: 24px; font-size: 16px; width: 100%; margin: 0; padding: 12px;" align="left" bgcolor="#ffffff" width="100%">
+                        <div class="row" style="margin-right: -24px;">
+                          <table class="" role="presentation" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%;" width="100%">
+                            <tbody>
+                            <tr>
+                              <td class="col-6" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; width: 50%; margin: 0;" align="left" valign="top">
+                                <a href="https://www.sac-pilatus.ch" style="color: #0d6efd;">
+                                  <img src="https://www.sac-pilatus.ch/files/theme-sac-pilatus/images/logos/logo-header.png" width="120" height="50" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; border-style: none; border-width: 0;">
+                                  <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                    <tbody>
+                                    <tr>
+                                      <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                        &#160;
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                  <h6 class="" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 16px; line-height: 19.2px; margin: 0;" align="left">Newsletter SAC Pilatus <br />OG Hochdorf</h6>
+                                  <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                    <tbody>
+                                    <tr>
+                                      <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                        &#160;
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </a>
+                              </td>
+                              <td class="col-6" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; width: 50%; margin: 0;" align="left" valign="top">
+                                <table class="ax-right" role="presentation" align="right" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                                      <div class="text-sm" style="font-size: 14px; line-height: 16.8px;">
+                                        <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/touren-trainings-und-anlaesse.html" style="color: #a0aec0; padding: 12px;">Touren</a>
+                                        <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/kurse.html" style="color: #a0aec0; padding: 12px;">Kurse</a>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div class="">
+                          <img class="img-fluid" src="https://4ae-racing-team.ch/files/gallery_creator_albums/hoh-jagiburg-via-rhreni/hohjaegiburg-via-roehreni_66.jpg" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; width: 100%; border-style: none; border-width: 0;" width="100%">
+                        </div>
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
                       </td>
                     </tr>
                     </tbody>
                   </table>
-                  <table class="c1542" style="box-sizing: border-box; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; width: 100%;" width="100%">
-                    <tbody style="box-sizing: border-box;">
-                    <tr style="box-sizing: border-box;">
-                      <td id="c1544" class="card-footer" style="box-sizing: border-box; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 0px; text-align: center;  font-size: 13px; line-height: 20px; color: rgb(111, 119, 125);" align="center">
-                        <em><strong>OG Hochdorf</strong></em><br />
-                        <em>Schweizer Alpenclub SAC, Sektion Pilatus, Bireggring 1, 6005 Luzern</em>
+                  <table class="main-section p-3 bg-white w-100 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" bgcolor="#ffffff" width="100%">
+                    <tbody>
+                    <tr>
+                      <td style="line-height: 24px; font-size: 16px; width: 100%; margin: 0; padding: 12px;" align="left" bgcolor="#ffffff" width="100%">
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div class="">
+                          <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                            <tbody>
+                            <tr>
+                              <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
+                                &#160;
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <table class="hr" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                            <tbody>
+                            <tr>
+                              <td style="line-height: 24px; font-size: 16px; border-top-width: 1px; border-top-color: #e2e8f0; border-top-style: solid; height: 1px; width: 100%; margin: 0;" align="left">
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                            <tbody>
+                            <tr>
+                              <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
+                                &#160;
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div class="">
+                          <p class="text-gray-600 body-text text-sm" style="line-height: 16.8px; font-size: 14px; color: #718096; width: 100%; margin: 0;" align="left">
+                            <?= $this->body ?>
+                          </p>
+                        </div>
+                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                          <tbody>
+                          <tr>
+                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                              &#160;
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
                       </td>
                     </tr>
-                    <tr style="box-sizing: border-box;">
-                      <td id="c1545" class="card-footer" style="box-sizing: border-box; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 0px; text-align: center;" align="center">
-                        <a target="_blank" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" class="button" style="box-sizing: border-box; font-size: 12px; padding-top: 10px; padding-right: 20px; padding-bottom: 10px; padding-left: 20px; background-color: #ff001c; color: rgb(255, 255, 255); text-align: center; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-weight: 300;">Newsletter abbestellen</a>
+                    </tbody>
+                  </table>
+                  <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                    <tbody>
+                    <tr>
+                      <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                        &#160;
                       </td>
                     </tr>
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                  <div class="footer-section w-100">
+                    <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
+                          &#160;
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="hr" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; border-top-width: 1px; border-top-color: #e2e8f0; border-top-style: solid; height: 1px; width: 100%; margin: 0;" align="left">
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
+                          &#160;
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                          <p class="text-sm text-gray-300" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                            <strong>SAC Sektion Pilatus</strong>
+                          </p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                          <p class="text-sm text-gray-300" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                            Schweizer Alpenclub SAC, Sektion Pilatus
+                          </p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                          <p class="text-sm text-gray-300" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                            Bireggring 1, 6005 Luzern
+                          </p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                          &#160;
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                          <p class="text-sm text-gray-300" style="line-height: 16.8px; font-size: 14px; color: #e2e8f0; width: 100%; margin: 0;" align="left">
+                            <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" target="_blank" style="color: #a0aec0;">Newsletter abbestellen</a>
+                          </p>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                      <tbody>
+                      <tr>
+                        <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                          &#160;
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                    <tbody>
+                    <tr>
+                      <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                        &#160;
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
                 </td>
               </tr>
               </tbody>
             </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <![endif]-->
           </td>
         </tr>
         </tbody>
@@ -75,4 +313,3 @@
 </table>
 </body>
 </html>
-
