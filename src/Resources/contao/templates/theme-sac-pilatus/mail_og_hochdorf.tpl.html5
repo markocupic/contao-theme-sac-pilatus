@@ -1,0 +1,64 @@
+<html>
+<!-- This is the template for the Bootstrap email template generator: https://app.bootstrapemail.com/editor/documents -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>[BODY]</title>
+</head>
+
+<body class="bg-light">
+<div class="container">
+  <div class="header-section p-3 bg-white w-100">
+    <div class="row">
+      <div class="col-6">
+        <a href="https://www.sac-pilatus.ch">
+          <img src="https://www.sac-pilatus.ch/files/theme-sac-pilatus/images/logos/logo-header.png" width="120" height="50">
+          <h6 class="my-2 text-red-600 fw-700">Newsletter SAC Pilatus<br>OG Hochdorf</h6>
+        </a>
+      </div>
+
+      <div class="col-6">
+        <div class="ax-right text-sm ">
+          <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/touren-trainings-und-anlaesse.html">Touren</a>
+          <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/kurse.html">Kurse</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-2">
+      <img class="img-fluid" src="https://4ae-racing-team.ch/files/gallery_creator_albums/hoh-jagiburg-via-rhreni/hohjaegiburg-via-roehreni_66.jpg">
+    </div>
+  </div>
+
+  <div class="main-section p-3 bg-white w-100">
+    <div class="my-2">
+      <hr>
+    </div>
+
+    <div class="my-2">
+      <p class="text-gray-600 body-text text-sm">
+        [BODY]
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-section w-100 my-2">
+    <hr>
+    <p class="ax-center text-sm text-gray-500 fw-700 my-2">
+      SAC Sektion Pilatus
+    </p>
+    <p class="ax-center text-sm text-gray-500">
+      Schweizer Alpenclub SAC, Sektion Pilatus
+    </p>
+    <p class="ax-center text-sm text-gray-500">
+      Bireggring 1, 6005 Luzern
+    </p>
+
+    <p class="ax-center text-sm text-gray-300 my-2">
+      <br>
+      <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" target="_blank">Newsletter abbestellen</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
