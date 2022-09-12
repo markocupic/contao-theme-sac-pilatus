@@ -51,7 +51,7 @@
                                     </tr>
                                     </tbody>
                                   </table>
-                                  <h6 class="text-red-600 fw-700" style="color: #b02a37; padding-top: 0; padding-bottom: 0; font-weight: 700 !important; vertical-align: baseline; font-size: 16px; line-height: 19.2px; margin: 0;" align="left">Newsletter SAC Pilatus<br>
+                                    <h6 class="text-blue-600 fw-700" style="color: #026ca0; padding-top: 0; padding-bottom: 0; font-weight: 700 !important; vertical-align: baseline; font-size: 16px; line-height: 19.2px; margin: 0;" align="left">Newsletter SAC Pilatus<br>
                                     OG Hochdorf</h6>
                                   <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                     <tbody>
@@ -70,8 +70,8 @@
                                   <tr>
                                     <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
                                       <div class="text-sm" style="font-size: 14px; line-height: 16.8px;">
-                                        <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/touren-trainings-und-anlaesse.html" style="color: #a0aec0; padding: 12px;">Touren</a>
-                                        <a class="p-3 text-gray-500" href="https://www.sac-pilatus.ch/kurse.html" style="color: #a0aec0; padding: 12px;">Kurse</a>
+                                        <a class="p-3 text-red-600" href="https://www.sac-pilatus.ch/touren-trainings-und-anlaesse.html" style="color: #be0b15; padding: 12px;">Touren</a>
+                                        <a class="p-3 text-red-600" href="https://www.sac-pilatus.ch/kurse.html" style="color: #be0b15; padding: 12px;">Kurse</a>
                                       </div>
                                     </td>
                                   </tr>
@@ -92,7 +92,7 @@
                           </tbody>
                         </table>
                         <div class="">
-                          <img class="img-fluid" src="https://4ae-racing-team.ch/files/gallery_creator_albums/hoh-jagiburg-via-rhreni/hohjaegiburg-via-roehreni_66.jpg" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; width: 100%; border-style: none; border-width: 0;" width="100%">
+                          <img class="img-fluid" src="https://www.sac-pilatus.ch/files/fileadmin/page_assets/newsletter/newsletter-800x340.jpg" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; width: 100%; border-style: none; border-width: 0;" width="100%">
                         </div>
                         <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                           <tbody>
@@ -121,53 +121,7 @@
                           </tbody>
                         </table>
                         <div class="">
-                          <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                            <tbody>
-                            <tr>
-                              <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
-                                &#160;
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                          <table class="hr" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
-                            <tbody>
-                            <tr>
-                              <td style="line-height: 24px; font-size: 16px; border-top-width: 1px; border-top-color: #e2e8f0; border-top-style: solid; height: 1px; width: 100%; margin: 0;" align="left">
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                          <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                            <tbody>
-                            <tr>
-                              <td style="line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;" align="left" width="100%" height="20">
-                                &#160;
-                              </td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                          <tbody>
-                          <tr>
-                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
-                              &#160;
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                        <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                          <tbody>
-                          <tr>
-                            <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
-                              &#160;
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                        <div class="">
-                          <p class="text-gray-600 body-text text-sm" style="line-height: 16.8px; font-size: 14px; color: #718096; width: 100%; margin: 0;" align="left">
+                          <p class="text-gray-800 body-text text-sm" style="line-height: 16.8px; font-size: 14px; color: #2d3748; width: 100%; margin: 0;" align="left">
                             <?= $this->body ?>
                           </p>
                         </div>
@@ -254,7 +208,18 @@
                       <tr>
                         <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
                           <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
-                            Schweizer Alpenclub SAC, Sektion Pilatus
+                            Schweizer Alpenclub SAC
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                    <tbody>
+                      <tr>
+                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                          <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                            Sektion Pilatus
                           </p>
                         </td>
                       </tr>
@@ -265,7 +230,7 @@
                       <tr>
                         <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
                           <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
-                            Bireggring 1, 6005 Luzern
+                            Ortsgruppe Hochdorf, 6280 Hochdorf
                           </p>
                         </td>
                       </tr>
@@ -284,9 +249,8 @@
                       <tbody>
                       <tr>
                         <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
-                          <p class="text-sm text-gray-300" style="line-height: 16.8px; font-size: 14px; color: #e2e8f0; width: 100%; margin: 0;" align="left">
-                            <br>
-                            <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" target="_blank" style="color: #a0aec0;">Newsletter abbestellen</a>
+                          <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                            <a class="text-gray-500" href="https://www.sac-pilatus.ch/" target="_blank" style="color: #a0aec0;">www.sac-pilatus.ch</a>
                           </p>
                         </td>
                       </tr>
@@ -299,6 +263,17 @@
                           &#160;
                         </td>
                       </tr>
+                      </tbody>
+                    </table>
+                    <table class="ax-center" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tbody>
+                        <tr>
+                          <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
+                            <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
+                              <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" target="_blank" style="color: #a0aec0;">Newsletter abbestellen</a>
+                            </p>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
