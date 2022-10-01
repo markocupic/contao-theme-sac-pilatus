@@ -13,7 +13,11 @@ h1, h2, h3, h4, h5, h6, .ce_headline {
   color: #000;
 }
 
-h2, .ce_headline{
+strong, #main .mod_article strong > * {
+  @extend .fw-bold;
+}
+
+h2, .ce_headline {
   font-weight: 700;
 }
 
@@ -72,7 +76,8 @@ $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "0.9rem", "small,.small
     }
   }
 }
-div,p,li,legend,label,td,th {
+
+div, p, li, legend, label, td, th {
   @include rfs(1.124rem, 'font-size');
   font-weight: 400;
 }
