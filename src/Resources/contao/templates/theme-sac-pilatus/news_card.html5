@@ -13,7 +13,7 @@
       <p class="card-date m-0">
         <time datetime="<?= $this->datetime ?>" itemprop="datePublished"><small><?= $this->date ?></small></time>
       </p>
-      <a href="<?= $this->href ?>" class="text-decoration-none" title="weiterlesen">
+      <a href="{{news_url::<?= $this->id ?>}}" class="text-decoration-none" title="weiterlesen">
         <h6 class="card-title mt-0"><?= $this->newsHeadline ?></h6>
       </a>
       <p class="card-news-teaser"><?= \Contao\StringUtil::substr($this->teaser,100) ?></p>
