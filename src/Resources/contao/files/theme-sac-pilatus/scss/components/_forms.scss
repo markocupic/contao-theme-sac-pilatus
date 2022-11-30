@@ -32,10 +32,8 @@ button:hover * {
   color: #fff;
 }
 
-
 #main {
   .formbody {
-
 
     fieldset {
       margin: $spacer 0 2rem 0;
@@ -73,9 +71,14 @@ button:hover * {
 
     // Special treatment for radio or checkbox widgets
     .widget .checkbox_container, .widget .radio_container {
+      display: flex;
+      flex-direction: column;
+
+      #ctrl_newsletter_367 > span:nth-child(3)
       span {
         display: flex;
         align-items: baseline;
+        margin-down: .5rem;
       }
     }
 
@@ -93,7 +96,6 @@ button:hover * {
     label {
       font-weight: bold;
     }
-
 
     span.mandatory, .captcha_text {
       display: inline-block !important;
@@ -114,7 +116,6 @@ button:hover * {
     }
 
   }
-
 
 }
 
