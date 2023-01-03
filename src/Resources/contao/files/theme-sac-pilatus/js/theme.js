@@ -1,3 +1,11 @@
+/**
+ * Initialize popper.js tooltips
+ */
+document.addEventListener('DOMContentLoaded', (event) => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}, false);
+
 /** Remove leading zeros in login forms **/
 (function ($) {
     $(document).ready(function () {
@@ -131,8 +139,8 @@
                     el.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.target.closest('li')
-                            .querySelector('.toggle-submenu')
-                            .click();
+                        .querySelector('.toggle-submenu')
+                        .click();
                     });
                 }
             });
@@ -241,3 +249,6 @@
         });
     });
 })(jQuery);
+
+
+
