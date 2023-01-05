@@ -3,7 +3,18 @@
  */
 document.addEventListener('DOMContentLoaded', (event) => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => {
+        if (tooltipTriggerEl.hasAttribute('data-title')) {
+            title = tooltipTriggerEl.getAttribute('data-title');
+            tooltipTriggerEl.setAttribute('data-bs-title', title);
+            tooltipTriggerEl.setAttribute('title', title);
+            new bootstrap.Tooltip(tooltipTriggerEl);
+        } else {
+            new bootstrap.Tooltip(tooltipTriggerEl);
+        }
+    });
+
 }, false);
 
 /** Remove leading zeros in login forms **/
