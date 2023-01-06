@@ -4,21 +4,21 @@
         <div class="inner d-flex ps-3 pe-3 pt-2 pb-2 align-items-center">
             <div class="ms-0 me-auto d-none d-sm-flex align-items-center small">{{ '{{link_open::geschaeftsstelle}}' }}Zur Geschäftsstelle{{ '{{link_close}}' }}</div>
             <div class="ms-auto me-0 d-flex align-items-center">
-                {% if hasLoggedInFrontendUser() is same as true %}
+                {% if has_logged_in_frontend_user() is same as true %}
                     <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
 
                     <div class="ms-2 d-none d-sm-block small">{{ '{{user::firstname}}' }} {{ '{{user::lastname}}' }}</div>
                     <div class="ms-3">
-                        {% set user = getLoggedInFrontendUser() %}
+                        {% set user = get_logged_in_frontend_user() %}
                         {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
                     </div>
                 {% endif %}
 
-                {% if hasLoggedInFrontendUser() is same as false %}
+                {% if has_logged_in_frontend_user() is same as false %}
                     <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
                 {% endif %}
 
-                {% if hasLoggedInFrontendUser() is same as true %}
+                {% if has_logged_in_frontend_user() is same as true %}
                     <a href="{{ '{{link_url::member-profile}}' }}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
                 {% endif %}
             </div>
