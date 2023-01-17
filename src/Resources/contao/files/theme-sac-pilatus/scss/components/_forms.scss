@@ -5,6 +5,7 @@
 
 input.text, input.captcha, textarea, .widget > select {
   @extend .form-control;
+  background-color: #fff;
 }
 
 button {

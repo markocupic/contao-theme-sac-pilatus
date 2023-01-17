@@ -6,17 +6,18 @@
   .sac-ev-fb-form {
     padding-top: 2rem;
     background-color: #e9ecef;
+    background-color: transparent;
     padding: 2rem;
   }
 
   button[name="mp_form_pageswitch"][value="continue"] {
     @extend .btn;
-    @extend .btn-danger;
+    @extend .btn-success;
   }
 
   button[name="mp_form_pageswitch"][value="back"] {
     @extend .btn;
-    @extend .btn-success;
+    @extend .btn-light;
   }
 
   .widget {
