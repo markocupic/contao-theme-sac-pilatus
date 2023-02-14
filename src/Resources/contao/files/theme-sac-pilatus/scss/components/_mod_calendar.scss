@@ -146,53 +146,15 @@
   }
 
   .event-state-icon {
-    font-family: $icon-font-name;
-    margin-right: 6px;
-    font-style: normal;
-    font-weight: 900;
-    @include font-size(1.125rem !important);
-  }
+    margin-top: -0.175rem;
+    margin-right: 0.5rem;
 
-  .event-state-icon.event_status_1:before {
-    content: "\f111";
-    color: $green;
+    img {
+      width: 1rem !important;
+      height: 1rem !important;
+      max-width: initial !important;
+    }
   }
-
-  .event-state-icon.event_status_2:before {
-    content: "\f056";
-    color: $red;
-  }
-
-  .event-state-icon.event_status_3:before {
-    content: "\f111";
-    color: $red;
-  }
-
-  .event-state-icon.event_status_4:before {
-    content: "\f05e";
-    color: $red;
-  }
-
-  .event-state-icon.event_status_5:before {
-    content: "\f111";
-    color: $orange;
-  }
-
-  .event-state-icon.event_status_6:before {
-    content: "\f06a";
-    color: $orange;
-  }
-
-  .event-state-icon.event_status_7:before {
-    content: "\f06a";
-    color: #000000;
-  }
-
-  .event-state-icon.event_status_8:before {
-    content: "\f28b";
-    color: $red;
-  }
-
 }
 
 .event-item-course.last {
@@ -207,7 +169,6 @@
 }
 
 .event-detailview {
-
 
   .event-state-headline {
     color: $red;
