@@ -1,0 +1,70 @@
+<script type="text/javascript" src="bundles/markocupiccontaosidebarnavigation/js/sidebar_navigation.min.js"></script>
+
+{# {{ addCssResource('bundles/markocupiccontaosidebarnavigation/css/sidebar_navigation.css') }} #}
+
+<!-- indexer::stop -->
+{% set classes = ['sidebar-navigation' , 'block'] %}
+{% if class is defined and class is not empty %}
+    {% set classes = classes|merge(class|split(' ')) %}
+{% endif %}
+{% set class = classes|join(' ') %}
+
+<nav class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
+
+    {% if headline is defined and headline is not empty %}
+    <{{ hl }}>{{ headline }}</{{ hl }}>
+    {% endif %}
+
+    <a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
+    {{ items|raw }}
+    <a id="{{ skipId }}" class="invisible">&nbsp;</a>
+
+</nav>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (e) => {
+
+        if (ContaoSidebarNavigation) {
+            new ContaoSidebarNavigation({
+                'submenuContainer': '.submenu',
+                'followSubmenuContainerLink': true,
+                'submenuTogglerHtml': '<button class="toggle-submenu" role="button"></button>',
+            });
+        }
+    });
+</script>
+
+<script>
+    // Toggle the sidebar with the mobile navigation
+    window.addEventListener('DOMContentLoaded', (e) => {
+        let sidebar = document.getElementById("sidebar");
+        let sidebarOverlay = document.createElement("div");
+
+        sidebarOverlay.setAttribute('id', 'sidebarOverlay');
+
+        document.body.prepend(sidebarOverlay);
+        document.body.prepend(sidebar);
+
+        let toggleEl = document.querySelectorAll('.navigation-toggler, #sidebarOverlay');
+        let i;
+
+        for (i = 0; i < toggleEl.length; ++i) {
+            toggleEl[i].addEventListener('click', (e) => {
+                document.body.classList.toggle('sidebar-open');
+
+                if (document.body.classList.contains('sidebar-open')) {
+                    sidebar.style.visibility = 'visible';
+                } else {
+                    window.setTimeout(() => {
+                        sidebar.style.visibility = 'hidden';
+                    }, 600);
+                }
+            })
+        }
+
+        window.addEventListener('resize', (e) => {
+            document.body.classList.remove('sidebar-open');
+        });
+    });
+</script>
+<!-- indexer::continue -->

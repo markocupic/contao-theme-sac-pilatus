@@ -143,6 +143,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
 
         /** Sidebar navigation: accordion behavior when clicking on page-container **/
+        /*
+         * No more used
+
         let navItems = document.querySelectorAll('.mod_navigation.sidebar-navigation a.submenu');
         if (navItems) {
             navItems.forEach((el) => {
@@ -156,6 +159,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             });
         }
+        */
     });
 })(jQuery);
 

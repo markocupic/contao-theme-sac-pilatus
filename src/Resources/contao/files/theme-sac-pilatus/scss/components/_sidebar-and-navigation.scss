@@ -286,11 +286,16 @@ body.sidebar-open {
       }
 
       > .toggle-submenu:before {
+        color: $red !important;
         font-family: $icon-font-name;
         // fa fal-plus-circle
         content: "\f055";
         font-size: 18px;
         font-style: normal;
+      }
+      
+      > .toggle-submenu:before:hover {
+        color: $red !important;
       }
 
       &.expanded {
@@ -303,16 +308,6 @@ body.sidebar-open {
           content: "\f056";
           //color: $red;
         }
-      }
-    }
-
-    > li {
-      > .toggle-submenu:before {
-        color: $gray-500 !important;
-      }
-
-      > .toggle-submenu:hover:before {
-        color: $nav-font-color !important;
       }
     }
   }
