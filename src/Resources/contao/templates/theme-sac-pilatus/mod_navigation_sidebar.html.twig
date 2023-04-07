@@ -3,6 +3,16 @@
 {# {{ addCssResource('bundles/markocupiccontaosidebarnavigation/css/sidebar_navigation.css') }} #}
 
 <!-- indexer::stop -->
+<div class="sidebar-top-container">
+    <h5 class="sidebar-title invisible">NAVIGATION</h5>
+    <div class="navigation-toggler" title="Navigation schliessen" role="button">
+        <button class="btn btn-lg btn-link" title="Navigation schliessen">
+            <i class="fal fa-times" aria-hidden="true"></i>
+        </button>
+        <span class="visually-hidden">Navigation</span>
+    </div>
+</div>
+
 {% set classes = ['sidebar-navigation' , 'block'] %}
 {% if class is defined and class is not empty %}
     {% set classes = classes|merge(class|split(' ')) %}
