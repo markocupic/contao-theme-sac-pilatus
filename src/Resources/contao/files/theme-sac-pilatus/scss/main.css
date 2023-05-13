@@ -13372,7 +13372,7 @@ body.sidebar-open #sidebar {
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > a:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > strong:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > span:before {
   font-family: "Font Awesome 5 Pro" !important;
   padding-right: 0.75rem;
-  content: "\f6fc";
+  content: "\f138";
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > a:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > strong:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > span:before {
   text-decoration: none !important;
@@ -14892,5 +14892,3 @@ eg.
   height: 300px;
   max-width: 100%;
 }
-
-/*# sourceMappingURL=main.css.map */
