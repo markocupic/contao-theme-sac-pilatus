@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "contao/test-case": "^4.0 || ^5.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-community-alliance/composer-plugin": false
+        }
+    }
+}

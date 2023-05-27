@@ -1,0 +1,126 @@
+
+#header {
+  background-color: #fff;
+
+  .header-custom-template {
+    .header-navbar-row-0 {
+      //min-height: 40px;
+      font-size: $font-size-sm;
+      @include media-breakpoint-up(lg) {
+        font-size: $font-size-base;
+      }
+      @media (min-width: 1600px) {
+        font-size: $font-size-base;
+      }
+      background-color: $blue;
+      //border: 1px solid #343434;
+      * {
+        //font-size: small;
+        color: #fff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a.email {
+        border: 0;
+
+        &:hover {
+          //color: $gray-800;
+        }
+      }
+
+      a.header-login-button {
+        line-height: 1;
+      }
+    }
+
+    .header-navbar-row-1 {
+      background-color: #fff;
+      border-bottom: 1px solid $gray-200;
+
+      .logo-header {
+        height: 60px;
+        @include media-breakpoint-up(lg) {
+          height: 80px;
+        }
+        @media (min-width: 1600px) {
+          height: 95px;
+        }
+        width: auto;
+      }
+
+      .navbar-header {
+        flex-grow: 1;
+        justify-content: center;
+      }
+
+      .header-search-form {
+        margin: 0;
+      }
+
+      // Nav icon & search icon
+      .header-button-container {
+        .btn {
+          cursor: pointer !important;
+        }
+
+        .svg-inline--fa, i.fal, i.fas, i.fa {
+          font-size: 1.625rem !important;
+        }
+      }
+
+      .fa-search {
+        color: $gray-900;
+        @include transition(color);
+
+        &:hover {
+          color: #d50000;
+        }
+      }
+
+      .fa-bars {
+        color: #000000;
+      }
+    }
+
+    .header-navbar-row-2 {
+      max-height: 0;
+      background-color: #fff;
+      transition: max-height ease-in-out 1s;
+      overflow: hidden;
+
+      .form-control {
+        width: 300px;
+      }
+
+      .btn {
+        //background-color: #08c;
+      }
+
+      input[type="search"] {
+        text-align: center;
+        color: #000;
+        background-color: #fff;
+        border-color: #eee;
+
+      }
+
+    }
+  }
+
+  .header-row-3 {
+    .header-banner-image {
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+// Search bar open
+body.search-bar-open #header .header-navbar-row-2 {
+  max-height: 300px; /* approximate max height */
+}
+

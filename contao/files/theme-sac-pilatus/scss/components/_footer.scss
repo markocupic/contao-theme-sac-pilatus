@@ -1,0 +1,102 @@
+#footer {
+  $footer-bg-color-row-1: #262626;
+  $footer-bg-color-row-2: #131313;
+  $footer-color: #fff;
+  $footer-link-color: #d2d2d2;
+
+  .footer-nav {
+    margin-top: 1rem;
+
+    ul {
+      text-align: center;
+    }
+
+    li {
+      display: inline;
+      margin: 0;
+      line-height: 2;
+      padding: 0 0.75rem;
+
+      * {
+        // Extend font-size, line-height & margin from .small (@see type.scss)
+        @extend .small;
+        color: $footer-color !important;
+        font-weight: normal !important;
+        text-decoration: none;
+      }
+    }
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  [class*="footer-row-"] {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  .footer-row-1 {
+    background-color: $footer-bg-color-row-1;
+    color: $footer-color;
+    @extend .small;
+
+
+    a, a > * {
+      color: $footer-link-color !important;
+      @extend .small;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-position: under;
+        color: $footer-link-color;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .row > div > div {
+      padding: 0 8px;
+    }
+  }
+
+  .footer-row-2 {
+    .container {
+      padding-top: 2rem;
+    }
+
+    background-color: $footer-bg-color-row-2;
+    color: $footer-color !important;
+
+    * {
+      @extend .small;
+
+    }
+
+    a, a > * {
+      color: $footer-link-color !important;
+      @extend .small;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-position: under;
+        color: $footer-link-color;
+      }
+    }
+
+    .title {
+      color: $footer-color;
+    }
+
+    #socialIcons ul {
+      display: flex;
+
+      li {
+        margin-right: 5px;
+      }
+    }
+  }
+
+}

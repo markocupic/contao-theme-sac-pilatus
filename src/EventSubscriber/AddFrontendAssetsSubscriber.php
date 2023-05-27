@@ -22,8 +22,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private ScopeMatcher $scopeMatcher,
-        private string $fontAwesomeKitKey,
+        private readonly ScopeMatcher $scopeMatcher,
+        private readonly string $fontAwesomeKitKey,
     ) {
     }
 

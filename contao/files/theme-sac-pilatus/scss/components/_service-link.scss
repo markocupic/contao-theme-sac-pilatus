@@ -1,0 +1,67 @@
+.ce_serviceLink {
+  @include rfs(3rem, padding-top);
+  @include rfs(3rem, padding-bottom);
+
+  [class*="fa-"] {
+    @include rfs(4.5rem, width);
+    @include rfs(4.5rem, height);
+    @include rfs(.1rem, padding);
+    @include rfs(3.5rem, font-size);
+    margin-bottom: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    @include transition(color);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .service-link-wrapper {
+    > * {
+      text-align: center !important;
+    }
+  }
+
+  .service-link-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .service-link-headline {
+    margin-bottom: 0 !important;
+    @include rfs(0.75rem, margin-top);
+    @include rfs(1rem, margin-bottom);
+    @include rfs(1.5rem, font-size);
+  }
+
+  .service-link-headline a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .service-link-button {
+    text-align: center;
+    @extend .more;
+  }
+}
+
+.article-blue .ce_serviceLink {
+  [class*="fa-"] {
+    color: #000;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .service-link-headline, .service-link-headline a {
+    color: #fff;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

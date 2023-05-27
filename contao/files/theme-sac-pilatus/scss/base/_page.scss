@@ -1,0 +1,20 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+
+
+
+  // The font family
+  font-family: $font-family-base;
+
+  // Go easy on the eyes and use something other than `#000` for text
+  color: darken($body-color, 90);
+
+  background-color: $body-bg;
+}
+

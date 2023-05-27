@@ -1,0 +1,23 @@
+.scroll-to-top {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  @extend .ratio;
+  @extend .ratio-1x1;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  width: 50px;
+  background: $blue;
+  color: #fff;
+
+  display: none;
+  border-radius: 0;
+  opacity: 1;
+  @include transition(background-color);
+}

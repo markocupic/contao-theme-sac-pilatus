@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpstan/phpstan": "^1.10",
+        "contao/test-case": "^4.13 || ^5.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-community-alliance/composer-plugin": false
+        }
+    }
+}

@@ -1,0 +1,452 @@
+$sidebar-bg-color: #000000;
+$nav-bg-hover-color: #f6f6f6;
+$nav-close-btn-color: #ccc;
+//$nav-bg-hover-color: $accent-color;
+
+$nav-font-color: #222;
+$nav-bg-color: #fff;
+//$nav-font-color: #333;
+/* Dropdown - main navigation header */
+
+#sidebar {
+  .navigation-toggler {
+    background: transparent;
+
+    .btn {
+      font-size: 1.75rem;
+      color: $nav-font-color;
+    }
+
+    border: 0;
+
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+#sidebarOverlay {
+  display: none;
+  opacity: 0.6 !important;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: $sidebar-bg-color !important;
+  z-index: $zindex-navbar-aside-backdrop;
+  @include transition(opacity);
+}
+
+// Thin scrollbar
+#sidebar::-webkit-scrollbar {
+  -webkit-appearance: none !important;
+  width: 6px !important;
+  background-color: #000 !important;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  border-radius: 6px !important;
+  background-color: $nav-bg-hover-color !important;
+}
+
+#sidebar {
+  display: none;
+  visibility: hidden;
+  overflow-x: hidden;
+  z-index: $zindex-navbar-aside;
+  position: fixed;
+  left: -400px;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background-color: $nav-bg-color;
+  @include transition(left, ease-in-out, 0.7s);
+
+  .sidebar-top-container {
+    @include flex-vertical-align-middle();
+    background: transparent;
+    z-index: 99;
+    height: 78px;
+    overflow: hidden;
+    border-bottom: 1px ridge $gray-400;
+    @include transition(height);
+
+    img {
+      margin: 0 $spacer;
+      width: auto;
+      max-width: 120px;
+      height: 66px;
+    }
+
+    .sidebar-title {
+      padding-left: $spacer-x;
+      color: $gray-400;
+    }
+
+    .navigation-toggler {
+      position: absolute;
+      right: $spacer;
+
+      .fa {
+        color: $nav-close-btn-color;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+body {
+  #sidebar {
+    display: block;
+    overflow-y: scroll;
+  }
+}
+
+body.sidebar-open {
+  #sidebarOverlay {
+    display: block;
+    opacity: 0;
+  }
+
+  #sidebar {
+    left: 0;
+  }
+
+}
+
+@include media-breakpoint-down(sm) {
+  #sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  body.sidebar-open {
+    #sidebar {
+      left: 0;
+    }
+
+    #wrapper, #footer {
+      display: none;
+    }
+  }
+}
+
+//https://jsfiddle.net/markocupic/br520419/
+
+.sidebar-navigation {
+  padding: $spacer 0;
+  margin: 20px 0 0 0;
+  text-align: left;
+
+  * {
+    text-decoration: none !important;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    > a,
+    > strong {
+      color: $nav-font-color !important;
+    }
+
+    > strong.active {
+      color: $nav-font-color;
+      font-weight: bold;
+    }
+
+    &:hover {
+      > a, > strong {
+        color: $nav-font-color !important;
+      }
+    }
+  }
+
+  // Hide Submenus
+  ul.level_1 {
+    display: block;
+
+    ul {
+      display: none;
+    }
+  }
+
+  // Iconfont for level_1
+  ul.level_1 {
+
+    > li:before {
+      font-family: $icon-font-name;
+      position: absolute;
+      top: 0;
+      left: 16px;
+      color: $nav-font-color;
+      width: 2.5rem;
+    }
+
+    > li.picture-o:before {
+      content: "\f03e";
+    }
+
+    > li.newspaper-o:before {
+      content: "\f1ea";
+    }
+
+    > li.users:before {
+      content: "\f0c0";
+    }
+
+    > li.bolt:before {
+      content: "\f0e7";
+    }
+
+    > li.wrench:before {
+      content: "\f0ad";
+    }
+
+    > li.newspaper-o:before {
+      content: "\f1ea ";
+    }
+
+    > li.cogs:before {
+      content: "\f085";
+    }
+
+    > li.flask:before {
+      content: "\f0c3";
+    }
+
+    > li.file-o:before {
+      content: "\f016";
+    }
+
+    > li.leanpub:before {
+      content: "\f212";
+    }
+
+    > li.handshake-o:before {
+      content: "\f2b5";
+    }
+
+    > li.school:before {
+      content: "\f19d";
+    }
+
+    > li.home:before {
+      content: "\f015";
+    }
+  }
+
+  // Borders&backgrounds
+  ul.level_1 {
+    > li {
+      border-bottom: 1px solid #e2e2e2;
+
+      &:hover {
+        background-color: $nav-bg-hover-color;
+
+        > a, > span, > strong {
+          color: #000 !important;
+        }
+      }
+    }
+  }
+
+  // Expand Icon for items with submenus
+  ul.level_1 {
+    > li.expanded {
+      background-color: $nav-bg-hover-color;
+
+      &:before, > *, > *:before {
+        color: $nav-font-color !important;
+      }
+    }
+
+    li.submenu {
+      > .toggle-submenu {
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 30px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      > .toggle-submenu:before {
+        color: $red !important;
+        font-family: $icon-font-name;
+        // fa fal-plus-circle
+        content: "\f055";
+        font-size: 18px;
+        font-style: normal;
+      }
+      
+      > .toggle-submenu:before:hover {
+        color: $red !important;
+      }
+
+      &.expanded {
+        > .toggle-submenu {
+          background-color: transparent;
+        }
+
+        > .toggle-submenu:before {
+          // minus fal fa-minus-circle
+          content: "\f056";
+          //color: $red;
+        }
+      }
+    }
+  }
+
+  $level_1-offset: 48px;
+  $level_2-offset: 54px;
+  $level_3-offset: 60px;
+  $level_4-offset: 66px;
+
+  ul.level_1 {
+    > li {
+      padding: 0;
+      line-height: 40px;
+      background-color: transparent;
+
+      > a, > strong {
+        padding: 0;
+        margin: 10px 0;
+        padding-left: $level_1-offset;
+        font-size: 20px;
+        color: #fff;
+        display: block;
+      }
+
+      span.active {
+        color: #000 !important;
+      }
+    }
+  }
+
+  ul.level_2 {
+    background-color: #eee;
+
+    > li {
+      padding: 0;
+      line-height: 36px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      > .toggle-submenu {
+        right: 0;
+        top: 5px;
+      }
+
+      > .toggle-submenu:before {
+        font-size: 16px !important;
+      }
+
+      > a, strong {
+        padding: 0;
+        margin: 10px 0;
+        padding-left: $level_2-offset;
+        font-size: 18px;
+        color: $nav-font-color;
+        display: block;
+      }
+
+      strong.active {
+        color: $blue !important;
+      }
+    }
+  }
+
+  ul.level_3 {
+    > li {
+      padding: 0;
+      line-height: 32px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      > .toggle-submenu {
+        right: 0;
+      }
+
+      > .toggle-submenu:before {
+        font-size: 16px !important;
+      }
+
+      > a, strong {
+        padding-left: $level_3-offset;
+        margin: 5px 0;
+        font-size: 16px;
+        color: $nav-font-color;
+        display: block;
+      }
+
+      strong.active {
+        color: $blue !important;
+      }
+    }
+  }
+
+  ul.level_4 {
+    > li {
+      padding: 0;
+      line-height: 28px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      > .toggle-submenu {
+        right: 0;
+      }
+
+      > .toggle-submenu:before {
+        font-size: 14px !important;
+      }
+
+      > a, strong {
+        margin: 10px 0;
+        padding-left: $level_4-offset;
+        font-size: 14px;
+        color: $nav-font-color;
+        display: block;
+      }
+
+      strong.active {
+        color: $blue !important;
+      }
+    }
+  }
+
+  // Show active submenus
+  ul.level_1 li.trail > ul,
+  ul.level_1 li.active.submenu > ul {
+    display: block;
+  }
+
+}
+
+
+
+
+

@@ -1,0 +1,26 @@
+/** Font awesome adds <span class="sr-only">Suche</span> if a form input has no legend
+
+eg.
+
+<button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
+<i class="fal fa-search" aria-hidden="true" title="Suche"></i>
+</button>
+
+...becomes:
+
+<button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
+<i class="fal fa-search" aria-hidden="true" title="Suche"></i>
+<span class="sr-only">Suche</span>
+</button>
+
+ */
+.sr-only, .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: none;
+}

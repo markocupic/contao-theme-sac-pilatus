@@ -1,60 +1,61 @@
 {
-  "name": "markocupic/contao-theme-sac-pilatus",
-  "description": "Contao Frontend Theme SAC Pilatus Relaunch 2019",
-  "keywords": [
-    "contao",
-    "frontend",
-    "theme",
-    "SAC Pilatus"
-  ],
-  "type": "contao-module",
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "Marko Cupic",
-      "email": "m.cupic@gmx.ch",
-      "homepage": "https://github.com/markocupic",
-      "role": "Developer"
+    "name": "markocupic/contao-theme-sac-pilatus",
+    "description": "Contao Frontend Theme SAC Pilatus Relaunch 2019",
+    "keywords": [
+        "contao",
+        "frontend",
+        "theme",
+        "SAC Pilatus"
+    ],
+    "type": "contao-module",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Marko Cupic",
+            "email": "m.cupic@gmx.ch",
+            "homepage": "https://github.com/markocupic",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/markocupic/contao-theme-sac-pilatus/issues",
+        "source": "https://github.com/markocupic/contao-theme-sac-pilatus"
+    },
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^4.13 || ^5.1",
+        "markocupic/contao-component-bootstrap": "^5.0",
+        "markocupic/rotate_image": "^1.0",
+        "markocupic/custom-section": "^1.0",
+        "markocupic/contao-sidebar-navigation": "^2.0",
+        "markocupic/service-link-bundle": "^1.0",
+        "markocupic/contao-heroimage-bundle": "^1.0",
+        "markocupic/bootstrap_responsive_youtube_embed": "^2.1",
+        "markocupic/contao-article-class-select-bundle": "^2.0",
+        "markocupic/bootstrap-carousel-bundle": "^2.0",
+        "stefansl/contao-divider-bundle": "^v1.0",
+        "markocupic/nav-page-container": "^2.1"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Markocupic\\ContaoThemeSacPilatus\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
+        "contao": {
+            "sources": {
+                "contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
+                "contao/files/theme-sac-pilatus": "files/theme-sac-pilatus"
+            }
+        }
+    },
+    "scripts": {
+        "cs-fixer": "@php tools/ecs/vendor/bin/ecs check config/ contao/templates src/ tests/ --config tools/ecs/config.php --fix --ansi",
+        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyse src tests",
+        "unit-tests": "@php tools/phpunit/vendor/bin/phpunit -c tools/phpunit/phpunit.xml.dist"
     }
-  ],
-  "support": {
-    "issues": "https://github.com/markocupic/contao-theme-sac-pilatus/issues",
-    "source": "https://github.com/markocupic/contao-theme-sac-pilatus"
-  },
-  "require": {
-    "contao/core-bundle": "^4.13",
-    "markocupic/contao-component-bootstrap": "^5.0",
-    "markocupic/rotate_image": "^1.0",
-    "markocupic/custom-section": "^1.0",
-    "markocupic/contao-sidebar-navigation": "^2.0",
-    "markocupic/service-link-bundle": "^1.0",
-    "markocupic/contao-heroimage-bundle": "^1.0",
-    "markocupic/bootstrap_responsive_youtube_embed": "^2.1",
-    "markocupic/contao-article-class-select-bundle": "^2.0",
-    "markocupic/bootstrap-carousel-bundle": "^2.0",
-    "stefansl/contao-divider-bundle": "^v1.0",
-    "markocupic/nav-page-container": "^2.1"
-  },
-  "require-dev": {
-    "contao/manager-plugin": "^2.3.1",
-    "contao/test-case": "^4.5",
-    "phpunit/phpunit": "^9.3",
-    "symfony/http-client": "5.4.*",
-    "symfony/phpunit-bridge": "^5.4",
-    "contao/easy-coding-standard": "^5.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Markocupic\\ContaoThemeSacPilatus\\": "src/"
-    }
-  },
-  "extra": {
-    "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
-    "contao": {
-      "sources": {
-        "src/Resources/contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
-        "src/Resources/contao/files/theme-sac-pilatus": "files/theme-sac-pilatus"
-      }
-    }
-  }
 }

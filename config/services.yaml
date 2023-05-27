@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $fontAwesomeKitKey: '%markocupic_contao_theme_sac_pilatus.font_awesome_kit_key%'
+
+    Markocupic\ContaoThemeSacPilatus\:
+        resource: ../src/
+        exclude: ../../{DependencyInjection}

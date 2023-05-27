@@ -1,0 +1,127 @@
+<!-- indexer::stop -->
+<div class="header-custom-template">
+    <div class="header-navbar-row-0">
+        <div class="inner d-flex ps-3 pe-3 pt-2 pb-2 align-items-center">
+            <div class="ms-0 me-auto d-none d-sm-flex align-items-center small">{{ '{{link_open::geschaeftsstelle}}' }}Zur Geschäftsstelle{{ '{{link_close}}' }}</div>
+            <div class="ms-auto me-0 d-flex align-items-center">
+                {% if has_logged_in_frontend_user() is same as true %}
+                    <button data-href="/" class="btn btn-link trigger-ids-kill-session ms-2 text-decoration-none" title="Abmelden"><i class="fal fa-sign-out-alt"></i> Abmelden</button>
+
+                    <div class="ms-2 d-none d-sm-block small">{{ '{{user::firstname}}' }} {{ '{{user::lastname}}' }}</div>
+                    <div class="ms-3">
+                        {% set user = get_logged_in_frontend_user() %}
+                        {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
+                    </div>
+                {% endif %}
+
+                {% if has_logged_in_frontend_user() is same as false %}
+                    <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
+                {% endif %}
+
+                {% if has_logged_in_frontend_user() is same as true %}
+                    <a href="{{ '{{link_url::member-profile}}' }}" class="btn btn-sm btn-danger ms-2" title="Mein Profil"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="header-navbar-row-1">
+        <div class="inner hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center">
+            <div class="navbar-brand ms-3">
+                <a href="" title="Startseite">
+                    <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo">
+                </a>
+            </div>
+
+            <!-- NAVBAR-START -->
+            <div class="navbar-header d-none d-xl-flex align-items-center">
+                <!-- indexer::continue -->
+                {{ '{{insert_module::307}}' }}
+            </div>
+            <!-- indexer::stop -->
+            <!-- NAVBAR-END -->
+
+            <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
+
+                <a href="{{ '{{link_url::kurse}}' }}" class="d-none d-md-block btn btn-outline-dark ms-2" role="button" aria-hidden="true" aria-label="Kurse"><i style="width:20px;font-size:1rem !important;" class="far fa-mind-share"></i> Kurse</a>
+                <a href="{{ '{{link_url::touren-trainings-und-anlaesse}}' }}" class="d-none d-md-block btn btn-danger ms-2" role="button" aria-hidden="true" aria-label="Touren"><i style="width:20px;font-size:1rem !important;" class="far fa-mountain"></i> Touren</a>
+
+                <!-- Searchbar toggler -->
+                <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
+                    <i class="fal fa-search" aria-label="Suche" title="Suche"></i>
+                </button>
+                <!-- End Searchbar toggler -->
+
+                <!-- Navbar toggler mobile -->
+                <button class="navigation-toggler d-xl-none btn btn-lg btn-link ms-2" role="button" aria-label="Navigation">
+                    <i class="fal fa-lg fa-bars" title="Navigation öffnen"></i>
+                </button>
+                <!-- End Navbar toggler mobile -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Search module -->
+    <!-- indexer::continue -->
+    {{ '{{insert_module::353}}' }}
+    <!-- indexer::stop -->
+
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="d-block modal-title">Mitglieder-Login</h5>{{ '{{br}}' }}
+                <!--<h6 class="d-block">und alle SAC-Pilatus Dienstleistungen nutzen</h6>-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen"></button>
+            </div>
+            <div class="modal-body">
+                <!-- indexer::continue -->
+                {{ '{{insert_module::396}}' }}
+                <!-- indexer::stop -->
+
+                <div class="mt-5">
+                    <h5>Mehrere Services, ein Login</h5>
+                    <p>Mit deinem <strong>SAC-Login</strong> kannst du dich hier anmelden. <br>Falls du dein SAC-Konto noch nicht aktiviert hast, kannst du es mit deiner <strong>Mitgliedernummer</strong> und deinem <strong>PUK</strong> (Passwort) direkt aktivieren. Beide Angaben findest du auf deinem SAC-Mitgliederausweis.</p>
+
+                    <h5 class="mt-4 d-block">Was ist das SAC-Login?</h5>
+                    <p>In einem Flyer, welchen du unterhalb herunterladen kannst, werden alle Fragen rund um das SAC-Login beantwortet.</p>
+
+                    <div class="d-block mt-1">
+                        <p><a class="btn btn-sm btn-outline-danger" href="{{ '{{file::c10f6425-84a3-11eb-a01f-02000a14001a}}' }}" download="SAC Login FAQ">Häufige Fragen rund um das SAC-Login</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    /**
+     * Handle Login Modal
+     */
+    (function ($) {
+        "use strict";
+
+        $(document).ready(function () {
+            $('.trigger-login-modal').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#loginModal').modal('show');
+            });
+
+            if ($('#loginModal .error').length) {
+                $('#loginModal').modal('show');
+            }
+        });
+    })(jQuery);
+</script>
+
+
+<!-- indexer::continue -->
+

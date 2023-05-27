@@ -1,0 +1,294 @@
+$navbar-height: 35px;
+$navbar-tab-color: $red;
+$navbar-content-color: #ffffff;
+$navbar-dropdown-color: $blue;
+$color-level-1: $black;
+$color-level-2: $navbar-content-color;
+$color-level-3: $navbar-content-color;
+$color-level-4: $navbar-content-color;
+$color-level-1-active: $black;
+$color-level-1-hover: $dark;
+$color-level-2-active: $black;
+$color-level-2-hover: $dark;
+
+// Toggler
+#header .close-header-navigation-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: $navbar-content-color;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#header {
+  .header-custom-template {
+    position: relative;
+
+    .navbar {
+      position: inherit; //override bootstrap
+      .navbar-header {
+        .mod_navigation {
+          background-color: transparent;
+
+          ul, li {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+          }
+
+          ul.level_1 {
+            background-color: transparent;
+            display: flex;
+
+
+            a:hover {
+              background-color: transparent;
+            }
+
+            > li.nav-item {
+              ////////////////// megamenu hack
+              position: inherit !important;
+              //margin: 0 .5rem;
+              padding: 0 0 0 6px;
+              //height: $navbar-height;
+              position: relative;
+              display: flex;
+              align-items: center;
+              margin-right: 0;
+              @media screen and (min-width: 1900px) {
+                margin-right: 1rem;
+              }
+
+              > a > span, > span[data-bs-toggle="dropdown"], > strong {
+                padding: 0;
+                margin: 0;
+                font-size: 1rem !important;
+                color: $color-level-1;
+                line-height: $navbar-height;
+                font-weight: 400;
+
+                @media screen and (min-width: 1600px) {
+                  font-size: 1.15rem !important;
+                }
+              }
+
+              > span[data-bs-toggle="dropdown"] {
+                @include icon-after("\f107", black); //fas fa-angle-down
+              }
+
+              > span[data-bs-toggle="dropdown"][aria-expanded="true"] {
+                @include icon-after("\f106", black); //fas fa-angle-up
+              }
+
+              > span[aria-expanded="true"], > span[aria-expanded="true"]:after {
+                color: $navbar-tab-color !important;
+              }
+
+              > span:after {
+                font-weight: bold !important;
+                padding-left: .125rem !important;
+              }
+            }
+
+            > li.nav-item.active > * {
+              color: $color-level-1-active;
+            }
+
+            > li.nav-item:hover > * {
+              color: $color-level-1-hover !important;
+            }
+
+            > li.nav-item.active > * {
+              border-bottom: 2px solid transparent;
+            }
+
+            > li.nav-item.active > *, > li.nav-item.trail > * {
+              color: $color-level-1-active;
+              border-bottom: 2px solid $navbar-tab-color;
+            }
+
+            > li.nav-item.active > *, > li.nav-item.trail > * {
+              &:after {
+                border-bottom-color: $navbar-content-color;
+              }
+            }
+
+            > li.nav-item:hover {
+              > a, > a:after, > strong {
+                text-decoration: none;
+                color: $color-level-1-hover;
+              }
+            }
+
+            li.nav-item {
+              padding-right: .75rem;
+            }
+
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: auto;
+            margin: 0;
+            top: calc(100% - 1px);
+            background-color: $navbar-dropdown-color;
+            min-width: 100%;
+            width: 100%;
+
+            .dropdown-menu-grid-container {
+              @extend .container;
+            }
+          }
+
+          ////////////////// megamenu hack
+          .dropdown-menu.show ul.level_2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+          }
+
+          .dropdown-menu ul.level_2 {
+
+            min-height: 200px;
+            border: 0;
+            border-top: 1px solid #eee;
+            //border-bottom: 1px solid #ccc;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            z-index: 1054; // put the menu below the bootstrap modal backdrop, which has has a z-index of 1055
+            ////////////////// megamenu hack
+            width: 100% !important;
+            // new
+            border-top: 0;
+
+            //width: calc(100vw - 80px) !important;
+            opacity: .97;
+            //left:40px;
+            //right:40px;
+            margin-top: 1px;
+            background-color: $navbar-dropdown-color;
+
+            > li.active > strong {
+              color: $color-level-2-active !important;
+            }
+
+            > li > a > span:hover, > li > a > strong:hover {
+              color: $color-level-2-hover !important;
+            }
+
+            li.page-container > a {
+              cursor: text;
+              text-decoration: none;
+            }
+
+            > li {
+              width: 350px;
+              line-height: 2;
+              //border-top: 1px solid $gray-300;
+              padding: 0 $spacer-x;
+              margin-bottom: 2rem;
+              @include transition(background-color);
+
+              > a, > strong, > span {
+                color: $color-level-2;
+                font-size: 1rem !important;
+                @media screen and (min-width: 1600px) {
+                  font-size: $font-size-lg !important;
+                }
+                font-weight: 600;
+                @include transition(color);
+                display: block;
+                margin-bottom: 0.5rem;
+                @include icon-before("\f138");
+                text-decoration: none !important;
+
+                &:before {
+                  text-decoration: none !important;
+                }
+              }
+            }
+
+            > li.page-container {
+              > a {
+                border-bottom: 1px solid $color-level-2;
+              }
+
+              > strong {
+                border-bottom: 1px solid $color-level-2-active;
+              }
+            }
+
+            > li:hover {
+              > a, > strong, > a > span {
+                color: $color-level-2 !important;
+              }
+            }
+
+          }
+
+          ul.level_3 {
+            > li {
+              line-height: 2.25;
+              @include icon-before("\f105", white); //angle-right
+              &:before {
+                margin-top: 0;
+              }
+
+              //border-top: 1px solid #444;
+              padding: 0;
+
+              > a, > strong, > a > span {
+                color: $color-level-3;
+                font-size: 0.875rem !important;
+                text-decoration: none;
+                @media screen and (min-width: 1600px) {
+                  font-size: 1.125rem !important;
+                }
+                font-weight: normal;
+                @include transition(color);
+
+                &:before {
+                  text-decoration: none !important;
+                }
+              }
+            }
+
+            > li.active > strong {
+              color: $color-level-2-active !important;
+            }
+
+            > li > a > span:hover, > li > a > strong:hover {
+              color: $color-level-2-hover !important;
+            }
+
+            > li:first-child {
+              border: 0;
+            }
+          }
+
+          ul.level_4 {
+            > li {
+              line-height: 2.25;
+              border-top: 1px solid #444;
+              padding: 0 $spacer-x;
+
+              > a, > strong, > a > span {
+                color: $color-level-4;
+                font-size: 0.875rem !important;
+                font-weight: normal;
+                @include transition(color);
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

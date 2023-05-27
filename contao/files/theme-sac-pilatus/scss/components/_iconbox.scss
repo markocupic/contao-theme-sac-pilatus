@@ -1,0 +1,14 @@
+.icon-box-small {
+  padding: 0 0 0 30px;
+  position: relative;
+
+  &:before {
+    font-family: $icon-font-name;
+    content: "\f00c";
+    color: $red;
+    position: absolute;
+    top: .4rem;
+    left: 0;
+    font-size: 20px;
+  }
+}

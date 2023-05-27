@@ -1,0 +1,56 @@
+// Email mailto link
+a.email {
+  &:before {
+    @include icon-before("\f2b6");
+  }
+}
+
+
+.ce_downloads > ul, .ce_hyperlink > a {
+  position: relative;
+  display: block;
+  padding-right: 50px;
+}
+
+// Replace contao mime icons with font awesome icons
+
+.ce_downloads {
+
+  li {
+    position: relative;
+    line-height: 2.25;
+  }
+
+  .mime_icon {
+    display: none;
+  }
+
+  a[href*="."]:before {
+    @include icon-before("\f0c1"); // fa-file-o     // fa-file-word
+  }
+
+  a[href$=".docx"]:before {
+    @include icon-before("\f1c2"); // fa-file-word
+  }
+
+  a[href$=".doc"]:before {
+    @include icon-before("\f1c2"); // fa-file-word
+  }
+
+  a[href$=".pdf"]:before {
+    @include icon-before("\f1c1"); // fa-file-pdf
+  }
+}
+
+.ce_hyperlink {
+  a[href*="."] {
+    @include icon-before("\f0c1"); // fa-link
+  }
+
+  a.hyperlink_img:before {
+    display: none;
+  }
+
+  margin-bottom: $spacer-y;
+}
+
