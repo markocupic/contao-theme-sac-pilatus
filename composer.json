@@ -48,7 +48,6 @@
         "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
         "contao": {
             "sources": {
-                "contao/templates/theme-sac-pilatus": "templates/theme-sac-pilatus",
                 "contao/files/theme-sac-pilatus": "files/theme-sac-pilatus"
             }
         }
