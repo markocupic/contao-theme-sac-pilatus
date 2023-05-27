@@ -33,7 +33,7 @@
     "markocupic/contao-article-class-select-bundle": "^2.0",
     "markocupic/bootstrap-carousel-bundle": "^2.0",
     "stefansl/contao-divider-bundle": "^v1.0",
-    "markocupic/nav-page-container": "dev-master"
+    "markocupic/nav-page-container": "^2.1"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.3.1",
