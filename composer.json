@@ -28,7 +28,7 @@
         "markocupic/rotate_image": "^1.0",
         "markocupic/custom-section": "^1.0",
         "markocupic/contao-sidebar-navigation": "^2.0",
-        "markocupic/service-link-bundle": "^1.0",
+        "markocupic/service-link-bundle": "^2.0",
         "markocupic/contao-heroimage-bundle": "^1.0",
         "markocupic/bootstrap_responsive_youtube_embed": "^2.1",
         "markocupic/contao-article-class-select-bundle": "^2.0",
