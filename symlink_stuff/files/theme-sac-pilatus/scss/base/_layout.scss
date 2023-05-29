@@ -31,7 +31,7 @@ body {
   #container {
     .mod_article > .article-inside.container {
       max-width: $mc-container-max-width;
-      @extend .px-2;
+      @extend .px-3;
       @extend .px-sm-4;
       @extend .container-lg;
       padding-top: 2rem !important;
