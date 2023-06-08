@@ -221,7 +221,7 @@ $color-level-2-hover: $dark;
               }
             }
 
-            > li:hover {
+            > li.page-container:hover {
               > a, > strong, > a > span {
                 color: $color-level-2 !important;
               }
