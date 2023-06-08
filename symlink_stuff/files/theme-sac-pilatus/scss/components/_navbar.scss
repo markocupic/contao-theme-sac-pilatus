@@ -41,7 +41,6 @@ $color-level-2-hover: $dark;
             background-color: transparent;
             display: flex;
 
-
             a:hover {
               background-color: transparent;
             }
@@ -129,6 +128,7 @@ $color-level-2-hover: $dark;
 
           .dropdown-menu {
             position: absolute;
+            z-index: 1060; // The underlying buttons from the bootsrap carousel have z-index of 1054
             left: 0;
             right: 0;
             height: auto;
