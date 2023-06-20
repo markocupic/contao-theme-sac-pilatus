@@ -4,18 +4,19 @@
 
   .header-custom-template {
     .header-navbar-row-0 {
-      //min-height: 40px;
       font-size: $font-size-sm;
+
       @include media-breakpoint-up(lg) {
         font-size: $font-size-base;
       }
+
       @media (min-width: 1600px) {
         font-size: $font-size-base;
       }
+
       background-color: $blue;
-      //border: 1px solid #343434;
+
       * {
-        //font-size: small;
         color: #fff;
       }
 
@@ -25,10 +26,6 @@
 
       a.email {
         border: 0;
-
-        &:hover {
-          //color: $gray-800;
-        }
       }
 
       a.header-login-button {
@@ -41,7 +38,10 @@
       border-bottom: 1px solid $gray-200;
 
       .logo-header {
-        height: 60px;
+        height: 40px;
+        @include media-breakpoint-up(md) {
+          height: 60px;
+        }
         @include media-breakpoint-up(lg) {
           height: 80px;
         }
@@ -67,8 +67,15 @@
         }
 
         .svg-inline--fa, i.fal, i.fas, i.fa {
-          font-size: 1.625rem !important;
+          font-size: 1.2rem !important;
         }
+
+        @include media-breakpoint-up(sm) {
+          .svg-inline--fa, i.fal, i.fas, i.fa {
+            font-size: 1.625rem !important;
+          }
+        }
+
       }
 
       .fa-search {
@@ -95,16 +102,11 @@
         width: 300px;
       }
 
-      .btn {
-        //background-color: #08c;
-      }
-
       input[type="search"] {
         text-align: center;
         color: #000;
         background-color: #fff;
         border-color: #eee;
-
       }
 
     }

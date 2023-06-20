@@ -12429,8 +12429,13 @@ body {
   border-bottom: 1px solid #e9ecef;
 }
 #header .header-custom-template .header-navbar-row-1 .logo-header {
-  height: 60px;
+  height: 40px;
   width: auto;
+}
+@media (min-width: 768px) {
+  #header .header-custom-template .header-navbar-row-1 .logo-header {
+    height: 60px;
+  }
 }
 @media (min-width: 992px) {
   #header .header-custom-template .header-navbar-row-1 .logo-header {
@@ -12453,7 +12458,12 @@ body {
   cursor: pointer !important;
 }
 #header .header-custom-template .header-navbar-row-1 .header-button-container .svg-inline--fa, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fal, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fas, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fa {
-  font-size: 1.625rem !important;
+  font-size: 1.2rem !important;
+}
+@media (min-width: 576px) {
+  #header .header-custom-template .header-navbar-row-1 .header-button-container .svg-inline--fa, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fal, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fas, #header .header-custom-template .header-navbar-row-1 .header-button-container i.fa {
+    font-size: 1.625rem !important;
+  }
 }
 #header .header-custom-template .header-navbar-row-1 .fa-search {
   color: #212529;
@@ -13301,6 +13311,7 @@ body.sidebar-open #sidebar {
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu {
   position: absolute;
+  z-index: 1060;
   left: 0;
   right: 0;
   height: auto;
@@ -13383,7 +13394,7 @@ body.sidebar-open #sidebar {
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container > strong {
   border-bottom: 1px solid #000;
 }
-#header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li:hover > a, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li:hover > strong, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li:hover > a > span {
+#header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container:hover > a, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container:hover > strong, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container:hover > a > span {
   color: #ffffff !important;
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation ul.level_3 > li {
