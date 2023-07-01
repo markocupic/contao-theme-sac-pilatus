@@ -3,7 +3,7 @@
     {% for row in body %}
         {% set class = loop.index %}
         {% for col in row %}
-            {% if col.addImage is defined %}
+            {% if col.addImage is defined and col.singleSRC|default %}
                 {% set owner = mpf_getOwnerFromPath(col.singleSRC) %}
                 {% set file = mpf_getFilesModelFromPath(col.singleSRC) %}
                 {% if not owner is empty and not file is empty %}
