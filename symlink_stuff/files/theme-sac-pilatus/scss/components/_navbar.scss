@@ -1,7 +1,7 @@
 $navbar-height: 35px;
 $navbar-tab-color: $red;
 $navbar-content-color: #ffffff;
-$navbar-dropdown-color: $blue;
+$navbar-dropdown-color: darken($blue, 3);
 $color-level-1: $black;
 $color-level-2: $navbar-content-color;
 $color-level-3: $navbar-content-color;
@@ -137,9 +137,11 @@ $color-level-2-hover: $dark;
             background-color: $navbar-dropdown-color;
             min-width: 100%;
             width: 100%;
+            border: none !important;
 
             .dropdown-menu-grid-container {
               @extend .container;
+              background-color: $navbar-dropdown-color;
             }
           }
 
