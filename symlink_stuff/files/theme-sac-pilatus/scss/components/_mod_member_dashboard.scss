@@ -37,11 +37,14 @@
       padding: 4px 0 10px 0;
       margin-right: 1rem;
       border-bottom: 4px solid transparent;
+      margin-bottom: 0 !important;
     }
 
     > li.nav-item.active {
       border-color: $red;
-
+      padding-left: .5rem !important;
+      padding-right: .5rem !important;
+      background-color: $gray-100;
     }
 
     > li > a {
