@@ -204,7 +204,7 @@ $color-level-2-hover: $dark;
                 @include transition(color);
                 display: block;
                 margin-bottom: 0.5rem;
-                @include icon-before("\f138");
+                @include icon-before("\f138"); // circle-right
                 text-decoration: none !important;
 
                 &:before {
@@ -220,6 +220,10 @@ $color-level-2-hover: $dark;
 
               > strong {
                 border-bottom: 1px solid $color-level-2-active;
+              }
+
+              > a, > strong, > span {
+                @include icon-before("\f13a"); // circle-down
               }
             }
 
