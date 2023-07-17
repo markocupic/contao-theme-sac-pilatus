@@ -17,13 +17,13 @@ figure {
   padding: 0;
 }
 
-.grid-card {
+.grid-card, .grid-card-infinite-scroll > .infinite_scroll_newslist_container {
   @extend .row;
   @extend .gx-2;
   @extend .gy-2;
   margin: -8px -4px 0 -4px !important;
 
-  > * {
+  > div {
     margin: 8px 0 0 0 !important;
     padding: 0 4px !important;
     @extend .col-12;

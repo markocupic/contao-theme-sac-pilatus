@@ -1,0 +1,126 @@
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="bundles/markocupiccontaonewsinfinitescroll/js/contao_infinite_scroll.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const infiniteScrollNewsModuleSelector = '.mod_newslist_infinite_scroll > .infinite_scroll_newslist_container';
+
+        document.querySelectorAll(infiniteScrollNewsModuleSelector).forEach((listItemContainer) => {
+            {# Masonry: -#}
+            let masonryGrid = null;
+            let masonryInstance = null;
+
+            const masonryOptions = {
+                horizontalOrder: true,
+                itemSelector: '.news_card',
+                columnWidth: '.grid-sizer',
+                percentPosition: true,
+            };
+
+            /**
+             * @type {ContaoInfiniteScrollApp}
+             */
+            const app = new ContaoInfiniteScrollApp(listItemContainer, {
+                loadingMode: ContaoInfiniteScroll.Modes.LOAD_MORE_BUTTON,
+
+                {#
+                // DOM element: Element|null
+                // Set the scroll container to null (default) if you want to use the whole scren as scroll area
+                // Use document.querySelector('#scrollArea') if you prefer a custom scroll area
+                scrollContainer: null,
+
+                // The urls are retrieved from the pagination. Specify the css selectors from the pagination inside container
+                pagination: {
+                    selectorNext: '.pagination > .next > a.next[href]',
+                    selectorLast: '.pagination > .last > a.last[href]',
+                    paramPageRegex: 'page([_a-z]*)(\d*)',
+                }
+                -#}
+
+                // Loading in process indicator markup
+                loadingInProcessIndicatorMarkup: '<div class="inf-scr-loading-in-process-container mt-4 text-center"><i class="fas fa-5x fa-spinner fa-spin"></i><br><br>{{ "MSC.infScrLoadingInProcess"|trans([], "contao_default") }}...</em></div>',
+
+                // Load more button markup
+                loadMoreButtonMarkup: '<div class="mt-2 inf-scr-load-more-btn-container text-center"><button class="btn btn-primary w-100">{{ "MSC.infScrLoadMore"|trans([], "contao_default") }}</button></div>',
+            });
+
+            app.on('contao.infinite_scroll.initialize', (instance) => {
+                {#  Hide pagination -#}
+                instance.getContainer().querySelectorAll('nav.block:has(.pagination)').forEach(function (element) {
+                    if (element) {
+                        element.style.display = 'none';
+                    }
+                });
+
+                {#  Masonry -#}
+                masonryGrid = instance.getContainer();
+
+                instance.getContainer().querySelectorAll('.card').forEach(el => {
+                    el.closest('.news_card').classList.add('added-to-masonry-grid');
+                });
+
+                {# Add empty grid-sizer element for masonry layout -#}
+                const elGridSizer = document.createElement('div');
+                elGridSizer.classList.add(...['grid-sizer', 'col-12', 'col-md-4']);
+                instance.getContainer().prepend(elGridSizer);
+
+                masonryInstance = new Masonry(masonryGrid, masonryOptions);
+
+                {# Return false will abort the initialization -#}
+                return true;
+            });
+
+            {#
+            app.on('contao.infinite_scroll.xhr_start', (instance, currentUrl) => {
+                // Do something
+            });
+            -#}
+
+            {#
+            app.on('contao.infinite_scroll.xhr_complete', (instance, responseText) => {
+                // Do something and return the html markup
+                return responseText;
+            });
+            -#}
+
+            {#
+            app.on('contao.infinite_scroll.xhr_error', (instance, error) => {
+                // Do something
+                console.warn(error);
+            });
+            -#}
+
+            {#
+            app.on('contao.infinite_scroll.append', (instance, documentFragment) => {
+                // Do something
+                return documentFragment;
+            });
+            -#}
+
+            app.on('contao.infinite_scroll.appended', (instance) => {
+                // Masonry:
+                instance.getContainer().querySelectorAll('.card .item-number').forEach(el => {
+                    el.remove();
+                });
+
+                // Find new elements
+                const newElements = instance.getContainer().querySelectorAll('.news_card:not(.added-to-masonry-grid)');
+
+                newElements.forEach(el => {
+                    el.classList.add('added-to-masonry-grid');
+                    masonryGrid.appendChild(el);
+                    masonryInstance.appended(el);
+                })
+
+                window.setTimeout(() => {
+                    masonryInstance.reloadItems();
+                    masonryInstance.layout();
+                }, 100)
+            });
+
+            app.execute();
+        }, false);
+    });
+
+</script>
