@@ -51,11 +51,12 @@
                 "symlink_stuff/files/theme-sac-pilatus": "files/theme-sac-pilatus"
             }
         },
-        "composer-file-copier-plugin": {
-            "sources": {
-                "contao/templates/js_news_infinite_scroll.html.twig": "templates/js_news_infinite_scroll.html.twig"
+        "composer-file-copier-plugin": [
+            {
+                "source": "contao/templates/js_news_infinite_scroll.html.twig",
+                "target": "templates/js_news_infinite_scroll.html.twig"
             }
-        }
+        ]
     },
     "config": {
         "allow-plugins": {
