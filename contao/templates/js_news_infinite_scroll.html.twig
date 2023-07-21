@@ -1,12 +1,12 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="bundles/markocupiccontaonewsinfinitescroll/js/contao_infinite_scroll.js"></script>
+<script src="bundles/markocupiccontaonewsinfinitescroll/js/contao_infinite_scroll.min.js?t={{ date().timestamp }}"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
         const infiniteScrollNewsModuleSelector = '.mod_newslist_infinite_scroll > .infinite_scroll_newslist_container';
 
-        document.querySelectorAll(infiniteScrollNewsModuleSelector).forEach((listItemContainer) => {
+        for (const listItemContainer of document.querySelectorAll(infiniteScrollNewsModuleSelector)) {
             {# Masonry: -#}
             let masonryGrid = null;
             let masonryInstance = null;
@@ -38,27 +38,25 @@
                 }
                 -#}
 
-                // Loading in process indicator markup
-                loadingInProcessIndicatorMarkup: '<div class="inf-scr-loading-in-process-container mt-4 text-center"><i class="fas fa-5x fa-spinner fa-spin"></i><br><br>{{ "MSC.infScrLoadingInProcess"|trans([], "contao_default") }}...</em></div>',
-
                 // Load more button markup
-                loadMoreButtonMarkup: '<div class="mt-2 inf-scr-load-more-btn-container text-center"><button class="btn btn-primary w-100">{{ "MSC.infScrLoadMore"|trans([], "contao_default") }}</button></div>',
+                loadMoreButtonMarkup: '<div class="mt-4 inf-scr-load-more-btn-container text-center"><span class="btn btn-primary w-100" role="button" tabindex="1">{{ "MSC.infScrLoadMore"|trans([], "contao_default") }}</span></div>',
+
+                // Loading in process indicator markup
+                loadingInProcessIndicatorMarkup: '<div class="inf-scr-loading-in-process-container mt-4 pt-4 text-center text-muted"><i class="fas fa-5x text-light fa-rotate fa-spin"></i><br><br>{{ "MSC.infScrLoadingInProcess"|trans([], "contao_default") }}</em></div>',
             });
 
             app.on('contao.infinite_scroll.initialize', (instance) => {
                 {#  Hide pagination -#}
-                instance.getContainer().querySelectorAll('nav.block:has(.pagination)').forEach(function (element) {
-                    if (element) {
-                        element.style.display = 'none';
-                    }
-                });
+                for (const elPag of instance.getContainer().querySelectorAll('nav.block:has(.pagination)')) {
+                    elPag.style.display = 'none';
+                }
 
                 {#  Masonry -#}
                 masonryGrid = instance.getContainer();
 
-                instance.getContainer().querySelectorAll('.card').forEach(el => {
-                    el.closest('.news_card').classList.add('added-to-masonry-grid');
-                });
+                for (const card of instance.getContainer().querySelectorAll('.card')) {
+                    card.closest('.news_card').setAttribute('data-masonryinit', 'true');
+                }
 
                 {# Add empty grid-sizer element for masonry layout -#}
                 const elGridSizer = document.createElement('div');
@@ -99,28 +97,33 @@
             -#}
 
             app.on('contao.infinite_scroll.appended', (instance) => {
-                // Masonry:
-                instance.getContainer().querySelectorAll('.card .item-number').forEach(el => {
-                    el.remove();
+
+                // Append freshly items to the masonry grid
+                new Promise(function (resolve) {
+                    setTimeout(() => resolve(), 1);
+                }).then(() => {
+                    // Masonry: Remove the masonry item number elements
+                    for (const elItemNum of instance.getContainer().querySelectorAll('.card .item-number')) {
+                        elItemNum.remove();
+                    }
+                }).then(() => {
+                    // Find freshly loaded elements
+                    return instance.getContainer().querySelectorAll('.news_card:not([data-masonryinit])');
+                }).then((newElements) => {
+                    // Append new elements to the masonry grid
+                    for (const newElement of newElements) {
+                        newElement.setAttribute('data-masonryinit', 'true');
+                        masonryGrid.appendChild(newElement);
+                        masonryInstance.appended(newElement);
+                    }
+                }).then(() => {
+                    //masonryInstance.reloadItems();
+                    //masonryInstance.layout();
                 });
-
-                // Find new elements
-                const newElements = instance.getContainer().querySelectorAll('.news_card:not(.added-to-masonry-grid)');
-
-                newElements.forEach(el => {
-                    el.classList.add('added-to-masonry-grid');
-                    masonryGrid.appendChild(el);
-                    masonryInstance.appended(el);
-                })
-
-                window.setTimeout(() => {
-                    masonryInstance.reloadItems();
-                    masonryInstance.layout();
-                }, 100)
             });
 
             app.execute();
-        }, false);
+        }
     });
 
 </script>
