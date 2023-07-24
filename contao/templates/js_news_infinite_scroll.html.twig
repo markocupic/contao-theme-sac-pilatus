@@ -83,43 +83,39 @@
             -#}
 
             {#
-            app.on('contao.infinite_scroll.xhr_error', (instance, error) => {
-                // Do something
-                console.warn(error);
-            });
-            -#}
-
-            {#
             app.on('contao.infinite_scroll.append', (instance, documentFragment) => {
                 // Do something
                 return documentFragment;
             });
             -#}
 
-            app.on('contao.infinite_scroll.appended', (instance) => {
+            app.on('contao.infinite_scroll.appended', async (instance) => {
 
                 // Append freshly items to the masonry grid
-                new Promise(function (resolve) {
-                    setTimeout(() => resolve(), 1);
-                }).then(() => {
-                    // Masonry: Remove the masonry item number elements
-                    for (const elItemNum of instance.getContainer().querySelectorAll('.card .item-number')) {
-                        elItemNum.remove();
-                    }
-                }).then(() => {
-                    // Find freshly loaded elements
-                    return instance.getContainer().querySelectorAll('.news_card:not([data-masonryinit])');
-                }).then((newElements) => {
-                    // Append new elements to the masonry grid
-                    for (const newElement of newElements) {
-                        newElement.setAttribute('data-masonryinit', 'true');
-                        masonryGrid.appendChild(newElement);
-                        masonryInstance.appended(newElement);
-                    }
-                }).then(() => {
-                    //masonryInstance.reloadItems();
-                    //masonryInstance.layout();
+                await new Promise(resolve => {
+                    setTimeout(() => {
+                            resolve();
+                        }, 1
+                    );
                 });
+
+                // Masonry: Remove the masonry item number elements
+                for (const elItemNum of instance.getContainer().querySelectorAll('.card .item-number')) {
+                    elItemNum.remove();
+                }
+
+                // Find freshly loaded elements
+                const newElements = instance.getContainer().querySelectorAll('.news_card:not([data-masonryinit])');
+
+                // Append new elements to the masonry grid
+                for (const newElement of newElements) {
+                    newElement.setAttribute('data-masonryinit', 'true');
+                    masonryGrid.appendChild(newElement);
+                    masonryInstance.appended(newElement);
+                }
+
+                //masonryInstance.reloadItems();
+                //masonryInstance.layout();
             });
 
             app.execute();
