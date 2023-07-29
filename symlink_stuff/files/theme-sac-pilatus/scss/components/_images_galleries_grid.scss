@@ -23,7 +23,7 @@ figure {
   @extend .gy-2;
   margin: -8px -4px 0 -4px !important;
 
-  > div {
+  > li.grid-card-item, > div {
     margin: 8px 0 0 0 !important;
     padding: 0 4px !important;
     @extend .col-12;
