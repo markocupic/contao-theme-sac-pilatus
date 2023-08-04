@@ -818,7 +818,7 @@ progress {
   width: 91.66666667%;
 }
 
-.col-12, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
+.col-12, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > li.grid-card-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > li.grid-card-item, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
   flex: 0 0 auto;
   width: 100%;
 }
@@ -1003,7 +1003,7 @@ progress {
     width: 41.66666667%;
   }
 
-  .col-sm-6, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
+  .col-sm-6, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > li.grid-card-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > li.grid-card-item, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
     flex: 0 0 auto;
     width: 50%;
   }
@@ -1206,7 +1206,7 @@ progress {
     width: 25%;
   }
 
-  .col-md-4, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
+  .col-md-4, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > li.grid-card-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > li.grid-card-item, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
@@ -1414,7 +1414,7 @@ progress {
     width: 16.66666667%;
   }
 
-  .col-lg-3, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
+  .col-lg-3, .ce_gallery ul.gallery-grid li.gallery-grid-item, .grid-card > li.grid-card-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > li.grid-card-item, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
     flex: 0 0 auto;
     width: 25%;
   }
@@ -12318,7 +12318,7 @@ ul {
 }
 .unordered_list ul li:before {
   content: "\f105";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   color: #666;
   font-weight: normal;
   display: table-cell;
@@ -12674,7 +12674,7 @@ a.email:before {
   flex-wrap: nowrap;
 }
 a.email:before:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f2b6";
 }
@@ -12697,7 +12697,7 @@ a.email:before:before {
   flex-wrap: nowrap;
 }
 .ce_downloads a[href*="."]:before:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f0c1";
 }
@@ -12706,7 +12706,7 @@ a.email:before:before {
   flex-wrap: nowrap;
 }
 .ce_downloads a[href$=".docx"]:before:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f1c2";
 }
@@ -12715,7 +12715,7 @@ a.email:before:before {
   flex-wrap: nowrap;
 }
 .ce_downloads a[href$=".doc"]:before:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f1c2";
 }
@@ -12724,7 +12724,7 @@ a.email:before:before {
   flex-wrap: nowrap;
 }
 .ce_downloads a[href$=".pdf"]:before:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f1c1";
 }
@@ -12737,7 +12737,7 @@ a.email:before:before {
   flex-wrap: nowrap;
 }
 .ce_hyperlink a[href*="."]:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f0c1";
 }
@@ -13019,7 +13019,7 @@ body.sidebar-open #sidebar {
   display: none;
 }
 .sidebar-navigation ul.level_1 > li:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   position: absolute;
   top: 0;
   left: 16px;
@@ -13093,7 +13093,7 @@ body.sidebar-open #sidebar {
 }
 .sidebar-navigation ul.level_1 li.submenu > .toggle-submenu:before {
   color: #be0b15 !important;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f055";
   font-size: 18px;
   font-style: normal;
@@ -13266,7 +13266,7 @@ body.sidebar-open #sidebar {
   flex-wrap: nowrap;
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation ul.level_1 > li.nav-item > span[data-bs-toggle=dropdown]:after {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-left: 0.75rem;
   content: "\f107";
   color: black;
@@ -13276,7 +13276,7 @@ body.sidebar-open #sidebar {
   flex-wrap: nowrap;
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation ul.level_1 > li.nav-item > span[data-bs-toggle=dropdown][aria-expanded=true]:after {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-left: 0.75rem;
   content: "\f106";
   color: black;
@@ -13387,7 +13387,7 @@ body.sidebar-open #sidebar {
   }
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > a:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > strong:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li > span:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f138";
 }
@@ -13405,7 +13405,7 @@ body.sidebar-open #sidebar {
   flex-wrap: nowrap;
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container > a:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container > strong:before, #header .header-custom-template .navbar .navbar-header .mod_navigation .dropdown-menu ul.level_2 > li.page-container > span:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f13a";
 }
@@ -13419,7 +13419,7 @@ body.sidebar-open #sidebar {
   padding: 0;
 }
 #header .header-custom-template .navbar .navbar-header .mod_navigation ul.level_3 > li:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f105";
   color: white;
@@ -13520,7 +13520,7 @@ figure {
 .grid-card, .grid-card-infinite-scroll > .infinite_scroll_newslist_container {
   margin: -8px -4px 0 -4px !important;
 }
-.grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
+.grid-card > li.grid-card-item, .grid-card > div, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > li.grid-card-item, .grid-card-infinite-scroll > .infinite_scroll_newslist_container > div {
   margin: 8px 0 0 0 !important;
   padding: 0 4px !important;
 }
@@ -13633,12 +13633,12 @@ ul.pagination > li > span, ul.pagination > li > a {
   color: #000;
 }
 .ce_accordion .toggler .ui-icon-triangle-1-s::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f078";
   padding-right: 20px;
 }
 .ce_accordion .toggler .ui-icon-triangle-1-e::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f054";
   padding-right: 20px;
 }
@@ -13665,7 +13665,7 @@ ul.pagination > li > span, ul.pagination > li > a {
 }
 
 .ce_hyperlink a:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f019";
   margin-right: 5px;
 }
@@ -13767,7 +13767,7 @@ ul.pagination > li > span, ul.pagination > li > a {
   text-align: right;
 }
 .event-item-course .event-for-beginners:before, .event-item-tour .event-for-beginners:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f4c4";
   color: #ffffff;
 }
@@ -13961,7 +13961,7 @@ ul.pagination > li > span, ul.pagination > li > a {
   position: relative;
 }
 .icon-box-small:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f00c";
   color: #be0b15;
   position: absolute;
@@ -14029,7 +14029,7 @@ ul.pagination > li > span, ul.pagination > li > a {
 }
 .carousel .carousel-control-prev-icon:before, .carousel .carousel-control-next-icon:before {
   font-size: 20px;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   line-height: 1;
   color: transparent;
   font-weight: 100;
@@ -14088,7 +14088,7 @@ button.slick-prev.slick-arrow:hover:before, button.slick-next.slick-arrow:hover:
 }
 
 button.slick-next.slick-arrow:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f054";
   border: 1px solid white;
   padding: 8px 12px;
@@ -14098,7 +14098,7 @@ button.slick-next.slick-arrow:before {
 }
 
 button.slick-prev.slick-arrow:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f053";
   border: 1px solid white;
   padding: 8px 12px;
@@ -14281,7 +14281,7 @@ button.slick-prev.slick-arrow:hover:before, button.slick-next.slick-arrow:hover:
 }
 
 button.slick-next.slick-arrow:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f054";
   border: 1px solid white;
   padding: 8px 12px;
@@ -14291,7 +14291,7 @@ button.slick-next.slick-arrow:before {
 }
 
 button.slick-prev.slick-arrow:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   content: "\f053";
   border: 1px solid white;
   padding: 8px 12px;
@@ -14513,7 +14513,7 @@ button.slick-prev.slick-arrow:before {
   font-family: "Roboto Slab", serif;
 }
 .ce_heroimage_element .heroimage-wrapper .heroimage-button-box > a:after {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-left: 0.75rem;
   content: "\f35a";
 }
@@ -14693,7 +14693,7 @@ input.custom-input-file {
   display: block;
 }
 .widget.custom-input-file > label:before {
-  font-family: "Font Awesome 5 Pro" !important;
+  font-family: "Font Awesome 6 Pro" !important;
   padding-right: 0.75rem;
   content: "\f382";
 }
