@@ -35,7 +35,8 @@
         "markocupic/bootstrap-carousel-bundle": "^2.0",
         "stefansl/contao-divider-bundle": "^v1.0",
         "markocupic/nav-page-container": "^2.1",
-        "markocupic/composer-file-copier-plugin": "^0.1"
+        "markocupic/composer-file-copier-plugin": "^0.1",
+        "markocupic/contao-component-fontawesome-pro": "dev-main"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.3.1"
