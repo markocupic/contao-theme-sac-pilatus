@@ -7,5 +7,11 @@
         "allow-plugins": {
             "contao-community-alliance/composer-plugin": false
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/markocupic/contao-component-fontawesome-pro"
+        }
+    ]
 }
