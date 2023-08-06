@@ -4,6 +4,7 @@ $nav-close-btn-color: #ccc;
 //$nav-bg-hover-color: $accent-color;
 
 $nav-font-color: #222;
+$nav-link-color: $blue;
 $nav-bg-color: #fff;
 //$nav-font-color: #333;
 /* Dropdown - main navigation header */
@@ -180,6 +181,27 @@ body.sidebar-open {
     ul {
       display: none;
     }
+  }
+
+  // Link color for non-clickable items for all levels
+  .sidebar-navigation ul.level_1 > li.page-container > a {
+    color: $nav-font-color !important;
+  }
+  .sidebar-navigation ul.level_2 > li.page-container > a {
+    color: $nav-font-color !important;
+  }
+  .sidebar-navigation ul.level_3 > li.page-container > a {
+    color: $nav-font-color !important;
+  }
+  // Link color for clickable items for all levels
+  .sidebar-navigation ul.level_1 > li > a {
+    color: $nav-link-color !important;
+  }
+  .sidebar-navigation ul.level_2 > li > a {
+    color: $nav-link-color !important;
+  }
+  .sidebar-navigation ul.level_3 > li > a {
+    color: $nav-link-color !important;
   }
 
   // Iconfont for level_1
