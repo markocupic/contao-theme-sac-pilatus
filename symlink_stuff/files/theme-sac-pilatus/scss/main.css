@@ -13695,17 +13695,20 @@ ul.pagination > li > span, ul.pagination > li > a {
   transition: background-color ease-in-out 0.4s;
   border: 1px solid #e9ecef;
 }
-.event-list-inner-box .event-list-badge-wrapper {
+.event-list-inner-box .event-list-date-badge-wrapper {
   min-width: 50px;
   width: 50px;
   height: 50px;
   border: 1px solid #e9ecef;
 }
-.event-list-inner-box .event-list-badge-wrapper strong {
+.event-list-inner-box .event-list-date-badge-wrapper strong {
   font-size: 0.875rem !important;
 }
-.event-list-inner-box .event-list-badge-wrapper .event-list-badge-day, .event-list-inner-box .event-list-badge-wrapper event-list-badge-month {
+.event-list-inner-box .event-list-date-badge-wrapper .event-list-badge-day, .event-list-inner-box .event-list-date-badge-wrapper event-list-badge-month {
   line-height: 1;
+}
+.event-list-inner-box .badge-container .badge {
+  margin-right: 4px;
 }
 .event-list-inner-box .last-minute-tour {
   color: #4caf58;
