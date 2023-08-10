@@ -21,6 +21,23 @@ button:hover * {
   @extend .btn-outline-primary;
 }
 
+/** Button styling for mp_forms (multi page forms) */
+.ce_form {
+  .widget-pagebreak {
+    button[type="submit"] {
+      @extend .btn;
+
+      &[value="continue"] {
+        @extend .btn-primary;
+      }
+
+      &[value="back"] {
+        @extend .btn-outline-primary;
+      }
+    }
+  }
+}
+
 .article-blue .submit {
   background: #ffffff;
   border-color: transparent;
@@ -38,6 +55,7 @@ button:hover * {
 
     fieldset {
       margin: $spacer 0 2rem 0;
+      border: none;
 
       legend {
         margin-bottom: $spacer;
@@ -49,38 +67,34 @@ button:hover * {
       line-height: 2;
     }
 
-    .checkbox_container, .radio_container {
-      display: flex;
-      align-items: baseline;
-      position: relative;
-
-      label, input {
-        margin: 0;
-        padding: 0;
-      }
-
-      input {
-        margin-right: .75rem;
-        //background-color: blue;
-      }
-
-    }
-
     .checkbox_container, .radio_container, .submit_container {
-      margin: 2rem 0;
+      margin: 1rem 0;
     }
 
     // Special treatment for radio or checkbox widgets
     .widget .checkbox_container, .widget .radio_container {
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
 
-      #ctrl_newsletter_367 > span:nth-child(3)
-      span {
-        display: flex;
-        align-items: baseline;
-        margin-down: .5rem;
+      > span {
+        display: inline-flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        vertical-align: top !important;
+        line-height: 1.4 !important;
+
+        > input {
+          margin: .3rem .75rem 0 0;
+          line-height: inherit;
+        }
+
+        > label {
+          margin: 0;
+          padding: 0;
+          line-height: inherit;
+        }
       }
+
     }
 
     .widget.error {

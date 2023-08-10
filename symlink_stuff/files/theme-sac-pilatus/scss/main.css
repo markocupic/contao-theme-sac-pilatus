@@ -2579,7 +2579,7 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .mod_event_feedback_form .btn-check[disabled] + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check[disabled] + button[name=mp_form_pageswitch][value=continue], .btn-check[disabled] + .submit, .btn-check[disabled] + button, .btn-check:disabled + .btn, .mod_event_feedback_form .btn-check:disabled + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:disabled + button[name=mp_form_pageswitch][value=continue], .btn-check:disabled + .submit, .btn-check:disabled + button {
+.btn-check[disabled] + .btn, .mod_event_feedback_form .btn-check[disabled] + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check[disabled] + button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-check[disabled] + button[type=submit], .btn-check[disabled] + .submit, .btn-check[disabled] + button, .btn-check:disabled + .btn, .mod_event_feedback_form .btn-check:disabled + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:disabled + button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-check:disabled + button[type=submit], .btn-check:disabled + .submit, .btn-check:disabled + button {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2755,11 +2755,11 @@ textarea.form-control-lg {
 .input-group > .form-floating:focus-within {
   z-index: 5;
 }
-.input-group .btn, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=back], .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=continue], .input-group .submit, .input-group button {
+.input-group .btn, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=back], .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=continue], .input-group .ce_form .widget-pagebreak button[type=submit], .ce_form .widget-pagebreak .input-group button[type=submit], .input-group .submit, .input-group button {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:focus, .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=back]:focus, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:focus, .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=continue]:focus, .input-group .submit:focus, .input-group button:focus {
+.input-group .btn:focus, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:focus, .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=back]:focus, .input-group .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:focus, .mod_event_feedback_form .input-group button[name=mp_form_pageswitch][value=continue]:focus, .input-group .ce_form .widget-pagebreak button[type=submit]:focus, .ce_form .widget-pagebreak .input-group button[type=submit]:focus, .input-group .submit:focus, .input-group button:focus {
   z-index: 5;
 }
 
@@ -2788,6 +2788,7 @@ textarea.form-control-lg {
 .input-group-lg > .btn,
 .mod_event_feedback_form .input-group-lg > button[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .input-group-lg > button[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .input-group-lg > button[type=submit],
 .input-group-lg > .submit,
 .input-group-lg > button {
   padding: 1rem 1.5rem;
@@ -2800,6 +2801,7 @@ textarea.form-control-lg {
 .input-group-lg > .btn,
 .mod_event_feedback_form .input-group-lg > button[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .input-group-lg > button[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .input-group-lg > button[type=submit],
 .input-group-lg > .submit,
 .input-group-lg > button {
     font-size: 1.25rem;
@@ -2812,6 +2814,7 @@ textarea.form-control-lg {
 .input-group-sm > .btn,
 .mod_event_feedback_form .input-group-sm > button[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .input-group-sm > button[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .input-group-sm > button[type=submit],
 .input-group-sm > .submit,
 .input-group-sm > button {
   padding: 0.5rem 1rem;
@@ -3004,7 +3007,7 @@ textarea.form-control-lg {
   z-index: 4;
 }
 
-.btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .submit, button {
+.btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button[type=submit], .submit, button {
   --bs-btn-padding-x: 1.25rem;
   --bs-btn-padding-y: 0.75rem;
   --bs-btn-font-family: ;
@@ -3037,41 +3040,41 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (min-width: 2000px) {
-  .btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .submit, button {
+  .btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button[type=submit], .submit, button {
     --bs-btn-font-size: 1rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .submit, button {
+  .btn, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button[type=submit], .submit, button {
     transition: none;
   }
 }
-:not(.btn-check) + .btn:hover, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:hover, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:hover, :not(.btn-check) + .submit:hover, :not(.btn-check) + button:hover, .btn:first-child:hover, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:first-child:hover, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:first-child:hover, .submit:first-child:hover, button:first-child:hover {
+:not(.btn-check) + .btn:hover, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:hover, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:hover, .ce_form .widget-pagebreak :not(.btn-check) + button[type=submit]:hover, :not(.btn-check) + .submit:hover, :not(.btn-check) + button:hover, .btn:first-child:hover, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:first-child:hover, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:first-child:hover, .ce_form .widget-pagebreak button[type=submit]:first-child:hover, .submit:first-child:hover, button:first-child:hover {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
-.btn:focus-visible, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:focus-visible, .submit:focus-visible, button:focus-visible {
+.btn:focus-visible, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:focus-visible, .ce_form .widget-pagebreak button[type=submit]:focus-visible, .submit:focus-visible, button:focus-visible {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:focus-visible + .btn, .mod_event_feedback_form .btn-check:focus-visible + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:focus-visible + button[name=mp_form_pageswitch][value=continue], .btn-check:focus-visible + .submit, .btn-check:focus-visible + button {
+.btn-check:focus-visible + .btn, .mod_event_feedback_form .btn-check:focus-visible + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:focus-visible + button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-check:focus-visible + button[type=submit], .btn-check:focus-visible + .submit, .btn-check:focus-visible + button {
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked + .btn, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=continue], .btn-check:checked + .submit, .btn-check:checked + button, :not(.btn-check) + .btn:active, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:active, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:active, :not(.btn-check) + .submit:active, :not(.btn-check) + button:active, .btn:first-child:active, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:first-child:active, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:first-child:active, .submit:first-child:active, button:first-child:active, .btn.active, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=continue], .active.submit, button.active, .btn.show, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=continue], .show.submit, button.show {
+.btn-check:checked + .btn, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-check:checked + button[type=submit], .btn-check:checked + .submit, .btn-check:checked + button, :not(.btn-check) + .btn:active, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:active, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:active, .ce_form .widget-pagebreak :not(.btn-check) + button[type=submit]:active, :not(.btn-check) + .submit:active, :not(.btn-check) + button:active, .btn:first-child:active, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:first-child:active, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:first-child:active, .ce_form .widget-pagebreak button[type=submit]:first-child:active, .submit:first-child:active, button:first-child:active, .btn.active, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button.active[type=submit], .active.submit, button.active, .btn.show, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button.show[type=submit], .show.submit, button.show {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
-.btn-check:checked + .btn:focus-visible, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=continue]:focus-visible, .btn-check:checked + .submit:focus-visible, .btn-check:checked + button:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:active:focus-visible, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:active:focus-visible, :not(.btn-check) + .submit:active:focus-visible, :not(.btn-check) + button:active:focus-visible, .btn:first-child:active:focus-visible, .submit:first-child:active:focus-visible, button:first-child:active:focus-visible, .btn.active:focus-visible, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=continue]:focus-visible, .active.submit:focus-visible, button.active:focus-visible, .btn.show:focus-visible, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=continue]:focus-visible, .show.submit:focus-visible, button.show:focus-visible {
+.btn-check:checked + .btn:focus-visible, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form .btn-check:checked + button[name=mp_form_pageswitch][value=continue]:focus-visible, .ce_form .widget-pagebreak .btn-check:checked + button[type=submit]:focus-visible, .btn-check:checked + .submit:focus-visible, .btn-check:checked + button:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=back]:active:focus-visible, .mod_event_feedback_form :not(.btn-check) + button[name=mp_form_pageswitch][value=continue]:active:focus-visible, .ce_form .widget-pagebreak :not(.btn-check) + button[type=submit]:active:focus-visible, :not(.btn-check) + .submit:active:focus-visible, :not(.btn-check) + button:active:focus-visible, .btn:first-child:active:focus-visible, .submit:first-child:active:focus-visible, button:first-child:active:focus-visible, .btn.active:focus-visible, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button.active[name=mp_form_pageswitch][value=continue]:focus-visible, .ce_form .widget-pagebreak button.active[type=submit]:focus-visible, .active.submit:focus-visible, button.active:focus-visible, .btn.show:focus-visible, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=back]:focus-visible, .mod_event_feedback_form button.show[name=mp_form_pageswitch][value=continue]:focus-visible, .ce_form .widget-pagebreak button.show[type=submit]:focus-visible, .show.submit:focus-visible, button.show:focus-visible {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn:disabled, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:disabled, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:disabled, .submit:disabled, button:disabled, .btn.disabled, .mod_event_feedback_form button.disabled[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.disabled[name=mp_form_pageswitch][value=continue], .disabled.submit, button.disabled, fieldset:disabled .btn, fieldset:disabled .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form fieldset:disabled button[name=mp_form_pageswitch][value=back], fieldset:disabled .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .mod_event_feedback_form fieldset:disabled button[name=mp_form_pageswitch][value=continue], fieldset:disabled .submit, fieldset:disabled button {
+.btn:disabled, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back]:disabled, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue]:disabled, .ce_form .widget-pagebreak button[type=submit]:disabled, .submit:disabled, button:disabled, .btn.disabled, .mod_event_feedback_form button.disabled[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.disabled[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak button.disabled[type=submit], .disabled.submit, button.disabled, fieldset:disabled .btn, fieldset:disabled .mod_event_feedback_form button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form fieldset:disabled button[name=mp_form_pageswitch][value=back], fieldset:disabled .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], .mod_event_feedback_form fieldset:disabled button[name=mp_form_pageswitch][value=continue], fieldset:disabled .ce_form .widget-pagebreak button[type=submit], .ce_form .widget-pagebreak fieldset:disabled button[type=submit], fieldset:disabled .submit, fieldset:disabled button {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
@@ -3079,7 +3082,7 @@ textarea.form-control-lg {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-primary {
+.btn-primary, .ce_form .widget-pagebreak button[type=submit][value=continue] {
   --bs-btn-color: #fff;
   --bs-btn-bg: #026ca0;
   --bs-btn-border-color: #026ca0;
@@ -3215,7 +3218,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #333;
 }
 
-.btn-outline-primary, .submit {
+.btn-outline-primary, .ce_form .widget-pagebreak button[type=submit][value=back], .submit {
   --bs-btn-color: #026ca0;
   --bs-btn-border-color: #026ca0;
   --bs-btn-hover-color: #fff;
@@ -3373,19 +3376,19 @@ textarea.form-control-lg {
   color: var(--bs-btn-hover-color);
 }
 
-.btn-lg, .btn-group-lg > .btn, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue], .btn-group-lg > .submit, .btn-group-lg > button {
+.btn-lg, .btn-group-lg > .btn, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-group-lg > button[type=submit], .btn-group-lg > .submit, .btn-group-lg > button {
   --bs-btn-padding-y: 1rem;
   --bs-btn-padding-x: 1.5rem;
   --bs-btn-font-size: calc(0.8947368421rem + 0.2842105263vw);
   --bs-btn-border-radius: 0;
 }
 @media (min-width: 2000px) {
-  .btn-lg, .btn-group-lg > .btn, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue], .btn-group-lg > .submit, .btn-group-lg > button {
+  .btn-lg, .btn-group-lg > .btn, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-group-lg > button[type=submit], .btn-group-lg > .submit, .btn-group-lg > button {
     --bs-btn-font-size: 1.25rem;
   }
 }
 
-.btn-sm, .btn-group-sm > .btn, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=continue], .btn-group-sm > .submit, .btn-group-sm > button {
+.btn-sm, .btn-group-sm > .btn, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-group-sm > button[type=submit], .btn-group-sm > .submit, .btn-group-sm > button {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 0.875rem;
@@ -3760,10 +3763,11 @@ textarea.form-control-lg {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn, .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=continue], .btn-group > .submit, .btn-group > button,
+.btn-group > .btn, .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-group > button[type=submit], .btn-group > .submit, .btn-group > button,
 .btn-group-vertical > .btn,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .btn-group-vertical > button[type=submit],
 .btn-group-vertical > .submit,
 .btn-group-vertical > button {
   position: relative;
@@ -3776,21 +3780,25 @@ textarea.form-control-lg {
 .btn-group > .btn:hover,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=back]:hover,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=continue]:hover,
+.ce_form .widget-pagebreak .btn-group > button[type=submit]:hover,
 .btn-group > .submit:hover,
 .btn-group > button:hover,
 .btn-group > .btn:focus,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=back]:focus,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=continue]:focus,
+.ce_form .widget-pagebreak .btn-group > button[type=submit]:focus,
 .btn-group > .submit:focus,
 .btn-group > button:focus,
 .btn-group > .btn:active,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=back]:active,
 .mod_event_feedback_form .btn-group > button[name=mp_form_pageswitch][value=continue]:active,
+.ce_form .widget-pagebreak .btn-group > button[type=submit]:active,
 .btn-group > .submit:active,
 .btn-group > button:active,
 .btn-group > .btn.active,
 .mod_event_feedback_form .btn-group > button.active[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .btn-group > button.active[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .btn-group > button.active[type=submit],
 .btn-group > .active.submit,
 .btn-group > button.active,
 .btn-group-vertical > .btn-check:checked + .btn,
@@ -3802,21 +3810,25 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn:hover,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back]:hover,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue]:hover,
+.ce_form .widget-pagebreak .btn-group-vertical > button[type=submit]:hover,
 .btn-group-vertical > .submit:hover,
 .btn-group-vertical > button:hover,
 .btn-group-vertical > .btn:focus,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back]:focus,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue]:focus,
+.ce_form .widget-pagebreak .btn-group-vertical > button[type=submit]:focus,
 .btn-group-vertical > .submit:focus,
 .btn-group-vertical > button:focus,
 .btn-group-vertical > .btn:active,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back]:active,
 .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue]:active,
+.ce_form .widget-pagebreak .btn-group-vertical > button[type=submit]:active,
 .btn-group-vertical > .submit:active,
 .btn-group-vertical > button:active,
 .btn-group-vertical > .btn.active,
 .mod_event_feedback_form .btn-group-vertical > button.active[name=mp_form_pageswitch][value=back],
 .mod_event_feedback_form .btn-group-vertical > button.active[name=mp_form_pageswitch][value=continue],
+.ce_form .widget-pagebreak .btn-group-vertical > button.active[type=submit],
 .btn-group-vertical > .active.submit,
 .btn-group-vertical > button.active {
   z-index: 1;
@@ -3846,12 +3858,12 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=back] + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=continue] + .dropdown-toggle-split, .btn-group-sm > .submit + .dropdown-toggle-split, .btn-group-sm > button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=back] + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-sm > button[name=mp_form_pageswitch][value=continue] + .dropdown-toggle-split, .ce_form .widget-pagebreak .btn-group-sm > button[type=submit] + .dropdown-toggle-split, .btn-group-sm > .submit + .dropdown-toggle-split, .btn-group-sm > button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back] + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue] + .dropdown-toggle-split, .btn-group-lg > .submit + .dropdown-toggle-split, .btn-group-lg > button + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=back] + .dropdown-toggle-split, .mod_event_feedback_form .btn-group-lg > button[name=mp_form_pageswitch][value=continue] + .dropdown-toggle-split, .ce_form .widget-pagebreak .btn-group-lg > button[type=submit] + .dropdown-toggle-split, .btn-group-lg > .submit + .dropdown-toggle-split, .btn-group-lg > button + .dropdown-toggle-split {
   padding-right: 1.125rem;
   padding-left: 1.125rem;
 }
@@ -3861,11 +3873,11 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn, .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue], .btn-group-vertical > .submit, .btn-group-vertical > button,
+.btn-group-vertical > .btn, .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back], .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue], .ce_form .widget-pagebreak .btn-group-vertical > button[type=submit], .btn-group-vertical > .submit, .btn-group-vertical > button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child), .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back]:not(:first-child), .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue]:not(:first-child), .btn-group-vertical > .submit:not(:first-child), .btn-group-vertical > button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=back]:not(:first-child), .mod_event_feedback_form .btn-group-vertical > button[name=mp_form_pageswitch][value=continue]:not(:first-child), .ce_form .widget-pagebreak .btn-group-vertical > button[type=submit]:not(:first-child), .btn-group-vertical > .submit:not(:first-child), .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
@@ -4805,7 +4817,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-.btn .badge, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back] .badge, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue] .badge, .submit .badge, button .badge {
+.btn .badge, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back] .badge, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue] .badge, .ce_form .widget-pagebreak button[type=submit] .badge, .submit .badge, button .badge {
   position: relative;
   top: -1px;
 }
@@ -6699,7 +6711,7 @@ textarea.form-control-lg {
   background-color: currentcolor;
   opacity: 0.5;
 }
-.placeholder.btn::before, .mod_event_feedback_form button.placeholder[name=mp_form_pageswitch][value=back]::before, .mod_event_feedback_form button.placeholder[name=mp_form_pageswitch][value=continue]::before, .placeholder.submit::before, button.placeholder::before {
+.placeholder.btn::before, .mod_event_feedback_form button.placeholder[name=mp_form_pageswitch][value=back]::before, .mod_event_feedback_form button.placeholder[name=mp_form_pageswitch][value=continue]::before, .ce_form .widget-pagebreak button.placeholder[type=submit]::before, .placeholder.submit::before, button.placeholder::before {
   display: inline-block;
   content: "";
 }
@@ -12207,11 +12219,11 @@ small, .small, #footer .footer-row-2 a, #footer .footer-row-2 a > *, #footer .fo
 }
 @media (min-width: 992px) {
   div, p, li, legend, label, td, th {
-    font-size: calc(0.9rem * 1.05);
+    font-size: calc(0.9rem * 1);
   }
 
   small, .small, #footer .footer-row-2 a, #footer .footer-row-2 a > *, #footer .footer-row-2 *, #footer .footer-row-1 a, #footer .footer-row-1 a > *, #footer .footer-row-1, #footer .footer-nav li * {
-    font-size: calc(0.8rem * 1.05);
+    font-size: calc(0.8rem * 1);
   }
 }
 @media (min-width: 1200px) {
@@ -12225,11 +12237,11 @@ small, .small, #footer .footer-row-2 a, #footer .footer-row-2 a > *, #footer .fo
 }
 @media (min-width: 1400px) {
   div, p, li, legend, label, td, th {
-    font-size: calc(0.9rem * 1.25);
+    font-size: calc(0.9rem * 1.1);
   }
 
   small, .small, #footer .footer-row-2 a, #footer .footer-row-2 a > *, #footer .footer-row-2 *, #footer .footer-row-1 a, #footer .footer-row-1 a > *, #footer .footer-row-1, #footer .footer-nav li * {
-    font-size: calc(0.8rem * 1.25);
+    font-size: calc(0.8rem * 1.1);
   }
 }
 div, p, li, legend, label, td, th {
@@ -12599,6 +12611,7 @@ button:hover * {
   text-decoration: none !important;
 }
 
+/** Button styling for mp_forms (multi page forms) */
 .article-blue .submit {
   background: #ffffff;
   border-color: transparent;
@@ -12613,6 +12626,7 @@ button:hover * {
 
 #main .formbody fieldset {
   margin: 1rem 0 2rem 0;
+  border: none;
 }
 #main .formbody fieldset legend {
   margin-bottom: 1rem;
@@ -12621,29 +12635,28 @@ button:hover * {
 #main .formbody textarea {
   line-height: 2;
 }
-#main .formbody .checkbox_container, #main .formbody .radio_container {
-  display: flex;
-  align-items: baseline;
-  position: relative;
-}
-#main .formbody .checkbox_container label, #main .formbody .checkbox_container input, #main .formbody .radio_container label, #main .formbody .radio_container input {
-  margin: 0;
-  padding: 0;
-}
-#main .formbody .checkbox_container input, #main .formbody .radio_container input {
-  margin-right: 0.75rem;
-}
 #main .formbody .checkbox_container, #main .formbody .radio_container, #main .formbody .submit_container {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 #main .formbody .widget .checkbox_container, #main .formbody .widget .radio_container {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
-#main .formbody .widget .checkbox_container #ctrl_newsletter_367 > span:nth-child(3) span, #main .formbody .widget .radio_container #ctrl_newsletter_367 > span:nth-child(3) span {
-  display: flex;
-  align-items: baseline;
-  margin-down: 0.5rem;
+#main .formbody .widget .checkbox_container > span, #main .formbody .widget .radio_container > span {
+  display: inline-flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  vertical-align: top !important;
+  line-height: 1.4 !important;
+}
+#main .formbody .widget .checkbox_container > span > input, #main .formbody .widget .radio_container > span > input {
+  margin: 0.3rem 0.75rem 0 0;
+  line-height: inherit;
+}
+#main .formbody .widget .checkbox_container > span > label, #main .formbody .widget .radio_container > span > label {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
 }
 #main .formbody .widget.error .error {
   color: #be0b15;
@@ -14415,12 +14428,14 @@ button.slick-prev.slick-arrow:before {
 .filter-board .widget-checkbox .form-check.form-switch {
   display: flex;
   align-items: flex-start;
-  padding: 0;
+  justify-content: center !important;
 }
 .filter-board .widget-checkbox .form-check.form-switch .form-check-input {
   border-radius: 2em;
+  margin-right: 4px;
 }
 .filter-board .widget-checkbox .form-check.form-switch > label {
+  margin-top: 4px !important;
   margin-bottom: 0 !important;
   line-height: 1;
 }
@@ -14623,47 +14638,47 @@ button.slick-prev.slick-arrow:before {
   margin-bottom: -6.66667em;
 }
 
-.btn a, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue] a, button a, .submit a {
+.btn a, .mod_event_feedback_form button[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue] a, button a, .submit a, .ce_form .widget-pagebreak button[type=submit] a {
   text-decoration: none;
 }
 
-.btn.btn-primary a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue] a, button.btn-primary a, .btn-primary.submit a {
+.btn.btn-primary a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue] a, button.btn-primary a, .btn-primary.submit a, .ce_form .widget-pagebreak button.btn-primary[type=submit] a, .ce_form .widget-pagebreak button[type=submit][value=continue] a {
   color: #fff;
 }
 
-.btn.btn-primary:hover a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue]:hover a, button.btn-primary:hover a, .btn-primary.submit:hover a {
+.btn.btn-primary:hover a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue]:hover a, button.btn-primary:hover a, .btn-primary.submit:hover a, .ce_form .widget-pagebreak button.btn-primary[type=submit]:hover a, .ce_form .widget-pagebreak button[type=submit][value=continue]:hover a {
   color: #026ca0;
 }
 
-.btn.btn-outline-primary a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=continue] a, button.btn-outline-primary a, .submit a {
+.btn.btn-outline-primary a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=continue] a, button.btn-outline-primary a, .ce_form .widget-pagebreak button.btn-outline-primary[type=submit] a, .submit a, .ce_form .widget-pagebreak button[type=submit].submit a, .ce_form .widget-pagebreak button[type=submit][value=back] a {
   color: #026ca0;
 }
 
-.btn.btn-outline-primary:hover a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=continue]:hover a, button.btn-outline-primary:hover a, .submit:hover a {
+.btn.btn-outline-primary:hover a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-outline-primary[name=mp_form_pageswitch][value=continue]:hover a, button.btn-outline-primary:hover a, .ce_form .widget-pagebreak button.btn-outline-primary[type=submit]:hover a, .submit:hover a, .ce_form .widget-pagebreak button[type=submit].submit:hover a, .ce_form .widget-pagebreak button[type=submit][value=back]:hover a {
   color: #ffffff;
 }
 
-.btn.btn-danger a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=continue] a, button.btn-danger a, .btn-danger.submit a {
+.btn.btn-danger a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=continue] a, button.btn-danger a, .btn-danger.submit a, .ce_form .widget-pagebreak button.btn-danger[type=submit] a {
   color: #fff;
 }
 
-.btn.btn-danger:hover a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=continue]:hover a, button.btn-danger:hover a, .btn-danger.submit:hover a {
+.btn.btn-danger:hover a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-danger[name=mp_form_pageswitch][value=continue]:hover a, button.btn-danger:hover a, .btn-danger.submit:hover a, .ce_form .widget-pagebreak button.btn-danger[type=submit]:hover a {
   color: #be0b15;
 }
 
-.btn.btn-outline-danger a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=continue] a, button.btn-outline-danger a, .btn-outline-danger.submit a {
+.btn.btn-outline-danger a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=back] a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=continue] a, button.btn-outline-danger a, .btn-outline-danger.submit a, .ce_form .widget-pagebreak button.btn-outline-danger[type=submit] a {
   color: #be0b15;
 }
 
-.btn.btn-outline-danger:hover a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=continue]:hover a, button.btn-outline-danger:hover a, .btn-outline-danger.submit:hover a {
+.btn.btn-outline-danger:hover a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=back]:hover a, .mod_event_feedback_form button.btn-outline-danger[name=mp_form_pageswitch][value=continue]:hover a, button.btn-outline-danger:hover a, .btn-outline-danger.submit:hover a, .ce_form .widget-pagebreak button.btn-outline-danger[type=submit]:hover a {
   color: #ffffff;
 }
 
-.btn.btn-primary, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue], button.btn-primary, .btn-primary.submit, .btn.btn-primary:active, .btn.btn-primary:hover {
+.btn.btn-primary, .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button.btn-primary[name=mp_form_pageswitch][value=continue], button.btn-primary, .btn-primary.submit, .ce_form .widget-pagebreak button.btn-primary[type=submit], .ce_form .widget-pagebreak button[type=submit][value=continue], .btn.btn-primary:active, .btn.btn-primary:hover {
   color: #ffffff;
 }
 
-.btn.btn-success, .mod_event_feedback_form button.btn-success[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], button.btn-success, .btn-success.submit, .btn.btn-success:active, .btn.btn-success:hover {
+.btn.btn-success, .mod_event_feedback_form button.btn-success[name=mp_form_pageswitch][value=back], .mod_event_feedback_form button[name=mp_form_pageswitch][value=continue], button.btn-success, .btn-success.submit, .ce_form .widget-pagebreak button.btn-success[type=submit], .btn.btn-success:active, .btn.btn-success:hover {
   color: #ffffff;
 }
 
