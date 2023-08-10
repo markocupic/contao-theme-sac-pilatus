@@ -79,14 +79,16 @@
     .form-check.form-switch {
       display: flex;
       align-items: flex-start;
-      padding: 0;
+      justify-content: center !important;
     }
 
     .form-check.form-switch .form-check-input {
       border-radius: 2em;
+      margin-right: 4px;
     }
 
     .form-check.form-switch > label {
+      margin-top: 4px !important;
       margin-bottom: 0 !important;
       line-height: 1;
     }
