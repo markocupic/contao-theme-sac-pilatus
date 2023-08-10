@@ -64,7 +64,7 @@ $mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30r
 }
 
 // font-size
-$mc_scale_factors: ("xs": .9, "sm": .95, "md": 1, "lg": 1.05, "xl": 1.1, "xxl": 1.25);
+$mc_scale_factors: ("xs": .9, "sm": .95, "md": 1, "lg": 1, "xl": 1.1, "xxl": 1.1);
 $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "0.9rem", "small,.small": "0.8rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
