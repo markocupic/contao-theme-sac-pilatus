@@ -13014,10 +13014,6 @@ body.sidebar-open #sidebar {
   padding: 0;
   overflow: hidden;
 }
-.sidebar-navigation li > a,
-.sidebar-navigation li > strong {
-  color: #222 !important;
-}
 .sidebar-navigation li > strong.active {
   color: #222;
   font-weight: bold;
@@ -13030,6 +13026,24 @@ body.sidebar-open #sidebar {
 }
 .sidebar-navigation ul.level_1 ul {
   display: none;
+}
+.sidebar-navigation ul.level_1 > li.page-container > a {
+  color: #222 !important;
+}
+.sidebar-navigation ul.level_2 > li.page-container > a {
+  color: #222 !important;
+}
+.sidebar-navigation ul.level_3 > li.page-container > a {
+  color: #222 !important;
+}
+.sidebar-navigation ul.level_1 > li > a {
+  color: #026ca0 !important;
+}
+.sidebar-navigation ul.level_2 > li > a {
+  color: #026ca0 !important;
+}
+.sidebar-navigation ul.level_3 > li > a {
+  color: #026ca0 !important;
 }
 .sidebar-navigation ul.level_1 > li:before {
   font-family: "Font Awesome 6 Pro";
@@ -13130,11 +13144,10 @@ body.sidebar-open #sidebar {
   margin: 10px 0;
   padding-left: 48px;
   font-size: 20px;
-  color: #fff;
   display: block;
 }
-.sidebar-navigation ul.level_1 > li span.active {
-  color: #000 !important;
+.sidebar-navigation ul.level_1 > li > strong.active {
+  color: #026ca0 !important;
 }
 .sidebar-navigation ul.level_2 {
   background-color: #eee;
@@ -13162,7 +13175,7 @@ body.sidebar-open #sidebar {
   color: #222;
   display: block;
 }
-.sidebar-navigation ul.level_2 > li strong.active {
+.sidebar-navigation ul.level_2 > li > strong.active {
   color: #026ca0 !important;
 }
 .sidebar-navigation ul.level_3 > li {
@@ -13186,7 +13199,7 @@ body.sidebar-open #sidebar {
   color: #222;
   display: block;
 }
-.sidebar-navigation ul.level_3 > li strong.active {
+.sidebar-navigation ul.level_3 > li > strong.active {
   color: #026ca0 !important;
 }
 .sidebar-navigation ul.level_4 > li {
@@ -13210,7 +13223,7 @@ body.sidebar-open #sidebar {
   color: #222;
   display: block;
 }
-.sidebar-navigation ul.level_4 > li strong.active {
+.sidebar-navigation ul.level_4 > li > strong.active {
   color: #026ca0 !important;
 }
 .sidebar-navigation ul.level_1 li.trail > ul,

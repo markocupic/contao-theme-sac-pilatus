@@ -6,7 +6,7 @@ $nav-close-btn-color: #ccc;
 $nav-font-color: #222;
 $nav-link-color: $blue;
 $nav-bg-color: #fff;
-//$nav-font-color: #333;
+
 /* Dropdown - main navigation header */
 
 #sidebar {
@@ -159,7 +159,7 @@ body.sidebar-open {
 
     > a,
     > strong {
-      color: $nav-font-color !important;
+      //color: $nav-font-color !important;
     }
 
     > strong.active {
@@ -184,23 +184,28 @@ body.sidebar-open {
   }
 
   // Link color for non-clickable items for all levels
-  .sidebar-navigation ul.level_1 > li.page-container > a {
+  ul.level_1 > li.page-container > a {
     color: $nav-font-color !important;
   }
-  .sidebar-navigation ul.level_2 > li.page-container > a {
+
+  ul.level_2 > li.page-container > a {
     color: $nav-font-color !important;
   }
-  .sidebar-navigation ul.level_3 > li.page-container > a {
+
+  ul.level_3 > li.page-container > a {
     color: $nav-font-color !important;
   }
+
   // Link color for clickable items for all levels
-  .sidebar-navigation ul.level_1 > li > a {
+  ul.level_1 > li > a {
     color: $nav-link-color !important;
   }
-  .sidebar-navigation ul.level_2 > li > a {
+
+  ul.level_2 > li > a {
     color: $nav-link-color !important;
   }
-  .sidebar-navigation ul.level_3 > li > a {
+
+  ul.level_3 > li > a {
     color: $nav-link-color !important;
   }
 
@@ -269,7 +274,7 @@ body.sidebar-open {
     }
   }
 
-  // Borders&backgrounds
+  // Borders & backgrounds
   ul.level_1 {
     > li {
       border-bottom: 1px solid #e2e2e2;
@@ -315,7 +320,7 @@ body.sidebar-open {
         font-size: 18px;
         font-style: normal;
       }
-      
+
       > .toggle-submenu:before:hover {
         color: $red !important;
       }
@@ -350,12 +355,11 @@ body.sidebar-open {
         margin: 10px 0;
         padding-left: $level_1-offset;
         font-size: 20px;
-        color: #fff;
         display: block;
       }
 
-      span.active {
-        color: #000 !important;
+      > strong.active {
+        color: $blue !important;
       }
     }
   }
@@ -390,7 +394,7 @@ body.sidebar-open {
         display: block;
       }
 
-      strong.active {
+      > strong.active {
         color: $blue !important;
       }
     }
@@ -422,7 +426,7 @@ body.sidebar-open {
         display: block;
       }
 
-      strong.active {
+      > strong.active {
         color: $blue !important;
       }
     }
@@ -454,7 +458,7 @@ body.sidebar-open {
         display: block;
       }
 
-      strong.active {
+      > strong.active {
         color: $blue !important;
       }
     }
@@ -467,8 +471,3 @@ body.sidebar-open {
   }
 
 }
-
-
-
-
-
