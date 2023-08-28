@@ -19,11 +19,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class AddFrontendAssetsSubscriber implements EventSubscriberInterface
+final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private readonly ScopeMatcher $scopeMatcher,
-        private readonly string $fontAwesomeKitKey,
+        private ScopeMatcher $scopeMatcher,
+        private string $fontAwesomeKitKey, // Not in use yet
     ) {
     }
 
@@ -43,16 +43,16 @@ class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 
             // jQuery is loaded in the layout
             // Bootstrap.js bundle (includes popper.js)
-            $GLOBALS['TL_HEAD'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
             // Load Font Awesome key from configuration
             // $GLOBALS['TL_HEAD'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
             // Due to bandwidth limitations we host fontawesome ourselves
-            $GLOBALS['TL_HEAD'][] = '<script defer src="assets/contao-component-fontawesome-pro/fontawesome-pro/js/all.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="assets/contao-component-fontawesome-pro/fontawesome-pro/js/all.min.js?v=6.4.1" crossorigin="anonymous"></script>';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="assets/contao-component-fontawesome-pro/fontawesome-pro/css/all.min.css?v=6.4.1" />';
 
             // Select2
-            $GLOBALS['TL_HEAD'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" />';
 
             // Animate
@@ -78,7 +78,7 @@ class AddFrontendAssetsSubscriber implements EventSubscriberInterface
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/third-party/jquery.touchSwipe.min.js|static';
 
             // Load headroom.js https://github.com/WickyNilliams/headroom.js/
-            //$GLOBALS['TL_HEAD'][] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>';
+            //$GLOBALS['TL_BODY'][] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>';
 
             // Load theme javascript file
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/equal-height.min.js|static';
@@ -86,8 +86,8 @@ class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 
             // Load flatpickr (datepicker)
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
-            $GLOBALS['TL_HEAD'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
-            $GLOBALS['TL_HEAD'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
         }
     }
 }
