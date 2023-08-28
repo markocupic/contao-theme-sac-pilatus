@@ -15,7 +15,12 @@
                 {% endif %}
 
                 {% if has_logged_in_frontend_user() is same as false %}
-                    <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
+                    <a href="{{ '{{link_url::member-login}}' }}" class="header-login-button trigger-login-modal d-none ms-2 small" title="Mitglieder-Login"><i class="fal fa-sign-in"></i><span>&nbsp;Mitglieder-Login</span></a>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", (event) => {
+                            document.querySelector('.header-login-button').classList.remove('d-none');
+                        });
+                    </script>
                 {% endif %}
 
                 {% if has_logged_in_frontend_user() is same as true %}
