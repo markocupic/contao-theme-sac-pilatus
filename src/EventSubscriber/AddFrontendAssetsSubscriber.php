@@ -37,6 +37,9 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         $request = $e->getRequest();
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
+            // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
+            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/detect-is-bs-modal-ready.js';
+
             // Head tags
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
             $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
