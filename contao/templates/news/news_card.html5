@@ -10,7 +10,7 @@
     <?php endif; ?>
 
     <div class="card-body">
-      <p class="card-date m-0">
+      <p class="card-date m-0 text-muted">
         <time datetime="<?= $this->datetime ?>" itemprop="datePublished"><small><?= $this->date ?></small></time>
       </p>
       <a href="{{news_url::<?= $this->id ?>}}" class="text-decoration-none" title="weiterlesen">
