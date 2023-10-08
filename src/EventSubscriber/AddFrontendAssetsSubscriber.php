@@ -63,12 +63,11 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 
             // Google Webfonts
-            $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.gstatic.com">';
+            $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.googleapis.com">';
+            $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
             $GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">';
-            //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">';
-            //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,200&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Varela+Round&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">';
-
-            // Vorschlag Buffoni Source Serif Pro
+            $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">';
+            // Vorschlag M. Buffoni Source Serif Pro
             //$GLOBALS['TL_HEAD'][] = '<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">';
 
             // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
