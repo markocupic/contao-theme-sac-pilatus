@@ -2,7 +2,7 @@
   font-family: $font-family-serif;
 }
 
-$headline-font-weight: 600;
+$headline-font-weight: $font-weight-bolder;
 
 body {
   font-size: 16px;
@@ -48,8 +48,8 @@ h2, .ce_headline {
 
 
 // headline font-size, line-height & margin
-$mc_scale_factors: ("xs": 1, "sm": 1.05, "md": 1.1, "lg": 1.125, "xl": 1.15, "xxl": 1.175);
-$mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30rem", "h4,.h4": "1.2rem", "h5,.h5": "1.1rem", "h6,.h6": "1.0rem");
+$mc_scale_factors: ("xs": 1.1, "sm": 1.1, "md": 1.1, "lg": 1.125, "xl": 1.15, "xxl": 1.175);
+$mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30rem", "h4,.h4": "1.2rem", "h5,.h5": "1.15rem", "h6,.h6": "1.1rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
   @include media-breakpoint-up($mc_breakpoint) {
@@ -65,8 +65,8 @@ $mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30r
 }
 
 // font-size
-$mc_scale_factors: ("xs": .9, "sm": .95, "md": 1, "lg": 1, "xl": 1.1, "xxl": 1.1);
-$mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "0.9rem", "small,.small": "0.8rem");
+$mc_scale_factors: ("xs": 1, "sm": 1, "md": 1, "lg": 1, "xl": 1.1, "xxl": 1.1);
+$mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "1rem", "small,.small": "0.8rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
   @include media-breakpoint-up($mc_breakpoint) {
@@ -84,7 +84,7 @@ div, p, li, legend, label, td, th {
 }
 
 // line-height
-$mc_scale_factors: ("xs": .9, "sm": .95, "md": 1, "lg": 1.05, "xl": 1.1, "xxl": 1.25);
+$mc_scale_factors: ("xs": .9, "sm": .95, "md": 1, "lg": 1.1, "xl": 1.15, "xxl": 1.25);
 $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "0.9rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
@@ -92,6 +92,7 @@ $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "0.9rem");
     @each $mc_selector, $mc_font_size_base in $mc_font_size_bases_map {
       #{$mc_selector} {
         line-height: calc(#{$mc_font_size_base} * #{$mc_font_size_factor} * 1.7);
+        line-height: 1.6;
       }
     }
   }
