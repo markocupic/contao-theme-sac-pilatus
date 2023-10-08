@@ -49,9 +49,9 @@
     }
   }
 
-  .heroimage-button-box:hover {
-    > a {
-      background-color: $red;
+  .heroimage-button-box {
+    > .btn:hover {
+      background-color: #000;
       color: #fff;
     }
   }
