@@ -34,8 +34,9 @@ body {
       @extend .px-3;
       @extend .px-sm-4;
       @extend .container-lg;
-      padding-top: 2rem !important;
-      padding-bottom: 2rem !important;
+      @extend .py-2;
+      @extend .py-lg-3;
+
       @include media-breakpoint-down(lg) {
         width: 100% !important; // override container class
         margin-left: 0 !important; // override container class
