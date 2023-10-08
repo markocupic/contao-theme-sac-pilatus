@@ -7,6 +7,8 @@
     @include rfs(4.5rem, height);
     @include rfs(.1rem, padding);
     @include rfs(3.5rem, font-size);
+    min-width: 3rem;
+    min-height: 3rem;
     margin-bottom: 0;
     color: #333;
     display: flex;
