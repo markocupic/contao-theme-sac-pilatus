@@ -59,23 +59,30 @@
 
     .heroimage-headline-box h1 {
       font-size: 3.5rem;
-      line-height: 5.2rem;
+      line-height: 1.6;
     }
   }
 
   @include media-breakpoint-up(lg) {
 
     .heroimage-headline-box h1 {
-      font-size: 4.25rem;
-      line-height: calc(6.75rem * 1.6);
+      font-size: 4.0rem;
+      line-height: 1.6;
     }
 
   }
 
   @include media-breakpoint-up(xl) {
     .heroimage-headline-box h1 {
-      //font-size: 5rem;
-      //line-height: 7.5rem;
+      font-size: 4.0rem;
+      line-height: 1.6;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    .heroimage-headline-box h1 {
+      font-size: 4.0rem;
+      line-height: 1.6;
     }
   }
 

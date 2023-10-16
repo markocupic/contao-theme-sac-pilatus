@@ -79,7 +79,7 @@ $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "1rem", "small,.small":
 }
 
 div, p, li, legend, label, td, th {
-  @include rfs(1.124rem, 'font-size');
+  //@include rfs(1.124rem, 'font-size');
   font-weight: 400;
 }
 
