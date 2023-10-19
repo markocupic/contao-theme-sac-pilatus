@@ -35,7 +35,7 @@ body {
       @extend .px-sm-4;
       @extend .container-lg;
       @extend .py-2;
-      @extend .py-lg-3;
+      @extend .py-lg-5; // more vertical padding on large screens
 
       @include media-breakpoint-down(lg) {
         width: 100% !important; // override container class
