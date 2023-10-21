@@ -1,8 +1,13 @@
 #footer {
-  $footer-bg-color-row-1: #262626;
-  $footer-bg-color-row-2: #131313;
-  $footer-color: #fff;
-  $footer-link-color: #d2d2d2;
+  $footer-bg-color-row-1: transparent;
+  $footer-bg-color-row-2: transparent;
+  $footer-color: #666;
+  $footer-link-color: #666;
+
+  .inside{
+    @extend .container-lg;
+    @extend .px-0;
+  }
 
   .footer-nav {
     margin-top: 1rem;
