@@ -1,0 +1,55 @@
+div:has(> .scrolling-text) {
+  overflow: hidden;
+  white-space: nowrap !important;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.scrolling-text {
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  /* animation properties */
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  -moz-animation: scrolling-text-animation 15s linear infinite;
+  -webkit-animation: scrolling-text-animation 15s linear infinite;
+  animation: scrolling-text-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes scrolling-text-animation {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes scrolling-text-animation {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scrolling-text-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
