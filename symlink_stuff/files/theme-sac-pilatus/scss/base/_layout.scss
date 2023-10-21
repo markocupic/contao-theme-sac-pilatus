@@ -13,6 +13,7 @@ body {
 }
 
 #header {
+  @extend .mb-xl-3;
   .header-navbar-row-0 > .inner {
     @extend .container-lg; // 100% width < lg (large screens)
     max-width: $mc-container-max-width;
@@ -31,11 +32,11 @@ body {
   #container {
     .mod_article > .article-inside.container {
       max-width: $mc-container-max-width;
-      @extend .px-3;
+      @extend .px-4;
       @extend .px-sm-4;
       @extend .container-lg;
-      @extend .py-2;
-      @extend .py-lg-5; // more vertical padding on large screens
+      @extend .py-4;
+      @extend .py-sm-5; // more vertical padding on large screens
 
       @include media-breakpoint-down(lg) {
         width: 100% !important; // override container class
@@ -55,6 +56,20 @@ body {
       }
     }
 
+    // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
+    .mod_article > .article-inside > *:first-child:not(script) {
+      @extend .mt-0;
+    }
+
+    // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
+    .mod_article > .article-inside > [class*="mod_"]:first-child > *:first-child {
+      @extend .mt-0;
+    }
+
+    .mod_article > .article-inside > [class*="ce_"]:first-child > *:first-child {
+      @extend .mt-0;
+    }
+
     .mod_article > .article-inside.container-fluid {
       padding: 0;
     }
@@ -62,11 +77,19 @@ body {
     .mod_article {
       margin-bottom: 0;
       margin-top: 0;
-      background-color: #fff;
+      background-color: transparent;
 
       .article-inside {
-        background-color: transparent;
+        background-color: #ffffff;
         overflow: hidden;
+      }
+    }
+
+    .mod_article.article-transparent {
+      background-color: transparent;
+
+      > .article-inside {
+        background-color: transparent;
       }
     }
 
@@ -75,8 +98,6 @@ body {
 
       > .article-inside {
         background-color: #fff;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
@@ -87,8 +108,6 @@ body {
 
       > .article-inside {
         background-color: #fff;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
       }
     }
 
@@ -96,22 +115,16 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background-color: $blue;
-        background: rgb(0, 130, 199);
         background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
-        padding-top: 1rem;
-        padding-bottom: 1rem;
       }
     }
 
     .mod_article.article-blue {
-      background: $blue;
+      background: transparent;
       color: #fff;
 
       > .article-inside {
-        background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        background: $blue;
       }
 
 
@@ -126,12 +139,10 @@ body {
     }
 
     .mod_article.article-darkcyan {
-      background-color: #009688;
+      background-color: transparent;
 
       > .article-inside {
-        background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        background-color: #009688;
       }
 
       li, ul, p, time, div {
@@ -159,38 +170,30 @@ body {
 
       > .article-inside {
         background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
       }
     }
 
     .mod_article.article-white {
-      background-color: #fff;
+      background-color: transparent;
 
       > .article-inside {
         background-color: #fff;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
       }
     }
 
     .mod_article.article-gray {
-      background-color: #fafafa;
+      background-color: transparent;
 
       .article-inside {
-        background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        background: #fafafa;
       }
     }
 
     .mod_article.article-dark-gray {
-      background-color: #cfcfcf;
+      background-color: transparent;
 
       > .article-inside {
-        background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        background-color: #cfcfcf;
       }
     }
   }
