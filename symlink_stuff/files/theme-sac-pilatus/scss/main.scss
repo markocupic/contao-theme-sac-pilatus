@@ -7,6 +7,7 @@
 @import "../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
 
 // MIXINS
+
 @import "mixins/_mixins.scss";
 
 // BASE
@@ -62,3 +63,4 @@
 @import "components/font-awesome";
 @import "components/image_zoom_in";
 @import "components/swiss-topo";
+@import "components/scrolling-text";
