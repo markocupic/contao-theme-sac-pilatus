@@ -1,41 +1,39 @@
 {% do addHtmlToHead('
     <style>
-    .event-button-box .btn {
+    .mod_event-button-box .btn {
         border-color: #fff !important;
     }
 
-    .event-button-box .btn:hover {
+    .mod_event-button-box .btn:hover {
         background: #000 !important;
         border: transparent !important;
     }
     </style>
 ') %}
 
-{% set tours = { 'Wanderung': '?tourType=6', 'Klettern Halle': '?tourType=11', 'Klettern Fels': '?tourType=4', 'Hochtour':'?tourType=2', 'Skitour':'?tourType=1', 'Mountainbike':'?tourType=10', 'Weitere Touren...': '' } %}
-{% set courses = { 'Basis Halle': '?courseType=24', 'Sportklettern': '?courseType=3', 'Hochtouren': '?courseType=2', 'Lawinenkunde':'?courseType=10', 'Skitouren':'?courseType=11', 'Skitechnik':'?courseType=12', 'Weitere Kurse...': '' } %}
+{% set tours = { 'Wanderung': '?tourType=6', 'Klettern Halle': '?tourType=11', 'Klettern Fels': '?tourType=4', 'Hochtour': '?tourType=2', 'Skitour': '?tourType=1', 'Mountainbike': '?tourType=10', 'Weitere Touren...': '' } %}
+{% set courses = { 'Basis Halle': '?courseType=24', 'Sportklettern': '?courseType=3', 'Hochtouren': '?courseType=2', 'Lawinenkunde': '?courseType=10', 'Skitouren': '?courseType=11', 'Skitechnik': '?courseType=12', 'Weitere Kurse...': '' } %}
 
-<div class="article-inside container">
-    <div class="event-button-box">
-        <h4><strong>TOUREN:</strong></h4>
-        <div class="d-inline-flex flex-wrap">
-            {% for event_type,url_param in tours %}
-                {# small screens #}
-                <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-inline d-md-none btn btn-sm btn-outline-dark me-2 mb-2"><i class="fa-thin fa-link"></i> {{ event_type }}</a>
-                {# large screens #}
-                <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-thin fa-link"></i> {{ event_type }}</a>
-            {% endfor %}
-        </div>
+<div class="mod_event-button-box">
+    <h4><strong>TOUREN:</strong></h4>
+    <div class="d-inline-flex flex-wrap">
+        {% for event_type,url_param in tours %}
+            {# small screens #}
+            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-inline d-md-none btn btn-sm btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            {# large screens #}
+            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+        {% endfor %}
     </div>
+</div>
 
-    <div class="event-button-box mt-5">
-        <h4><strong>KURSE:</strong></h4>
-        <div class="d-inline-flex flex-wrap">
-            {% for event_type,url_param in courses %}
-                {# small screens #}
-                <a href="kurse.html{{ url_param }}" class="d-inline d-md-none btn-sm btn btn-outline-dark me-2 mb-2"><i class="fa-thin fa-link"></i> {{ event_type }}</a>
-                {# large screens #}
-                <a href="kurse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-thin fa-link"></i> {{ event_type }}</a>
-            {% endfor %}
-        </div>
+<div class="mod_event-button-box mt-5">
+    <h4><strong>KURSE:</strong></h4>
+    <div class="d-inline-flex flex-wrap">
+        {% for event_type,url_param in courses %}
+            {# small screens #}
+            <a href="kurse.html{{ url_param }}" class="d-inline d-md-none btn-sm btn btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            {# large screens #}
+            <a href="kurse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+        {% endfor %}
     </div>
 </div>
