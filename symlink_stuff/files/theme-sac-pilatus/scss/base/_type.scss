@@ -48,8 +48,8 @@ h2, .ce_headline {
 
 
 // headline font-size, line-height & margin
-$mc_scale_factors: ("xs": 1.1, "sm": 1.1, "md": 1.1, "lg": 1.125, "xl": 1.15, "xxl": 1.4);
-$mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.30rem", "h4,.h4": "1.2rem", "h5,.h5": "1.15rem", "h6,.h6": "1.1rem");
+$mc_scale_factors: ("xs": 1.1, "sm": 1.1, "md": 1.1, "lg": 1.1, "xl": 1.15, "xxl": 1.15);
+$mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.3rem", "h4,.h4": "1.2rem", "h5,.h5": "1.1rem", "h6,.h6": "1rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
   @include media-breakpoint-up($mc_breakpoint) {
