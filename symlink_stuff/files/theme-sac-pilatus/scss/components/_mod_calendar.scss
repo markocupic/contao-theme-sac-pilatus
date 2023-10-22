@@ -141,8 +141,8 @@
   }
 
   .row {
-    padding-top: 2rem;
-    padding-bottom: $spacer-y;
+    //padding-top: 2rem;
+    //padding-bottom: $spacer-y;
 
     .kursstufe {
       color: $gray-400 !important;
@@ -178,6 +178,35 @@
     }
   }
 }
+
+.event-item-course {
+  .badge {
+    background-color: #000 !important;
+  }
+
+  .more-btn .badge {
+    @extend .bg-danger;
+
+    &:hover {
+      @extend .bg-primary;
+    }
+  }
+
+  .event-state-icon {
+    margin-top: 0 !important;
+
+    img {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  .event-organizer-logo {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
 
 .event-item-course.last {
   border-bottom: 0;

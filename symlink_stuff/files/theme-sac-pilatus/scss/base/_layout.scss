@@ -13,7 +13,7 @@ body {
 }
 
 #header {
-  @extend .mb-xl-3;
+  @extend .mb-lg-3;
   .header-navbar-row-0 > .inner {
     @extend .container-lg; // 100% width < lg (large screens)
     max-width: $mc-container-max-width;

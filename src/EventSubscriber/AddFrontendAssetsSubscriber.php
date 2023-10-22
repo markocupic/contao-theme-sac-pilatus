@@ -90,6 +90,11 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
             $GLOBALS['TL_BODY'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
             $GLOBALS['TL_BODY'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
+
+            // Add AOS animation library: https://github.com/michalsnik/aos
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />';
+            $GLOBALS['TL_BODY'][] = '<script src="https://unpkg.com/aos@next/dist/aos.js"></script>';
+            $GLOBALS['TL_BODY'][] = '<script>AOS.init();</script>';
         }
     }
 }
