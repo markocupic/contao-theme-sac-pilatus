@@ -151,6 +151,10 @@ ul {
 // Links
 a {
   text-underline-position: under;
+  &:before {
+    text-decoration: none !important;
+    display: inline-block;
+  }
 }
 
 a:hover, a:focus {
