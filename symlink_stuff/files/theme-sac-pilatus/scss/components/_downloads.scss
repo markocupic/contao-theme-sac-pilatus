@@ -44,7 +44,7 @@ a.email {
 
 .ce_hyperlink {
   a[href*="."] {
-    @include icon-before("\f0c1"); // fa-link
+    @include icon-before("\f08e"); // fa-arrow-up-right-from-square
   }
 
   a.hyperlink_img:before {
