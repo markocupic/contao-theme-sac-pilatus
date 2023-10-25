@@ -19,9 +19,9 @@
     <div class="d-inline-flex flex-wrap">
         {% for event_type,url_param in tours %}
             {# small screens #}
-            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-inline d-md-none btn btn-sm btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-inline d-md-none btn btn-sm btn-outline-dark me-2 mb-2">{{ event_type }}</a>
             {# large screens #}
-            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            <a href="touren-trainings-und-anlaesse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2">{{ event_type }}</a>
         {% endfor %}
     </div>
 </div>
@@ -31,9 +31,9 @@
     <div class="d-inline-flex flex-wrap">
         {% for event_type,url_param in courses %}
             {# small screens #}
-            <a href="kurse.html{{ url_param }}" class="d-inline d-md-none btn-sm btn btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            <a href="kurse.html{{ url_param }}" class="d-inline d-md-none btn-sm btn btn-outline-dark me-2 mb-2">{{ event_type }}</a>
             {# large screens #}
-            <a href="kurse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2"><i class="fa-light fa-link"></i> {{ event_type }}</a>
+            <a href="kurse.html{{ url_param }}" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2">{{ event_type }}</a>
         {% endfor %}
     </div>
 </div>
