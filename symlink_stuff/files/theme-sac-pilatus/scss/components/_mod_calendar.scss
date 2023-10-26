@@ -1,3 +1,9 @@
+#tour-list, #course-list {
+  &[v-cloak] {
+    visibility: hidden;
+  }
+}
+
 .loading-icon-lg {
 
   text-align: center;
@@ -26,7 +32,7 @@
   margin-right: 5px;
 }
 
-// Do not show "aktuell sind keine termine vorahanden"
+// Do not show "aktuell sind keine termine vorhanden"
 .empty {
   display: none;
 }
@@ -207,7 +213,6 @@
   }
 }
 
-
 .event-item-course.last {
   border-bottom: 0;
 }
@@ -278,4 +283,3 @@
   }
 
 }
-
