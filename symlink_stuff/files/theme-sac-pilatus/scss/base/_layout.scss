@@ -28,7 +28,8 @@ body {
 
 #wrapper {
   overflow-x: hidden;
-  @extend .px-0;
+  padding-left: $spacer-0;
+  padding-right: $spacer-0;
 
   #container {
 
@@ -42,36 +43,39 @@ body {
 
     .mod_article > .article-inside.container {
       max-width: $mc-container-max-width;
-      @extend .px-4;
-      @extend .px-sm-4;
-      @extend .container-lg;
-      @extend .py-4;
-      @extend .py-sm-5; // more vertical padding on large screens
+      width: 100%; // override container class
+      margin-left: 0; // override container class
+      margin-right: 0; // override container class
+      padding: $spacer-3 $spacer-4;
 
-      @include media-breakpoint-down(lg) {
-        width: 100% !important; // override container class
-        margin-left: 0 !important; // override container class
-        margin-right: 0 !important; // override container class
+      @include media-breakpoint-up(sm) {
+        // more vertical & horizontal padding on large screens
+        padding: $spacer-5 $spacer-4;
+      }
+
+      @include media-breakpoint-up(lg) {
+        @extend .container;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
     .mod_article > .article-inside.container.p-0 {
-      @extend .px-0;
-      @extend .py-0;
+      padding: 0
     }
 
     // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
     .mod_article > .article-inside > *:first-child:not(script) {
-      @extend .mt-0;
+      margin-top: 0;
     }
 
     // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
     .mod_article > .article-inside > [class*="mod_"]:first-child > *:first-child {
-      @extend .mt-0;
+      margin-top: 0;
     }
 
     .mod_article > .article-inside > [class*="ce_"]:first-child > *:first-child {
-      @extend .mt-0;
+      margin-top: 0;
     }
 
     .mod_article > .article-inside.container-fluid {

@@ -56,6 +56,13 @@
   }
 }
 
-.card.gray-lightest {
-  background-color: $gray-300;
+.card {
+  border: 1px solid $gray-200;
 }
+
+.article-gray {
+  .card {
+    border: 0;
+  }
+}
+
