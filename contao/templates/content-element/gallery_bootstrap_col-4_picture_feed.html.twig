@@ -3,24 +3,24 @@
     {% for row in body %}
         {% set class = loop.index %}
         {% for col in row %}
-            {% if col.addImage is defined and col.singleSRC|default %}
+            {% if col.addImage|default and col.singleSRC|default %}
                 {% set owner = mpf_getOwnerFromPath(col.singleSRC) %}
                 {% set file = mpf_getFilesModelFromPath(col.singleSRC) %}
-                {% if not owner is empty and not file is empty %}
+                {% if owner|default and file|default %}
 
-                    <li class="grid-card-item {{ class }} {{ col.class }}">
+                    <li class="grid-card-item {{ class }} {{ col.class }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom">
                         <div class="card">
                             <div class="p-2 d-flex fw-bold align-items-center">
                                 {{ '{{image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
                                 <p class="card-text small m-0 ms-2">von {{ owner.firstname }} {{ owner.lastname }}</p>
                             </div>
-                            <figure class="image_container"{% if col.margin is defined %} style="{{ col.margin }}"{% endif %}>
+                            <figure class="image_container"{% if col.margin|default %} style="{{ col.margin }}"{% endif %}>
                                 {% set sources = col.picture %}
                                 {% if not sources.class is defined %}
                                     {% set sources = sources|merge({"class": ""}) %}
                                 {% endif %}
 
-                                {% if col.href is defined %}
+                                {% if col.href|default %}
                                     <a href="{{ col.href }}"{{ col.attributes }} title="{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}">
                                         <div class="image-zoom-in">
                                             {% include '@Contao/picture_default' with sources %}
@@ -31,7 +31,7 @@
                                         {% include '@Contao/picture_default' with sources %}
                                     </div>
                                 {% endif %}
-                                {% if col.caption is defined and not col.caption is empty %}
+                                {% if col.caption|default %}
                                     <figcaption class="caption">{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}</figcaption>
                                 {% endif %}
                             </figure>
@@ -39,9 +39,9 @@
                                 <p class="card-date m-0">
                                     <small>{{ file.tstamp|date("d.m.Y") }}</small>
                                 </p>
-                                <h6 class="card-title mt-0">
+                                <p class="mt-0 fw-bold small">
                                     {{ col.caption }}
-                                </h6>
+                                </p>
                             </div>
                         </div>
                     </li>
