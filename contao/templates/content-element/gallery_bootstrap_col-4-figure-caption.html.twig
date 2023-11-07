@@ -1,0 +1,22 @@
+<ul class="gallery-grid cols_{{ perRow }}">
+    {% for class, row in body %}
+        {% for col in row %}
+            {% if col.addImage|default %}
+                <li class="gallery-grid-item col-xs-12 col-sm-4 col-md-3 {{ class }} {{ col.class }}">
+                    <figure class="image_container"{% if col.margin|default %} style="{{ col.margin }}"{% endif %}>
+                        {% if col.href|default %}
+                            <a href="{{ col.href }}" {{ col.attributes }} title="{{ col.photographer }} {{ col.alt }}">
+                                {% include '@Contao/picture_default' with col.picture %}
+                            </a>
+                        {% else %}
+                            {% include '@Contao/picture_default' with col.picture %}
+                        {% endif %}
+                        {% if col.caption|default %}
+                            <figcaption class="figure-caption">{{ col.caption }}</figcaption>
+                        {% endif %}
+                    </figure>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</ul>
