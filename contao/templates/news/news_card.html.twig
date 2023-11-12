@@ -1,6 +1,5 @@
 <div class="news_card{{ class|default('') }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom" itemscope itemtype="http://schema.org/Article">
-    <div class="card border-0">
-
+    <div class="card">
         {% if addImage|default %}
             <a href="{{ '{{news_url::'~id~'}}' }}" title="weiterlesen">
                 {% set picture = picture|merge({"alt": headline}) %}
@@ -18,9 +17,6 @@
                 <h6 class="card-title mt-0">{{ newsHeadline }}</h6>
             </a>
             <p class="card-news-teaser small">{{ teaser|striptags|raw|slice(0, 100) }}</p>
-            {#
-            <button onclick="return window.location='{{ '{{news_url::'~id~'}}' }}'" class="btn btn-sm btn-danger" style="border-radius:3px; --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">mehr</button>
-            #}
         </div>
     </div>
 </div>
