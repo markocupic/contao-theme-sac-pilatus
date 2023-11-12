@@ -5,14 +5,14 @@
                 <li class="gallery-grid-item col-xs-12 col-sm-4 col-md-3 {{ class }} {{ col.class }}">
                     <figure class="image_container"{% if col.margin|default %} style="{{ col.margin }}"{% endif %}>
                         {% if col.href|default %}
-                            <a href="{{ col.href }}" {{ col.attributes }} title="{{ col.photographer }} {{ col.alt }}">
+                            <a href="{{ col.href }}" {{ col.attributes }} title="{% if col.photographer|default %}{{ col.photographer }} - {% endif %}{{ col.caption }}">
                                 {% include '@Contao/picture_default' with col.picture %}
                             </a>
                         {% else %}
                             {% include '@Contao/picture_default' with col.picture %}
                         {% endif %}
                         {% if col.caption|default %}
-                            <figcaption class="figure-caption">{{ col.caption }}</figcaption>
+                            <figcaption class="figure-caption">{% if col.photographer|default %}{{ col.photographer }} - {% endif %}{{ col.caption }}</figcaption>
                         {% endif %}
                     </figure>
                 </li>
