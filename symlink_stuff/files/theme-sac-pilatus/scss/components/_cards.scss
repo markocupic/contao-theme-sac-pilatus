@@ -27,12 +27,18 @@
 }
 
 .card {
-  .caption {
-    display: none;
-  }
+  border: 1px solid $gray-200;
 
   &:hover {
     @extend .shadow-sm;
+  }
+
+  &.gray-lightest {
+    background-color: $gray-300;
+  }
+
+  .caption {
+    display: none;
   }
 
   figure {
@@ -56,13 +62,4 @@
   }
 }
 
-.card {
-  border: 1px solid $gray-200;
-}
-
-.article-gray {
-  .card {
-    border: 0;
-  }
-}
 
