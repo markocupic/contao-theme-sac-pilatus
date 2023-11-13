@@ -21,7 +21,7 @@
                                 {% endif %}
 
                                 {% if col.href|default %}
-                                    <a href="{{ col.href }}"{{ col.attributes }} title="{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}">
+                                    <a href="{{ col.href }}"{{ col.attributes|raw }} title="{{ owner.firstname }} {{ owner.lastname }}: {{ col.caption }}">
                                         <div class="image-zoom-in">
                                             {% include '@Contao/picture_default' with sources %}
                                         </div>
