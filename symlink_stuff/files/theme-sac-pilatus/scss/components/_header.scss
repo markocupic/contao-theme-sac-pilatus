@@ -28,8 +28,10 @@
         border: 0;
       }
 
-      a.header-login-button {
+      .header-login-button, .header-logout-link, .header-backoffice-link {
         line-height: 1;
+        @extend .small;
+        @extend .lh-1;
       }
     }
 
