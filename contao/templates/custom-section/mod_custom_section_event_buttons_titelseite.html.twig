@@ -19,32 +19,26 @@
 {% set courses = { 'Basis Halle': '?courseType=24', 'Sportklettern': '?courseType=3', 'Hochtouren': '?courseType=2', 'Lawinenkunde': '?courseType=10', 'Skitouren': '?courseType=11', 'Skitechnik': '?courseType=12', 'Weitere Kurse...': '' } %}
 
 <div class="mod_event-button-box">
-    <div class="overflow-x-auto">
-        <nav>
-            <h4><strong>TOUREN:</strong></h4>
-            <div class="d-inline-flex flex-nowrap">
-                <ul>
-                    {% for event_type,url_param in tours %}
-                        {# small screens #}
-                        <li class="d-inline d-md-none"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                        {# large screens #}
-                        <li class="d-none d-md-inline"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }} "tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </nav>
-        <nav>
-            <h4 class="mt-5"><strong>KURSE:</strong></h4>
-            <div class="d-inline-flex flex-nowrap">
-                <ul>
-                    {% for event_type,url_param in courses %}
-                        {# small screens #}
-                        <li class="d-inline d-md-none"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="d-inline d-md-none btn-sm btn btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                        {# large screens #}
-                        <li class="d-none d-md-inline"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="d-none d-md-inline btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav class="overflow-x-auto">
+        <h4 class="mb-0"><strong>TOUREN:</strong></h4>
+        <ul class="d-inline-flex flex-nowrap">
+            {% for event_type,url_param in tours %}
+                {# small screens #}
+                <li class="d-inline d-md-none"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
+                {# large screens #}
+                <li class="d-none d-md-inline"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }} " tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <nav class="overflow-x-auto">
+        <h4 class="mt-5 mb-0"><strong>KURSE:</strong></h4>
+        <ul class="d-inline-flex flex-nowrap">
+            {% for event_type,url_param in courses %}
+                {# small screens #}
+                <li class="d-inline d-md-none"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
+                {# large screens #}
+                <li class="d-none d-md-inline"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </nav>
 </div>
