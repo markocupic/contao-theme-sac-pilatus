@@ -42,7 +42,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Head tags
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
-            $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
+            $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
             // jQuery is loaded in the layout
             // Bootstrap.js bundle (includes popper.js)
