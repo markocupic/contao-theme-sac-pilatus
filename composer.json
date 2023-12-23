@@ -50,11 +50,11 @@
         "contao-manager-plugin": "Markocupic\\ContaoThemeSacPilatus\\ContaoManager\\Plugin",
         "composer-file-copier-plugin": [
             {
-                "source": "symlink_stuff/files/theme-sac-pilatus",
+                "source": "contao/templates/js_news_infinite_scroll.html.twig",
                 "target": "templates/js_news_infinite_scroll.html.twig"
             },
             {
-                "source": "contao/templates/js_news_infinite_scroll.html.twig",
+                "source": "symlink_stuff/files/theme-sac-pilatus",
                 "target": "files/theme-sac-pilatus",
                 "options": {
                     "OVERRIDE": true,
@@ -67,6 +67,7 @@
         "allow-plugins": {
             "contao/manager-plugin": true,
             "contao-components/installer": true,
+            "contao-community-alliance/composer-plugin": true,
             "markocupic/composer-file-copier-plugin": true
         }
     },
