@@ -1,10 +1,9 @@
 // Set variables and overwrite bootstrap vars
 @import "variables";
 // EMBED BOOTSTRAP FRAMEWORK
-// this wan't work --> @import "/../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
-// because the main.scss is located in:
-// vendor/markocupic/contao-theme-sac-pilatus/symlink_stuff/contao/files/theme-sac-pilatus/scss/main.scss
-@import "../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
+// the main.scss is located in:
+// files/theme-sac-pilatus/scss/main.scss
+@import "../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
 
 // MIXINS
 @import "mixins/_mixins.scss";
