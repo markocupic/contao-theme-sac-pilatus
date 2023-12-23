@@ -67,7 +67,6 @@
         "allow-plugins": {
             "contao/manager-plugin": true,
             "contao-components/installer": true,
-            "contao-community-alliance/composer-plugin": true,
             "markocupic/composer-file-copier-plugin": true
         }
     },
