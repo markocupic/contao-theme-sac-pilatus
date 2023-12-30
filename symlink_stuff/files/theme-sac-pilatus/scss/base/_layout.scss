@@ -144,7 +144,23 @@ body {
       h1:after {
         background-color: #fff;
       }
+    }
 
+    .mod_article.article-red {
+      background: transparent;
+      color: #fff;
+
+      > .article-inside {
+        background: $red;
+      }
+
+      a, h1, h2, h3, h4, h5, h6 {
+        color: #fff !important;
+      }
+
+      h1:after {
+        background-color: #fff;
+      }
     }
 
     .mod_article.article-white {
