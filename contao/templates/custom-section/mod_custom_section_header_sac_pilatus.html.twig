@@ -10,8 +10,8 @@
                     <div class="ms-2 d-none d-sm-block small">Angemeldet als: {{ '{{user::firstname}}' }} {{ '{{user::lastname}}' }}</div>
                     <div class="ms-3 small">
                         <a href="{{ '{{link_url::member-profile}}' }}" title="Mitgliederprofil bearbeiten">
-                        {% set user = get_logged_in_frontend_user() %}
-                        {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
+                            {% set user = get_logged_in_frontend_user() %}
+                            {{ '{{image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
                         </a>
                     </div>
                     {% if has_logged_in_frontend_user() is same as true %}
@@ -117,25 +117,30 @@
 
 <script>
     /**
-     * Handle Login Modal
+     * Handle OAuth2 SSO login modal window
      */
-    (function ($) {
-        "use strict";
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginModal = document.getElementById('loginModal');
 
-        $(document).ready(function () {
-            $('.trigger-login-modal').click(function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                $('#loginModal').modal('show');
-            });
+        if (loginModal) {
+            const bsLoginModal = new bootstrap.Modal(loginModal, {});
 
-            if ($('#loginModal .error').length) {
-                $('#loginModal').modal('show');
+            const buttons = document.querySelectorAll('.trigger-login-modal');
+
+            for (const button of buttons) {
+                button.addEventListener('click', e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    bsLoginModal.show();
+                });
             }
-        });
-    })(jQuery);
+
+            // Open login modal window on page reload after authentication errors
+            if (loginModal.querySelector('.error')) {
+                bsLoginModal.show();
+            }
+        }
+    }, false);
+
 </script>
-
-
 <!-- indexer::continue -->
-
