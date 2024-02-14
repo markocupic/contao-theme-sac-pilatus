@@ -11,7 +11,7 @@
                     <li class="grid-card-item {{ class }} {{ col.class }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom">
                         <div class="card">
                             <div class="p-2 d-flex fw-bold align-items-center">
-                                {{ '{{image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle}}' }}
+                                {{ insert_tag('image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
                                 <p class="card-text small m-0 ms-2">von {{ owner.firstname }} {{ owner.lastname }}</p>
                             </div>
                             <figure class="image_container"{% if col.margin|default %} style="{{ col.margin }}"{% endif %}>

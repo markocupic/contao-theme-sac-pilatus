@@ -1,7 +1,7 @@
 <div class="news_card{{ class|default('') }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom" itemscope itemtype="http://schema.org/Article">
     <div class="card">
         {% if addImage|default %}
-            <a href="{{ '{{news_url::'~id~'}}' }}" title="weiterlesen">
+            <a href="{{ insert_tag('news_url::'~id) }}" title="weiterlesen">
                 {% set picture = picture|merge({"alt": headline}) %}
                 <div class="image-zoom-in">
                     {% include '@Contao/picture_default' with picture %}
@@ -13,7 +13,7 @@
             <p class="card-date m-0 text-muted">
                 <time datetime="{{ datetime }}" itemprop="datePublished"><small>{{ date }}</small></time>
             </p>
-            <a href="{{ '{{news_url::'~id~'}}' }}" class="text-decoration-none" title="weiterlesen">
+            <a href="{{ insert_tag('news_url::'~id) }}" class="text-decoration-none" title="weiterlesen">
                 <h6 class="card-title mt-0">{{ newsHeadline }}</h6>
             </a>
             <p class="card-news-teaser small">{{ teaser|striptags|raw|slice(0, 100) }}</p>
