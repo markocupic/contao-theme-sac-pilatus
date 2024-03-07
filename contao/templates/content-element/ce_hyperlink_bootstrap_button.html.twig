@@ -8,7 +8,7 @@
     {% endif %}
 
     {{ embed_pre|default('')|raw }}
-    <a href="{{ href }}" class="d-inline hyperlink_txt" title="{{ linkTitle }}" {{ attribute|default('') }}{{ target }}{{ rel }}>{{ link }}</a>
+    <a href="{{ href }}" class="d-inline hyperlink_txt" title="{{ linkTitle }}" {{ attribute|default('') }}{{ target }}{{ rel }}>{{ link|default('') }}</a>
     {{ embed_post|default('')|raw }}
 </div>
 {% endfor %}

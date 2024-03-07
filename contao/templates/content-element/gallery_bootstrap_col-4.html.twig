@@ -2,7 +2,7 @@
     {% for class, row in body %}
         {% for col in row %}
             {% if col.addImage|default %}
-                <li class="gallery-grid-item col-xs-12 col-sm-4 col-md-3 {{ class }} {{ col.class }}">
+                <li class="gallery-grid-item col-xs-12 col-sm-4 col-md-3{% if class|default %}{{ class }}{% endif %}{% if col.class|default %} {{ col.class }}{% endif %}">
                     <figure class="image_container"{% if col.margin|default %} style="{{ col.margin }}"{% endif %}>
                         {% if col.href|default %}
                             <a href="{{ col.href }}" {{ col.attributes|raw }} title="{% if col.photographer|default %}{{ col.photographer }} - {% endif %}{{ col.caption }}">
