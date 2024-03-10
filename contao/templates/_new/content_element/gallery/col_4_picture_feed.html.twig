@@ -1,0 +1,51 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+{% use "@Contao/component/_list.html.twig" %}
+{% use "@Contao/component/_figure.html.twig" %}
+
+{% set attributes = attrs(attributes|default).addClass("content-#{type}--cols-#{items_per_row|default(4)}") %}
+
+{% block content %}
+    {% with {items: images} %}{{ block('list_component') }}{% endwith %}
+{% endblock %}
+
+
+{# Customization: Marko Cupic, 03.2024 #}
+{# Show each figure of a contao gallery in a Bootstrap Card #}
+
+{% block list %}
+    {# Add bootstrap row classes #}
+    {% set list = list|merge({'list_attributes': attrs(list.list_attributes|default)
+        .addClass('row grid-card')
+    }) %}
+
+    {% set list = list|merge({'item_attributes': attrs(list.item_attributes|default)
+        .addClass('grid-card-item')
+    }) %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block list_item %}
+    {% set owner = mpf_getOwnerFromUuid(item.metadata.uuid|default) %}
+    {% set file = mpf_getFilesModelFromUuid(item.metadata.uuid) %}
+    <div class="card">
+        <div class="p-2 d-flex fw-bold align-items-center">
+            {% if owner|default %}
+                {{ insert_tag('image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
+                <p class="card-text small m-0 ms-2">von {{ owner.firstname }} {{ owner.lastname }}</p>
+            {% endif %}
+        </div>
+        {# Embed the figure #}
+        {% block figure_component %}
+            {% set figure = item %}
+            {% block caption %}{# Do not output the figcaption #}{% endblock %}
+            {{ parent() }}
+        {% endblock %}
+        <div class="card-body">
+            <p class="card-date m-0">
+                <small>{{ file.tstamp|date("d.m.Y") }}</small>
+            </p>
+            <figcaption class="mt-0 fw-bold small">{{ item.metadata.caption }}</figcaption>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% if not image %}
+    {# Link wrapping text #}
+    {% block text_link %}
+        {# {% set class = class|default('')|replace({'ce_hyperlink ': ''})|trim %} #}
+        {% set button_versions = {'small-screens': 'd-inline-block d-md-none', 'large-screens': 'btn-lg d-none d-md-inline-block'} %}
+        {% for screen_size, css_classes in button_versions %}
+        <div onclick="document.location.href='{{ href }}'" role="button" class="mt-2 me-2 btn {{ css_classes }}{% if element_css_classes|default %} {{ element_css_classes|default }}{% endif %}">
+            {% if headline|default and headline.text|default %}
+                <{{ headline.tag_name }}>{{ headline.text }}</{{ headline.tag_name }}>
+            {% endif %}
+
+            {{- text_before -}}
+            <a href="{{ href|raw }}" class="d-inline hyperlink_txt" {{ attrs(link_attributes|default) }}>{{ link_text|insert_tag }}</a>
+            {{- text_after -}}
+            </div>
+        {% endfor %}
+    {% endblock %}
+{% endif %}

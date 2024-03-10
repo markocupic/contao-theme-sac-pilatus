@@ -1,14 +1,29 @@
+/* Contao 5 pagination */
+nav[data-pagination] {
+  ol {
+    @extend .pagination;
+
+    li {
+      @extend .page-item;
+
+      a {
+        @extend .page-link;
+      }
+    }
+  }
+}
+
 nav.pagination {
   display: block;
 
-  ul {
+  ul, ol {
     display: flex;
     padding-left: 1px;
 
     li {
       @extend .page-item;
 
-      a,strong {
+      a, strong {
         @extend .page-link;
         background-color: #fff;
         border-color: $gray-300;
