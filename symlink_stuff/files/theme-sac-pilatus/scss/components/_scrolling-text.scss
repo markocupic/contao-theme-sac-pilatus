@@ -1,7 +1,7 @@
 div:has(> .scrolling-text) {
   overflow: hidden;
   white-space: nowrap !important;
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }

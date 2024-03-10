@@ -4,7 +4,7 @@
   $footer-color: #333;
   $footer-link-color: #333;
 
-  .inside{
+  .inside {
     @extend .container-lg;
     @extend .px-0;
   }
@@ -45,7 +45,6 @@
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
     @extend .small;
-
 
     a, a > * {
       color: $footer-link-color !important;

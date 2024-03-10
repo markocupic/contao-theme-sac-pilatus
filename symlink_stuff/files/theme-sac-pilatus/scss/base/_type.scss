@@ -9,7 +9,7 @@ body {
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, .ce_headline {
+h1, h2, h3, h4, h5, h6, .content-headline {
   font-weight: $headline-font-weight;
   color: #000;
 }
@@ -18,12 +18,12 @@ strong, #main .mod_article strong > * {
   @extend .fw-bold;
 }
 
-h2, .ce_headline {
+h2, .content-headline {
   font-weight: 700;
 }
 
 // Underline h1
-#main h1.ce_headline, [class*="ce_"] > h1, [class*="mod_"] > h1 {
+#main h1.content-headline, [class*="content-"] > h1, [class*="mod_"] > h1 {
   text-align: left;
   color: $blue;
   font-weight: 700;

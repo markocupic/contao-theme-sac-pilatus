@@ -5,8 +5,7 @@ a.email {
   }
 }
 
-
-.ce_downloads > ul, .ce_hyperlink > a {
+.content-downloads > ul, .content-hyperlink > a {
   position: relative;
   display: block;
   padding-right: 50px;
@@ -14,7 +13,7 @@ a.email {
 
 // Replace contao mime icons with font awesome icons
 
-.ce_downloads {
+.content-downloads {
 
   li {
     position: relative;
@@ -42,7 +41,7 @@ a.email {
   }
 }
 
-.ce_hyperlink {
+.content-hyperlink {
   a[href*="."] {
     @include icon-before("\f08e"); // fa-arrow-up-right-from-square
   }

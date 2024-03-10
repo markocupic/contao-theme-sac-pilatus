@@ -34,7 +34,7 @@ figure {
   }
 }
 
-.ce_gallery {
+.content-gallery {
   ul.gallery-grid {
     @extend .row;
     @extend .gx-2;
@@ -58,12 +58,21 @@ figure {
 
     }
   }
-
 }
 
 // Do not show caption on mobile phones
 @include media-breakpoint-up(sm) {
-  .ce_gallery .caption {
+  .content-gallery figcaption {
     display: none;
+  }
+}
+
+.content-gallery-col-4-with-caption {
+  figcaption {
+    display: block;
+    font-size: 80%;
+    color: $gray-900;
+    font-style: italic;
+    margin-top: 8px;
   }
 }

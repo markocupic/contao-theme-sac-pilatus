@@ -26,7 +26,7 @@
   }
 }
 
-.ce_hyperlink a:before {
+.content-hyperlink a:before {
   font-family: $icon-font-name;
   content: "\f019";
   margin-right: 5px;
@@ -234,7 +234,7 @@
     width: 100%;
   }
 
-  .ce_headline.last-minute-tour {
+  .content-headline.last-minute-tour {
     color: $green;
     text-transform: inherit;
     margin-bottom: 0 !important;
