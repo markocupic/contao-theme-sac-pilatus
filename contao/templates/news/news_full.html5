@@ -1,6 +1,6 @@
 <div class="layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
 
-  <h1 class="ce_headline mt-0 text-break" itemprop="name"><?= $this->newsHeadline ?></h1>
+  <h1 class="content-headline mt-0 text-break" itemprop="name"><?= $this->newsHeadline ?></h1>
   <strong><?= $this->teaser ?></strong>
   <?php if ($this->hasMetaFields): ?>
   <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
