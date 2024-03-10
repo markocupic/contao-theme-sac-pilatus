@@ -9,6 +9,8 @@ nav[data-pagination] {
       a {
         @extend .page-link;
       }
+
+      margin-right: 2px;
     }
   }
 }
