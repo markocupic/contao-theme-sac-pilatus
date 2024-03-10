@@ -35,13 +35,13 @@ figure {
 }
 
 .content-gallery {
-  ul.gallery-grid {
+  ul, ul.gallery-grid {
     @extend .row;
     @extend .gx-2;
     @extend .gy-2;
     margin: -8px -4px 0 -4px !important;
 
-    li.gallery-grid-item {
+    li,li.gallery-grid-item {
       margin: 8px 0 0 0 !important;
       padding: 0 4px !important;
       @extend .col-12;
@@ -55,7 +55,6 @@ figure {
           max-width: 100%;
         }
       }
-
     }
   }
 }
