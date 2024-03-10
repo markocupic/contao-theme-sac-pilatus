@@ -1,0 +1,41 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+{% use "@Contao/component/_list.html.twig" %}
+{% use "@Contao/component/_figure.html.twig" %}
+
+
+{# Customization: Marko Cupic, 03.2024 #}
+{# Show each figure of a contao gallery with a caption text #}
+
+{% set attributes = attrs(attributes|default)
+    .addClass("content-gallery-col-4-with-caption content-#{type}--cols-#{items_per_row|default(4)}") %}
+
+{% block content %}
+    {% with {items: images} %}{{ block('list_component') }}{% endwith %}
+{% endblock %}
+
+{% block list_item %}
+    {% with {figure: item} %}{{ block('figure_component') }}{% endwith %}
+{% endblock %}
+
+{% block media_link %}
+    {# Add caption for glightbox #}
+    {% if figure.metadata.caption|default %}
+        {% set caption = 'title:' ~ figure.metadata.caption %}
+        {% set link_attributes = attrs(figure.linkAttributes(true)|default).set('data-glightbox', caption) %}
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block list %}
+    {# Add bootstrap row classes #}
+    {% set list = list|merge({'list_attributes': attrs(list.list_attributes|default)
+        .addClass('gallery-grid row')
+    }) %}
+
+    {% set list = list|merge({'item_attributes': attrs(list.item_attributes|default)
+        .addClass('gallery-grid-item col-xs-12 col-sm-4 col-md-3')
+    }) %}
+
+    {{ parent() }}
+{% endblock %}
