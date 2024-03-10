@@ -1,4 +1,4 @@
-.ce_serviceLink {
+.ce_servicelink {
   @include rfs(3rem, padding-top);
   @include rfs(3rem, padding-bottom);
 
@@ -50,7 +50,7 @@
   }
 }
 
-.article-blue .ce_serviceLink {
+.article-blue .ce_servicelink {
   [class*="fa-"] {
     color: #000;
 
