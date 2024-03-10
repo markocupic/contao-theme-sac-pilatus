@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Contao Theme SAC Pilatus.
  *
- * (c) Marko Cupic 2023 <m.cupic@gmx.ch>
+ * (c) Marko Cupic 2024 <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
@@ -92,8 +92,8 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_BODY'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
 
             // Add AOS animation library: https://github.com/michalsnik/aos
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />';
-            $GLOBALS['TL_BODY'][] = '<script src="https://unpkg.com/aos@next/dist/aos.js"></script>';
+            $GLOBALS['TL_HEAD'][] = '<link href="/bundles/markocupiccontaothemesacpilatus/aos/aos.css?v=2.3.4" rel="stylesheet">';
+            $GLOBALS['TL_BODY'][] = '<script src="/bundles/markocupiccontaothemesacpilatus/aos/aos.js?v=2.3.4"></script>';
             $GLOBALS['TL_BODY'][] = '<script>AOS.init();</script>';
         }
     }
