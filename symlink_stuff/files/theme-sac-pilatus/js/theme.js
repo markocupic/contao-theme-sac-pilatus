@@ -203,24 +203,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 })(jQuery);
 
-/** Mediabox **/
-(function ($) {
-    $().ready(function () {
-
-        /** Add caption to the title attribute when using colorbox **/
-        $('.ce_gallery a[data-lightbox]').map(function () {
-            var thumb = $(this);
-
-            $(this).siblings('figcaption').map(function () {
-                if ($(this).text() != '') {
-                    thumb.attr('title', $(this).text());
-                }
-            });
-        });
-
-    });
-})(jQuery);
-
 /** shorten download links **/
 (function ($) {
     $().ready(function () {
@@ -228,18 +210,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (inputScreenWidth < 300) {
             inputScreenWidth = 300; // min. screen width
         }
-        var targetRatio = 36.0 / 600; // scaling [string length / screen width]
-        var scaledLength = Math.ceil(targetRatio * inputScreenWidth);
-        var maxStringLength = Math.min(scaledLength, 100); // max. length
-        var classes = ['.ce_downloads a', '.ce_download a'];
+        const targetRatio = 36.0 / 600; // scaling [string length / screen width]
+        const scaledLength = Math.ceil(targetRatio * inputScreenWidth);
+        const maxStringLength = Math.min(scaledLength, 100); // max. length
+        const classes = ['.content-downloads a', '.content-download a'];
         $.each(classes, function (index, strClass) {
             $(strClass).each(function (index, el) {
-                var strFilename = el.innerHTML;
-                var match = strFilename.match(/(.*)\<span(.*)/);
+                const strFilename = el.innerHTML;
+                const match = strFilename.match(/(.*)\<span(.*)/);
                 if (match) {
-                    var filename = match[1];
+                    const filename = match[1];
                     if (filename.length > maxStringLength) {
-                        var filenameShortened = filename.substring(0, maxStringLength) + ' … ';
+                        const filenameShortened = filename.substring(0, maxStringLength) + ' … ';
                         el.innerHTML = filenameShortened + '<span' + match[2];
                     }
                 }
