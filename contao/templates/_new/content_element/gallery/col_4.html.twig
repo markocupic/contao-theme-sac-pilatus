@@ -10,7 +10,9 @@
     .addClass("content-gallery-col-4 content-#{type}--cols-#{items_per_row|default(4)}") %}
 
 {% block content %}
-    {% with {items: images} %}{{ block('list_component') }}{% endwith %}
+    {% if images|default %}
+        {% with {items: images} %}{{ block('list_component') }}{% endwith %}
+    {% endif %}
 {% endblock %}
 
 {% block list_item %}
