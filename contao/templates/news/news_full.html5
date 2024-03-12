@@ -2,8 +2,13 @@
 
   <h1 class="content-headline mt-0 text-break" itemprop="name"><?= $this->newsHeadline ?></h1>
   <strong><?= $this->teaser ?></strong>
-  <?php if ($this->hasMetaFields): ?>
-  <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+
+  <?php $this->block('info'); ?>
+  <p class="info"><time datetime="<?= $this->datetime ?>"><?= $this->date ?></time> <?= $this->author ?></p>
+  <?php $this->endblock(); ?>
+
+  <?php if ($this->hasSubHeadline): ?>
+  <h2 class="content-headline mt-0 text-break"><?= $this->subHeadline ?></h2>
   <?php endif; ?>
 
   <div class="d-sm-flex mb-3 mb-sm-0">
@@ -28,5 +33,23 @@
     </div>
   </div>
 
-
 </div>
+
+<?php
+
+$schemaOrg = $this->getSchemaOrgData();
+
+if ($this->hasText) {
+$schemaOrg['text'] = $this->rawHtmlToPlainText($this->text);
+}
+
+$this->addSchemaOrg($schemaOrg);
+
+if ($this->figure) {
+$primaryImage = [
+'@type' => 'WebPage',
+'primaryImageOfPage' => $this->figure->getSchemaOrgData(),
+];
+
+$this->addSchemaOrg($primaryImage);
+}
