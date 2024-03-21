@@ -206,24 +206,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /** shorten download links **/
 (function ($) {
     $().ready(function () {
-        var inputScreenWidth = window.innerWidth;
+        let inputScreenWidth = window.innerWidth;
         if (inputScreenWidth < 300) {
             inputScreenWidth = 300; // min. screen width
         }
+
         const targetRatio = 36.0 / 600; // scaling [string length / screen width]
         const scaledLength = Math.ceil(targetRatio * inputScreenWidth);
         const maxStringLength = Math.min(scaledLength, 100); // max. length
         const classes = ['.content-downloads a', '.content-download a'];
         $.each(classes, function (index, strClass) {
             $(strClass).each(function (index, el) {
-                const strFilename = el.innerHTML;
-                const match = strFilename.match(/(.*)\<span(.*)/);
-                if (match) {
-                    const filename = match[1];
-                    if (filename.length > maxStringLength) {
-                        const filenameShortened = filename.substring(0, maxStringLength) + ' … ';
-                        el.innerHTML = filenameShortened + '<span' + match[2];
-                    }
+                const filename = el.text;
+                if (filename.length > maxStringLength) {
+                    const filenameShortened = filename.substring(0, maxStringLength) + ' … ';
+                    el.text = filenameShortened;
                 }
             });
         });

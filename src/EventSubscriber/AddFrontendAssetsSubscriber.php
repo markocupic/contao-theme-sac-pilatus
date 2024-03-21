@@ -44,14 +44,17 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
             $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
+            // Load jQuery
+            $GLOBALS['TL_BODY'][] = '<script src="/assets/jquery/js/jquery.min.js"></script>';
+
             // jQuery is loaded in the layout
             // Bootstrap.js bundle (includes popper.js)
-            $GLOBALS['TL_BODY'][] = '<script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="/assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
             // Load Font Awesome key from configuration
             // $GLOBALS['TL_HEAD'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
             // Due to bandwidth limitations we host fontawesome ourselves
-            $GLOBALS['TL_BODY'][] = '<script defer src="assets/contao-component-fontawesome-pro/fontawesome-pro/js/all.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/all.min.js?v=6.4.1" crossorigin="anonymous"></script>';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="assets/contao-component-fontawesome-pro/fontawesome-pro/css/all.min.css?v=6.4.1" />';
 
             // Select2
@@ -84,7 +87,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Load theme javascript file
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/equal-height.min.js|static';
-            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.js|static';
+            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.min.js|static';
 
             // Load flatpickr (datepicker)
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
