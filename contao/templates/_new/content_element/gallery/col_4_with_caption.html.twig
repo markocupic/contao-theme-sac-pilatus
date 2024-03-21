@@ -18,12 +18,13 @@
 {% endblock %}
 
 {% block media_link %}
-    {# Add caption for glightbox #}
+    {# Add caption for glightbox usage #}
     {% if figure.metadata.caption|default %}
-        {% set caption = 'title:' ~ figure.metadata.caption %}
-        {% set link_attributes = attrs(figure.linkAttributes(true)|default).set('data-glightbox', caption) %}
+        {% set photographer = figure.metadata.get('photographer')|default('') %}
+        {% set caption = figure.metadata.get('caption')|default('') %}
+        {% set caption_text = 'title:' ~ (photographer ? photographer ~ ' - ' ~ caption : caption) %}
+        {% set link_attributes = attrs(figure.linkAttributes(true)|default).set('data-glightbox', caption_text) %}
     {% endif %}
-
     {{ parent() }}
 {% endblock %}
 
