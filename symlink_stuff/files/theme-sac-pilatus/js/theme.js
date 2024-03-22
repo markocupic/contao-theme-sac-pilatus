@@ -244,5 +244,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 })(jQuery);
 
+/** Add the onclick attribute to the image if download(s) element is combined with an image **/
+document.addEventListener('DOMContentLoaded', (event) => {
+    const downloadElements = document.querySelectorAll('.content-download a, .content-downloads a');
 
+    const tooltipList = [...downloadElements].map(node => {
+        if (node.parentElement) {
+            let figure = node.parentElement.querySelector('figure');
+            if (figure) {
+                figure.setAttribute('style', 'cursor:pointer');
+                figure.setAttribute('onclick', "javascript:location.href='" + node.getAttribute('href') + "'");
+            }
+        }
+    });
 
+}, false);
