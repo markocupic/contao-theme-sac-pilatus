@@ -37,15 +37,15 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         $request = $e->getRequest();
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
+            // Load jQuery
+            $GLOBALS['TL_JAVASCRIPT'][] = '/assets/jquery/js/jquery.min.js|static';
+
             // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/detect-is-bs-modal-ready.js';
 
             // Head tags
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
             $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-
-            // Load jQuery
-            $GLOBALS['TL_BODY'][] = '<script src="/assets/jquery/js/jquery.min.js"></script>';
 
             // jQuery is loaded in the layout
             // Bootstrap.js bundle (includes popper.js)
