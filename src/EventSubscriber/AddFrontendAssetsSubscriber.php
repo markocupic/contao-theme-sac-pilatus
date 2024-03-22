@@ -38,7 +38,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
             // Load jQuery
-            $GLOBALS['TL_JAVASCRIPT'][] = '/assets/jquery/js/jquery.min.js|static';
+            $GLOBALS['TL_HEAD'][] = '<script defer src="/assets/jquery/js/jquery.min.js"></script>';
 
             // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/detect-is-bs-modal-ready.js';
@@ -58,7 +58,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="assets/contao-component-fontawesome-pro/fontawesome-pro/css/all.min.css?v=6.4.1" />';
 
             // Select2
-            $GLOBALS['TL_BODY'][] = '<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" />';
 
             // Animate
@@ -80,14 +80,14 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Enable jqueryTouchSwipe
             //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
-            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/third-party/jquery.touchSwipe.min.js|static';
+            $GLOBALS['TL_HEAD'][] = '<script defer src="/files/theme-sac-pilatus/js/third-party/jquery.touchSwipe.min.js"></script>';
 
             // Load headroom.js https://github.com/WickyNilliams/headroom.js/
             //$GLOBALS['TL_BODY'][] = '<script src="files/theme-sac-pilatus/js/headroom.js"></script>';
 
             // Load theme javascript file
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/equal-height.min.js|static';
-            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/theme.min.js|static';
+            $GLOBALS['TL_HEAD'][] = '<script defer src="/files/theme-sac-pilatus/js/theme.min.js"></script>';
 
             // Load flatpickr (datepicker)
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
