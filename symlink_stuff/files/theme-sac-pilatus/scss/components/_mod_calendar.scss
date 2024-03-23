@@ -4,28 +4,6 @@
   }
 }
 
-.loading-icon-lg {
-
-  text-align: center;
-  position: relative;
-  padding: 50px 0;
-
-  .preloader-text {
-    color: $gray-600;
-  }
-
-  .preloader-icon {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: 100px;
-
-    .fa {
-      color: $gray-200 !important;
-    }
-  }
-}
-
 .content-hyperlink a:before {
   font-family: $icon-font-name;
   content: "\f019";

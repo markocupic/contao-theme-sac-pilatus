@@ -3,13 +3,13 @@
 eg.
 
 <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
-<i class="fal fa-search" aria-hidden="true" title="Suche"></i>
+<i class="fa-light fa-search" aria-hidden="true" title="Suche"></i>
 </button>
 
 ...becomes:
 
 <button class="btn btn-lg btn-link ms-2 search-toggler" data-action="search-bar-toggle" role="button" aria-label="Suche">
-<i class="fal fa-search" aria-hidden="true" title="Suche"></i>
+<i class="fa-light fa-search" aria-hidden="true" title="Suche"></i>
 <span class="sr-only">Suche</span>
 </button>
 

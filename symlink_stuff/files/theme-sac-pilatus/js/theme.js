@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 /** Scroll to top button **/
 document.addEventListener('DOMContentLoaded', (event) => {
-    jQuery('body').append('<div class="scroll-to-top"><a href="#"><span class="fa fa-chevron-up"></span></a></div>');
+    jQuery('body').append('<div class="scroll-to-top"><a href="#"><span class="fa-regular fa-chevron-up"></span></a></div>');
 
     //Check to see if the window is top if not then display button
     jQuery(window).on('scroll', function () {

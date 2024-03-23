@@ -30,6 +30,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 0;
+
+    a {
+      text-underline-position: revert;
+      text-decoration: none;
+    }
   }
 
   .service-link-headline {

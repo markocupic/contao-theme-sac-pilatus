@@ -5,7 +5,7 @@
             <div class="ms-0 me-auto d-none d-sm-flex align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}Zur Geschäftsstelle{{ insert_tag('link_close')|raw }}</div>
             <div class="ms-auto me-0 d-flex align-items-center">
                 {% if has_logged_in_frontend_user() is same as true %}
-                    <a href="/_contao/logout" data-href="/_contao/logout" data-targetpath="{{ app.request.getSchemeAndHttpHost() }}" class="trigger-ids-kill-session header-logout-link m-0 ms-2 me-4" title="Abmelden/Logout"><i class="fal fa-sign-out-alt me-2"></i>Abmelden</a>
+                    <a href="/_contao/logout" data-href="/_contao/logout" data-targetpath="{{ app.request.getSchemeAndHttpHost() }}" class="trigger-ids-kill-session header-logout-link m-0 ms-2 me-4" title="Abmelden/Logout"><i class="fa-light fa-sign-out-alt me-2"></i>Abmelden</a>
 
                     <div class="ms-2 d-none d-sm-block small">Angemeldet als: {{ insert_tag('user::firstname') }} {{ insert_tag('user::lastname') }}</div>
                     <div class="ms-3 small">
@@ -15,7 +15,7 @@
                         </a>
                     </div>
                     {% if has_logged_in_frontend_user() is same as true %}
-                        <a href="{{ insert_tag('link_url::member-profile') }}" class="btn btn-sm btn-danger ms-2" title="Mitgliederprofil bearbeiten"><i class="fa fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+                        <a href="{{ insert_tag('link_url::member-profile') }}" class="btn btn-sm btn-danger ms-2" title="Mitgliederprofil bearbeiten"><i class="fa-regular fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
                     {% endif %}
                 {% endif %}
 
@@ -26,7 +26,7 @@
                             <span class="placeholder col-9"></span>
                         </span>
                     </div>
-                    <button aria-haspopup="dialog" onclick="header.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button trigger-login-modal p-0 m-0 d-none ms-2" tabindex="0"><i class="fal fa-sign-in me-2"></i>Mitglieder-Login</button>
+                    <button aria-haspopup="dialog" onclick="header.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button trigger-login-modal p-0 m-0 d-none ms-2" tabindex="0"><i class="fa-light fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script>
                         document.addEventListener("BootstrapModalReady", (event) => {
                             document.querySelector('.header-login-placeholder').remove();
@@ -58,18 +58,18 @@
 
             <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
 
-                <a href="{{ insert_tag('link_url::kurse') }}" class="d-none d-md-block btn btn-outline-dark ms-2"><i style="width:20px;font-size:1rem !important;" class="far fa-mind-share"></i> Kurse</a>
-                <a href="{{ insert_tag('link_url::touren-trainings-und-anlaesse') }}" class="d-none d-md-block btn btn-danger ms-2 me-2"><i style="width:20px;font-size:1rem !important;" class="far fa-mountain"></i> Touren</a>
+                <a href="{{ insert_tag('link_url::kurse') }}" class="d-none d-md-block btn btn-outline-dark ms-2"><i style="width:20px;font-size:1rem !important;" class="fa-regular fa-mind-share"></i> Kurse</a>
+                <a href="{{ insert_tag('link_url::touren-trainings-und-anlaesse') }}" class="d-none d-md-block btn btn-danger ms-2 me-2"><i style="width:20px;font-size:1rem !important;" class="fa-regular fa-mountain"></i> Touren</a>
 
                 <!-- Searchbar toggler -->
                 <button class="btn btn-lg btn-link ps-2 ps-sm-3 pe-2 pe-2 pe-sm-3 ms-3 search-toggler" data-action="search-bar-toggle" aria-label="Suche" tabindex="0">
-                    <i class="fal fa-search" aria-label="Suche" title="Suche"></i>
+                    <i class="fa-light fa-search" aria-label="Suche" title="Suche"></i>
                 </button>
                 <!-- End Searchbar toggler -->
 
                 <!-- Navbar toggler mobile -->
                 <button class="navigation-toggler d-xl-none btn btn-lg btn-link ps-2 ps-sm-3 pe-2 pe-2 pe-sm-3 ms-2" aria-label="Navigation öffnen" tabindex="0">
-                    <i class="fal fa-lg fa-bars"></i>
+                    <i class="fa-light fa-lg fa-bars"></i>
                 </button>
                 <!-- End Navbar toggler mobile -->
 
