@@ -24,7 +24,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
     public function __construct(
         private ScopeMatcher $scopeMatcher,
         private string $fontAwesomeKitKey, // Not in use yet
-    ) {
+    ){
     }
 
     public static function getSubscribedEvents()
@@ -52,18 +52,20 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_BODY'][] = '<script src="/assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js"></script>';
 
             // Load Font Awesome key from configuration
-            // $GLOBALS['TL_HEAD'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
+            // $GLOBALS['TL_BODY'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
             // Due to bandwidth limitations we host fontawesome ourselves
-            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/all.min.js?v=6.4.1" crossorigin="anonymous"></script>';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="assets/contao-component-fontawesome-pro/fontawesome-pro/css/all.min.css?v=6.4.1" />';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=6.4.1" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=6.4.1" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.4.1" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.4.1" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.4.1" />';
 
             // Select2
             $GLOBALS['TL_BODY'][] = '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" />';
-
-            // Animate
-            //$GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js';
-            //$GLOBALS['TL_CSS'][] = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 
             // Google Webfonts
             $GLOBALS['TL_HEAD'][] = '<link rel="preconnect" href="https://fonts.googleapis.com">';
@@ -76,7 +78,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
             // JQuery UI does not go with popper.js
             // $GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
-            $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/third-party/Sortable.min.js|static';
+            $GLOBALS['TL_JAVASCRIPT'][] = '/files/theme-sac-pilatus/js/third-party/Sortable.min.js|static';
 
             // Enable jqueryTouchSwipe
             //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
