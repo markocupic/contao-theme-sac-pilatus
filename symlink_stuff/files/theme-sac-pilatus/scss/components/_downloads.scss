@@ -11,13 +11,19 @@ a.email {
   padding-right: 50px;
 }
 
-// Replace contao mime icons with font awesome icons
+// Line-height and margin
+.content-download a, .content-downloads li {
+  display: block;
+  line-height: 2.25;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 
+// Replace contao mime icons with font awesome icons
 .content-downloads {
 
   li {
     position: relative;
-    line-height: 2.25;
   }
 
   .mime_icon {
