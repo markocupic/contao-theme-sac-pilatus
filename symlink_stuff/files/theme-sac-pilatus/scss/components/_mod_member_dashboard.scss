@@ -145,6 +145,26 @@
     @extend .alert;
     @extend .alert-danger;
   }
+
+  button.add-caption {
+    animation: blinkingButton 1.2s infinite;
+  }
+
+  button.add-caption[data-hascaption="1"] {
+    animation: none !important;
+    background-color: $green;
+    border: 1px solid $green;
+  }
+
+  @keyframes blinkingButton {
+    0% {
+      background-color: #fff;
+    }
+    100% {
+      background-color: $red;
+    }
+  }
+
 }
 
 .member-dashboard-avatar {
@@ -158,4 +178,3 @@
     padding: 5px 10px;
   }
 }
-
