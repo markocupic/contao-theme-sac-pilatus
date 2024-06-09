@@ -59,6 +59,10 @@ $color-level-2-hover: $dark;
                 margin-right: 1rem;
               }
 
+              & .trail, & > strong {
+                font-weight: bold !important;
+              }
+
               > a > span, > span[data-bs-toggle="dropdown"], > strong {
                 padding: 0;
                 margin: 0;
