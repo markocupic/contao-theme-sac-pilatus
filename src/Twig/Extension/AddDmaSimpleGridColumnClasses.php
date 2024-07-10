@@ -14,18 +14,13 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoThemeSacPilatus\Twig\Extension;
 
-use Contao\CoreBundle\Framework\Adapter;
 use Contao\CoreBundle\Framework\ContaoFramework;
-use Contao\FrontendUser;
-use Contao\MemberModel;
 use Contao\StringUtil;
-use Symfony\Bundle\SecurityBundle\Security;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class AddDmaSimpleGridColumnClasses extends AbstractExtension
 {
-
     public function __construct(
         private readonly ContaoFramework $framework,
     ) {
@@ -40,11 +35,10 @@ class AddDmaSimpleGridColumnClasses extends AbstractExtension
 
     /**
      * Inside your _base.html.twig:
-     * {% extends "@Contao/content_element/_base.html.twig" %}
+     * {% extends "@Contao/content_element/_base.html.twig" %}.
      *
      * {# Attach the grid classes to the class attribute of the content element wrapper tag. #}
      * {% set element_css_classes = add_dma_simple_grid_classes(_context) %}
-     *
      */
     public function addDmaSimpleGridClasses(array $context): string
     {
@@ -70,5 +64,4 @@ class AddDmaSimpleGridColumnClasses extends AbstractExtension
 
         return implode(' ', array_filter(array_unique($arrClasses)));
     }
-
 }

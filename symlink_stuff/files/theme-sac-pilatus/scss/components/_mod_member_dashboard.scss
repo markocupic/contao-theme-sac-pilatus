@@ -27,7 +27,6 @@
   }
 
   .nav.horizontal-tabs {
-
     display: flex;
     flex-direction: row !important;
     flex-wrap: nowrap;
@@ -48,9 +47,13 @@
     }
 
     > li > a {
-      //font-size: larger ;
       color: #000000;
       text-decoration: none;
+      @extend .btn;
+      @extend .btn-light;
+      @extend .btn-sm;
+      @extend .rounded-pill;
+      background-color: $gray-200;
 
       &:hover {
         color: $link-color;

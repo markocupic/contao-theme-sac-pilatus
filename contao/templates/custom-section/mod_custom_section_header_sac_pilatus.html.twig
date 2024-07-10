@@ -4,29 +4,29 @@
         <div class="inner d-flex ps-3 pe-3 pt-2 pb-2 align-items-center">
             <div class="ms-0 me-auto d-none d-sm-flex align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}Zur Geschäftsstelle{{ insert_tag('link_close')|raw }}</div>
             <div class="ms-auto me-0 d-flex align-items-center">
-                {% if has_logged_in_frontend_user() is same as true %}
+                {% if has_logged_in_frontend_user() %}
                     <a href="/_contao/logout" data-href="/_contao/logout" data-targetpath="{{ app.request.getSchemeAndHttpHost() }}" class="trigger-ids-kill-session header-logout-link m-0 ms-2 me-4" title="Abmelden/Logout"><i class="fa-light fa-sign-out-alt me-2"></i>Abmelden</a>
 
                     <div class="ms-2 d-none d-sm-block small">Angemeldet als: {{ insert_tag('user::firstname') }} {{ insert_tag('user::lastname') }}</div>
                     <div class="ms-3 small">
-                        <a href="{{ insert_tag('link_url::member-profile') }}" title="Mitgliederprofil bearbeiten">
+                        <a href="{{ insert_tag('link_url::276') }}" title="Mitgliederprofil bearbeiten">
                             {% set user = get_logged_in_frontend_user() %}
                             {{ insert_tag('image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
                         </a>
                     </div>
-                    {% if has_logged_in_frontend_user() is same as true %}
-                        <a href="{{ insert_tag('link_url::member-profile') }}" class="btn btn-sm btn-danger ms-2" title="Mitgliederprofil bearbeiten"><i class="fa-regular fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
+                    {% if has_logged_in_frontend_user() %}
+                        <a href="{{ insert_tag('link_url::276') }}" class="btn btn-sm btn-danger ms-2" title="Mitgliederprofil bearbeiten"><i class="fa-regular fa-cog"></i><span class="d-inline">&nbsp;Profil</span></a>
                     {% endif %}
                 {% endif %}
 
-                {% if has_logged_in_frontend_user() is same as false %}
+                {% if not has_logged_in_frontend_user() %}
                     <div class="header-login-placeholder d-inline position-relative" style="width:120px">
                         <span class="placeholder-glow">
                             <span class="placeholder col-2"></span>
                             <span class="placeholder col-9"></span>
                         </span>
                     </div>
-                    <button aria-haspopup="dialog" onclick="header.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button trigger-login-modal p-0 m-0 d-none ms-2" tabindex="0"><i class="fa-light fa-sign-in me-2"></i>Mitglieder-Login</button>
+                    <button aria-haspopup="dialog" onclick="header.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button p-0 m-0 d-none ms-2" data-sac-login-toggle="modal" tabindex="0"><i class="fa-light fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script>
                         document.addEventListener("BootstrapModalReady", (event) => {
                             document.querySelector('.header-login-placeholder').remove();
@@ -114,33 +114,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    /**
-     * Handle OAuth2 SSO login modal window
-     */
-    document.addEventListener('DOMContentLoaded', () => {
-        const loginModal = document.getElementById('loginModal');
-
-        if (loginModal) {
-            const bsLoginModal = new bootstrap.Modal(loginModal, {});
-
-            const buttons = document.querySelectorAll('.trigger-login-modal');
-
-            for (const button of buttons) {
-                button.addEventListener('click', e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    bsLoginModal.show();
-                });
-            }
-
-            // Open login modal window on page reload after authentication errors
-            if (loginModal.querySelector('.sac-oidc-error')) {
-                bsLoginModal.show();
-            }
-        }
-    }, false);
-
-</script>
 <!-- indexer::continue -->

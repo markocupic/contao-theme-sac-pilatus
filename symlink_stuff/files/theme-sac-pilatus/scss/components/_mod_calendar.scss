@@ -203,6 +203,10 @@
 }
 
 .event-detailview {
+  .overflow-auto {
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
 
   .event-state-headline {
     color: $red;

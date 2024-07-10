@@ -24,7 +24,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
     public function __construct(
         private ScopeMatcher $scopeMatcher,
         private string $fontAwesomeKitKey, // Not in use yet
-    ){
+    ) {
     }
 
     public static function getSubscribedEvents()
@@ -42,6 +42,9 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
             $GLOBALS['TL_JAVASCRIPT'][] = 'files/theme-sac-pilatus/js/detect-is-bs-modal-ready.js';
+
+            // Add the SAC Frontend Login class to the theme
+            $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/markocupiccontaothemesacpilatus/js/sac-frontend-login-modal.js';
 
             // Head tags
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
