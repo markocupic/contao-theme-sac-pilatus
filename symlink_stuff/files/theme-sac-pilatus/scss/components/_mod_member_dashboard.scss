@@ -37,13 +37,21 @@
       margin-right: 1rem;
       border-bottom: 4px solid transparent;
       margin-bottom: 0 !important;
+
+      > a {
+        @extend .btn;
+        @extend .btn-sm;
+      }
     }
 
     > li.nav-item.active {
-      border-color: $red;
       padding-left: .5rem !important;
       padding-right: .5rem !important;
-      background-color: $gray-100;
+      background-color: white;
+
+      > a {
+        @extend .btn-danger;
+      }
     }
 
     > li > a {
