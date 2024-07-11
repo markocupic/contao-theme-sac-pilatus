@@ -63,7 +63,7 @@ $color-level-2-hover: $dark;
                 font-weight: bold;
               }
 
-              > a > span, > span[data-bs-toggle="dropdown"] {
+              > a > span, > strong, > span[data-bs-toggle="dropdown"] {
                 padding: 0;
                 margin: 0;
                 font-size: 1rem !important;
@@ -177,7 +177,7 @@ $color-level-2-hover: $dark;
             margin-top: 1px;
             background-color: $navbar-dropdown-color;
 
-            > li > a:before,  > li > strong:before {
+            > li > a:before, > li > strong:before {
               content: "";
               //background: red;
               background-size: contain;
