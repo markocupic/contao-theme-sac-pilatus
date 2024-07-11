@@ -60,10 +60,10 @@ $color-level-2-hover: $dark;
               }
 
               & .trail, & > strong {
-                font-weight: bold !important;
+                font-weight: bold;
               }
 
-              > a > span, > span[data-bs-toggle="dropdown"], > strong {
+              > a > span, > span[data-bs-toggle="dropdown"] {
                 padding: 0;
                 margin: 0;
                 font-size: 1rem !important;
@@ -177,7 +177,18 @@ $color-level-2-hover: $dark;
             margin-top: 1px;
             background-color: $navbar-dropdown-color;
 
-            > li.active > strong {
+            > li > a:before,  > li > strong:before {
+              content: "";
+              //background: red;
+              background-size: contain;
+              width: 15px;
+              //height: 15px;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 10px;
+            }
+
+            > li.active > strong:before {
               color: $color-level-2-active !important;
             }
 
