@@ -81,7 +81,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Embed Drag Sortable Plugin from https://rubaxa.github.io/Sortable/
             // JQuery UI does not go with popper.js
             // $GLOBALS['TL_JAVASCRIPT'][] = "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
-            $GLOBALS['TL_JAVASCRIPT'][] = '/files/theme-sac-pilatus/js/third-party/Sortable.min.js|static';
+            $GLOBALS['TL_JAVASCRIPT'][] = '/bundles/markocupiccontaothemesacpilatus/sortablejs/Sortable.min.js|static';
 
             // Enable jqueryTouchSwipe
             //$GLOBALS['TL_JAVASCRIPT'][] = "https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js";
