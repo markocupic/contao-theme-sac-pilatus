@@ -17,19 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 }, false);
 
-/** Remove leading zeros in login forms **/
-document.addEventListener('DOMContentLoaded', (event) => {
-    jQuery('input[name="username"]').each(function () {
-        var elInput = this;
-        jQuery(elInput).on('input', function (e) {
-            if (jQuery(elInput).val() != '') {
-                var value = jQuery(elInput).val().replace(/^0+/, '');
-                jQuery(elInput).val(value);
-            }
-        });
-    });
-}, false);
-
 /** Style file inputs **/
 //https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -54,16 +41,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // Equal height for cards
 document.addEventListener('DOMContentLoaded', (event) => {
-    jQuery(window).on("load resize orientationchange vueupdate", function () {
-        equalheight('.equal-height', '.card');
-    });
-}, false);
 
-// Popper tooltips
-document.addEventListener('DOMContentLoaded', (event) => {
-    jQuery('[data-toggle="tooltip"]').tooltip();
-}, false);
+    const allEvents = ["load", "resize", "orientationchange", "vueupdate"];
 
+    for (const evt of allEvents) {
+        window.addEventListener(evt, (e) => {
+            equalheight('.equal-height', '.card');
+        });
+    }
+}, false);
 
 /** Close and open the search form overlay **/
 document.addEventListener('DOMContentLoaded', (event) => {
