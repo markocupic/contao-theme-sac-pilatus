@@ -1,0 +1,20 @@
+{% do addHtmlToHead('
+    <style>
+    .mod_event-button-box .overflow-x-auto {
+        overflow-x: auto;
+    }
+    </style>
+') %}
+
+<div class="mod_event-button-box">
+    <nav class="overflow-x-auto">
+        <ul class="d-inline-flex flex-nowrap">
+            <li class="d-inline p-2 ps-0">
+                {{ insert_tag('insert_module::424')|raw }} {# Tourlist PDF Export #}
+            </li>
+            <li class="d-inline p-2">
+                {{ insert_tag('insert_module::348')|raw }} {# Schwierigkeitsgrade #}
+            </li>
+        </ul>
+    </nav>
+</div>
