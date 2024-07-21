@@ -10,10 +10,10 @@
     <nav class="overflow-x-auto">
         <ul class="d-inline-flex flex-nowrap">
             <li class="d-inline p-2 ps-0">
-                {{ insert_tag('insert_module::424')|raw }} {# Tourlist PDF Export #}
+                {{ insert_tag('insert_module::'~keys.export_tour_list_module_id|default('999999999999'))|default('module not found')|raw }} {# Tourlist PDF Export #}
             </li>
             <li class="d-inline p-2">
-                {{ insert_tag('insert_module::348')|raw }} {# Schwierigkeitsgrade #}
+                {{ insert_tag('insert_module::'~keys.export_tour_tech_diff_list_module_iddefault('999999999999'))|default('module not found')|raw }} {# Schwierigkeitsgrade #}
             </li>
         </ul>
     </nav>
