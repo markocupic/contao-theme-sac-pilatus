@@ -1,0 +1,42 @@
+{% set navId = dashboardNav~id %}
+
+<div class="h-scroll mb-4">
+    <ul class="nav horizontal-tabs" id="{{ navId }}" role="tablist">
+        {% for page_id, page_title in keys %}
+            <li class="nav-item">
+                <a class="nav-item" href="{{ insert_tag('link_url::'~page_id) }}">{{ page_title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<br>
+
+<script>
+    // Add CSS class "active" to the active menu item
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const listItems = document.querySelectorAll('{{ navId }} li.nav-item');
+        for (const listItem of listItems) {
+            const url = window.location.href;
+            const aTag = listItem.querySelector('a');
+
+            if (aTag) {
+                const regex = RegExp(url, 'i');
+                const match = regex.exec(aTag.href);
+
+                if (match !== null) {
+                    listItem.classList.add('active');
+                    listItem.setAttribute('aria-selected', 'true');
+
+                    aTag.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        return false;
+                    });
+
+                    aTag.setAttribute('href', '#');
+                }
+            } else {
+                listItem.setAttribute('aria-selected', 'false');
+            }
+        }
+    });
+</script>
