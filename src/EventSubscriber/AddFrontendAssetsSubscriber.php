@@ -57,14 +57,14 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Load Font Awesome key from configuration
             // $GLOBALS['TL_BODY'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
             // Due to bandwidth limitations we host fontawesome ourselves
-            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.4.1" crossorigin="anonymous"></script>';
-            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.4.1" crossorigin="anonymous"></script>';
-            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.4.1" crossorigin="anonymous"></script>';
-            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=6.4.1" crossorigin="anonymous"></script>';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=6.4.1" />';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.4.1" />';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.4.1" />';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.4.1" />';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.6.0" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.6.0" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.6.0" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=6.6.0" crossorigin="anonymous"></script>';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=6.6.0" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.6.0" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.6.0" />';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.6.0" />';
 
             // Select2
             $GLOBALS['TL_BODY'][] = '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
