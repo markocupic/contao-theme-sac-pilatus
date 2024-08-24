@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Markocupic\ContaoThemeSacPilatus\EventSubscriber;
 
+use Contao\CoreBundle\Routing\ResponseContext\Csp\CspHandler;
+use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -22,6 +24,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 {
     public function __construct(
+        private readonly ResponseContextAccessor $responseContextAccessor,
         private ScopeMatcher $scopeMatcher,
         private string $fontAwesomeKitKey, // Not in use yet
     ) {
@@ -35,6 +38,11 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
     public function addFrontendAssets(RequestEvent $e): void
     {
         $request = $e->getRequest();
+        $responceContext = $this->responseContextAccessor->getResponseContext();
+
+        if ($responceContext?->has(CspHandler::class)) {
+            $cspHandler = $responceContext->get(CspHandler::class);
+        }
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
             // Load jQuery
@@ -57,6 +65,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Load Font Awesome key from configuration
             // $GLOBALS['TL_BODY'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
             // Due to bandwidth limitations we host fontawesome ourselves
+            // @todo: CSP -> https://docs.fontawesome.com/web/dig-deeper/security#:~:text=and%20address%20things.-,Content,-Security%20Policy
             $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.6.0" crossorigin="anonymous"></script>';
             $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.6.0" crossorigin="anonymous"></script>';
             $GLOBALS['TL_BODY'][] = '<script defer src="/assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.6.0" crossorigin="anonymous"></script>';
@@ -65,6 +74,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.6.0" />';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.6.0" />';
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.6.0" />';
+            //$GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="/assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=6.6.0" />';
 
             // Select2
             $GLOBALS['TL_BODY'][] = '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous"></script>';
@@ -95,14 +105,22 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<script defer src="/files/theme-sac-pilatus/js/theme.min.js"></script>';
 
             // Load flatpickr (datepicker)
+            if (null !== $cspHandler) {
+                $cspHandler->addSource('script-src', 'https://cdn.jsdelivr.net/npm/flatpickr;');
+            }
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
             $GLOBALS['TL_BODY'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
+
+            if (null !== $cspHandler) {
+                $cspHandler->addSource('script-src', 'https://npmcdn.com/flatpickr/dist/l10n/de.js;');
+            }
             $GLOBALS['TL_BODY'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
 
             // Add AOS animation library: https://github.com/michalsnik/aos
             $GLOBALS['TL_HEAD'][] = '<link href="/bundles/markocupiccontaothemesacpilatus/aos/aos.css?v=2.3.4" rel="stylesheet">';
             $GLOBALS['TL_BODY'][] = '<script src="/bundles/markocupiccontaothemesacpilatus/aos/aos.js?v=2.3.4"></script>';
-            $GLOBALS['TL_BODY'][] = '<script>AOS.init();</script>';
+            $nonce = !empty($cspHandler) ? $cspHandler->getNonce('script-src') : '';
+            $GLOBALS['TL_BODY'][] = '<script nonce="'.$nonce.'">AOS.init();</script>';
         }
     }
 }

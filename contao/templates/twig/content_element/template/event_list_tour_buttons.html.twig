@@ -1,5 +1,5 @@
 {% do addHtmlToHead('
-    <style>
+    <style'~attrs().setIfExists('nonce', csp_nonce('script-src'))~'>
     .mod_event-button-box .overflow-x-auto {
         overflow-x: auto;
     }

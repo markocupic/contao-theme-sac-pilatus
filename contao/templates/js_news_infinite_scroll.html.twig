@@ -1,7 +1,7 @@
 <script src="bundles/markocupiccontaothemesacpilatus/masonry/masonry.js"></script>
 <script src="bundles/markocupiccontaonewsinfinitescroll/js/contao_infinite_scroll.min.js?t={{ date().timestamp }}"></script>
 
-<script>
+<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
     document.addEventListener('DOMContentLoaded', function () {
 
         const infiniteScrollNewsModuleSelector = '.mod_newslist_infinite_scroll > .infinite_scroll_newslist_container';

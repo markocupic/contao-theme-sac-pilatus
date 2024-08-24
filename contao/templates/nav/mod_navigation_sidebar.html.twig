@@ -31,7 +31,7 @@
 
 </nav>
 
-<script>
+<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
     window.addEventListener('DOMContentLoaded', (e) => {
 
         if (ContaoSidebarNavigation) {
@@ -44,7 +44,7 @@
     });
 </script>
 
-<script>
+<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
     // Toggle the sidebar with the mobile navigation
     window.addEventListener('DOMContentLoaded', (e) => {
         let sidebar = document.getElementById("sidebar");

@@ -11,7 +11,7 @@
 </div>
 <br>
 
-<script>
+<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
     // Add CSS class "active" to the active menu item
     document.addEventListener('DOMContentLoaded', (event) => {
         const listItems = document.querySelectorAll('{{ navId }} li.nav-item');
