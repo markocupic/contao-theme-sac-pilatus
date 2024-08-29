@@ -105,13 +105,13 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<script defer src="/files/theme-sac-pilatus/js/theme.min.js"></script>';
 
             // Load flatpickr (datepicker)
-            if (null !== $cspHandler) {
+            if (!empty($cspHandler)) {
                 $cspHandler->addSource('script-src', 'https://cdn.jsdelivr.net/npm/flatpickr;');
             }
             $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">';
             $GLOBALS['TL_BODY'][] = '<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>';
 
-            if (null !== $cspHandler) {
+            if (!empty($cspHandler)) {
                 $cspHandler->addSource('script-src', 'https://npmcdn.com/flatpickr/dist/l10n/de.js;');
             }
             $GLOBALS['TL_BODY'][] = '<script src="https://npmcdn.com/flatpickr/dist/l10n/de.js"></script>';
