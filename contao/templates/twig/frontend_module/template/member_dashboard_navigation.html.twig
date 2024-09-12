@@ -1,4 +1,4 @@
-{% set navId = dashboardNav~id %}
+{% set navId = 'memberDashboardNav' %}
 
 <div class="h-scroll mb-4">
     <ul class="nav horizontal-tabs" id="{{ navId }}" role="tablist">
@@ -14,7 +14,7 @@
 <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
     // Add CSS class "active" to the active menu item
     document.addEventListener('DOMContentLoaded', (event) => {
-        const listItems = document.querySelectorAll('{{ navId }} li.nav-item');
+        const listItems = document.querySelectorAll('#{{ navId }} li.nav-item');
         for (const listItem of listItems) {
             const url = window.location.href;
             const aTag = listItem.querySelector('a');
