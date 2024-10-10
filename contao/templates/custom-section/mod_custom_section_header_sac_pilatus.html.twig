@@ -30,7 +30,7 @@
                             <span class="placeholder col-9"></span>
                         </span>
                     </div>
-                    <button aria-haspopup="dialog" onclick="window.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button p-0 m-0 d-none ms-2" data-sac-login-toggle="modal" tabindex="0"><i class="fa-light fa-sign-in me-2"></i>Mitglieder-Login</button>
+                    <button aria-haspopup="dialog" onclick="window.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button p-0 d-none ms-2 me-0 mt-2 mb-2" data-sac-login-toggle="modal" tabindex="0"><i class="fa-light fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
                         document.addEventListener("BootstrapModalReady", (event) => {
                             document.querySelector('.header-login-placeholder').remove();
