@@ -15,7 +15,8 @@ window.SacFrontendLoginModal = class {
                 e.preventDefault();
                 // Use the currentTarget property on the event, because
                 // e.target will probably submit the icon element.
-                this.openModal(e.currentTarget);
+                const loginBtn = e.currentTarget;
+                this.openModal(loginBtn);
             });
         }
 
@@ -23,12 +24,19 @@ window.SacFrontendLoginModal = class {
         const elLoginModal = document.getElementById('loginModal');
         if (elLoginModal) {
             if (loginModal.querySelector('.sac-oidc-error')) {
-                SacFrontendLogin.openModal();
+                //SacFrontendLogin.openModal();
+                const bsModal = new bootstrap.Modal(elLoginModal, {});
+                bsModal.show();
             }
         }
     }
 
-    static openModal(elTarget) {
+    /**
+     * @param loginBtn
+     * The login button clicked by the user can contain forwarding information
+     * in the data-sac-login-target attribute.
+     */
+    static openModal(loginBtn = null) {
         if (typeof bootstrap === 'object') {
             const elLoginModal = document.getElementById('loginModal');
             const inputHidden = elLoginModal.querySelector('input[name="_target_path"]');
@@ -37,7 +45,7 @@ window.SacFrontendLoginModal = class {
             // <button data-sac-login-target="same-site">Login</button>
             // to redirect the user to the same site
             // after he has logged in
-            if (elTarget.dataset.sacLoginTarget === 'same-site') {
+            if (loginBtn && loginBtn.dataset.sacLoginTarget === 'same-site') {
                 if (inputHidden) {
                     if (!inputHidden.hasAttribute('data-orig-target-path')) {
                         inputHidden.setAttribute('data-orig-target-path', inputHidden.value);
