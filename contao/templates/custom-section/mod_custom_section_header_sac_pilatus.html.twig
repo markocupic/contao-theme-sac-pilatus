@@ -126,9 +126,11 @@
      * @type {HTMLElement}
      */
     const loginModal = document.getElementById('loginModal');
+
     loginModal.addEventListener('hidden.bs.modal', event => {
-        const modalBackdrop = document.querySelector('body > .modal-backdrop.show');
-        if (modalBackdrop) {
+        const modalBackdrops = document.querySelectorAll('body > .modal-backdrop.show');
+        
+        for (const modalBackdrop of modalBackdrops) {
             modalBackdrop.remove();
         }
     });
