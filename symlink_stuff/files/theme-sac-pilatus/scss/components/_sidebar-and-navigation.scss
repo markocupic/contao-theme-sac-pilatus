@@ -16,13 +16,12 @@ $nav-bg-color: #fff;
     .btn {
       font-size: 1.75rem;
       color: $nav-font-color;
+      margin: 0 !important;
+      padding: 2px !important;
     }
 
-    border: 0;
-
     &:focus {
-      border: 0;
-      outline: 0;
+      outline: initial;
     }
   }
 }
@@ -56,12 +55,13 @@ $nav-bg-color: #fff;
   display: none;
   visibility: hidden;
   overflow-x: hidden;
+  overflow-y: scroll;
   z-index: $zindex-navbar-aside;
   position: fixed;
-  left: -400px;
   top: 0;
-  width: 400px;
   height: 100%;
+  width: 100%;
+  left: -100%;
   background-color: $nav-bg-color;
   @include transition(left, ease-in-out, 0.7s);
 
@@ -71,15 +71,8 @@ $nav-bg-color: #fff;
     z-index: 99;
     height: 78px;
     overflow: hidden;
-    border-bottom: 1px ridge $gray-400;
+    //border-bottom: 1px ridge $gray-400;
     @include transition(height);
-
-    img {
-      margin: 0 $spacer;
-      width: auto;
-      max-width: 120px;
-      height: 66px;
-    }
 
     .sidebar-title {
       padding-left: $spacer-x;
@@ -90,7 +83,7 @@ $nav-bg-color: #fff;
       position: absolute;
       right: $spacer;
 
-      .fa {
+      svg {
         color: $nav-close-btn-color;
         font-size: 2rem;
       }
@@ -98,10 +91,11 @@ $nav-bg-color: #fff;
   }
 }
 
-body {
-  #sidebar {
-    display: block;
-    overflow-y: scroll;
+@include media-breakpoint-down(xl) {
+  #sidebar[aria-expanded="true"] {
+    left: 0 !important;
+    display: block !important;
+    visibility: visible !important;
   }
 }
 
@@ -110,28 +104,8 @@ body.sidebar-open {
     display: block;
     opacity: 0;
   }
-
-  #sidebar {
-    left: 0;
-  }
-
 }
 
-@include media-breakpoint-down(sm) {
-  #sidebar {
-    width: 100%;
-    left: -100%;
-  }
-  body.sidebar-open {
-    #sidebar {
-      left: 0;
-    }
-
-    #wrapper, #footer {
-      display: none;
-    }
-  }
-}
 
 //https://jsfiddle.net/markocupic/br520419/
 

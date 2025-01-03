@@ -3,78 +3,116 @@
 {# {{ addCssResource('bundles/markocupiccontaosidebarnavigation/css/sidebar_navigation.css') }} #}
 
 <!-- indexer::stop -->
-<div class="sidebar-top-container">
-    <h5 class="sidebar-title invisible">NAVIGATION</h5>
-    <div class="navigation-toggler" title="Navigation schliessen" role="button">
-        <button class="btn btn-lg btn-link" title="Navigation schliessen">
-            <i class="fa-light fa-times" aria-hidden="true"></i>
-        </button>
-        <span class="visually-hidden">Navigation</span>
-    </div>
-</div>
-
 {% set classes = ['sidebar-navigation' , 'block'] %}
 {% if class|default %}
     {% set classes = classes|merge(class|split(' ')) %}
 {% endif %}
 {% set class = classes|join(' ') %}
 
-<nav class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
+<nav role="navigation" class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
+    <div class="sidebar-top-container mb-3">
+        <h5 class="sidebar-title invisible">NAVIGATION</h5>
+        <div class="navbar-brand ms-3 position-absolute">
+            <a href="{{ app.request.getSchemeAndHttpHost() }}" title="Gehe zur Startseite">
+                <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo SAC-Pilatus">
+            </a>
+        </div>
+        <button class="navigation-toggler p-0 btn btn-lg btn-link" focusable="true" title="Navigation schliessen">
+            <i class="fa-light fa-times" focusable="false" aria-hidden="true"></i>
+        </button>
+        <span class="visually-hidden">Navigation</span>
+    </div>
 
     {% if headline|default %}
     <{{ hl }}>{{ headline }}</{{ hl }}>
-    {% endif %}
+{% endif %}
 
-    <a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
-    {{ items|raw }}
-    <a id="{{ skipId }}" class="invisible">&nbsp;</a>
-
+<a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
+{{ items|raw }}
+<a id="{{ skipId }}" class="invisible">&nbsp;</a>
 </nav>
 
-<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-    window.addEventListener('DOMContentLoaded', (e) => {
-
-        if (ContaoSidebarNavigation) {
-            new ContaoSidebarNavigation({
-                'submenuContainer': '.submenu',
-                'followSubmenuContainerLink': true,
-                'submenuTogglerHtml': '<button class="toggle-submenu" role="button"></button>',
-            });
-        }
-    });
-</script>
-
-<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-    // Toggle the sidebar with the mobile navigation
-    window.addEventListener('DOMContentLoaded', (e) => {
-        let sidebar = document.getElementById("sidebar");
-        let sidebarOverlay = document.createElement("div");
-
-        sidebarOverlay.setAttribute('id', 'sidebarOverlay');
-
-        document.body.prepend(sidebarOverlay);
-        document.body.prepend(sidebar);
-
-        let toggleEl = document.querySelectorAll('.navigation-toggler, #sidebarOverlay');
-        let i;
-
-        for (i = 0; i < toggleEl.length; ++i) {
-            toggleEl[i].addEventListener('click', (e) => {
-                document.body.classList.toggle('sidebar-open');
-
-                if (document.body.classList.contains('sidebar-open')) {
-                    sidebar.style.visibility = 'visible';
-                } else {
-                    window.setTimeout(() => {
-                        sidebar.style.visibility = 'hidden';
-                    }, 600);
+{% block nav_script %}
+    {% add "nav_script" to body %}
+        {% set script_attributes = attrs()
+            .setIfExists('nonce', csp_nonce('script-src'))
+            .mergeWith(script_attributes|default) %}
+        <script{{ script_attributes }}>
+            window.addEventListener('DOMContentLoaded', (e) => {
+                if (ContaoSidebarNavigation) {
+                    new ContaoSidebarNavigation({
+                        'submenuContainer': '.submenu',
+                        'followSubmenuContainerLink': true,
+                        'submenuTogglerHtml': '<button class="toggle-submenu" role="button"></button>',
+                    });
                 }
-            })
-        }
+            });
+        </script>
+        <script{{ script_attributes }}>
+            // Toggle the sidebar with the mobile navigation
+            window.addEventListener('DOMContentLoaded', (e) => {
 
-        window.addEventListener('resize', (e) => {
-            document.body.classList.remove('sidebar-open');
-        });
-    });
-</script>
+                const sidebar = document.getElementById("sidebar");
+                sidebar.setAttribute('aria-expanded', 'false');
+                const sidebarOverlay = document.createElement("div");
+                sidebarOverlay.setAttribute('id', 'sidebarOverlay');
+                // Inject the sidebar and the overlay into the DOM
+                document.body.prepend(sidebarOverlay);
+                document.body.prepend(sidebar);
+
+                // Toggle the sidebar with the mobile navigation
+                document.addEventListener('sidebar::open', (e) => {
+                    document.body.classList.add('sidebar-open');
+                    e.detail.sidebar.setAttribute('aria-expanded', 'true');
+                    e.detail.sidebar.querySelector('.navigation-toggler').focus();
+                });
+
+                // Toggle the sidebar with the mobile navigation
+                document.addEventListener('sidebar::close', (e) => {
+                    e.detail.sidebar.querySelector('.navigation-toggler').focus();
+                    e.detail.sidebar.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('sidebar-open');
+                });
+
+                // On keypress ESC
+                document.addEventListener('keyup', (e) => {
+                    if (e.code === 'Escape' && document.body.classList.contains('sidebar-open')) {
+                        const event = new CustomEvent("sidebar::close", {detail: {'sidebar': sidebar}});
+                        document.dispatchEvent(event);
+                    }
+                });
+
+                const toggleElements = document.querySelectorAll('.navigation-toggler, #sidebarOverlay');
+
+                for (const button of toggleElements) {
+                    button.addEventListener('click', (e) => {
+                        if (document.body.classList.contains('sidebar-open')) {
+                            const event = new CustomEvent("sidebar::close", {detail: {'sidebar': sidebar}});
+                            document.dispatchEvent(event);
+                        } else {
+                            const event = new CustomEvent("sidebar::open", {detail: {'sidebar': sidebar}});
+                            document.dispatchEvent(event);
+                        }
+                    });
+                }
+
+                // ResizeObserver: Will close the sidebar when the user resizes the window
+                // and the CSS directive hides/shrinks the window to a width of 0px.
+                const resizeObserver = new ResizeObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.contentBoxSize) {
+                            const contentBoxSize = entry.contentBoxSize[0];
+                            console.log(contentBoxSize.inlineSize);
+                            if (contentBoxSize.inlineSize < 10) {
+                                const event = new CustomEvent("sidebar::close", {detail: {'sidebar': sidebar}});
+                                document.dispatchEvent(event);
+                            }
+                        }
+                    }
+                });
+                resizeObserver.observe(sidebar);
+            });
+        </script>
+    {% endadd %}
+{% endblock %}
 <!-- indexer::continue -->
