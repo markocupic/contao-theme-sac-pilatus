@@ -1,11 +1,11 @@
 $sidebar-bg-color: #000000;
-$nav-bg-hover-color: #f6f6f6;
-$nav-close-btn-color: #ccc;
+$nav-bg-hover-color: #F6F6F6;
+$nav-close-btn-color: #000000;
 //$nav-bg-hover-color: $accent-color;
 
-$nav-font-color: #222;
+$nav-font-color: #222222;
 $nav-link-color: $blue;
-$nav-bg-color: #fff;
+$nav-bg-color: #FFFFFF;
 
 /* Dropdown - main navigation header */
 
@@ -61,7 +61,8 @@ $nav-bg-color: #fff;
   top: 0;
   height: 100%;
   width: 100%;
-  left: -100%;
+  left: -576px;
+  max-width: 576px;
   background-color: $nav-bg-color;
   @include transition(left, ease-in-out, 0.7s);
 
@@ -85,7 +86,7 @@ $nav-bg-color: #fff;
 
       svg {
         color: $nav-close-btn-color;
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
   }

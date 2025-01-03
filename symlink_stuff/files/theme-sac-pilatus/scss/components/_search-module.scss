@@ -1,6 +1,7 @@
-.mod_search_custom_overlay {
-  .close-button.btn-close {
+.mod_search_overlay {
+  .svg-inline--fa {
     color: #ffffff;
+    height: 3rem;
   }
 
   display: none;
@@ -76,7 +77,7 @@
   }
 }
 
-.mod_search_custom_overlay {
+.mod_search_overlay {
 
   -webkit-transition: opacity 0.4s linear;
   -moz-transition: opacity 0.4s linear;
@@ -96,7 +97,7 @@
   }
 }
 
-.mod_search_custom_overlay:before {
+.mod_search_overlay:before {
   content: "";
   display: block;
   height: 50%;

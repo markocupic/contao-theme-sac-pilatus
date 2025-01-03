@@ -17,10 +17,9 @@
                 <img src="/files/theme-sac-pilatus/images/logos/logo-header.svg" class="logo-header" alt="Logo SAC-Pilatus">
             </a>
         </div>
-        <button class="navigation-toggler p-0 btn btn-lg btn-link" focusable="true" title="Navigation schliessen">
+        <button type="button" class="navigation-toggler p-0 btn btn-lg btn-link" aria-controls="sidebar" aria-label="Navigation schliessen" focusable="true">
             <i class="fa-light fa-times" focusable="false" aria-hidden="true"></i>
         </button>
-        <span class="visually-hidden">Navigation</span>
     </div>
 
     {% if headline|default %}
@@ -102,7 +101,6 @@
                     for (const entry of entries) {
                         if (entry.contentBoxSize) {
                             const contentBoxSize = entry.contentBoxSize[0];
-                            console.log(contentBoxSize.inlineSize);
                             if (contentBoxSize.inlineSize < 10) {
                                 const event = new CustomEvent("sidebar::close", {detail: {'sidebar': sidebar}});
                                 document.dispatchEvent(event);

@@ -54,45 +54,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
 /** Close and open the search form overlay **/
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    if (!jQuery(".mod_search_custom .mod_search_custom_overlay").length) {
+    if (null === document.getElementById('websiteSearch')) {
         return;
     }
-    var form = jQuery(".mod_search_custom .mod_search_custom_overlay").first();
 
-    // Move form to the top of the body
-    jQuery(form).detach().prependTo('body');
+    // Detach and append the search container as the first child to the body
+    const searchContainer = document.getElementById('websiteSearch');
+    searchContainer.parentElement.removeChild(searchContainer);
+    document.querySelector('body').prepend(searchContainer);
 
     // Show overlay
-    jQuery('.search-toggler').click(function (e) {
+    document.getElementById('openWebsiteSearchButton').addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        form.addClass('is-pre-active');
-        window.setTimeout(function () {
-            form.addClass('is-active');
-            form.removeClass('is-pre-active');
-        }, 100);
+        openSearchForm();
     });
 
     // Hide form when clicking the close icon
-    jQuery('.mod_search_custom_overlay .close-button').click(function (e) {
+    document.getElementById('closeWebsiteSearchButton').addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        hideSearchForm();
+        closeSearchForm();
     });
 
     // Hide form when typing ESC
-    jQuery(document).keyup(function (e) {
-        if (e.keyCode == 27) {
-            hideSearchForm();
+    document.addEventListener('keyup', (e) => {
+        if (e.code === 'Escape' || e.code === 'Esc' || e.key === 'Escape' || e.key === 'Esc') {
+            closeSearchForm();
         }
     });
 
-    /**
-     * Close search form
-     */
-    function hideSearchForm() {
-        form.removeClass('is-active');
-        form.removeClass('is-pre-active');
+    // Close search form
+    function openSearchForm() {
+        searchContainer.classList.add('is-pre-active');
+        window.setTimeout(() => {
+            searchContainer.setAttribute('aria-expanded', 'true');
+            searchContainer.classList.add('is-active');
+            searchContainer.classList.remove('is-pre-active');
+        }, 100);
+    }
+
+    // Close search form
+    function closeSearchForm() {
+        searchContainer.setAttribute('aria-expanded', 'false');
+        searchContainer.classList.remove('is-active');
+        searchContainer.classList.remove('is-pre-active');
     }
 }, false);
 
