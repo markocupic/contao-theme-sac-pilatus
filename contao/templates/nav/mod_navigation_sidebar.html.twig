@@ -9,7 +9,7 @@
 {% endif %}
 {% set class = classes|join(' ') %}
 
-<nav role="navigation" class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
+<nav role="navigation" aria-label="Hauptnavigation für Mobile Devices" class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
     <div class="sidebar-top-container mb-3">
         <h5 class="sidebar-title invisible">NAVIGATION</h5>
         <div class="navbar-brand ms-3 position-absolute">
@@ -41,8 +41,8 @@
                 if (ContaoSidebarNavigation) {
                     new ContaoSidebarNavigation({
                         'submenuContainer': '.submenu',
-                        'followSubmenuContainerLink': true,
-                        'submenuTogglerHtml': '<button class="toggle-submenu" role="button"></button>',
+                        'followSubmenuContainerLink': false,
+                        'submenuTogglerHtml': '<button class="toggle-submenu" role="button" aria-label="Untermenü öffnen/schliessen"></button>',
                     });
                 }
             });
@@ -62,19 +62,19 @@
                 // Toggle the sidebar with the mobile navigation
                 document.addEventListener('sidebar::open', (e) => {
                     document.body.classList.add('sidebar-open');
-                    document.querySelector('#sidebar').classList.add('open');
-                    document.querySelector('#sidebar .navigation-toggler').setAttribute('aria-expanded', 'true');
-                    document.querySelector('#header .navigation-toggler').setAttribute('aria-expanded', 'true');
-                    document.querySelector('#sidebar navigation-toggler').focus();
+                    document.querySelector('#sidebar')?.classList.add('open');
+                    document.querySelector('#sidebar .navigation-toggler')?.setAttribute('aria-expanded', 'true');
+                    document.querySelector('#header .navigation-toggler')?.setAttribute('aria-expanded', 'true');
+                    document.querySelector('#sidebar .navigation-toggler')?.focus({focusVisible: true, preventScroll: true});
                 });
 
                 // Toggle the sidebar with the mobile navigation
                 document.addEventListener('sidebar::close', (e) => {
-                    document.querySelector('#sidebar .navigation-toggler').focus();
-                    document.querySelector('#sidebar .navigation-toggler').setAttribute('aria-expanded', 'false');
-                    document.querySelector('#header .navigation-toggler').setAttribute('aria-expanded', 'false');
-                    document.querySelector('#sidebar').classList.remove('open');
-                    document.body.classList.remove('sidebar-open');
+                    document.querySelector('#sidebar .navigation-toggler')?.focus({focusVisible: true, preventScroll: true});
+                    document.querySelector('#sidebar .navigation-toggler')?.setAttribute('aria-expanded', 'false');
+                    document.querySelector('#header .navigation-toggler')?.setAttribute('aria-expanded', 'false');
+                    document.querySelector('#sidebar')?.classList.remove('open');
+                    document.body?.classList.remove('sidebar-open');
                 });
 
                 // On keypress ESC
