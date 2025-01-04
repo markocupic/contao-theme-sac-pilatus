@@ -1,0 +1,80 @@
+{# https://gist.github.com/markocupic/b81df49ae8a832c1b82c1178936fff5d #}
+
+{% set levelClass = level %}
+
+{% if level == 'level_2' %}
+<div class="dropdown-menu">
+    <div class="dropdown-menu-grid-container">
+        {% endif %}
+        <ul class="{{ levelClass }}">
+            {% for item in items %}
+                {% if level == 'level_1' %}
+                    {# Add css class nav-item #}
+                    {% set item = item|merge({'class': "#{item.class} nav-item"}) %}
+
+                    {# Set item.hasDropdown key #}
+                    {% set item = item|merge({'hasDropdown': (item.subitems|default) ? true : false}) %}
+
+                    {% if item.isActive %}
+                        {% if item.hasDropdown %}
+                            {# Add css class dropdown #}
+                            {% set item = item|merge({'class': "#{item.class} dropdown"}) %}
+                            <li class="{{ item.class|trim }}">
+                        <span role="button" data-bs-toggle="dropdown" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
+                        {{ item.link }}
+                        </span>
+                                {{ item.subitems|raw }}
+                            </li>
+                        {% else %}
+                            <li class="{{ item.class|trim }}">
+                                <strong class="{{ item.class|trim }}"{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">{{ item.link }}</strong>
+                                {{ item.subitems|raw }}
+                            </li>
+                        {% endif %}
+                    {% else %}
+                        {% if item.hasDropdown %}
+                            {# Add css class dropdown #}
+                            {% set item = item|merge({'class': "#{item.class} dropdown"}) %}
+                            <li class="{{ item.class|trim }}">
+                        <span role="button" data-bs-toggle="dropdown" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
+                        {{ item.link }}
+                        </span>
+                                {{ item.subitems|raw }}
+                            </li>
+                        {% else %}
+                            <li class="{{ item.class|trim }}">
+                                <a href="{{ item.href ?: './' }}" title="{{ item.pageTitle ?: "#{item.title}" }}" class="nav-link {{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} accesskey="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="url">
+                                    <span itemprop="name">{{ item.link }}</span>
+                                </a>
+                                {{ item.subitems|raw }}
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% else %} {# level > 1 #}
+                    {% if item.subitems|default %}
+                        {# Add css class dropdown #}
+                        {% set item = item|merge({'class': "#{item.class} dropdown"}) %}
+                    {% endif %}
+                    {% if item.isActive %}
+                        <li class="{{ item.class|trim }}">
+                            <strong class="{{ item.class|trim }}"{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">{{ item.link }}</strong>
+                            {{ item.subitems|raw }}
+                        </li>
+                    {% else %}
+                        <li{% if item.class|default %} class="{{ item.class|trim }}"{% endif %}>
+                            <a href="{{ item.href ?: './' }}" title="{{ item.pageTitle ?: "#{item.title}" }}"{% if item.class|default %} class="{{ item.class|trim }}"{% endif %}{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="url">
+                                <span itemprop="name">{{ item.link }}</span>
+                            </a>
+                            {{ item.subitems|raw }}
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% if level == 'level_2' %}
+                <i class="close-header-navigation-dropdown fa-2x fal fa-times" role="button"></i>
+            {% endif %}
+        </ul>
+        {% if level == 'level_2' %}
+    </div>{# close the drop down container #}
+</div>
+{% endif %}
