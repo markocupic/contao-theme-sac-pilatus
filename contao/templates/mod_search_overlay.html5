@@ -1,5 +1,5 @@
-<div id="websiteSearch" class="mod_search_overlay" aria-expanded="false" aria-labelledby="websiteSearchLabel" role="dialog">
-  <button id="closeWebsiteSearchButton" type="button" class="close-button" aria-controls="websiteSearch" aria-label="Suche Schliessen">
+<div id="websiteSearch" class="mod_search_overlay" aria-labelledby="websiteSearchLabel" role="dialog">
+  <button id="closeWebsiteSearchButton" type="button" class="close-button" aria-expanded="false" aria-controls="websiteSearch" aria-label="Suche Schliessen">
     <i class="fa-light fa-times" focusable="false" aria-hidden="true"></i>
   </button>
   <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="get">

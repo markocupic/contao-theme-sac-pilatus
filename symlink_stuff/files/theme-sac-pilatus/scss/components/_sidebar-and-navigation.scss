@@ -93,7 +93,7 @@ $nav-bg-color: #FFFFFF;
 }
 
 @include media-breakpoint-down(xl) {
-  #sidebar[aria-expanded="true"] {
+  #sidebar.open {
     left: 0 !important;
     display: block !important;
     visibility: visible !important;

@@ -62,14 +62,18 @@
                 // Toggle the sidebar with the mobile navigation
                 document.addEventListener('sidebar::open', (e) => {
                     document.body.classList.add('sidebar-open');
-                    e.detail.sidebar.setAttribute('aria-expanded', 'true');
-                    e.detail.sidebar.querySelector('.navigation-toggler').focus();
+                    document.querySelector('#sidebar').classList.add('open');
+                    document.querySelector('#sidebar .navigation-toggler').setAttribute('aria-expanded', 'true');
+                    document.querySelector('#header .navigation-toggler').setAttribute('aria-expanded', 'true');
+                    document.querySelector('#sidebar navigation-toggler').focus();
                 });
 
                 // Toggle the sidebar with the mobile navigation
                 document.addEventListener('sidebar::close', (e) => {
-                    e.detail.sidebar.querySelector('.navigation-toggler').focus();
-                    e.detail.sidebar.setAttribute('aria-expanded', 'false');
+                    document.querySelector('#sidebar .navigation-toggler').focus();
+                    document.querySelector('#sidebar .navigation-toggler').setAttribute('aria-expanded', 'false');
+                    document.querySelector('#header .navigation-toggler').setAttribute('aria-expanded', 'false');
+                    document.querySelector('#sidebar').classList.remove('open');
                     document.body.classList.remove('sidebar-open');
                 });
 

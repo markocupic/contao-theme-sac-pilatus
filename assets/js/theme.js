@@ -88,7 +88,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function openSearchForm() {
         searchContainer.classList.add('is-pre-active');
         window.setTimeout(() => {
-            searchContainer.setAttribute('aria-expanded', 'true');
+            document.getElementById('openWebsiteSearchButton').setAttribute('aria-expanded', 'true');
+            document.getElementById('closeWebsiteSearchButton').setAttribute('aria-expanded', 'true');
             searchContainer.classList.add('is-active');
             searchContainer.classList.remove('is-pre-active');
         }, 100);
@@ -96,7 +97,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Close search form
     function closeSearchForm() {
-        searchContainer.setAttribute('aria-expanded', 'false');
+        document.getElementById('openWebsiteSearchButton').setAttribute('aria-expanded', 'false');
+        document.getElementById('closeWebsiteSearchButton').setAttribute('aria-expanded', 'false');
         searchContainer.classList.remove('is-active');
         searchContainer.classList.remove('is-pre-active');
     }
