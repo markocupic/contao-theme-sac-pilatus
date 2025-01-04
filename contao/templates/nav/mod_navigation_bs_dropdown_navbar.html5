@@ -1,6 +1,5 @@
-
 <!-- indexer::stop -->
-<nav class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<nav class="<?= $this->class ?> block" aria-label="Hauptnavigation für Desktop Devices"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
 
     <?php if ($this->headline): ?>
     <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
@@ -16,8 +15,3 @@
 
 </nav>
 <!-- indexer::continue -->
-
-
-
-
-
