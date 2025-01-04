@@ -52,10 +52,10 @@
       Bireggring 1, 6005 Luzern
     </p>
     <p class="ax-center text-sm text-gray-500 my-2">
-      <a class="text-gray-500" href="https://www.sac-pilatus.ch/" target="_blank">www.sac-pilatus.ch</a>
+      <a class="text-gray-500" href="https://www.sac-pilatus.ch/" rel="noopener" target="_blank">www.sac-pilatus.ch</a>
     </p>
     <p class="ax-center text-sm text-gray-500">
-      <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" target="_blank">Newsletter abbestellen</a>
+      <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-og-hochdorf.html" rel="noopener" target="_blank">Newsletter abbestellen</a>
     </p>
   </div>
 

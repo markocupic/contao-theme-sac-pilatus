@@ -250,7 +250,7 @@
                       <tr>
                         <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
                           <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
-                            <a class="text-gray-500" href="https://www.sac-pilatus.ch/" target="_blank" style="color: #a0aec0;">www.sac-pilatus.ch</a>
+                            <a class="text-gray-500" href="https://www.sac-pilatus.ch/" rel="noopener" target="_blank" style="color: #a0aec0;">www.sac-pilatus.ch</a>
                           </p>
                         </td>
                       </tr>
@@ -270,7 +270,7 @@
                         <tr>
                           <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
                             <p class="text-sm text-gray-500" style="line-height: 16.8px; font-size: 14px; color: #a0aec0; width: 100%; margin: 0;" align="left">
-                              <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-jugend.html" target="_blank" style="color: #a0aec0;">Newsletter abbestellen</a>
+                              <a class="text-gray-500" href="https://www.sac-pilatus.ch/newsletter-abbestellen-jugend.html" rel="noopener" target="_blank" style="color: #a0aec0;">Newsletter abbestellen</a>
                             </p>
                           </td>
                         </tr>
