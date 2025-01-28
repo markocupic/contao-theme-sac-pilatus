@@ -50,7 +50,7 @@ body {
 
       @include media-breakpoint-up(sm) {
         // more vertical & horizontal padding on large screens
-        padding: $spacer-5 $spacer-4;
+        padding: $spacer-5 $spacer-5;
       }
 
       @include media-breakpoint-up(lg) {
