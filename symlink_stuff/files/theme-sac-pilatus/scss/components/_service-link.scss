@@ -1,4 +1,10 @@
-.ce_serviceLink {
+.content-service-link {
+
+  @extend .pt-xxl-5;
+  @extend .pb-xxl-5;
+  @extend .pt-sm-3;
+  @extend .pb-sm-3;
+
   @include rfs(3rem, padding-top);
   @include rfs(3rem, padding-bottom);
 
@@ -37,16 +43,23 @@
     }
   }
 
-  .service-link-headline {
+  .service-link-title {
     margin-bottom: 0 !important;
     @include rfs(0.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
     @include rfs(1.5rem, font-size);
   }
 
-  .service-link-headline a {
+  .service-link-title a {
     text-decoration: none;
     font-weight: 400;
+  }
+
+  .service-link-number {
+    margin-bottom: 0 !important;
+    @include rfs(0.75rem, margin-top);
+    @include rfs(1rem, margin-bottom);
+    @include rfs(2rem, font-size);
   }
 
   .service-link-button {
@@ -55,7 +68,7 @@
   }
 }
 
-.article-blue .ce_servicelink {
+.article-blue .content-service-link {
   [class*="fa-"] {
     color: #000;
 
@@ -64,9 +77,11 @@
     }
   }
 
-  .service-link-headline, .service-link-headline a {
+  .service-link-number, .service-link-title, .service-link-title a {
     color: #fff;
+  }
 
+  .service-link-title, .service-link-title a {
     &:hover {
       color: #000;
     }
