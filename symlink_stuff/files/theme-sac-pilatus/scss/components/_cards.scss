@@ -27,10 +27,12 @@
 }
 
 .card {
-  border: 1px solid $gray-200;
+  border: 0;
+  @extend .rounded;
+  overflow: hidden !important;
 
   &:hover {
-    @extend .shadow-sm;
+    @extend .shadow-lg;
   }
 
   &.gray-lightest {

@@ -42,6 +42,7 @@
   .heroimage-button-box > a {
     @include icon-after('\f35a', false, 'inline-flex');
     font-family: 'Roboto Slab', serif;
+    border-radius: $btn-border-radius;
 
     &:after {
       //color: $accent-color;
