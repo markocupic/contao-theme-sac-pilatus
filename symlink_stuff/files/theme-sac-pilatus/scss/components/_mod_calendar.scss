@@ -252,6 +252,10 @@
     .instructor-name {
       margin-bottom: $spacer-y;
     }
+
+    .ce_user_portrait_email {
+      overflow-wrap: break-word;
+    }
   }
 
   .event-detail {
