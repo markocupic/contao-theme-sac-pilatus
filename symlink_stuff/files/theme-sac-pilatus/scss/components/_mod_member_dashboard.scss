@@ -27,9 +27,6 @@
   }
 
   .nav.horizontal-tabs {
-    display: flex;
-    flex-direction: row !important;
-    flex-wrap: nowrap;
     scrollbar-width: thin;
 
     > li.nav-item {

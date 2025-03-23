@@ -1,7 +1,7 @@
 {% set navId = 'memberDashboardNav' %}
 
-<div class="h-scroll mb-4">
-    <ul class="nav horizontal-tabs" id="{{ navId }}" role="tablist">
+<div class="h-scroll pb-4">
+    <ul class="nav horizontal-tabs d-inline-flex flex-nowrap" id="{{ navId }}" role="tablist">
         {% for page_id, page_title in keys %}
             <li class="nav-item">
                 <a class="nav-item" href="{{ insert_tag('link_url::'~page_id) }}">{{ page_title }}</a>
