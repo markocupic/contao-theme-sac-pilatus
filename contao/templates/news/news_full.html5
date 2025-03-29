@@ -4,7 +4,10 @@
   <strong><?= $this->teaser ?></strong>
 
   <?php $this->block('info'); ?>
-  <p class="info"><time datetime="<?= $this->datetime ?>"><?= $this->date ?></time> <?= $this->author ?></p>
+  <p class="info">
+    <time datetime="<?= $this->datetime ?>"><?= $this->date ?></time>
+    <?= $this->author ?>
+  </p>
   <?php $this->endblock(); ?>
 
   <?php if ($this->hasSubHeadline): ?>
@@ -13,9 +16,11 @@
 
   <div class="d-sm-flex mb-3 mb-sm-0">
     <?php if ($this->singleSRC): ?>
+    <!-- indexer::stop -->
     <div class="col-12 col-sm-4 col-lg-4 col-xxl-4 me-sm-3 mb-4 mb-sm-0">
       {{picture::<?= $this->singleSRC ?>?size=3&class=img-fluid w-100}}
     </div>
+    <!-- indexer::continue -->
     <?php endif; ?>
 
     <div class="flex-sm-grow-1">

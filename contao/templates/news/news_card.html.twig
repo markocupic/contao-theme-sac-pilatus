@@ -1,12 +1,14 @@
 <div class="news_card{{ class|default('') }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom" itemscope itemtype="http://schema.org/Article">
     <div class="card">
         {% if addImage|default %}
+            <!-- indexer::stop -->
             <a href="{{ insert_tag('news_url::'~id) }}" title="weiterlesen">
                 {% set picture = picture|merge({"alt": headline}) %}
                 <div class="image-zoom-in">
                     {% include '@Contao/picture_default' with picture %}
                 </div>
             </a>
+            <!-- indexer::continue -->
         {% endif %}
 
         <div class="card-body">
