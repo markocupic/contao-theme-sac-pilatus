@@ -4,10 +4,12 @@
   <strong><?= $this->teaser ?></strong>
 
   <?php $this->block('info'); ?>
+  <!-- indexer::stop -->
   <p class="info">
     <time datetime="<?= $this->datetime ?>"><?= $this->date ?></time>
     <?= $this->author ?>
   </p>
+  <!-- indexer::continue -->
   <?php $this->endblock(); ?>
 
   <?php if ($this->hasSubHeadline): ?>
