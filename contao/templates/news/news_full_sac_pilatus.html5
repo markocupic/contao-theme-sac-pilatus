@@ -1,4 +1,4 @@
-<div class="layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Article">
+<div class="layout_full block<?= $this->class ?>" itemscope itemtype="https://schema.org/Article">
 
   <h1 class="content-headline mt-0 text-break" itemprop="name"><?= $this->newsHeadline ?></h1>
   <strong><?= $this->teaser ?></strong>
@@ -20,7 +20,7 @@
     <?php if ($this->singleSRC): ?>
     <!-- indexer::stop -->
     <div class="col-12 col-sm-4 col-lg-4 col-xxl-4 me-sm-3 mb-4 mb-sm-0">
-      {{picture::<?= $this->singleSRC ?>?size=3&class=img-fluid w-100}}
+      {{figure::<?= $this->singleSRC ?>?size=28&enableLightbox=1&options[attr][class]=img-fluid w-100}}
     </div>
     <!-- indexer::continue -->
     <?php endif; ?>
