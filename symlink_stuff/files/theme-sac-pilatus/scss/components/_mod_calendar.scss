@@ -22,30 +22,41 @@
 
   .event-list-tour-col-1 {
     .event-list-date-badge-wrapper {
-      min-width: 50px;
-      width: 50px;
-      height: 50px;
+      min-width: 30px;
+      width: 30px;
+      height: 30px;
       border: 1px solid $gray-200;
+      @include media-breakpoint-up(sm) {
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+      }
 
       .event-list-badge-day, .event-list-badge-month {
-        line-height: .8rem;
-        font-size: .8rem;
+        line-height: .55rem;
+        font-size: .55rem;
         font-weight: bolder;
         color: $danger;
+        @include media-breakpoint-up(sm) {
+          line-height: .8rem;
+          font-size: .8rem;
+        }
       }
     }
 
-    .event-organizer-logo {
-      min-height: 50px;
+    .event-organizer-logo img {
+      height: 30px !important;
+      width: 30px !important;
+      min-height: 30px;
+      @include media-breakpoint-up(sm) {
+        height: 50px !important;
+        width: 50px !important;
+        min-height: 50px;
+      }
     }
   }
 
   .event-list-tour-col-2 {
-    .event-state-icon {
-      margin-top: -1px;
-      line-height: 1.2;
-    }
-
     .event-title-link {
       line-height: 1.2;
 

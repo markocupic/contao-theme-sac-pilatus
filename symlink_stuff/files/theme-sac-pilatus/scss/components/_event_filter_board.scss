@@ -8,6 +8,13 @@ li.select2-results__option {
 .filter-board {
   background-color: transparent;
 
+  .widget {
+    margin-bottom: 0 !important;
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 1rem !important;
+    }
+  }
+
   .filter-board-widget {
     visibility: hidden;
   }
