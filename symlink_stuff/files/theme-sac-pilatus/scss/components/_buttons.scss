@@ -1,3 +1,30 @@
+.button-list-horizontal-scroll {
+  .button-list-horizontal-scroll--wrapper {
+    overflow-x: auto;
+
+    .button-list-horizontal-scroll--list {
+      display: inline-flex;
+      margin-bottom: 1.5rem;
+      text-wrap: nowrap;
+
+      > * {
+        margin-right: .5rem;
+      }
+
+      .btn, .hyperlink_txt {
+        //white-space: nowrap;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .btn {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+
 .btn a {
   text-decoration: none;
 }

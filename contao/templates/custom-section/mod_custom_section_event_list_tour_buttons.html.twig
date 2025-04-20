@@ -1,14 +1,6 @@
-{% do addHtmlToHead('
-    <style'~attrs().setIfExists('nonce', csp_nonce('script-src'))~'>
-    .mod_event-button-box .overflow-x-auto {
-        overflow-x: auto;
-    }
-    </style>
-') %}
-
-<div class="mod_event-button-box">
-    <nav class="overflow-x-auto">
-        <ul class="d-inline-flex flex-nowrap">
+<div class="button-list-horizontal-scroll">
+    <nav class="button-list-horizontal-scroll--wrapper">
+        <ul class="button-list-horizontal-scroll--list">
             <li class="d-inline">
                 {{ insert_tags('module::424') }}
             </li>

@@ -20,6 +20,13 @@
     //min-height: 650px;
   }
 
+  .heroimage-content-box {
+    padding: 1rem 1.5rem;
+    @include media-breakpoint-up(sm) {
+      padding: 1rem 4rem;
+    }
+  }
+
   .heroimage-headline-box h1 {
     color: #fff !important;
     font-weight: 200 !important;
@@ -39,10 +46,15 @@
     margin-top: 0
   }
 
-  .heroimage-button-box > a {
+  .heroimage-button-box > a.btn {
     @include icon-after('\f35a', false, 'inline-flex');
     font-family: 'Roboto Slab', serif;
     border-radius: $btn-border-radius;
+    text-wrap: nowrap;
+    padding: .5rem 1rem !important;
+    @include media-breakpoint-up(sm) {
+      padding: 1rem 3rem !important;
+    }
 
     &:after {
       //color: $accent-color;
@@ -56,8 +68,12 @@
     }
   }
 
-  @include media-breakpoint-up(sm) {
+  .heroimage-headline-box h1 {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
 
+  @include media-breakpoint-up(sm) {
     .heroimage-headline-box h1 {
       font-size: 3.5rem;
       line-height: 1.6;
@@ -65,12 +81,10 @@
   }
 
   @include media-breakpoint-up(lg) {
-
     .heroimage-headline-box h1 {
       font-size: 4.0rem;
       line-height: 1.6;
     }
-
   }
 
   @include media-breakpoint-up(xl) {
@@ -86,5 +100,4 @@
       line-height: 1.6;
     }
   }
-
 }

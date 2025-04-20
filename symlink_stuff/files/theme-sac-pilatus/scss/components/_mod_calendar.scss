@@ -16,47 +16,89 @@
 }
 
 .event-list-inner-box {
+  .event-list-date-badge-wrapper {
+    border: 1px solid $gray-200;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
 
-  @include transition(background-color);
-  border: 1px solid $gray-200;
-
-  .event-list-tour-col-1 {
-    .event-list-date-badge-wrapper {
+    @media (max-width: 360px) {
       min-width: 30px;
       width: 30px;
       height: 30px;
-      border: 1px solid $gray-200;
-      @include media-breakpoint-up(sm) {
-        min-width: 50px;
-        width: 50px;
-        height: 50px;
-      }
+    }
 
-      .event-list-badge-day, .event-list-badge-month {
-        line-height: .55rem;
-        font-size: .55rem;
+    span.event-list-badge-day, span.event-list-badge-month {
+      line-height: .8rem;
+
+      span {
+        line-height: .8rem;
+        font-size: .8rem;
         font-weight: bolder;
         color: $danger;
-        @include media-breakpoint-up(sm) {
-          line-height: .8rem;
-          font-size: .8rem;
-        }
       }
     }
 
-    .event-organizer-logo img {
-      height: 30px !important;
-      width: 30px !important;
-      min-height: 30px;
-      @include media-breakpoint-up(sm) {
-        height: 50px !important;
-        width: 50px !important;
-        min-height: 50px;
+    @media (max-width: 360px) {
+      span.event-list-badge-day, span.event-list-badge-month {
+        line-height: .7rem !important;
+
+        span {
+          line-height: .7rem !important;
+          font-size: .6rem !important;
+        }
       }
     }
   }
 
-  .event-list-tour-col-2 {
+  .event-state-icon {
+    margin: 0;
+
+    img {
+      width: 1rem !important;
+      height: 1rem !important;
+      max-width: initial !important;
+      @media (max-width: 360px) {
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+  }
+
+  .event-organizer-logo img {
+    height: 30px !important;
+    width: 30px !important;
+    min-height: 30px;
+    @include media-breakpoint-up(sm) {
+      height: 50px !important;
+      width: 50px !important;
+      min-height: 50px;
+    }
+  }
+
+  .badge {
+    @media (max-width: 360px) {
+      padding: 0.1rem 0.35rem !important;
+      font-size: 0.625rem !important;
+    }
+  }
+
+  @include transition(background-color);
+  border: 1px solid $gray-200;
+
+
+  .event-list-col-1 {
+
+    @media (max-width: 360px) {
+      a, span, p, div {
+        font-size: 0.75rem !important; // 12px
+      }
+      a.event-title-link strong {
+        margin: 0.375rem 0 !important; // 6px
+        font-size: 0.8125rem !important; // 13px
+      }
+    }
+
     .event-title-link {
       line-height: 1.2;
 
@@ -80,7 +122,7 @@
   background-color: $gray-200;
   border-color: $gray-400;
 
-  .event-list-tour-col-1 {
+  .event-list-col-1 {
     cursor: pointer;
 
     .event-list-badge-wrapper {
@@ -161,24 +203,9 @@
     content: "\f4c4";
     color: #ffffff;
   }
-
-  .event-state-icon {
-    margin-top: -0.175rem;
-    margin-right: 0.5rem;
-
-    img {
-      width: 1rem !important;
-      height: 1rem !important;
-      max-width: initial !important;
-    }
-  }
 }
 
 .event-item-course {
-  .badge {
-    background-color: #000 !important;
-  }
-
   .more-btn .badge {
     @extend .bg-danger;
 
@@ -187,14 +214,6 @@
     }
   }
 
-  .event-state-icon {
-    margin-top: 0 !important;
-
-    img {
-      width: 20px !important;
-      height: 20px !important;
-    }
-  }
 
   .event-organizer-logo {
     bottom: 16px;

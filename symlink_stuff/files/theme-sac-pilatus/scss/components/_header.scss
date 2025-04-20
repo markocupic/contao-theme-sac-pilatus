@@ -4,7 +4,7 @@
 
   .header-custom-template {
     .header-navbar-row-0 {
-      font-size: $font-size-sm;
+      //font-size: $font-size-sm;
 
       @include media-breakpoint-up(lg) {
         font-size: $font-size-base;
@@ -30,7 +30,7 @@
 
       .header-login-button, .header-logout-link, .header-backoffice-link {
         line-height: 1;
-        @extend .small;
+        //@extend .small;
         @extend .lh-1;
       }
     }
@@ -40,7 +40,7 @@
       border-bottom: 0;
 
       .logo-header {
-        height: 50px; // mobile phones
+        height: 55px; // mobile phones
         @include media-breakpoint-up(md) {
           height: 60px;
         }

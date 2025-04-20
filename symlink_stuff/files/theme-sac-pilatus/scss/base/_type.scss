@@ -48,7 +48,7 @@ h2, .content-headline {
 
 
 // headline font-size, line-height & margin
-$mc_scale_factors: ("xs": 1.1, "sm": 1.1, "md": 1.1, "lg": 1.1, "xl": 1.15, "xxl": 1.15);
+$mc_scale_factors: ("xs": .875, "sm": 1.0, "md": 1.1, "lg": 1.1, "xl": 1.15, "xxl": 1.15);
 $mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.3rem", "h4,.h4": "1.2rem", "h5,.h5": "1.1rem", "h6,.h6": "1rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {
@@ -65,7 +65,7 @@ $mc_font_size_bases_map: ("h1,.h1": "2rem", "h2,.h2": "1.5rem", "h3,.h3": "1.3re
 }
 
 // font-size
-$mc_scale_factors: ("xs": 1, "sm": 1, "md": 1, "lg": 1, "xl": 1.1, "xxl": 1.1);
+$mc_scale_factors: ("xs": 0.875, "sm": 0.875, "md": 1, "lg": 0.9375, "xl": 0.9375'', "xxl": 1.0);
 $mc_font_size_bases_map: ("div,p,li,legend,label,td,th": "1rem", "small,.small": "0.8rem");
 
 @each $mc_breakpoint, $mc_font_size_factor in $mc_scale_factors {

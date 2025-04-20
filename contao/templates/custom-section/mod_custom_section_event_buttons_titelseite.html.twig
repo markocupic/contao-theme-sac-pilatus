@@ -1,44 +1,41 @@
 {% do addHtmlToHead('
     <style'~attrs().setIfExists('nonce', csp_nonce('script-src'))~'>
-    .mod_event-button-box .btn {
+    .event-type-buttons .btn {
         border-color: #fff !important;
     }
 
-    .mod_event-button-box .btn:hover {
+    .event-type-buttons .btn:hover {
         background: #000 !important;
         border-color: #000 !important;
-    }
-
-    .mod_event-button-box .overflow-x-auto {
-        overflow-x: auto;
     }
     </style>
 ') %}
 
-{% set tours = { 'Wanderung': '?tourType=6', 'Klettern Halle': '?tourType=11', 'Klettern Fels': '?tourType=4', 'Hochtour': '?tourType=2', 'Skitour': '?tourType=1', 'Mountainbike': '?tourType=10', 'Weitere Touren...': '' } %}
-{% set courses = { 'Basis Halle': '?courseType=24', 'Sportklettern': '?courseType=3', 'Hochtouren': '?courseType=2', 'Lawinenkunde': '?courseType=10', 'Skitouren': '?courseType=11', 'Skitechnik': '?courseType=12', 'Weitere Kurse...': '' } %}
-
-<div class="mod_event-button-box">
-    <nav class="overflow-x-auto">
-        <h4 class="mb-0"><strong>TOUREN:</strong></h4>
-        <ul class="d-inline-flex flex-nowrap">
-            {% for event_type,url_param in tours %}
-                {# small screens #}
-                <li class="d-inline d-md-none"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                {# large screens #}
-                <li class="d-none d-md-inline"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }} " tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <nav class="overflow-x-auto">
-        <h4 class="mt-5 mb-0"><strong>KURSE:</strong></h4>
-        <ul class="d-inline-flex flex-nowrap">
-            {% for event_type,url_param in courses %}
-                {# small screens #}
-                <li class="d-inline d-md-none"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-                {# large screens #}
-                <li class="d-none d-md-inline"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark me-2 mb-2 text-nowrap"><span itemprop="name">{{ event_type }}</span></a></li>
-            {% endfor %}
-        </ul>
-    </nav>
+{% set tours = { 'Wanderung': '?tourType=6&amp;getUpcoming=1', 'Klettern Halle': '?tourType=11&amp;getUpcoming=1', 'Klettern Fels': '?tourType=4&amp;getUpcoming=1', 'Hochtour': '?tourType=2&amp;getUpcoming=1', 'Skitour': '?tourType=1&amp;getUpcoming=1', 'Mountainbike': '?tourType=10&amp;getUpcoming=1', 'Weitere Touren...': '?getUpcoming=1' } %}
+{% set courses = { 'Basis Halle': '?courseType=24&amp;getUpcoming=1', 'Sportklettern': '?courseType=3&amp;getUpcoming=1', 'Hochtouren': '?courseType=2&amp;getUpcoming=1', 'Lawinenkunde': '?courseType=10&amp;getUpcoming=1', 'Skitouren': '?courseType=11&amp;getUpcoming=1', 'Skitechnik': '?courseType=12&amp;getUpcoming=1', 'Weitere Kurse...': '?getUpcoming=1' } %}
+<div class="event-type-buttons">
+    <div class="button-list-horizontal-scroll">
+        <nav class="button-list-horizontal-scroll--wrapper">
+            <h4 class="mb-0"><strong>TOUREN:</strong></h4>
+            <ul class="button-list-horizontal-scroll--list">
+                {% for event_type,url_param in tours %}
+                    {# small screens #}
+                    <li class="d-inline d-md-none"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark"><span itemprop="name">{{ event_type }}</span></a></li>
+                    {# large screens #}
+                    <li class="d-none d-md-inline"><a href="touren-trainings-und-anlaesse.html{{ url_param }}" title="{{ event_type }} " tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark"><span itemprop="name">{{ event_type }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <nav class="button-list-horizontal-scroll--wrapper">
+            <h4 class="mt-5 mb-0"><strong>KURSE:</strong></h4>
+            <ul class="button-list-horizontal-scroll--list">
+                {% for event_type,url_param in courses %}
+                    {# small screens #}
+                    <li class="d-inline d-md-none"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-sm btn-outline-dark"><span itemprop="name">{{ event_type }}</span></a></li>
+                    {# large screens #}
+                    <li class="d-none d-md-inline"><a href="kurse.html{{ url_param }}" title="{{ event_type }}" tabindex="0" itemprop="url" class="btn btn-lg btn-outline-dark"><span itemprop="name">{{ event_type }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
 </div>
