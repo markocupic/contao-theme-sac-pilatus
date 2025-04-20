@@ -21,29 +21,41 @@ $breakpoint-mobile-sm: 380px; // Samsung S24+ 384px  // Samsung S24 360px
     height: 50px;
 
     @media (max-width: $breakpoint-mobile-sm) {
-      min-width: 30px;
-      width: 30px;
-      height: 30px;
+      //min-width: 50px;
+      //width: 50px;
+      //height: 50px;
     }
 
     span.event-list-badge-day, span.event-list-badge-month {
       line-height: .75rem;
 
       span {
-        line-height: .75rem; // 12px
+        line-height: 1rem; // 12px
         font-size: .75rem; // 12px
         font-weight: bolder;
         color: $danger;
       }
 
       @media (max-width: $breakpoint-mobile-sm) {
-        line-height: .5625rem !important;
+        //line-height: 1rem !important;
 
         span {
-          line-height: .5625rem !important;
-          font-size: .5625rem !important;
+          //line-height: .75rem !important;
+          //font-size: .75rem !important;
         }
       }
+    }
+  }
+
+  .event-organizer-logo img {
+    height: 50px !important;
+    width: 50px !important;
+    min-height: 50px;
+
+    @media (max-width: $breakpoint-mobile-sm) {
+      //height: 50px !important;
+      //width: 50px !important;
+      //min-height: 50px;
     }
   }
 
@@ -61,16 +73,6 @@ $breakpoint-mobile-sm: 380px; // Samsung S24+ 384px  // Samsung S24 360px
     }
   }
 
-  .event-organizer-logo img {
-    height: 30px !important;
-    width: 30px !important;
-    min-height: 30px;
-    @include media-breakpoint-up(sm) {
-      height: 50px !important;
-      width: 50px !important;
-      min-height: 50px;
-    }
-  }
 
   .badge {
     @media (max-width: $breakpoint-mobile-sm) {
@@ -78,7 +80,6 @@ $breakpoint-mobile-sm: 380px; // Samsung S24+ 384px  // Samsung S24 360px
       font-size: 0.625rem !important;
     }
   }
-
 
   .event-list-col-1 {
     a, span, p, div {

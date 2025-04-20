@@ -1,0 +1,26 @@
+<li class="news_card col-12 col-sm-6 col-md-4 col-xl-3 {{ class|default('') }}" itemscope itemtype="http://schema.org/Article">
+    <div class="card">
+        {% if addImage|default %}
+            <!-- indexer::stop -->
+            <a href="{{ insert_tag('news_url::'~id) }}" title="weiterlesen">
+                {% set picture = picture|merge({"alt": headline}) %}
+                <div class="image-zoom-in">
+                    {% include '@Contao/picture_default' with picture %}
+                </div>
+            </a>
+            <!-- indexer::continue -->
+        {% endif %}
+
+        <div class="card-body">
+            <!-- indexer::stop -->
+            <p class="card-date m-0 text-muted">
+                <time datetime="{{ datetime }}" itemprop="datePublished"><small>{{ date }}</small></time>
+            </p>
+            <!-- indexer::continue -->
+            <a href="{{ insert_tag('news_url::'~id) }}" class="text-decoration-none" title="weiterlesen">
+                <h6 class="card-title mt-0">{{ newsHeadline }}</h6>
+            </a>
+            <p class="card-news-teaser">{{ teaser|striptags|raw|slice(0, 100) }}</p>
+        </div>
+    </div>
+</li>

@@ -1,3 +1,6 @@
+{# Customization: Marko Cupic, 04.2025 #}
+{# Show each figure of a contao gallery in a Bootstrap Card & and a swiper.js slider #}
+
 {% extends "@Contao/content_element/_base.html.twig" %}
 {% use "@Contao/component/_list.html.twig" %}
 {% use "@Contao/component/_figure.html.twig" %}
@@ -17,9 +20,6 @@
         {% include '@Contao_MarkocupicContaoThemeSacPilatus/swiper/swiper_options.html.twig' %}
     {% endadd %}
 {% endblock %}
-
-{# Customization: Marko Cupic, 03.2024 #}
-{# Show each figure of a contao gallery in a Bootstrap Card #}
 
 {% block list %}
     {# Add bootstrap row classes #}
