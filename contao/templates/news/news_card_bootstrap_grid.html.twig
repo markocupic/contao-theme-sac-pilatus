@@ -1,10 +1,10 @@
-<li class="news_card col-12 col-sm-6 col-md-4 col-xl-3 {{ class|default('') }}" itemscope itemtype="http://schema.org/Article">
+<li class="news_card mb-1 col-12 col-sm-6 col-md-4 col-xl-3{{ class|default('') }}" itemscope itemtype="http://schema.org/Article">
     <div class="card">
         {% if addImage|default %}
             <!-- indexer::stop -->
             <a href="{{ insert_tag('news_url::'~id) }}" title="weiterlesen">
                 {% set picture = picture|merge({"alt": headline}) %}
-                <div class="image-zoom-in">
+                <div class="image_container image-zoom-in">
                     {% include '@Contao/picture_default' with picture %}
                 </div>
             </a>
