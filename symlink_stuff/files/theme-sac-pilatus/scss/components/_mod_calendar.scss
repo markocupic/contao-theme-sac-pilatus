@@ -1,3 +1,5 @@
+$breakpoint-mobile-sm: 380px; // Samsung S24+ 384px  // Samsung S24 360px
+
 #tour-list, #course-list {
   &[v-cloak] {
     visibility: hidden;
@@ -22,30 +24,30 @@
     width: 50px;
     height: 50px;
 
-    @media (max-width: 360px) {
+    @media (max-width: $breakpoint-mobile-sm) {
       min-width: 30px;
       width: 30px;
       height: 30px;
     }
 
     span.event-list-badge-day, span.event-list-badge-month {
-      line-height: .8rem;
+      line-height: .75rem;
 
       span {
-        line-height: .8rem;
-        font-size: .8rem;
+        line-height: .75rem; // 12px
+        font-size: .75rem; // 12px
         font-weight: bolder;
         color: $danger;
       }
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: $breakpoint-mobile-sm) {
       span.event-list-badge-day, span.event-list-badge-month {
-        line-height: .7rem !important;
+        line-height: .5625rem !important;
 
         span {
-          line-height: .7rem !important;
-          font-size: .6rem !important;
+          line-height: .5625rem !important;
+          font-size: .5625rem !important;
         }
       }
     }
@@ -58,7 +60,7 @@
       width: 1rem !important;
       height: 1rem !important;
       max-width: initial !important;
-      @media (max-width: 360px) {
+      @media (max-width: $breakpoint-mobile-sm) {
         width: 16px !important;
         height: 16px !important;
       }
@@ -77,7 +79,7 @@
   }
 
   .badge {
-    @media (max-width: 360px) {
+    @media (max-width: $breakpoint-mobile-sm) {
       padding: 0.1rem 0.35rem !important;
       font-size: 0.625rem !important;
     }
@@ -86,12 +88,10 @@
   @include transition(background-color);
   border: 1px solid $gray-200;
 
-
   .event-list-col-1 {
-
-    @media (max-width: 360px) {
+    @media (max-width: 400px) {
       a, span, p, div {
-        font-size: 0.75rem !important; // 12px
+        font-size: .75rem !important; // 12px
       }
       a.event-title-link strong {
         margin: 0.375rem 0 !important; // 6px
