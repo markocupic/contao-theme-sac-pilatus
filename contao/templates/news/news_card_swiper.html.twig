@@ -1,4 +1,4 @@
-<div class="news_card{{ class|default('') }}" data-aos="fade-down" data-aos-duration="600" data-aos-once="true" data-aos-anchor-placement="top-bottom" itemscope itemtype="http://schema.org/Article">
+<li class="news_card swiper-slide h-100 {{ class|default('') }}" itemscope itemtype="http://schema.org/Article">
     <div class="card">
         {% if addImage|default %}
             <!-- indexer::stop -->
@@ -20,7 +20,7 @@
             <a href="{{ insert_tag('news_url::'~id) }}" class="text-decoration-none" title="weiterlesen">
                 <h6 class="card-title mt-0">{{ newsHeadline }}</h6>
             </a>
-            <p class="card-news-teaser small">{{ teaser|striptags|raw|slice(0, 100) }}</p>
+            <p class="card-news-teaser">{{ teaser|striptags|raw|slice(0, 100) }}</p>
         </div>
     </div>
-</div>
+</li>

@@ -1,4 +1,5 @@
 {
+  "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.0b879a9d.js",
   "jquery/jquery.js": "/bundles/markocupiccontaothemesacpilatus/jquery/jquery.be868f37.js",
   "select2/dist/js/select2.js": "/bundles/markocupiccontaothemesacpilatus/select2/dist/js/select2.cf15d55a.js",
   "flatpickr/dist/flatpickr.js": "/bundles/markocupiccontaothemesacpilatus/flatpickr/dist/flatpickr.39a030a5.js",
@@ -23,6 +24,7 @@
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-600.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-600.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2",
+  "swiper/swiper-bundle.css": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.cafd6363.css",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2",
   "select2/dist/css/select2.css": "/bundles/markocupiccontaothemesacpilatus/select2/dist/css/select2.ec956da0.css",
   "flatpickr/dist/flatpickr.css": "/bundles/markocupiccontaothemesacpilatus/flatpickr/dist/flatpickr.122272e5.css",

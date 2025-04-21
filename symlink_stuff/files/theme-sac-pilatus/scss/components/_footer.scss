@@ -1,4 +1,12 @@
 #footer {
+  .invisible {
+    display: none !important;
+  }
+
+  .mod_customnav {
+    margin: 0 !important;
+  }
+
   $footer-bg-color-row-1: transparent;
   $footer-bg-color-row-2: transparent;
   $footer-color: #333;
@@ -24,7 +32,8 @@
 
       * {
         // Extend font-size, line-height & margin from .small (@see type.scss)
-        @extend .small;
+        font-size: $font-size-sm;
+
         color: $footer-color !important;
         font-weight: normal !important;
         text-decoration: none;
@@ -36,19 +45,14 @@
     }
   }
 
-  [class*="footer-row-"] {
-    padding-top: $spacer;
-    padding-bottom: $spacer;
-  }
-
   .footer-row-1 {
     background-color: $footer-bg-color-row-1;
     color: $footer-color;
-    @extend .small;
+    font-size: $font-size-sm;
 
     a, a > * {
       color: $footer-link-color !important;
-      @extend .small;
+      font-size: $font-size-sm;
 
       &:hover {
         text-decoration: underline;
@@ -67,20 +71,16 @@
   }
 
   .footer-row-2 {
-    .container {
-      padding-top: 2rem;
-    }
-
     background-color: $footer-bg-color-row-2;
     color: $footer-color !important;
 
     * {
-      @extend .small;
+      font-size: $font-size-sm;
     }
 
     a, a > * {
       color: $footer-link-color !important;
-      @extend .small;
+      font-size: $font-size-sm;
 
       &:hover {
         text-decoration: underline;
@@ -101,5 +101,4 @@
       }
     }
   }
-
 }

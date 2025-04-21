@@ -1,0 +1,76 @@
+/** Event reader **/
+/** Event reader **/
+/** Event reader **/
+.mod_eventreader {
+  .back {
+    display: none;
+  }
+}
+
+.event-detailview {
+  .overflow-auto {
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+
+  .event-state-headline {
+    color: $red;
+  }
+
+  .img-fluid {
+    width: 100%;
+  }
+
+  .content-headline.last-minute-tour {
+    color: $green;
+    text-transform: inherit;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .teaser p {
+    line-height: 2;
+  }
+
+  .kursstufe {
+    color: green;
+    margin-bottom: $spacer-y;
+    text-transform: uppercase;
+  }
+
+  .eventdate {
+    time {
+      display: block;
+    }
+  }
+
+  .instructor {
+    img {
+      border-radius: 0;
+    }
+
+    .instructor-name {
+      margin-bottom: $spacer-y;
+    }
+
+    .ce_user_portrait_email {
+      overflow-wrap: break-word;
+    }
+  }
+
+  .event-detail {
+    h5 {
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+}

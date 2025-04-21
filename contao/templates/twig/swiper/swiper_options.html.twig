@@ -1,0 +1,46 @@
+<script>
+    const swiperOptions = {
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+        preventClicks: true, {# Set to true to prevent accidental unwanted clicks on links during swiping #}
+        autoHeight: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        setWrapperSize: true,
+        // Default parameters
+        slidesPerView: 1,
+        spaceBetween: 8,
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 576px
+            576: { // sm
+                slidesPerView: 2,
+                spaceBetween: 8,
+            },
+            // when window width is >= 768px
+            768: { // md
+                slidesPerView: 3,
+                spaceBetween: 8
+            },
+            // when window width is >= 992px
+            992: { // lg
+                slidesPerView: 4,
+                spaceBetween: 8,
+            },
+            // when window width is >= 1200px
+            1200: { // xl
+                slidesPerView: 4,
+                spaceBetween: 8,
+            },
+            // when window width is >= 1400px
+            1400: { // xxl
+                slidesPerView: 4,
+                spaceBetween: 8,
+            }
+        }
+    }
+</script>

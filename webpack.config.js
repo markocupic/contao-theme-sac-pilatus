@@ -50,6 +50,11 @@ Encore
         to: 'sortablejs/[path][name].[hash:8].[ext]',
         pattern: /(Sortable\.js)$/,
     })
+    .copyFiles({
+        from: './node_modules/swiper',
+        to: 'swiper/[path][name].[hash:8].[ext]',
+        pattern: /(swiper-bundle\.js|swiper-bundle\.css)$/,
+    })
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableSourceMaps()

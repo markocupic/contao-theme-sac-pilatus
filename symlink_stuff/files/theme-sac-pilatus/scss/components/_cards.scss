@@ -32,8 +32,14 @@
   overflow: hidden !important;
 
   &:hover {
-    @extend .shadow-lg;
+    //@extend .shadow-lg;
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  background-color: #ffffff;
 
   &.gray-lightest {
     background-color: $gray-300;

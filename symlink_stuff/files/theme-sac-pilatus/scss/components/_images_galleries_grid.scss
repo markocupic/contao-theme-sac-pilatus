@@ -34,14 +34,22 @@ figure {
   }
 }
 
-.content-gallery {
-  ul, ul.gallery-grid {
+.content-gallery
+ul li {
+  figure {
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  ul:not(.swiper), ul.gallery-grid {
     @extend .row;
     @extend .gx-2;
     @extend .gy-2;
     margin: -8px -4px 0 -4px !important;
 
-    li,li.gallery-grid-item {
+    li, li.gallery-grid-item {
       margin: 8px 0 0 0 !important;
       padding: 0 4px !important;
       @extend .col-12;
@@ -49,12 +57,7 @@ figure {
       @extend .col-md-4;
       @extend .col-lg-3;
 
-      figure {
-        img {
-          width: 100%;
-          max-width: 100%;
-        }
-      }
+
     }
   }
 }

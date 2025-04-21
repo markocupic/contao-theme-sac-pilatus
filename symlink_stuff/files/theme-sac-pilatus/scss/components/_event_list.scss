@@ -1,0 +1,153 @@
+// https://www.browserstack.com/guide/common-screen-resolutions
+// Samsung S24+ 384px  // Samsung S24 360px // iPhone 11 414px
+$breakpoint-mobile-end: 415px;
+
+#tour-list, #course-list {
+  &[v-cloak] {
+    visibility: hidden;
+  }
+}
+
+// Do not show "Aktuell sind keine Termine vorhanden"
+.empty {
+  display: none;
+}
+
+.event-list-item--inner-box {
+
+
+  .event-list-item--organizer-logo img {
+    height: 50px !important;
+    width: 50px !important;
+    min-height: 50px;
+  }
+
+  // Left column - Left column - Left column - Left column - Left column:
+  // Left column - Left column - Left column - Left column - Left column:
+  .event-list-item--col-1 {
+    //
+  }
+
+  // Main column - Main column - Main column - Main column - Main column:
+  // Main column - Main column - Main column - Main column - Main column:
+  .event-list-item--col-2 {
+    a, span, p, div {
+      font-size: .8125rem !important; // 13px
+      @media (max-width: $breakpoint-mobile-end) {
+        font-size: .6875rem !important; // 11px
+      }
+    }
+
+    .event-list-item--event-date-span .more-date-infos {
+      color: $link-color;
+      text-decoration: $link-decoration;
+
+      &:hover, &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+      }
+
+      &:focus {
+        @include tab-focus();
+      }
+    }
+
+    .event-list-item--last-minute-tour {
+      color: $green;
+    }
+
+    .event-list-item--title {
+      a.event-list-item--title-link {
+        text-decoration: none !important;
+        color: $link-color;
+        font-size: 1rem;
+        line-height: 1.2 !important;
+      }
+
+      a.event-list-item--title-link:hover {
+        text-decoration: underline !important;
+      }
+
+      a.event-list-item--title-link strong {
+        margin: 0.375rem 0 !important; // 6px
+        font-size: 0.9375rem !important; // 14px
+        line-height: 1.2 !important;
+        @media (max-width: $breakpoint-mobile-end) {
+          font-size: 0.8125rem !important; // 13px
+        }
+      }
+    }
+
+    .event-list-item--badge-container {
+      .badge {
+        margin-right: .25rem;
+        margin-bottom: .25rem;
+        @media (max-width: $breakpoint-mobile-end) {
+          padding: 0.1rem 0.35rem !important;
+          font-size: 0.625rem !important;
+        }
+      }
+
+      .event-list-item--see-more-link .badge {
+        @extend .bg-danger;
+
+        &:hover {
+          @extend .bg-primary;
+        }
+      }
+
+      .event-list-item--badge-beginners {
+        color: #ffffff;
+      }
+    }
+  }
+
+  // Right column - Right column - Right column - Right column - Right column:
+  // Right column - Right column - Right column - Right column - Right column:
+  .event-list-item--col-3 {
+    .event-list-item--event-state-icon {
+      margin: 0;
+
+      img {
+        width: 1rem !important;
+        height: 1rem !important;
+        max-width: initial !important;
+        @media (max-width: $breakpoint-mobile-end) {
+          width: 16px !important;
+          height: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+// Tour list only - Tour list only - Tour list only - Tour list only
+// Tour list only - Tour list only - Tour list only - Tour list only
+.event-list-item--tour {
+  .event-list-item--date-badge-wrapper {
+    border: 1px solid $gray-200;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+
+    span.event-list-item--badge-day, span.event-list-item--badge-month {
+      line-height: .75rem;
+
+      span {
+        line-height: 1rem; // 12px
+        font-size: .75rem; // 12px
+        font-weight: bolder;
+        color: $danger;
+      }
+    }
+  }
+}
+
+// Course list only - Course list only - Course list only - Course list only
+// Course list only - Course list only - Course list only - Course list only
+.event-list-item--course {
+  .event-list-item--organizer-logo {
+    bottom: 16px; // position absolute
+    right: 16px;
+  }
+}
