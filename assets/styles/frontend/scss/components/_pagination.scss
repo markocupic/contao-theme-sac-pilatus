@@ -29,6 +29,7 @@ nav.pagination {
         @extend .page-link;
         background-color: #fff;
         border-color: $gray-300;
+        border-radius: 0 !important;
       }
 
       margin-right: 2px;

@@ -1,3 +1,9 @@
 {
-  "entrypoints": {}
+  "entrypoints": {
+    "styles/frontend": {
+      "css": [
+        "/bundles/markocupiccontaothemesacpilatus/styles/frontend.5788e264.css"
+      ]
+    }
+  }
 }

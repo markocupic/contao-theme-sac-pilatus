@@ -40,25 +40,6 @@ li.select2-results__option {
     border: 0;
   }
 
-  li.select2-selection__choice {
-    margin-bottom: 2px !important;
-  }
-
-  .select2-container--default .select2-selection--multiple {
-    padding: .25rem;
-    line-height: 1.6;
-    font-size: .75rem;
-
-    .select2-selection__choice {
-      background-color: $blue !important;
-      color: #fff !important;
-
-      .select2-selection__choice__remove {
-        color: #fff;
-      }
-    }
-  }
-
   .datepicker {
     z-index: 1200;
   }

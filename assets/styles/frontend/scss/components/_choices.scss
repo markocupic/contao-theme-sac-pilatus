@@ -1,0 +1,31 @@
+.choices {
+  .choices__inner {
+    border-radius: var(--bs-border-radius) !important;
+
+    .choices__list {
+      .choices__item {
+        background-color: $blue !important;
+        border-color: $blue !important;
+        color: #fff !important;
+
+        button.choices__button {
+          border-left: 1px solid #fff !important;
+          padding-top: 4px !important;
+          padding-bottom: 4px !important;
+        }
+      }
+    }
+  }
+
+  .choices__list.choices__list--dropdown {
+    .choices__item.choices__item--choice.choices__item--selectable {
+      background-color: #fff;
+      color: #000;
+
+      &:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+  }
+}

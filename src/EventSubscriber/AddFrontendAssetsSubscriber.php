@@ -46,7 +46,6 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Add jQuery
             $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('jquery/jquery.js'));
-            $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('jquery-touchswipe/jquery.touchSwipe.js'));
 
             // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
             $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('js/detect-is-bs-modal-ready.js'));
@@ -67,22 +66,8 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/roboto-slab.css');
 
-            // Add select2
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('select2/dist/js/select2.js'));
-            $GLOBALS['TL_CSS'][] = $this->getAssetUrl('select2/dist/css/select2.css');
-
             // Add drag sortable Plugin from https://rubaxa.github.io/Sortable/
             $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('sortablejs/Sortable.js'));
-
-            // Add flatpickr (datepicker)
-            $GLOBALS['TL_CSS'][] = $this->getAssetUrl('flatpickr/dist/flatpickr.css');
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('flatpickr/dist/flatpickr.js'));
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('flatpickr/dist/l10n/de.js'));
-
-            // Add AOS animation library: https://github.com/michalsnik/aos
-            $GLOBALS['TL_CSS'][] = $this->getAssetUrl('aos/aos.css');
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('aos/aos.js'));
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag(null, true, 'AOS.init()');
         }
     }
 

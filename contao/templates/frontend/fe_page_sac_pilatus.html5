@@ -23,7 +23,7 @@
   <?= $this->mooScripts ?>
   <?= $this->head ?>
   <?php $this->endblock(); ?>
-
+  <link rel="stylesheet" href="{{asset::styles/frontend.css::markocupic_contao_theme_sac_pilatus}}">
 </head>
 <body id="top"<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?><?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
 

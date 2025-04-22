@@ -3,7 +3,7 @@
 // EMBED BOOTSTRAP FRAMEWORK
 // the main.scss is located in:
 // files/theme-sac-pilatus/scss/main.scss
-@import "../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // MIXINS
 @import "mixins/_mixins.scss";
@@ -62,3 +62,4 @@
 @import "components/swiss-topo";
 @import "components/scrolling-text";
 @import "components/swiper";
+@import "components/choices";
