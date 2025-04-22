@@ -1,26 +1,14 @@
 <li class="news_card mb-1 col-12 col-sm-6 col-md-4 col-xl-3{{ class|default('') }}" itemscope itemtype="http://schema.org/Article">
-    <div class="card">
-        {% if addImage|default %}
-            <!-- indexer::stop -->
-            <a href="{{ insert_tag('news_url::'~id) }}" title="weiterlesen">
-                {% set picture = picture|merge({"alt": headline}) %}
-                <div class="image_container image-zoom-in">
-                    {% include '@Contao/picture_default' with picture %}
-                </div>
-            </a>
-            <!-- indexer::continue -->
-        {% endif %}
-
-        <div class="card-body">
-            <!-- indexer::stop -->
-            <p class="card-date m-0 text-muted">
-                <time datetime="{{ datetime }}" itemprop="datePublished"><small>{{ date }}</small></time>
-            </p>
-            <!-- indexer::continue -->
-            <a href="{{ insert_tag('news_url::'~id) }}" class="text-decoration-none" title="weiterlesen">
-                <h6 class="card-title mt-0">{{ newsHeadline }}</h6>
-            </a>
-            <p class="card-news-teaser">{{ teaser|striptags|raw|slice(0, 100) }}</p>
-        </div>
-    </div>
+    {% set card_props = {
+        card_attributes: attrs().addClass('with-border-bottom-gradient'),
+        card_link: insert_tag('news_url::'~id),
+        card_image_path: addImage|default ? singleSRC : null,
+        card_image_size: size|default('')|deserialize[2],
+        card_title_text: newsHeadline,
+        card_text_text: teaser|default('')|striptags|raw|slice(0, 100),
+        card_text_attributes: attrs().addClass('card-news-teaser'),
+        card_date_text: date,
+        card_date_attributes: { 'datetime': datetime },
+    } %}
+    {% include '@MarkocupicContaoThemeSacPilatus/Card/card_default.html.twig' with card_props only %}
 </li>

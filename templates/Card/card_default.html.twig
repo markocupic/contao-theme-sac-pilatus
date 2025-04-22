@@ -1,0 +1,73 @@
+{% block card %}
+    {% set card_attributes = attrs()
+        .addClass('card')
+        .mergeWith(card_attributes|default) %}
+    <div{{ card_attributes }}>
+        {# start card image - start card image #}
+        {% block card_image %}
+            {% if card_image_path|default %}
+                {% set image_options = {
+                    linkHref: card_link|default(null),
+                    options: {
+                        attr: {
+                            class: 'card-img-top image-zoom-in',
+                        },
+                    },
+                } %}
+                {% set card_image_options = image_options|merge(card_image_options|default({})) %}
+                <!-- indexer::stop -->
+                {{ contao_figure(card_image_path,card_image_size|default('0'),card_image_options) }}
+                <!-- indexer:continue -->
+            {% endif %}
+        {% endblock %}
+        {# end card image - end card image #}
+        {% block card_body %}
+            <div class="card-body">
+                {# start card date - start card date #}
+                {% block card_date %}
+                    {% if card_date_text|default %}
+                        {% set card_date_attributes =  attrs()
+                            .addClass('card-date m-0 text-muted')
+                            .set('itemprop','datePublished')
+                            .mergeWith(card_date_attributes|default) %}
+                        <!-- indexer::stop -->
+                        <p{{ card_date_attributes }}>
+                            <time{{ card_date_attributes }}><small>{{ card_date_text }}</small></time>
+                        </p>
+                        <!-- indexer:continue -->
+                    {% endif %}
+                {% endblock %}
+                {# end card date - end card date #}
+                {# start card title - start card title #}
+                {% block card_title %}
+                    {% if card_title_text|default %}
+                        {% set card_title_attributes =  attrs()
+                            .addClass('card-title mt-0')
+                            .mergeWith(card_title_attributes|default) %}
+                        {% if card_link|default %}
+                            {% set card_link_attributes =  attrs()
+                                .setIfExists('href',card_link|default)
+                                .addClass('card-link text-decoration-none')
+                                .mergeWith(card_link_attributes|default) %}
+                            <a{{ card_link_attributes }}>
+                        {% endif %}
+                        <h6{{ card_title_attributes }}>{{ card_title_text }}</h6>
+                        {% if card_link|default %}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                {% endblock %}
+                {# start card text - start card text #}
+                {% block card_text %}
+                    {% if card_text_text|default %}
+                        {% set card_text_attributes = attrs()
+                            .addClass('card-text')
+                            .mergeWith(card_text_attributes|default) %}
+                        <p{{ card_text_attributes }}>{{ card_text_text }}</p>
+                    {% endif %}
+                {% endblock %}
+                {# end card text - end card text #}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
