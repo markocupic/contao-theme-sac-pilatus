@@ -134,8 +134,10 @@
       bottom: 5px;
       right: 12px;
 
-      button {
+      button.btn{
         margin-left: 5px;
+        padding: 4px 8px !important;
+        opacity: 0.3;
       }
     }
 

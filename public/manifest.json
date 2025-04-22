@@ -1,5 +1,5 @@
 {
-  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.5788e264.css",
+  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.c23747e7.css",
   "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.0b879a9d.js",
   "jquery/jquery.js": "/bundles/markocupiccontaothemesacpilatus/jquery/jquery.be868f37.js",
   "sortablejs/Sortable.js": "/bundles/markocupiccontaothemesacpilatus/sortablejs/Sortable.e20f1037.js",
@@ -29,5 +29,5 @@
   "js/sac-frontend-login-modal.js": "/bundles/markocupiccontaothemesacpilatus/js/sac-frontend-login-modal.b85ce3d1.js",
   "js/equal-height.js": "/bundles/markocupiccontaothemesacpilatus/js/equal-height.4b631e6d.js",
   "js/detect-is-bs-modal-ready.js": "/bundles/markocupiccontaothemesacpilatus/js/detect-is-bs-modal-ready.2ae57014.js",
-  "frontend.5788e264.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.5788e264.css.map"
+  "frontend.c23747e7.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.c23747e7.css.map"
 }
