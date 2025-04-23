@@ -1,40 +1,62 @@
-// Same height for cards
-// Add a parent container and a child element as a parameter.
-// Usage: equalheight('.row.same-height', '.card');
-var equalheight = function (parent, child) {
+/**
+ * Equal height for cards
+ * @param parent
+ * @param child
+ */
 
-    jQuery(parent).each(function () {
-        var parentContainer = this;
-        var children = jQuery(parentContainer).find(child);
-        if (children.length) {
-            var currentTallest = 0;
-            var currentRowStart = 0;
-            var rowDivs = [];
-            var $el;
-            var topPosition = 0;
 
-            children.each(function () {
-                var child = this;
-                $el = jQuery(child);
-                jQuery($el).height('auto');
-                topPosition = $el.position().top;
+/**
+ * Equal height for cards
+ */
+document.addEventListener('DOMContentLoaded', (e) => {
 
-                if (currentRowStart !== topPosition) {
-                    for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
-                        rowDivs[currentDiv].height(currentTallest);
+    const equalHeight = (parent, child) => {
+        const parentElements = document.querySelectorAll(parent);
+
+        for (const parentContainer of parentElements) {
+            const children = parentContainer.querySelectorAll(child);
+            if (children.length > 0) {
+                let currentTallest = 0;
+                let currentRowStart = 0;
+                let rowDivs = [];
+                let topPosition = 0;
+
+                for (const childElement of children) {
+                    childElement.style.height = 'auto'; // Reset height
+                    topPosition = childElement.getBoundingClientRect().top;
+
+                    if (currentRowStart !== topPosition) {
+                        // Set all heights in the previous row
+                        for (const div of rowDivs) {
+                            div.style.height = `${currentTallest}px`;
+                        }
+
+                        // Reset for the next row
+                        rowDivs = [];
+                        currentRowStart = topPosition;
+                        currentTallest = childElement.offsetHeight;
+                        rowDivs.push(childElement);
+                    } else {
+                        rowDivs.push(childElement);
+                        currentTallest = Math.max(currentTallest, childElement.offsetHeight);
                     }
-                    rowDivs.length = 0; // empty the array
-                    currentRowStart = topPosition;
-                    currentTallest = $el.height();
-                    rowDivs.push($el);
-                } else {
-                    rowDivs.push($el);
-                    currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
                 }
-                for (var currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
-                    rowDivs[currentDiv].height(currentTallest);
+
+                // Set the height for the last row
+                for (const div of rowDivs) {
+                    div.style.height = `${currentTallest}px`;
                 }
-            });
+            }
         }
-    });
-};
+    };
+
+    equalHeight('.equal-height', '.card');
+
+    const allEvents = ["load", "resize", "orientationchange", "vueupdate"];
+
+    for (const evt of allEvents) {
+        window.addEventListener(evt, (e) => {
+            equalHeight('.equal-height', '.card');
+        });
+    }
+}, false);

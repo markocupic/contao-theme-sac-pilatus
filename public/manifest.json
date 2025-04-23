@@ -1,9 +1,7 @@
 {
-  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.f3ca3caf.css",
+  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.0e9b0382.css",
   "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.0b879a9d.js",
-  "jquery/jquery.js": "/bundles/markocupiccontaothemesacpilatus/jquery/jquery.be868f37.js",
-  "sortablejs/Sortable.js": "/bundles/markocupiccontaothemesacpilatus/sortablejs/Sortable.e20f1037.js",
-  "sortablejs/src/Sortable.js": "/bundles/markocupiccontaothemesacpilatus/sortablejs/src/Sortable.4ffcf6e1.js",
+  "bootstrap/dist/js/bootstrap.bundle.min.js": "/bundles/markocupiccontaothemesacpilatus/bootstrap/dist/js/bootstrap.bundle.min.js",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-500italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-500italic.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-300italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-300italic.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-italic.woff2",
@@ -23,11 +21,11 @@
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2",
   "swiper/swiper-bundle.css": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.cafd6363.css",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2",
-  "js/theme.js": "/bundles/markocupiccontaothemesacpilatus/js/theme.efc72292.js",
+  "js/theme.js": "/bundles/markocupiccontaothemesacpilatus/js/theme.6e4a25ab.js",
   "fonts/open-sans.css": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans.css",
   "fonts/roboto-slab.css": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab.css",
   "js/sac-frontend-login-modal.js": "/bundles/markocupiccontaothemesacpilatus/js/sac-frontend-login-modal.b85ce3d1.js",
-  "js/equal-height.js": "/bundles/markocupiccontaothemesacpilatus/js/equal-height.4b631e6d.js",
+  "js/equal-height.js": "/bundles/markocupiccontaothemesacpilatus/js/equal-height.e0e3872d.js",
   "js/detect-is-bs-modal-ready.js": "/bundles/markocupiccontaothemesacpilatus/js/detect-is-bs-modal-ready.2ae57014.js",
-  "frontend.f3ca3caf.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.f3ca3caf.css.map"
+  "frontend.0e9b0382.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.0e9b0382.css.map"
 }

@@ -14,12 +14,15 @@ $breakpoint-mobile-end: 415px;
 }
 
 .event-list-item--inner-box {
-
-
   .event-list-item--organizer-logo img {
     height: 50px !important;
     width: 50px !important;
     min-height: 50px;
+    @media (max-width: $breakpoint-mobile-end) {
+      width: 45px !important;
+      height: 45px !important;
+      min-height: 45px;
+    }
   }
 
   // Left column - Left column - Left column - Left column - Left column:
@@ -82,9 +85,11 @@ $breakpoint-mobile-end: 415px;
       .badge {
         margin-right: .25rem;
         margin-bottom: .25rem;
+        padding: 0.1875rem 0.35rem !important;
+        font-size: 0.6875rem !important;
         @media (max-width: $breakpoint-mobile-end) {
-          padding: 0.1rem 0.35rem !important;
-          font-size: 0.625rem !important;
+          //padding: 0.1875rem 0.35rem !important;
+          //font-size: 0.6875rem !important;
         }
       }
 
@@ -129,6 +134,11 @@ $breakpoint-mobile-end: 415px;
     min-width: 50px;
     width: 50px;
     height: 50px;
+    @media (max-width: $breakpoint-mobile-end) {
+      min-width: 45px;
+      width: 45px;
+      height: 45px;
+    }
 
     span.event-list-item--badge-day, span.event-list-item--badge-month {
       line-height: .75rem;

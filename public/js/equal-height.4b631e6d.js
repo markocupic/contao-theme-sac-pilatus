@@ -1,1 +1,0 @@
-var equalheight=function(h,e){jQuery(h).each((function(){var h=jQuery(this).find(e);if(h.length){var t,i=0,n=0,g=[],u=0;h.each((function(){if(t=jQuery(this),jQuery(t).height("auto"),u=t.position().top,n!==u){for(h=0;h<g.length;h++)g[h].height(i);g.length=0,n=u,i=t.height(),g.push(t)}else g.push(t),i=i<t.height()?t.height():i;for(var h=0;h<g.length;h++)g[h].height(i)}))}}))};

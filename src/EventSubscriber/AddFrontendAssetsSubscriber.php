@@ -44,9 +44,6 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_HEAD'][] = '<meta name="author" content="SAC Sektion Pilatus">';
             $GLOBALS['TL_HEAD'][] = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
-            // Add jQuery
-            $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('jquery/jquery.js'));
-
             // Dispatch the BootstrapModalReady event if bootstrap.Modal has been initialized
             $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('js/detect-is-bs-modal-ready.js'));
 
@@ -56,7 +53,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/sac-frontend-login-modal.js'));
 
             // Bootstrap.js bundle (includes popper.js)
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.bundle.min.js');
+            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('bootstrap/dist/js/bootstrap.bundle.min.js'));
 
             // Add Font Awesome
             $this->addFontAwesome();
@@ -65,9 +62,6 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // See Google Webfont helper: https://gwfh.mranftl.com/fonts
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/roboto-slab.css');
-
-            // Add drag sortable Plugin from https://rubaxa.github.io/Sortable/
-            $GLOBALS['TL_HEAD'][] = $this->generateScriptTag($this->getAssetUrl('sortablejs/Sortable.js'));
         }
     }
 

@@ -8,22 +8,17 @@ Encore
     //.addEntry('select2', './assets/entries/select2.js')
     //.addEntry('frontend', './assets/filepond.js')
     .copyFiles({
+        from: './node_modules/bootstrap/dist/js',
+        to: 'bootstrap/dist/js/[path][name].[ext]',
+        pattern: /(bootstrap\.bundle\.min\.js)$/,
+    })
+    .copyFiles({
         from: './assets/fonts',
         to: 'fonts/[path][name].[ext]'
     })
     .copyFiles({
         from: './assets/js',
         to: 'js/[path][name].[hash:8].[ext]'
-    })
-    .copyFiles({
-        from: './node_modules/jquery/dist',
-        to: 'jquery/[path][name].[hash:8].[ext]',
-        pattern: /(jquery\.js)$/,
-    })
-    .copyFiles({
-        from: './node_modules/sortablejs',
-        to: 'sortablejs/[path][name].[hash:8].[ext]',
-        pattern: /(Sortable\.js)$/,
     })
     .copyFiles({
         from: './node_modules/swiper',

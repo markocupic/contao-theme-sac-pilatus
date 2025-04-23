@@ -12,10 +12,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "swiper": "^11.2.6",
-        "jquery": "^3.7",
-        "sortablejs": "^1.15",
-        "bootstrap": "^5.3.5"
+        "bootstrap": "^5.3.5",
+        "swiper": "^11.2.6"
     },
     "devDependencies": {
         "@babel/preset-env": "*",
