@@ -51,6 +51,8 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/equal-height.js'));
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/theme.js'));
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/sac-frontend-login-modal.js'));
+            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/scroll-to-top-button.js'));
+            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/navigation.js'));
 
             // Bootstrap.js bundle (includes popper.js)
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('bootstrap/dist/js/bootstrap.bundle.min.js'));

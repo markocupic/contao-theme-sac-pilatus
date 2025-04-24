@@ -1,0 +1,2 @@
+/*! For license information please see detect-is-bs-modal-ready.7baa4dd4.js.LICENSE.txt */
+"use strict";document.addEventListener("DOMContentLoaded",(()=>{if("undefined"==typeof checkBootstrapModalInterval){const t=setInterval((()=>{Boolean(bootstrap?.Modal)&&(document.dispatchEvent(new CustomEvent("BootstrapModalReady")),clearInterval(t))}),100)}}));

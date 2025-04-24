@@ -1,3 +1,15 @@
+/*
+ * This file is part of Contao Theme SAC Pilatus.
+ *
+ * (c) Marko Cupic <m.cupic@gmx.ch>
+ * @license GPL-3.0-or-later
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ * @link https://github.com/markocupic/contao-theme-sac-pilatus
+ */
+
+"use strict";
+
 /**
  * Initialize popper.js tooltips
  */
@@ -70,74 +82,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         searchContainer.classList.remove('is-pre-active');
     }
 }, false);
-
-/**
- * Main Navigation & Aside-/Mobile-Navigation
- */
-document.addEventListener('DOMContentLoaded', () => {
-    // Prevent default if a link is inside an element with the class 'page-container'
-    const level2Links = document.querySelectorAll('.mod_navigation ul.level_2 > li.page-container > a');
-
-    for (const link of level2Links) {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-        });
-    }
-
-    // Prevent default for sidebar navigation links with the class 'page-container'
-    const sidebarLinks = document.querySelectorAll('.mod_navigation.sidebar-navigation li.page-container > a');
-
-    for (const link of sidebarLinks) {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-        });
-    }
-
-    // Sidebar navigation: accordion behavior for elements with the class 'submenu'
-    const navItems = document.querySelectorAll('.mod_navigation.sidebar-navigation a.submenu');
-
-    for (const navItem of navItems) {
-        if (navItem.classList.contains('page-container')) {
-            navItem.addEventListener('click', (e) => {
-                e.preventDefault();
-                const toggleSubmenu = e.target.closest('li')?.querySelector('.toggle-submenu');
-                if (toggleSubmenu) {
-                    toggleSubmenu.click();
-                }
-            });
-        }
-    }
-});
-
-/**
- * Scroll to top button
- */
-document.addEventListener('DOMContentLoaded', (e) => {
-    // Append the scroll-to-top button
-    const scrollToTopButton = document.createElement('div');
-    scrollToTopButton.className = 'scroll-to-top';
-    scrollToTopButton.innerHTML = '<a href="#"><span class="fa-regular fa-chevron-up"></span></a>';
-    document.body.appendChild(scrollToTopButton);
-
-    // Check to see if the window is at the top; if not, display the button
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            scrollToTopButton.style.display = 'block';
-        } else {
-            scrollToTopButton.style.display = 'none';
-        }
-    });
-
-    // Click event to scroll to the top
-    scrollToTopButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0, behavior: 'smooth'
-        });
-    });
-});
 
 /**
  * Scroll to form fields if there are errors
