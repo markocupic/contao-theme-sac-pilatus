@@ -20,7 +20,7 @@
                             {# Add css class dropdown #}
                             {% set item = item|merge({'class': "#{item.class} dropdown"}) %}
                             <li class="{{ item.class|trim }}">
-                        <span role="button" data-bs-toggle="dropdown" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
+                        <span role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
                         {{ item.link }}
                         </span>
                                 {{ item.subitems|raw }}
@@ -36,7 +36,7 @@
                             {# Add css class dropdown #}
                             {% set item = item|merge({'class': "#{item.class} dropdown"}) %}
                             <li class="{{ item.class|trim }}">
-                        <span role="button" data-bs-toggle="dropdown" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
+                        <span role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" title="{{ item.pageTitle ?: item.title }}" class="{{ item.class|trim }}"{% if item.accesskey|default %} accesskey="{{ item.accesskey }}"{% endif %}{% if item.tabindex|default %} tabindex="{{ item.tabindex }}"{% endif %}{{ item.target }}{{ item.rel }}{% if item.subitems|default %} aria-haspopup="true"{% endif %} itemprop="name">
                         {{ item.link }}
                         </span>
                                 {{ item.subitems|raw }}
