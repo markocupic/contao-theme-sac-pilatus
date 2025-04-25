@@ -29,7 +29,8 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         private readonly Packages $packages,
         private ScopeMatcher $scopeMatcher,
         private string $fontAwesomeKitKey, // Not in use yet
-    ) {
+    )
+    {
     }
 
     public static function getSubscribedEvents()

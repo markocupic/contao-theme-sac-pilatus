@@ -71,11 +71,46 @@
 
     }
   }
-
 }
 
-.dashboard-event-blog-gallery {
 
+.member-dashboard-avatar-upload {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  .member-dashboard-avatar-upload--inner {
+    max-width: 280px;
+  }
+
+  .member-dashboard-avatar-upload--rotate-profile-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+    background: black;
+    color: white;
+    padding: 10px;
+  }
+
+  .member-dashboard-avatar-upload--rotate-profile-image-button:hover {
+    background: black;
+  }
+
+  .member-dashboard-avatar-upload--rotate-profile-image-button svg {
+    color: white !important;
+    padding: 10px;
+  }
+}
+
+
+.dashboard-event-blog-gallery {
   .sortable-item {
     cursor: move;
   }
@@ -124,6 +159,7 @@
   }
 }
 
+
 .mod_memberPictureFeedUpload {
   .member-picture-feed-thumb {
     position: relative;
@@ -134,7 +170,7 @@
       bottom: 5px;
       right: 12px;
 
-      button.btn{
+      button.btn {
         margin-left: 5px;
         padding: 4px 8px !important;
         opacity: .8;
@@ -178,18 +214,5 @@
     100% {
       background-color: $red;
     }
-  }
-
-}
-
-.member-dashboard-avatar {
-  position: relative;
-
-  .member-dashboard-rotate-image-button {
-    position: absolute;
-    right: 20px;
-    bottom: 5px;
-    background-color: #ccc;
-    padding: 5px 10px;
   }
 }
