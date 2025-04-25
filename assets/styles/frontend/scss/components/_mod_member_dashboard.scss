@@ -221,3 +221,17 @@
     }
   }
 }
+
+.mod_member_dashboard_delete_profile {
+  .btn {
+    @extend .btn-danger;
+  }
+
+  a.btn {
+    text-decoration: none;
+  }
+
+  a.btn:focus {
+    color: #fff !important;
+  }
+}
