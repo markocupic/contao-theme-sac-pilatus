@@ -7,3 +7,8 @@
     font-size: 2em;
   }
 }
+
+.alert.alert-lighter {
+  background-color: $gray-100;
+  border-color: darken($gray-100, 10%);
+}
