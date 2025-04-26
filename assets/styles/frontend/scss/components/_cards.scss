@@ -62,7 +62,7 @@
   }
 
   .card-body {
-    a, .card-title {
+    a:not(.btn), .card-title {
       color: $blue !important;
       line-height: 1.4;
       text-decoration-color: $blue;
