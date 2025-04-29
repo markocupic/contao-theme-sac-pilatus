@@ -1,9 +1,9 @@
-$enable-responsive-font-sizes: true;
-$rfs-base-value: 0.875rem; //default 1.25rem
-$rfs-breakpoint: 2000px; //default 1200px
-$rfs-factor: 19;
+$rfs-base-value: 0.9125rem; //default 1.25rem
+$rfs-breakpoint: 1400px; //default 1200px
+//$rfs-factor: 25;
+$rfs-class: disable; // Add .disable-rfs to disable rfs on this element
 
-$font-size-base: 1rem;
+//$font-size-base: 1rem;
 $enable-gradients: false;
 
 // Icon Fontname
