@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const li = e.target.closest('.dropdown'); // Finds the closest parent dropdown element.
                 const dropdownToggle = li.querySelector('[data-bs-toggle="dropdown"]'); // Selects the dropdown toggle button.
 
-                if (dropdownToggle) {
+                if (dropdownToggle && dropdownToggle.classList.contains('show')) {
                     dropdownToggle.click(); // Simulates a click on the dropdown toggle to close the menu.
                 }
             });
