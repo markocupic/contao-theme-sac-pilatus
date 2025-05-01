@@ -111,7 +111,6 @@ body.sidebar-open {
   }
 }
 
-
 //https://jsfiddle.net/markocupic/br520419/
 
 .sidebar-navigation {
@@ -119,28 +118,23 @@ body.sidebar-open {
   margin: 20px 0 0 0;
   text-align: left;
 
-  a, strong {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-decoration-color: transparent !important;
-    text-underline-offset: 0.35em;
-  }
-
-  strong.active {
-    text-decoration-color: red !important;
-  }
-
-  ul {
+  ul.level_1, ul.level_2, ul.level_3, ul.level_4 {
+    width: 100%;
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
-  li {
-    display: block;
+  ul.level_1 li {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Pushes elements apart */
+    flex-wrap: wrap;
     position: relative;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
     overflow: hidden;
 
     > strong.active {
@@ -155,13 +149,35 @@ body.sidebar-open {
     }
   }
 
-  // Hide Submenus
+  button.toggle-submenu {
+    margin-left: .75rem;
+    margin-right: 1rem;
+    padding: .0625rem .25rem;
+  }
+
+  a, strong {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: transparent !important;
+    text-underline-offset: 0.35em;
+  }
+
+  strong.active {
+    text-decoration-color: red !important;
+  }
+
+  // Show only active submenus
   ul.level_1 {
     display: block;
 
     ul {
       display: none;
     }
+  }
+
+  ul.level_1 li.trail > ul,
+  ul.level_1 li.active.submenu > ul {
+    display: block;
   }
 
   // Link color for non-clickable items for all levels
@@ -192,12 +208,14 @@ body.sidebar-open {
 
   // Borders & backgrounds
   ul.level_1 {
+    > li:first-child {
+      border-top: 1px solid #e2e2e2;
+    }
+
     > li {
       border-bottom: 1px solid #e2e2e2;
 
       &:hover {
-        // Hover-background-color for active levels
-        //background-color: $nav-bg-hover-color;
         > a, > span, > strong {
           color: #000 !important;
         }
@@ -217,14 +235,7 @@ body.sidebar-open {
     li.submenu {
       > .toggle-submenu {
         vertical-align: middle;
-        padding: 0 .5rem;
         line-height: 1;
-        margin-right: .75rem;
-        width: auto;
-        text-align: center;
-        position: absolute;
-        top: 12px;
-        right: 10px;
         cursor: pointer;
       }
 
@@ -263,9 +274,11 @@ body.sidebar-open {
   ul.level_1 {
 
     > li {
-      padding: 1.125rem 0 1.125rem $level_1-offset;
       line-height: 1.5;
       background-color: transparent;
+      padding: .8rem;
+      padding-left: .8rem;
+      padding-right: 0;
 
       > .toggle-submenu:before {
         @include font-size(1.25rem);
@@ -274,8 +287,7 @@ body.sidebar-open {
       > a, > strong {
         @include font-size(1.25rem);
         font-weight: bolder;
-        display: block;
-        padding-right: 3.5rem !important;
+        max-width: calc(100% - 3rem);
       }
 
       > strong.active {
@@ -290,12 +302,14 @@ body.sidebar-open {
 
   ul.level_2 {
     > li {
-      padding: .75rem 0 .75rem $level_2-offset;
       line-height: 1.5;
       background-color: transparent;
+      padding: .7rem;
+      padding-left: .7rem;
+      padding-right: 0;
 
       &:first-child {
-        margin-top: .75rem;
+        margin-top: 0;
       }
 
       &:hover {
@@ -314,8 +328,7 @@ body.sidebar-open {
       > a, strong {
         @include font-size(1.125rem);
         color: $nav-link-color;
-        display: block;
-        padding-right: 3.5rem !important;
+        max-width: calc(100% - 3rem);
       }
 
       > strong.active {
@@ -330,12 +343,14 @@ body.sidebar-open {
 
   ul.level_3 {
     > li {
-      padding: .5rem 0 .5rem $level_3-offset;
       line-height: 1.5;
       background-color: transparent;
+      padding: .6rem;
+      padding-left: .6rem;
+      padding-right: 0;
 
       &:first-child {
-        margin-top: .75rem;
+        margin-top: 0;
       }
 
       &:hover {
@@ -353,8 +368,7 @@ body.sidebar-open {
       > a, strong {
         @include font-size(1rem !important) ;
         color: $nav-link-color;
-        display: block;
-        padding-right: 3.5rem !important;
+        max-width: calc(100% - 3rem);
       }
 
       > strong.active {
@@ -369,12 +383,14 @@ body.sidebar-open {
 
   ul.level_4 {
     > li {
-      padding: .375px 0 .375px $level_4-offset;
       line-height: 1.5;
       background-color: transparent;
+      padding: .5rem;
+      padding-left: .5rem;
+      padding-right: 0;
 
       &:first-child {
-        margin-top: .75rem;
+        margin-top: 0;
       }
 
       &:hover {
@@ -392,8 +408,7 @@ body.sidebar-open {
       > a, strong {
         @include font-size(0.875rem);
         color: $nav-link-color;
-        display: block;
-        padding-right: 3.5rem !important;
+        max-width: calc(100% - 3rem);
       }
 
       > strong.active {
@@ -405,11 +420,4 @@ body.sidebar-open {
       }
     }
   }
-
-  // Show active submenus
-  ul.level_1 li.trail > ul,
-  ul.level_1 li.active.submenu > ul {
-    display: block;
-  }
-
 }
