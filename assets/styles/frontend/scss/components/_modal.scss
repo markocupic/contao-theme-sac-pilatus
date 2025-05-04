@@ -5,17 +5,17 @@
 
     .modal-header {
       background-color: #ffffff;
-      padding-left: 2.25rem;
-      padding-right: 2.25rem;
+      padding-left: rfs-fluid-value(2.25rem);
+      padding-right: rfs-fluid-value(2.25rem);
       border: 0;
       border-bottom: 1px solid #dddddd;
 
       h1, h2, h3, h4, h5, h6, .modal-title {
-        font-size: 1.625rem;
+        @include font-size(1.625rem);
         font-weight: lighter;
         color: $red;
-        margin-top: 1.25rem;
-        margin-bottom: 0.625rem;
+        margin-top: rfs-fluid-value(1.25rem);
+        margin-bottom: rfs-fluid-value(0.625rem);
       }
 
       .btn-close {
@@ -23,13 +23,12 @@
         width: 1.25em;
         background: transparent var(--bs-btn-close-bg) center / 1.25em auto no-repeat;
         opacity: 1;
-        //font-size: 1.25rem !important;
         filter: brightness(0) saturate(100%) invert(9%) sepia(95%) saturate(5594%) hue-rotate(352deg) brightness(77%) contrast(101%);
       }
     }
 
     .modal-body {
-      padding: 2.25rem;
+      padding: rfs-fluid-value(2.25rem);
       background-color: #fff;
       border: 0;
 
