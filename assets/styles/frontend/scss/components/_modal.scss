@@ -12,7 +12,7 @@
 
       h1, h2, h3, h4, h5, h6, .modal-title {
         @include font-size(1.625rem);
-        font-weight: lighter;
+        font-weight: bold;
         color: $red;
         margin-top: rfs-fluid-value(1.25rem);
         margin-bottom: rfs-fluid-value(0.625rem);
