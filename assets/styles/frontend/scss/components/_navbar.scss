@@ -18,7 +18,9 @@ $color-level-2-hover: #f1f1f1;
   top: 20px;
   color: $navbar-content-color;
   cursor: pointer;
-  font-size: 2rem;
+  border: 0;
+  font-size: 1.5rem;
+  background-color: transparent;
 }
 
 #header {
@@ -64,7 +66,7 @@ $color-level-2-hover: #f1f1f1;
               > a > span, > strong, > span[data-bs-toggle="dropdown"] {
                 padding: 0;
                 margin: 0;
-                @include font-size(1.1rem !important);
+                font-size: clamp-calc(1.125rem, 1.25rem, 1200px, 1440px) !important;
                 color: $color-level-1;
                 line-height: $navbar-height;
                 font-weight: 400;
@@ -139,6 +141,7 @@ $color-level-2-hover: #f1f1f1;
             min-width: 100%;
             width: 100%;
             border: none !important;
+            border-radius: 0 !important;
 
             .dropdown-menu-grid-container {
               @extend .container;
