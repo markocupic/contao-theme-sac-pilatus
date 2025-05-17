@@ -1,23 +1,14 @@
-
 #header {
   background-color: #fff;
 
   .header-custom-template {
     .header-navbar-row-0 {
-      //font-size: $font-size-sm;
-
-      @include media-breakpoint-up(lg) {
-        font-size: $font-size-base;
-      }
-
-      @media (min-width: 1600px) {
-        font-size: $font-size-base;
-      }
 
       background-color: $blue;
 
       * {
         color: #fff;
+        font-size: clamp-calc(0.875rem, 1rem) !important;
       }
 
       a {
@@ -40,16 +31,7 @@
       border-bottom: 0;
 
       .logo-header {
-        height: 55px; // mobile phones
-        @include media-breakpoint-up(md) {
-          height: 60px;
-        }
-        @include media-breakpoint-up(lg) {
-          height: 80px;
-        }
-        @media (min-width: 1600px) {
-          height: 95px;
-        }
+        height: clamp-calc(45px, 95px, 360px, 1600px);
         width: auto;
       }
 
@@ -69,15 +51,8 @@
         }
 
         .svg-inline--fa, i.fal, i.fas, i.fa {
-          font-size: 1.2rem !important;
+          font-size: clamp-calc(1.2rem, 1.625rem, 360px, 1200px) !important;
         }
-
-        @include media-breakpoint-up(sm) {
-          .svg-inline--fa, i.fal, i.fas, i.fa {
-            font-size: 1.625rem !important;
-          }
-        }
-
       }
 
       .fa-search {
