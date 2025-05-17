@@ -1,15 +1,11 @@
-$rfs-base-value: 0.9125rem; //default 1.25rem
 $rfs-breakpoint: 1400px; //default 1200px
-//$rfs-factor: 25;
 $rfs-class: disable; // Add .disable-rfs to disable rfs on this element
 
-//$font-size-base: 1rem;
 $enable-gradients: false;
 
 // Icon Fontname
 $icon-font-name: "Font Awesome 6 Pro";
 $font-family-serif: "Roboto Slab", Georgia, "Times New Roman", serif;
-$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 // Container max-width (custom variable)
 $mc-container-max-width: 1380px;
 
