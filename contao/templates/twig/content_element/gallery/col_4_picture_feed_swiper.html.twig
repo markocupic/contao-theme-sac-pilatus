@@ -24,7 +24,7 @@
 {% block list %}
     {# Add bootstrap row classes #}
     {% set list = list|merge({'list_attributes': attrs(list.list_attributes|default)
-        .addClass('swiper-wrapper m-0')
+        .addClass('swiper-wrapper py-3 m-0')
     }) %}
 
     {% set list = list|merge({'item_attributes': attrs(list.item_attributes|default)
@@ -47,24 +47,31 @@
 {% block list_item %}
     {% set owner = mpf_getOwnerFromUuid(item.metadata.uuid|default) %}
     {% set file = mpf_getFilesModelFromUuid(item.metadata.uuid) %}
-    <div class="card h-100">
-        <div class="p-2 d-flex fw-bold align-items-center">
-            {% if owner|default %}
-                {{ insert_tag('image::'~getAvatarResourcePath(owner)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
-                <p class="card-text small m-0 ms-2">von {{ owner.firstname }} {{ owner.lastname }}</p>
-            {% endif %}
+    <div class="card bg-white shadow-sm">
+        <div class="image-zoom-in" style="overflow:hidden">
+            {% block figure_component %}
+                {% set figure = item %}
+                {% block caption %}{# Do not output the figcaption #}{% endblock %}
+                {{ parent() }}
+            {% endblock %}
         </div>
-        {# Embed the figure #}
-        {% block figure_component %}
-            {% set figure = item %}
-            {% block caption %}{# Do not output the figcaption #}{% endblock %}
-            {{ parent() }}
-        {% endblock %}
-        <div class="card-body">
-            <p class="card-date m-0">
-                <small>{{ file.tstamp|date("d.m.Y") }}</small>
-            </p>
-            <figcaption class="mt-0 fw-bold d-block">{{ item.metadata.caption }}</figcaption>
+        <div class="card-body bg-white p-3">
+            <p class="card-news-teaser mb-0">{{ item.metadata.caption }}</p>
+        </div>
+        <div class="card-footer border-top-0 bg-white p-3">
+            <div class="d-flex align-items-center">
+                {{ insert_tag('image::'~getAvatarResourcePath(owner)~'?width=40&height=40&mode=crop&class=rounded-circle')|raw }}
+                <div class="d-flex flex-column ps-3">
+                    <p class="card-text m-0 fw-bold"><small>{{ owner.firstname }} {{ owner.lastname }}</small></p>
+                    <p class="card-date text-muted m-0">
+                        <small>
+                            <time datetime="{{ file.tstamp|date('Y-m-d\TH:i:sP') }}">
+                                {{ file.tstamp|date("d.m.Y") }}
+                            </time>
+                        </small>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
