@@ -62,7 +62,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
 
             // Add Google fonts
             // See Google Webfont helper: https://gwfh.mranftl.com/fonts
-            $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
+            // $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/roboto-slab.css');
         }
     }
