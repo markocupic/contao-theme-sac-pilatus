@@ -1,33 +1,38 @@
-p {
-  @include rfs($font-size-base); // dynamic font-size
+$fs-base: clamp-calc($font-size-base, $font-size-base * 1.125); // dynamic font-size
+$fs-sm: clamp-calc($font-size-base * 0.875, $font-size-base * 1.125 * 0.875); // dynamic font-size
+
+#main p {
   line-height: 1.6; // optimized readability
-  @include margin-top(1rem); // dynamic margin
+  margin-top: clamp-calc(0.5rem, 1.25rem);
+  margin-bottom: clamp-calc(0.5rem, 1.25rem);
+  // dynamic font-size(1rem); // dynamic margin
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $font-weight-bold;
-  line-height: 1.5;
+#main p, div, legend {
+  font-size: clamp-calc($font-size-base, $font-size-base * 1.125); // dynamic font-size
 }
 
 // Individuelle Anpassungen für spezifische Heading-Größen
 // Map to store heading configurations
 $headings-map: (
-        h1: (2.5, 1.5), // font-size, and margin (rem)
-        h2: (2, 1.25),
-        h3: (1.75, 1),
-        h4: (1.5, 0.8),
-        h5: (1.25, 0.6),
-        h6: (1.1, 0.5)
+        h1: (1.5, 600), //margin, font-weight
+        h2: (1.4, 600),
+        h3: (1.3, 600),
+        h4: (1.2, 600),
+        h5: (1.1, 600),
+        h6: (1.0, 600),
 );
 
 // Loop through the map and apply styles
 @each $heading, $values in $headings-map {
   #{$heading} {
-    @include font-size(nth($values, 1) * 1rem); // Fluid font size
-    @include margin-top(nth($values, 2) * 1rem); // Dynamic margin-top
-    @include margin-bottom(nth($values, 2) * 1rem); // Dynamic margin-bottom
+    @extend .#{$heading}; // @extend .h1;
+    font-weight: nth($values, 2);
+    @include margin-top(nth($values, 1) * 1rem); // Dynamic margin-top
+    @include margin-bottom(nth($values, 1) * 1rem); // Dynamic margin-bottom
   }
 }
+
 
 // Underline h1
 #main h1.content-headline, [class*="content-"] > h1, [class*="mod_"] > h1 {
@@ -46,7 +51,7 @@ ul {
     li {
       line-height: 1.7;
       display: table-row;
-      margin-top: 2.5rem;
+      margin-top: clamp-calc(1rem, 2.5rem);
 
       &:before {
         content: "\f105";
@@ -54,7 +59,7 @@ ul {
         color: #666;
         font-weight: normal;
         display: table-cell;
-        padding-right: 10px;
+        padding-right: clamp-calc(.5rem, 1rem);
       }
     }
   }
