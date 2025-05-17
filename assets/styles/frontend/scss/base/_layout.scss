@@ -46,7 +46,7 @@ body {
       width: 100%; // override container class
       margin-left: 0; // override container class
       margin-right: 0; // override container class
-      padding: clamp-calc(3rem, 4.5rem) clamp-calc(1rem, 4.5rem);
+      padding: clamp-calc(3rem, 3.5rem) clamp-calc(1rem, 4.5rem);
 
       @include media-breakpoint-up(lg) {
         margin-left: auto;

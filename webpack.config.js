@@ -13,6 +13,10 @@ Encore
         pattern: /(bootstrap\.bundle\.min\.js)$/,
     })
     .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
+    .copyFiles({
         from: './assets/fonts',
         to: 'fonts/[path][name].[ext]'
     })

@@ -8,7 +8,7 @@
 
       * {
         color: #fff;
-        font-size: clamp-calc(0.875rem, 1rem) !important;
+        font-size: $font-size-sm !important;
       }
 
       a {
@@ -21,7 +21,6 @@
 
       .header-login-button, .header-logout-link, .header-backoffice-link {
         line-height: 1;
-        //@extend .small;
         @extend .lh-1;
       }
     }
@@ -31,7 +30,7 @@
       border-bottom: 0;
 
       .logo-header {
-        height: clamp-calc(45px, 95px, 360px, 1600px);
+        height: clamp-calc(50px, 95px, 360px, 1600px);
         width: auto;
       }
 
@@ -51,7 +50,7 @@
         }
 
         .svg-inline--fa, i.fal, i.fas, i.fa {
-          font-size: clamp-calc(1.2rem, 1.625rem, 360px, 1200px) !important;
+          font-size: clamp-calc(1.25rem, 1.625rem, 360px, 1200px) !important;
         }
       }
 
