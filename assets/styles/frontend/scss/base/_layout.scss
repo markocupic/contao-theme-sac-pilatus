@@ -46,12 +46,7 @@ body {
       width: 100%; // override container class
       margin-left: 0; // override container class
       margin-right: 0; // override container class
-      padding: $spacer-3 $spacer-4;
-
-      @include media-breakpoint-up(sm) {
-        // more vertical & horizontal padding on large screens
-        padding: $spacer-5 $spacer-5;
-      }
+      padding: clamp-calc(3rem, 4.5rem) clamp-calc(1rem, 4.5rem);
 
       @include media-breakpoint-up(lg) {
         margin-left: auto;
@@ -81,7 +76,6 @@ body {
       padding: 0;
     }
 
-
     /**
      * Background colors and colors
      */
@@ -107,7 +101,7 @@ body {
 
       > .article-inside {
         background-color: #fff;
-        margin-top: 2rem;
+        margin-top: clamp-calc(1rem, 2.5rem);
         margin-bottom: 1rem;
       }
     }
@@ -190,10 +184,19 @@ body {
   // Tour detail/course detail
   .mod_article {
     .box-layout-transparent, .box-layout-white {
-      @extend .mt-3;
-      @extend .mb-3;
-      @extend .p-2;
-      @extend .p-sm-3;
+      margin-top: clamp-calc(1.5rem, 2rem);
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      margin-bottom: clamp-calc(1.5rem, 2rem);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      padding: clamp-calc(1.5rem, 2rem);
 
       > *:first-child {
         margin-top: 0;
