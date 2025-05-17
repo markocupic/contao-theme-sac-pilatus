@@ -26,10 +26,18 @@
   }
 }
 
-.card {
+#main .card {
   border: 0;
   @extend .rounded;
   overflow: hidden !important;
+
+  .card-header {
+    //font-size: clamp-calc(1rem, 1.125rem) !important;
+  }
+
+  h6.card-title {
+    @extend .h5;
+  }
 
   &:hover {
     //@extend .shadow-lg;
