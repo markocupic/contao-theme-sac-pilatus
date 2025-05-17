@@ -1,16 +1,18 @@
-.ce_heroimage_element .heroimage-wrapper {
+$heroimage-font-size-scale-factor: 1.35;
+
+#main .ce_heroimage_element .heroimage-wrapper {
 
   display: flex;
-  min-height: 300px;
+  min-height: 250px;
 
   @include media-breakpoint-up(sm) {
-    min-height: 430px;
+    min-height: 350px;
   }
   @include media-breakpoint-up(md) {
-    min-height: 460px;
+    min-height: 390px;
   }
   @include media-breakpoint-up(lg) {
-    min-height: 490px;
+    min-height: 480px;
   }
   @include media-breakpoint-up(xl) {
     // min-height: 550px;
@@ -25,36 +27,42 @@
     @include media-breakpoint-up(sm) {
       padding: 1rem 4rem;
     }
+
+    .lead p {
+      font-size: clamp-calc(1.125rem, 1.125rem * $heroimage-font-size-scale-factor);
+      line-height: 1.6;
+    }
   }
 
   .heroimage-headline-box h1 {
     color: #fff !important;
     font-weight: 200 !important;
     margin: 0;
+    line-height: 1.6;
+    font-size: clamp-calc(1.75rem, 4rem);
   }
 
   .heroimage-headline-box {
     margin: 0 0 1.5rem 0 !important;
   }
 
-  .heroimage-text-box {
-    //font-style: italic;
+  .heroimage-text-box p, .heroimage-text-box {
     font-family: 'Roboto Slab', serif;
   }
 
   .heroimage-button-box {
-    margin-top: 0
+    margin-top: 0;
+    margin-bottom: clamp-calc(1rem, 2rem);
   }
 
   .heroimage-button-box > a.btn {
     @include icon-after('\f35a', false, 'inline-flex');
     font-family: 'Roboto Slab', serif;
+    @include font-size(1.2rem);
     border-radius: $btn-border-radius;
     text-wrap: nowrap;
-    padding: .5rem 1rem !important;
-    @include media-breakpoint-up(sm) {
-      padding: 1rem 3rem !important;
-    }
+    font-size: clamp-calc(1rem, 1.5rem);
+    padding: clamp-calc(0.5rem, 1rem) clamp-calc(1rem, 3rem);
 
     &:after {
       //color: $accent-color;
@@ -65,39 +73,6 @@
     > .btn:hover {
       background-color: #000;
       color: #fff;
-    }
-  }
-
-  .heroimage-headline-box h1 {
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
-
-  @include media-breakpoint-up(sm) {
-    .heroimage-headline-box h1 {
-      font-size: 3.5rem;
-      line-height: 1.6;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    .heroimage-headline-box h1 {
-      font-size: 4.0rem;
-      line-height: 1.6;
-    }
-  }
-
-  @include media-breakpoint-up(xl) {
-    .heroimage-headline-box h1 {
-      font-size: 4.0rem;
-      line-height: 1.6;
-    }
-  }
-
-  @include media-breakpoint-up(xxl) {
-    .heroimage-headline-box h1 {
-      font-size: 4.0rem;
-      line-height: 1.6;
     }
   }
 }
