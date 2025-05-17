@@ -62,7 +62,9 @@
             <div class="d-flex align-items-center">
                 {{ insert_tag('image::'~getAvatarResourcePath(owner)~'?width=40&height=40&mode=crop&class=rounded-circle')|raw }}
                 <div class="d-flex flex-column ps-3">
-                    <p class="card-text m-0 fw-bold"><small>{{ owner.firstname }} {{ owner.lastname }}</small></p>
+                    {% if owner|default %}
+                        <p class="card-text m-0 fw-bold"><small>{{ owner.firstname }} {{ owner.lastname }}</small></p>
+                    {% endif %}
                     <p class="card-date text-muted m-0">
                         <small>
                             <time datetime="{{ file.tstamp|date('Y-m-d\TH:i:sP') }}">
