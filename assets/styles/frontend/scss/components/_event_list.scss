@@ -34,11 +34,8 @@ $breakpoint-mobile-end: 415px;
   // Main column - Main column - Main column - Main column - Main column:
   // Main column - Main column - Main column - Main column - Main column:
   .event-list-item--col-2 {
-    a, span, p, div {
-      font-size: .8125rem !important; // 13px
-      @media (max-width: $breakpoint-mobile-end) {
-        font-size: .6875rem !important; // 11px
-      }
+    a, span:not(.badge), p, div {
+      font-size: $fs-sm !important;
     }
 
     .event-list-item--event-date-span .more-date-infos {
@@ -63,7 +60,6 @@ $breakpoint-mobile-end: 415px;
       a.event-list-item--title-link {
         text-decoration: none !important;
         color: $link-color;
-        font-size: 1rem;
         line-height: 1.2 !important;
       }
 
@@ -73,24 +69,20 @@ $breakpoint-mobile-end: 415px;
 
       a.event-list-item--title-link strong {
         margin: 0.375rem 0 !important; // 6px
-        font-size: 0.9375rem !important; // 14px
+        font-size: $fs-base;
         line-height: 1.2 !important;
-        @media (max-width: $breakpoint-mobile-end) {
-          font-size: 0.8125rem !important; // 13px
-        }
       }
     }
 
     .event-list-item--badge-container {
+      margin-top: clamp-calc(.375rem, .5rem);
+
       .badge {
         margin-right: .25rem;
         margin-bottom: .25rem;
-        padding: 0.1875rem 0.35rem !important;
-        font-size: 0.6875rem !important;
-        @media (max-width: $breakpoint-mobile-end) {
-          //padding: 0.1875rem 0.35rem !important;
-          //font-size: 0.6875rem !important;
-        }
+        //padding: clamp-calc(.2rem, .2rem * 1.125) clamp-calc(.375rem, .375rem * 1.125) !important;
+        //font-size: $fs-sm !important;
+        //line-height: 1 !important;
       }
 
       .event-list-item--see-more-link .badge {
@@ -144,8 +136,8 @@ $breakpoint-mobile-end: 415px;
       line-height: .75rem;
 
       span {
-        line-height: 1rem; // 12px
-        font-size: .75rem; // 12px
+        line-height: 1; // 12px
+        font-size: 0.75em;
         font-weight: bolder;
         color: $danger;
       }
