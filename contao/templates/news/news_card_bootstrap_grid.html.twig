@@ -10,5 +10,11 @@
         card_date_text: date,
         card_date_attributes: { 'datetime': datetime },
     } %}
+    {#
+    We hardcode the image size so that incorrect entries by users in the Contao backend
+    do not lead to an incorrect image size.
+    #}
+    {% set card_props = card_props|merge({card_image_size: 29}) %}
     {% include '@MarkocupicContaoThemeSacPilatus/Card/card_default.html.twig' with card_props only %}
 </li>
+{# card_image_size: size|default('')|deserialize[2], #}
