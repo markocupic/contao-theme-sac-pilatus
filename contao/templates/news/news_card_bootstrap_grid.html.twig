@@ -9,6 +9,13 @@
         card_text_attributes: attrs().addClass('card-news-teaser'),
         card_date_text: date,
         card_date_attributes: { 'datetime': datetime },
+        card_image_options: {
+            metadata: {
+                caption: '',
+                alt: newsHeadline|escape('html_attr'),
+                title: newsHeadline|escape('html_attr'),
+            },
+        },
     } %}
     {#
     We hardcode the image size so that incorrect entries by users in the Contao backend
