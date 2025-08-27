@@ -16438,7 +16438,7 @@ input.custom-input-file {
     line-height: 2rem;
   }
 }
-.mod_event_registration .step-indicator .checkout-step.step--done {
+.mod_event_registration .step-indicator .checkout-step.step--processed {
   color: #505050;
 }
 .mod_event_registration .step-indicator .checkout-step.step--current {
