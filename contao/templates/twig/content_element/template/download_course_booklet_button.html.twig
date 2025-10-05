@@ -1,0 +1,49 @@
+<!-- button bar -->
+<div class="button-bar d-block">
+    <ul class="d-flex justify-content-sm-end">
+        {% block course_booklet_download_pdf %}
+            <li class="me-1 mt-2 mt-sm-0">
+                {% if has_logged_in_frontend_user() %}
+                    {# Do not allow the download for not logged in users #}
+                    {% set attributes = attrs()
+                        .set('href', '/_download/print_workshop_booklet_as_pdf') %}
+                {% else %}
+                    {% set attributes = attrs()
+                        .set('data-sac-login-toggle', 'modal')
+                        .set('data-sac-login-target', 'same-site') %}
+                {% endif %}
+                <a{{ attributes }}>
+                    <button class="text-right btn btn-sm btn-success" title="Kursprogramm als pdf Broschüre herunterladen">
+                        <i class="fa-solid fa-file-pdf fa-fw"></i>
+                    </button>
+                </a>
+            </li>
+        {% endblock %}
+
+        {% block course_booklet_download_docx %}
+            <li class="me-1 mt-2 mt-sm-0">
+                {% if has_logged_in_frontend_user() %}
+                    {# Do not allow the download for not logged in users #}
+                    {% set attributes = attrs()
+                        .set('href', '/_download/print_workshop_details_as_docx') %}
+                {% else %}
+                    {% set attributes = attrs()
+                        .set('data-sac-login-toggle', 'modal')
+                        .set('data-sac-login-target', 'same-site') %}
+                {% endif %}
+                <a{{ attributes }}>
+                    <button class="text-right btn btn-sm btn-primary" title="Kursprogramm herunterladen im docx Format herunterladen">
+                        <i class="fa-solid fa-file-word fa-fw"></i>
+                    </button>
+                </a>
+            </li>
+        {% endblock %}
+        <!-- Button trigger modal -->
+        <li class="mt-2 mt-sm-0">
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kursstufenModal">
+                Kursstufen
+            </button>
+        </li>
+    </ul>
+</div>
+<!-- end button bar -->
