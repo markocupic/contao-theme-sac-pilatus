@@ -31,7 +31,7 @@
 {% block list %}
     {# Add bootstrap row classes #}
     {% set list = list|merge({'list_attributes': attrs(list.list_attributes|default)
-        .addClass('gallery-grid row')
+        .addClass('gallery-grid row g-3')
     }) %}
 
     {% set list = list|merge({'item_attributes': attrs(list.item_attributes|default)
