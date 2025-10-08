@@ -25,13 +25,14 @@ $headings-map: (
 
 // Loop through the map and apply styles
 @each $heading, $values in $headings-map {
-  #{$heading} {
+  #{$heading}:not(.popover-header) {
     @extend .#{$heading}; // @extend .h1;
     font-weight: nth($values, 2);
     @include margin-top(nth($values, 1) * 1rem); // Dynamic margin-top
     @include margin-bottom(nth($values, 1) * 1rem); // Dynamic margin-bottom
   }
 }
+
 
 
 // Underline h1
