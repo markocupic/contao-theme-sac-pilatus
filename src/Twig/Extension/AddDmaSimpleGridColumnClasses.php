@@ -34,11 +34,11 @@ class AddDmaSimpleGridColumnClasses extends AbstractExtension
     }
 
     /**
-     * Inside your _base.html.twig:
-     * {% extends "@Contao/content_element/_base.html.twig" %}.
+     * Inside your _base.html.twig: {% extends
+     * "@Contao/content_element/_base.html.twig" %}.
      *
-     * {# Attach the grid classes to the class attribute of the content element wrapper tag. #}
-     * {% set element_css_classes = add_dma_simple_grid_classes(_context) %}
+     * Attach the grid classes to the class attribute of the content element wrapper
+     * tag. {% set element_css_classes = add_dma_simple_grid_classes(_context) %}
      */
     public function addDmaSimpleGridClasses(array $context): string
     {

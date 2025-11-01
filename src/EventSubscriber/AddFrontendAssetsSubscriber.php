@@ -60,8 +60,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Add Font Awesome
             $this->addFontAwesome();
 
-            // Add Google fonts
-            // See Google Webfont helper: https://gwfh.mranftl.com/fonts
+            // Add Google fonts See Google Webfont helper: https://gwfh.mranftl.com/fonts
             // $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/roboto-slab.css');
         }
@@ -83,31 +82,35 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         $attrDefer = $defer ? ' defer' : '';
 
         $nonce = !empty($cspHandler) ? $cspHandler->getNonce('script-src') : '';
-        $attrNonce = !empty($nonce) ? sprintf(' nonce="%s"', $nonce) : '';
+        $attrNonce = !empty($nonce) ? \sprintf(' nonce="%s"', $nonce) : '';
 
         if (!empty($src)) {
             $src = '/'.ltrim($src, '/');
         }
-        $attrSrc = !empty($src) ? sprintf(' src="%s"', $src) : '';
+        $attrSrc = !empty($src) ? \sprintf(' src="%s"', $src) : '';
 
-        return sprintf('<script%s%s%s>%s</script>', $attrDefer, $attrNonce, $attrSrc, $script);
+        return \sprintf('<script%s%s%s>%s</script>', $attrDefer, $attrNonce, $attrSrc, $script);
     }
 
     private function addFontAwesome(): void
     {
-        // Load Font Awesome key from configuration
-        // $GLOBALS['TL_BODY'][] = '<script src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js" crossorigin="anonymous"></script>';
-        // Due to bandwidth limitations we host fontawesome ourselves
-        // @todo: CSP -> https://docs.fontawesome.com/web/dig-deeper/security#:~:text=and%20address%20things.-,Content,-Security%20Policy
+        // Load Font Awesome key from configuration $GLOBALS['TL_BODY'][] =
+        // '<script
+        // src="https://kit.fontawesome.com/'.$this->fontAwesomeKitKey.'.js"
+        // crossorigin="anonymous"></script>'; Due to bandwidth limitations we host
+        // fontawesome ourselves @todo: CSP ->
+        // https://docs.fontawesome.com/web/dig-deeper/security#:~:text=and%20address%20things.-,Content,-Security%20Policy
         $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.6.0', true);
         $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.6.0', true);
         $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.6.0', true);
         $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=6.6.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/brands.min.js?v=6.6.0', true);
 
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=6.6.0';
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.6.0';
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.6.0';
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.6.0';
-        //$GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=6.6.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/brands.min.css?v=6.6.0';
+        // $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=6.6.0';
     }
 }
