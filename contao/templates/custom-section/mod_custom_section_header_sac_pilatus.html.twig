@@ -3,25 +3,87 @@
     <div class="header-navbar-row-0">
 
         <div class="inner d-flex px-3 py-1 py-sm-1 align-items-center">
-            {# small screens #}
-            <div class="ms-0 me-auto d-flex d-sm-none align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope"></i>{{ insert_tag('link_close')|raw }}</div>
-            {# large screens #}
-            <div class="ms-0 me-auto d-none d-sm-flex align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope me-2 align-bottom"></i>Geschäftsstelle{{ insert_tag('link_close')|raw }}</div>
-
+            <div class="ms-0 me-auto d-flex ">
+                <div class="ms-0 d-flex align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope me-1 align-bottom"></i><span class="d-none d-sm-inline">Geschäftsstelle</span>{{ insert_tag('link_close')|raw }}</div>
+            </div>
             <div class="ms-auto me-0 d-flex align-items-center">
                 {% if has_logged_in_frontend_user() %}
-                    <a href="{{ path('contao_frontend_logout') }}" data-href="{{ path('contao_frontend_logout') }}" data-targetpath="{{ app.request.getSchemeAndHttpHost() }}" data-logout-label="du wirst abgemeldet …" class="trigger-ids-kill-session header-logout-link m-0 ms-2 me-4" title="Abmelden/Logout"><i class="fa-light fa-sign-out-alt me-2"></i>Abmelden</a>
-
-                    <div class="ms-2 d-none d-sm-block">Angemeldet als: {{ insert_tag('user::firstname') }} {{ insert_tag('user::lastname') }}</div>
-                    <div class="ms-3">
-                        <a href="{{ insert_tag('link_url::276') }}" title="Mitgliederprofil bearbeiten">
-                            {% set user = get_logged_in_frontend_user() %}
-                            {{ insert_tag('image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
-                        </a>
+                    {% set user = get_logged_in_frontend_user() %}
+                    <div class="d-none d-sm-block me-2">
+                        Angemeldet als:
                     </div>
-                    {% if has_logged_in_frontend_user() %}
-                        <a href="{{ insert_tag('link_url::276') }}" class="btn btn-sm btn-danger py-1 ms-2 text-nowrap" title="Mitgliederprofil bearbeiten"><i class="fa-regular fa-cog"></i><span class="d-inline ms-2">Profil</span></a>
-                    {% endif %}
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle btn-danger" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ user.firstname }} {{ user.lastname|first }}.
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end p-3">
+                            <div class="row gx-2 align-items-center">
+                                <div class="col-auto">
+                                    <a href="{{ insert_tag('link_url::276') }}" title="Mitgliederprofil bearbeiten">
+                                        {{ insert_tag('image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <div>{{ substr(user.email, 20) }}</div>
+                                    <div>{{ user.sacMemberId }}</div>
+                                </div>
+                            </div>
+                            <nav>
+                                <ul class="p-0 m-0 mt-4">
+                                    {% if has_backend_account() %}
+                                        <li class="d-flex align-items-center">
+                                            <a class="dropdown-item" target="_blank" rel="noopener" href="/contao"><i class="fa-brands fa-fw fa-contao"></i><span class="ms-1">Zum Contao Backend</span></a>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            {# Link to: Anleitungen und Tutorials #}
+                                            <a class="dropdown-item" href="{{ insert_tag('link_url::315') }}"><i class="fa-solid fa-fw fa-square-question"></i><span class="ms-1">{{ insert_tag('link_name::315') }}</span></a>
+                                        </li>
+                                    {% endif %}
+                                    <li class="d-flex align-items-center">
+                                        {% set attributes = attrs()
+                                            .set('href', path('contao_frontend_logout'))
+                                            .set('data-href', path('contao_frontend_logout'))
+                                            .set('data-targetpath', app.request.getSchemeAndHttpHost())
+                                            .set('data-logout-label', 'du wirst abgemeldet …')
+                                            .set('title', 'Abmelden/Logout')
+                                            .addClass('trigger-ids-kill-session header-logout-link dropdown-item') %}
+                                        <a href="{{ insert_tag('link_url::276') }}" title="Mitgliederprofil bearbeiten" class="dropdown-item"><i class="fa-light fa-fw fa-cog"></i><span class="ms-1">Mitgliederprofil bearbeiten</span></a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <a{{ attributes }}><i class="fa-light fa-fw fa-sign-out-alt"></i><span class="ms-1">Abmelden</span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        {% add to head %}
+                            <style{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+                                {% apply scss %}
+                                #header .header-navbar-row-0 {
+                                    .dropdown > button.btn {
+                                        padding: .125rem .5rem !important;
+                                        font-size: 12px !important;
+                                    }
+
+                                    .dropdown-menu {
+                                        background: white;
+                                    }
+
+                                    .dropdown-menu a.dropdown-item {
+                                        padding: .25rem 0;
+                                    }
+
+                                    .dropdown-menu * {
+                                        color: #000 !important;
+                                    }
+                                }
+
+                                {% endapply %}
+                            </style>
+                        {% endadd %}
+                    </div>
                 {% endif %}
 
                 {% if not has_logged_in_frontend_user() %}
