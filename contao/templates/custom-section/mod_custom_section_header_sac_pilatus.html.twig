@@ -14,18 +14,18 @@
                     </div>
                     <div class="dropdown">
                         <button class="btn dropdown-toggle btn-danger" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ user.firstname }} {{ user.lastname|first }}.
+                            {{ substr((user.firstname~' '~user.lastname|first~'.'), 25) }}
                         </button>
-                        <div class="dropdown-menu dropdown-menu-end p-3">
-                            <div class="row gx-2 align-items-center">
+                        <div class="dropdown-menu dropdown-menu-end p-3 overflow-hidden">
+                            <div class="row gx-2 align-items-center flex-nowrap">
                                 <div class="col-auto">
                                     <a href="{{ insert_tag('link_url::276') }}" title="Mitgliederprofil bearbeiten">
                                         {{ insert_tag('image::'~getAvatarResourcePath(user)~'?width=32&height=32&mode=crop&class=rounded-circle')|raw }}
                                     </a>
                                 </div>
                                 <div class="col-auto">
-                                    <div>{{ substr(user.email, 20) }}</div>
-                                    <div>{{ user.sacMemberId }}</div>
+                                    <div class="fw-bold">Mitgl.-Nr. {{ user.sacMemberId|default('---') }}</div>
+                                    <div>{{ substr(user.email|default('E-Mail: ---'), 19) }}</div>
                                 </div>
                             </div>
                             <nav>
