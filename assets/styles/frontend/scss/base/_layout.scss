@@ -196,7 +196,7 @@ body {
         margin-bottom: 0;
       }
 
-      padding: clamp-calc(1.5rem, 2rem);
+      padding: clamp-calc(1.25rem, 2rem) clamp-calc(.75rem, 2rem);
 
       > *:first-child {
         margin-top: 0;

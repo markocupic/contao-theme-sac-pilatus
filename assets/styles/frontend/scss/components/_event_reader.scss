@@ -8,6 +8,13 @@
 }
 
 .event-detailview {
+
+  div:has(> .icon-box-small) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
   .overflow-auto {
     white-space: nowrap;
     scrollbar-width: thin;
@@ -26,11 +33,6 @@
     text-transform: inherit;
     margin-bottom: 0 !important;
     line-height: 1 !important;
-  }
-
-  .flex-wrapper {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .teaser p {
@@ -65,7 +67,9 @@
 
   .event-detail {
     h5 {
+      margin-top: 0;
       font-weight: bold;
+      overflow-wrap: break-word;
     }
 
     p {
