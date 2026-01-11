@@ -100,17 +100,17 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         // crossorigin="anonymous"></script>'; Due to bandwidth limitations we host
         // fontawesome ourselves @todo: CSP ->
         // https://docs.fontawesome.com/web/dig-deeper/security#:~:text=and%20address%20things.-,Content,-Security%20Policy
-        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=6.6.0', true);
-        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=6.6.0', true);
-        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=6.6.0', true);
-        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=6.6.0', true);
-        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/brands.min.js?v=6.6.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/fontawesome.min.js?v=7.0.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/light.min.js?v=7.0.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/regular.min.js?v=7.0.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/solid.min.js?v=7.0.0', true);
+        $GLOBALS['TL_BODY'][] = $this->generateScriptTag('assets/contao-component-fontawesome-pro/fontawesome-pro/js/brands.min.js?v=7.0.0', true);
 
-        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=6.6.0';
-        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=6.6.0';
-        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=6.6.0';
-        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=6.6.0';
-        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/brands.min.css?v=6.6.0';
-        // $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=6.6.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/fontawesome.min.css?v=7.0.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/light.min.css?v=7.0.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=7.0.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=7.0.0';
+        $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/brands.min.css?v=7.0.0';
+        // $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=7.0.0';
     }
 }
