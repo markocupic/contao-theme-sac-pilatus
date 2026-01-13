@@ -51,7 +51,7 @@
                                 .mergeWith(card_link_attributes|default) %}
                             <a{{ card_link_attributes }}>
                         {% endif %}
-                        <h6{{ card_title_attributes }}>{{ card_title_text }}</h6>
+                        <h6{{ card_title_attributes }}>{{ card_title_text|decode_entities }}</h6>
                         {% if card_link|default %}
                             </a>
                         {% endif %}
@@ -63,7 +63,7 @@
                         {% set card_text_attributes = attrs()
                             .addClass('card-text')
                             .mergeWith(card_text_attributes|default) %}
-                        <p{{ card_text_attributes }}>{{ card_text_text }}</p>
+                        <p{{ card_text_attributes }}>{{ card_text_text|decode_entities }}</p>
                     {% endif %}
                 {% endblock %}
                 {# end card text - end card text #}
