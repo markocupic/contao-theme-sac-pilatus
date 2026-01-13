@@ -102,6 +102,10 @@ $breakpoint-mobile-end: 415px;
   // Right column - Right column - Right column - Right column - Right column:
   // Right column - Right column - Right column - Right column - Right column:
   .event-list-item--col-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .event-list-item--event-state-icon {
       margin: 0;
 
