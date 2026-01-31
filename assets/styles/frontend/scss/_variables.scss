@@ -61,8 +61,9 @@ $carousel-control-color: #000000;
 $grid-gutter-width: 15px;
 
 // Modal
-$modal-backdrop-opacity: .7;
-$modal-content-border-radius: 0;
+$modal-backdrop-opacity: .5;
+$modal-content-border-radius: .5rem;
+$modal-backdrop-bg: #000000;
 
 :root {
   --bg-article-blue: $blue;

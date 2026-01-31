@@ -1,6 +1,7 @@
 .modal-dialog {
   .modal-content {
     background-color: transparent;
+    overflow: hidden;
     @extend .shadow;
 
     .modal-header {
