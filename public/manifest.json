@@ -1,5 +1,5 @@
 {
-  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.71d4a49c.css",
+  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.e3035c2f.css",
   "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.34d473d0.js",
   "images/logos/logo-header.png": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.969749ff.png",
   "images/logos/logo-header.svg": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.8ec20c35.svg",
@@ -15,7 +15,15 @@
   "fonts/open-sans/open-sans-v40-latin_latin-ext-600.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-600.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-700italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-700italic.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-800.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-800.woff2",
+  "fonts/google-sans/google-sans-v67-latin-600italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-600italic.woff2",
+  "fonts/google-sans/google-sans-v67-latin-500italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-500italic.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-700.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-700.woff2",
+  "fonts/google-sans/google-sans-v67-latin-700italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-700italic.woff2",
+  "fonts/google-sans/google-sans-v67-latin-italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-italic.woff2",
+  "fonts/google-sans/google-sans-v67-latin-600.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-600.woff2",
+  "fonts/google-sans/google-sans-v67-latin-500.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-500.woff2",
+  "fonts/google-sans/google-sans-v67-latin-700.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-700.woff2",
+  "fonts/google-sans/google-sans-v67-latin-regular.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans/google-sans-v67-latin-regular.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-800.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-800.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-900.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-900.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2",
@@ -25,11 +33,12 @@
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2",
   "js/theme.js": "/bundles/markocupiccontaothemesacpilatus/js/theme.59bbf9a9.js",
   "fonts/open-sans.css": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans.css",
+  "fonts/google-sans.css": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans.css",
   "js/navigation.js": "/bundles/markocupiccontaothemesacpilatus/js/navigation.840de079.js",
   "fonts/roboto-slab.css": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab.css",
   "js/sac-frontend-login-modal.js": "/bundles/markocupiccontaothemesacpilatus/js/sac-frontend-login-modal.605fcfd5.js",
   "js/scroll-to-top-button.js": "/bundles/markocupiccontaothemesacpilatus/js/scroll-to-top-button.921dc774.js",
   "js/equal-height.js": "/bundles/markocupiccontaothemesacpilatus/js/equal-height.a85d1926.js",
   "js/detect-is-bs-modal-ready.js": "/bundles/markocupiccontaothemesacpilatus/js/detect-is-bs-modal-ready.7baa4dd4.js",
-  "frontend.71d4a49c.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.71d4a49c.css.map"
+  "frontend.e3035c2f.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.e3035c2f.css.map"
 }

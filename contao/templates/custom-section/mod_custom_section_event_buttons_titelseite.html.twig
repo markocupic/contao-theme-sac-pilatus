@@ -1,12 +1,15 @@
 {% do addHtmlToHead('
     <style'~attrs().setIfExists('nonce', csp_nonce('script-src'))~'>
-    .event-type-buttons .btn {
-        border-color: #fff !important;
+    #wrapper #container .mod_article.article-blue .event-type-buttons a.btn {
+        border-color: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #202124 !important;
     }
 
-    .event-type-buttons .btn:hover {
+    #wrapper #container .mod_article.article-blue .event-type-buttons a.btn:hover {
         background: #000 !important;
         border-color: #000 !important;
+        color: #ffffff !important;
     }
     </style>
 ') %}
