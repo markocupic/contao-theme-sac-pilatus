@@ -28,11 +28,15 @@ nav.pagination {
       a, strong {
         @extend .page-link;
         background-color: #fff;
-        border-color: $gray-300;
-        border-radius: 0 !important;
+        border-color: #fafafa;
+        border-radius: .675rem !important;
+        &:hover{
+          background-color: $primary;
+          color: #fff;
+        }
       }
 
-      margin-right: 2px;
+      margin-right: .5rem;
     }
 
     > li > strong, > li > a {
@@ -53,7 +57,7 @@ ul.pagination {
     a {
       @extend .page-link;
       background-color: #fff;
-      border-color: $gray-300;
+      border-color: transparent;
     }
 
     margin-right: 2px;
