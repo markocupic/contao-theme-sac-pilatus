@@ -49,8 +49,10 @@
           cursor: pointer !important;
         }
 
-        .svg-inline--fa, i.fal, i.fas, i.fa {
-          font-size: clamp-calc(1.25rem, 1.625rem, 360px, 1200px) !important;
+        .search-toggle, .navigation-toggle {
+          .svg-inline--fa, i.fal, i.fas, i.fa {
+            font-size: clamp-calc(1.25rem, 1.625rem, 360px, 1200px) !important;
+          }
         }
       }
 
