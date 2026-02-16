@@ -70,4 +70,24 @@
             </div>
         {% endblock %}
     </div>
+    {#
+    <style>
+        /* Add a clipped accent shape with ::after */
+        .card {
+            position: relative;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            z-index: 100;
+            width: 30px;
+            height: 30px;
+            bottom: 0;
+            right: 0;
+            clip-path: polygon(0 100%, 100% 0, 100% 100%);
+            background: var(--bs-primary);
+        }
+    </style>
+    #}
 {% endblock %}
