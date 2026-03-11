@@ -24,6 +24,14 @@
     color: $red;
   }
 
+  .event-state-box {
+    .event-state-icon {
+      width: rfs-fluid-value(2.125rem);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   .img-fluid {
     width: 100%;
   }
