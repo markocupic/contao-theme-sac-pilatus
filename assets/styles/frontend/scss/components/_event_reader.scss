@@ -26,9 +26,16 @@
 
   .event-state-box {
     .event-state-icon {
+      min-width: rfs-fluid-value(2.125rem);
       width: rfs-fluid-value(2.125rem);
       margin: 0;
       padding: 0;
+
+      img {
+        min-width: $fs-base;
+        width: $fs-base;
+        height: auto;
+      }
     }
   }
 

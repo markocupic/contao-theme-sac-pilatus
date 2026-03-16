@@ -9,7 +9,7 @@ $fs-sm: clamp-calc($font-size-base * 0.875, $font-size-base * 1.125 * 0.875); //
 }
 
 #main p, div, legend {
-  font-size: clamp-calc($font-size-base, $font-size-base * 1.125); // dynamic font-size
+  font-size: $fs-base; // dynamic font-size
 }
 
 // Individuelle Anpassungen für spezifische Heading-Größen
