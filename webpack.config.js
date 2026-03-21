@@ -5,8 +5,9 @@ Encore
     .setPublicPath('/bundles/markocupiccontaothemesacpilatus')
     .setManifestKeyPrefix('')
 
-    //.addEntry('select2', './assets/entries/select2.js')
-    //.addEntry('frontend', './assets/filepond.js')
+    // Add stimulus controllers
+    .addEntry('stimulus_frontend', './assets/stimulus_frontend.js')
+
     .copyFiles({
         from: './node_modules/bootstrap/dist/js',
         to: 'bootstrap/dist/js/[path][name].[ext]',

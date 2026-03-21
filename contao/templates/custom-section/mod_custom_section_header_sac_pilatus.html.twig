@@ -102,7 +102,7 @@
                             <span class="placeholder col-9"></span>
                         </span>
                     </div>
-                    <button aria-haspopup="dialog" onclick="window.location.href='{{ insert_tag('link_url::member-login') }}'" class="header-login-button p-0 d-none ms-2 me-0 mt-2 mb-2" data-sac-login-toggle="modal" tabindex="0"><i class="fa-solid fa-sign-in me-2"></i>Mitglieder-Login</button>
+                    <button data-controller="sacptheme--frontend--bs-login-modal" data-sac-login-target="same-site" aria-haspopup="dialog" class="header-login-button p-0 d-none ms-2 me-0 mt-2 mb-2" tabindex="0"><i class="fa-solid fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
                         document.addEventListener("BootstrapModalReady", (event) => {
                             document.querySelector('.header-login-placeholder').remove();
@@ -188,24 +188,4 @@
         </div>
     </div>
 </div>
-<script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-    /**
-     * Bootstrap does not hide the modal backdrop,
-     * when clicking the hide button,
-     * so we have to do remove it manually.
-     *
-     * @type {HTMLElement}
-     */
-    const loginModal = document.getElementById('loginModal');
-
-    loginModal.addEventListener('hidden.bs.modal', event => {
-        const modalBackdrops = document.querySelectorAll('body > .modal-backdrop.show');
-
-        for (const modalBackdrop of modalBackdrops) {
-            modalBackdrop.remove();
-        }
-
-        document.querySelector('body').removeAttribute('style');
-    });
-</script>
 <!-- indexer::continue -->

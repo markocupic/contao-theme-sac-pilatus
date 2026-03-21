@@ -1,5 +1,10 @@
 {
   "entrypoints": {
+    "stimulus_frontend": {
+      "js": [
+        "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.be2af324.js"
+      ]
+    },
     "styles/frontend": {
       "css": [
         "/bundles/markocupiccontaothemesacpilatus/styles/frontend.0e60f90b.css"

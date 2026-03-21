@@ -25,8 +25,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
 final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private readonly ResponseContextAccessor $responseContextAccessor,
-        private readonly Packages $packages,
+        private ResponseContextAccessor $responseContextAccessor,
+        private Packages $packages,
         private ScopeMatcher $scopeMatcher,
         private string $fontAwesomeKitKey, // Not in use yet
     ) {
@@ -50,7 +50,6 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // Load theme javascript files
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/equal-height.js'));
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/theme.js'));
-            $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/sac-frontend-login-modal.js'));
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/scroll-to-top-button.js'));
             $GLOBALS['TL_BODY'][] = $this->generateScriptTag($this->getAssetUrl('js/navigation.js'));
 
@@ -64,6 +63,9 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
             // $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/open-sans.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/roboto-slab.css');
             $GLOBALS['TL_CSS'][] = $this->getAssetUrl('fonts/google-sans.css');
+
+            // Stimulus
+            $GLOBALS['TL_JAVASCRIPT'][] = $this->getAssetUrl('stimulus_frontend.js');
         }
     }
 
