@@ -2,46 +2,60 @@ import {Controller} from "@hotwired/stimulus";
 import {Modal} from "bootstrap";
 
 export default class extends Controller {
+    static MODAL_ID = 'loginModal';
+    static OIDC_ERROR_SELECTOR = '.sac-oidc-error';
+    static TARGET_PATH_INPUT_SELECTOR = 'input[name="_target_path"]';
+    static SAME_SITE_TARGET = 'same-site';
 
     connect() {
-        // Auto-open modal on OIDC error
-        const modal = document.getElementById('loginModal');
+        const modal = this._getModal();
+        const hasOidcError = modal.querySelector(this.constructor.OIDC_ERROR_SELECTOR);
 
-        this.element.addEventListener('click', this.open.bind(this));
-
-        if (modal.querySelector(".sac-oidc-error")) {
-            this.show();
+        if (hasOidcError) {
+            this._show();
         }
     }
 
     open(event) {
         event.preventDefault();
         event.stopPropagation();
-        this.updateTargetPath();
-        this.show();
+        this._updateTargetPath();
+        this._show();
     }
 
-    updateTargetPath() {
-        const modal = document.getElementById('loginModal');
+    disconnect() {
+        this._getModalInstance()?.hide();
+    }
 
-        const input = modal.querySelector('input[name="_target_path"]');
+    _getModal() {
+        const modal = document.getElementById(this.constructor.MODAL_ID);
+        if (!modal) {
+            throw new Error("Bootstrap modal markup not found!");
+        }
+        return modal;
+    }
 
-        if (!input) return;
+    _getModalInstance() {
+        return Modal.getOrCreateInstance(this._getModal(), {});
+    }
 
-        if (this.element.dataset.sacLoginTarget === "same-site") {
-            if (!input.dataset.origTargetPath) {
-                input.dataset.origTargetPath = input.value;
-            }
-            input.value = btoa(window.location.href);
-        } else {
-            if (input.dataset.origTargetPath) {
-                input.value = input.dataset.origTargetPath;
-            }
+    _updateTargetPath() {
+        const modal = this._getModal();
+        const targetPathInput = modal.querySelector(this.constructor.TARGET_PATH_INPUT_SELECTOR);
+
+        if (!targetPathInput) return;
+
+        const isSameSiteTarget = this.element.dataset.sacLoginTarget === this.constructor.SAME_SITE_TARGET;
+
+        if (isSameSiteTarget) {
+            targetPathInput.dataset.origTargetPath ??= targetPathInput.value;
+            targetPathInput.value = btoa(window.location.href);
+        } else if (targetPathInput.dataset.origTargetPath) {
+            targetPathInput.value = targetPathInput.dataset.origTargetPath;
         }
     }
 
-    show() {
-        const modal = Modal.getOrCreateInstance(document.getElementById('loginModal'), {});
-        modal.show();
+    _show() {
+        this._getModalInstance().show();
     }
 }
