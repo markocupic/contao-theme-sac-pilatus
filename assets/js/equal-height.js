@@ -26,54 +26,62 @@ EqualHeight.observe = (container, childSelector) => {
         // Set the new timer
         timer = setTimeout(() => {
             timer = null;
-            EqualHeight.run(container, childSelector);
+            EqualHeight.apply(container, childSelector);
         }, 100);
     });
 
     ro.observe(container);
 
     // Initial
-    EqualHeight.run(container, childSelector);
+    EqualHeight.apply(container, childSelector);
 };
 
 
-EqualHeight.run = (container, childSelector) => {
+EqualHeight.apply = (container, childSelector) => {
     const children = container.querySelectorAll(childSelector);
-    if (!children.length) return;
 
-    let currentTallest = 0;
-    let currentRowStart = null;
-    let rowDivs = [];
+    if (!children.length) return;
 
     for (const childElement of children) {
         childElement.style.height = 'auto';
-        const topPosition = childElement.offsetTop;
+    }
 
-        const tolerance = 10;
+    const tolerance = 5;
+    const rowGroups = new Map(); // Map<rowIndex, Array<{element, height}>>
+    let currentRowIndex = 0;
+    let previousTop = null;
 
-        // Check if the element is in the same row as the previous one
-        if (currentRowStart === null || Math.abs(currentRowStart - topPosition) > tolerance) {
-            // The element is the first in the row, so set the height to the current tallest element
-            for (const div of rowDivs) {
-                div.style.height = `${currentTallest}px`;
-            }
+    for (const childElement of children) {
+        const top = childElement.getBoundingClientRect().top;
+        const height = childElement.offsetHeight;
 
-            rowDivs = [];
-            currentRowStart = topPosition;
-            currentTallest = childElement.offsetHeight;
-            rowDivs.push(childElement);
-        } else {
-            // The element is not the first in the row, so add it to the rowDivs array
-            rowDivs.push(childElement);
-            currentTallest = Math.max(currentTallest, childElement.offsetHeight);
+        // Check if this is a new row
+        if (previousTop !== null && Math.abs(previousTop - top) > tolerance) {
+            currentRowIndex++;
+        }
+
+        // Add the element to its row group
+        if (!rowGroups.has(currentRowIndex)) {
+            rowGroups.set(currentRowIndex, []);
+        }
+
+        rowGroups.get(currentRowIndex).push({
+            element: childElement,
+            height: height,
+        });
+
+        previousTop = top;
+    }
+
+    // Apply max height to each row group
+    for (const rowElements of rowGroups.values()) {
+        const maxHeight = Math.max(...rowElements.map(data => data.height));
+
+        for (const data of rowElements) {
+            data.element.style.height = `${maxHeight}px`;
         }
     }
-
-    for (const div of rowDivs) {
-        div.style.height = `${currentTallest}px`;
-    }
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
