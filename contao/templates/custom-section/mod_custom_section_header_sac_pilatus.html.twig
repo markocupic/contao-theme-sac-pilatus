@@ -1,4 +1,3 @@
-<!-- indexer::stop -->
 <div class="header-custom-template">
     <div class="header-navbar-row-0">
 
@@ -13,6 +12,7 @@
                         Angemeldet als:
                     </div>
                     <div class="dropdown">
+                        <!-- indexer::stop -->
                         <button class="btn dropdown-toggle btn-danger" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                             {{ substr((user.firstname~' '~user.lastname|first~'.'), 25) }}
                         </button>
@@ -92,6 +92,7 @@
                                 {% endapply %}
                             </style>
                         {% endadd %}
+                        <!-- indexer::continue -->
                     </div>
                 {% endif %}
 
@@ -104,11 +105,11 @@
                     </div>
                     <button data-controller="sacptheme--frontend--bs-login-modal" data-action="click->sacptheme--frontend--bs-login-modal#open" data-sac-login-target="same-site" aria-haspopup="dialog" class="header-login-button p-0 d-none ms-2 me-0 mt-2 mb-2" tabindex="0"><i class="fa-solid fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-                        document.addEventListener("BootstrapModalReady", (event) => {
-                            document.querySelector('.header-login-placeholder').remove();
-                            document.querySelector('.header-login-button').classList.remove('d-none');
-                            document.querySelector('.header-login-button').removeAttribute('onclick');
-                        });
+                      document.addEventListener("BootstrapModalReady", (event) => {
+                        document.querySelector('.header-login-placeholder').remove();
+                        document.querySelector('.header-login-button').classList.remove('d-none');
+                        document.querySelector('.header-login-button').removeAttribute('onclick');
+                      });
                     </script>
                 {% endif %}
             </div>
@@ -125,10 +126,8 @@
 
             <!-- NAVBAR-START -->
             <div class="navbar-header d-none d-xl-flex align-items-center">
-                <!-- indexer::continue -->
                 {{ insert_tag('insert_module::307')|raw }}
             </div>
-            <!-- indexer::stop -->
             <!-- NAVBAR-END -->
 
             <div class="header-button-container ms-auto d-flex align-items-center justify-content-end">
@@ -151,10 +150,7 @@
     </div>
 
     <!-- Search module -->
-    <!-- indexer::continue -->
     {{ insert_tag('insert_module::353')|raw }}
-    <!-- indexer::stop -->
-
 </div>
 
 <!-- Login Modal -->
@@ -170,11 +166,9 @@
                     <p class="my-0">
                         Als Mitglied der SAC Sektion Pilatus kannst du dich mit deinem <strong>SAC-Login</strong> hier anmelden.
                     </p>
-                    <!-- indexer::continue -->
                     <div class="mt-4">
                         {{ insert_tag('insert_module::396')|raw }}
                     </div>
-                    <!-- indexer::stop -->
                     <p class="mt-4 mb-0">
                         Verwende deine <strong>Mitgliedernummer oder E-Mail-Adresse</strong> und das <strong>Passwort</strong> deines SAC-Kontos.
                     </p>
@@ -188,4 +182,3 @@
         </div>
     </div>
 </div>
-<!-- indexer::continue -->
