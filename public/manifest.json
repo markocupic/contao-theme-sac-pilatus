@@ -1,6 +1,6 @@
 {
   "stimulus_frontend.js": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.5c7e336d.js",
-  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.0e60f90b.css",
+  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.cfca9f88.css",
   "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.34d473d0.js",
   "images/logos/logo-header.png": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.969749ff.png",
   "images/logos/logo-header.svg": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.8ec20c35.svg",
@@ -41,5 +41,5 @@
   "js/scroll-to-top-button.js": "/bundles/markocupiccontaothemesacpilatus/js/scroll-to-top-button.921dc774.js",
   "js/detect-is-bs-modal-ready.js": "/bundles/markocupiccontaothemesacpilatus/js/detect-is-bs-modal-ready.7baa4dd4.js",
   "stimulus_frontend.5c7e336d.js.map": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.5c7e336d.js.map",
-  "frontend.0e60f90b.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.0e60f90b.css.map"
+  "frontend.cfca9f88.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.cfca9f88.css.map"
 }

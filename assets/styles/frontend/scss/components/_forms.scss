@@ -102,6 +102,10 @@ button:hover * {
       }
     }
 
+    .error {
+      color: $alert-danger-text;
+    }
+
     .captcha_text {
       margin-top: 10px;
       display: block;
