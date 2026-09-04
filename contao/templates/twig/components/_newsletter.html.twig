@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title><?= $this->title ?></title>
+    <!--[if mso]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <style>table, td, div, h1, h2, h3, p, a {
+        font-family: Helvetica, Arial, sans-serif !important;
+    }</style>
+    <![endif]-->
+    <style type="text/css">
+        /* ---------- Reset ---------- */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table, td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+            border-collapse: collapse !important;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        a[x-apple-data-detectors], u + #body a, #MessageViewBody a {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+
+        /* ---------- Typografie im Inhaltsbereich ---------- */
+        .content h1 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            line-height: 34px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #0f1f2e;
+            margin: 0 0 16px 0;
+        }
+
+        .content h2 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 700;
+            color: #026ca0;
+            margin: 28px 0 10px 0;
+        }
+
+        .content h3 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 700;
+            color: #0f1f2e;
+            margin: 24px 0 8px 0;
+        }
+
+        .content p {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3a4654;
+            margin: 0 0 16px 0;
+        }
+
+        .content ul, .content ol {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3a4654;
+            margin: 0 0 16px 0;
+            padding-left: 22px;
+        }
+
+        .content li {
+            margin: 0 0 6px 0;
+        }
+
+        .content a {
+            color: #026ca0;
+            text-decoration: underline;
+        }
+
+        .content b, .content strong {
+            color: #0f1f2e;
+        }
+
+        .content hr {
+            border: 0;
+            border-top: 1px solid #e6ebf0;
+            margin: 28px 0;
+            height: 0;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ---------- Dark Mode ---------- */
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body, .bg-page {
+                background-color: #0b1219 !important;
+            }
+
+            .bg-card {
+                background-color: #161f2a !important;
+            }
+
+            .bg-footer {
+                background-color: #0a0f15 !important;
+            }
+
+            .logo-wrap {
+                display: inline-block !important;
+                background-color: #ffffff !important;
+                padding: 6px 10px !important;
+                border-radius: 10px !important;
+            }
+
+            .nav-pill {
+                background-color: #243040 !important;
+                color: #e6ecf2 !important;
+            }
+
+            .kicker {
+                color: #ff5a63 !important;
+            }
+
+            .content, .content p, .content ul, .content ol, .content li {
+                color: #c9d3dd !important;
+            }
+
+            .content h1, .content h3, .content b, .content strong {
+                color: #f2f5f8 !important;
+            }
+
+            .content h2, .content a {
+                color: #5cbcf0 !important;
+            }
+
+            .content hr {
+                border-top-color: #2a3745 !important;
+            }
+
+            .ft-title, .ft-link-primary {
+                color: #ffffff !important;
+            }
+
+            .ft-text, .ft-link {
+                color: #9fb0c0 !important;
+            }
+
+            .unsub, .unsub-link {
+                color: #7f8b98 !important;
+            }
+        }
+
+        /* Outlook.com / Outlook-App Dark Mode */
+        [data-ogsc] .bg-page, [data-ogsb] .bg-page {
+            background-color: #0b1219 !important;
+        }
+
+        [data-ogsc] .bg-card, [data-ogsb] .bg-card {
+            background-color: #161f2a !important;
+        }
+
+        [data-ogsc] .bg-footer, [data-ogsb] .bg-footer {
+            background-color: #0a0f15 !important;
+        }
+
+        [data-ogsc] .logo-wrap {
+            display: inline-block !important;
+            background-color: #ffffff !important;
+            padding: 6px 10px !important;
+            border-radius: 10px !important;
+        }
+
+        [data-ogsc] .nav-pill, [data-ogsb] .nav-pill {
+            background-color: #243040 !important;
+            color: #e6ecf2 !important;
+        }
+
+        [data-ogsc] .kicker {
+            color: #ff5a63 !important;
+        }
+
+        [data-ogsc] .content, [data-ogsc] .content p, [data-ogsc] .content ul, [data-ogsc] .content ol, [data-ogsc] .content li {
+            color: #c9d3dd !important;
+        }
+
+        [data-ogsc] .content h1, [data-ogsc] .content h3, [data-ogsc] .content b, [data-ogsc] .content strong {
+            color: #f2f5f8 !important;
+        }
+
+        [data-ogsc] .content h2, [data-ogsc] .content a {
+            color: #5cbcf0 !important;
+        }
+
+        [data-ogsc] .content hr {
+            border-top-color: #2a3745 !important;
+        }
+
+        [data-ogsc] .ft-title, [data-ogsc] .ft-link-primary {
+            color: #ffffff !important;
+        }
+
+        [data-ogsc] .ft-text, [data-ogsc] .ft-link {
+            color: #9fb0c0 !important;
+        }
+
+        [data-ogsc] .unsub, [data-ogsc] .unsub-link {
+            color: #7f8b98 !important;
+        }
+
+        /* ---------- Mobile ---------- */
+        @media screen and (max-width: 620px) {
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .px {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .stack {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .nav-cell {
+                padding-top: 12px !important;
+                text-align: left !important;
+            }
+
+            .content h1 {
+                font-size: 24px !important;
+                line-height: 30px !important;
+            }
+
+            .btn-cell {
+                display: block !important;
+                width: 100% !important;
+                padding-bottom: 10px !important;
+            }
+
+            .btn-cell a {
+                display: block !important;
+                text-align: center !important;
+            }
+
+            .btn-gap {
+                display: none !important;
+            }
+
+            .btn-table {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body id="body" class="bg-page" style="margin: 0; padding: 0; background-color: #eef2f5; width: 100%;" bgcolor="#eef2f5">
+
+<!-- Vorschautext (im Posteingang sichtbar, im Mail unsichtbar) -->
+<div style="display: none; max-height: 0; overflow: hidden; mso-hide: all; font-size: 1px; line-height: 1px; color: #eef2f5;">
+    <?= $this->title ?>&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+
+<table role="presentation" class="bg-page" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #eef2f5;" bgcolor="#eef2f5">
+    <tr>
+        <td align="center" style="padding: 32px 12px;">
+
+            <!--[if mso]>
+            <table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                <tr>
+                    <td><![endif]-->
+            <table role="presentation" class="container" border="0" cellpadding="0" cellspacing="0" width="600" style="width: 600px; max-width: 600px; margin: 0 auto;">
+
+                <!-- ================= HEADER ================= -->
+                <tr>
+                    <td class="px bg-card" style="background-color: #ffffff; border-radius: 16px 16px 0 0; padding: 24px 32px 20px 32px;" bgcolor="#ffffff">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Logo -->
+                                <td class="stack" valign="middle" style="width: 50%;">
+                                    <a href="https://www.sac-pilatus.ch" style="text-decoration: none;">
+                                        <span class="logo-wrap" style="display: inline-block;">
+                                        <img src="https://www.sac-pilatus.ch/files/theme-sac-pilatus/images/logos/logo-header.png" width="120" height="50" alt="SAC Sektion Pilatus" style="display: block; width: 120px; height: auto; border: 0;">
+                                        </span>
+                                    </a>
+                                </td>
+                                <!-- Navigation -->
+                                <td class="stack nav-cell" valign="middle" align="right" style="width: 50%; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+                                    <a class="nav-pill" href="https://www.sac-pilatus.ch/touren-trainings-und-anlaesse.html" style="display: inline-block; color: #0f1f2e; font-weight: 700; text-decoration: none; padding: 6px 12px; border-radius: 999px; background-color: #f2f5f8;">Touren</a>
+                                    <a class="nav-pill" href="https://www.sac-pilatus.ch/kurse.html" style="display: inline-block; color: #0f1f2e; font-weight: 700; text-decoration: none; padding: 6px 12px; border-radius: 999px; background-color: #f2f5f8; margin-left: 6px;">Kurse</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- ================= HERO ================= -->
+                <tr>
+                    <td class="bg-card" style="background-color: #ffffff; padding: 0 0 0 0;" bgcolor="#ffffff">
+                        <a href="https://www.sac-pilatus.ch" style="text-decoration: none;">
+                            <img src="https://www.sac-pilatus.ch/files/fileadmin/page_assets/newsletter/newsletter-800x340.jpg" width="600" alt="SAC Sektion Pilatus – Newsletter" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;">
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- Farbakzent unter dem Bild -->
+                <tr>
+                    <td class="bg-card" style="background-color: #ffffff;" bgcolor="#ffffff">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td style="height: 5px; font-size: 5px; line-height: 5px; background-color: #be0b15;" bgcolor="#be0b15">&nbsp;</td>
+                                <td style="height: 5px; font-size: 5px; line-height: 5px; background-color: #026ca0;" bgcolor="#026ca0">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- ================= KICKER ================= -->
+                <tr>
+                    <td class="px bg-card kicker" style="background-color: #ffffff; padding: 32px 32px 0 32px; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: #be0b15;" bgcolor="#ffffff">
+                        {{ kickerText }}
+                    </td>
+                </tr>
+
+                <!-- ================= INHALT ================= -->
+                <tr>
+                    <td class="px content bg-card" style="background-color: #ffffff; padding: 12px 32px 16px 32px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 26px; color: #3a4654;" bgcolor="#ffffff">
+                        <!-- Ab hier: Inhalt des Newsletters (h1, h2, p, hr, ul, b …) -->
+                        {{ body|raw }}
+                        <!-- Ende Inhalt -->
+                    </td>
+                </tr>
+
+                <!-- ================= FOOTER ================= -->
+                <tr>
+                    <td class="px bg-footer" align="center" style="background-color: #0f1f2e; border-radius: 0 0 16px 16px; padding: 28px 32px; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; color: #9fb0c0;" bgcolor="#0f1f2e">
+                        <p class="ft-title" style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #ffffff;">SAC Sektion Pilatus</p>
+                        <p class="ft-text" style="margin: 0 0 12px 0;">{{ addressFooter|raw }}</p>
+                        <p style="margin: 0;">
+                            <a class="ft-link-primary" href="https://www.sac-pilatus.ch/" rel="noopener" target="_blank" style="color: #ffffff; text-decoration: underline;">www.sac-pilatus.ch</a>
+                        </p>
+                    </td>
+                </tr>
+
+                {% if unsubscribeUrl|default %}
+                    <!-- ================= ABMELDEN ================= -->
+                    <tr>
+                        <td class="px unsub" align="center" style="padding: 20px 32px 0 32px; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #7b8794;">
+                            <a class="unsub-link" href="{{ unsubscribeUrl|raw }}" style="color: #7b8794; text-decoration: underline;">Newsletter abbestellen</a>
+                        </td>
+                    </tr>
+                {% endif %}
+
+            </table>
+            <!--[if mso]></td></tr></table><![endif]-->
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>
