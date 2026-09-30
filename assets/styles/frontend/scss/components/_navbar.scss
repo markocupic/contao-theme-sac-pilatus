@@ -1,22 +1,26 @@
 $navbar-height: 3rem;
 $navbar-tab-color: $red;
 $navbar-content-color: #ffffff;
-$navbar-dropdown-color: darken($blue, 3);
+// Megamenu (light variant)
+$navbar-dropdown-color: #ffffff;
+$navbar-dropdown-border-color: #dfe6ec;
+$navbar-dropdown-accent: $blue;
+$navbar-dropdown-text-color: #1d2733;
+$navbar-dropdown-label-color: $red;
 $color-level-1: $black;
-$color-level-2: $navbar-content-color;
-$color-level-3: $navbar-content-color;
-$color-level-4: $navbar-content-color;
+$color-level-2: $navbar-dropdown-text-color;
+$color-level-3: $navbar-dropdown-text-color;
+$color-level-4: $navbar-dropdown-text-color;
 $color-level-1-active: $black;
 $color-level-1-hover: $dark;
-$color-level-2-active: $black;
-$color-level-2-hover: #f1f1f1;
+$color-level-2-hover: $navbar-dropdown-accent;
 
 // Toggler
 #header .close-header-navigation-dropdown {
   position: absolute;
   right: 20px;
   top: 20px;
-  color: $navbar-content-color;
+  color: $navbar-dropdown-text-color;
   cursor: pointer;
   border: 0;
   font-size: 1.5rem;
@@ -51,7 +55,6 @@ $color-level-2-hover: #f1f1f1;
               ////////////////// megamenu hack
               position: inherit !important;
               padding: 0 0 0 6px;
-              position: relative;
               display: flex;
               align-items: center;
               margin-right: 0;
@@ -59,7 +62,7 @@ $color-level-2-hover: #f1f1f1;
                 margin-right: 1rem;
               }
 
-              & .trail, & > strong {
+              & .trail {
                 font-weight: bold;
               }
 
@@ -70,18 +73,11 @@ $color-level-2-hover: #f1f1f1;
                 color: $color-level-1;
                 line-height: $navbar-height;
                 font-weight: 400;
-
-                @media screen and (min-width: 1600px) {
-                  //font-size: 1.15rem !important;
-                }
               }
 
+              // Dropdown toggler: small, regular weight angle that rotates when the menu is open
               > span[data-bs-toggle="dropdown"] {
-                @include icon-after("\f107", black); //fa-solid fa-angle-down
-              }
-
-              > span[data-bs-toggle="dropdown"][aria-expanded="true"] {
-                @include icon-after("\f106", black); //fa-solid fa-angle-up
+                @include icon-after("\f107", black); //angle-down
               }
 
               > span[aria-expanded="true"], > span[aria-expanded="true"]:after {
@@ -89,21 +85,21 @@ $color-level-2-hover: #f1f1f1;
               }
 
               > span:after {
-                font-weight: bold !important;
-                padding-left: .125rem !important;
+                display: inline-block;
+                font-size: .75em;
+                font-weight: 400 !important;
+                padding-left: .375rem !important;
+                vertical-align: .05em;
+                transition: transform .2s ease-in-out;
               }
-            }
 
-            > li.nav-item.active > * {
-              color: $color-level-1-active;
+              > span[aria-expanded="true"]:after {
+                transform: rotate(180deg);
+              }
             }
 
             > li.nav-item:hover > * {
               color: $color-level-1-hover !important;
-            }
-
-            > li.nav-item.active > * {
-              border-bottom: 2px solid transparent;
             }
 
             > li.nav-item.active > *, > li.nav-item.trail > * {
@@ -118,9 +114,8 @@ $color-level-2-hover: #f1f1f1;
             }
 
             > li.nav-item:hover {
-              > a, > a:after, > strong {
+              > a, > strong {
                 text-decoration: none;
-                color: $color-level-1-hover;
               }
             }
 
@@ -131,7 +126,7 @@ $color-level-2-hover: #f1f1f1;
 
           .dropdown-menu {
             position: absolute;
-            z-index: 1054; // The underlying buttons from the bootsrap carousel have z-index of 1054
+            z-index: 1054; // The underlying buttons from the bootstrap carousel have z-index of 1054
             left: 0;
             right: 0;
             height: auto;
@@ -141,7 +136,9 @@ $color-level-2-hover: #f1f1f1;
             min-width: 100%;
             width: 100%;
             border: none !important;
+            border-top: 3px solid #fff !important;
             border-radius: 0 !important;
+            box-shadow: 0 1rem 2rem rgba(20, 40, 60, .12);
 
             .dropdown-menu-grid-container {
               @extend .container;
@@ -150,10 +147,51 @@ $color-level-2-hover: #f1f1f1;
           }
 
           ////////////////// megamenu hack
-          .dropdown-menu.show ul.level_2 {
+          // The template splits level 2 into two lists side by side:
+          // ul.megamenu-groups (items with subpages) and ul.megamenu-links (items without subpages).
+          // Inside a list, items flow top-down through the columns (masonry-like, no empty space).
+          $megamenu-col-width: 20rem;
+          $megamenu-col-gap: 3rem;
+
+          .megamenu {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: start;
+            align-items: stretch; // equal height lists: the separator line reaches the bottom
+            gap: $megamenu-col-gap;
+          }
+
+          .dropdown-menu.show ul.level_2 {
+            display: block;
+            column-gap: $megamenu-col-gap;
+
+            &.cols-1 {
+              columns: 1;
+              flex: 0 0 $megamenu-col-width;
+            }
+
+            &.cols-2 {
+              columns: 2;
+              flex: 0 0 calc(2 * #{$megamenu-col-width} + #{$megamenu-col-gap});
+            }
+
+            &.cols-3 {
+              columns: 3;
+              flex: 1 1 auto;
+            }
+          }
+
+          // Simple links next to a group list: separated by a vertical line
+          .dropdown-menu.show ul.level_2.megamenu-groups + ul.level_2.megamenu-links {
+            // Separator line fading out at the top and bottom
+            border-left: 1px solid;
+            border-image: linear-gradient(
+              to bottom,
+              transparent,
+              $navbar-dropdown-border-color 15%,
+              $navbar-dropdown-border-color 85%,
+              transparent
+            ) 1;
+            padding-left: 2rem;
+            flex-basis: calc(#{$megamenu-col-width} + 2rem + 1px); // keep the content width at $megamenu-col-width
           }
 
           .dropdown-menu ul.level_2 {
@@ -161,76 +199,87 @@ $color-level-2-hover: #f1f1f1;
             border: 0;
             padding-top: 1rem;
             padding-bottom: 1rem;
-            z-index: 1054; // put the menu below the bootstrap modal backdrop, which has has a z-index of 1055
+            z-index: 1054; // put the menu below the bootstrap modal backdrop, which has a z-index of 1055
             ////////////////// megamenu hack
             width: 100% !important;
-            opacity: .97;
             margin-top: 1px;
             background-color: $navbar-dropdown-color;
 
-            > li > a:before, > li > strong:before {
-              background-size: contain;
-              width: 15px;
-              display: inline-block;
-              vertical-align: middle;
-              margin-right: 10px;
-            }
-
-            > li.active > strong:before {
-              // color: $color-level-2-active !important;
-            }
-
-            > li > a > span:hover, > li > a > strong:hover {
+            > li > a > span:hover {
               color: $color-level-2-hover !important;
             }
 
-            li.page-container > a {
-              cursor: text;
-              text-decoration: none;
+            li.page-container > span {
+              cursor: default;
             }
 
             > li {
-              width: 350px;
+              width: auto;
+              max-width: $megamenu-col-width; // keep rows compact
               line-height: 2;
               border: 0;
-              padding: 0 $spacer-x;
-              margin-bottom: 2rem;
-              @include transition(background-color);
+              padding: 0 0 2rem; // padding instead of margin: margins get lost at column breaks
+              break-inside: avoid; // never split a group across two columns
+
+              // Links without subpages: no lines, slightly larger text,
+              // clearly distinct from the level_3 rows (smaller text + separator lines)
+              &:not(:has(> ul)) {
+                padding-bottom: .25rem;
+
+                > a, > strong {
+                  display: block;
+                  margin-bottom: 0;
+                  padding: .55rem 0;
+                  color: $navbar-dropdown-text-color;
+                  font-weight: 500;
+                  line-height: 1.35;
+                  @include font-size(1.0625rem !important);
+                  @include transition(color);
+
+                  &:hover, &:hover > span {
+                    color: $navbar-dropdown-accent !important;
+                  }
+                }
+
+                // Current page
+                > strong {
+                  color: $navbar-dropdown-accent;
+                }
+              }
+
+              // Group headings (items with subpages): uppercase label
+              &:has(> ul) {
+                > a, > strong, > span {
+                  color: $navbar-dropdown-label-color;
+                  font-size: 1.0625rem !important;
+                  font-weight: 600;
+                  letter-spacing: .08em;
+                  text-transform: uppercase;
+                  line-height: 1.5;
+                  margin-bottom: .75rem;
+                }
+              }
 
               > a, > strong, > span {
                 color: $color-level-2;
                 @include font-size(1.25rem !important);
-                @media screen and (min-width: 1600px) {
-                  //font-size: $font-size-lg !important;
-                }
-                font-weight: lighter;
+                font-weight: 500;
                 @include transition(color);
                 display: block;
                 margin-bottom: 0.5rem;
                 text-decoration: none !important;
-
-                &:before {
-                  text-decoration: none !important;
-                }
-              }
-            }
-
-            > li.page-container:hover {
-              > a, > strong, > a > span {
-                color: $color-level-2 !important;
               }
             }
           }
 
           ul.level_3 {
             > li {
-              line-height: 2.25;
-              border-top: 1px solid #48a5d4;
-              padding: 0;
+              line-height: 1.4;
+              border-top: 1px solid $navbar-dropdown-border-color;
+              padding: .55rem 0;
 
-              @include icon-before("\f105", white); //angle-right
-              &:before {
-                margin-top: 0;
+              > a, > strong {
+                display: block;
               }
 
               > a, > strong, > a > span {
@@ -240,21 +289,19 @@ $color-level-2-hover: #f1f1f1;
                 @media screen and (min-width: 1600px) {
                   font-size: 1.0rem !important;
                 }
-                font-weight: lighter;
+                font-weight: 400;
                 @include transition(color);
-
-                &:before {
-                  text-decoration: none !important;
-                }
               }
             }
 
-            > li.active > strong {
-              // color: $color-level-2-active !important;
+            > li > a:hover, > li > a:hover > span {
+              color: $color-level-2-hover !important;
             }
 
-            > li > a > span:hover, > li > a > strong:hover {
-              color: $color-level-2-hover !important;
+            // Current page
+            > li > strong {
+              color: $navbar-dropdown-accent;
+              font-weight: 500;
             }
 
             > li:first-child {
@@ -265,7 +312,7 @@ $color-level-2-hover: #f1f1f1;
           ul.level_4 {
             > li {
               line-height: 2.25;
-              border-top: 1px solid #444;
+              border-top: 1px solid $navbar-dropdown-border-color;
               padding: 0 $spacer-x;
 
               > a, > strong, > a > span {
