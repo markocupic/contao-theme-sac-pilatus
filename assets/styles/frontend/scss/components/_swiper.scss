@@ -1,11 +1,60 @@
 .swiper {
   margin: 0;
+
   .swiper-wrapper {
     margin: 0;
-    padding:0;
-    .swiper-slide{
-      margin-top:0;
-      margin-bottom:0;
+    padding: 0;
+
+    .swiper-slide {
+      margin-top: 0;
+      margin-bottom: 0;
     }
+  }
+}
+
+// Navigation buttons: round dark button with white chevron for good contrast on any image
+.swiper {
+  --swiper-navigation-size: 2.75rem;
+  --swiper-navigation-sides-offset: 0.75rem;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: var(--swiper-navigation-size);
+    height: var(--swiper-navigation-size);
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+    opacity: .75;
+    color: #fff;
+    //box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &::after {
+      font-size: calc(var(--swiper-navigation-size) * 0.4);
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: var(--bs-primary);
+      opacity: 1;
+      transform: scale(1.08);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+
+  // Optical centering of the chevron
+  .swiper-button-prev::after {
+    margin-left: -0.15em;
+  }
+
+  .swiper-button-next::after {
+    margin-right: -0.15em;
   }
 }
