@@ -1,17 +1,19 @@
-<script type="text/javascript" src="{{ asset('js/script.js', 'markocupic_contao_sidebar_navigation') }}"></script>
+<script src="{{ asset('js/script.js', 'markocupic_contao_sidebar_navigation') }}"></script>
 {#
 {% add to head %}
     <link rel="stylesheet" href="{{ asset('css/style.css', 'markocupic_contao_sidebar_navigation') }}">
 {% endadd %}
 #}
 <!-- indexer::stop -->
-{% set classes = ['sidebar-navigation' , 'block'] %}
-{% if class|default %}
-    {% set classes = classes|merge(class|split(' ')) %}
-{% endif %}
-{% set class = classes|join(' ') %}
+{% set wrapperAttributes = attrs(cssID)
+    .addClass([class|default, 'sidebar-navigation', 'block'])
+    .set('role', 'navigation')
+    .set('aria-label', 'Hauptnavigation für Mobile Devices')
+    .setIfExists('style', style|default)
+    .mergeWith(wrapperAttributes|default)
+%}
 
-<nav role="navigation" aria-label="Hauptnavigation für Mobile Devices" class="{{ class }}" {{ cssID }}{% if style is defined and style is not empty %} style="{{ style }}"{% endif %}>
+<nav{{ wrapperAttributes }}>
     <div class="sidebar-top-container mb-3">
         <h5 class="sidebar-title invisible">NAVIGATION</h5>
         <div class="navbar-brand ms-3 position-absolute">
@@ -25,12 +27,14 @@
     </div>
 
     {% if headline|default %}
-    <{{ hl }}>{{ headline }}</{{ hl }}>
-{% endif %}
+        <{{ hl }}>{{ headline }}</{{ hl }}>
+    {% endif %}
 
-<a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
-{{ items|raw }}
-<a id="{{ skipId }}" class="invisible">&nbsp;</a>
+    <a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
+
+    {{ items|raw }}
+
+    <span id="{{ skipId }}" class="invisible"></span>
 </nav>
 
 {% block nav_script %}
