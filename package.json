@@ -13,7 +13,7 @@
     "license": "MIT",
     "dependencies": {
         "bootstrap": "^5.3.5",
-        "swiper": "^11.2.6"
+        "swiper": "^12.1.2"
     },
     "devDependencies": {
         "@babel/preset-env": "*",
