@@ -7,4 +7,4 @@ services:
 
     Markocupic\ContaoThemeSacPilatus\:
         resource: ../src/
-        exclude: ../../{DependencyInjection}
+        exclude: ../src/{DependencyInjection}
