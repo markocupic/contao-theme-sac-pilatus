@@ -32,7 +32,7 @@
         "markocupic/bootstrap_responsive_youtube_embed": "^2.1",
         "markocupic/contao-article-class-select-bundle": "^2.0",
         "markocupic/bootstrap-carousel-bundle": "^2.0",
-        "stefansl/contao-divider-bundle": "^dev-contao-6-support",
+        "stefansl/contao-divider-bundle": "dev-contao-6-support",
         "markocupic/nav-page-container": "^2.1",
         "markocupic/composer-file-copier-plugin": "^0.3",
         "markocupic/contao-component-fontawesome-pro": "dev-main"
