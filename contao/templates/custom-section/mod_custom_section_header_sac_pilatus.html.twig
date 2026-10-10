@@ -2,8 +2,15 @@
     <div class="header-navbar-row-0">
 
         <div class="inner d-flex px-3 py-1 py-sm-1 align-items-center">
-            <div class="ms-0 me-auto d-flex ">
-                <div class="ms-0 d-flex align-items-center header-backoffice-link">{{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope me-1 align-bottom"></i><span class="d-none d-sm-inline">Geschäftsstelle</span>{{ insert_tag('link_close')|raw }}</div>
+            <div class="ms-0 me-auto d-flex gap-2">
+                <div class="ms-0 d-flex align-items-center header-backoffice-link">
+                    {{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope me-1 align-bottom"></i><span class="d-none d-sm-inline">Geschäftsstelle</span>{{ insert_tag('link_close')|raw }}
+                </div>
+                {% if not has_logged_in_frontend_user() %}
+                    <div class="ms-0 d-flex align-items-center header-join-club-link">
+                        {{ insert_tag('link_open::mitglied-werden')|raw }}<i class="fa-solid fa-mountain-sun me-1 align-bottom"></i><span class="d-none d-sm-inline">Mitglied werden</span>{{ insert_tag('link_close')|raw }}
+                    </div>
+                {% endif %}
             </div>
             <div class="ms-auto me-0 d-flex align-items-center">
                 {% if has_logged_in_frontend_user() %}
@@ -111,11 +118,11 @@
                     </div>
                     <button data-controller="sacptheme--frontend--bs-login-modal" data-action="click->sacptheme--frontend--bs-login-modal#open" data-sac-login-target="same-site" aria-haspopup="dialog" class="header-login-button p-0 d-none ms-2 me-0 mt-2 mb-2" tabindex="0"><i class="fa-solid fa-sign-in me-2"></i>Mitglieder-Login</button>
                     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-                      document.addEventListener("BootstrapModalReady", (event) => {
-                        document.querySelector('.header-login-placeholder').remove();
-                        document.querySelector('.header-login-button').classList.remove('d-none');
-                        document.querySelector('.header-login-button').removeAttribute('onclick');
-                      });
+                        document.addEventListener("BootstrapModalReady", (event) => {
+                            document.querySelector('.header-login-placeholder').remove();
+                            document.querySelector('.header-login-button').classList.remove('d-none');
+                            document.querySelector('.header-login-button').removeAttribute('onclick');
+                        });
                     </script>
                 {% endif %}
             </div>
