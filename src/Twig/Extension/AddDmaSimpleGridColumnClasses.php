@@ -21,9 +21,8 @@ use Twig\TwigFunction;
 
 class AddDmaSimpleGridColumnClasses extends AbstractExtension
 {
-    public function __construct(
-        private readonly ContaoFramework $framework,
-    ) {
+    public function __construct(private readonly ContaoFramework $framework)
+    {
     }
 
     public function getFunctions(): array

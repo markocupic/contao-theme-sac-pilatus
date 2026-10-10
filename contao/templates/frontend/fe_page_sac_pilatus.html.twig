@@ -1,0 +1,122 @@
+{% set rootAttributes = attrs()
+    .set('lang', language|default(app.request.locale|default('de')))
+    .set('dir', 'rtl', isRTL|default(false))
+    .mergeWith(rootAttributes|default)
+-%}
+
+{% set bodyAttributes = attrs()
+    .set('id', 'top')
+    .addClass(class|default)
+    .setIfExists('onload', onload|default)
+    .mergeWith(bodyAttributes|default)
+-%}
+
+<!DOCTYPE html>
+<html{{ rootAttributes }}>
+<head>
+
+    {% block head %}
+        <meta charset="{{ charset }}">
+        <title>{{ title }}</title>
+        <base href="{{ base }}">
+
+        {% block meta %}
+            <meta name="robots" content="{{ robots }}">
+            <meta name="description" content="{{ description|length > 320 ? description|slice(0, 320) ~ ' …' : description }}">
+            <meta name="generator" content="Contao Open Source CMS">
+            {% for metaTag in metaTags|default %}
+                <meta{{ metaTag }}>
+            {% endfor %}
+            {% for linkTag in linkTags|default %}
+                <link{{ linkTag }}>
+            {% endfor %}
+        {% endblock %}
+
+        {% if canonical|default %}
+            <link rel="canonical" href="{{ canonical }}">
+        {% endif %}
+
+        {{ viewport|default|raw }}
+        {{ framework|default|raw }}
+        {{ stylesheets|default|raw }}
+        {{ mooScripts|default|raw }}
+        {{ head|default|insert_tag_raw|raw }}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ asset('styles/frontend.css', 'markocupic_contao_theme_sac_pilatus') }}">
+</head>
+<body{{ bodyAttributes }}>
+
+{% block body %}
+    {{ contao_sections('top') }}
+
+    {% block header %}
+        {% if header|default %}
+            <header id="header">
+                <div class="inside">
+                    {{ header|raw }}
+                </div>
+            </header>
+        {% endif %}
+    {% endblock %}
+
+    <div id="wrapper">
+        {{ contao_sections('before') }}
+
+        {% block container %}
+            <div id="container">
+
+                {% block main %}
+                    <main id="main">
+                        <div class="inside">
+                            {{ main|default|raw }}
+                        </div>
+                        {{ contao_sections('main') }}
+                    </main>
+                {% endblock %}
+
+                {% block left %}
+                    {% if left|default %}
+                        <aside id="left">
+                            <div class="inside">
+                                {{ left|raw }}
+                            </div>
+                        </aside>
+                    {% endif %}
+                {% endblock %}
+
+                {% block right %}
+                    {% if right|default %}
+                        <aside id="right">
+                            <div class="inside">
+                                {{ right|raw }}
+                            </div>
+                        </aside>
+                    {% endif %}
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+
+        {{ contao_sections('after') }}
+
+    </div><!-- End wrapper -->
+
+    <!-- Sticky footer -->
+    {% block footer %}
+        {% if footer|default %}
+            <footer id="footer">
+                <div class="inside">
+                    {{ footer|raw }}
+                </div>
+            </footer>
+        {% endif %}
+    {% endblock %}
+
+    {{ contao_sections('bottom') }}
+{% endblock %}
+
+{{ mootools|default|insert_tag_raw|raw }}
+{{ jsonLdScripts|default|raw }}
+
+</body>
+</html>

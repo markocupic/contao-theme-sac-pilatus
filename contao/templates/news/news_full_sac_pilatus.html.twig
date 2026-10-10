@@ -1,0 +1,61 @@
+{# In Contao 5.3 "hasText" can be a plain boolean, in Contao 6 it is always a callable wrapper #}
+{% set has_text = hasText.invoke is defined ? hasText.invoke() : hasText|default(false) %}
+
+<div class="layout_full block{{ class }}" itemscope itemtype="https://schema.org/Article">
+
+    <h1 class="content-headline mt-0 text-break" itemprop="name">{{ newsHeadline }}</h1>
+    <strong>{{ teaser|default|raw }}</strong>
+
+    {% block info %}
+        <!-- indexer::stop -->
+        <p class="info">
+            <time datetime="{{ datetime }}">{{ date }}</time>
+            {{ author|default }}
+        </p>
+        <!-- indexer::continue -->
+    {% endblock %}
+
+    {% if hasSubHeadline|default %}
+        <h2 class="content-headline mt-0 text-break">{{ subHeadline }}</h2>
+    {% endif %}
+
+    <div class="d-sm-flex mb-3 mb-sm-0">
+        {% if singleSRC|default %}
+            <!-- indexer::stop -->
+            <div class="col-12 col-sm-4 col-lg-4 col-xxl-4 me-sm-3 mb-4 mb-sm-0">
+                {{ insert_tag('figure::' ~ singleSRC ~ '?size=28&enableLightbox=1&options[attr][class]=img-fluid w-100')|raw }}
+            </div>
+            <!-- indexer::continue -->
+        {% endif %}
+
+        <div class="flex-sm-grow-1">
+            {% if has_text %}
+                {{ text|raw }}
+            {% endif %}
+
+            {% if enclosure|default %}
+                <ul class="enclosure">
+                    {% for item in enclosure %}
+                        <li class="download-element ext-{{ item.extension }}">
+                            <a href="{{ item.href }}" title="{{ item.title }}">{{ item.link }} <span class="size">({{ item.filesize }})</span></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% set schemaOrg = getSchemaOrgData.invoke() %}
+
+{% if has_text %}
+    {# Template.rawHtmlToPlainText() exists in Contao 5.3 only, the html_to_plain_text filter in Contao 6 only #}
+    {% set schemaOrg = schemaOrg|merge({text: Template.rawHtmlToPlainText is defined ? Template.rawHtmlToPlainText(text ~ '') : (text ~ '')|striptags|trim}) %}
+{% endif %}
+
+{% do add_schema_org(schemaOrg) %}
+
+{% if figure|default %}
+    {% do add_schema_org({'@type': 'WebPage', primaryImageOfPage: figure.getSchemaOrgData()}) %}
+{% endif %}

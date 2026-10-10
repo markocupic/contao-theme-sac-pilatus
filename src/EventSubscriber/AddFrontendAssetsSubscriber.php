@@ -114,6 +114,7 @@ final readonly class AddFrontendAssetsSubscriber implements EventSubscriberInter
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/regular.min.css?v=7.0.0';
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/solid.min.css?v=7.0.0';
         $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/brands.min.css?v=7.0.0';
-        // $GLOBALS['TL_CSS'][] = 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=7.0.0';
+        // $GLOBALS['TL_CSS'][] =
+        // 'assets/contao-component-fontawesome-pro/fontawesome-pro/css/svg-with-js.min.css?v=7.0.0';
     }
 }

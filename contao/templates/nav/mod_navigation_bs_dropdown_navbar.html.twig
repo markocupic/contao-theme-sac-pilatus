@@ -1,0 +1,24 @@
+{% set wrapperAttributes = attrs(cssID)
+    .addClass([class|default, 'block'])
+    .set('aria-label', 'Hauptnavigation für Desktop Devices')
+    .setIfExists('style', style|default)
+    .mergeWith(wrapperAttributes|default)
+%}
+
+<!-- indexer::stop -->
+<nav{{ wrapperAttributes }}>
+
+    {% if headline|default %}
+        <{{ hl }}>{{ headline }}</{{ hl }}>
+    {% endif %}
+
+    <a href="{{ request }}#{{ skipId }}" class="invisible">{{ skipNavigation }}</a>
+
+    <div class="collapse navbar-collapse">
+        {{ items|raw }}
+    </div>
+
+    <a id="{{ skipId }}" class="invisible">&nbsp;</a>
+
+</nav>
+<!-- indexer::continue -->
