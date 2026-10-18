@@ -1,3 +1,4 @@
+// Horizontal scrollbare Button-Liste
 .button-list-horizontal-scroll {
   .button-list-horizontal-scroll--wrapper {
     overflow-x: auto;
@@ -10,10 +11,6 @@
       > * {
         margin-right: .5rem;
       }
-
-      .btn, .hyperlink_txt {
-        //white-space: nowrap;
-      }
     }
   }
 }
@@ -25,54 +22,73 @@
   }
 }
 
+// -----------------------------------------------------------------------------
+// Links innerhalb von Buttons
+// -----------------------------------------------------------------------------
 .btn a {
   text-decoration: none;
 }
 
-.btn.btn-primary a {
-  color: #fff;
-}
-
+.btn.btn-primary a,
 .btn.btn-primary:hover a {
-  color: #fff;
+  color: var(--sacp-on-color);
 }
 
 .btn.btn-outline-primary a {
-  color: $blue;
+  color: var(--sacp-primary-text);
 }
 
 .btn.btn-outline-primary:hover a {
-  color: #ffffff;
+  color: var(--sacp-on-color);
 }
 
 .btn.btn-danger a {
-  color: #fff;
+  color: var(--sacp-on-color);
 }
 
 .btn.btn-danger:hover a {
-  color: $red;
+  color: var(--sacp-accent-text);
 }
 
 .btn.btn-outline-danger a {
-  color: $red;
+  color: var(--sacp-accent-text);
 }
 
 .btn.btn-outline-danger:hover a {
-  color: #ffffff;
+  color: var(--sacp-on-color);
 }
 
-.btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover {
-  color: #ffffff;
-}
-
-.btn.btn-success, .btn.btn-success:active, .btn.btn-success:hover {
-  color: #ffffff;
-}
-
-a.btn.btn-primary, a.btn.btn-primary:active, a.btn.btn-primary:hover, a.btn.btn-primary:focus {
-  color: #ffffff;
-}
-
+// -----------------------------------------------------------------------------
+// Textfarbe der Buttons
+// -----------------------------------------------------------------------------
+.btn.btn-primary, .btn.btn-primary:active, .btn.btn-primary:hover,
+.btn.btn-success, .btn.btn-success:active, .btn.btn-success:hover,
+a.btn.btn-primary, a.btn.btn-primary:active, a.btn.btn-primary:hover, a.btn.btn-primary:focus,
 a.btn.btn-danger, a.btn.btn-danger:active, a.btn.btn-danger:hover, a.btn.btn-danger:focus {
-  color: #ffffff;
+  color: var(--sacp-on-color);
+}
+
+// -----------------------------------------------------------------------------
+// Event-Typ-Buttons (Touren/Kurse) auf blauem Artikel der Startseite
+// (mod_custom_section_event_buttons_titelseite.html.twig)
+// -----------------------------------------------------------------------------
+:root {
+  --sacp-event-type-btn-bg: var(--sacp-white);
+  --sacp-event-type-btn-border-color: var(--sacp-white);
+  --sacp-event-type-btn-color: #202124;
+  --sacp-event-type-btn-hover-bg: var(--sacp-black);
+  --sacp-event-type-btn-hover-border-color: var(--sacp-black);
+  --sacp-event-type-btn-hover-color: var(--sacp-white);
+}
+
+#wrapper #container .mod_article.article-blue .event-type-buttons a.btn {
+  border-color: var(--sacp-event-type-btn-border-color) !important;
+  background-color: var(--sacp-event-type-btn-bg) !important;
+  color: var(--sacp-event-type-btn-color) !important;
+
+  &:hover {
+    background: var(--sacp-event-type-btn-hover-bg) !important;
+    border-color: var(--sacp-event-type-btn-hover-border-color) !important;
+    color: var(--sacp-event-type-btn-hover-color) !important;
+  }
 }

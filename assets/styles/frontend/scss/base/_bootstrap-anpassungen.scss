@@ -1,21 +1,29 @@
+// Anpassungen an Bootstrap-Komponenten
+
+:root {
+  --sacp-bg-light-hover: #d6dce1;
+  --sacp-alert-info-color: #333;
+}
+
 .breadcrumb {
-  background-color: #ffffff;
+  background-color: var(--sacp-surface);
   padding-left: 0;
   margin-bottom: 0;
-  font-size: 0.8125rem;
+  font-size: .8125rem;
 }
 
 .bg-light {
-  background-color: $gray-200 !important;
+  background-color: var(--bs-gray-200) !important;
 }
 
-a.bg-light:focus, a.bg-light:hover {
-  background-color: #d6dce1 !important;
+a.bg-light:focus,
+a.bg-light:hover {
+  background-color: var(--sacp-bg-light-hover) !important;
 }
 
 .figure-caption {
   font-size: 80%;
-  color: $gray-900;
+  color: var(--bs-gray-900);
   font-style: italic;
   margin-top: 8px;
 }
@@ -25,21 +33,21 @@ a.bg-light:focus, a.bg-light:hover {
 }
 
 .alert-info {
-  background: $gray-100;
-  color: #333;
+  background: var(--bs-gray-100);
+  color: var(--sacp-alert-info-color);
 }
 
 .alert-danger {
-  background: $red;
-  color: #ffffff;
+  background: var(--sacp-red);
+  color: var(--sacp-on-color);
 }
 
 .alert-success {
-  background: $green;
-  color: #ffffff;
+  background: var(--sacp-green);
+  color: var(--sacp-on-color);
 }
 
 .alert-primary {
-  background: $primary;
-  color: #ffffff;
+  background: var(--sacp-primary);
+  color: var(--sacp-on-color);
 }

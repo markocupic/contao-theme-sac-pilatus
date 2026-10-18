@@ -1,7 +1,8 @@
+// Inhaltselement "Hero Image"
+
 $heroimage-font-size-scale-factor: 1.35;
 
 #main .ce_heroimage_element .heroimage-wrapper {
-
   display: flex;
   min-height: clamp-calc(250px, 430px);
 
@@ -14,41 +15,41 @@ $heroimage-font-size-scale-factor: 1.35;
     }
   }
 
-  .heroimage-headline-box h1 {
-    color: #fff !important;
-    font-weight: 200 !important;
-    margin: 0;
-    line-height: 1.6;
-    font-size: clamp-calc(1.75rem, 4rem);
-  }
-
   .heroimage-headline-box {
     margin: 0;
     margin-bottom: clamp-calc(.5rem, 1.5rem);
+
+    h1 {
+      color: var(--sacp-on-color) !important;
+      font-weight: 200 !important;
+      margin: 0;
+      line-height: 1.6;
+      font-size: clamp-calc(1.75rem, 4rem);
+    }
   }
 
-  .heroimage-text-box p, .heroimage-text-box {
+  // Achtung: bewusst nicht --sacp-font-family-serif (andere Fallback-Schriften)
+  .heroimage-text-box p,
+  .heroimage-text-box {
     font-family: 'Roboto Slab', serif;
   }
 
   .heroimage-button-box {
     margin-top: 0;
     margin-bottom: clamp-calc(1rem, 2rem);
-  }
 
-  .heroimage-button-box > a.btn {
-    @include icon-after('\f35a', false, 'inline-flex');
-    font-family: 'Roboto Slab', serif;
-    font-size: clamp-calc(1rem, 1.25rem);
-    border-radius: $btn-border-radius;
-    text-wrap: nowrap;
-    padding: clamp-calc(0.5rem, .75rem) clamp-calc(1rem, 2rem);
-  }
+    > a.btn {
+      @include icon-after('\f35a'); // fa-circle-right
+      font-family: 'Roboto Slab', serif;
+      font-size: clamp-calc(1rem, 1.25rem);
+      border-radius: $btn-border-radius;
+      text-wrap: nowrap;
+      padding: clamp-calc(.5rem, .75rem) clamp-calc(1rem, 2rem);
+    }
 
-  .heroimage-button-box {
     > .btn:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: var(--sacp-black);
+      color: var(--sacp-white);
     }
   }
 }

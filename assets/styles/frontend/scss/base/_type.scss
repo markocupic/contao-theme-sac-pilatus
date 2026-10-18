@@ -1,46 +1,55 @@
-$fs-base: clamp-calc($font-size-base, $font-size-base * 1.125); // dynamic font-size
-$fs-sm: clamp-calc($font-size-base * 0.875, $font-size-base * 1.125 * 0.875); // dynamic font-size
+@use "sass:list";
 
+// -----------------------------------------------------------------------------
+// Fliesstext
+// -----------------------------------------------------------------------------
 #main p {
-  line-height: 1.6; // optimized readability
-  margin-top: clamp-calc(0.5rem, 1.25rem);
-  margin-bottom: clamp-calc(0.5rem, 1.25rem);
-  // dynamic font-size(1rem); // dynamic margin
+  line-height: 1.6; // bessere Lesbarkeit
+  margin-top: clamp-calc(.5rem, 1.25rem);
+  margin-bottom: clamp-calc(.5rem, 1.25rem);
 }
 
+// Achtung: `div` und `legend` gelten global, nicht nur innerhalb von #main
 #main p, div, legend {
-  font-size: $fs-base; // dynamic font-size
+  font-size: var(--sacp-font-size-base);
 }
 
-// Individuelle Anpassungen für spezifische Heading-Größen
-// Map to store heading configurations
+// -----------------------------------------------------------------------------
+// Überschriften
+// -----------------------------------------------------------------------------
+// h1–h6: (Abstand oben/unten in rem, font-weight)
 $headings-map: (
-        h1: (1.5, 600), //margin, font-weight
-        h2: (1.4, 600),
-        h3: (1.3, 600),
-        h4: (1.2, 600),
-        h5: (1.1, 600),
-        h6: (1.0, 600),
+  h1: (1.5, 600),
+  h2: (1.4, 600),
+  h3: (1.3, 600),
+  h4: (1.2, 600),
+  h5: (1.1, 600),
+  h6: (1.0, 600),
 );
 
-// Loop through the map and apply styles
 @each $heading, $values in $headings-map {
   #{$heading}:not(.popover-header) {
-    @extend .#{$heading}; // @extend .h1;
-    font-weight: nth($values, 2);
-    @include margin-top(nth($values, 1) * 1rem); // Dynamic margin-top
-    @include margin-bottom(nth($values, 1) * 1rem); // Dynamic margin-bottom
+    @extend .#{$heading};
+    font-weight: list.nth($values, 2);
+    @include margin-top(list.nth($values, 1) * 1rem); // fluider Abstand (RFS)
+    @include margin-bottom(list.nth($values, 1) * 1rem);
   }
 }
 
-
-
-// Underline h1
-#main h1.content-headline, [class*="content-"] > h1, [class*="mod_"] > h1 {
+#main h1.content-headline,
+[class*="content-"] > h1,
+[class*="mod_"] > h1 {
   text-align: left;
-  color: $blue;
+  color: var(--sacp-primary-text);
   font-weight: 700;
-  font-family: $font-family-serif;
+  font-family: var(--sacp-font-family-serif);
+}
+
+// -----------------------------------------------------------------------------
+// Listen
+// -----------------------------------------------------------------------------
+:root {
+  --sacp-list-bullet-color: #666;
 }
 
 ul {
@@ -55,9 +64,9 @@ ul {
       margin-top: clamp-calc(1rem, 2.5rem);
 
       &:before {
-        content: "\f105";
-        font-family: $icon-font-name;
-        color: #666;
+        content: "\f105"; // fa-angle-right
+        font-family: var(--sacp-font-family-icon);
+        color: var(--sacp-list-bullet-color);
         font-weight: normal;
         display: table-cell;
         padding-right: clamp-calc(.5rem, 1rem);
@@ -66,14 +75,18 @@ ul {
   }
 }
 
-.hyphenate, .hyphenate * {
+// -----------------------------------------------------------------------------
+// Silbentrennung
+// -----------------------------------------------------------------------------
+.hyphenate,
+.hyphenate * {
   hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
+  -webkit-hyphens: auto; // Safari
 }
 
+// -----------------------------------------------------------------------------
 // Links
+// -----------------------------------------------------------------------------
 a {
   text-underline-position: under;
 
@@ -83,7 +96,7 @@ a {
   }
 }
 
-a:hover, a:focus {
-  color: darken($link-color, 10);
+a:hover,
+a:focus {
+  color: var(--sacp-link-hover-color);
 }
-

@@ -12,7 +12,13 @@
   }
 }
 
-// Navigation buttons: round dark button with white chevron for good contrast on any image
+:root {
+  --sacp-swiper-nav-bg: var(--bs-primary);
+  --sacp-swiper-nav-hover-bg: var(--bs-primary);
+  --sacp-swiper-nav-border-color: transparent;
+}
+
+// Navigation: runder Button mit weissem Pfeil, gut sichtbar auf jedem Bild
 .swiper {
   --swiper-navigation-size: 2.75rem;
   --swiper-navigation-sides-offset: 0.75rem;
@@ -22,25 +28,30 @@
     width: var(--swiper-navigation-size);
     height: var(--swiper-navigation-size);
     border-radius: 50%;
-    background-color: var(--bs-primary);
+    border: 1px solid var(--sacp-swiper-nav-border-color);
+    background-color: var(--sacp-swiper-nav-bg);
     opacity: .75;
-    color: #fff;
+    color: var(--sacp-on-color);
     //box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.2s ease, transform 0.2s ease;
 
-    &::after {
-      font-size: calc(var(--swiper-navigation-size) * 0.4);
-      font-weight: bold;
+    // Swiper 12 fügt den Pfeil als SVG ein (früher ::after mit Icon-Font)
+    .swiper-navigation-icon {
+      width: 40%;
+      height: 40%;
+      // Der SVG-Pfeil ist dünner als das frühere Font-Icon (font-weight: bold)
+      stroke: currentColor;
+      stroke-width: 1;
     }
 
     &:hover {
-      background-color: var(--bs-primary);
+      background-color: var(--sacp-swiper-nav-hover-bg);
       opacity: 1;
       transform: scale(1.08);
     }
 
     &:focus-visible {
-      outline: 3px solid #fff;
+      outline: 3px solid var(--sacp-on-color);
       outline-offset: 2px;
     }
 
@@ -49,12 +60,12 @@
     }
   }
 
-  // Optical centering of the chevron
-  .swiper-button-prev::after {
-    margin-left: -0.15em;
+  // Pfeil optisch zentrieren (leicht in Pfeilrichtung verschieben)
+  .swiper-button-prev .swiper-navigation-icon {
+    margin-left: -.15em;
   }
 
-  .swiper-button-next::after {
-    margin-right: -0.15em;
+  .swiper-button-next .swiper-navigation-icon {
+    margin-right: -.15em;
   }
 }

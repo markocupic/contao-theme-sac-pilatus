@@ -1,0 +1,36 @@
+@use "sass:math";
+@use "sass:string";
+
+// =============================================================================
+// Funktionen
+// =============================================================================
+
+// Entfernt die Einheit einer Zahl: strip-unit(1.25rem) => 1.25
+@function strip-unit($number) {
+  @return math.div($number, $number * 0 + 1);
+}
+
+// Rechnet eine px- oder rem-Angabe in px um (1rem = 16px)
+@function to-px($size) {
+  @if string.index("#{$size}", "rem") {
+    @return strip-unit($size) * 16px;
+  }
+
+  @return strip-unit($size) * 1px;
+}
+
+// Fluid-Wert, der zwischen zwei Viewport-Breiten linear skaliert.
+//
+// p {
+//   font-size: clamp-calc(1rem, 1.25rem);
+//   height: clamp-calc(40px, 50px); // akzeptiert px oder rem
+// }
+@function clamp-calc($size-at-min-width, $size-at-max-width, $min-breakpoint: 360px, $max-breakpoint: 1440px) {
+  $size-min: to-px($size-at-min-width);
+  $size-max: to-px($size-at-max-width);
+
+  $slope: math.div($size-max - $size-min, $max-breakpoint - $min-breakpoint);
+  $y-axis-intersection: -1 * $min-breakpoint * $slope + $size-min;
+
+  @return clamp(#{$size-min}, #{$y-axis-intersection} + #{$slope} * 100vw, #{$size-max});
+}

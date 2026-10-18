@@ -1,21 +1,50 @@
-.mod_search_overlay {
-  .svg-inline--fa {
-    color: #ffffff;
-    height: 3rem;
-  }
+// Such-Overlay (Vollbild)
 
+:root {
+  --sacp-search-overlay-bg: var(--sacp-blue);
+  --sacp-search-overlay-color: var(--sacp-on-color);
+}
+
+.mod_search_overlay {
   display: none;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  color: #ffffff;
-  background: $blue;
+  color: var(--sacp-search-overlay-color);
+  background: var(--sacp-search-overlay-bg);
   z-index: 100000;
   align-items: center;
   justify-content: center;
   width: 100%;
+  transition: opacity .4s linear;
+
+  // vertikale Zentrierung
+  &:before {
+    content: "";
+    display: block;
+    height: 50%;
+    margin-bottom: -6.66667em;
+  }
+
+  &.is-pre-active,
+  &.is-active {
+    display: flex !important;
+  }
+
+  &.is-pre-active {
+    opacity: 0;
+  }
+
+  &.is-active {
+    opacity: .95;
+  }
+
+  .svg-inline--fa {
+    color: var(--sacp-search-overlay-color);
+    height: 3rem;
+  }
 
   form {
     width: 600px;
@@ -30,7 +59,7 @@
       margin: 0;
 
       .search-headline {
-        color: #fff;
+        color: var(--sacp-search-overlay-color);
         margin-bottom: 2rem;
         text-align: center;
         width: 100%;
@@ -54,12 +83,11 @@
 
         .submit {
           background-color: transparent;
-          border: 1px solid #fff;
-          color: #fff;
+          border: 1px solid var(--sacp-search-overlay-color);
+          color: var(--sacp-search-overlay-color);
         }
       }
     }
-
   }
 
   .close-button {
@@ -67,7 +95,7 @@
     right: 2rem;
     top: 2rem;
     background-color: transparent;
-    color: #fff;
+    color: var(--sacp-search-overlay-color);
     font-size: 2rem;
     border: none;
 
@@ -75,31 +103,4 @@
       cursor: pointer;
     }
   }
-}
-
-.mod_search_overlay {
-
-  -webkit-transition: opacity 0.4s linear;
-  -moz-transition: opacity 0.4s linear;
-  -o-transition: opacity 0.4s linear;
-  transition: opacity 0.4s linear;
-
-  &.is-pre-active, &.is-active {
-    display: flex !important;
-  }
-
-  &.is-pre-active {
-    opacity: 0;
-  }
-
-  &.is-active {
-    opacity: 0.95;
-  }
-}
-
-.mod_search_overlay:before {
-  content: "";
-  display: block;
-  height: 50%;
-  margin-bottom: -6.66667em;
 }

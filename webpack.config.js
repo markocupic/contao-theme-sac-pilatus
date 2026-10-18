@@ -43,8 +43,24 @@ Encore
 
     .enablePostCssLoader()
     // Preprocessing scss in css
-    .enableSassLoader()
+    // quietDeps: keine Deprecation-Warnungen aus node_modules (Bootstrap)
+    // silenceDeprecations: @import wird erst mit der Umstellung auf @use entfernt
+    .enableSassLoader((options) => {
+        options.sassOptions = {
+            ...options.sassOptions,
+            quietDeps: true,
+            silenceDeprecations: ['import'],
+        };
+    })
     .enablePostCssLoader()
+
+    // svgo im CSS-Minifier abschalten: Er kann die URL-kodierten SVG-Icons
+    // von Bootstrap (Data-URIs) nicht lesen und wirft sonst Warnungen.
+    .configureCssMinimizerPlugin((options) => {
+        options.minimizerOptions = {
+            preset: ['default', {svgo: false}],
+        };
+    })
     .addStyleEntry('styles/frontend', './assets/styles/frontend/scss/main.scss')
 ;
 

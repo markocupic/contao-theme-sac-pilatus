@@ -1,5 +1,4 @@
 .mod_sitemap {
-
   .level_1 {
     > li {
       margin: 1.5rem 0 0 0;
@@ -18,21 +17,16 @@
 
     > li > a, > li > span {
       font-size: 1.125rem !important;
-      //font-weight: bold;
     }
   }
 
+  // Hinweis: Hier stand `font-size: 1 !important;` (ohne Einheit, ungültig,
+  // vom Browser ignoriert) -> entfernt.
   .level_3 {
     margin-left: 1rem;
-
-    > li > a, > li > span {
-      font-size: 1 !important;
-      //font-weight: bold;
-    }
   }
 
   .level_4 {
     margin-left: 1rem;
   }
-
 }

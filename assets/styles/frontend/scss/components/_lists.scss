@@ -1,11 +1,6 @@
-.content-list, .content-text {
-  ul {
-    list-style-type: disc;
-    padding-left: 40px;
-
-  }
-}
-
+// Aufzählungen mit Bullets (ul ist global als .list-unstyled definiert)
+.content-list ul,
+.content-text ul,
 .list-bullet {
   list-style-type: disc;
   padding-left: 40px;

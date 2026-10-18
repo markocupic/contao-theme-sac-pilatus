@@ -1,9 +1,10 @@
 {
-  "stimulus_frontend.js": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.54a836f3.js",
-  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.4770c54f.css",
-  "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.34d473d0.js",
+  "stimulus_frontend.js": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.b2c8a88c.js",
+  "styles/frontend.css": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.45103bad.css",
+  "swiper/swiper-bundle.js": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.55bac79d.js",
   "images/logos/logo-header.png": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.969749ff.png",
   "images/logos/logo-header.svg": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header.8ec20c35.svg",
+  "images/logos/logo-header-dark-theme.svg": "/bundles/markocupiccontaothemesacpilatus/images/logos/logo-header-dark-theme.f48c6044.svg",
   "bootstrap/dist/js/bootstrap.bundle.min.js": "/bundles/markocupiccontaothemesacpilatus/bootstrap/dist/js/bootstrap.bundle.min.js",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-500italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-500italic.woff2",
   "fonts/open-sans/open-sans-v40-latin_latin-ext-300italic.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans/open-sans-v40-latin_latin-ext-300italic.woff2",
@@ -30,8 +31,8 @@
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-500.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-600.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-600.woff2",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-700.woff2",
-  "swiper/swiper-bundle.css": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.3491daab.css",
   "fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2": "/bundles/markocupiccontaothemesacpilatus/fonts/roboto-slab/roboto-slab-v34-latin_latin-ext-regular.woff2",
+  "swiper/swiper-bundle.css": "/bundles/markocupiccontaothemesacpilatus/swiper/swiper-bundle.cc838c85.css",
   "js/theme.js": "/bundles/markocupiccontaothemesacpilatus/js/theme.59bbf9a9.js",
   "fonts/open-sans.css": "/bundles/markocupiccontaothemesacpilatus/fonts/open-sans.css",
   "fonts/google-sans.css": "/bundles/markocupiccontaothemesacpilatus/fonts/google-sans.css",
@@ -40,6 +41,6 @@
   "js/equal-height.js": "/bundles/markocupiccontaothemesacpilatus/js/equal-height.913f4e2e.js",
   "js/scroll-to-top-button.js": "/bundles/markocupiccontaothemesacpilatus/js/scroll-to-top-button.921dc774.js",
   "js/detect-is-bs-modal-ready.js": "/bundles/markocupiccontaothemesacpilatus/js/detect-is-bs-modal-ready.7baa4dd4.js",
-  "stimulus_frontend.54a836f3.js.map": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.54a836f3.js.map",
-  "frontend.4770c54f.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.4770c54f.css.map"
+  "stimulus_frontend.b2c8a88c.js.map": "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.b2c8a88c.js.map",
+  "frontend.45103bad.css.map": "/bundles/markocupiccontaothemesacpilatus/styles/frontend.45103bad.css.map"
 }

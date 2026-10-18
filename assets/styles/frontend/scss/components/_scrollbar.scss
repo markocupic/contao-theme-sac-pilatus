@@ -1,19 +1,25 @@
+@use "sass:color";
+
+// Scrollbar (WebKit/Blink)
+
+:root {
+  --sacp-scrollbar-thumb-color: #{color.adjust($primary, $lightness: -5%)};
+  --sacp-scrollbar-track-color: var(--sacp-surface);
+  --sacp-scrollbar-track-shadow-color: #f0f0f0;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: darken($primary, 5);
+  background: var(--sacp-scrollbar-thumb-color);
   border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  //background: linear-gradient(13deg, #FF0011 14%,#ff0011 64%);
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--sacp-scrollbar-track-color);
   border-radius: 4px;
-  box-shadow: inset 7px 10px 12px #f0f0f0;
+  box-shadow: inset 7px 10px 12px var(--sacp-scrollbar-track-shadow-color);
 }

@@ -12,6 +12,12 @@
                 {% endif %}
             </div>
             <div class="ms-auto me-0 d-flex align-items-center">
+                <!-- Theme toggler (Hell/Dunkel) -->
+                <button type="button" class="btn btn-link p-0 me-3 lh-1 text-decoration-none theme-toggler" data-controller="sacptheme--frontend--theme-switch" data-action="sacptheme--frontend--theme-switch#toggle" aria-pressed="false" aria-label="Dunkles Design einschalten" title="Dunkles Design einschalten">
+                    <span class="theme-toggler-icon-dark"><i class="fa-solid fa-moon me-1" aria-hidden="true"></i><span class="d-none d-sm-inline">Dunkel</span></span>
+                    <span class="theme-toggler-icon-light"><i class="fa-solid fa-sun me-1" aria-hidden="true"></i><span class="d-none d-sm-inline">Hell</span></span>
+                </button>
+                <!-- End Theme toggler -->
                 {% if has_logged_in_frontend_user() %}
                     {% set user = get_logged_in_frontend_user() %}
                     <div class="d-none d-sm-block me-2">
@@ -79,31 +85,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        {% add to head %}
-                            <style{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-                                {% apply scss %}
-                                #header .header-navbar-row-0 {
-                                    .dropdown > button.btn {
-                                        padding: .125rem .5rem !important;
-                                        font-size: 12px !important;
-                                    }
-
-                                    .dropdown-menu {
-                                        background: white;
-                                    }
-
-                                    .dropdown-menu a.dropdown-item {
-                                        padding: .25rem 0;
-                                    }
-
-                                    .dropdown-menu * {
-                                        color: #000 !important;
-                                    }
-                                }
-
-                                {% endapply %}
-                            </style>
-                        {% endadd %}
+                        {# Styles: assets/styles/frontend/scss/components/_header.scss (Benutzermenü) #}
                         <!-- indexer::continue -->
                     </div>
                 {% endif %}
@@ -132,7 +114,8 @@
         <div class="inner hide-from-print navbar navbar-expand navbar-dark flex-md-row bd-navbar align-items-center py-0 py-sm-2">
             <div class="navbar-brand ms-3">
                 <a href="{{ app.request.getSchemeAndHttpHost() }}" title="Gehe zur Startseite">
-                    <img src="{{ asset('images/logos/logo-header.svg', 'markocupic_contao_theme_sac_pilatus') }}" class="logo-header" alt="Logo SAC-Pilatus">
+                    <img src="{{ asset('images/logos/logo-header.svg', 'markocupic_contao_theme_sac_pilatus') }}" class="logo-header logo-header--light" alt="Logo SAC-Pilatus">
+                    <img src="{{ asset('images/logos/logo-header-dark-theme.svg', 'markocupic_contao_theme_sac_pilatus') }}" class="logo-header logo-header--dark" alt="Logo SAC-Pilatus">
                 </a>
             </div>
 

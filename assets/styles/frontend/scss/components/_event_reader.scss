@@ -1,6 +1,9 @@
-/** Event reader **/
-/** Event reader **/
-/** Event reader **/
+// Tour- und Kursdetailansicht
+
+:root {
+  --sacp-kursstufe-color: green; // Achtung: CSS-Grün, nicht --sacp-green
+}
+
 .mod_eventreader {
   .back {
     display: none;
@@ -8,7 +11,6 @@
 }
 
 .event-detailview {
-
   div:has(> .icon-box-small) {
     display: flex;
     flex-direction: column;
@@ -21,7 +23,7 @@
   }
 
   .event-state-headline {
-    color: $red;
+    color: var(--sacp-accent-text);
   }
 
   .event-state-box {
@@ -32,8 +34,8 @@
       padding: 0;
 
       img {
-        min-width: $fs-base;
-        width: $fs-base;
+        min-width: var(--sacp-font-size-base);
+        width: var(--sacp-font-size-base);
         height: auto;
       }
     }
@@ -44,7 +46,7 @@
   }
 
   .content-headline.last-minute-tour {
-    color: $green;
+    color: var(--sacp-green);
     text-transform: inherit;
     margin-bottom: 0 !important;
     line-height: 1 !important;
@@ -55,15 +57,13 @@
   }
 
   .kursstufe {
-    color: green;
+    color: var(--sacp-kursstufe-color);
     margin-bottom: $spacer-y;
     text-transform: uppercase;
   }
 
-  .eventdate {
-    time {
-      display: block;
-    }
+  .eventdate time {
+    display: block;
   }
 
   .instructor {
@@ -91,5 +91,4 @@
       margin: 0;
     }
   }
-
 }

@@ -1,13 +1,21 @@
+:root {
+  --sacp-header-bg: var(--sacp-surface);
+  --sacp-header-topbar-bg: var(--sacp-blue);
+  --sacp-header-topbar-color: var(--sacp-on-color);
+  --sacp-header-search-icon-hover-color: #d50000;
+  --sacp-header-search-border-color: #eee;
+}
+
 #header {
-  background-color: #fff;
+  background-color: var(--sacp-header-bg);
 
   .header-custom-template {
+    // Obere Leiste (Login, Kontakt, ...)
     .header-navbar-row-0 {
-
-      background-color: $blue;
+      background-color: var(--sacp-header-topbar-bg);
 
       * {
-        color: #fff;
+        color: var(--sacp-header-topbar-color);
         font-size: $font-size-sm !important;
       }
 
@@ -19,14 +27,18 @@
         border: 0;
       }
 
-      .header-login-button, .header-logout-link, .header-backoffice-link, .header-join-club-link {
+      .header-login-button,
+      .header-logout-link,
+      .header-backoffice-link,
+      .header-join-club-link {
         line-height: 1;
         @extend .lh-1;
       }
     }
 
+    // Logo, Navigation, Such- und Menü-Button
     .header-navbar-row-1 {
-      background-color: #fff;
+      background-color: var(--sacp-header-bg);
       border-bottom: 0;
 
       .logo-header {
@@ -43,13 +55,13 @@
         margin: 0;
       }
 
-      // Nav icon & search icon
       .header-button-container {
         .btn {
           cursor: pointer !important;
         }
 
-        .search-toggle, .navigation-toggle {
+        .search-toggle,
+        .navigation-toggle {
           .svg-inline--fa, i.fal, i.fas, i.fa {
             font-size: clamp-calc(1.25rem, 1.625rem, 360px, 1200px) !important;
           }
@@ -57,22 +69,23 @@
       }
 
       .fa-search {
-        color: $gray-900;
+        color: var(--bs-gray-900);
         @include transition(color);
 
         &:hover {
-          color: #d50000;
+          color: var(--sacp-header-search-icon-hover-color);
         }
       }
 
       .fa-bars {
-        color: #000000;
+        color: var(--sacp-body-color);
       }
     }
 
+    // Aufklappbare Suchleiste
     .header-navbar-row-2 {
       max-height: 0;
-      background-color: #fff;
+      background-color: var(--sacp-header-bg);
       transition: max-height ease-in-out 1s;
       overflow: hidden;
 
@@ -82,11 +95,10 @@
 
       input[type="search"] {
         text-align: center;
-        color: #000;
-        background-color: #fff;
-        border-color: #eee;
+        color: var(--sacp-body-color);
+        background-color: var(--sacp-input-bg);
+        border-color: var(--sacp-header-search-border-color);
       }
-
     }
   }
 
@@ -99,8 +111,71 @@
   }
 }
 
-// Search bar open
+// Suchleiste geöffnet
 body.search-bar-open #header .header-navbar-row-2 {
-  max-height: 300px; /* approximate max height */
+  max-height: 300px; // ungefähre max. Höhe
 }
 
+// -----------------------------------------------------------------------------
+// Benutzermenü in der obersten Zeile (angemeldete Mitglieder)
+// -----------------------------------------------------------------------------
+:root {
+  --sacp-header-user-menu-bg: var(--sacp-white);
+  --sacp-header-user-menu-color: var(--sacp-black);
+}
+
+#header .header-navbar-row-0 {
+  .dropdown > button.btn {
+    padding: .125rem .5rem !important;
+    font-size: 12px !important;
+  }
+
+  .dropdown-menu {
+    background: var(--sacp-header-user-menu-bg);
+  }
+
+  .dropdown-menu a.dropdown-item {
+    padding: .25rem 0;
+  }
+
+  .dropdown-menu * {
+    color: var(--sacp-header-user-menu-color) !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Logo: helle und dunkle Variante (Header und Sidebar)
+// -----------------------------------------------------------------------------
+.logo-header--dark {
+  display: none;
+}
+
+[data-bs-theme="dark"] {
+  .logo-header--light {
+    display: none;
+  }
+
+  .logo-header--dark {
+    display: inline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Schalter Hell/Dunkel in der obersten Zeile (theme_switch_controller.js)
+// -----------------------------------------------------------------------------
+// Angezeigt wird jeweils der Modus, zu dem gewechselt wird
+.theme-toggler {
+  .theme-toggler-icon-light {
+    display: none;
+  }
+}
+
+[data-bs-theme="dark"] .theme-toggler {
+  .theme-toggler-icon-dark {
+    display: none;
+  }
+
+  .theme-toggler-icon-light {
+    display: inline-block;
+  }
+}

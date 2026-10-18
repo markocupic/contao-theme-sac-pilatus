@@ -1,3 +1,10 @@
+// Filter für Touren- und Kursliste
+
+:root {
+  --sacp-filter-switch-knob: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.99%29'/%3e%3c/svg%3e");
+  --sacp-filter-switch-checked-bg: var(--sacp-black);
+}
+
 li.select2-results__option {
   font-size: .825rem;
   margin-top: 2px !important;
@@ -10,6 +17,7 @@ li.select2-results__option {
 
   .widget {
     margin-bottom: 0 !important;
+
     @include media-breakpoint-up(sm) {
       margin-bottom: 1rem !important;
     }
@@ -24,17 +32,16 @@ li.select2-results__option {
   }
 
   label {
-    color: #fff;
+    color: var(--sacp-on-color);
     margin-top: 1rem;
     font-weight: lighter !important;
   }
 
   input#ctrl_dateStart {
-    background: #fff !important;
+    background: var(--sacp-input-bg) !important;
   }
 
   input[type="text"], textarea, select {
-    //margin: 0;
     width: 100%;
     outline: none;
     border: 0;
@@ -45,7 +52,7 @@ li.select2-results__option {
   }
 
   .reset-form {
-    color: #fff;
+    color: var(--sacp-on-color);
   }
 
   .widget-checkbox {
@@ -71,7 +78,7 @@ li.select2-results__option {
     }
 
     .form-switch .form-check-input {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.99%29'/%3e%3c/svg%3e");
+      background-image: var(--sacp-filter-switch-knob);
     }
 
     .form-switch .form-check-input:checked {
@@ -79,8 +86,8 @@ li.select2-results__option {
     }
 
     .form-check-input:checked {
-      background-color: #000;
-      border-color: #000;
+      background-color: var(--sacp-filter-switch-checked-bg);
+      border-color: var(--sacp-filter-switch-checked-bg);
     }
   }
 }

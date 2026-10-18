@@ -1,18 +1,4 @@
-{% do addHtmlToHead('
-    <style'~attrs().setIfExists('nonce', csp_nonce('script-src'))~'>
-    #wrapper #container .mod_article.article-blue .event-type-buttons a.btn {
-        border-color: #ffffff !important;
-        background-color: #ffffff !important;
-        color: #202124 !important;
-    }
-
-    #wrapper #container .mod_article.article-blue .event-type-buttons a.btn:hover {
-        background: #000 !important;
-        border-color: #000 !important;
-        color: #ffffff !important;
-    }
-    </style>
-') %}
+{# Styles: assets/styles/frontend/scss/components/_buttons.scss (Event-Typ-Buttons) #}
 
 {% set tours = { 'Wanderung': '?tourType=6&amp;getUpcoming=1', 'Klettern Halle': '?tourType=11&amp;getUpcoming=1', 'Klettern Fels': '?tourType=4&amp;getUpcoming=1', 'Hochtour': '?tourType=2&amp;getUpcoming=1', 'Skitour': '?tourType=1&amp;getUpcoming=1', 'Mountainbike': '?tourType=10&amp;getUpcoming=1', 'Weitere Touren...': '?getUpcoming=1' } %}
 {% set courses = { 'Basis Halle': '?courseType=24&amp;getUpcoming=1', 'Sportklettern': '?courseType=3&amp;getUpcoming=1', 'Hochtouren': '?courseType=2&amp;getUpcoming=1', 'Lawinenkunde': '?courseType=10&amp;getUpcoming=1', 'Skitouren': '?courseType=11&amp;getUpcoming=1', 'Skitechnik': '?courseType=12&amp;getUpcoming=1', 'Weitere Kurse...': '?getUpcoming=1' } %}

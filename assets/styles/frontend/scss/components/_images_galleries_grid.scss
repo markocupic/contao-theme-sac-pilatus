@@ -1,12 +1,3 @@
-
-.image_container {
-  overflow: hidden;
-}
-
-.image_container img {
-  @include transition(all);
-}
-
 img {
   height: auto;
   max-width: 100%;
@@ -17,52 +8,61 @@ figure {
   padding: 0;
 }
 
-.grid-card, .grid-card-infinite-scroll > .infinite_scroll_newslist_container {
+.image_container {
+  overflow: hidden;
+
+  img {
+    @include transition(all);
+  }
+}
+
+// Raster (12 / 6 / 4 / 3 Spalten)
+%sacp-grid-row {
   @extend .row;
   @extend .gx-2;
   @extend .gy-2;
   margin: -8px -4px 0 -4px !important;
+}
+
+%sacp-grid-col {
+  @extend .col-12;
+  @extend .col-sm-6;
+  @extend .col-md-4;
+  @extend .col-lg-3;
+}
+
+.grid-card,
+.grid-card-infinite-scroll > .infinite_scroll_newslist_container {
+  @extend %sacp-grid-row;
 
   > li.grid-card-item, > div {
+    @extend %sacp-grid-col;
     margin-top: 8px;
     margin-bottom: 0;
     padding: 0 4px !important;
-    @extend .col-12;
-    @extend .col-sm-6;
-    @extend .col-md-4;
-    @extend .col-lg-3;
   }
 }
 
-.content-gallery
-ul li {
-  figure {
-    img {
-      width: 100%;
-      max-width: 100%;
-    }
+// Achtung: Der Selektor lautet `.content-gallery ul li` – die Regeln greifen
+// also nur innerhalb eines li der Galerie.
+.content-gallery ul li {
+  figure img {
+    width: 100%;
+    max-width: 100%;
   }
 
   ul:not(.swiper), ul.gallery-grid {
-    @extend .row;
-    @extend .gx-2;
-    @extend .gy-2;
-    margin: -8px -4px 0 -4px !important;
+    @extend %sacp-grid-row;
 
     li, li.gallery-grid-item {
+      @extend %sacp-grid-col;
       margin: 8px 0 0 0 !important;
       padding: 0 4px !important;
-      @extend .col-12;
-      @extend .col-sm-6;
-      @extend .col-md-4;
-      @extend .col-lg-3;
-
-
     }
   }
 }
 
-// Do not show caption on mobile phones
+// Bildunterschriften ab sm ausblenden
 @include media-breakpoint-up(sm) {
   .content-gallery figcaption {
     display: none;
@@ -73,7 +73,7 @@ ul li {
   figcaption {
     display: block;
     font-size: 80%;
-    color: $gray-900;
+    color: var(--bs-gray-900);
     font-style: italic;
     margin-top: 8px;
   }

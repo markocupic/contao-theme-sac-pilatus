@@ -1,15 +1,16 @@
+// Kleine Box mit Häkchen-Icon links
 .icon-box-small {
   padding: 0;
   padding-left: rfs-fluid-value(2.125rem);
   position: relative;
 
   &:before {
-    font-family: $icon-font-name;
-    content: "\f00c";
-    color: $red;
+    font-family: var(--sacp-font-family-icon);
+    content: "\f00c"; // fa-check
+    color: var(--sacp-accent-text);
     position: absolute;
     top: 0;
     left: 0;
-    @include font-size(1.25rem); // Fluid font size
+    @include font-size(1.25rem);
   }
 }

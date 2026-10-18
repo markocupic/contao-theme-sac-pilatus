@@ -1,38 +1,50 @@
-$sidebar-bg-color: #000000;
-$nav-bg-hover-color: #F6F6F6;
-$nav-close-btn-color: red;
-//$nav-bg-hover-color: $accent-color;
+// =============================================================================
+// Sidebar mit mobiler Navigation
+// Demo: https://jsfiddle.net/markocupic/br520419/
+// -----------------------------------------------------------------------------
+// Achtung: Die Reihenfolge der Regeln ist für die Kaskade wichtig
+// (gleiche Spezifität, teilweise !important). Nicht umsortieren!
+// =============================================================================
 
-$nav-link-color: #222222;
-$nav-link-color: #000000;
-$nav-link-color-active: #000000;
-$nav-bg-color: #FFFFFF;
-$focus-outline-color: #a0d3eb;
+:root {
+  --sacp-sidebar-bg: var(--sacp-surface);
+  --sacp-sidebar-overlay-bg: var(--sacp-black);
+  --sacp-sidebar-scrollbar-bg: var(--sacp-black);
+  --sacp-sidebar-scrollbar-thumb-color: #F6F6F6;
+  --sacp-sidebar-close-btn-color: red;
+  --sacp-sidebar-title-color: var(--bs-gray-400);
+  --sacp-sidebar-focus-outline-color: #a0d3eb;
+  --sacp-sidebar-border-color: #e2e2e2;
+  --sacp-sidebar-link-color: var(--sacp-body-color);
+  --sacp-sidebar-link-active-color: var(--sacp-body-color);
+  --sacp-sidebar-link-hover-color: red;
+  --sacp-sidebar-toggle-color: red;
+}
 
-/* Dropdown - main navigation header */
+// Halbtransparenter Hintergrund hinter der geöffneten Sidebar
 #sidebarOverlay {
   display: none;
-  opacity: 0.6 !important;
+  opacity: .6 !important;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 100%;
-  background-color: $sidebar-bg-color !important;
-  z-index: $zindex-navbar-aside-backdrop;
+  background-color: var(--sacp-sidebar-overlay-bg) !important;
+  z-index: var(--sacp-zindex-navbar-aside-backdrop);
   @include transition(opacity);
 }
 
-// Thin scrollbar
+// Schmale Scrollbar
 #sidebar::-webkit-scrollbar {
   -webkit-appearance: none !important;
   width: 6px !important;
-  background-color: #000 !important;
+  background-color: var(--sacp-sidebar-scrollbar-bg) !important;
 }
 
 #sidebar::-webkit-scrollbar-thumb {
   border-radius: 6px !important;
-  background-color: $nav-bg-hover-color !important;
+  background-color: var(--sacp-sidebar-scrollbar-thumb-color) !important;
 }
 
 #sidebar {
@@ -40,18 +52,18 @@ $focus-outline-color: #a0d3eb;
   visibility: hidden;
   overflow-x: hidden;
   overflow-y: scroll;
-  z-index: $zindex-navbar-aside;
+  z-index: var(--sacp-zindex-navbar-aside);
   position: fixed;
   top: 0;
   height: 100%;
   width: 100%;
   left: -576px;
   max-width: 576px;
-  background-color: $nav-bg-color;
-  @include transition(left, ease-in-out, 0.7s);
+  background-color: var(--sacp-sidebar-bg);
+  @include transition(left, ease-in-out, .7s);
 
   a:focus, a:focus-visible, button:focus, button:focus-visible {
-    outline: 4px solid $focus-outline-color;
+    outline: 4px solid var(--sacp-sidebar-focus-outline-color);
     outline-offset: 2px;
   }
 
@@ -63,7 +75,7 @@ $focus-outline-color: #a0d3eb;
   .navigation-toggler.btn.btn-link {
     background: transparent;
     font-size: clamp-calc(1.75rem, 2.5rem);
-    color: $nav-link-color;
+    color: var(--sacp-sidebar-link-color);
     margin: 0 !important;
     padding: 2px 6px !important;
     height: auto;
@@ -81,7 +93,7 @@ $focus-outline-color: #a0d3eb;
 
     .sidebar-title {
       padding-left: $spacer-x;
-      color: $gray-400;
+      color: var(--sacp-sidebar-title-color);
     }
 
     .navigation-toggler {
@@ -89,7 +101,7 @@ $focus-outline-color: #a0d3eb;
       right: $spacer;
 
       svg {
-        color: $nav-close-btn-color;
+        color: var(--sacp-sidebar-close-btn-color);
         font-size: 2.5rem;
       }
     }
@@ -111,7 +123,48 @@ body.sidebar-open {
   }
 }
 
-//https://jsfiddle.net/markocupic/br520419/
+// -----------------------------------------------------------------------------
+// Navigation in der Sidebar
+// -----------------------------------------------------------------------------
+
+// Gemeinsame Styles der Ebenen 2–4
+@mixin sidebar-navigation-level($padding, $toggle-font-size, $link-font-size) {
+  > li {
+    line-height: 1.5;
+    background-color: transparent;
+    padding: $padding;
+    padding-right: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @content;
+
+    > .toggle-submenu:before {
+      font-size: $toggle-font-size;
+    }
+
+    // Achtung: `strong` ohne `>` greift auf alle Nachfahren
+    > a, strong {
+      font-size: $link-font-size;
+      color: var(--sacp-sidebar-link-color);
+      max-width: calc(100% - 4.5rem);
+    }
+
+    > strong.active {
+      color: var(--sacp-sidebar-link-active-color) !important;
+    }
+
+    > a:hover, > strong:hover {
+      color: var(--sacp-sidebar-link-hover-color) !important;
+    }
+  }
+}
 
 .sidebar-navigation {
   padding: $spacer 0;
@@ -126,8 +179,8 @@ body.sidebar-open {
   ul.level_1 li {
     display: flex !important;
     flex-direction: row;
-    align-items: center; /* Centers content vertically */
-    justify-content: space-between; /* Pushes elements apart */
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
     width: 100%;
@@ -138,13 +191,13 @@ body.sidebar-open {
     overflow: hidden;
 
     > strong.active {
-      color: $nav-link-color;
+      color: var(--sacp-sidebar-link-color);
       font-weight: bold;
     }
 
     &:hover {
       > a, > strong {
-        color: red !important;
+        color: var(--sacp-sidebar-link-hover-color) !important;
       }
     }
   }
@@ -159,14 +212,14 @@ body.sidebar-open {
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-decoration-color: transparent !important;
-    text-underline-offset: 0.35em;
+    text-underline-offset: .35em;
   }
 
   strong.active {
-    text-decoration-color: red !important;
+    text-decoration-color: var(--sacp-sidebar-link-hover-color) !important;
   }
 
-  // Show only active submenus
+  // Nur aktive Untermenüs anzeigen
   ul.level_1 {
     display: block;
 
@@ -180,55 +233,40 @@ body.sidebar-open {
     display: block;
   }
 
-  // Link color for non-clickable items for all levels
-  ul.level_1 > li.page-container > a {
-    color: $nav-link-color !important;
-  }
-
-  ul.level_2 > li.page-container > a {
-    color: $nav-link-color !important;
-  }
-
-  ul.level_3 > li.page-container > a {
-    color: $nav-link-color !important;
-  }
-
-  // Link color for clickable items for all levels
-  ul.level_1 > li > a {
-    color: $nav-link-color !important;
-  }
-
-  ul.level_2 > li > a {
-    color: $nav-link-color !important;
-  }
-
+  // Linkfarbe: nicht klickbare Einträge (page-container), danach klickbare.
+  // Die page-container-Regeln sind nötig, weil sie spezifischer sind als
+  // die Hover-Regel von `ul.level_1 li`.
+  ul.level_1 > li.page-container > a,
+  ul.level_2 > li.page-container > a,
+  ul.level_3 > li.page-container > a,
+  ul.level_1 > li > a,
+  ul.level_2 > li > a,
   ul.level_3 > li > a {
-    color: $nav-link-color !important;
+    color: var(--sacp-sidebar-link-color) !important;
   }
 
-  // Borders & backgrounds
+  // Rahmen
   ul.level_1 {
     > li:first-child {
-      border-top: 1px solid #e2e2e2;
+      border-top: 1px solid var(--sacp-sidebar-border-color);
     }
 
     > li {
-      border-bottom: 1px solid #e2e2e2;
+      border-bottom: 1px solid var(--sacp-sidebar-border-color);
 
       &:hover {
         > a, > span, > strong {
-          color: #000 !important;
+          color: var(--sacp-sidebar-link-color) !important;
         }
       }
     }
   }
 
-  // Expand Icon for items with submenus
+  // Auf-/Zuklappen-Icon für Einträge mit Untermenü
   ul.level_1 {
     > li.expanded {
-      // Background-color for active levels
       &:before, > *, > *:before {
-        color: $nav-link-color !important;
+        color: var(--sacp-sidebar-link-color) !important;
       }
     }
 
@@ -240,17 +278,12 @@ body.sidebar-open {
       }
 
       > .toggle-submenu:before {
-        color: red !important;
-        font-family: $icon-font-name;
+        color: var(--sacp-sidebar-toggle-color) !important;
+        font-family: var(--sacp-font-family-icon);
         font-weight: 100;
-        // fa fa-angle-right
-        content: "\f105";
+        content: "\f105"; // fa-angle-right
         font-size: clamp-calc(2rem, 3rem);
         font-style: normal;
-      }
-
-      > .toggle-submenu:before:hover {
-        color: red !important;
       }
 
       &.expanded {
@@ -259,164 +292,60 @@ body.sidebar-open {
         }
 
         > .toggle-submenu:before {
-          // minus fa-angle-down
-          content: "\f107";
+          content: "\f107"; // fa-angle-down
         }
       }
     }
   }
 
-  $level_1-offset: 1.5rem;
-  $level_2-offset: rfs-fluid-value(1rem);
-  $level_3-offset: rfs-fluid-value(1rem);
-  $level_4-offset: rfs-fluid-value(1rem);
+  // Ebene 1
+  ul.level_1 > li {
+    line-height: 1.5;
+    background-color: transparent;
+    padding: clamp-calc(.8rem, 1.4rem);
+    padding-right: 0;
 
-  ul.level_1 {
+    > .toggle-submenu:before {
+      @include font-size(1.25rem);
+    }
 
-    > li {
-      line-height: 1.5;
-      background-color: transparent;
-      padding: clamp-calc(.8rem, 1.4rem);
-      padding-left: clamp-calc(.8rem, 1.4rem);
-      padding-right: 0;
+    > a, > strong {
+      font-size: clamp-calc(1.25rem, 1.5rem);
+      font-weight: bolder;
+      max-width: calc(100% - 4.5rem);
+    }
 
-      > .toggle-submenu:before {
-        @include font-size(1.25rem);
-      }
+    > strong.active {
+      color: var(--sacp-sidebar-link-active-color) !important;
+    }
 
-      > a, > strong {
-        font-size: clamp-calc(1.25rem, 1.5rem);
-        font-weight: bolder;
-        max-width: calc(100% - 4.5rem);
-      }
-
-      > strong.active {
-        color: $nav-link-color-active !important;
-      }
-
-      > a:hover, > strong:hover {
-        color: red !important;
-      }
+    > a:hover, > strong:hover {
+      color: var(--sacp-sidebar-link-hover-color) !important;
     }
   }
 
+  // Ebenen 2–4
   ul.level_2 {
-    > li {
-      line-height: 1.5;
-      background-color: transparent;
-      padding: .7rem;
-      padding-left: .7rem;
-      padding-right: 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:hover {
-        background-color: transparent;
-      }
-
+    @include sidebar-navigation-level(.7rem, clamp-calc(1.125rem, 1.75rem), clamp-calc(1.125rem, 1.4rem)) {
       > .toggle-submenu {
         right: 0;
         top: 5px;
-      }
-
-      > .toggle-submenu:before {
-        font-size: clamp-calc(1.125rem, 1.75rem);
-      }
-
-      > a, strong {
-        font-size: clamp-calc(1.125rem, 1.4rem);
-        color: $nav-link-color;
-        max-width: calc(100% - 4.5rem);
-      }
-
-      > strong.active {
-        color: $nav-link-color-active !important;
-      }
-
-      > a:hover, > strong:hover {
-        color: red !important;
       }
     }
   }
 
   ul.level_3 {
-    > li {
-      line-height: 1.5;
-      background-color: transparent;
-      padding: .6rem;
-      padding-left: .6rem;
-      padding-right: 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:hover {
-        background-color: transparent;
-      }
-
+    @include sidebar-navigation-level(.6rem, clamp-calc(1rem, 1.5rem), clamp-calc(1rem, 1.3rem)) {
       > .toggle-submenu {
         right: 0;
-      }
-
-      > .toggle-submenu:before {
-        font-size: clamp-calc(1rem, 1.5rem);
-      }
-
-      > a, strong {
-        font-size: clamp-calc(1rem, 1.3rem);
-        color: $nav-link-color;
-        max-width: calc(100% - 4.5rem);
-      }
-
-      > strong.active {
-        color: $nav-link-color-active !important;
-      }
-
-      > a:hover, > strong:hover {
-        color: red !important;
       }
     }
   }
 
   ul.level_4 {
-    > li {
-      line-height: 1.5;
-      background-color: transparent;
-      padding: .5rem;
-      padding-left: .5rem;
-      padding-right: 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:hover {
-        background-color: transparent;
-      }
-
+    @include sidebar-navigation-level(.5rem, clamp-calc(.875rem, 1.35rem), clamp-calc(.875rem, 1.2rem)) {
       > .toggle-submenu {
         right: 0;
-      }
-
-      > .toggle-submenu:before {
-        font-size: clamp-calc(.875rem, 1.35rem);
-      }
-
-      > a, strong {
-        font-size: clamp-calc(.875rem, 1.2rem);
-        color: $nav-link-color;
-        max-width: calc(100% - 4.5rem);
-      }
-
-      > strong.active {
-        color: $nav-link-color-active !important;
-      }
-
-      > a:hover, > strong:hover {
-        color: red !important;
       }
     }
   }

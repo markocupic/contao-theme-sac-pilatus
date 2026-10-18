@@ -1,14 +1,17 @@
+// Tour- und Kursliste
+
+// Ende "kleine Smartphones": Samsung S24 360px, S24+ 384px, iPhone 11 414px
 // https://www.browserstack.com/guide/common-screen-resolutions
-// Samsung S24+ 384px  // Samsung S24 360px // iPhone 11 414px
 $breakpoint-mobile-end: 415px;
 
-#tour-list, #course-list {
+#tour-list,
+#course-list {
   &[v-cloak] {
     visibility: hidden;
   }
 }
 
-// Do not show "Aktuell sind keine Termine vorhanden"
+// "Aktuell sind keine Termine vorhanden" nicht anzeigen
 .empty {
   display: none;
 }
@@ -18,6 +21,7 @@ $breakpoint-mobile-end: 415px;
     height: 50px !important;
     width: 50px !important;
     min-height: 50px;
+
     @media (max-width: $breakpoint-mobile-end) {
       width: 45px !important;
       height: 45px !important;
@@ -25,21 +29,16 @@ $breakpoint-mobile-end: 415px;
     }
   }
 
-  // Left column - Left column - Left column - Left column - Left column:
-  // Left column - Left column - Left column - Left column - Left column:
-  .event-list-item--col-1 {
-    //
-  }
-
-  // Main column - Main column - Main column - Main column - Main column:
-  // Main column - Main column - Main column - Main column - Main column:
+  // ---------------------------------------------------------------------------
+  // Hauptspalte
+  // ---------------------------------------------------------------------------
   .event-list-item--col-2 {
     a, span:not(.badge), p, div {
-      font-size: $fs-sm !important;
+      font-size: var(--sacp-font-size-sm) !important;
     }
 
     .event-list-item--event-date-span .more-date-infos {
-      color: $link-color;
+      color: var(--sacp-link-color);
       text-decoration: $link-decoration;
 
       &:hover, &:focus {
@@ -53,13 +52,13 @@ $breakpoint-mobile-end: 415px;
     }
 
     .event-list-item--last-minute-tour {
-      color: $green;
+      color: var(--sacp-green);
     }
 
     .event-list-item--title {
       a.event-list-item--title-link {
         text-decoration: none !important;
-        color: $link-color;
+        color: var(--sacp-link-color);
         line-height: 1.2 !important;
       }
 
@@ -68,8 +67,8 @@ $breakpoint-mobile-end: 415px;
       }
 
       a.event-list-item--title-link strong {
-        margin: 0.375rem 0 !important; // 6px
-        font-size: $fs-base;
+        margin: .375rem 0 !important; // 6px
+        font-size: var(--sacp-font-size-base);
         line-height: 1.2 !important;
       }
     }
@@ -80,9 +79,6 @@ $breakpoint-mobile-end: 415px;
       .badge {
         margin-right: .25rem;
         margin-bottom: .25rem;
-        //padding: clamp-calc(.2rem, .2rem * 1.125) clamp-calc(.375rem, .375rem * 1.125) !important;
-        //font-size: $fs-sm !important;
-        //line-height: 1 !important;
       }
 
       .event-list-item--see-more-link .badge {
@@ -94,13 +90,14 @@ $breakpoint-mobile-end: 415px;
       }
 
       .event-list-item--badge-beginners {
-        color: #ffffff;
+        color: var(--sacp-on-color);
       }
     }
   }
 
-  // Right column - Right column - Right column - Right column - Right column:
-  // Right column - Right column - Right column - Right column - Right column:
+  // ---------------------------------------------------------------------------
+  // Rechte Spalte
+  // ---------------------------------------------------------------------------
   .event-list-item--col-3 {
     display: flex;
     flex-direction: column;
@@ -113,6 +110,7 @@ $breakpoint-mobile-end: 415px;
         width: 1rem !important;
         height: 1rem !important;
         max-width: initial !important;
+
         @media (max-width: $breakpoint-mobile-end) {
           width: 16px !important;
           height: 16px !important;
@@ -122,38 +120,42 @@ $breakpoint-mobile-end: 415px;
   }
 }
 
-// Tour list only - Tour list only - Tour list only - Tour list only
-// Tour list only - Tour list only - Tour list only - Tour list only
+// -----------------------------------------------------------------------------
+// Nur Tourenliste
+// -----------------------------------------------------------------------------
 .event-list-item--tour {
   .event-list-item--date-badge-wrapper {
-    border: 1px solid $gray-200;
+    border: 1px solid var(--bs-gray-200);
     min-width: 50px;
     width: 50px;
     height: 50px;
+
     @media (max-width: $breakpoint-mobile-end) {
       min-width: 45px;
       width: 45px;
       height: 45px;
     }
 
-    span.event-list-item--badge-day, span.event-list-item--badge-month {
+    span.event-list-item--badge-day,
+    span.event-list-item--badge-month {
       line-height: .75rem;
 
       span {
         line-height: 1; // 12px
-        font-size: 0.75em;
+        font-size: .75em;
         font-weight: bolder;
-        color: $danger;
+        color: var(--sacp-accent-text);
       }
     }
   }
 }
 
-// Course list only - Course list only - Course list only - Course list only
-// Course list only - Course list only - Course list only - Course list only
+// -----------------------------------------------------------------------------
+// Nur Kursliste
+// -----------------------------------------------------------------------------
 .event-list-item--course {
   .event-list-item--organizer-logo {
-    bottom: 16px; // position absolute
+    bottom: 16px; // position: absolute
     right: 16px;
   }
 }

@@ -1,3 +1,10 @@
+:root {
+  --sacp-footer-row-1-bg: transparent;
+  --sacp-footer-row-2-bg: transparent;
+  --sacp-footer-color: #333;
+  --sacp-footer-link-color: #333;
+}
+
 #footer {
   .invisible {
     display: none !important;
@@ -6,11 +13,6 @@
   .mod_customnav {
     margin: 0 !important;
   }
-
-  $footer-bg-color-row-1: transparent;
-  $footer-bg-color-row-2: transparent;
-  $footer-color: #333;
-  $footer-link-color: #333;
 
   .inside {
     @extend .container-lg;
@@ -28,13 +30,11 @@
       display: inline;
       margin: 0;
       line-height: 2;
-      padding: 0 0.75rem;
+      padding: 0 .75rem;
 
       * {
-        // Extend font-size, line-height & margin from .small (@see type.scss)
-        font-size: $fs-sm;
-
-        color: $footer-color !important;
+        font-size: var(--sacp-font-size-sm);
+        color: var(--sacp-footer-color) !important;
         font-weight: normal !important;
         text-decoration: none;
       }
@@ -46,20 +46,9 @@
   }
 
   .footer-row-1 {
-    background-color: $footer-bg-color-row-1;
-    color: $footer-color;
-    font-size: $fs-sm;
-
-    a, a > * {
-      color: $footer-link-color !important;
-      font-size: $fs-sm;
-
-      &:hover {
-        text-decoration: underline;
-        text-underline-position: under;
-        color: $footer-link-color;
-      }
-    }
+    background-color: var(--sacp-footer-row-1-bg);
+    color: var(--sacp-footer-color);
+    font-size: var(--sacp-font-size-sm);
 
     .title {
       font-weight: bold;
@@ -71,26 +60,15 @@
   }
 
   .footer-row-2 {
-    background-color: $footer-bg-color-row-2;
-    color: $footer-color !important;
+    background-color: var(--sacp-footer-row-2-bg);
+    color: var(--sacp-footer-color) !important;
 
     * {
-      font-size: $fs-sm;
-    }
-
-    a, a > * {
-      color: $footer-link-color !important;
-      font-size: $fs-sm;
-
-      &:hover {
-        text-decoration: underline;
-        text-underline-position: under;
-        color: $footer-link-color;
-      }
+      font-size: var(--sacp-font-size-sm);
     }
 
     .title {
-      color: $footer-color;
+      color: var(--sacp-footer-color);
     }
 
     #socialIcons ul {
@@ -98,6 +76,21 @@
 
       li {
         margin-right: 5px;
+      }
+    }
+  }
+
+  // Links in beiden Zeilen
+  .footer-row-1,
+  .footer-row-2 {
+    a, a > * {
+      color: var(--sacp-footer-link-color) !important;
+      font-size: var(--sacp-font-size-sm);
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-position: under;
+        color: var(--sacp-footer-link-color);
       }
     }
   }

@@ -1,29 +1,47 @@
-/** Horizontal navigation **/
+// =============================================================================
+// Mitglieder-Dashboard
+// =============================================================================
+
+// Blinkender Button (Bild ohne Bildunterschrift/Fotograf)
+// Hinweis: Früher gab es zwei @keyframes mit diesem Namen (#000 → rot und
+// #fff → rot). Im Browser gilt immer die zuletzt definierte, deshalb bleibt
+// nur diese erhalten.
+@keyframes blinkingButton {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: $red;
+  }
+}
+
+:root {
+  --sacp-dashboard-tab-bg: #f1f1f1;
+  --sacp-dashboard-scrollbar-track-color: #ececf3;
+  --sacp-dashboard-scrollbar-thumb-color: #d2d8dd;
+}
+
+// -----------------------------------------------------------------------------
+// Horizontale Navigation
+// -----------------------------------------------------------------------------
 .h-scroll {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: thin;
-  border-bottom: 1px solid $gray-300;
+  border-bottom: 1px solid var(--bs-gray-300);
 
-  /* width */
   &::-webkit-scrollbar {
     width: 6px;
     height: 4px;
   }
 
-  /* Track */
   &::-webkit-scrollbar-track {
-    background: #ececf3;
+    background: var(--sacp-dashboard-scrollbar-track-color);
   }
 
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background: #d2d8dd;
-  }
-
-  /* Handle on hover */
+  &::-webkit-scrollbar-thumb,
   &::-webkit-scrollbar-thumb:hover {
-    background: #d2d8dd;
+    background: var(--sacp-dashboard-scrollbar-thumb-color);
   }
 
   .nav.horizontal-tabs {
@@ -39,41 +57,42 @@
         @extend .btn;
         @extend .btn-sm;
         @extend .btn-light;
-        background-color: #f1f1f1;
-        border-color: #f1f1f1;
+        background-color: var(--sacp-dashboard-tab-bg);
+        border-color: var(--sacp-dashboard-tab-bg);
       }
     }
 
     > li.nav-item.active {
       padding-left: .5rem !important;
       padding-right: .5rem !important;
-      background-color: white;
+      background-color: var(--sacp-surface);
 
       > a {
-        background-color: $red;
-        border-color: $red;
-        color: #fff;
+        background-color: var(--sacp-red);
+        border-color: var(--sacp-red);
+        color: var(--sacp-on-color);
       }
     }
 
     > li > a {
-      color: #000000;
+      color: var(--sacp-body-color);
       text-decoration: none;
       @extend .btn;
       @extend .btn-light;
       @extend .btn-sm;
       @extend .rounded-pill;
-      background-color: $gray-200;
+      background-color: var(--bs-gray-200);
 
       &:hover {
-        color: $link-color;
+        color: var(--sacp-link-color);
       }
-
     }
   }
 }
 
-
+// -----------------------------------------------------------------------------
+// Profilbild hochladen
+// -----------------------------------------------------------------------------
 .member-dashboard-avatar-upload {
   display: flex;
   align-items: center;
@@ -88,33 +107,35 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid $gray-500;
+    border: 1px solid var(--bs-gray-500);
     width: 50px;
     height: 50px;
     position: absolute;
     bottom: 0;
     left: 60%;
-    background: #fff;
-    color: $red;
+    background: var(--sacp-surface);
+    color: var(--sacp-accent-text);
     padding: 10px;
 
     svg {
-      color: $red;
+      color: var(--sacp-accent-text);
       padding: 10px;
     }
-  }
 
-  .member-dashboard-avatar-upload--rotate-profile-image-button:hover {
-    background: $red;
-    border-color: $red;
+    &:hover {
+      background: var(--sacp-red);
+      border-color: var(--sacp-red);
 
-    svg {
-      color: #fff;
+      svg {
+        color: var(--sacp-on-color);
+      }
     }
   }
 }
 
-
+// -----------------------------------------------------------------------------
+// Bildergalerie Tourenbericht
+// -----------------------------------------------------------------------------
 .dashboard-event-blog-gallery {
   .sortable-item {
     cursor: move;
@@ -124,16 +145,16 @@
     position: relative;
 
     .dashboard-event-blog-thumb-buttons-container {
-      button.btn {
-        padding: 4px 8px !important;
-      }
-
       position: absolute;
       bottom: 4px;
       right: 4px;
 
+      button.btn {
+        padding: 4px 8px !important;
+      }
+
       .missing-caption-or-photographer-name {
-        background-color: black;
+        background-color: var(--sacp-black);
         color: yellow;
       }
 
@@ -141,30 +162,23 @@
         animation: blinkingButton 1.2s infinite;
       }
     }
-
-    @keyframes blinkingButton {
-      0% {
-        background-color: #000;
-      }
-      100% {
-        background-color: $red;
-      }
-    }
   }
 
   button {
     margin-left: 4px;
-    @include opacity(0.6);
+    opacity: .6;
     @include transition(opacity);
     cursor: pointer;
   }
 
   button:hover {
-    @include opacity(1);
+    opacity: 1;
   }
 }
 
-
+// -----------------------------------------------------------------------------
+// Bilder-Upload (Member Picture Feed)
+// -----------------------------------------------------------------------------
 .module-memberPictureFeedUpload {
   .member-picture-feed-thumb {
     position: relative;
@@ -194,7 +208,6 @@
   .tl_info {
     @extend .alert;
     @extend .alert-info;
-
   }
 
   .tl_error {
@@ -208,20 +221,14 @@
 
   button.add-caption[data-hascaption="1"] {
     animation: none !important;
-    background-color: $green;
-    border: 1px solid $green;
-  }
-
-  @keyframes blinkingButton {
-    0% {
-      background-color: #fff;
-    }
-    100% {
-      background-color: $red;
-    }
+    background-color: var(--sacp-green);
+    border: 1px solid var(--sacp-green);
   }
 }
 
+// -----------------------------------------------------------------------------
+// Profil löschen
+// -----------------------------------------------------------------------------
 .mod_member_dashboard_delete_profile {
   .btn {
     @extend .btn-danger;
@@ -232,6 +239,6 @@
   }
 
   a.btn:focus {
-    color: #fff !important;
+    color: var(--sacp-on-color) !important;
   }
 }

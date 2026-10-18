@@ -1,4 +1,13 @@
-/** Fade in */
+:root {
+  --sacp-article-bg: var(--sacp-surface);
+  --sacp-article-gray-bg: #fafafa;
+  --sacp-article-darkgray-bg: #cfcfcf;
+  --sacp-article-blue-bg: var(--sacp-blue);
+  --sacp-article-red-bg: var(--sacp-red);
+  --sacp-article-boxed-blue-bg: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
+}
+
+// Seite sanft einblenden
 body {
   animation: visible 1.5s;
 }
@@ -15,14 +24,11 @@ body {
 #header {
   @extend .mb-lg-3;
 
-  .header-navbar-row-0 > .inner {
-    @extend .container-lg; // 100% width < lg (large screens)
-    max-width: $mc-container-max-width;
-  }
-
+  // < lg: 100% Breite
+  .header-navbar-row-0 > .inner,
   .header-navbar-row-1 > .inner {
     @extend .container-lg;
-    max-width: $mc-container-max-width;
+    max-width: var(--sacp-container-max-width);
   }
 }
 
@@ -32,20 +38,19 @@ body {
   padding-right: $spacer-0;
 
   #container {
-
-    /**
-     * Margins and paddings
-     */
+    // -------------------------------------------------------------------------
+    // Abstände
+    // -------------------------------------------------------------------------
     .mod_article {
       margin-bottom: 0;
       margin-top: 0;
     }
 
     .mod_article > .article-inside.container {
-      max-width: $mc-container-max-width;
-      width: 100%; // override container class
-      margin-left: 0; // override container class
-      margin-right: 0; // override container class
+      max-width: var(--sacp-container-max-width);
+      width: 100%; // überschreibt .container
+      margin-left: 0; // überschreibt .container
+      margin-right: 0; // überschreibt .container
       padding: clamp-calc(3rem, 3.5rem) clamp-calc(1rem, 4.5rem);
 
       @include media-breakpoint-up(lg) {
@@ -55,19 +60,13 @@ body {
     }
 
     .mod_article > .article-inside.container.p-0 {
-      padding: 0
+      padding: 0;
     }
 
-    // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
-    .mod_article > .article-inside > *:first-child:not(script) {
-      margin-top: 0;
-    }
-
-    // Do not add any padding to the first element inside .mod_article > .article-inside because there is already set one
-    .mod_article > .article-inside > [class*="mod_"]:first-child > *:first-child {
-      margin-top: 0;
-    }
-
+    // Das erste Element in .article-inside braucht keinen Abstand nach oben,
+    // .article-inside hat bereits ein Padding.
+    .mod_article > .article-inside > *:first-child:not(script),
+    .mod_article > .article-inside > [class*="mod_"]:first-child > *:first-child,
     .mod_article > .article-inside > [class*="content-"]:first-child > *:first-child {
       margin-top: 0;
     }
@@ -76,14 +75,14 @@ body {
       padding: 0;
     }
 
-    /**
-     * Background colors and colors
-     */
+    // -------------------------------------------------------------------------
+    // Hintergrund- und Textfarben
+    // -------------------------------------------------------------------------
     .mod_article {
       background-color: transparent;
 
       .article-inside {
-        background-color: #ffffff;
+        background-color: var(--sacp-article-bg);
         overflow: hidden;
       }
     }
@@ -100,7 +99,7 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background-color: #fff;
+        background-color: var(--sacp-article-bg);
         margin-top: clamp-calc(1rem, 2.5rem);
         margin-bottom: 1rem;
       }
@@ -110,7 +109,7 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background-color: #fff;
+        background-color: var(--sacp-article-bg);
       }
     }
 
@@ -118,41 +117,27 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background: linear-gradient(90deg, rgba(0, 130, 199, 1) 0%, rgba(0, 79, 121, 1) 96%);
+        background: var(--sacp-article-boxed-blue-bg);
       }
     }
 
-    .mod_article.article-blue {
-      background: transparent;
-      color: #fff;
+    // Farbige Artikel mit weisser Schrift
+    @each $name in ("blue", "red") {
+      .mod_article.article-#{$name} {
+        background: transparent;
+        color: var(--sacp-on-color);
 
-      > .article-inside {
-        background: $blue;
-      }
+        > .article-inside {
+          background: var(--sacp-article-#{$name}-bg);
+        }
 
-      a, h1, h2, h3, h4, h5, h6 {
-        color: #fff !important;
-      }
+        a, h1, h2, h3, h4, h5, h6 {
+          color: var(--sacp-on-color) !important;
+        }
 
-      h1:after {
-        background-color: #fff;
-      }
-    }
-
-    .mod_article.article-red {
-      background: transparent;
-      color: #fff;
-
-      > .article-inside {
-        background: $red;
-      }
-
-      a, h1, h2, h3, h4, h5, h6 {
-        color: #fff !important;
-      }
-
-      h1:after {
-        background-color: #fff;
+        h1:after {
+          background-color: var(--sacp-on-color);
+        }
       }
     }
 
@@ -160,7 +145,7 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background-color: #fff;
+        background-color: var(--sacp-article-bg);
       }
     }
 
@@ -168,7 +153,7 @@ body {
       background-color: transparent;
 
       .article-inside {
-        background: #fafafa;
+        background: var(--sacp-article-gray-bg);
       }
     }
 
@@ -176,31 +161,31 @@ body {
       background-color: transparent;
 
       > .article-inside {
-        background-color: #cfcfcf;
+        background-color: var(--sacp-article-darkgray-bg);
       }
     }
   }
 
-  // Tour detail/course detail
+  // Tour- / Kursdetailansicht
   .mod_article {
-    .box-layout-transparent, .box-layout-white {
+    .box-layout-transparent,
+    .box-layout-white {
       margin-top: clamp-calc(1.5rem, 2rem);
+      margin-bottom: clamp-calc(1.5rem, 2rem);
+      padding: clamp-calc(1.25rem, 2rem) clamp-calc(.75rem, 2rem);
 
       &:first-child {
         margin-top: 0;
       }
 
-      margin-bottom: clamp-calc(1.5rem, 2rem);
-
       &:last-child {
         margin-bottom: 0;
       }
 
-      padding: clamp-calc(1.25rem, 2rem) clamp-calc(.75rem, 2rem);
-
       > *:first-child {
         margin-top: 0;
 
+        // Achtung: nur h1 muss direktes Kind sein, h2–h6 greifen als Nachfahren
         > h1, h2, h3, h4, h5, h6 {
           margin-top: 0;
         }
@@ -212,8 +197,7 @@ body {
     }
 
     .box-layout-white {
-      background-color: #ffffff;
+      background-color: var(--sacp-surface);
     }
   }
-
 }

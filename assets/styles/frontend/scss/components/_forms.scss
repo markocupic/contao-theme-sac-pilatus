@@ -1,11 +1,16 @@
-// Bootstrap
+// -----------------------------------------------------------------------------
+// Contao-Formularfelder mit Bootstrap-Klassen versehen
+// -----------------------------------------------------------------------------
 .widget {
   @extend .mb-3;
 }
 
-input.text, input.captcha, textarea, .widget > select {
+input.text,
+input.captcha,
+textarea,
+.widget > select {
   @extend .form-control;
-  background-color: #fff;
+  background-color: var(--sacp-input-bg);
 }
 
 button {
@@ -21,7 +26,7 @@ button:hover * {
   @extend .btn-outline-primary;
 }
 
-/** Button styling for mp_forms (multi page forms) */
+// Buttons der mehrseitigen Formulare (mp_forms)
 .content-form {
   .widget-pagebreak {
     button[type="submit"] {
@@ -38,28 +43,38 @@ button:hover * {
   }
 }
 
+:root {
+  --sacp-article-blue-submit-bg: var(--sacp-white);
+  --sacp-article-blue-submit-color: var(--sacp-blue);
+  --sacp-article-blue-submit-hover-bg: var(--sacp-black);
+  --sacp-article-blue-submit-hover-color: var(--sacp-white);
+}
+
+// Absenden-Button auf blauem Artikel
 .article-blue .submit {
-  background: #ffffff;
+  background: var(--sacp-article-blue-submit-bg);
   border-color: transparent;
-  color: $blue;
+  color: var(--sacp-article-blue-submit-color);
 }
 
 .article-blue .submit:hover {
-  background: #000000;
+  background: var(--sacp-article-blue-submit-hover-bg);
   border-color: transparent;
-  color: #fff;
+  color: var(--sacp-article-blue-submit-hover-color);
 }
 
+// -----------------------------------------------------------------------------
+// Formulare im Hauptbereich
+// -----------------------------------------------------------------------------
 #main {
   .formbody {
-
     fieldset {
       margin: $spacer 0 2rem 0;
       border: none;
 
       legend {
         margin-bottom: $spacer;
-        border-bottom: 1px solid $gray-300;
+        border-bottom: 1px solid var(--bs-gray-300);
       }
     }
 
@@ -67,12 +82,15 @@ button:hover * {
       line-height: 2;
     }
 
-    .checkbox_container, .radio_container, .submit_container {
+    .checkbox_container,
+    .radio_container,
+    .submit_container {
       margin: 1rem 0;
     }
 
-    // Special treatment for radio or checkbox widgets
-    .widget .checkbox_container, .widget .radio_container {
+    // Radio- und Checkbox-Widgets
+    .widget .checkbox_container,
+    .widget .radio_container {
       display: inline-flex;
       flex-direction: column;
 
@@ -96,14 +114,9 @@ button:hover * {
       }
     }
 
-    .widget.error {
-      .error {
-        color: $alert-danger-text;
-      }
-    }
-
+    .widget.error .error,
     .error {
-      color: $alert-danger-text;
+      color: var(--sacp-accent-text);
     }
 
     .captcha_text {
@@ -115,7 +128,8 @@ button:hover * {
       font-weight: bold;
     }
 
-    span.mandatory, .captcha_text {
+    span.mandatory,
+    .captcha_text {
       display: inline-block !important;
     }
 
@@ -123,7 +137,7 @@ button:hover * {
       display: none;
     }
 
-    // Do not hide comments label in the comment form
+    // Label im Kommentarformular nicht verstecken
     label[for="ctrl_comment"].invisible {
       display: block;
       visibility: visible !important;
@@ -132,13 +146,5 @@ button:hover * {
     .submit {
       margin-top: $spacer-y;
     }
-
   }
-
 }
-
-
-
-
-
-
