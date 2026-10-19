@@ -68,7 +68,7 @@ class ThemeModeExtension extends AbstractExtension
             return $this->cache[$rootId];
         }
 
-        $root = $page->type === 'root' || $page->type === 'rootfallback' ? $page : $this->framework->getAdapter(PageModel::class)->findById($rootId);
+        $root = 'root' === $page->type || 'rootfallback' === $page->type ? $page : $this->framework->getAdapter(PageModel::class)->findById($rootId);
 
         $mode = (string) ($root?->sacpThemeMode ?? '');
 
@@ -76,8 +76,9 @@ class ThemeModeExtension extends AbstractExtension
     }
 
     /**
-     * Aktuelle Seite aus dem Request-Attribut "pageModel" (Contao 5.3 hat noch
-     * keinen PageFinder::getCurrentPage()). Fallback: $GLOBALS['objPage'].
+     * Retrieves the current page from the "pageModel" request attribute. (Contao 5.3
+     * does not yet provide PageFinder::getCurrentPage().) Falls back to
+     * $GLOBALS['objPage'] if no valid model is found.
      */
     private function getCurrentPage(): PageModel|null
     {
@@ -87,7 +88,7 @@ class ThemeModeExtension extends AbstractExtension
             return $pageModel;
         }
 
-        if (\is_numeric($pageModel)) {
+        if (is_numeric($pageModel)) {
             return $this->framework->getAdapter(PageModel::class)->findById((int) $pageModel);
         }
 
