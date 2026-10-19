@@ -2,11 +2,11 @@
     <div class="header-navbar-row-0">
         <div class="inner d-flex px-3 py-1 py-sm-1 align-items-center">
             <div class="ms-0 me-auto d-flex gap-2">
-                <div class="ms-0 d-flex align-items-center header-backoffice-link">
+                <div class="ms-0 mt-2 mb-2 d-flex align-items-center header-backoffice-link">
                     {{ insert_tag('link_open::geschaeftsstelle')|raw }}<i class="fa-solid fa-envelope me-1 align-bottom"></i><span class="d-none d-sm-inline">Geschäftsstelle</span>{{ insert_tag('link_close')|raw }}
                 </div>
                 {% if not has_logged_in_frontend_user() %}
-                    <div class="ms-0 d-flex align-items-center header-join-club-link">
+                    <div class="ms-0 mt-2 mb-2 d-flex align-items-center header-join-club-link">
                         {{ insert_tag('link_open::mitglied-werden')|raw }}<i class="fa-solid fa-user-plus me-1 align-bottom"></i><span class="d-none d-sm-inline">Mitglied werden</span>{{ insert_tag('link_close')|raw }}
                     </div>
                 {% endif %}
