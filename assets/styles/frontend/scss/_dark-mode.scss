@@ -1,0 +1,251 @@
+// =============================================================================
+// Dark Mode
+// -----------------------------------------------------------------------------
+// Aktiv, wenn <html data-bs-theme="dark"> gesetzt ist. Das erledigt das
+// Inline-Skript in fe_page_sac_pilatus.html.twig (Systemeinstellung bzw.
+// gespeicherte Wahl) und der Schalter im Header (theme_switch_controller.js).
+// Bootstrap stellt seine Komponenten über dasselbe Attribut selbst um.
+//
+// Hier werden nur CSS-Variablen überschrieben. Der Selektor :root[...] ist
+// spezifischer als :root, die Reihenfolge der Imports spielt deshalb keine
+// Rolle.
+//
+// Kontrast (WCAG) auf --sacp-surface #1d2128:
+//   Text #e3e6ea 12.9:1 · Blau #4ea8de 6.1:1 · Rot #f0545c 4.7:1
+// =============================================================================
+
+:root[data-bs-theme="dark"] {
+  // ---------------------------------------------------------------------------
+  // Grundfarben
+  // ---------------------------------------------------------------------------
+  --sacp-body-bg: #14171c;
+  --sacp-body-color: #e3e6ea;
+  --sacp-surface: #1d2128;
+  --sacp-input-bg: #242932;
+
+  // Blau und Rot als Schrift. Als Hintergrund bleiben --sacp-blue/--sacp-red
+  // unverändert (weisse Schrift darauf hat genug Kontrast).
+  --sacp-primary-text: #4ea8de;
+  --sacp-accent-text: #f0545c;
+  --sacp-link-color: #4ea8de;
+  --sacp-link-hover-color: #7cc0e8;
+
+  // Bootstrap-Grautöne umkehren (werden nur im Theme verwendet, nicht von
+  // Bootstrap selbst): helle Flächen werden dunkel, dunkle Schrift hell.
+  --bs-gray-100: #212529;
+  --bs-gray-200: #343a40;
+  --bs-gray-300: #495057;
+  --bs-gray-400: #6c757d;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #ced4da;
+  --bs-gray-700: #dee2e6;
+  --bs-gray-800: #e9ecef;
+  --bs-gray-900: #f8f9fa;
+
+  // ---------------------------------------------------------------------------
+  // Basis
+  // ---------------------------------------------------------------------------
+  --sacp-article-gray-bg: #232830;
+  // Blauer Artikel: im Dark Mode eine dunkle, leicht bläuliche Fläche
+  --sacp-article-blue-bg: #1a222c;
+  --sacp-article-darkgray-bg: #2c323b;
+  --sacp-list-bullet-color: #9aa3ad;
+  --sacp-bg-light-hover: #3a414b;
+  --sacp-alert-info-color: var(--sacp-body-color);
+  --sacp-alert-lighter-border-color: #343a40;
+
+  // ---------------------------------------------------------------------------
+  // Komponenten
+  // ---------------------------------------------------------------------------
+  // Oberste Header-Zeile: dunkler als die Navigationszeile (#1d2128)
+  --sacp-header-topbar-bg: #111418;
+  // Such-Overlay (Vollbild): fast schwarz statt blau
+  --sacp-search-overlay-bg: #111418;
+  --sacp-header-user-menu-bg: #232830;
+  --sacp-header-user-menu-color: var(--sacp-body-color);
+  --sacp-header-search-icon-hover-color: #ff6b6b;
+  --sacp-header-search-border-color: #3a414b;
+
+  --sacp-footer-color: #c5cbd3;
+  --sacp-footer-link-color: #c5cbd3;
+
+  --sacp-navbar-link-hover-color: var(--sacp-white);
+  --sacp-navbar-dropdown-bg: #232830; // Megamenü
+  --sacp-navbar-level-3-border-color: #3a414b;
+
+  --sacp-sidebar-border-color: #343a42;
+  --sacp-sidebar-scrollbar-thumb-color: #3a414b;
+  --sacp-sidebar-link-hover-color: #ff6b6b;
+  --sacp-sidebar-toggle-color: #ff6b6b;
+  --sacp-sidebar-close-btn-color: #ff6b6b;
+
+  --sacp-service-link-icon-color: #c5cbd3;
+  --sacp-service-link-on-blue-icon-color: var(--sacp-primary-text);
+  --sacp-service-link-on-blue-icon-hover-color: var(--sacp-white);
+  --sacp-service-link-on-blue-title-hover-color: var(--sacp-primary-text);
+
+  --sacp-article-blue-submit-bg: var(--sacp-blue);
+  --sacp-article-blue-submit-color: var(--sacp-white);
+  --sacp-article-blue-submit-hover-bg: var(--sacp-white);
+  --sacp-article-blue-submit-hover-color: var(--sacp-blue);
+
+  // Event-Typ-Buttons der Startseite: dezent statt weiss
+  --sacp-event-type-btn-bg: #2c323b;
+  --sacp-event-type-btn-border-color: #3a414b;
+  --sacp-event-type-btn-color: var(--sacp-body-color);
+  --sacp-event-type-btn-hover-bg: var(--sacp-blue);
+  --sacp-event-type-btn-hover-border-color: var(--sacp-blue);
+  --sacp-event-type-btn-hover-color: var(--sacp-white);
+
+  --sacp-filter-switch-knob: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 0.6%29'/%3e%3c/svg%3e");
+  --sacp-filter-switch-checked-bg: var(--sacp-blue);
+  --sacp-filter-input-border-color: #3a414b;
+  --sacp-filepond-bg: #2c323b;
+  // Swiper-Pfeile: dunkler Button mit hellem Rand statt Blau, Hover blau
+  --sacp-swiper-nav-bg: rgba(17, 20, 24, .85);
+  --sacp-swiper-nav-hover-bg: var(--sacp-blue);
+  --sacp-swiper-nav-border-color: rgba(255, 255, 255, .35);
+  --sacp-modal-header-border-color: #343a42;
+  // Modal-Footer wie der Body, Bootstrap trennt ihn mit einer Linie ab
+  --sacp-modal-footer-bg: var(--sacp-surface);
+  --sacp-pagination-border-color: #2c323b;
+  --sacp-choices-option-hover-bg: #3a414b;
+  --sacp-reg-form-border-color: #2c323b;
+
+  --sacp-dashboard-tab-bg: #2c323b;
+  --sacp-dashboard-scrollbar-track-color: #1d2128;
+  --sacp-dashboard-scrollbar-thumb-color: #3a414b;
+
+  --sacp-scrollbar-track-shadow-color: transparent;
+  --sacp-kursstufe-color: #5cc26a;
+  // Karten (Tourenliste, Tourenberichte, Bilder-Feed, Leiterportraits):
+  // etwas heller als die Artikelfläche, ohne Rahmen
+  --sacp-card-bg: #262b33;
+  // Rahmen der Choices.js-Dropdowns
+  --sacp-card-border-color: #343a42;
+}
+
+// -----------------------------------------------------------------------------
+// Regeln, die sich nicht über Variablen lösen lassen
+// -----------------------------------------------------------------------------
+[data-bs-theme="dark"] {
+  // Bootstrap-Textfarben (.text-primary, .text-danger) aufhellen
+  .text-primary {
+    --bs-primary-rgb: 78, 168, 222; // #4ea8de
+  }
+
+  .text-danger {
+    --bs-danger-rgb: 240, 84, 92; // #f0545c
+  }
+
+  // Tabs im Mitglieder-Dashboard (basieren auf .btn-light)
+  .h-scroll .nav.horizontal-tabs > li > a {
+    --bs-btn-color: var(--sacp-body-color);
+    --bs-btn-hover-color: var(--sacp-body-color);
+    --bs-btn-hover-bg: var(--sacp-bg-light-hover);
+    --bs-btn-hover-border-color: var(--sacp-bg-light-hover);
+  }
+
+  // Karten: einheitlich ohne Rahmen, nur über die Fläche abgesetzt
+
+  // Tour- und Kursliste (Sac-Event-Tool): Die Karten haben im Template
+  // .bg-white und .border-light (beide mit !important).
+  .event-list-item--inner-box.bg-white {
+    background-color: var(--sacp-card-bg) !important;
+  }
+
+  .event-list-item--inner-box.border-light {
+    border-color: transparent !important;
+  }
+
+  // Karten mit .bg-white, z.B. Tourenberichte (Event-Blog-Bundle) und
+  // Bilder-Feed: .card.bg-white mit .card-body.bg-white und .card-footer.bg-white
+  .card.bg-white {
+    border: 0;
+  }
+
+  .card.bg-white,
+  .card > .bg-white {
+    background-color: var(--sacp-card-bg) !important;
+  }
+
+  // Leiterportraits (Sac-Event-Tool, user_portrait_list/item.html.twig):
+  // Das Template setzt per Inline-Style einen weissen Hintergrund. Im hellen
+  // Modus verschmilzt die Karte mit dem Artikel, im dunklen braucht sie
+  // Innenabstand.
+  .content-user-portrait-list--item {
+    background-color: var(--sacp-card-bg);
+    padding: 1rem;
+    border-radius: var(--bs-border-radius);
+  }
+
+  // Tourenfilter: alle Eingabefelder mit feinem Rahmen
+  // (im hellen Modus stehen die weissen Felder ohne Rahmen auf Blau)
+  // (.choices__input ist das Suchfeld innerhalb von .choices__inner)
+  .filter-board {
+    input[type="text"]:not(.choices__input),
+    input[type="date"],
+    input[type="search"]:not(.choices__input),
+    textarea,
+    select,
+    .form-control,
+    .form-select,
+    .choices__inner {
+      border: 1px solid var(--sacp-filter-input-border-color) !important;
+    }
+  }
+
+  // Schliessen-Button im Modal: Im hellen Modus wird das Icon per filter
+  // dunkelrot eingefärbt. Im Dark Mode stattdessen als Maske in der hellen
+  // Akzentfarbe zeichnen (exakte Farbe, guter Kontrast).
+  .modal-dialog .modal-content .modal-header .btn-close {
+    filter: none;
+    background: var(--sacp-accent-text);
+    -webkit-mask: var(--bs-btn-close-bg) center / 1.25em auto no-repeat;
+    mask: var(--bs-btn-close-bg) center / 1.25em auto no-repeat;
+  }
+
+  // Such-Overlay: Eingabefeld mit feinem Rahmen
+  .mod_search_overlay form .formbody .search-input input[type="search"] {
+    border: 1px solid var(--sacp-filter-input-border-color);
+  }
+
+  // FilePond (Bildupload, z.B. Tourenbericht): bringt eigenes, helles CSS mit
+  .filepond--panel-root {
+    background-color: var(--sacp-filepond-bg);
+  }
+
+  .filepond--drop-label {
+    color: var(--sacp-body-color);
+  }
+
+  .filepond--label-action {
+    text-decoration-color: var(--sacp-body-color);
+  }
+
+  // Choices.js (Mehrfachauswahl im Tourenfilter): bringt eigenes, helles CSS mit
+  .choices__inner,
+  .choices__input,
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    background-color: var(--sacp-input-bg);
+    border-color: var(--sacp-card-border-color);
+    color: var(--sacp-body-color);
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: var(--sacp-choices-option-hover-bg);
+  }
+
+  // Outline-Buttons: Bootstrap verwendet hier die Hintergrundfarbe als Schrift
+  .btn-outline-primary {
+    --bs-btn-color: var(--sacp-primary-text);
+    --bs-btn-border-color: var(--sacp-primary-text);
+  }
+
+  .btn-outline-danger {
+    --bs-btn-color: var(--sacp-accent-text);
+    --bs-btn-border-color: var(--sacp-accent-text);
+  }
+}

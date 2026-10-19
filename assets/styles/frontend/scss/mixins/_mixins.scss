@@ -1,146 +1,59 @@
-/*
- * Use the function like this:
- * p {
- *   font-size: clamp-calc(1rem, 1.25rem);
- *   height: clamp-calc(40px, 50px); // accepts px or rem!
- * }
- */
-@function clamp-calc($size-at-min-width, $size-at-max-width, $min-breakpoint: 360px, $max-breakpoint: 1440px) {
-  $size-min: 0;
+// =============================================================================
+// Mixins
+// =============================================================================
 
-  @if str-index(#{$size-at-min-width}, 'rem') {
-    $size-min: parseInt($size-at-min-width) * 16px;
-  } @else if str-index(#{$size-at-min-width}, 'px') {
-    $size-min: parseInt($size-at-min-width) * 1px;
-  } @else {
-    $size-min: parseInt($size-at-min-width) * 1px;
-  }
-
-  $size-max: 0;
-
-  @if str-index(#{$size-at-max-width}, 'rem') {
-    $size-max: parseInt($size-at-max-width) * 16px;
-  } @else if str-index(#{$size-at-max-width}, 'px') {
-    $size-max: parseInt($size-at-max-width) * 1px;
-  } @else {
-    $size-max: parseInt($size-at-max-width) * 1px;
-  }
-
-  $slope: calc(($size-max - $size-min) / ($max-breakpoint - $min-breakpoint));
-  $y-axis-intersection: -1 * $min-breakpoint * $slope + $size-min;
-  @return clamp(#{$size-min}, #{$y-axis-intersection} + #{$slope} * 100vw, #{$size-max});
-}
-
-@function parseInt($n) {
-  @return $n / ($n * 0 + 1); /* 2 */
-}
-
+// Fokus-Rahmen
 @mixin tab-focus() {
-  // Default
-  outline: thin dotted;
-  // WebKit
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: thin dotted; // Fallback
+  outline: 5px auto -webkit-focus-ring-color; // WebKit
   outline-offset: -2px;
 }
 
-// Add a icon font before an element
-@mixin icon-before($icon, $color:false, $display: 'flex') {
-  //font-family: $icon-font-name;
-  //padding-right: 6px;
-  //content: "\#{$icon}";
-  display: $display;
+// Icon (Font Awesome) vor dem Element
+// Hinweis: Früher wurde hier zusätzlich `display: "flex"` ausgegeben. Der Wert
+// war ein String und damit ungültig, der Browser hat ihn ignoriert. Er wurde
+// entfernt, damit sich die Darstellung nicht ändert.
+@mixin icon-before($icon, $color: false) {
   flex-wrap: nowrap;
+
   &:before {
-    font-family: $icon-font-name !important;
+    font-family: var(--sacp-font-family-icon) !important;
     padding-right: .75rem;
     content: $icon;
+
     @if $color {
       color: $color;
     }
   }
-
 }
 
-// Add a icon font before an element
-@mixin icon-after($icon, $color:false, $display: 'flex') {
-  //font-family: $icon-font-name;
-  //padding-right: 6px;
-  //content: "\#{$icon}";
-  display: $display;
+// Icon (Font Awesome) nach dem Element (siehe Hinweis bei icon-before)
+@mixin icon-after($icon, $color: false) {
   flex-wrap: nowrap;
+
   &:after {
-    font-family: $icon-font-name !important;
+    font-family: var(--sacp-font-family-icon) !important;
     padding-left: .75rem;
     content: $icon;
+
     @if $color {
       color: $color;
     }
   }
-
 }
 
-// Add a icon font before an element
+// Mehrspaltiger Text
 @mixin column-count($value, $gap: 1rem) {
-  -webkit-column-count: $value; /* Chrome, Safari, Opera */
-  -moz-column-count: $value; /* Firefox */
   column-count: $value;
-
-  -webkit-column-gap: $gap; /* Chrome, Safari, Opera */
-  -moz-column-gap: $gap; /* Firefox */
   column-gap: $gap;
 }
 
+// Inhalt vertikal zentrieren
 @mixin flex-vertical-align-middle() {
-  // Center vertical with flexbox
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
   align-items: center;
 }
 
 @mixin transition($property, $mode: ease-in-out, $duration: 0.4s) {
-  -webkit-transition: $property $mode $duration;
-  -moz-transition: $property $mode $duration;
-  -ms-transition: $property $mode $duration;
-  -o-transition: $property $mode $duration;
   transition: $property $mode $duration;
-}
-
-@mixin opacity($value) {
-  $ie-value: $value * 100;
-  opacity: $value;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$ie-value+")";
-  filter: alpha(opacity=$ie-value);
-}
-
-@mixin ease-in-out() {
-  -webkit-transition: all 0.7s ease-in-out;
-  -moz-transition: all 0.7s ease-in-out;
-  -o-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-}
-
-// Functions
-// function map-deep-get()
-// function to get a value from a nested map, see _type.scss for usage
-//
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
-
-// screen reader only
-@mixin invisible {
-  width: 0;
-  height: 0;
-  left: -1000px;
-  top: -1000px;
-  position: absolute;
-  overflow: hidden;
-  display: inline;
 }

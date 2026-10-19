@@ -1,3 +1,10 @@
+// Bootstrap-Modal
+
+:root {
+  --sacp-modal-header-border-color: #ddd;
+  --sacp-modal-footer-bg: var(--bs-gray-300);
+}
+
 .modal-dialog {
   .modal-content {
     background-color: transparent;
@@ -5,32 +12,32 @@
     @extend .shadow;
 
     .modal-header {
-      background-color: #ffffff;
+      background-color: var(--sacp-surface);
       padding-left: rfs-fluid-value(2.25rem);
       padding-right: rfs-fluid-value(2.25rem);
       border: 0;
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid var(--sacp-modal-header-border-color);
 
       h1, h2, h3, h4, h5, h6, .modal-title {
         @include font-size(1.625rem);
         font-weight: bold;
-        color: $red;
+        color: var(--sacp-accent-text);
         margin-top: rfs-fluid-value(1.25rem);
-        margin-bottom: rfs-fluid-value(0.625rem);
+        margin-bottom: rfs-fluid-value(.625rem);
       }
 
       .btn-close {
         width: 1.25em;
-        width: 1.25em;
         background: transparent var(--bs-btn-close-bg) center / 1.25em auto no-repeat;
         opacity: 1;
+        // färbt das Schliessen-Icon rot ein
         filter: brightness(0) saturate(100%) invert(9%) sepia(95%) saturate(5594%) hue-rotate(352deg) brightness(77%) contrast(101%);
       }
     }
 
     .modal-body {
       padding: rfs-fluid-value(2.25rem);
-      background-color: #fff;
+      background-color: var(--sacp-surface);
       border: 0;
 
       label {
@@ -39,12 +46,12 @@
     }
 
     .modal-footer {
-      background-color: $gray-300;
+      background-color: var(--sacp-modal-footer-bg);
     }
 
     .error {
       @include font-size(20px);
-      color: $red;
+      color: var(--sacp-accent-text);
     }
   }
 }

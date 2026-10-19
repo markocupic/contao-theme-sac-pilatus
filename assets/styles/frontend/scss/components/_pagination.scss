@@ -1,16 +1,22 @@
-/* Contao 5 pagination */
+:root {
+  --sacp-pagination-bg: var(--sacp-surface);
+  --sacp-pagination-hover-bg: var(--sacp-primary);
+  --sacp-pagination-hover-color: var(--sacp-on-color);
+  --sacp-pagination-border-color: #fafafa;
+}
+
+// Contao 5
 nav[data-pagination] {
   ol {
     @extend .pagination;
 
     li {
       @extend .page-item;
+      margin-right: 2px;
 
       a {
         @extend .page-link;
       }
-
-      margin-right: 2px;
     }
   }
 }
@@ -24,48 +30,44 @@ nav.pagination {
 
     li {
       @extend .page-item;
+      margin-right: .5rem;
 
       a, strong {
         @extend .page-link;
-        background-color: #fff;
-        border-color: #fafafa;
+        background-color: var(--sacp-pagination-bg);
+        border-color: var(--sacp-pagination-border-color);
         border-radius: .675rem !important;
-        &:hover{
-          background-color: $primary;
-          color: #fff;
+
+        &:hover {
+          background-color: var(--sacp-pagination-hover-bg);
+          color: var(--sacp-pagination-hover-color);
         }
       }
-
-      margin-right: .5rem;
     }
 
     > li > strong, > li > a {
       padding-top: 4px;
       padding-bottom: 4px;
     }
-
   }
 }
 
 ul.pagination {
-
   padding-left: 1px;
 
   li {
     @extend .page-item;
+    margin-right: 2px;
 
     a {
       @extend .page-link;
-      background-color: #fff;
+      background-color: var(--sacp-pagination-bg);
       border-color: transparent;
     }
-
-    margin-right: 2px;
   }
 
   > li > span, > li > a {
     padding-top: 4px;
     padding-bottom: 4px;
   }
-
 }

@@ -2,12 +2,12 @@
   "entrypoints": {
     "stimulus_frontend": {
       "js": [
-        "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.54a836f3.js"
+        "/bundles/markocupiccontaothemesacpilatus/stimulus_frontend.b2c8a88c.js"
       ]
     },
     "styles/frontend": {
       "css": [
-        "/bundles/markocupiccontaothemesacpilatus/styles/frontend.4770c54f.css"
+        "/bundles/markocupiccontaothemesacpilatus/styles/frontend.45103bad.css"
       ]
     }
   }

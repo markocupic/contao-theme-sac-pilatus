@@ -1,34 +1,40 @@
+@use "sass:color";
+
+// Anmeldeformular Tour/Kurs
+
+:root {
+  --sacp-reg-form-border-color: #{color.adjust($body-bg, $lightness: -7%)};
+}
+
 .mod_event_registration {
-  /* start step-indicator */
+  // Schritt-Anzeige
   .step-indicator {
     .checkout-step {
-      color: $gray-500;
+      color: var(--bs-gray-500);
       padding-bottom: 4px;
       font-size: .875rem;
       line-height: 1.75rem;
 
       @include media-breakpoint-up(sm) {
-        font-size: 1.0rem;
+        font-size: 1rem;
         line-height: 2rem;
       }
 
       &.step--processed {
-        color: $body-color;
+        color: var(--bs-body-color);
       }
 
       &.step--current {
         @extend .text-danger;
-        border-bottom: 3px solid $red;
+        border-bottom: 3px solid var(--sacp-accent-text);
       }
     }
 
     .step-indicator-divider {
-      color: $gray-500;
+      color: var(--bs-gray-500);
       margin: 0 10px;
     }
   }
-
-  /* end step-indicator */
 
   [data-ffield-explanation] {
     display: none;
@@ -39,12 +45,11 @@
   }
 
   .bg-reg-form {
-    border: 1px solid darken($body-bg, 7);
-    background-color: $body-bg;
+    border: 1px solid var(--sacp-reg-form-border-color);
+    background-color: var(--sacp-body-bg);
 
     select, input, textarea {
-      background-color: #fff !important;
+      background-color: var(--sacp-input-bg) !important;
     }
   }
-
 }

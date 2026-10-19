@@ -1,0 +1,76 @@
+@use "sass:color";
+@use "sass:meta";
+
+// =============================================================================
+// CSS-Variablen (Design Tokens)
+// -----------------------------------------------------------------------------
+// Globale Werte des Themes, Präfix --sacp-* (SAC Pilatus), damit es keine
+// Kollisionen mit Bootstrap (--bs-*) oder Plugins (--swiper-*, ...) gibt.
+// Komponenten-spezifische Variablen stehen jeweils am Anfang der
+// Komponenten-Datei. Grautöne kommen direkt von Bootstrap (var(--bs-gray-*)).
+// =============================================================================
+
+:root {
+  // ---------------------------------------------------------------------------
+  // Farben
+  // ---------------------------------------------------------------------------
+  --sacp-blue: #{$blue};
+  --sacp-red: #{$red};
+  --sacp-green: #{$green};
+  --sacp-orange: #{$orange};
+  --sacp-purple: #{$purple};
+  --sacp-dark: #{$dark};
+  // Feste Farben: ändern sich in einem Dark Mode NICHT. Nur verwenden, wo der
+  // Hintergrund ohnehin farbig ist (Blau, Rot, Bild, Overlay).
+  --sacp-white: #fff;
+  --sacp-black: #000;
+
+  --sacp-primary: var(--sacp-blue);
+  --sacp-accent: var(--sacp-red);
+  --sacp-success: var(--sacp-green);
+
+  --sacp-link-color: #{$link-color};
+  --sacp-link-hover-color: #{color.adjust($link-color, $lightness: -10%)};
+
+  // Textfarbe. Entspricht dem früheren darken($body-color, 90), also reinem
+  // Schwarz. ($body-color selbst wird von Bootstrap verwendet.)
+  --sacp-body-color: #000;
+  --sacp-body-bg: #{$body-bg};
+
+  // ---------------------------------------------------------------------------
+  // Semantische Farben (für einen späteren Dark Mode überschreiben)
+  // ---------------------------------------------------------------------------
+  // Hintergrund von Inhaltsboxen (Artikel, Karten, Header, Tabellen, ...)
+  --sacp-surface: #fff;
+  // Hintergrund von Formularfeldern
+  --sacp-input-bg: var(--sacp-surface);
+  // Schrift und Icons auf farbigem Hintergrund (Blau, Rot, Grün, Bilder)
+  --sacp-on-color: var(--sacp-white);
+  // Blau bzw. Rot als SCHRIFTfarbe (Überschriften, Links, Hinweise).
+  // Als Hintergrund weiterhin --sacp-blue bzw. --sacp-red verwenden.
+  --sacp-primary-text: var(--sacp-blue);
+  --sacp-accent-text: var(--sacp-red);
+
+  // ---------------------------------------------------------------------------
+  // Typografie
+  // ---------------------------------------------------------------------------
+  --sacp-font-family-serif: #{meta.inspect($font-family-serif)};
+  --sacp-font-family-icon: "#{$icon-font-name}";
+
+  // Fluide Schriftgrössen (360px → 1440px Viewport-Breite)
+  --sacp-font-size-base: #{clamp-calc($font-size-base, $font-size-base * 1.125)};
+  --sacp-font-size-sm: #{clamp-calc($font-size-base * .875, $font-size-base * 1.125 * .875)};
+
+  // ---------------------------------------------------------------------------
+  // Layout
+  // ---------------------------------------------------------------------------
+  --sacp-container-max-width: #{$mc-container-max-width};
+
+  // ---------------------------------------------------------------------------
+  // z-index
+  // ---------------------------------------------------------------------------
+  --sacp-zindex-carousel-controls: 1053; // unterhalb des Megamenüs
+  --sacp-zindex-megamenu: 1054; // unterhalb des Bootstrap-Modal-Backdrops (1055)
+  --sacp-zindex-navbar-aside-backdrop: #{$zindex-navbar-aside-backdrop};
+  --sacp-zindex-navbar-aside: #{$zindex-navbar-aside};
+}

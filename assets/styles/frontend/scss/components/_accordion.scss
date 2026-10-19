@@ -1,13 +1,13 @@
-/** Accordion **/
+// Contao-Akkordeon (jQuery UI)
 .ce_accordion {
-  border-bottom: 1px solid $gray-400;
+  border-bottom: 1px solid var(--bs-gray-400);
+
+  // Hinweis: Hier standen `padding: 1rem, 0;` und `margin: 1rem, 0;`.
+  // Wegen des Kommas ungültig und vom Browser ignoriert -> entfernt.
 
   .ui-accordion-header {
     @extend .h4;
   }
-
-  padding: $spacer-y, 0;
-  margin: $spacer-y, 0;
 
   .ui-accordion-header.active {
     padding-bottom: 15px;
@@ -15,7 +15,6 @@
 
   .ui-state-focus {
     outline: none !important;
-
   }
 
   .ui-accordion-header.active:focus {
@@ -23,26 +22,26 @@
   }
 
   .toggler {
-    //font-size: 1.25rem !important;
     cursor: pointer;
     @include transition(color);
-    color: #000;
-    // for open accordions
+    color: var(--sacp-body-color);
+
+    // geöffnet
     .ui-icon-triangle-1-s::before {
-      font-family: $icon-font-name;
-      content: "\f078";
+      font-family: var(--sacp-font-family-icon);
+      content: "\f078"; // fa-chevron-down
       padding-right: 20px;
     }
 
-    // for closed accordions
+    // geschlossen
     .ui-icon-triangle-1-e::before {
-      font-family: $icon-font-name;
-      content: "\f054";
+      font-family: var(--sacp-font-family-icon);
+      content: "\f054"; // fa-chevron-right
       padding-right: 20px;
     }
   }
 
   .toggler:hover {
-    color: $link-color;
+    color: var(--sacp-link-color);
   }
 }

@@ -1,3 +1,5 @@
+// Export Jahresprogramm (Touren- und Kursprogramm)
+
 .event-export-table {
   td, th {
     border-width: 0;
@@ -8,7 +10,7 @@
     padding-top: 1rem;
     border-top: 1px solid $border-color;
     border-bottom: none !important;
-    color: $blue;
+    color: var(--sacp-primary-text);
     font-weight: bold;
   }
 
@@ -17,7 +19,7 @@
   }
 
   td.event-export-eventState {
-    color: $red;
+    color: var(--sacp-accent-text);
     text-transform: uppercase;
   }
 
@@ -27,35 +29,35 @@
     }
 
     td.event-export-event-separator {
-      border-top: 1px solid #dee2e6;
+      border-top: 1px solid var(--bs-gray-300);
       margin-top: 20px;
     }
   }
-
 }
 
 .event-export-month {
-  color: $red;
+  color: var(--sacp-accent-text);
   padding-top: 3rem !important;
 }
 
 .event-export-row-subheadline td {
   border-bottom: none !important;
   font-weight: bold;
-  color: black;
+  color: var(--sacp-body-color);
 }
 
 .event-export-row-teaser td {
   border-bottom: none !important;
 }
 
-.event-export-row-details, .event-export-row-details > td {
+.event-export-row-details,
+.event-export-row-details > td {
   border: 0 !important;
 }
 
 .event-export-course-type-level-0 {
   font-size: 3rem !important;
-  color: $red;
+  color: var(--sacp-accent-text);
   text-transform: uppercase;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
@@ -63,7 +65,7 @@
 
 .event-export-course-type-level-1 {
   font-size: 2rem !important;
-  color: $blue;
+  color: var(--sacp-primary-text);
   text-transform: uppercase;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;

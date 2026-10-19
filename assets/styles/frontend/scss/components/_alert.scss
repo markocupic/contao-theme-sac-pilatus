@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .alert {
   display: flex;
   align-items: flex-start;
@@ -9,22 +11,26 @@
   }
 }
 
-.alert.alert-lighter {
-  background-color: $gray-100;
-  border-color: darken($gray-100, 10%);
+:root {
+  --sacp-alert-lighter-border-color: #{color.adjust($gray-100, $lightness: -10%)};
 }
 
+.alert.alert-lighter {
+  background-color: var(--bs-gray-100);
+  border-color: var(--sacp-alert-lighter-border-color);
+}
+
+// Alert mit Icon, Titel und Text
 .alert--wrapper {
   display: flex;
   align-items: flex-start;
-
   flex-direction: row;
 
   &.alert-lighter {
-    background-color: $gray-100;
+    background-color: var(--bs-gray-100);
 
     .alert--headline {
-      color: $red;
+      color: var(--sacp-accent-text);
     }
   }
 

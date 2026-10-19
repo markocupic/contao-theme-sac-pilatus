@@ -1,5 +1,12 @@
-.content-service-link {
+:root {
+  --sacp-service-link-icon-color: #333;
+  // auf blauem Artikel
+  --sacp-service-link-on-blue-icon-color: var(--sacp-black);
+  --sacp-service-link-on-blue-icon-hover-color: var(--sacp-white);
+  --sacp-service-link-on-blue-title-hover-color: var(--sacp-black);
+}
 
+.content-service-link {
   @extend .pt-xxl-5;
   @extend .pb-xxl-5;
   @extend .pt-sm-3;
@@ -16,7 +23,7 @@
     min-width: 3rem;
     min-height: 3rem;
     margin-bottom: 0;
-    color: #333;
+    color: var(--sacp-service-link-icon-color);
     display: flex;
     justify-content: center;
     @include transition(color);
@@ -26,10 +33,8 @@
     }
   }
 
-  .service-link-wrapper {
-    > * {
-      text-align: center !important;
-    }
+  .service-link-wrapper > * {
+    text-align: center !important;
   }
 
   .service-link-icon {
@@ -43,9 +48,10 @@
     }
   }
 
+  // margin-bottom: 0 !important überschreibt den RFS-Wert
   .service-link-title {
     margin-bottom: 0 !important;
-    @include rfs(0.75rem, margin-top);
+    @include rfs(.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
     @include rfs(1.5rem, font-size);
   }
@@ -57,7 +63,7 @@
 
   .service-link-number {
     margin-bottom: 0 !important;
-    @include rfs(0.75rem, margin-top);
+    @include rfs(.75rem, margin-top);
     @include rfs(1rem, margin-bottom);
     @include rfs(2rem, font-size);
   }
@@ -67,22 +73,24 @@
   }
 }
 
+// Auf blauem Artikel
 .article-blue .content-service-link {
   [class*="fa-"] {
-    color: #000;
+    color: var(--sacp-service-link-on-blue-icon-color);
 
     &:hover {
-      color: #fff;
+      color: var(--sacp-service-link-on-blue-icon-hover-color);
     }
   }
 
-  .service-link-number, .service-link-title, .service-link-title a {
-    color: #fff;
+  .service-link-number,
+  .service-link-title,
+  .service-link-title a {
+    color: var(--sacp-on-color);
   }
 
-  .service-link-title, .service-link-title a {
-    &:hover {
-      color: #000;
-    }
+  .service-link-title:hover,
+  .service-link-title a:hover {
+    color: var(--sacp-service-link-on-blue-title-hover-color);
   }
 }

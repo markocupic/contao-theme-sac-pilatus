@@ -1,3 +1,4 @@
+// Bootstrap-Carousel
 .carousel {
   position: relative;
 
@@ -6,8 +7,9 @@
     display: none;
   }
 
-  .carousel-control-next, .carousel-control-prev {
-    z-index: 1053; // Display buttons below megamenu, which has a z-index of 1054
+  .carousel-control-next,
+  .carousel-control-prev {
+    z-index: var(--sacp-zindex-carousel-controls); // unterhalb des Megamenüs
     opacity: 1;
     width: auto;
     display: flex;
@@ -27,26 +29,31 @@
     justify-content: flex-end;
   }
 
-  .carousel-control-prev-icon, .carousel-control-next-icon {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
     width: 50px;
     height: 50px;
+
     @include media-breakpoint-up(xl) {
       width: 75px;
       height: 75px;
     }
+
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all ease-in-out 0.4s;
+    transition: all ease-in-out .4s;
     background-color: transparent;
     background-image: none;
 
     &:before {
       font-size: 20px;
+
       @include media-breakpoint-up(xl) {
         font-size: 30px;
       }
-      font-family: $icon-font-name;
+
+      font-family: var(--sacp-font-family-icon);
       line-height: 1;
       color: transparent;
       font-weight: 100;
@@ -54,21 +61,21 @@
   }
 
   .carousel-control-prev-icon:before {
-    content: "\f053";
+    content: "\f053"; // fa-chevron-left
   }
 
   .carousel-control-next-icon:before {
-    content: "\f054";
+    content: "\f054"; // fa-chevron-right
   }
 
-}
+  &:hover {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: var(--sacp-white); // fest, liegt über dem Bild
 
-.carousel:hover {
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: #fff;
-
-    &:before {
-      color: $gray-500;
+      &:before {
+        color: var(--bs-gray-500);
+      }
     }
   }
 }

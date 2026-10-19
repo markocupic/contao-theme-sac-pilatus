@@ -1,3 +1,4 @@
+// Mehrspaltige Karten (Masonry über CSS-Spalten)
 .card-columns {
   @include media-breakpoint-only(sm) {
     @include column-count(2);
@@ -13,7 +14,7 @@
   }
 
   .card-date {
-    color: $gray-500;
+    color: var(--bs-gray-500);
   }
 
   a > .card-title .card-title {
@@ -31,26 +32,18 @@
   @extend .rounded;
   overflow: hidden !important;
 
-  .card-header {
-    //font-size: clamp-calc(1rem, 1.125rem) !important;
-  }
-
   h6.card-title {
     @extend .h5;
-  }
-
-  &:hover {
-    //@extend .shadow-lg;
   }
 
   &:focus {
     outline: none;
   }
 
-  background-color: #ffffff;
+  background-color: var(--sacp-surface);
 
   &.gray-lightest {
-    background-color: $gray-300;
+    background-color: var(--bs-gray-300);
   }
 
   .caption {
@@ -65,17 +58,16 @@
     @extend .img-fluid;
   }
 
-  .image_container img, .card-img-top {
+  .image_container img,
+  .card-img-top {
     @extend .w-100;
   }
 
   .card-body {
     a:not(.btn), .card-title {
-      color: $blue !important;
+      color: var(--sacp-primary-text) !important;
       line-height: 1.4;
-      text-decoration-color: $blue;
+      text-decoration-color: var(--sacp-primary-text);
     }
   }
 }
-
-

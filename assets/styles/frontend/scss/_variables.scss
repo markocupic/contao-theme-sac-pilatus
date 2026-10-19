@@ -1,82 +1,57 @@
-$rfs-breakpoint: 1400px; //default 1200px
-$rfs-class: disable; // Add .disable-rfs to disable rfs on this element
+// =============================================================================
+// Sass-Variablen
+// -----------------------------------------------------------------------------
+// Diese Datei wird VOR Bootstrap geladen und überschreibt dessen Defaults.
+// Werte, die im Browser gebraucht werden, stellt _custom-properties.scss
+// zusätzlich als CSS-Variablen (--sacp-*) bereit.
+// Sass-Variablen braucht es weiterhin überall dort, wo Sass rechnen muss
+// (Farbfunktionen, clamp-calc(), Media-Queries, Bootstrap-Konfiguration).
+// =============================================================================
 
+// -----------------------------------------------------------------------------
+// Bootstrap-Features
+// -----------------------------------------------------------------------------
 $enable-gradients: false;
+$enable-rounded: true;
 
-// Icon Fontname
-$icon-font-name: "Font Awesome 7 Pro";
-$font-family-serif: "Roboto Slab", Georgia, "Times New Roman", serif;
-$font-family-sans-serif: "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// RFS (responsive font sizes)
+$rfs-breakpoint: 1400px; // Bootstrap-Default: 1200px
+$rfs-class: disable; // .disable-rfs deaktiviert RFS für ein Element
 
-// Container max-width (custom variable)
-$mc-container-max-width: 1380px;
-
-// color scheme: https://color.adobe.com/de/create/color-wheel/?copy=true&base=4&rule=Triad&selected=2&name=Kopie%20von%20Plexzi&mode=rgb&rgbvalues=0.0480392156862745,0.3304808355503539,0.4803921568627451,0.8065603811618105,0.08065603811618104,0.1347644857972848,0.580392156862745,0.5655213130802272,0.058039215686274494,0.3607843137254902,0.3515805547313169,0.03749327181853132,0,0.5098039215686274,0.7803921568627451&swatchOrder=0,1,2,3,4
-// Luzern Corporate Design
-$blue: #0082c7;
+// -----------------------------------------------------------------------------
+// Farben
+// -----------------------------------------------------------------------------
+// Farbschema: https://color.adobe.com/de/create/color-wheel/?copy=true&base=4&rule=Triad&selected=2&name=Kopie%20von%20Plexzi&mode=rgb&rgbvalues=0.0480392156862745,0.3304808355503539,0.4803921568627451,0.8065603811618105,0.08065603811618104,0.1347644857972848,0.580392156862745,0.5655213130802272,0.058039215686274494,0.3607843137254902,0.3515805547313169,0.03749327181853132,0,0.5098039215686274,0.7803921568627451&swatchOrder=0,1,2,3,4
+// Luzern Corporate Design: #0082c7
+// Vorschlag Buffoni: blau #0094c6, rot #C70000
 $blue: #026ca0;
-// Vorschlag Buffoni
-//$blue: #0094c6;
-//$red: #C70000;
 $red: #be0b15;
 $green: #4caf58;
 $orange: #FF9900;
 $purple: #7848B8;
-$primary: $blue;
 $dark: #333;
 
-:root {
-  --red: $red;
-  --green: $green;
-  --orange: $orange;
-  --purple: $purple;
-  --blue: $blue;
-  --primary: $primary;
-}
-
-// Disable border radius
-$enable-rounded: true;
-
-// Border radius buttons
-$btn-border-radius: 9999px;
-$btn-border-radius-lg: 9999px;
-$btn-border-radius-sm: 9999px;
-
+$primary: $blue;
 $accent-color: $red;
 $accent-color-2: $blue;
 
 $link-color: $blue;
 
-$body-color: #202124; // Contrast ratio 8.0
+$body-color: #202124; // Kontrastverhältnis 8.0
 $body-bg: #f2f5fa;
 
-// Form Widgets
-$alert-danger-text: $accent-color;
+// -----------------------------------------------------------------------------
+// Typografie
+// -----------------------------------------------------------------------------
+$icon-font-name: "Font Awesome 7 Pro";
+$font-family-serif: "Roboto Slab", Georgia, "Times New Roman", serif;
+$font-family-sans-serif: "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$zindex-navbar-aside-backdrop: 1080;
-$zindex-navbar-aside: 1090;
-
-
-// Carousel
-$carousel-control-color: #000000;
-
+// -----------------------------------------------------------------------------
+// Layout & Abstände
+// -----------------------------------------------------------------------------
+$mc-container-max-width: 1380px; // max. Breite der Inhalts-Container
 $grid-gutter-width: 15px;
-
-// Modal
-$modal-backdrop-opacity: .5;
-$modal-content-border-radius: .5rem;
-$modal-backdrop-bg: #000000;
-
-:root {
-  --bg-article-blue: $blue;
-}
-
-$input-btn-padding-y: .75rem;
-$input-btn-padding-x: 1.25rem;
-$input-btn-padding-y-sm: .5rem;
-$input-btn-padding-x-sm: 1rem;
-$input-btn-padding-y-lg: 1rem;
-$input-btn-padding-x-lg: 1.5rem;
 
 $spacer: 1rem;
 $spacer-y: 1rem;
@@ -87,3 +62,35 @@ $spacer-2: $spacer * .5; // 8px
 $spacer-3: $spacer; // 16px
 $spacer-4: $spacer * 1.5; // 24px
 $spacer-5: $spacer * 3; // 48px
+
+// -----------------------------------------------------------------------------
+// z-index
+// -----------------------------------------------------------------------------
+$zindex-navbar-aside-backdrop: 1080;
+$zindex-navbar-aside: 1090;
+
+// -----------------------------------------------------------------------------
+// Bootstrap-Komponenten
+// -----------------------------------------------------------------------------
+// Buttons & Inputs
+$btn-border-radius: 9999px;
+$btn-border-radius-lg: 9999px;
+$btn-border-radius-sm: 9999px;
+
+$input-btn-padding-y: .75rem;
+$input-btn-padding-x: 1.25rem;
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: 1rem;
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 1.5rem;
+
+// Formulare
+$alert-danger-text: $accent-color;
+
+// Carousel
+$carousel-control-color: #000000;
+
+// Modal
+$modal-backdrop-opacity: .5;
+$modal-content-border-radius: .5rem;
+$modal-backdrop-bg: #000000;

@@ -1,20 +1,31 @@
-// Set variables and overwrite bootstrap vars
+// =============================================================================
+// SAC Sektion Pilatus – Frontend-Styles
+// -----------------------------------------------------------------------------
+// Achtung: Die Reihenfolge der Imports bestimmt die Kaskade. Beim Umstellen
+// können sich Styles ändern!
+// =============================================================================
+
+// 1. Konfiguration (Bootstrap-Variablen überschreiben)
 @import "variables";
-// EMBED BOOTSTRAP FRAMEWORK
-// the main.scss is located in:
-// files/theme-sac-pilatus/scss/main.scss
-@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// MIXINS
-@import "mixins/_mixins.scss";
+// 2. Bootstrap
+@import "bootstrap/scss/bootstrap";
 
-// BASE
+// 3. Funktionen & Mixins
+@import "mixins/functions";
+@import "mixins/mixins";
+
+// 4. CSS-Variablen (--sacp-*)
+@import "custom-properties";
+
+// 5. Basis
 @import "base/page";
 @import "base/layout";
 @import "base/type";
 @import "base/bootstrap-anpassungen";
 @import "base/sticky-footer";
-// Components
+
+// 6. Komponenten
 @import "components/header";
 @import "components/footer";
 @import "components/utilities";
@@ -38,16 +49,14 @@
 @import "components/carousel";
 @import "components/event-slick-slider";
 @import "components/cards";
-@import "components/event-slick-slider";
 @import "components/event_filter_board";
 @import "components/modal";
 @import "components/heroimage";
-@import "components/navtabs";
 @import "components/search-module";
 @import "components/buttons";
 @import "components/tables";
 @import "components/colorbox";
-@import "components/user_portrait";
+//@import "components/user_portrait";
 @import "components/newsletter";
 @import "components/ce_divider";
 @import "components/jahresprogramm_export";
@@ -62,3 +71,6 @@
 @import "components/scrolling-text";
 @import "components/swiper";
 @import "components/choices";
+
+// 7. Dark Mode (überschreibt nur CSS-Variablen)
+@import "dark-mode";

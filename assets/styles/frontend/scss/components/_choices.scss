@@ -1,15 +1,19 @@
+:root {
+  --sacp-choices-option-hover-bg: #333;
+}
+
 .choices {
   .choices__inner {
     border-radius: var(--bs-border-radius) !important;
 
     .choices__list {
       .choices__item {
-        background-color: $blue !important;
-        border-color: $blue !important;
-        color: #fff !important;
+        background-color: var(--sacp-blue) !important;
+        border-color: var(--sacp-blue) !important;
+        color: var(--sacp-on-color) !important;
 
         button.choices__button {
-          border-left: 1px solid #fff !important;
+          border-left: 1px solid var(--sacp-on-color) !important;
           padding-top: 4px !important;
           padding-bottom: 4px !important;
         }
@@ -19,12 +23,12 @@
 
   .choices__list.choices__list--dropdown {
     .choices__item.choices__item--choice.choices__item--selectable {
-      background-color: #fff;
-      color: #000;
+      background-color: var(--sacp-surface);
+      color: var(--sacp-body-color);
 
       &:hover {
-        background-color: #333;
-        color: #fff;
+        background-color: var(--sacp-choices-option-hover-bg);
+        color: var(--sacp-white);
       }
     }
   }

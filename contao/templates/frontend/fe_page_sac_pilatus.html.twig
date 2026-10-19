@@ -14,6 +14,47 @@
 <!DOCTYPE html>
 <html{{ rootAttributes }}>
 <head>
+    {# Hell/Dunkel so früh wie möglich setzen, damit die Seite nicht kurz hell aufblitzt #}
+    <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+        (() => {
+            const key = 'sacp-theme';
+            const root = document.documentElement;
+            const media = window.matchMedia('(prefers-color-scheme: dark)');
+            const stored = () => {
+                try {
+                    const value = localStorage.getItem(key);
+                    return value === 'dark' || value === 'light' ? value : null;
+                } catch (e) {
+                    return null;
+                }
+            };
+            const apply = (theme) => {
+                root.setAttribute('data-bs-theme', theme);
+                document.dispatchEvent(new CustomEvent('sacp:themechange', {detail: {theme}}));
+            };
+
+            apply(stored() || (media.matches ? 'dark' : 'light'));
+
+            // Systemeinstellung folgen, solange nichts gespeichert wurde
+            media.addEventListener('change', (e) => {
+                if (!stored()) {
+                    apply(e.matches ? 'dark' : 'light');
+                }
+            });
+
+            // Immer hell drucken
+            let beforePrint = null;
+            window.addEventListener('beforeprint', () => {
+                beforePrint = root.getAttribute('data-bs-theme');
+                apply('light');
+            });
+            window.addEventListener('afterprint', () => {
+                if (beforePrint) {
+                    apply(beforePrint);
+                }
+            });
+        })();
+    </script>
 
     {% block head %}
         <meta charset="{{ charset }}">
