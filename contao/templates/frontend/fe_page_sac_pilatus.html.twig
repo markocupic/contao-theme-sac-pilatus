@@ -17,10 +17,16 @@
     {# Hell/Dunkel so früh wie möglich setzen, damit die Seite nicht kurz hell aufblitzt #}
     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
         (() => {
+            // Einstellung "Dunkles Design" im Startpunkt: toggle, auto oder off
+            const mode = {{ sacp_theme_mode()|json_encode|raw }};
             const key = 'sacp-theme';
             const root = document.documentElement;
             const media = window.matchMedia('(prefers-color-scheme: dark)');
             const stored = () => {
+                // Ohne Schalter zählt nur die Systemeinstellung
+                if (mode !== 'toggle') {
+                    return null;
+                }
                 try {
                     const value = localStorage.getItem(key);
                     return value === 'dark' || value === 'light' ? value : null;
@@ -32,6 +38,12 @@
                 root.setAttribute('data-bs-theme', theme);
                 document.dispatchEvent(new CustomEvent('sacp:themechange', {detail: {theme}}));
             };
+
+            // Dunkles Design ausgeschaltet: immer hell
+            if (mode === 'off') {
+                apply('light');
+                return;
+            }
 
             apply(stored() || (media.matches ? 'dark' : 'light'));
 
