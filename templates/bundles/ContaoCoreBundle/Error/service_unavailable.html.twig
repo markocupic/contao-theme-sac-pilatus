@@ -1,0 +1,35 @@
+{#
+    Maintenance mode (503) page of sac-pilatus.ch.
+
+    Template @ContaoCore/Error/service_unavailable.html.twig (Contao 5.7), used by
+    contao:maintenance-mode and the PrettyErrorScreenListener. Layout: _sac_pilatus_layout.html.twig
+
+    "contao:maintenance-mode enable" renders this template ONCE and writes the result to
+    var/maintenance.html, which is then delivered as a static page. After changing the template,
+    the maintenance mode has to be enabled again:
+        php vendor/bin/contao-console cache:clear --env=prod
+        php vendor/bin/contao-console contao:maintenance-mode disable
+        php vendor/bin/contao-console contao:maintenance-mode enable
+#}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% block title %}Wartungsarbeiten{% endblock %}
+
+{% block head %}
+    {# Reload the page every 5 minutes, so visitors get back to the website automatically #}
+    <meta http-equiv="refresh" content="300">
+{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+            <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Wartungsarbeiten</p>
+    <h1>Wir sind gleich wieder für dich da</h1>
+    <p>Unsere Website wird gerade gewartet und ist für kurze Zeit nicht erreichbar.</p>
+    <p class="muted">Bitte versuche es in ein paar Minuten nochmals. Die Seite lädt sich automatisch neu.</p>
+    <a class="btn" href="">Seite neu laden</a>
+{% endblock %}

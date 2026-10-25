@@ -1,0 +1,279 @@
+{#
+    Base layout of the error and maintenance pages of sac-pilatus.ch, in the design of the website
+    (theme colors, fonts and logos, dark mode). The pages are rendered without the page layout,
+    so all styles are inline. Fonts and logos are loaded from the theme bundle
+    (asset package "markocupic_contao_theme_sac_pilatus").
+
+    The theme bundle adds templates/bundles/ContaoCoreBundle to the Twig namespace @ContaoCore
+    (see MarkocupicContaoThemeSacPilatusExtension::prepend()).
+
+    Blocks: title, head (additional head elements), card (content of the card)
+#}
+{% set package = 'markocupic_contao_theme_sac_pilatus' %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | SAC Sektion Pilatus</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="color-scheme" content="light dark">
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('fonts/google-sans.css', package) }}">
+    <link rel="stylesheet" href="{{ asset('fonts/roboto-slab.css', package) }}">
+    <style>
+        :root {
+            --sacp-blue: #026ca0;
+            --sacp-blue-hover: #015680;
+            --sacp-red: #be0b15;
+            --sacp-bg: #f2f5fa;
+            --sacp-card-bg: #fff;
+            --sacp-text: #202124;
+            --sacp-muted: #5f6368;
+            --sacp-border: #dde3ec;
+            --sacp-mountain: #dbe5f1;
+            --sacp-mountain-front: #c4d4e8;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --sacp-blue: #4aa6d6;
+                --sacp-blue-hover: #6cb8e0;
+                --sacp-red: #f0626a;
+                --sacp-bg: #1b1f24;
+                --sacp-card-bg: #252b33;
+                --sacp-text: #e8eaed;
+                --sacp-muted: #a8adb4;
+                --sacp-border: #343b45;
+                --sacp-mountain: #2a3139;
+                --sacp-mountain-front: #323a44;
+            }
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            min-height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: var(--sacp-bg);
+            color: var(--sacp-text);
+            font: 400 1rem/1.6 "Google Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .accent {
+            height: 6px;
+            background: linear-gradient(90deg, var(--sacp-red) 0 33%, var(--sacp-blue) 33% 100%);
+        }
+        header {
+            background: var(--sacp-card-bg);
+            border-bottom: 1px solid var(--sacp-border);
+        }
+        .container {
+            width: 100%;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        header .container {
+            display: flex;
+            align-items: center;
+            min-height: 84px;
+        }
+        .logo img {
+            display: block;
+            height: 52px;
+            width: auto;
+        }
+        .logo--dark {
+            display: none !important;
+        }
+        @media (prefers-color-scheme: dark) {
+            .logo--light {
+                display: none !important;
+            }
+            .logo--dark {
+                display: block !important;
+            }
+        }
+        main {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 48px 0 160px;
+            overflow: hidden;
+        }
+        .mountains {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 220px;
+            pointer-events: none;
+        }
+        .mountains .back {
+            fill: var(--sacp-mountain);
+        }
+        .mountains .front {
+            fill: var(--sacp-mountain-front);
+        }
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 40px 32px;
+            background: var(--sacp-card-bg);
+            border: 1px solid var(--sacp-border);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(2, 108, 160, .08);
+            text-align: center;
+        }
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            margin-bottom: 16px;
+            border-radius: 50%;
+            background: rgba(2, 108, 160, .1);
+            color: var(--sacp-blue);
+        }
+        .eyebrow {
+            margin: 0 0 8px;
+            color: var(--sacp-red);
+            font-size: .8125rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        h1 {
+            margin: 0 0 16px;
+            font: 600 clamp(1.75rem, 4vw, 2.25rem)/1.25 "Roboto Slab", Georgia, "Times New Roman", serif;
+        }
+        p {
+            margin: 0 0 16px;
+        }
+        .muted {
+            color: var(--sacp-muted);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: .75rem 1.5rem;
+            border: 0;
+            border-radius: 9999px;
+            background: var(--sacp-blue);
+            color: #fff;
+            font: inherit;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color .2s;
+        }
+        .btn:hover,
+        .btn:focus-visible {
+            background: var(--sacp-blue-hover);
+        }
+        .btn:focus-visible {
+            outline: 3px solid rgba(2, 108, 160, .35);
+            outline-offset: 2px;
+        }
+        .btn--secondary {
+            background: transparent;
+            color: var(--sacp-blue);
+            box-shadow: inset 0 0 0 2px var(--sacp-blue);
+        }
+        .btn--secondary:hover,
+        .btn--secondary:focus-visible {
+            background: rgba(2, 108, 160, .08);
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 12px;
+            margin-top: 8px;
+        }
+        .actions .btn {
+            margin-top: 0;
+        }
+        .error-code {
+            margin-top: 24px;
+            color: var(--sacp-muted);
+            font-size: .8125rem;
+        }
+        footer {
+            position: relative;
+            z-index: 1;
+            background: var(--sacp-card-bg);
+            border-top: 1px solid var(--sacp-border);
+            color: var(--sacp-muted);
+            font-size: .875rem;
+        }
+        footer .container {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            text-align: center;
+        }
+        footer strong {
+            color: var(--sacp-text);
+            font-weight: 600;
+        }
+        @media (max-width: 575px) {
+            header .container {
+                min-height: 68px;
+            }
+            .logo img {
+                height: 40px;
+            }
+            main {
+                padding: 24px 0 120px;
+            }
+            .card {
+                padding: 32px 20px;
+            }
+            .mountains {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="accent"></div>
+
+    <header>
+        <div class="container">
+            <a class="logo" href="/" title="Zur Startseite">
+                <img class="logo--light" src="{{ asset('images/logos/logo-header.svg', package) }}" alt="Logo SAC Sektion Pilatus">
+                <img class="logo--dark" src="{{ asset('images/logos/logo-header-dark-theme.svg', package) }}" alt="Logo SAC Sektion Pilatus">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                {% block card %}{% endblock %}
+            </div>
+        </div>
+
+        <svg class="mountains" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+            <path class="back" d="M0 220V150l140-70 110 50 170-110 150 95 120-60 190 120 140-70 170 85 150-110 100 60v150z"/>
+            <path class="front" d="M0 220v-40l180-60 130 45 160-80 200 105 150-55 180 75 170-90 170 65 100-30v75z"/>
+        </svg>
+    </main>
+
+    <footer>
+        <div class="container">
+            <strong>SAC Sektion Pilatus</strong> · Schweizer Alpen-Club SAC · Bireggring 1, 6005 Luzern
+        </div>
+    </footer>
+</body>
+</html>

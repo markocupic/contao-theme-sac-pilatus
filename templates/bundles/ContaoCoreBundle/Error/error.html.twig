@@ -1,0 +1,56 @@
+{#
+    Error page of sac-pilatus.ch for 500 errors and all other errors without their own page
+    (not 404, 503 and invalid request token).
+
+    Template @ContaoCore/Error/error.html.twig (Contao 5.7, PrettyErrorScreenListener, prod mode only).
+    Layout: _sac_pilatus_layout.html.twig
+
+    Available variables: statusCode, statusName, adminEmail (encoded "mailto:" link of the
+    administrator e-mail address), base
+#}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% set code = statusCode|default(500) %}
+{% set kind = 403 == code ? 'forbidden' : (code >= 400 and code < 500 ? 'client' : 'server') %}
+{% set messages = {
+    forbidden: {
+        headline: 'Kein Zugriff',
+        text: 'Du hast keine Berechtigung, diese Seite anzusehen.',
+        hint: 'Bist du nicht angemeldet? Melde dich an und versuche es nochmals.',
+    },
+    client: {
+        headline: 'Diese Anfrage können wir nicht verarbeiten',
+        text: 'Die Seite konnte mit diesen Angaben nicht aufgerufen werden.',
+        hint: 'Bitte prüfe den Link oder starte noch einmal auf der Startseite.',
+    },
+    server: {
+        headline: 'Da ist etwas schiefgelaufen',
+        text: 'Auf unserer Website ist ein unerwarteter Fehler aufgetreten. Das Web-Team wurde informiert und wir arbeiten daran.',
+        hint: 'Bitte versuche es später nochmals. Bleibt der Fehler bestehen, melde dich beim Webmaster.',
+    },
+} %}
+{% set message = messages[kind] %}
+
+{% block title %}{{ message.headline }}{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
+            <path d="M12 9v4"/>
+            <path d="M12 17h.01"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Fehler {{ code }}</p>
+    <h1>{{ message.headline }}</h1>
+    <p>{{ message.text }}</p>
+    <p class="muted">{{ message.hint }}</p>
+    <div class="actions">
+        <a class="btn" href="{{ base|default('') }}/">Zur Startseite</a>
+        {% if code >= 500 %}
+            <a class="btn btn--secondary" href="">Nochmals versuchen</a>
+        {% endif %}
+        <a class="btn btn--secondary" href="mailto:webmaster@sac-pilatus.ch">Webmaster kontaktieren</a>
+    </div>
+    <p class="error-code">{{ code }} {{ statusName|default('Internal Server Error') }}</p>
+{% endblock %}

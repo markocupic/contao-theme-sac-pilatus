@@ -17,10 +17,26 @@ namespace Markocupic\ContaoThemeSacPilatus\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class MarkocupicContaoThemeSacPilatusExtension extends Extension
+class MarkocupicContaoThemeSacPilatusExtension extends Extension implements PrependExtensionInterface
 {
+    /**
+     * Templates in templates/bundles/ContaoCoreBundle override the templates of the Contao
+     * core bundle (Twig namespace @ContaoCore), like templates/bundles/ContaoCoreBundle in
+     * the project root. Used for the maintenance page
+     * (@ContaoCore/Error/service_unavailable.html.twig, see contao:maintenance-mode).
+     */
+    public function prepend(ContainerBuilder $container): void
+    {
+        $container->prependExtensionConfig('twig', [
+            'paths' => [
+                __DIR__.'/../../templates/bundles/ContaoCoreBundle' => 'ContaoCore',
+            ],
+        ]);
+    }
+
     public function getAlias(): string
     {
         return Configuration::ROOT_KEY;
