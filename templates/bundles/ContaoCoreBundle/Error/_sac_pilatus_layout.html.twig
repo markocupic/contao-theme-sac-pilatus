@@ -209,6 +209,50 @@
             color: var(--sacp-muted);
             font-size: .8125rem;
         }
+        .details {
+            margin: 24px 0 8px;
+            padding: 16px 20px;
+            border: 1px solid var(--sacp-border);
+            border-radius: 8px;
+            background: var(--sacp-bg);
+            text-align: left;
+            font-size: .875rem;
+            overflow-x: auto;
+        }
+        .details h2 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+        .details p {
+            margin: 0 0 8px;
+        }
+        .details p:last-child {
+            margin-bottom: 0;
+        }
+        code, pre {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: .8125rem;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .details table {
+            width: 100%;
+            margin-top: 8px;
+            border-collapse: collapse;
+        }
+        .details th,
+        .details td {
+            padding: 6px 8px;
+            border-bottom: 1px solid var(--sacp-border);
+            text-align: left;
+            vertical-align: top;
+        }
+        .details th {
+            font-weight: 600;
+        }
         footer {
             position: relative;
             z-index: 1;

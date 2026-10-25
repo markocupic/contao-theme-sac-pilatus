@@ -1,0 +1,58 @@
+{#
+    Error page of sac-pilatus.ch when a URL could not be generated because route parameters are missing.
+
+    Template @ContaoCore/Error/missing_route_parameters.html.twig (Contao 5.7, PrettyErrorScreenListener, prod mode only).
+    Layout: _sac_pilatus_layout.html.twig
+
+    Available variables: throwable (Contao\CoreBundle\Exception\MissingRouteParametersException), statusCode, statusName
+#}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% block title %}Seite nicht verfügbar{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="19" r="3"/>
+            <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>
+            <circle cx="18" cy="5" r="3"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Fehler {{ statusCode|default(500) }}</p>
+    <h1>Diese Seite ist nicht verfügbar</h1>
+    <p>Die Adresse der Seite konnte nicht erstellt werden, weil Angaben in der URL fehlen.</p>
+    <p class="muted">Bitte starte noch einmal auf der Startseite. Bleibt der Fehler bestehen, melde dich beim Webmaster.</p>
+
+    {% if throwable.route|default(null) %}
+        <div class="details">
+            <h2>Technische Details</h2>
+            <p>Route: <code>{{ throwable.route.path }}</code></p>
+            {% if throwable.route.requirements is not empty %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Anforderung</th>
+                            <th>Standardwert</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for variable, requirement in throwable.route.requirements %}
+                            <tr>
+                                <td>{{ variable }}</td>
+                                <td><code>{{ requirement }}</code></td>
+                                <td>{% if throwable.route.defaults[variable] is empty %}<i>leer</i>{% else %}{{ throwable.route.defaults[variable] }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="actions">
+        <a class="btn" href="{{ base|default('') }}/">Zur Startseite</a>
+        <a class="btn btn--secondary" href="mailto:webmaster@sac-pilatus.ch">Webmaster kontaktieren</a>
+    </div>
+    <p class="error-code">{{ statusCode|default(500) }} {{ statusName|default('Internal Server Error') }}</p>
+{% endblock %}

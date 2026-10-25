@@ -1,0 +1,30 @@
+{#
+    Error page of sac-pilatus.ch for an invalid or expired request token (CSRF token),
+    e.g. when a form is submitted after the session has expired.
+
+    Template @ContaoCore/Error/invalid_request_token.html.twig (Contao 5.7, PrettyErrorScreenListener, prod mode only).
+    Layout: _sac_pilatus_layout.html.twig
+#}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% block title %}Sitzung abgelaufen{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6v6l4 2"/>
+            <path d="M22 12A10 10 0 1 1 12 2"/>
+            <path d="M22 2v6h-6"/>
+            <path d="M21.17 8A10 10 0 0 0 12 2"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Ungültiges Formular-Token</p>
+    <h1>Deine Sitzung ist abgelaufen</h1>
+    <p>Das Formular konnte aus Sicherheitsgründen nicht verarbeitet werden. Meist passiert das, wenn eine Seite längere Zeit offen war oder Cookies blockiert werden.</p>
+    <p class="muted">Gehe zurück, lade die Seite neu und sende das Formular nochmals ab. Bitte prüfe, ob Cookies für sac-pilatus.ch erlaubt sind.</p>
+    <div class="actions">
+        <a class="btn" href="javascript:history.back()">Zurück zum Formular</a>
+        <a class="btn btn--secondary" href="{{ base|default('') }}/">Zur Startseite</a>
+    </div>
+    <p class="error-code">{{ statusCode|default(400) }} Invalid Request Token</p>
+{% endblock %}

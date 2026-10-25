@@ -1,0 +1,43 @@
+{#
+    Compatibility layout for error templates that extend "@ContaoCore/Error/layout.html.twig"
+    (e.g. error pages of third-party bundles). It renders the blocks of the Contao core layout
+    (title, message, main, matter, howToFix, explain) in the design of sac-pilatus.ch.
+
+    The error pages of the Contao core are overridden by their own templates in this folder.
+    Layout: _sac_pilatus_layout.html.twig
+#}
+{% trans_default_domain 'contao_exception' %}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% block title %}Fehler {{ statusCode|default(500) }}{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
+            <path d="M12 9v4"/>
+            <path d="M12 17h.01"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Fehler {{ statusCode|default(500) }}</p>
+    {% block message %}<h1>{{ block('title') }}</h1>{% endblock %}
+
+    {% block main %}
+        {% set _matter = block('matter') is defined ? block('matter')|trim : '' %}
+        {% set _howToFix = block('howToFix') is defined ? block('howToFix')|trim : '' %}
+        {% set _explain = block('explain') is defined ? block('explain')|trim : '' %}
+        {{ _matter|raw }}
+        {% if _howToFix is not empty %}
+            <div class="muted">{{ _howToFix|raw }}</div>
+        {% endif %}
+        {% if _explain is not empty %}
+            <div class="details">{{ _explain|raw }}</div>
+        {% endif %}
+    {% endblock %}
+
+    <div class="actions">
+        <a class="btn" href="{{ base|default('') }}/">Zur Startseite</a>
+        <a class="btn btn--secondary" href="mailto:webmaster@sac-pilatus.ch">Webmaster kontaktieren</a>
+    </div>
+    <p class="error-code">{{ statusCode|default(500) }} {{ statusName|default('Error') }}</p>
+{% endblock %}

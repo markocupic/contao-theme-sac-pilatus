@@ -1,0 +1,38 @@
+{#
+    Error page of sac-pilatus.ch shown to logged-in backend users. In contrast to the public
+    error pages, it shows the exception message to make troubleshooting easier.
+
+    Template @ContaoCore/Error/backend.html.twig (Contao 5.7, PrettyErrorScreenListener, prod mode only).
+    Layout: _sac_pilatus_layout.html.twig
+
+    Available variables: exception (message), statusCode, statusName
+#}
+{% extends '@ContaoCore/Error/_sac_pilatus_layout.html.twig' %}
+
+{% block title %}{{ statusName|default('Fehler') }}{% endblock %}
+
+{% block card %}
+    <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
+            <path d="M12 9v4"/>
+            <path d="M12 17h.01"/>
+        </svg>
+    </div>
+    <p class="eyebrow">Fehler {{ statusCode|default(500) }}</p>
+    <h1>Da ist etwas schiefgelaufen</h1>
+    <p>Beim Verarbeiten der Anfrage ist ein Fehler aufgetreten. Du siehst die Details, weil du im Backend angemeldet bist.</p>
+
+    {% if exception|default('') is not empty %}
+        <div class="details">
+            <h2>Fehlermeldung</h2>
+            <pre>{{ exception }}</pre>
+        </div>
+    {% endif %}
+
+    <div class="actions">
+        <a class="btn" href="javascript:history.back()">Zurück</a>
+        <a class="btn btn--secondary" href="">Nochmals versuchen</a>
+    </div>
+    <p class="error-code">{{ statusCode|default(500) }} {{ statusName|default('Internal Server Error') }}</p>
+{% endblock %}
