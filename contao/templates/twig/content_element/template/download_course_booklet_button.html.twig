@@ -9,8 +9,10 @@
                         .set('href', '/_download/print_workshop_booklet_as_pdf') %}
                 {% else %}
                     {% set attributes = attrs()
-                        .set('data-sac-login-toggle', 'modal')
-                        .set('data-sac-login-target', 'same-site') %}
+                        .set('data-controller', 'sacptheme--frontend--bs-login-modal')
+                        .set('data-action', 'click->sacptheme--frontend--bs-login-modal#open')
+                        .set('data-sac-login-target', 'same-site')
+                        .set('title', 'Kursbroschüre herunterladen') %}
                 {% endif %}
                 <a{{ attributes }}>
                     <button class="text-right btn btn-sm btn-success" title="Kursprogramm als pdf Broschüre herunterladen">
