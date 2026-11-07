@@ -10,11 +10,33 @@
   }
 }
 
+// Seitenabstand oben auf der Detailseite (v. a. Mobile) reduzieren
+#wrapper #container .mod_article > .article-inside.container:has(.event-detailview) {
+  padding-top: clamp-calc(1.5rem, 3.5rem);
+}
+
 .event-detailview {
+  // Titel: auf Mobile deutlich kleiner
+  > h1.content-headline {
+    font-size: clamp-calc(1.5rem, 2.5rem);
+    line-height: 1.2;
+    hyphens: auto;
+  }
+
   div:has(> .icon-box-small) {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: clamp-calc(1.25rem, 2rem);
+  }
+
+  // Häkchen-Icon näher an den Text
+  .icon-box-small {
+    padding-left: clamp-calc(1.625rem, 2.125rem);
+
+    &:before {
+      font-size: clamp-calc(1rem, 1.25rem);
+      //top: .15em; // optisch auf die h5-Grundlinie
+    }
   }
 
   .overflow-auto {
@@ -83,12 +105,16 @@
   .event-detail {
     h5 {
       margin-top: 0;
+      margin-bottom: clamp-calc(.25rem, .75rem);
+      font-size: clamp-calc(1.05rem, 1.25rem);
       font-weight: bold;
+      hyphens: auto; // statt hartem Umbruch mitten im Wort
       overflow-wrap: break-word;
     }
-
-    p {
-      margin: 0;
-    }
   }
+}
+
+// Höhere Spezifität nötig, sonst gewinnt `#main p` aus base/_type.scss
+#main .event-detailview .event-detail p {
+  margin: 0;
 }
